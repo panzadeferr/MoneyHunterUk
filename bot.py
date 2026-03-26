@@ -8,7 +8,8 @@ from flask import Flask, request, jsonify
 from flask_cors import CORS
 
 # --- CONFIGURATION ---
-BOT_TOKEN  = os.environ.get("BOT_TOKEN", "")
+TELEGRAM_TOKEN = os.environ.get("BOT_TOKEN")
+CHAT_ID = os.environ.get("TELEGRAM_CHAT_ID")
 CHANNEL    = "@MoneyHunterUK"
 APP_URL    = "https://moneyhunters.co.uk"
 BREVO_API_KEY = os.environ.get("BREVO_API_KEY", "")
