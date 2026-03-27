@@ -47,7 +47,7 @@ jobs:
             const fs = require('fs');
             if (!fs.existsSync('app.html')) process.exit(0);
             const html = fs.readFileSync('app.html', 'utf8');
-            const forbidden = ['YOUR_BREVO_API_KEY', 'RAILWAY_URL_HERE', 'xkeysib-c7e091d246f55dba71a3214c812d68c57c3c8835b08c35f68e4919bbc960eb78'];
+            const forbidden = ['YOUR_BREVO_API_KEY', 'RAILWAY_URL_HERE', 'xkeysib-'];
             let ok = true;
             forbidden.forEach(s => { if (html.includes(s)) { console.log('❌ Forbidden string found:', s); ok = false; } });
             if (!ok) process.exit(1);

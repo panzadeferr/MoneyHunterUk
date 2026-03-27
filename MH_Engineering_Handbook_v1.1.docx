@@ -1,0 +1,555 @@
+MONEY HUNTERS UK
+
+Engineering & Agent Handbook
+
+Version 1.1 — March 2026
+
+Project Overview
+
+A UK-focused mobile-first PWA for tracking referral deals,
+bank switch bonuses, cashback stacks and investment offers.
+Live at moneyhunters.co.uk
+
+46+
+Live Offers
+
+£1,000+
+Bank Switch Value
+
+Free
+Forever
+
+PWA
+Mobile First
+
+1. Current Project State
+
+This section describes the exact state of the project as of March 2026. Any AI agent or developer joining the project must read this section first before making any changes.
+
+1.1 Infrastructure
+
+Service
+Details
+
+Domain
+moneyhunters.co.uk (Namecheap, £3.87/yr)
+
+Frontend Host
+GitHub Pages — github.com/panzadeferr/MoneyHunterUk
+
+Backend / Bot
+Railway — referral-hunter-bot-production.up.railway.app
+
+Database / Auth
+Supabase — wqcwevcdmiounmoqhqpg.supabase.co
+
+Email List
+Brevo — List #2 "Money Hunters Weekly"
+
+Email Address
+hello@moneyhunters.co.uk (Namecheap → Gmail forward)
+
+Telegram Bot
+@MoneyHunterUkBot | Channel: @MoneyHunterUK
+
+Scraper
+scraper.py in MoneyHunterUk repo — pulls 30+ offers + supermarket deals daily into all_deals.json
+
+Email Auth
+Brevo SMTP wired into Supabase. SPF/DKIM/DMARC verified. Sends from hello@moneyhunters.co.uk
+
+Reddit
+r/ReferralHunterUK
+
+Ko-fi
+ko-fi.com/moneyhunteruk
+
+Stripe DD
+buy.stripe.com/aFa8wP9gM4oW1kc1Bj7IY00
+
+GitHub Actions
+deploy.yml (CI/CD), scraper.yml (auto-scraper every 6 hours)
+
+1.2 File Structure (GitHub Pages Repo)
+
+File
+Purpose
+
+index.html
+Landing page — what users see first at moneyhunters.co.uk
+
+app.html
+Main PWA app — all features, 3,700+ lines
+
+sw.js
+Service worker — offline support, caching
+
+manifest.json
+PWA manifest — icons, display mode, shortcuts
+
+icon-192.png
+App icon 192x192 (Android, Chrome)
+
+icon-512.png
+App icon 512x512
+
+icon-maskable.png
+Android adaptive icon
+
+apple-touch-icon.png
+iOS home screen icon 180x180
+
+scraper.py
+Complete scraper for 30+ manual offers + supermarket deals
+
+all_deals.json
+Auto-generated deals data with stacking rates
+
+.github/workflows/deploy.yml
+CI/CD pipeline with syntax checks
+
+.github/workflows/scraper.yml
+Auto-scraper runs every 6 hours
+
+1.3 Railway Bot (bot.py)
+
+The Railway service runs two things simultaneously in one Python process:
+
+Flask web server on PORT 8080 — handles HTTP API endpoints
+Telegram scheduler — sends daily deal alerts via schedule library in a background thread
+
+Current API endpoints:
+
+Endpoint
+Method
+Purpose
+
+/health
+GET
+Health check — returns {"status":"ok"}
+
+/subscribe
+POST
+Adds email to Brevo list #2 using BREVO_API_KEY env var
+
+Environment Variables (Railway)
+
+BREVO_API_KEY — Brevo v3 API key (never commit to code)
+PORT — set automatically by Railway (8080)
+All secrets stored in Railway Variables dashboard only.
+
+1.4 Supabase Schema
+
+Five tables with Row Level Security enabled. Users can only access their own data.
+
+Table
+Key Columns
+
+profiles
+id (uuid, FK auth.users), username (unique), email, created_at
+
+progress
+id, xp, level, streak, last_daily, savings, claimed, updated_at
+
+offer_status
+user_id, offer_id, status (none/pending/completed), steps (jsonb), saved_amount
+
+pending_payouts
+user_id, offer_id, offer_name, reward, amount, due_at
+
+badges
+user_id, badge_id, earned_at
+
+Trigger
+handle_new_user() fires on auth.users INSERT — auto-creates profile and progress rows. This means signup always results in data rows existing, simplifying all subsequent queries.
+
+1.5 App Features (Current)
+
+Feature
+Implementation
+Status
+
+46+ referral offers
+Hardcoded in app.html offers array
+Live
+
+Slide-up offer detail panel
+Full-screen panel with tips, warnings, steps
+Live
+
+Cashback Battle Table
+Now loads from all_deals.json stacking rates
+Live ✅
+
+Stacking Guides
+3 guides — supermarket, bank switch, invest
+Live
+
+XP / Level / Streak
+localStorage + Supabase sync
+Live
+
+Pending Payout Tracker
+Countdown timer per offer
+Live
+
+Supabase Auth
+Email + password signup/login, progress sync
+Live
+
+Email Capture
+Via Railway → Brevo (no key in frontend code)
+Live
+
+PWA Install
+Manifest, SW, icons, install prompt
+Live
+
+Telegram Daily Alerts
+Mon/Wed/Fri specific, other days Reddit
+Live
+
+Landing Page
+Full marketing page with signup form
+Live
+
+Password Reset
+handlePasswordReset(), handleNewPassword(), checkPasswordResetToken()
+Live ✅
+
+Batch Supabase Sync
+Batch upsert for offer_status and pending_payouts
+Live ✅
+
+Targeted Rendering
+updateTopStatsOnly(), updateProfileOnly() functions
+Live ✅
+
+HTML Escaping
+esc() helper function prevents XSS
+Live ✅
+
+Auto-scraper
+GitHub Actions runs scraper every 6 hours
+Live ✅
+
+2. Known Issues & Technical Debt
+
+Every agent must be aware of these issues before touching the codebase.
+
+2.1 Critical Issues
+
+CRIT-01: Single 3,700-line HTML File
+app.html contains all CSS, HTML, JS, and data in one file. No separation of concerns. Difficult to maintain, impossible to test in isolation, and every change redeploys everything. Target architecture: separate app.css, app.js, data.js files.
+
+CRIT-02: ✅ RESOLVED (Mar 2026) — renderAll() Called on Every State Change
+Fixed with targeted renders using dirty flags. Added updateTopStatsOnly() and updateProfileOnly() functions.
+
+CRIT-03: ✅ RESOLVED (Mar 2026) — Sequential Supabase Sync Loop
+Fixed with batch upsert calls for offer_status and pending_payouts.
+
+2.2 Medium Issues
+
+CRIT-04: Offer data hardcoded in HTML — adding/editing requires a GitHub deploy
+
+CRIT-05: inferCategory() uses regex on badge text — fragile, breaks if badge wording changes
+
+CRIT-06: offerEnrichment is a separate object — should be merged into each offer object
+
+CRIT-07: ✅ RESOLVED (Mar 2026) — formatMoney() rounds to 0 decimal places — now uses .toFixed(2)
+
+CRIT-08: ✅ RESOLVED (Mar 2026) — Password reset flow added. Forgot password link, reset email via Supabase, new password form on redirect.
+
+CRIT-09: Leaderboard shows static fake data, not real Supabase data
+
+CRIT-10: ✅ RESOLVED (Mar 2026) — SW updated to v2. Network-first for HTML pages, cache-first for static assets. External APIs never cached.
+
+2.3 Minor Issues
+
+CRIT-11: No swipe-down gesture to close offer panel (only small X button)
+
+CRIT-12: iOS keyboard pushes form content off screen in auth modal
+
+CRIT-13: No skeleton loaders — offers grid shows empty then pops in
+
+CRIT-14: ✅ RESOLVED (Mar 2026) — BOT_TOKEN moved to Railway Variables, old token revoked via BotFather
+
+CRIT-15: Google Fonts loaded without font-display:swap — blocks rendering
+
+3. Staged Rebuild Plan
+
+The project will be rebuilt in 5 stages. Each stage must be fully tested and deployed before starting the next. No stage should break the live site.
+
+Stage 1 — Hotfixes & Quick Wins
+Priority: fix issues that hurt users right now. Timeline: 1-2 days.
+
+#
+Task
+Fixes
+Test
+
+1
+✅ Move BOT_TOKEN to Railway environment variable
+CRIT-14 — DONE
+Health endpoint returns 200 ✅
+
+2
+✅ Fix formatMoney() to show pence (toFixed(2))
+CRIT-07 — DONE
+Unit test: formatMoney(34.5) === "£34.50"
+
+3
+Add font-display:swap to Google Fonts link
+CRIT-15
+Lighthouse performance score
+
+4
+Add swipe-down gesture to close offer panel
+CRIT-11
+Manual test on device
+
+✅
+Add password reset to auth modal — DONE
+CRIT-08 — RESOLVED
+Reset email received ✅ Brevo SMTP authenticated ✅
+
+6
+Fix iOS keyboard scroll in auth modal
+CRIT-12
+Manual test on iOS Safari
+
+7
+Add skeleton loaders to offers grid
+CRIT-13
+Visual check on slow 3G throttle
+
+Stage 2 — Data Layer (Offers in Supabase)
+Move all offer data from hardcoded JS into Supabase. Enables daily updates without code deploys. Timeline: 3-5 days.
+
+Create offers table in Supabase (see SQL below)
+Seed table with all 46+ current offers
+Create admin.html — password-protected offer editor
+Update app.html to fetch offers from Supabase on load
+Keep data.js as offline fallback (last known rates)
+Service worker caches offer data with 1-hour TTL
+
+Offers Table SQL
+
+create table public.offers (
+  id text primary key,
+  name text not null,
+  category text not null,  -- bank/invest/cashback/gift/business/earn/mobile/travel/freebie
+  reward text not null,
+  amount numeric default 0,
+  badge text default '',
+  effort text default '',
+  description text default '',
+  code text default '',
+  url text not null,
+  expected_days integer default 30,
+  tips jsonb default '[]',
+  warnings jsonb default '[]',
+  steps jsonb default '[]',
+  is_active boolean default true,
+  sort_order integer default 0,
+  created_at timestamptz default now(),
+  updated_at timestamptz default now()
+);
+
+alter table public.offers enable row level security;
+create policy "Public read" on public.offers for select using (true);
+-- Only service role (admin panel) can insert/update/delete
+
+Stage 3 — App Architecture Refactor
+Split the single 3,700-line file into maintainable modules. Timeline: 5-7 days.
+
+File
+Contents
+
+app.html
+Shell only — head, nav, section containers, script tags. Under 200 lines.
+
+app.css
+All CSS — variables, components, animations. Cached separately.
+
+app.js
+All JavaScript — state, renders, event handlers, auth, sync.
+
+data.js
+Offline fallback offers data — static snapshot, auto-generated from Supabase.
+
+admin.html
+Password-protected offer editor — reads/writes Supabase offers table.
+
+Render optimisation in app.js:
+
+Replace renderAll() with targeted renders per section
+Add dirty flag system: markDirty("offers"), markDirty("profile") etc.
+Single tick() function renders only dirty sections on next animation frame
+Battle table and stacking guides render once on load only
+
+Stage 4 — Native App Feel
+Make the app feel like iOS/Android. Timeline: 3-4 days.
+
+Page transitions — slide animations between tabs (CSS transforms, not reloads)
+Pull-to-refresh on offers tab
+Haptic feedback on every meaningful interaction (navigator.vibrate)
+Bottom sheet modals — auth, pending payout popup, all use sheet pattern
+No visible scrollbars (-webkit-scrollbar: none)
+Safe area insets on all fixed elements (env(safe-area-inset-bottom))
+Proper tap highlight removal (-webkit-tap-highlight-color: transparent)
+Loading states for every async operation
+
+Stage 5 — Growth Features
+Features that drive user acquisition and retention. Timeline: ongoing.
+
+Real-time leaderboard from Supabase progress table
+Push notifications via Railway (Web Push API + VAPID keys)
+"What to do next" smart recommendation engine
+Amazon affiliate links (amazon.co.uk affiliate programme)
+Jam Doughnut / Tillo live rates API (when partnership approved)
+Weekly email digest sent via Brevo automation
+Referral system — users invite friends, both get bonus XP
+
+4. Agent Rules & Working Protocol
+
+Every AI agent or developer working on this project MUST follow these rules without exception.
+
+4.1 Before Starting Any Task
+
+Read this entire document first
+Check the Progress Log (Section 6) to understand what has already been done
+Read the current state of the file(s) you will be modifying
+Identify which Known Issues (Section 2) your task relates to
+Write your test plan before writing any code
+
+RULE: Never Assume, Always Read
+
+Do not assume you know what the current code looks like. Always read the actual file before editing. The codebase changes frequently and your training data will be stale.
+
+4.2 Constraints — Never Violate These
+
+NO build step — the app must deploy by drag-and-drop to GitHub Pages. No webpack, Vite, npm build, or compilation required.
+NO framework — no React, Vue, Angular, or Svelte. Vanilla JS only.
+NO secrets in frontend code — API keys, tokens, passwords belong in Railway Variables or Supabase environment only.
+NO breaking the live site — test locally first. If it breaks locally it will break in production.
+NO sequential await loops for Supabase — always batch upserts.
+NO direct writes to auth.users — always use supabase.auth methods.
+ALWAYS keep localStorage as primary storage — Supabase is the sync layer, not the source of truth on-device.
+ALWAYS test on mobile viewport (375px width minimum) before marking complete.
+
+4.3 Coding Standards
+
+JavaScript
+Use const by default, let when reassignment is needed, never var
+Async functions must handle errors with try/catch — never let promises fail silently
+All Supabase calls must have timeout handling
+No inline event handlers in HTML (onclick="...") — use addEventListener in JS
+Functions must be single-purpose and under 40 lines — extract if longer
+Name functions clearly: renderOffers(), pushProgress(), handleSignup()
+
+CSS
+Use CSS custom properties (variables) for all colours, radii, shadows
+Mobile-first: base styles for mobile, media queries for desktop
+Minimum touch target size: 44x44px (Apple HIG standard)
+Minimum font size: 13px for body, 11px absolute minimum for labels
+Never use px for font sizes alone — use rem or ensure base is set
+
+TypeScript (Future)
+When the project migrates to TypeScript (Stage 3+), these rules apply:
+Strict mode enabled: "strict": true in tsconfig.json
+No any types — use unknown and type guards
+All Supabase responses typed using generated types (supabase gen types typescript)
+Zod for runtime validation of API responses
+
+4.4 Git & Deployment Rules
+
+Never commit secrets — use .gitignore and Railway Variables
+Commit messages: "feat: add password reset flow" / "fix: batch Supabase upsert" / "docs: update progress log"
+One feature per commit — do not bundle unrelated changes
+GitHub Pages deploys automatically on push to main — verify the live site after every push
+Railway deploys automatically on push to the bot repo — check /health after every deploy
+Keep requirements.txt pinned: requests==2.31.0, schedule==1.2.0, flask, flask-cors
+
+Deployment Checklist (run before every push)
+
+1. JS syntax check: node --input-type=module (check for errors)
+2. Test on mobile viewport (375px)
+3. Test auth flow (signup, login, sync)
+4. Check /health endpoint after Railway deploy
+5. Hard refresh on live site (Ctrl+Shift+R) to clear SW cache
+6. Update Progress Log in this document
+
+5. Testing Protocol
+
+All agents must run the full test suite before marking any task complete. Tests are described below by category.
+
+5.1 Test Categories
+
+Category
+What It Tests
+Tool
+
+Unit
+Individual functions in isolation
+Jest (when TypeScript migrated)
+
+Integration
+Supabase auth, sync, and API calls
+Manual + Supabase logs
+
+E2E
+Full user journeys on real browser
+Manual on device + Playwright (future)
+
+Visual
+Mobile layout at 375px, 390px, 414px
+Chrome DevTools device emulation
+
+Performance
+Load time, jank, Lighthouse score
+Chrome Lighthouse + WebPageTest
+
+Offline
+App behaviour with no network
+Chrome DevTools → Offline mode
+
+API
+Railway endpoints health and subscribe
+curl / Postman
+
+5.2 Test Cases — Run Before Every Deploy
+
+Auth Tests
+
+TC-A1: New user can sign up with email + password + username → redirected to app → progress row created in Supabase
+TC-A2: Existing user can log in → progress loaded from Supabase → XP matches database
+TC-A3: Wrong password shows clear error message, does not crash
+TC-A4: "Continue without account" skips modal, app works in localStorage-only mode
+TC-A5: Password reset email is received within 60 seconds (once implemented)
+
+Progress Sync Tests
+
+TC-S1: Claiming daily XP → state.xp increases → Supabase progress.xp matches after 5 seconds
+TC-S2: Marking offer as completed → offer_status row upserted in Supabase
+TC-S3: Log saving £100 on Chase → earningsMap updated → Supabase saved_amount updated
+TC-S4: Log in on a second device → XP, offer status, and pending payouts all match first device
+TC-S5: Supabase unavailable → app continues working from localStorage → no crash
+
+Offer Panel Tests
+
+TC-O1: Tapping any offer card opens slide panel with name, reward, badge, desc
+TC-O2: Offer with code shows copy button → tapping copies to clipboard → toast appears
+TC-O3: Ticking all steps marks offer as completed automatically
+TC-O4: Status buttons (Not started / Pending / Done) update correctly
+TC-O5: "Open Offer" button opens URL in new tab
+TC-O6: Panel closes on X button tap and on swipe down
+
+API Tests
+
+# Health check
+curl https://referral-hunter-bot-production.up.railway.app/health
+# Expected: {"status":"ok","bot":"Money Hunters UK"}
+
+# Subscribe endpoint
+curl -X POST https://referral-hunter-bot-production.up.railway
