@@ -1547,6 +1547,29 @@
     .auth-submit:active{transform:scale(.97)}
     .auth-submit:disabled{opacity:.6;cursor:default}
     .auth-error{color:var(--red);font-size:11px;text-align:center;margin-top:8px;min-height:16px}
+
+    .auth-forgot{
+      width:100%;
+      padding:8px;
+      background:transparent;
+      border:none;
+      color:var(--muted2);
+      font-size:11px;
+      font-weight:600;
+      cursor:pointer;
+      font-family:var(--fb);
+      margin-top:6px;
+      transition:.15s;
+    }
+    .auth-forgot:hover{color:var(--text)}
+    .auth-success{
+      color:var(--green);
+      font-size:11px;
+      text-align:center;
+      margin-top:8px;
+      font-weight:700;
+      min-height:16px;
+    }
     .auth-skip{width:100%;padding:9px;border:1px solid var(--line);border-radius:11px;background:transparent;color:var(--muted2);font-size:11px;font-weight:600;cursor:pointer;font-family:var(--fb);margin-top:8px}
     /* User badge in topbar */
     .user-badge{display:flex;align-items:center;gap:6px;background:var(--bg3);border:1px solid var(--line);border-radius:999px;padding:5px 10px;cursor:pointer;font-size:11px;font-weight:700;color:var(--text)}
@@ -1886,6 +1909,28 @@
           <input class="auth-input" id="loginPassword" type="password" placeholder="Your password">
         </div>
         <button class="auth-submit" id="loginSubmitBtn" onclick="handleLogin()">Log In →</button>
+        <button class="auth-forgot" onclick="switchAuthTab('reset')">Forgot password?</button>
+      </div>
+      <!-- Reset password fields -->
+      <div id="resetFields" style="display:none">
+        <div class="auth-field">
+          <label class="auth-label">Your email address</label>
+          <input class="auth-input" id="resetEmail" type="email" placeholder="you@example.com">
+        </div>
+        <button class="auth-submit" id="resetSubmitBtn" onclick="handlePasswordReset()">Send Reset Link →</button>
+        <button class="auth-forgot" onclick="switchAuthTab('login')">← Back to login</button>
+      </div>
+      <!-- New password fields (shown after clicking reset link) -->
+      <div id="newPasswordFields" style="display:none">
+        <div class="auth-field">
+          <label class="auth-label">New password</label>
+          <input class="auth-input" id="newPassword" type="password" placeholder="Min 6 characters">
+        </div>
+        <div class="auth-field">
+          <label class="auth-label">Confirm new password</label>
+          <input class="auth-input" id="confirmPassword" type="password" placeholder="Repeat password">
+        </div>
+        <button class="auth-submit" id="newPasswordBtn" onclick="handleNewPassword()">Set New Password →</button>
       </div>
       <div class="auth-error" id="authError"></div>
       <button class="auth-skip" onclick="skipAuth()">Continue without account</button>
@@ -3391,8 +3436,12 @@
     function switchAuthTab(tab) {
       document.getElementById('signupFields').style.display = tab === 'signup' ? 'block' : 'none';
       document.getElementById('loginFields').style.display = tab === 'login' ? 'block' : 'none';
+      document.getElementById('resetFields').style.display = tab === 'reset' ? 'block' : 'none';
+      document.getElementById('newPasswordFields').style.display = tab === 'newpassword' ? 'block' : 'none';
       document.getElementById('tabSignup').className = 'auth-tab' + (tab === 'signup' ? ' on' : '');
       document.getElementById('tabLogin').className = 'auth-tab' + (tab === 'login' ? ' on' : '');
+      // Hide tabs on reset/newpassword views
+      document.querySelector('.auth-tabs').style.display = (tab === 'reset' || tab === 'newpassword') ? 'none' : 'grid';
       document.getElementById('authError').textContent = '';
     }
 
@@ -3637,6 +3686,89 @@
       }
     }
 
+
+    async function handlePasswordReset() {
+      const email = document.getElementById('resetEmail').value.trim();
+      const btn = document.getElementById('resetSubmitBtn');
+      const errEl = document.getElementById('authError');
+
+      if (!email || !email.includes('@')) {
+        errEl.textContent = 'Please enter a valid email address';
+        errEl.style.color = 'var(--red)';
+        return;
+      }
+
+      btn.disabled = true;
+      btn.textContent = 'Sending...';
+      errEl.textContent = '';
+
+      try {
+        const { error } = await db.auth.resetPasswordForEmail(email, {
+          redirectTo: 'https://moneyhunters.co.uk/app.html'
+        });
+        if (error) throw error;
+        errEl.style.color = 'var(--green)';
+        errEl.textContent = '✅ Reset link sent! Check your inbox.';
+        btn.textContent = 'Email sent!';
+        vibrate(30);
+      } catch(e) {
+        errEl.style.color = 'var(--red)';
+        errEl.textContent = e.message || 'Failed to send reset email.';
+        btn.disabled = false;
+        btn.textContent = 'Send Reset Link →';
+      }
+    }
+
+    async function handleNewPassword() {
+      const newPw = document.getElementById('newPassword').value;
+      const confirmPw = document.getElementById('confirmPassword').value;
+      const btn = document.getElementById('newPasswordBtn');
+      const errEl = document.getElementById('authError');
+
+      if (!newPw || newPw.length < 6) {
+        errEl.style.color = 'var(--red)';
+        errEl.textContent = 'Password must be at least 6 characters';
+        return;
+      }
+      if (newPw !== confirmPw) {
+        errEl.style.color = 'var(--red)';
+        errEl.textContent = 'Passwords do not match';
+        return;
+      }
+
+      btn.disabled = true;
+      btn.textContent = 'Updating...';
+      errEl.textContent = '';
+
+      try {
+        const { error } = await db.auth.updateUser({ password: newPw });
+        if (error) throw error;
+        errEl.style.color = 'var(--green)';
+        errEl.textContent = '✅ Password updated! You are now logged in.';
+        btn.textContent = 'Password updated!';
+        vibrate(50);
+        setTimeout(() => hideAuthModal(), 1500);
+      } catch(e) {
+        errEl.style.color = 'var(--red)';
+        errEl.textContent = e.message || 'Failed to update password.';
+        btn.disabled = false;
+        btn.textContent = 'Set New Password →';
+      }
+    }
+
+    // Detect password reset token in URL on page load
+    function checkPasswordResetToken() {
+      const hash = window.location.hash;
+      // Supabase puts access_token in hash after reset link click
+      if (hash && hash.includes('type=recovery')) {
+        // Show auth modal with new password form
+        showAuthModal();
+        switchAuthTab('newpassword');
+        // Clean URL without reload
+        history.replaceState(null, '', window.location.pathname);
+      }
+    }
+
     function renderAll() {
       updateTopStats();
       updateDailyBox();
@@ -3732,6 +3864,7 @@
     initTheme();
     renderAll();
     initAuth();
+    checkPasswordResetToken();
   </script>
 </body>
 </html>
