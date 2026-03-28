@@ -182,6 +182,20 @@
 11. **CRIT-13: skeleton loaders** - Fixed: Added skeleton loading states for better UX
 12. **CRIT-15: Google Fonts display:swap** - Fixed: Added display=swap to Google Fonts for better performance
 
+### UX Improvements & Jam Doughnut Featured Positioning (March 28, 2026)
+1. **Jam Doughnut Featured Positioning**: Implemented battleData[] with one Jam Doughnut row per supermarket, positioned first in each category
+2. **Tap Targets**: All interactive elements now meet 44px minimum touch target size for better mobile usability
+3. **Swipe-down Panel**: Added touch gesture support to close the offer panel with swipe-down motion
+4. **Auth Modal iOS Fix**: Fixed keyboard overlap with scrollable, properly positioned modal content
+5. **Tap Highlight**: Added visual feedback for all interactive elements with opacity and scale transforms
+6. **Font-display Swap**: Added `font-display: swap` and `@font-face` declarations for better font loading performance
+7. **Compact Offer Cards**: Reduced padding from 14px to 12px and border radius from 14px to 12px for cleaner design
+8. **Community Tab Merge**: Consolidated all community resources into a single, organized view
+9. **Stack Guides Update**: Updated stackGuides to reference Jam Doughnut as the primary starting point for supermarket stacking
+10. **Featured Styling**: Added CSS for featured Jam Doughnut rows with yellow left border, gradient background, and enhanced typography
+11. **Today's Plan Integration**: Updated daily tasks to include Jam Doughnut for Wednesday (supermarket stack day)
+12. **Offer Card Enhancement**: Added Jam Doughnut offer with code 8TGF and proper positioning in offers list
+
 ### Immediate Improvements Needed
 1. **Data Freshness Automation**: Scraper needs to run regularly via GitHub Actions (currently manual setup)
 2. **Offer Updates**: Manual offers need regular review and updates as bank switch offers change
