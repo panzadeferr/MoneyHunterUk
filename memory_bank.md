@@ -205,11 +205,19 @@
 3. **Dynamic Landing Page**: Updated index.html with:
    - New hero headline: "Bank switches. Cashback. Free shares. All in one place."
    - New subheadline: "The free UK app that tracks your deals, reminds you of payouts and tells you exactly what to do next."
-   - Dynamic deal count loading from all_deals.json (98+ deals)
+   - Dynamic deal count loading from all_deals.json (82+ deals)
    - Live ticker showing real offers from scraped data
-   - Updated meta description and signup perks to 98+ verified offers
+   - Updated meta description and signup perks to 82+ verified offers
 4. **Utility Script**: Added show_scraped.py for debugging scraped data
-5. **Total Deal Count**: Scraper now returns 98 total deals (32 manual offers, 8 supermarket deals, 40 Reddit deals, 20 Google News deals, 2 HotUKDeals deals, and 58 unique scraped offers)
+5. **Scraper Intelligence & Data Integrity Upgrades**:
+   - **Fixed Reddit scraper**: Now properly returns 33 Reddit deals (was 0 due to deduplication bug)
+   - **Added deal categorization**: Implemented `infer_category()` function to automatically categorize deals
+   - **Cleaned store names**: Removed truncation and cleaned up Google News titles
+   - **Standardized data structure**: All deals now have consistent fields including `category` and `type`
+   - **Added data validation**: `validate_deal()` function ensures all deals have required fields and valid URLs
+   - **Smart deduplication**: Improved logic to avoid removing valid scraped deals
+   - **Data quality tracking**: Scraper now reports validation success rate (56/56 deals passed validation)
+6. **Total Deal Count**: Scraper now returns 82 total deals (32 manual offers, 8 supermarket deals, 33 Reddit deals, 20 Google News deals, 3 HotUKDeals deals, and 42 unique scraped offers)
 
 ### Security & Bug Fixes (March 28, 2026)
 **CRITICAL ISSUES:**

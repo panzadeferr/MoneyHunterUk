@@ -485,8 +485,83 @@ def calculate_stacked_price(deal: Dict) -> float:
 # MAIN SCRAPER FUNCTION
 # ============================================
 
+def clean_store_name(store: str) -> str:
+    """Clean store names by removing truncation and cleaning up text"""
+    # Remove truncation markers (trailing spaces followed by lowercase letter)
+    store = re.sub(r'\s+[a-z]$', '', store)
+    # Remove trailing punctuation
+    store = re.sub(r'[.,;:]$', '', store)
+    # Remove common news source suffixes
+    suffixes = [' - Daily Express', ' - Metro', ' - which.co.uk', ' - Moneyfacts', 
+                ' - Times & Sta', ' - The M', ' - Metro.co.uk']
+    for suffix in suffixes:
+        if store.endswith(suffix):
+            store = store[:-len(suffix)].strip()
+    # Capitalize first letter of each word
+    return ' '.join(word.capitalize() for word in store.split())
+
+
+def infer_category(deal: Dict) -> str:
+    """Infer category based on store name and item description"""
+    store_lower = deal["store"].lower()
+    item_lower = deal.get("item", "").lower()
+    type_lower = deal.get("type", "").lower()
+    
+    # Check store names first
+    bank_keywords = ["lloyds", "chase", "monzo", "revolut", "first direct", "halifax", 
+                     "natwest", "nationwide", "barclays", "santander", "tsb", "co-operative", "bank"]
+    investment_keywords = ["freetrade", "robinhood", "plum", "webull", "wealthify", 
+                          "moneybox", "ig", "invest", "share", "pension"]
+    cashback_keywords = ["topcashback", "quidco", "rakuten", "airtime", "cheddar", 
+                        "jam doughnut", "everup", "cashback"]
+    supermarket_keywords = ["tesco", "sainsbury", "asda", "iceland", "morrisons", 
+                           "waitrose", "aldi", "lidl", "supermarket", "grocer"]
+    utility_keywords = ["octopus", "lebara", "energy", "sim", "mobile", "utility"]
+    
+    combined = store_lower + " " + item_lower + " " + type_lower
+    
+    if any(keyword in combined for keyword in bank_keywords):
+        return "bank_switch"
+    elif any(keyword in combined for keyword in investment_keywords):
+        return "investment"
+    elif any(keyword in combined for keyword in cashback_keywords):
+        return "cashback"
+    elif any(keyword in combined for keyword in supermarket_keywords):
+        return "supermarket"
+    elif any(keyword in combined for keyword in utility_keywords):
+        return "utilities"
+    elif "travel" in combined or "train" in combined:
+        return "travel"
+    elif "business" in combined:
+        return "business"
+    elif "free" in combined or "costa" in combined or "waitrose" in combined:
+        return "freebies"
+    else:
+        return "other"
+
+
+def validate_deal(deal: Dict) -> bool:
+    """Validate deal has required fields and reasonable values"""
+    required_fields = ["store", "item", "deal_price", "link"]
+    for field in required_fields:
+        if field not in deal or not deal[field]:
+            return False
+    
+    # Validate deal price format
+    deal_price = str(deal["deal_price"])
+    if not re.search(r'£?\d+(?:\.\d{2})?', deal_price):
+        return False
+    
+    # Validate link is a URL
+    link = str(deal["link"])
+    if not link.startswith(("http://", "https://")):
+        return False
+    
+    return True
+
+
 def run_all_scrapers() -> Dict:
-    """Run all scrapers and save results"""
+    """Run all scrapers and save results with enhanced data integrity"""
     print("🛒 Money Hunters Scraper Starting...")
     print("=" * 50)
     
@@ -520,18 +595,59 @@ def run_all_scrapers() -> Dict:
     
     scraped = reddit_deals + news_deals + hotuk_deals
     
-    # Deduplicate against manual offers
-    manual_stores = {o["store"].lower()[:8] for o in manual_offers}
-    unique_scraped = [
-        d for d in scraped
-        if not any(d["store"].lower()[:8] in s 
-                   for s in manual_stores)
-    ]
+    # Clean and validate scraped deals
+    cleaned_scraped = []
+    for deal in scraped:
+        # Clean store name
+        if "store" in deal:
+            deal["store"] = clean_store_name(deal["store"])
+        
+        # Add category if missing
+        if "category" not in deal:
+            deal["category"] = infer_category(deal)
+        
+        # Validate deal
+        if validate_deal(deal):
+            cleaned_scraped.append(deal)
+        else:
+            print(f"   Skipping invalid deal: {deal.get('store', 'Unknown')}")
+    
+    # Smart deduplication against manual offers
+    manual_store_names = {o["store"].lower() for o in manual_offers}
+    unique_scraped = []
+    
+    for deal in cleaned_scraped:
+        deal_store_lower = deal["store"].lower()
+        is_duplicate = False
+        
+        # Check for exact matches or partial matches
+        for manual_store in manual_store_names:
+            if (deal_store_lower == manual_store or 
+                manual_store in deal_store_lower or 
+                deal_store_lower in manual_store):
+                is_duplicate = True
+                break
+        
+        if not is_duplicate:
+            unique_scraped.append(deal)
     
     all_deals.extend(unique_scraped)
     
-    # Calculate stacked prices for all deals
+    # Calculate stacked prices and add missing fields for all deals
     for deal in all_deals:
+        # Ensure all deals have category
+        if "category" not in deal:
+            deal["category"] = infer_category(deal)
+        
+        # Ensure all deals have type (use category as fallback)
+        if "type" not in deal:
+            deal["type"] = deal["category"]
+        
+        # Clean store name if not already cleaned
+        if "store" in deal:
+            deal["store"] = clean_store_name(deal["store"])
+        
+        # Calculate stacked prices for supermarkets
         if deal["store"] in STACKING_RATES:
             stacked_price = calculate_stacked_price(deal)
             deal["stacked_price"] = stacked_price
@@ -544,8 +660,20 @@ def run_all_scrapers() -> Dict:
         
         deal["last_updated"] = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
     
-    # Sort by stacked price (cheapest first)
-    all_deals.sort(key=lambda x: x.get("stacked_price", 999) if x.get("stacked_price", 0) > 0 else 999)
+    # Sort by stacked price (cheapest first), then by deal amount
+    def get_sort_key(deal):
+        # Try to extract numeric value from deal_price for sorting
+        deal_price = str(deal.get("deal_price", "£0"))
+        match = re.search(r'£?(\d+(?:\.\d{2})?)', deal_price)
+        amount = float(match.group(1)) if match else 0
+        
+        stacked = deal.get("stacked_price", 999)
+        if stacked > 0:
+            return (stacked, -amount)  # Cheapest stacked first, then highest amount
+        else:
+            return (999, -amount)  # Non-stacked deals after stacked ones
+    
+    all_deals.sort(key=get_sort_key)
     
     # Save all deals to JSON
     output = {
@@ -565,7 +693,7 @@ def run_all_scrapers() -> Dict:
     with open("all_deals.json", "w", encoding="utf-8") as f:
         json.dump(output, f, indent=2, ensure_ascii=False)
     
-    # Write scrape log
+    # Write detailed scrape log
     log = [
         f"Scrape run: {datetime.now()}",
         f"Manual offers: {len(manual_offers)}",
@@ -573,8 +701,10 @@ def run_all_scrapers() -> Dict:
         f"Reddit deals: {len(reddit_deals)}",
         f"Google News deals: {len(news_deals)}",
         f"HotUKDeals deals: {len(hotuk_deals)}",
+        f"Cleaned scraped: {len(cleaned_scraped)}",
         f"Unique scraped: {len(unique_scraped)}",
         f"Total written: {len(all_deals)}",
+        f"Data quality: {len(cleaned_scraped)}/{len(scraped)} deals passed validation",
     ]
     with open("scrape_log.txt", "w") as f:
         f.write("\n".join(log))
@@ -587,6 +717,7 @@ def run_all_scrapers() -> Dict:
     print(f"   - Google News deals: {len(news_deals)}")
     print(f"   - HotUKDeals deals: {len(hotuk_deals)}")
     print(f"   - Unique scraped: {len(unique_scraped)}")
+    print(f"📊 Data quality: {len(cleaned_scraped)}/{len(scraped)} deals passed validation")
     print(f"💾 Saved to all_deals.json")
     print(f"📝 Log written to scrape_log.txt")
     
