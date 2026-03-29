@@ -273,6 +273,173 @@ def scrape_mse_rss():
         print(f"MSE scrape failed: {e}")
         return []
 
+def scrape_google_news_deals():
+    import xml.etree.ElementTree as ET
+    import re
+    deals = []
+    queries = [
+        "UK bank switch bonus referral 2026",
+        "UK cashback free share bonus offer 2026"
+    ]
+    
+    action_words = ["switch", "referral", "cashback", "bonus", 
+                    "free share", "sign up", "refer", "open account"]
+    noise_words = ["opinion", "analysis", "podcast", "explainer",
+                   "what is", "how does", "history of", "review of",
+                   "results", "earnings", "profits", "shares fall",
+                   "shares rise", "stock", "market"]
+    
+    for query in queries:
+        try:
+            q = query.replace(" ", "+")
+            url = (
+                "https://news.google.com/rss/search"
+                f"?q={q}&hl=en-GB&gl=GB&ceid=GB:en"
+            )
+            r = requests.get(url, timeout=15)
+            if r.status_code != 200:
+                continue
+            root = ET.fromstring(r.content)
+            items = root.findall(".//item")
+            
+            item_count = 0
+            for item in items:
+                if item_count >= 10:  # Limit to 10 results per query
+                    break
+                    
+                title = item.findtext("title","")
+                link = item.findtext("link","")
+                desc = item.findtext("description","")
+                combined = (title+" "+desc).lower()
+                
+                # Must contain £ symbol with a number
+                if not re.search(r'£\d+(?:\.\d{2})?', combined):
+                    continue
+                
+                # Must contain at least one action word
+                if not any(action in combined for action in action_words):
+                    continue
+                
+                # Must NOT contain noise words
+                if any(noise in combined for noise in noise_words):
+                    continue
+                
+                # Extract reward amount
+                amounts = re.findall(r'£(\d+(?:\.\d{2})?)', title+" "+desc)
+                if not amounts:
+                    continue
+                
+                # Minimum reward filter: only include if reward >= £5
+                try:
+                    reward_amount = float(amounts[0])
+                    if reward_amount < 5:
+                        continue
+                except ValueError:
+                    continue
+                
+                reward = f"£{amounts[0]}"
+                
+                deals.append({
+                    "store": title[:40],
+                    "item": title[:80],
+                    "deal_price": reward,
+                    "link": link,
+                    "original_price": "£0",
+                    "saving_percent": 100,
+                    "type": "scraped_mse",
+                    "code": "",
+                    "steps": [
+                        "Read the full article",
+                        "Follow the deal link",
+                        "Complete required steps"
+                    ],
+                    "timeFrame": "Check article",
+                    "source": "Google News",
+                    "last_updated": datetime.now()
+                        .strftime("%Y-%m-%d %H:%M:%S")
+                })
+                item_count += 1
+                
+            time.sleep(1)
+        except Exception as e:
+            print(f"Google News query failed: {e}")
+    print(f"Google News: found {len(deals)} deals")
+    return deals
+
+def scrape_hotukdeals():
+    from bs4 import BeautifulSoup
+    import re
+    deals = []
+    urls = [
+        "https://www.hotukdeals.com/deals/financial",
+        "https://www.hotukdeals.com/search?q=bank+switch",
+        "https://www.hotukdeals.com/search?q=cashback+referral"
+    ]
+    headers = {
+        "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36"
+    }
+    for url in urls:
+        try:
+            r = requests.get(url, headers=headers, timeout=15)
+            print(f"HotUKDeals {url[-20:]}: {r.status_code}")
+            if r.status_code != 200:
+                continue
+            soup = BeautifulSoup(r.content, 'html.parser')
+            # Find deal articles
+            articles = soup.find_all('article', limit=20)
+            for article in articles:
+                title_el = article.find(['h2','h3','a'])
+                if not title_el:
+                    continue
+                title = title_el.get_text(strip=True)
+                link_el = article.find('a', href=True)
+                link = link_el['href'] if link_el else url
+                if not link.startswith('http'):
+                    link = 'https://www.hotukdeals.com' + link
+                combined = title.lower()
+                keywords = ["switch","cashback","referral",
+                           "bonus","free","bank","£","reward"]
+                if not any(k in combined for k in keywords):
+                    continue
+                amounts = re.findall(
+                    r'£(\d+(?:\.\d{2})?)', title)
+                reward = f"£{amounts[0]}" if amounts else "Deal"
+                if not amounts:
+                    continue
+                deals.append({
+                    "store": title[:40],
+                    "item": title[:80],
+                    "deal_price": reward,
+                    "link": link,
+                    "original_price": "£0",
+                    "saving_percent": 100,
+                    "type": "scraped_hotukdeals",
+                    "code": "",
+                    "steps": [
+                        "Check the HotUKDeals post",
+                        "Follow the deal link",
+                        "Complete required steps"
+                    ],
+                    "timeFrame": "Check post",
+                    "source": "HotUKDeals",
+                    "last_updated": datetime.now()
+                        .strftime("%Y-%m-%d %H:%M:%S")
+                })
+            time.sleep(2)
+        except Exception as e:
+            print(f"HotUKDeals failed: {e}")
+            continue
+    # Deduplicate
+    seen = set()
+    unique = []
+    for d in deals:
+        key = d["store"][:20].lower()
+        if key not in seen:
+            seen.add(key)
+            unique.append(d)
+    print(f"HotUKDeals: found {len(unique)} deals")
+    return unique
+
 
 # ============================================
 # SUPERMARKET DEALS
@@ -342,11 +509,16 @@ def run_all_scrapers() -> Dict:
     reddit_deals = scrape_reddit_beermoneyuk()
     time.sleep(2)
     
-    # Scrape MoneySavingExpert RSS
-    print("\n📡 Scraping MoneySavingExpert RSS...")
-    mse_deals = scrape_mse_rss()
+    # Scrape Google News as MSE replacement
+    print("\n📡 Scraping Google News for deals...")
+    news_deals = scrape_google_news_deals()
     
-    scraped = reddit_deals + mse_deals
+    # Scrape HotUKDeals
+    print("\n📡 Scraping HotUKDeals...")
+    hotuk_deals = scrape_hotukdeals()
+    time.sleep(2)
+    
+    scraped = reddit_deals + news_deals + hotuk_deals
     
     # Deduplicate against manual offers
     manual_stores = {o["store"].lower()[:8] for o in manual_offers}
@@ -382,9 +554,10 @@ def run_all_scrapers() -> Dict:
         "manual_count": len(manual_offers),
         "supermarket_count": len(supermarket_deals),
         "reddit_count": len(reddit_deals),
-        "mse_count": len(mse_deals),
+        "news_count": len(news_deals),
+        "hotukdeals_count": len(hotuk_deals),
         "unique_scraped_count": len(unique_scraped),
-        "sources": ["Manual", "Supermarket", "Reddit r/beermoneyuk", "MSE RSS"],
+        "sources": ["Manual", "Supermarket", "Reddit r/beermoneyuk", "Google News", "HotUKDeals"],
         "stacking_rates": STACKING_RATES,
         "deals": all_deals
     }
@@ -398,7 +571,8 @@ def run_all_scrapers() -> Dict:
         f"Manual offers: {len(manual_offers)}",
         f"Supermarket deals: {len(supermarket_deals)}",
         f"Reddit deals: {len(reddit_deals)}",
-        f"MSE deals: {len(mse_deals)}",
+        f"Google News deals: {len(news_deals)}",
+        f"HotUKDeals deals: {len(hotuk_deals)}",
         f"Unique scraped: {len(unique_scraped)}",
         f"Total written: {len(all_deals)}",
     ]
@@ -410,7 +584,8 @@ def run_all_scrapers() -> Dict:
     print(f"   - Manual offers: {len(manual_offers)}")
     print(f"   - Supermarket deals: {len(supermarket_deals)}")
     print(f"   - Reddit deals: {len(reddit_deals)}")
-    print(f"   - MSE deals: {len(mse_deals)}")
+    print(f"   - Google News deals: {len(news_deals)}")
+    print(f"   - HotUKDeals deals: {len(hotuk_deals)}")
     print(f"   - Unique scraped: {len(unique_scraped)}")
     print(f"💾 Saved to all_deals.json")
     print(f"📝 Log written to scrape_log.txt")
