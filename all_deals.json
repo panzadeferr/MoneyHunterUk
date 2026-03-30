@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-03-30 16:33:13",
+  "last_updated": "2026-03-30 19:07:05",
   "total_deals": 43,
   "manual_count": 32,
   "supermarket_count": 8,
@@ -38,7 +38,7 @@
       "stacked_price": 2.39,
       "best_payment_method": "Airtime Rewards (4%) + Asda Rewards",
       "stacking_rate": 4.5,
-      "last_updated": "2026-03-30 16:33:13"
+      "last_updated": "2026-03-30 19:07:05"
     },
     {
       "store": "Sainsbury's",
@@ -53,7 +53,7 @@
       "stacked_price": 3.35,
       "best_payment_method": "JamDoughnut (4.1%) + Nectar",
       "stacking_rate": 4.4,
-      "last_updated": "2026-03-30 16:33:13"
+      "last_updated": "2026-03-30 19:07:05"
     },
     {
       "store": "Tesco",
@@ -68,7 +68,7 @@
       "stacked_price": 6.63,
       "best_payment_method": "EverUp (4.9%) + Clubcard",
       "stacking_rate": 5.3,
-      "last_updated": "2026-03-30 16:33:13"
+      "last_updated": "2026-03-30 19:07:05"
     },
     {
       "store": "Iceland",
@@ -83,7 +83,7 @@
       "stacked_price": 7.6,
       "best_payment_method": "TopCashback (3.5%) + Bonus Card",
       "stacking_rate": 5.0,
-      "last_updated": "2026-03-30 16:33:13"
+      "last_updated": "2026-03-30 19:07:05"
     },
     {
       "store": "Iceland",
@@ -98,7 +98,7 @@
       "stacked_price": 9.5,
       "best_payment_method": "TopCashback (3.5%) + Bonus Card",
       "stacking_rate": 5.0,
-      "last_updated": "2026-03-30 16:33:13"
+      "last_updated": "2026-03-30 19:07:05"
     },
     {
       "store": "Sainsbury's",
@@ -113,7 +113,7 @@
       "stacked_price": 11.47,
       "best_payment_method": "JamDoughnut (4.1%) + Nectar",
       "stacking_rate": 4.4,
-      "last_updated": "2026-03-30 16:33:13"
+      "last_updated": "2026-03-30 19:07:05"
     },
     {
       "store": "Asda",
@@ -128,7 +128,7 @@
       "stacked_price": 14.32,
       "best_payment_method": "Airtime Rewards (4%) + Asda Rewards",
       "stacking_rate": 4.5,
-      "last_updated": "2026-03-30 16:33:13"
+      "last_updated": "2026-03-30 19:07:05"
     },
     {
       "store": "Tesco",
@@ -143,7 +143,7 @@
       "stacked_price": 18.94,
       "best_payment_method": "EverUp (4.9%) + Clubcard",
       "stacking_rate": 5.3,
-      "last_updated": "2026-03-30 16:33:13"
+      "last_updated": "2026-03-30 19:07:05"
     },
     {
       "store": "Worldfirst",
@@ -164,7 +164,7 @@
       "stacked_price": 0,
       "best_payment_method": "N/A",
       "stacking_rate": 0,
-      "last_updated": "2026-03-30 16:33:13"
+      "last_updated": "2026-03-30 19:07:05"
     },
     {
       "store": "Lloyds Bank",
@@ -185,7 +185,7 @@
       "stacked_price": 0,
       "best_payment_method": "N/A",
       "stacking_rate": 0,
-      "last_updated": "2026-03-30 16:33:13"
+      "last_updated": "2026-03-30 19:07:05"
     },
     {
       "store": "Natwest",
@@ -206,7 +206,7 @@
       "stacked_price": 0,
       "best_payment_method": "N/A",
       "stacking_rate": 0,
-      "last_updated": "2026-03-30 16:33:13"
+      "last_updated": "2026-03-30 19:07:05"
     },
     {
       "store": "First Direct",
@@ -227,7 +227,7 @@
       "stacked_price": 0,
       "best_payment_method": "N/A",
       "stacking_rate": 0,
-      "last_updated": "2026-03-30 16:33:13"
+      "last_updated": "2026-03-30 19:07:05"
     },
     {
       "store": "Halifax",
@@ -248,7 +248,7 @@
       "stacked_price": 0,
       "best_payment_method": "N/A",
       "stacking_rate": 0,
-      "last_updated": "2026-03-30 16:33:13"
+      "last_updated": "2026-03-30 19:07:05"
     },
     {
       "store": "Amex",
@@ -269,7 +269,7 @@
       "stacked_price": 0,
       "best_payment_method": "N/A",
       "stacking_rate": 0,
-      "last_updated": "2026-03-30 16:33:13"
+      "last_updated": "2026-03-30 19:07:05"
     },
     {
       "store": "Plum",
@@ -290,7 +290,7 @@
       "stacked_price": 0,
       "best_payment_method": "N/A",
       "stacking_rate": 0,
-      "last_updated": "2026-03-30 16:33:13"
+      "last_updated": "2026-03-30 19:07:05"
     },
     {
       "store": "Tide",
@@ -311,7 +311,7 @@
       "stacked_price": 0,
       "best_payment_method": "N/A",
       "stacking_rate": 0,
-      "last_updated": "2026-03-30 16:33:13"
+      "last_updated": "2026-03-30 19:07:05"
     },
     {
       "store": "Nintendo Switch 2 Mario Kart + Donkey Ko",
@@ -329,7 +329,7 @@
       ],
       "timeFrame": "Check post",
       "source": "HotUKDeals",
-      "last_updated": "2026-03-30 16:33:13",
+      "last_updated": "2026-03-30 19:07:05",
       "category": "other",
       "stacked_price": 0,
       "best_payment_method": "N/A",
@@ -354,7 +354,7 @@
       "stacked_price": 0,
       "best_payment_method": "N/A",
       "stacking_rate": 0,
-      "last_updated": "2026-03-30 16:33:13"
+      "last_updated": "2026-03-30 19:07:05"
     },
     {
       "store": "Webull",
@@ -375,7 +375,7 @@
       "stacked_price": 0,
       "best_payment_method": "N/A",
       "stacking_rate": 0,
-      "last_updated": "2026-03-30 16:33:13"
+      "last_updated": "2026-03-30 19:07:05"
     },
     {
       "store": "Wealthify",
@@ -396,7 +396,7 @@
       "stacked_price": 0,
       "best_payment_method": "N/A",
       "stacking_rate": 0,
-      "last_updated": "2026-03-30 16:33:13"
+      "last_updated": "2026-03-30 19:07:05"
     },
     {
       "store": "Octopus Energy",
@@ -417,7 +417,7 @@
       "stacked_price": 0,
       "best_payment_method": "N/A",
       "stacking_rate": 0,
-      "last_updated": "2026-03-30 16:33:13"
+      "last_updated": "2026-03-30 19:07:05"
     },
     {
       "store": "Pensionbee",
@@ -437,7 +437,7 @@
       "stacked_price": 0,
       "best_payment_method": "N/A",
       "stacking_rate": 0,
-      "last_updated": "2026-03-30 16:33:13"
+      "last_updated": "2026-03-30 19:07:05"
     },
     {
       "store": "Rakuten",
@@ -458,7 +458,7 @@
       "stacked_price": 0,
       "best_payment_method": "N/A",
       "stacking_rate": 0,
-      "last_updated": "2026-03-30 16:33:13"
+      "last_updated": "2026-03-30 19:07:05"
     },
     {
       "store": "£25 Referral Bonus + £20 For Your Friend",
@@ -476,7 +476,7 @@
       ],
       "timeFrame": "Check post",
       "source": "HotUKDeals",
-      "last_updated": "2026-03-30 16:33:13",
+      "last_updated": "2026-03-30 19:07:05",
       "category": "cashback",
       "stacked_price": 0,
       "best_payment_method": "N/A",
@@ -501,7 +501,7 @@
       "stacked_price": 0,
       "best_payment_method": "N/A",
       "stacking_rate": 0,
-      "last_updated": "2026-03-30 16:33:13"
+      "last_updated": "2026-03-30 19:07:05"
     },
     {
       "store": "Quidco",
@@ -522,7 +522,7 @@
       "stacked_price": 0,
       "best_payment_method": "N/A",
       "stacking_rate": 0,
-      "last_updated": "2026-03-30 16:33:13"
+      "last_updated": "2026-03-30 19:07:05"
     },
     {
       "store": "Freetrade",
@@ -542,7 +542,7 @@
       "stacked_price": 0,
       "best_payment_method": "N/A",
       "stacking_rate": 0,
-      "last_updated": "2026-03-30 16:33:13"
+      "last_updated": "2026-03-30 19:07:05"
     },
     {
       "store": "Robinhood",
@@ -562,7 +562,7 @@
       "stacked_price": 0,
       "best_payment_method": "N/A",
       "stacking_rate": 0,
-      "last_updated": "2026-03-30 16:33:13"
+      "last_updated": "2026-03-30 19:07:05"
     },
     {
       "store": "Topcashback",
@@ -582,7 +582,7 @@
       "stacked_price": 0,
       "best_payment_method": "N/A",
       "stacking_rate": 0,
-      "last_updated": "2026-03-30 16:33:13"
+      "last_updated": "2026-03-30 19:07:05"
     },
     {
       "store": "Zopa (biscuit)",
@@ -602,7 +602,7 @@
       "stacked_price": 0,
       "best_payment_method": "N/A",
       "stacking_rate": 0,
-      "last_updated": "2026-03-30 16:33:13"
+      "last_updated": "2026-03-30 19:07:05"
     },
     {
       "store": "Monzo",
@@ -623,7 +623,7 @@
       "stacked_price": 0,
       "best_payment_method": "N/A",
       "stacking_rate": 0,
-      "last_updated": "2026-03-30 16:33:13"
+      "last_updated": "2026-03-30 19:07:05"
     },
     {
       "store": "Zilch",
@@ -643,7 +643,7 @@
       "stacked_price": 0,
       "best_payment_method": "N/A",
       "stacking_rate": 0,
-      "last_updated": "2026-03-30 16:33:13"
+      "last_updated": "2026-03-30 19:07:05"
     },
     {
       "store": "Nintendo Switch Lite Console - Turquoise",
@@ -661,7 +661,7 @@
       ],
       "timeFrame": "Check post",
       "source": "HotUKDeals",
-      "last_updated": "2026-03-30 16:33:13",
+      "last_updated": "2026-03-30 19:07:05",
       "category": "other",
       "stacked_price": 0,
       "best_payment_method": "N/A",
@@ -685,7 +685,7 @@
       "stacked_price": 0,
       "best_payment_method": "N/A",
       "stacking_rate": 0,
-      "last_updated": "2026-03-30 16:33:13"
+      "last_updated": "2026-03-30 19:07:05"
     },
     {
       "store": "Jam Doughnut",
@@ -705,7 +705,7 @@
       "stacked_price": 0,
       "best_payment_method": "N/A",
       "stacking_rate": 0,
-      "last_updated": "2026-03-30 16:33:13"
+      "last_updated": "2026-03-30 19:07:05"
     },
     {
       "store": "Trainpal",
@@ -726,7 +726,7 @@
       "stacked_price": 0,
       "best_payment_method": "N/A",
       "stacking_rate": 0,
-      "last_updated": "2026-03-30 16:33:13"
+      "last_updated": "2026-03-30 19:07:05"
     },
     {
       "store": "Airtime",
@@ -747,7 +747,7 @@
       "stacked_price": 0,
       "best_payment_method": "N/A",
       "stacking_rate": 0,
-      "last_updated": "2026-03-30 16:33:13"
+      "last_updated": "2026-03-30 19:07:05"
     },
     {
       "store": "Everup",
@@ -768,7 +768,7 @@
       "stacked_price": 0,
       "best_payment_method": "N/A",
       "stacking_rate": 0,
-      "last_updated": "2026-03-30 16:33:13"
+      "last_updated": "2026-03-30 19:07:05"
     },
     {
       "store": "Moneybox",
@@ -788,7 +788,7 @@
       "stacked_price": 0,
       "best_payment_method": "N/A",
       "stacking_rate": 0,
-      "last_updated": "2026-03-30 16:33:13"
+      "last_updated": "2026-03-30 19:07:05"
     },
     {
       "store": "Lebara",
@@ -808,7 +808,7 @@
       "stacked_price": 0,
       "best_payment_method": "N/A",
       "stacking_rate": 0,
-      "last_updated": "2026-03-30 16:33:13"
+      "last_updated": "2026-03-30 19:07:05"
     },
     {
       "store": "Costa",
@@ -828,7 +828,7 @@
       "stacked_price": 0,
       "best_payment_method": "N/A",
       "stacking_rate": 0,
-      "last_updated": "2026-03-30 16:33:13"
+      "last_updated": "2026-03-30 19:07:05"
     },
     {
       "store": "Waitrose",
@@ -848,7 +848,7 @@
       "stacked_price": 0,
       "best_payment_method": "JamDoughnut (3.5%) + MyWaitrose",
       "stacking_rate": 3.5,
-      "last_updated": "2026-03-30 16:33:13"
+      "last_updated": "2026-03-30 19:07:05"
     },
     {
       "store": "Wise",
@@ -869,7 +869,7 @@
       "stacked_price": 0,
       "best_payment_method": "N/A",
       "stacking_rate": 0,
-      "last_updated": "2026-03-30 16:33:13"
+      "last_updated": "2026-03-30 19:07:05"
     }
   ]
 }
