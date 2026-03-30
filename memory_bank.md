@@ -194,7 +194,7 @@
 19. **CRIT-07: Skeleton loaders** - Fixed: Added skeleton loading states for offers grid and leaderboard
 20. **CRIT-08: iOS keyboard fix** - Fixed: Added handleIOSKeyboard() function to scroll inputs into view on iOS devices
 
-### New Features & Enhancements (March 29, 2026)
+### New Features & Enhancements (March 29-30, 2026)
 1. **Google News Scraper**: Added Google News API integration to scrape 20 high-quality deals with strict filtering:
    - Must contain £ symbol with a number
    - Must contain action words (switch, referral, cashback, bonus, etc.)
@@ -227,7 +227,19 @@
    - **Category Inference**: `infer_category()` auto-categorizes deals as bank_switch, investment, cashback, supermarket, utilities, travel, business, freebies, or other
    - **Smart Deduplication**: Compares scraped deals against manual offers using fuzzy matching
    - **Data Quality Reporting**: Tracks and reports validation success rate for transparency
-7. **Total Deal Count**: Scraper now returns 84 total deals (32 manual offers, 8 supermarket deals, 34 Reddit deals, 20 Google News deals, 3 HotUKDeals deals, and 44 unique scraped offers)
+7. **Structured Megathread Parsing (March 30, 2026)**:
+   - **Enhanced Reddit Scraper**: Added `parse_megathread_content()` function for intelligent list item extraction from structured megathread posts
+   - **List Item Extraction**: Uses regex patterns to identify bullet points (`•`, `-`, `*`) and numbered items (`1.`, `2)`)
+   - **Offer Name Identification**: Extracts names from bold sections or first 3-5 words before £ symbol
+   - **First Valid £ Value**: Takes the first valid amount (not highest), filtering unrealistic totals (>£1000) and combined earnings
+   - **Category Grouping**: Automatically categorizes offers as bank_switch, investment, cashback, utilities, travel, business, or freebies
+   - **Clean Structured JSON**: Returns properly formatted deal objects with name, reward, category, and extracted links
+   - **Filtering Improvements**: Ignores paragraphs and guides (lines >200 chars or containing explanations)
+   - **Realistic Rewards**: Skips unrealistic totals like "£1450+" (combined earnings)
+   - **Minimum Threshold**: Only includes rewards ≥ £5
+   - **Smart Categorization**: Uses keyword matching to group offers by type
+   - **Link Extraction**: Extracts URLs from offer text when present
+8. **Total Deal Count**: Scraper now returns 78 total deals (32 manual offers, 8 supermarket deals, 104 Reddit deals, 20 Google News deals, 3 HotUKDeals deals, and 38 unique scraped offers)
 
 ### Security & Bug Fixes (March 28, 2026)
 **CRITICAL ISSUES:**
@@ -340,10 +352,11 @@ MoneyHunterUk/
 
 ## Last Updated
 - **Memory Bank Created**: March 27, 2026
-- **Memory Bank Updated**: March 29, 2026
-- **Project Last Commit**: 6b29dd9 (feat: add show_scraped.py utility script for debugging scraped data)
-- **Data Freshness**: Scraper includes "updated March 2026" references with 98+ live offers
-- **Recent Updates**: Added Google News & HotUKDeals scrapers, dynamic landing page with real-time deal count
+- **Memory Bank Updated**: March 30, 2026
+- **Project Last Commit**: 5541651 (fix: resolve merge conflicts in all_deals.json and scrape_log.txt)
+- **Previous Commit**: 8241087 (feat: enhance Reddit scraper with structured megathread parsing)
+- **Data Freshness**: Scraper includes "updated March 2026" references with 78+ live offers
+- **Recent Updates**: Enhanced Reddit scraper with structured megathread parsing, improved data quality (50/127 deals pass validation)
 
 ---
 

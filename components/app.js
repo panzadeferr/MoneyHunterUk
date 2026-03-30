@@ -95,19 +95,37 @@ function updateUI() {
 // Render all offers
 function renderAll() {
   console.log('Rendering all offers');
-  // Implementation would render offers to the UI
   const offersGrid = document.getElementById('offersGrid');
   if (offersGrid) {
-    offersGrid.innerHTML = state.offers.map(offer => `
-      <div class="offer-card" onclick="openOffer('${offer.id}')">
-        <div class="offer-name">${offer.name}</div>
-        <div class="reward">${formatMoney(offer.value || 0)}</div>
-        <div class="offer-badge">${offer.badge || ''}</div>
-      </div>
-    `).join('');
+    offersGrid.innerHTML = state.offers.map((offer, index) => {
+      // Use store and item fields from new scraper structure
+      const offerName = offer.store || offer.name || 'Unknown Offer';
+      const itemDesc = offer.item || offer.desc || '';
+      const dealPrice = offer.deal_price || offer.value || '£0';
+      const category = offer.category || 'other';
+      const link = offer.link || '#';
+      const steps = offer.step_by_step_guide || '';
+      
+      // Create a unique ID if not present
+      const offerId = offer.id || `offer-${index}`;
+      
+      return `
+        <div class="offer-card" onclick="openOffer('${offerId}')" data-category="${category}">
+          <div class="offer-header">
+            <div class="offer-name">${offerName}</div>
+            <div class="reward">${dealPrice}</div>
+          </div>
+          <div class="offer-desc">${itemDesc.substring(0, 80)}${itemDesc.length > 80 ? '...' : ''}</div>
+          <div class="offer-category">${category}</div>
+          ${steps ? '<div class="offer-has-guide">🤖 AI Guide Available</div>' : ''}
+        </div>
+      `;
+    }).join('');
+    
+    // Update offer count
+    document.getElementById('offerCount').textContent = `${state.offers.length} offers`;
   }
 }
-
 // Calculate today's plan amount
 function calculatePlanAmount() {
   // Simple calculation: sum of top 3 offers
@@ -168,21 +186,66 @@ function claimDaily() {
 
 // Open offer panel
 function openPanel(offerId) {
-  const offer = state.offers.find(o => o.id === offerId);
+  // Find offer by index if it's a generated ID
+  let offer;
+  if (offerId.startsWith('offer-')) {
+    const index = parseInt(offerId.replace('offer-', ''));
+    offer = state.offers[index];
+  } else {
+    offer = state.offers.find(o => o.id === offerId);
+  }
+  
   if (!offer) return;
   
-  document.getElementById('panelTitle').textContent = offer.name;
-  document.getElementById('panelBody').innerHTML = `
+  // Use new scraper structure fields
+  const offerName = offer.store || offer.name || 'Unknown Offer';
+  const itemDesc = offer.item || offer.desc || '';
+  const dealPrice = offer.deal_price || offer.value || '£0';
+  const link = offer.link || '#';
+  const category = offer.category || 'other';
+  const steps = offer.step_by_step_guide || '';
+  const requirements = offer.requirements || '';
+  
+  document.getElementById('panelTitle').textContent = offerName;
+  
+  let panelHTML = `
     <div class="panel-section">
-      <div class="panel-reward">${formatMoney(offer.value || 0)}</div>
-      <div class="panel-desc">${offer.desc || ''}</div>
-      <div class="panel-badge">${offer.badge || ''}</div>
-    </div>
+      <div class="panel-reward">${dealPrice}</div>
+      <div class="panel-desc">${itemDesc}</div>
+      <div class="panel-category">${category}</div>
   `;
   
+  if (link && link !== '#') {
+    panelHTML += `
+      <a href="${link}" target="_blank" class="panel-link">
+        🔗 Open Offer Link
+      </a>
+    `;
+  }
+  
+  panelHTML += `</div>`;
+  
+  if (requirements) {
+    panelHTML += `
+      <div class="panel-section">
+        <h4>Requirements:</h4>
+        <div class="panel-requirements">${requirements.substring(0, 200)}${requirements.length > 200 ? '...' : ''}</div>
+      </div>
+    `;
+  }
+  
+  if (steps) {
+    panelHTML += `
+      <div class="panel-section">
+        <h4>🤖 AI Step-by-Step Guide:</h4>
+        <div class="panel-guide">${steps.replace(/\n/g, '<br>')}</div>
+      </div>
+    `;
+  }
+  
+  document.getElementById('panelBody').innerHTML = panelHTML;
   document.getElementById('offerPanel').classList.add('open');
 }
-
 // Open offer
 function openOffer(offerId) {
   console.log('Opening offer:', offerId);
