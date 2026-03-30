@@ -239,8 +239,29 @@
    - **Minimum Threshold**: Only includes rewards ≥ £5
    - **Smart Categorization**: Uses keyword matching to group offers by type
    - **Link Extraction**: Extracts URLs from offer text when present
-8. **Total Deal Count**: Scraper now returns 78 total deals (32 manual offers, 8 supermarket deals, 104 Reddit deals, 20 Google News deals, 3 HotUKDeals deals, and 38 unique scraped offers)
-
+8. **MegaList Scraper with AI Guide Generation (March 30, 2026)**:
+   - **High-Precision MegaList Integration**: New scraper targeting `https://www.reddit.com/r/beermoneyuk/comments/1rywry0/the_beermoney_megalist_march_2026_the_big_list_of/`
+   - **Markdown Table Parser**: Extracts offers from Reddit markdown tables with 4-column support (Offer Name, Reward, Requirements/Link)
+   - **Direct URL Extraction**: Bypasses Reddit redirects (`out.reddit.com`) to capture destination URLs
+   - **AI-Powered Step-by-Step Guide Generator**: Creates natural 3-step Markdown guides using pattern matching:
+     - **Step 1**: Context-aware sign-up action (Sign up, Switch account, Open account, Deposit funds, Invest)
+     - **Step 2**: Specific action extraction (Deposit £X, Spend £X, Complete CASS switch, Refer friends)
+     - **Step 3**: Reward timing detection (30 days, 60 days, immediate, few days, 7 days)
+   - **Recursive Deep Crawler**: Follows sub-list links with loop protection for comprehensive coverage
+   - **Ghost Offer Cleanup**: Removes old Reddit scraped offers not found in MegaList while preserving manual offers and supermarket deals
+   - **UI Integration**: Updated app.js to display AI guides with "🤖 AI Guide Available" badges and formatted step-by-step guides
+   - **Files Created**:
+     - `final_megalist_scraper.py` - Complete integrated scraper
+     - `test_megalist.py` - Dry run test script (found 57 offers)
+     - `show_results.py` - Demonstration of first 3 offers with AI guides
+     - `scraper_backup.py` - Backup of original scraper
+     - `scraper_enhanced.py` - Enhanced version with MegaList integration
+   - **Key Features**:
+     - **Data Extraction**: Offer Name, Reward Value, Destination URL, Requirements text
+     - **AI Guide Generation**: Context-aware 3-step instructions for every offer
+     - **Data Purity**: Cleans up ghost offers while preserving valuable content
+     - **Backward Compatibility**: Maintains all existing manual offers and supermarket deals
+9. **Total Deal Count**: Scraper now returns 78 total deals (32 manual offers, 8 supermarket deals, 104 Reddit deals, 20 Google News deals, 3 HotUKDeals deals, and 38 unique scraped offers)
 ### Security & Bug Fixes (March 28, 2026)
 **CRITICAL ISSUES:**
 1. **CRIT-01: window.open() popup blocker** - Fixed: Changed `window.open()` to `window.location.href` in app.html to avoid browser popup blockers
@@ -353,11 +374,16 @@ MoneyHunterUk/
 ## Last Updated
 - **Memory Bank Created**: March 27, 2026
 - **Memory Bank Updated**: March 30, 2026
-- **Project Last Commit**: 5541651 (fix: resolve merge conflicts in all_deals.json and scrape_log.txt)
-- **Previous Commit**: 8241087 (feat: enhance Reddit scraper with structured megathread parsing)
+- **Project Last Commit**: 66959ba (feat: Add MegaList scraper with AI guide generation)
+- **Previous Commit**: 646e458 (feat: Add MegaList scraper with AI guide generation)
 - **Data Freshness**: Scraper includes "updated March 2026" references with 78+ live offers
-- **Recent Updates**: Enhanced Reddit scraper with structured megathread parsing, improved data quality (50/127 deals pass validation)
-
+- **Recent Updates**: 
+  - **MegaList Scraper Integration**: High-precision scraper targeting Reddit MegaList with AI guide generation
+  - **AI-Powered Step-by-Step Guides**: 3-step Markdown guides generated for every offer using pattern matching
+  - **Direct URL Extraction**: Bypasses Reddit redirects to capture destination URLs
+  - **Ghost Offer Cleanup**: Removes outdated offers while preserving manual offers and supermarket deals
+  - **UI Integration**: Updated app.js to display AI guides with proper formatting
+  - **Enhanced Reddit scraper**: Structured megathread parsing with improved data quality
 ---
 
 *This memory bank serves as a living document for the MoneyHunterUk project. Update regularly as the project evolves.*
