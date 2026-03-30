@@ -1,8 +1,8 @@
 {
-  "last_updated": "2026-03-30 15:34:11",
-  "total_deals": 97,
+  "last_updated": "2026-03-30 15:55:03",
+  "total_deals": 98,
   "manual_count": 32,
-  "supermarket_count": 8,
+  "supermarket_count": 9,
   "megalist_count": 57,
   "cleaned_count": 57,
   "sources": [
@@ -30,7 +30,7 @@
       "stacked_price": 0,
       "best_payment_method": "N/A",
       "stacking_rate": 0,
-      "last_updated": "2026-03-30 15:34:11"
+      "last_updated": "2026-03-30 15:55:03"
     },
     {
       "store": "Lloyds Bank",
@@ -51,7 +51,7 @@
       "stacked_price": 0,
       "best_payment_method": "N/A",
       "stacking_rate": 0,
-      "last_updated": "2026-03-30 15:34:11"
+      "last_updated": "2026-03-30 15:55:03"
     },
     {
       "store": "Natwest",
@@ -72,7 +72,7 @@
       "stacked_price": 0,
       "best_payment_method": "N/A",
       "stacking_rate": 0,
-      "last_updated": "2026-03-30 15:34:11"
+      "last_updated": "2026-03-30 15:55:03"
     },
     {
       "store": "First Direct",
@@ -93,7 +93,7 @@
       "stacked_price": 0,
       "best_payment_method": "N/A",
       "stacking_rate": 0,
-      "last_updated": "2026-03-30 15:34:11"
+      "last_updated": "2026-03-30 15:55:03"
     },
     {
       "store": "Halifax",
@@ -114,7 +114,7 @@
       "stacked_price": 0,
       "best_payment_method": "N/A",
       "stacking_rate": 0,
-      "last_updated": "2026-03-30 15:34:11"
+      "last_updated": "2026-03-30 15:55:03"
     },
     {
       "store": "Amex",
@@ -135,7 +135,7 @@
       "stacked_price": 0,
       "best_payment_method": "N/A",
       "stacking_rate": 0,
-      "last_updated": "2026-03-30 15:34:11"
+      "last_updated": "2026-03-30 15:55:03"
     },
     {
       "store": "Plum",
@@ -156,7 +156,7 @@
       "stacked_price": 0,
       "best_payment_method": "N/A",
       "stacking_rate": 0,
-      "last_updated": "2026-03-30 15:34:11"
+      "last_updated": "2026-03-30 15:55:03"
     },
     {
       "store": "Tide",
@@ -177,7 +177,7 @@
       "stacked_price": 0,
       "best_payment_method": "N/A",
       "stacking_rate": 0,
-      "last_updated": "2026-03-30 15:34:11"
+      "last_updated": "2026-03-30 15:55:03"
     },
     {
       "store": "Chase Uk",
@@ -198,7 +198,7 @@
       "stacked_price": 0,
       "best_payment_method": "N/A",
       "stacking_rate": 0,
-      "last_updated": "2026-03-30 15:34:11"
+      "last_updated": "2026-03-30 15:55:03"
     },
     {
       "store": "Webull",
@@ -219,7 +219,7 @@
       "stacked_price": 0,
       "best_payment_method": "N/A",
       "stacking_rate": 0,
-      "last_updated": "2026-03-30 15:34:11"
+      "last_updated": "2026-03-30 15:55:03"
     },
     {
       "store": "Wealthify",
@@ -240,7 +240,7 @@
       "stacked_price": 0,
       "best_payment_method": "N/A",
       "stacking_rate": 0,
-      "last_updated": "2026-03-30 15:34:11"
+      "last_updated": "2026-03-30 15:55:03"
     },
     {
       "store": "Octopus Energy",
@@ -261,7 +261,7 @@
       "stacked_price": 0,
       "best_payment_method": "N/A",
       "stacking_rate": 0,
-      "last_updated": "2026-03-30 15:34:11"
+      "last_updated": "2026-03-30 15:55:03"
     },
     {
       "store": "Pensionbee",
@@ -281,7 +281,7 @@
       "stacked_price": 0,
       "best_payment_method": "N/A",
       "stacking_rate": 0,
-      "last_updated": "2026-03-30 15:34:11"
+      "last_updated": "2026-03-30 15:55:03"
     },
     {
       "store": "Rakuten",
@@ -302,7 +302,7 @@
       "stacked_price": 0,
       "best_payment_method": "N/A",
       "stacking_rate": 0,
-      "last_updated": "2026-03-30 15:34:11"
+      "last_updated": "2026-03-30 15:55:03"
     },
     {
       "store": "Revolut",
@@ -323,7 +323,7 @@
       "stacked_price": 0,
       "best_payment_method": "N/A",
       "stacking_rate": 0,
-      "last_updated": "2026-03-30 15:34:11"
+      "last_updated": "2026-03-30 15:55:03"
     },
     {
       "store": "Quidco",
@@ -344,7 +344,7 @@
       "stacked_price": 0,
       "best_payment_method": "N/A",
       "stacking_rate": 0,
-      "last_updated": "2026-03-30 15:34:11"
+      "last_updated": "2026-03-30 15:55:03"
     },
     {
       "store": "Freetrade",
@@ -364,7 +364,7 @@
       "stacked_price": 0,
       "best_payment_method": "N/A",
       "stacking_rate": 0,
-      "last_updated": "2026-03-30 15:34:11"
+      "last_updated": "2026-03-30 15:55:03"
     },
     {
       "store": "Robinhood",
@@ -384,7 +384,7 @@
       "stacked_price": 0,
       "best_payment_method": "N/A",
       "stacking_rate": 0,
-      "last_updated": "2026-03-30 15:34:11"
+      "last_updated": "2026-03-30 15:55:03"
     },
     {
       "store": "Topcashback",
@@ -404,7 +404,7 @@
       "stacked_price": 0,
       "best_payment_method": "N/A",
       "stacking_rate": 0,
-      "last_updated": "2026-03-30 15:34:11"
+      "last_updated": "2026-03-30 15:55:03"
     },
     {
       "store": "Zopa (biscuit)",
@@ -424,7 +424,7 @@
       "stacked_price": 0,
       "best_payment_method": "N/A",
       "stacking_rate": 0,
-      "last_updated": "2026-03-30 15:34:11"
+      "last_updated": "2026-03-30 15:55:03"
     },
     {
       "store": "Monzo",
@@ -445,7 +445,7 @@
       "stacked_price": 0,
       "best_payment_method": "N/A",
       "stacking_rate": 0,
-      "last_updated": "2026-03-30 15:34:11"
+      "last_updated": "2026-03-30 15:55:03"
     },
     {
       "store": "Zilch",
@@ -465,7 +465,7 @@
       "stacked_price": 0,
       "best_payment_method": "N/A",
       "stacking_rate": 0,
-      "last_updated": "2026-03-30 15:34:11"
+      "last_updated": "2026-03-30 15:55:03"
     },
     {
       "store": "Cheddar",
@@ -485,7 +485,7 @@
       "stacked_price": 0,
       "best_payment_method": "N/A",
       "stacking_rate": 0,
-      "last_updated": "2026-03-30 15:34:11"
+      "last_updated": "2026-03-30 15:55:03"
     },
     {
       "store": "Jam Doughnut",
@@ -505,7 +505,7 @@
       "stacked_price": 0,
       "best_payment_method": "N/A",
       "stacking_rate": 0,
-      "last_updated": "2026-03-30 15:34:11"
+      "last_updated": "2026-03-30 15:55:03"
     },
     {
       "store": "Trainpal",
@@ -526,7 +526,7 @@
       "stacked_price": 0,
       "best_payment_method": "N/A",
       "stacking_rate": 0,
-      "last_updated": "2026-03-30 15:34:11"
+      "last_updated": "2026-03-30 15:55:03"
     },
     {
       "store": "Airtime",
@@ -547,7 +547,7 @@
       "stacked_price": 0,
       "best_payment_method": "N/A",
       "stacking_rate": 0,
-      "last_updated": "2026-03-30 15:34:11"
+      "last_updated": "2026-03-30 15:55:03"
     },
     {
       "store": "Everup",
@@ -568,7 +568,7 @@
       "stacked_price": 0,
       "best_payment_method": "N/A",
       "stacking_rate": 0,
-      "last_updated": "2026-03-30 15:34:11"
+      "last_updated": "2026-03-30 15:55:03"
     },
     {
       "store": "Moneybox",
@@ -588,7 +588,7 @@
       "stacked_price": 0,
       "best_payment_method": "N/A",
       "stacking_rate": 0,
-      "last_updated": "2026-03-30 15:34:11"
+      "last_updated": "2026-03-30 15:55:03"
     },
     {
       "store": "Lebara",
@@ -608,7 +608,7 @@
       "stacked_price": 0,
       "best_payment_method": "N/A",
       "stacking_rate": 0,
-      "last_updated": "2026-03-30 15:34:11"
+      "last_updated": "2026-03-30 15:55:03"
     },
     {
       "store": "Costa",
@@ -628,7 +628,7 @@
       "stacked_price": 0,
       "best_payment_method": "N/A",
       "stacking_rate": 0,
-      "last_updated": "2026-03-30 15:34:11"
+      "last_updated": "2026-03-30 15:55:03"
     },
     {
       "store": "Waitrose",
@@ -648,7 +648,7 @@
       "stacked_price": 0,
       "best_payment_method": "JamDoughnut (3.5%) + MyWaitrose",
       "stacking_rate": 3.5,
-      "last_updated": "2026-03-30 15:34:11"
+      "last_updated": "2026-03-30 15:55:03"
     },
     {
       "store": "Wise",
@@ -669,7 +669,7 @@
       "stacked_price": 0,
       "best_payment_method": "N/A",
       "stacking_rate": 0,
-      "last_updated": "2026-03-30 15:34:11"
+      "last_updated": "2026-03-30 15:55:03"
     },
     {
       "store": "Asda",
@@ -684,7 +684,7 @@
       "stacked_price": 2.39,
       "best_payment_method": "Airtime Rewards (4%) + Asda Rewards",
       "stacking_rate": 4.5,
-      "last_updated": "2026-03-30 15:34:11"
+      "last_updated": "2026-03-30 15:55:03"
     },
     {
       "store": "Sainsbury's",
@@ -699,7 +699,7 @@
       "stacked_price": 3.35,
       "best_payment_method": "JamDoughnut (4.1%) + Nectar",
       "stacking_rate": 4.4,
-      "last_updated": "2026-03-30 15:34:11"
+      "last_updated": "2026-03-30 15:55:03"
     },
     {
       "store": "Tesco",
@@ -714,7 +714,7 @@
       "stacked_price": 6.63,
       "best_payment_method": "EverUp (4.9%) + Clubcard",
       "stacking_rate": 5.3,
-      "last_updated": "2026-03-30 15:34:11"
+      "last_updated": "2026-03-30 15:55:03"
     },
     {
       "store": "Iceland",
@@ -729,7 +729,7 @@
       "stacked_price": 7.6,
       "best_payment_method": "TopCashback (3.5%) + Bonus Card",
       "stacking_rate": 5.0,
-      "last_updated": "2026-03-30 15:34:11"
+      "last_updated": "2026-03-30 15:55:03"
     },
     {
       "store": "Iceland",
@@ -744,7 +744,7 @@
       "stacked_price": 9.5,
       "best_payment_method": "TopCashback (3.5%) + Bonus Card",
       "stacking_rate": 5.0,
-      "last_updated": "2026-03-30 15:34:11"
+      "last_updated": "2026-03-30 15:55:03"
     },
     {
       "store": "Sainsbury's",
@@ -759,7 +759,7 @@
       "stacked_price": 11.47,
       "best_payment_method": "JamDoughnut (4.1%) + Nectar",
       "stacking_rate": 4.4,
-      "last_updated": "2026-03-30 15:34:11"
+      "last_updated": "2026-03-30 15:55:03"
     },
     {
       "store": "Asda",
@@ -774,7 +774,7 @@
       "stacked_price": 14.32,
       "best_payment_method": "Airtime Rewards (4%) + Asda Rewards",
       "stacking_rate": 4.5,
-      "last_updated": "2026-03-30 15:34:11"
+      "last_updated": "2026-03-30 15:55:03"
     },
     {
       "store": "Tesco",
@@ -789,7 +789,22 @@
       "stacked_price": 18.94,
       "best_payment_method": "EverUp (4.9%) + Clubcard",
       "stacking_rate": 5.3,
-      "last_updated": "2026-03-30 15:34:11"
+      "last_updated": "2026-03-30 15:55:03"
+    },
+    {
+      "store": "**Tesco Bank**  | Get",
+      "item": "**Tesco Bank**  | Get",
+      "deal_price": "£25.0",
+      "link": "https://www.topcashback.co.uk/ref/scrimprbonus",
+      "requirements": "**Tesco Bank**  | Get £25 | Open an account | Where: [Topcashback](https://www.topcashback.co.uk/ref/scrimprbonus)",
+      "type": "scraped_megalist",
+      "source": "MegaList",
+      "last_updated": "2026-03-30 15:55:03",
+      "step_by_step_guide": "1. **Open account** - Create an account using the provided link\n2. **Complete the required steps** - Follow the specific requirements to qualify\n3. **Receive your reward** - The bonus will be paid once all conditions are met",
+      "steps": [
+        "Follow the step-by-step guide below"
+      ],
+      "category": "supermarket"
     },
     {
       "store": "Rubify is a new rewards app looking for ",
@@ -799,7 +814,7 @@
       "requirements": "Rubify is a new rewards app looking for UK beta testers. They'll pay people £10 to try it out and provide feedback. [Details here](https://www.reddit.com/r/GetPaidToPlay/s/3UJLArSgpa)",
       "type": "scraped_megalist",
       "source": "MegaList",
-      "last_updated": "2026-03-30 15:34:11",
+      "last_updated": "2026-03-30 15:55:03",
       "step_by_step_guide": "1. **Sign up** - Create an account using the provided link\n2. **Complete the required steps** - Follow the specific requirements to qualify\n3. **Receive your reward** - The bonus will be paid once all conditions are met",
       "steps": [
         "Follow the step-by-step guide below"
@@ -814,7 +829,7 @@
       "requirements": "On the face of it, these offers are worth around £1000+ in cashback. But not all of that will be profit. Assuming your tracking works, and you lose the deposit on every offer, it should work out around £400 profit.",
       "type": "scraped_megalist",
       "source": "MegaList",
-      "last_updated": "2026-03-30 15:34:11",
+      "last_updated": "2026-03-30 15:55:03",
       "step_by_step_guide": "1. **Deposit funds** - Create an account using the provided link\n2. **Complete the required steps** - Follow the specific requirements to qualify\n3. **Receive your reward** - The bonus will be paid once all conditions are met",
       "steps": [
         "Follow the step-by-step guide below"
@@ -829,7 +844,7 @@
       "requirements": "But they have a subscription fee of \\~£15/month.",
       "type": "scraped_megalist",
       "source": "MegaList",
-      "last_updated": "2026-03-30 15:34:11",
+      "last_updated": "2026-03-30 15:55:03",
       "step_by_step_guide": "1. **Sign up** - Create an account using the provided link\n2. **Complete the required steps** - Follow the specific requirements to qualify\n3. **Receive your reward** - The bonus will be paid once all conditions are met",
       "steps": [
         "Follow the step-by-step guide below"
@@ -844,7 +859,7 @@
       "requirements": "In the first month, there is no fee. And you can claim both a welcome bonus and a monthly bonus (\\~£30 in total) from two online purchases. Buy the cheapest thing you can (e.gm London to London bus ticket for NX Rewards)",
       "type": "scraped_megalist",
       "source": "MegaList",
-      "last_updated": "2026-03-30 15:34:11",
+      "last_updated": "2026-03-30 15:55:03",
       "step_by_step_guide": "1. **Sign up** - Create an account using the provided link\n2. **Complete the required steps** - Follow the specific requirements to qualify\n3. **Receive your reward** - The bonus will be paid once all conditions are met",
       "steps": [
         "Follow the step-by-step guide below"
@@ -859,7 +874,7 @@
       "requirements": "Claim a 20% discount on a £100 One4All giftcard each month you are a member.",
       "type": "scraped_megalist",
       "source": "MegaList",
-      "last_updated": "2026-03-30 15:34:11",
+      "last_updated": "2026-03-30 15:55:03",
       "step_by_step_guide": "1. **Sign up** - Create an account using the provided link\n2. **Complete the required steps** - Follow the specific requirements to qualify\n3. **Receive your reward** - The bonus will be paid once all conditions are met",
       "steps": [
         "Follow the step-by-step guide below"
@@ -874,7 +889,7 @@
       "requirements": "**NX Rewards**: Typically offers £16.87 cashback for your first qualifying purchase through the platform at NX Rewards, subscription costs £15/month.",
       "type": "scraped_megalist",
       "source": "MegaList",
-      "last_updated": "2026-03-30 15:34:11",
+      "last_updated": "2026-03-30 15:55:03",
       "step_by_step_guide": "1. **Sign up** - Create an account using the provided link\n2. **Complete the required steps** - Follow the specific requirements to qualify\n3. **Receive your reward** - The bonus will be paid once all conditions are met",
       "steps": [
         "Follow the step-by-step guide below"
@@ -889,7 +904,7 @@
       "requirements": "**Complete Savings**: £20.87 cashback as a welcome bonus when you sign up &amp; complete another order on the site you signed up with (via the CS shopping gateway), subscription costs £15/month.",
       "type": "scraped_megalist",
       "source": "MegaList",
-      "last_updated": "2026-03-30 15:34:11",
+      "last_updated": "2026-03-30 15:55:03",
       "step_by_step_guide": "1. **Sign up** - Create an account using the provided link\n2. **Complete the required steps** - Follow the specific requirements to qualify\n3. **Receive your reward** - The bonus will be paid once all conditions are met",
       "steps": [
         "Follow the step-by-step guide below"
@@ -904,7 +919,7 @@
       "requirements": "**Free Trial Period**: Both NX Rewards and Complete Savings sign up offers come with a 30 day free trial (often 30 days). After this, the subscription fee - £15 or £18 per month - in unless you cancel.",
       "type": "scraped_megalist",
       "source": "MegaList",
-      "last_updated": "2026-03-30 15:34:11",
+      "last_updated": "2026-03-30 15:55:03",
       "step_by_step_guide": "1. **Sign up** - Create an account using the provided link\n2. **Complete the required steps** - Follow the specific requirements to qualify\n3. **Receive £15.0 within 30 days** - The bonus will be paid once all conditions are met",
       "steps": [
         "Follow the step-by-step guide below"
@@ -919,7 +934,7 @@
       "requirements": "**Cost**: Both platforms typically charge a subscription fee (£15 per month for NX Rewards, £18 for Complete Savings), billed automatically to the card you enter upon signing up.",
       "type": "scraped_megalist",
       "source": "MegaList",
-      "last_updated": "2026-03-30 15:34:11",
+      "last_updated": "2026-03-30 15:55:03",
       "step_by_step_guide": "1. **Sign up** - Create an account using the provided link\n2. **Complete the required steps** - Follow the specific requirements to qualify\n3. **Receive your reward** - The bonus will be paid once all conditions are met",
       "steps": [
         "Follow the step-by-step guide below"
@@ -934,7 +949,7 @@
       "requirements": "**20% off a £100 One4All Giftcard Each Month**:",
       "type": "scraped_megalist",
       "source": "MegaList",
-      "last_updated": "2026-03-30 15:34:11",
+      "last_updated": "2026-03-30 15:55:03",
       "step_by_step_guide": "1. **Sign up** - Create an account using the provided link\n2. **Complete the required steps** - Follow the specific requirements to qualify\n3. **Receive your reward** - The bonus will be paid once all conditions are met",
       "steps": [
         "Follow the step-by-step guide below"
@@ -949,7 +964,7 @@
       "requirements": "**TopCashback**: Free to use with a wide range of retailers and strong cashback rates. Topcashback offer a premium service too, but it only subtracts £5 from your annual cashback earnings (there is no fee if you do not use it).",
       "type": "scraped_megalist",
       "source": "MegaList",
-      "last_updated": "2026-03-30 15:34:11",
+      "last_updated": "2026-03-30 15:55:03",
       "step_by_step_guide": "1. **Sign up** - Create an account using the provided link\n2. **Complete the required steps** - Follow the specific requirements to qualify\n3. **Receive your reward** - The bonus will be paid once all conditions are met",
       "steps": [
         "Follow the step-by-step guide below"
@@ -964,7 +979,7 @@
       "requirements": "**Spend £100 on Swipii Currency:** You get a £107 value.",
       "type": "scraped_megalist",
       "source": "MegaList",
-      "last_updated": "2026-03-30 15:34:11",
+      "last_updated": "2026-03-30 15:55:03",
       "step_by_step_guide": "1. **Sign up** - Create an account using the provided link\n2. **Spend £100** - Follow the specific requirements to qualify\n3. **Receive your reward** - The bonus will be paid once all conditions are met",
       "steps": [
         "Follow the step-by-step guide below"
@@ -979,7 +994,7 @@
       "requirements": "**Total Spent:** £100",
       "type": "scraped_megalist",
       "source": "MegaList",
-      "last_updated": "2026-03-30 15:34:11",
+      "last_updated": "2026-03-30 15:55:03",
       "step_by_step_guide": "1. **Sign up** - Create an account using the provided link\n2. **Complete the required steps** - Follow the specific requirements to qualify\n3. **Receive your reward** - The bonus will be paid once all conditions are met",
       "steps": [
         "Follow the step-by-step guide below"
@@ -994,7 +1009,7 @@
       "requirements": "**Total Spent After Cashback:** £98.50",
       "type": "scraped_megalist",
       "source": "MegaList",
-      "last_updated": "2026-03-30 15:34:11",
+      "last_updated": "2026-03-30 15:55:03",
       "step_by_step_guide": "1. **Sign up** - Create an account using the provided link\n2. **Complete the required steps** - Follow the specific requirements to qualify\n3. **Receive your reward** - The bonus will be paid once all conditions are met",
       "steps": [
         "Follow the step-by-step guide below"
@@ -1009,7 +1024,7 @@
       "requirements": "Karma Vouchers occasionally has offers for a free voucher when you buy another one. This morning they sent out an email for \"Get a free £10 Argos Voucher when you purchase vouchers worth a minimum of £10\". I think you can only get this offer if you were sent the email though.",
       "type": "scraped_megalist",
       "source": "MegaList",
-      "last_updated": "2026-03-30 15:34:11",
+      "last_updated": "2026-03-30 15:55:03",
       "step_by_step_guide": "1. **Sign up** - Create an account using the provided link\n2. **Complete the required steps** - Follow the specific requirements to qualify\n3. **Receive your reward** - The bonus will be paid once all conditions are met",
       "steps": [
         "Follow the step-by-step guide below"
@@ -1024,7 +1039,7 @@
       "requirements": "Zilch - [Free £10 from Zilch mini-megathread](https://www.reddit.com/r/beermoneyuk/comments/wgbeck/zilch_fast_and_free_10_to_spend_no_deposit/)",
       "type": "scraped_megalist",
       "source": "MegaList",
-      "last_updated": "2026-03-30 15:34:11",
+      "last_updated": "2026-03-30 15:55:03",
       "step_by_step_guide": "1. **Deposit funds** - Create an account using the provided link\n2. **Complete the required steps** - Follow the specific requirements to qualify\n3. **Receive your reward** - The bonus will be paid once all conditions are met",
       "steps": [
         "Follow the step-by-step guide below"
@@ -1039,7 +1054,7 @@
       "requirements": "**Add** a debit card. **There is no need to spend any of your own money to get the £10 bonus.**",
       "type": "scraped_megalist",
       "source": "MegaList",
-      "last_updated": "2026-03-30 15:34:11",
+      "last_updated": "2026-03-30 15:55:03",
       "step_by_step_guide": "1. **Sign up** - Create an account using the provided link\n2. **Complete the required steps** - Follow the specific requirements to qualify\n3. **Receive your reward** - The bonus will be paid once all conditions are met",
       "steps": [
         "Follow the step-by-step guide below"
@@ -1054,7 +1069,7 @@
       "requirements": "**Receive 1000 bonus points** (worth £10) in your account.",
       "type": "scraped_megalist",
       "source": "MegaList",
-      "last_updated": "2026-03-30 15:34:11",
+      "last_updated": "2026-03-30 15:55:03",
       "step_by_step_guide": "1. **Sign up** - Create an account using the provided link\n2. **Complete the required steps** - Follow the specific requirements to qualify\n3. **Receive your reward** - The bonus will be paid once all conditions are met",
       "steps": [
         "Follow the step-by-step guide below"
@@ -1069,7 +1084,7 @@
       "requirements": "Try out Zilch and **spend your free £10**.",
       "type": "scraped_megalist",
       "source": "MegaList",
-      "last_updated": "2026-03-30 15:34:11",
+      "last_updated": "2026-03-30 15:55:03",
       "step_by_step_guide": "1. **Sign up** - Create an account using the provided link\n2. **Complete the required steps** - Follow the specific requirements to qualify\n3. **Receive your reward** - The bonus will be paid once all conditions are met",
       "steps": [
         "Follow the step-by-step guide below"
@@ -1084,7 +1099,7 @@
       "requirements": "**Link:** 🌐 [Outplayed link with free trial (earn ~£40)](https://outplayed.com/idevaffiliate//idevaffiliate.php?id=10331)  &amp;#10;",
       "type": "scraped_megalist",
       "source": "MegaList",
-      "last_updated": "2026-03-30 15:34:11",
+      "last_updated": "2026-03-30 15:55:03",
       "step_by_step_guide": "1. **Sign up** - Create an account using the provided link\n2. **Complete the required steps** - Follow the specific requirements to qualify\n3. **Receive your reward** - The bonus will be paid once all conditions are met",
       "steps": [
         "Follow the step-by-step guide below"
@@ -1099,7 +1114,7 @@
       "requirements": "There is over £1000 in cashback to be made from these offers (but not all of that will be profit)",
       "type": "scraped_megalist",
       "source": "MegaList",
-      "last_updated": "2026-03-30 15:34:11",
+      "last_updated": "2026-03-30 15:55:03",
       "step_by_step_guide": "1. **Sign up** - Create an account using the provided link\n2. **Complete the required steps** - Follow the specific requirements to qualify\n3. **Receive your reward** - The bonus will be paid once all conditions are met",
       "steps": [
         "Follow the step-by-step guide below"
@@ -1114,7 +1129,7 @@
       "requirements": "Revolut ([direct offer](https://www.revolut.com/revolut-sziget-cash-reward/)) - get £20 for spending £1",
       "type": "scraped_megalist",
       "source": "MegaList",
-      "last_updated": "2026-03-30 15:34:11",
+      "last_updated": "2026-03-30 15:55:03",
       "step_by_step_guide": "1. **Sign up** - Create an account using the provided link\n2. **Complete the required steps** - Follow the specific requirements to qualify\n3. **Receive your reward** - The bonus will be paid once all conditions are met",
       "steps": [
         "Follow the step-by-step guide below"
@@ -1129,7 +1144,7 @@
       "requirements": "Plum ([cashback offer on Topcashback](https://www.topcashback.co.uk/ref/scrimprbonus)) - get a free £12 for linking your account)",
       "type": "scraped_megalist",
       "source": "MegaList",
-      "last_updated": "2026-03-30 15:34:11",
+      "last_updated": "2026-03-30 15:55:03",
       "step_by_step_guide": "1. **Sign up** - Create an account using the provided link\n2. **Complete the required steps** - Follow the specific requirements to qualify\n3. **Receive your reward** - The bonus will be paid once all conditions are met",
       "steps": [
         "Follow the step-by-step guide below"
@@ -1144,7 +1159,7 @@
       "requirements": "Airwallex ([cashback offer on Gemsloot](https://gemsloot.com/?aff=beermoney)) - get £89 to sign up and make your first transaction (multicurrency business account).",
       "type": "scraped_megalist",
       "source": "MegaList",
-      "last_updated": "2026-03-30 15:34:11",
+      "last_updated": "2026-03-30 15:55:03",
       "step_by_step_guide": "1. **Sign up** - Create an account using the provided link\n2. **Complete the required steps** - Follow the specific requirements to qualify\n3. **Receive your reward** - The bonus will be paid once all conditions are met",
       "steps": [
         "Follow the step-by-step guide below"
@@ -1159,7 +1174,7 @@
       "requirements": "Chip ([direct offer](https://www.getchip.uk/promo-terms/get30)) - get £30 when you invest £100. **ENDS 26/02/2026**",
       "type": "scraped_megalist",
       "source": "MegaList",
-      "last_updated": "2026-03-30 15:34:11",
+      "last_updated": "2026-03-30 15:55:03",
       "step_by_step_guide": "1. **Invest** - Create an account using the provided link\n2. **Complete the required steps** - Follow the specific requirements to qualify\n3. **Receive your reward** - The bonus will be paid once all conditions are met",
       "steps": [
         "Follow the step-by-step guide below"
@@ -1174,7 +1189,7 @@
       "requirements": "PensionBee ([NutsAboutMoney offer](https://www.nutsaboutmoney.com/reviews/pensionbee)) get a free £50 in your pension pot) - states end date of 2025, but users report that it works in 2026 still",
       "type": "scraped_megalist",
       "source": "MegaList",
-      "last_updated": "2026-03-30 15:34:11",
+      "last_updated": "2026-03-30 15:55:03",
       "step_by_step_guide": "1. **Sign up** - Create an account using the provided link\n2. **Complete the required steps** - Follow the specific requirements to qualify\n3. **Receive your reward** - The bonus will be paid once all conditions are met",
       "steps": [
         "Follow the step-by-step guide below"
@@ -1189,7 +1204,7 @@
       "requirements": "**First Direct** | Get £45 | Additional switch bonus | Where: [Topcashback](https://www.topcashback.co.uk/ref/scrimprbonus)",
       "type": "scraped_megalist",
       "source": "MegaList",
-      "last_updated": "2026-03-30 15:34:11",
+      "last_updated": "2026-03-30 15:55:03",
       "step_by_step_guide": "1. **Switch account** - Create an account using the provided link\n2. **Complete the Current Account Switch Service (CASS)** - Follow the specific requirements to qualify\n3. **Receive your reward** - The bonus will be paid once all conditions are met",
       "steps": [
         "Follow the step-by-step guide below"
@@ -1204,7 +1219,7 @@
       "requirements": "**TSB Spend &amp; Save** | Get £20 | Open account | Where: [Topcashback](https://www.topcashback.co.uk/ref/scrimprbonus)",
       "type": "scraped_megalist",
       "source": "MegaList",
-      "last_updated": "2026-03-30 15:34:11",
+      "last_updated": "2026-03-30 15:55:03",
       "step_by_step_guide": "1. **Open account** - Create an account using the provided link\n2. **Complete the required steps** - Follow the specific requirements to qualify\n3. **Receive your reward** - The bonus will be paid once all conditions are met",
       "steps": [
         "Follow the step-by-step guide below"
@@ -1219,7 +1234,7 @@
       "requirements": "**Revolut**  | Get £20 | Open account, spend £1 | Where: Revolut [https://www.revolut.com/revolut-sziget-cash-reward/](https://www.revolut.com/revolut-sziget-cash-reward/)",
       "type": "scraped_megalist",
       "source": "MegaList",
-      "last_updated": "2026-03-30 15:34:11",
+      "last_updated": "2026-03-30 15:55:03",
       "step_by_step_guide": "1. **Open account** - Create an account using the provided link\n2. **Spend £1** - Follow the specific requirements to qualify\n3. **Receive your reward** - The bonus will be paid once all conditions are met",
       "steps": [
         "Follow the step-by-step guide below"
@@ -1234,7 +1249,7 @@
       "requirements": "**Santander** | Get up to £20 | Open a Everyday/Edge/Student account | Where: [Topcashback](https://www.topcashback.co.uk/ref/scrimprbonus)",
       "type": "scraped_megalist",
       "source": "MegaList",
-      "last_updated": "2026-03-30 15:34:11",
+      "last_updated": "2026-03-30 15:55:03",
       "step_by_step_guide": "1. **Open account** - Create an account using the provided link\n2. **Complete the required steps** - Follow the specific requirements to qualify\n3. **Receive your reward** - The bonus will be paid once all conditions are met",
       "steps": [
         "Follow the step-by-step guide below"
@@ -1249,7 +1264,7 @@
       "requirements": "**Santander savings &amp; cash ISAs** | Get £15| Various accounts | Where: [Topcashback](https://www.topcashback.co.uk/ref/scrimprbonus)",
       "type": "scraped_megalist",
       "source": "MegaList",
-      "last_updated": "2026-03-30 15:34:11",
+      "last_updated": "2026-03-30 15:55:03",
       "step_by_step_guide": "1. **Sign up** - Create an account using the provided link\n2. **Complete the required steps** - Follow the specific requirements to qualify\n3. **Receive your reward** - The bonus will be paid once all conditions are met",
       "steps": [
         "Follow the step-by-step guide below"
@@ -1264,7 +1279,7 @@
       "requirements": "**BeanStalk JISA**  | Get £17.50 | Invest £10 | Where: [Topcashback](https://www.topcashback.co.uk/ref/scrimprbonus)",
       "type": "scraped_megalist",
       "source": "MegaList",
-      "last_updated": "2026-03-30 15:34:11",
+      "last_updated": "2026-03-30 15:55:03",
       "step_by_step_guide": "1. **Invest** - Create an account using the provided link\n2. **Complete the required steps** - Follow the specific requirements to qualify\n3. **Receive your reward** - The bonus will be paid once all conditions are met",
       "steps": [
         "Follow the step-by-step guide below"
@@ -1279,7 +1294,7 @@
       "requirements": "**Charles Stanley** | Get £150 | Open an ISA or GIA account, invest £500 (invest in a fund to avoid fees)| Where: [Topcashback](https://www.topcashback.co.uk/ref/scrimprbonus)",
       "type": "scraped_megalist",
       "source": "MegaList",
-      "last_updated": "2026-03-30 15:34:11",
+      "last_updated": "2026-03-30 15:55:03",
       "step_by_step_guide": "1. **Open account** - Create an account using the provided link\n2. **Complete the required steps** - Follow the specific requirements to qualify\n3. **Receive your reward** - The bonus will be paid once all conditions are met",
       "steps": [
         "Follow the step-by-step guide below"
@@ -1294,7 +1309,7 @@
       "requirements": "**Chip** | Get £30 | Open an ISA, invest £100 | Where: [Chip](https://www.getchip.uk/promo-terms/get30)",
       "type": "scraped_megalist",
       "source": "MegaList",
-      "last_updated": "2026-03-30 15:34:11",
+      "last_updated": "2026-03-30 15:55:03",
       "step_by_step_guide": "1. **Open account** - Create an account using the provided link\n2. **Complete the required steps** - Follow the specific requirements to qualify\n3. **Receive your reward** - The bonus will be paid once all conditions are met",
       "steps": [
         "Follow the step-by-step guide below"
@@ -1309,7 +1324,7 @@
       "requirements": "**IG Invest** | 5% cash back (up to £200) for investing, or 1% cashback (up to £3k) for transferring | | Where: [Scrimpr](https://scrimpr.co.uk/offers/ig-deposit-match-offer/)",
       "type": "scraped_megalist",
       "source": "MegaList",
-      "last_updated": "2026-03-30 15:34:11",
+      "last_updated": "2026-03-30 15:55:03",
       "step_by_step_guide": "1. **Deposit funds** - Create an account using the provided link\n2. **Complete the required steps** - Follow the specific requirements to qualify\n3. **Receive your reward** - The bonus will be paid once all conditions are met",
       "steps": [
         "Follow the step-by-step guide below"
@@ -1324,7 +1339,7 @@
       "requirements": "**Fidelity**  | Get £200 | ISA Invest £5k | Where: [Topcashback](https://www.topcashback.co.uk/ref/scrimprbonus)",
       "type": "scraped_megalist",
       "source": "MegaList",
-      "last_updated": "2026-03-30 15:34:11",
+      "last_updated": "2026-03-30 15:55:03",
       "step_by_step_guide": "1. **Invest** - Create an account using the provided link\n2. **Complete the required steps** - Follow the specific requirements to qualify\n3. **Receive your reward** - The bonus will be paid once all conditions are met",
       "steps": [
         "Follow the step-by-step guide below"
@@ -1339,7 +1354,7 @@
       "requirements": "**J.P. Morgan (was Nutmeg)** | Get £75 or £100 | Open an ISA or GIA (£500 deposit requirement w/ £100/m direct debit) on Top cashback. £100 offer available via Chase app | Where: [Topcashback](https://www.topcashback.co.uk/ref/scrimprbonus)",
       "type": "scraped_megalist",
       "source": "MegaList",
-      "last_updated": "2026-03-30 15:34:11",
+      "last_updated": "2026-03-30 15:55:03",
       "step_by_step_guide": "1. **Open account** - Create an account using the provided link\n2. **Complete the required steps** - Follow the specific requirements to qualify\n3. **Receive your reward** - The bonus will be paid once all conditions are met",
       "steps": [
         "Follow the step-by-step guide below"
@@ -1354,7 +1369,7 @@
       "requirements": "Prosper ([direct offer](https://www.prosper.co.uk/cashback-offer), get £100 for £10k investing)",
       "type": "scraped_megalist",
       "source": "MegaList",
-      "last_updated": "2026-03-30 15:34:11",
+      "last_updated": "2026-03-30 15:55:03",
       "step_by_step_guide": "1. **Invest** - Create an account using the provided link\n2. **Complete the required steps** - Follow the specific requirements to qualify\n3. **Receive your reward** - The bonus will be paid once all conditions are met",
       "steps": [
         "Follow the step-by-step guide below"
@@ -1369,7 +1384,7 @@
       "requirements": "**Quilter (was Wombat/NuWealth)** | Get £100 | Invesst £500 in ISA| Where: [Topcashback](https://www.topcashback.co.uk/ref/scrimprbonus)",
       "type": "scraped_megalist",
       "source": "MegaList",
-      "last_updated": "2026-03-30 15:34:11",
+      "last_updated": "2026-03-30 15:55:03",
       "step_by_step_guide": "1. **Sign up** - Create an account using the provided link\n2. **Complete the required steps** - Follow the specific requirements to qualify\n3. **Receive your reward** - The bonus will be paid once all conditions are met",
       "steps": [
         "Follow the step-by-step guide below"
@@ -1384,7 +1399,7 @@
       "requirements": "**Santander Stocks &amp; Shares ISA** | Get £50 | Invest £100 | Where: [Topcashback](https://www.topcashback.co.uk/ref/scrimprbonus)",
       "type": "scraped_megalist",
       "source": "MegaList",
-      "last_updated": "2026-03-30 15:34:11",
+      "last_updated": "2026-03-30 15:55:03",
       "step_by_step_guide": "1. **Invest** - Create an account using the provided link\n2. **Complete the required steps** - Follow the specific requirements to qualify\n3. **Receive your reward** - The bonus will be paid once all conditions are met",
       "steps": [
         "Follow the step-by-step guide below"
@@ -1399,7 +1414,7 @@
       "requirements": "**Scottish Friendly**  | Get £310 | ISA Invest £100/month (~6-12 months) | Where: [Topcashback](https://www.topcashback.co.uk/ref/scrimprbonus)",
       "type": "scraped_megalist",
       "source": "MegaList",
-      "last_updated": "2026-03-30 15:34:11",
+      "last_updated": "2026-03-30 15:55:03",
       "step_by_step_guide": "1. **Invest** - Create an account using the provided link\n2. **Complete the required steps** - Follow the specific requirements to qualify\n3. **Receive your reward** - The bonus will be paid once all conditions are met",
       "steps": [
         "Follow the step-by-step guide below"
@@ -1414,7 +1429,7 @@
       "requirements": "**Shepherds Friendly**  | Get £300 | ISA Invest £100/month  (~6-12 months)  | Where: [Topcashback](https://www.topcashback.co.uk/ref/scrimprbonus)",
       "type": "scraped_megalist",
       "source": "MegaList",
-      "last_updated": "2026-03-30 15:34:11",
+      "last_updated": "2026-03-30 15:55:03",
       "step_by_step_guide": "1. **Invest** - Create an account using the provided link\n2. **Complete the required steps** - Follow the specific requirements to qualify\n3. **Receive your reward** - The bonus will be paid once all conditions are met",
       "steps": [
         "Follow the step-by-step guide below"
@@ -1429,7 +1444,7 @@
       "requirements": "Airwallex | Get £89 | Sign up and make your first transaction (multicurrency business account) | Where: [Gemsloot](https://gemsloot.com/?aff=beermoney)",
       "type": "scraped_megalist",
       "source": "MegaList",
-      "last_updated": "2026-03-30 15:34:11",
+      "last_updated": "2026-03-30 15:55:03",
       "step_by_step_guide": "1. **Sign up** - Create an account using the provided link\n2. **Complete the required steps** - Follow the specific requirements to qualify\n3. **Receive your reward** - The bonus will be paid once all conditions are met",
       "steps": [
         "Follow the step-by-step guide below"
@@ -1444,7 +1459,7 @@
       "requirements": "**Cahoot Sunny Day Saver (Santander)** | Get £15 | Open savings account, deposit £1| Where: [Topcashback](https://www.topcashback.co.uk/ref/scrimprbonus)",
       "type": "scraped_megalist",
       "source": "MegaList",
-      "last_updated": "2026-03-30 15:34:11",
+      "last_updated": "2026-03-30 15:55:03",
       "step_by_step_guide": "1. **Open account** - Create an account using the provided link\n2. **Deposit £1** - Follow the specific requirements to qualify\n3. **Receive your reward** - The bonus will be paid once all conditions are met",
       "steps": [
         "Follow the step-by-step guide below"
@@ -1459,7 +1474,7 @@
       "requirements": "**Cahoot Simple Saver (Santander)** | Get £15 | Open savings account, deposit £1| Where: [Topcashback](https://www.topcashback.co.uk/ref/scrimprbonus)",
       "type": "scraped_megalist",
       "source": "MegaList",
-      "last_updated": "2026-03-30 15:34:11",
+      "last_updated": "2026-03-30 15:55:03",
       "step_by_step_guide": "1. **Open account** - Create an account using the provided link\n2. **Deposit £1** - Follow the specific requirements to qualify\n3. **Receive your reward** - The bonus will be paid once all conditions are met",
       "steps": [
         "Follow the step-by-step guide below"
@@ -1474,7 +1489,7 @@
       "requirements": "**Currensea** | Get £15 | Make 5 foreign currency transactions | Where: [Direct (Currensea promotion)](https://www.currensea.com/partner/p-hill)",
       "type": "scraped_megalist",
       "source": "MegaList",
-      "last_updated": "2026-03-30 15:34:11",
+      "last_updated": "2026-03-30 15:55:03",
       "step_by_step_guide": "1. **Sign up** - Create an account using the provided link\n2. **Complete the required steps** - Follow the specific requirements to qualify\n3. **Receive your reward** - The bonus will be paid once all conditions are met",
       "steps": [
         "Follow the step-by-step guide below"
@@ -1489,7 +1504,7 @@
       "requirements": "**GoHenry** | Get £15 | Deposit £10 | Where: [Direct (MSE promotion)](https://www.gohenry.com/uk/aff-mse/?promotion= AFFUKMSE15)",
       "type": "scraped_megalist",
       "source": "MegaList",
-      "last_updated": "2026-03-30 15:34:11",
+      "last_updated": "2026-03-30 15:55:03",
       "step_by_step_guide": "1. **Deposit funds** - Create an account using the provided link\n2. **Deposit £10** - Follow the specific requirements to qualify\n3. **Receive your reward** - The bonus will be paid once all conditions are met",
       "steps": [
         "Follow the step-by-step guide below"
@@ -1504,7 +1519,7 @@
       "requirements": "**PensionBee** | Get £50 | Open a PensionBee pension (free!) | Where: [NutsAboutMoney](https://www.nutsaboutmoney.com/reviews/pensionbee) (note that terms say it ended in 2025, but its still advertised, and people report it works in 2026",
       "type": "scraped_megalist",
       "source": "MegaList",
-      "last_updated": "2026-03-30 15:34:11",
+      "last_updated": "2026-03-30 15:55:03",
       "step_by_step_guide": "1. **Open account** - Create an account using the provided link\n2. **Complete the required steps** - Follow the specific requirements to qualify\n3. **Receive your reward** - The bonus will be paid once all conditions are met",
       "steps": [
         "Follow the step-by-step guide below"
@@ -1519,7 +1534,7 @@
       "requirements": "**Plum** | Get £12 | Sign up, connect current account | Where: [Topcashback](https://www.topcashback.co.uk/ref/scrimprbonus)",
       "type": "scraped_megalist",
       "source": "MegaList",
-      "last_updated": "2026-03-30 15:34:11",
+      "last_updated": "2026-03-30 15:55:03",
       "step_by_step_guide": "1. **Sign up** - Create an account using the provided link\n2. **Complete the required steps** - Follow the specific requirements to qualify\n3. **Receive your reward** - The bonus will be paid once all conditions are met",
       "steps": [
         "Follow the step-by-step guide below"
@@ -1534,7 +1549,7 @@
       "requirements": "**Post Office Travel Money Card** | Get £10 | Order a travel money card | Where: [Topcashback](https://www.topcashback.co.uk/ref/scrimprbonus)",
       "type": "scraped_megalist",
       "source": "MegaList",
-      "last_updated": "2026-03-30 15:34:11",
+      "last_updated": "2026-03-30 15:55:03",
       "step_by_step_guide": "1. **Sign up** - Create an account using the provided link\n2. **Complete the required steps** - Follow the specific requirements to qualify\n3. **Receive your reward** - The bonus will be paid once all conditions are met",
       "steps": [
         "Follow the step-by-step guide below"
@@ -1549,7 +1564,7 @@
       "requirements": "**Crypto.com** | Get £13 | Buy $5+ crypto | Where: Adgem on [Earnlab](https://earnlab.com/r/beermoneyuk)",
       "type": "scraped_megalist",
       "source": "MegaList",
-      "last_updated": "2026-03-30 15:34:11",
+      "last_updated": "2026-03-30 15:55:03",
       "step_by_step_guide": "1. **Sign up** - Create an account using the provided link\n2. **Complete the required steps** - Follow the specific requirements to qualify\n3. **Receive your reward** - The bonus will be paid once all conditions are met",
       "steps": [
         "Follow the step-by-step guide below"
@@ -1564,7 +1579,7 @@
       "requirements": "**Wirex** | Get £32 | Deposit $15 | Where: PrimeEarn on [CashInStyle](https://cashinstyle.com/?ref=beermoney)",
       "type": "scraped_megalist",
       "source": "MegaList",
-      "last_updated": "2026-03-30 15:34:11",
+      "last_updated": "2026-03-30 15:55:03",
       "step_by_step_guide": "1. **Deposit funds** - Create an account using the provided link\n2. **Complete the required steps** - Follow the specific requirements to qualify\n3. **Receive your reward** - The bonus will be paid once all conditions are met",
       "steps": [
         "Follow the step-by-step guide below"
@@ -1579,7 +1594,7 @@
       "requirements": "**Barclaycard** | Get £15 | Open an account | Where: [Quidco](https://quidco.com/raf/297635/)",
       "type": "scraped_megalist",
       "source": "MegaList",
-      "last_updated": "2026-03-30 15:34:11",
+      "last_updated": "2026-03-30 15:55:03",
       "step_by_step_guide": "1. **Open account** - Create an account using the provided link\n2. **Complete the required steps** - Follow the specific requirements to qualify\n3. **Receive your reward** - The bonus will be paid once all conditions are met",
       "steps": [
         "Follow the step-by-step guide below"
@@ -1594,7 +1609,7 @@
       "requirements": "**HSBC** | Get £35 | Open an account | Where: [Topcashback](https://www.topcashback.co.uk/ref/scrimprbonus)",
       "type": "scraped_megalist",
       "source": "MegaList",
-      "last_updated": "2026-03-30 15:34:11",
+      "last_updated": "2026-03-30 15:55:03",
       "step_by_step_guide": "1. **Open account** - Create an account using the provided link\n2. **Complete the required steps** - Follow the specific requirements to qualify\n3. **Receive your reward** - The bonus will be paid once all conditions are met",
       "steps": [
         "Follow the step-by-step guide below"
@@ -1609,7 +1624,7 @@
       "requirements": "**M&amp;S Bank**  | Get £35 | Open an account | Where: [Topcashback](https://www.topcashback.co.uk/ref/scrimprbonus)",
       "type": "scraped_megalist",
       "source": "MegaList",
-      "last_updated": "2026-03-30 15:34:11",
+      "last_updated": "2026-03-30 15:55:03",
       "step_by_step_guide": "1. **Open account** - Create an account using the provided link\n2. **Complete the required steps** - Follow the specific requirements to qualify\n3. **Receive your reward** - The bonus will be paid once all conditions are met",
       "steps": [
         "Follow the step-by-step guide below"
@@ -1624,7 +1639,7 @@
       "requirements": "**MBNA**  | Get £28 | Open an account | Where: [Quidco](https://quidco.com/raf/297635/)",
       "type": "scraped_megalist",
       "source": "MegaList",
-      "last_updated": "2026-03-30 15:34:11",
+      "last_updated": "2026-03-30 15:55:03",
       "step_by_step_guide": "1. **Open account** - Create an account using the provided link\n2. **Complete the required steps** - Follow the specific requirements to qualify\n3. **Receive your reward** - The bonus will be paid once all conditions are met",
       "steps": [
         "Follow the step-by-step guide below"
@@ -1639,7 +1654,7 @@
       "requirements": "**Tesco Bank**  | Get £25 | Open an account | Where: [Topcashback](https://www.topcashback.co.uk/ref/scrimprbonus)",
       "type": "scraped_megalist",
       "source": "MegaList",
-      "last_updated": "2026-03-30 15:34:11",
+      "last_updated": "2026-03-30 15:55:03",
       "step_by_step_guide": "1. **Open account** - Create an account using the provided link\n2. **Complete the required steps** - Follow the specific requirements to qualify\n3. **Receive your reward** - The bonus will be paid once all conditions are met",
       "steps": [
         "Follow the step-by-step guide below"
