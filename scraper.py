@@ -150,6 +150,7 @@ def scrape_reddit_beermoneyuk():
         "https://www.reddit.com/r/beermoneyuk/search.json?q=referral+%C2%A3&sort=new&limit=25",
         "https://www.reddit.com/r/beermoneyuk/search.json?q=bank+switch&sort=new&limit=25",
     ]
+    
     for url in endpoints:
         try:
             r = requests.get(url, headers=headers, timeout=15)
@@ -166,42 +167,180 @@ def scrape_reddit_beermoneyuk():
                 body = d.get("selftext","")
                 score = d.get("score", 0)
                 flair = d.get("link_flair_text","") or ""
+                
                 # Lower threshold for new posts
                 min_score = 1 if "new.json" in url else 3
                 if score < min_score:
                     continue
-                if "£" not in title and "£" not in body:
-                    continue
-                amounts = re.findall(
-                    r'£(\d+(?:\.\d{2})?)', title+" "+body)
-                reward = f"£{amounts[0]}" if amounts else "Bonus"
-                code_match = re.search(
-                    r'(?:code|referral)[:\s]+([A-Z0-9]{4,15})',
-                    title + " " + body, re.IGNORECASE)
-                code = code_match.group(1) if code_match else ""
-                permalink = "https://reddit.com" + d.get("permalink", "")
-                link = d.get("url", permalink)
-                deals.append({
-                    "store": title[:40],
-                    "item": title[:80],
-                    "deal_price": reward,
-                    "link": link if link.startswith("http") else permalink,
-                    "original_price": "£0",
-                    "saving_percent": 100,
-                    "type": "scraped_reddit",
-                    "code": code,
-                    "steps": ["Read the Reddit post for full details",
-                              "Follow the referral link",
-                              "Complete the required steps"],
-                    "timeFrame": "Varies",
-                    "source": "r/beermoneyuk",
-                    "reddit_score": score,
-                    "last_updated": datetime.now().strftime("%Y-%m-%d %H:%M:%S")
-                })
+                
+                # Check if this is a megathread/guide post
+                is_megathread = ("megathread" in title.lower() or 
+                                "guide" in title.lower() or 
+                                "guide" in flair.lower())
+                
+                if is_megathread:
+                    # Parse structured megathread content
+                    megathread_deals = parse_megathread_content(title, body)
+                    deals.extend(megathread_deals)
+                else:
+                    # Regular post processing (existing logic)
+                    if "£" not in title and "£" not in body:
+                        continue
+                    amounts = re.findall(
+                        r'£(\d+(?:\.\d{2})?)', title+" "+body)
+                    reward = f"£{amounts[0]}" if amounts else "Bonus"
+                    code_match = re.search(
+                        r'(?:code|referral)[:\s]+([A-Z0-9]{4,15})',
+                        title + " " + body, re.IGNORECASE)
+                    code = code_match.group(1) if code_match else ""
+                    permalink = "https://reddit.com" + d.get("permalink", "")
+                    link = d.get("url", permalink)
+                    deals.append({
+                        "store": title[:40],
+                        "item": title[:80],
+                        "deal_price": reward,
+                        "link": link if link.startswith("http") else permalink,
+                        "original_price": "£0",
+                        "saving_percent": 100,
+                        "type": "scraped_reddit",
+                        "code": code,
+                        "steps": ["Read the Reddit post for full details",
+                                  "Follow the referral link",
+                                  "Complete the required steps"],
+                        "timeFrame": "Varies",
+                        "source": "r/beermoneyuk",
+                        "reddit_score": score,
+                        "last_updated": datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+                    })
         except Exception as e:
             print(f"Reddit endpoint {url} failed: {e}")
             continue
+    
     print(f"Reddit: found {len(deals)} deals")
+    return deals
+
+
+def parse_megathread_content(title, body):
+    """Parse structured megathread posts to extract individual offers"""
+    import re
+    deals = []
+    
+    # Split body into lines
+    lines = body.split('\n')
+    
+    # Patterns for identifying offer lines
+    list_item_pattern = re.compile(r'^[•\-\*]\s+(.*)', re.IGNORECASE)
+    numbered_item_pattern = re.compile(r'^\d+[\.\)]\s+(.*)', re.IGNORECASE)
+    bold_section_pattern = re.compile(r'\*\*(.*?)\*\*', re.IGNORECASE)
+    
+    current_category = "other"
+    category_keywords = {
+        "bank_switch": ["bank", "switch", "lloyds", "chase", "monzo", "revolut", 
+                       "first direct", "halifax", "natwest", "nationwide", 
+                       "barclays", "santander", "tsb", "co-operative"],
+        "investment": ["invest", "share", "freetrade", "robinhood", "plum", 
+                      "webull", "wealthify", "moneybox", "pension", "stocks"],
+        "cashback": ["cashback", "topcashback", "quidco", "rakuten", "airtime", 
+                    "cheddar", "jam doughnut", "everup", "gift card"],
+        "utilities": ["energy", "octopus", "lebara", "sim", "mobile", "utility"],
+        "travel": ["train", "travel", "trainpal", "flight", "hotel"],
+        "business": ["business", "tide", "worldfirst", "account"],
+        "freebies": ["free", "costa", "waitrose", "coffee", "cake"]
+    }
+    
+    for line in lines:
+        line = line.strip()
+        if not line:
+            continue
+        
+        # Skip paragraphs and guides (lines that are too long or contain explanations)
+        if len(line) > 200 or ":" in line and "http" not in line:
+            continue
+        
+        # Check if line is a list item
+        list_match = list_item_pattern.match(line)
+        numbered_match = numbered_item_pattern.match(line)
+        
+        if not list_match and not numbered_match:
+            continue
+        
+        # Extract the offer text
+        offer_text = list_match.group(1) if list_match else numbered_match.group(1)
+        
+        # Identify offer name (look for bold text or first few words before £)
+        offer_name = ""
+        bold_match = bold_section_pattern.search(offer_text)
+        if bold_match:
+            offer_name = bold_match.group(1).strip()
+        else:
+            # Take first 3-5 words as offer name
+            words = offer_text.split()
+            if len(words) > 5:
+                offer_name = " ".join(words[:5])
+            else:
+                offer_name = offer_text
+        
+        # Extract first valid £ value (not highest)
+        amounts = re.findall(r'£(\d+(?:\.\d{2})?)', offer_text)
+        if not amounts:
+            continue
+        
+        # Filter unrealistic totals (ignore combined earnings like £1450+)
+        valid_amounts = []
+        for amount in amounts:
+            try:
+                amount_float = float(amount)
+                # Skip unrealistic totals (combined earnings)
+                if amount_float > 1000:
+                    continue
+                # Skip very small amounts (likely not main reward)
+                if amount_float < 5:
+                    continue
+                valid_amounts.append(amount_float)
+            except ValueError:
+                continue
+        
+        if not valid_amounts:
+            continue
+        
+        # Take the first valid amount (not the highest)
+        reward_amount = valid_amounts[0]
+        reward = f"£{reward_amount:.2f}"
+        
+        # Determine category
+        category = "other"
+        offer_lower = offer_text.lower()
+        for cat, keywords in category_keywords.items():
+            if any(keyword in offer_lower for keyword in keywords):
+                category = cat
+                break
+        
+        # Extract link if present
+        link_match = re.search(r'https?://[^\s\)]+', offer_text)
+        link = link_match.group(0) if link_match else ""
+        
+        # Create deal object
+        deal = {
+            "store": offer_name[:40],
+            "item": offer_text[:80],
+            "deal_price": reward,
+            "link": link,
+            "original_price": "£0",
+            "saving_percent": 100,
+            "type": "scraped_reddit",
+            "code": "",
+            "steps": ["Read the Reddit post for full details",
+                      "Follow the referral link",
+                      "Complete the required steps"],
+            "timeFrame": "Varies",
+            "source": "r/beermoneyuk",
+            "reddit_score": 0,  # Will be set by parent function
+            "last_updated": datetime.now().strftime("%Y-%m-%d %H:%M:%S"),
+            "category": category
+        }
+        
+        deals.append(deal)
+    
     return deals
 
 def scrape_mse_rss():
