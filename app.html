@@ -4195,9 +4195,9 @@
           const t = (d.type || '').toLowerCase();
           if (supermarkets.some(x => s.includes(x)))
             return false;
-          return t === 'scraped_reddit' ||
-                 t === 'scraped_mse';
-                 t === 'scraped_megalist'; //
+         return t === 'scraped_reddit' ||
+       t === 'scraped_mse' ||
+       t === 'scraped_megalist';
         });
         if (!scraped.length) return;
         const existingIds = new Set(offers.map(o => o.id));
