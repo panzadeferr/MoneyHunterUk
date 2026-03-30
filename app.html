@@ -4216,6 +4216,12 @@
     console.error('Error loading offers:', err);
   }
 })();
+
+    console.log('Total scraped offers kept:', scraped.length);
+  } catch (err) {
+    console.error('Error loading offers:', err);
+  }
+})();
 "
         if (!scraped.length) return;
         const existingIds = new Set(offers.map(o => o.id));
