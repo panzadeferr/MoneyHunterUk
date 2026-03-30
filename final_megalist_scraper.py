@@ -14,22 +14,6 @@ from typing import List, Dict, Set
 # CORE PARSING FUNCTIONS (from test)
 # ============================================
 
-def strip_markdown(text: str) -> str:
-    """Remove markdown formatting from a text string.
-    Fixes store/item fields that contain raw **bold**, [links](url)
-    and | pipe-separator artifacts from Reddit table parsing.
-    """
-    # Remove bold/italic markers: **text** or *text*
-    text = re.sub(r'\*+([^*\n]+?)\*+', r'\1', text)
-    # Remove markdown links: [text](url) → text
-    text = re.sub(r'\[([^\]]+)\]\([^)]*\)', r'\1', text)
-    # Remove anything after a pipe (table column remnant): "Name | Get £25" → "Name"
-    text = re.sub(r'\s*\|.*$', '', text, flags=re.DOTALL)
-    # Collapse multiple spaces
-    text = re.sub(r'\s{2,}', ' ', text)
-    return text.strip()
-
-
 def extract_direct_url(text: str) -> str:
     """Extract destination URL, bypassing Reddit redirects."""
     markdown_links = re.findall(r'\[([^\]]+)\]\(([^)]+)\)', text)
@@ -63,26 +47,13 @@ def parse_markdown_table(text: str) -> List[Dict]:
             if len(cells) < 2:
                 continue
             
-            # FIX: Strip markdown bold markers, links and pipe remnants
-            # e.g. "**Tesco Bank**  | Get" → "Tesco Bank"
-            offer_name = strip_markdown(cells[0])
-
-            # Skip rows where offer_name looks like a prose sentence
-            # (more than 6 words with no capitalised proper noun pattern)
-            if len(offer_name.split()) > 6:
-                continue
-
+            offer_name = cells[0]
             reward = ""
             for cell in cells:
                 amounts = re.findall(r'£(\d+(?:\.\d{2})?)', cell)
                 if amounts:
-                    # Skip unrealistic totals (megathread intro combined figures)
-                    try:
-                        if float(amounts[0]) <= 500:
-                            reward = f"£{amounts[0]}"
-                            break
-                    except ValueError:
-                        pass
+                    reward = f"£{amounts[0]}"
+                    break
             
             url = ""
             for cell in cells:
@@ -120,9 +91,7 @@ def parse_list_items(text: str) -> List[Dict]:
     
     for item_text in all_items:
         name_match = re.match(r'^([^£\-]+?)(?=\s*[£\-]|$)', item_text)
-        raw_name = name_match.group(1).strip() if name_match else item_text[:50].strip()
-        # FIX: Strip **bold**, [links](url) and pipe separators
-        offer_name = strip_markdown(raw_name)
+        offer_name = name_match.group(1).strip() if name_match else item_text[:50].strip()
         
         reward = ""
         amounts = re.findall(r'£(\d+(?:\.\d{2})?)', item_text)
