@@ -1,0 +1,88 @@
+{
+  "last_updated": "2026-03-30 23:40:35",
+  "total_deals": 4,
+  "source": "Scrimpr Free Money Page",
+  "type": "scraped_megalist",
+  "deals": [
+    {
+      "id": "sc_chase-uk-20047503",
+      "store": "Chase UK",
+      "item": "Chase UK Your Reward: £50 Open a Chase account and deposit £1,000 to get £50 bonus. Claim Offer",
+      "deal_price": "£50",
+      "link": "https://chase.co.uk/raf",
+      "requirements": "Chase UK Your Reward: £50 Open a Chase account and deposit £1,000 to get £50 bonus. Claim Offer",
+      "step_by_step_guide": "1. Open the account using the referral link\n2. Complete the switch or signup requirements\n3. Wait for the cash reward to be paid",
+      "steps": [
+        "Open the account using the referral link",
+        "Complete the switch or signup requirements",
+        "Wait for the cash reward to be paid"
+      ],
+      "type": "scraped_megalist",
+      "source": "Scrimpr Free Money",
+      "category": "bank_switch",
+      "code": "",
+      "last_updated": "2026-03-30 23:40:35",
+      "desc": "Chase UK Your Reward: £50 Open a Chase account and deposit £1,000 to get £50 bonus. Claim Offer"
+    },
+    {
+      "id": "sc_lloyds-bank-8d56ca3f",
+      "store": "Lloyds Bank",
+      "item": "Lloyds Bank Your Reward: £250 Switch to Lloyds using CASS for £250 bonus. Claim Offer",
+      "deal_price": "£250",
+      "link": "https://apply.lloydsbank.co.uk",
+      "requirements": "Lloyds Bank Your Reward: £250 Switch to Lloyds using CASS for £250 bonus. Claim Offer",
+      "step_by_step_guide": "1. Open the account using the referral link\n2. Complete the switch or signup requirements\n3. Wait for the cash reward to be paid",
+      "steps": [
+        "Open the account using the referral link",
+        "Complete the switch or signup requirements",
+        "Wait for the cash reward to be paid"
+      ],
+      "type": "scraped_megalist",
+      "source": "Scrimpr Free Money",
+      "category": "bank_switch",
+      "code": "",
+      "last_updated": "2026-03-30 23:40:35",
+      "desc": "Lloyds Bank Your Reward: £250 Switch to Lloyds using CASS for £250 bonus. Claim Offer"
+    },
+    {
+      "id": "sc_natwest-7f3163af",
+      "store": "NatWest",
+      "item": "NatWest Get £200 for switching to NatWest. Claim Offer",
+      "deal_price": "£200",
+      "link": "https://www.natwest.com",
+      "requirements": "NatWest Get £200 for switching to NatWest. Claim Offer",
+      "step_by_step_guide": "1. Open the account using the referral link\n2. Complete the switch or signup requirements\n3. Wait for the cash reward to be paid",
+      "steps": [
+        "Open the account using the referral link",
+        "Complete the switch or signup requirements",
+        "Wait for the cash reward to be paid"
+      ],
+      "type": "scraped_megalist",
+      "source": "Scrimpr Free Money",
+      "category": "bank_switch",
+      "code": "",
+      "last_updated": "2026-03-30 23:40:35",
+      "desc": "NatWest Get £200 for switching to NatWest. Claim Offer"
+    },
+    {
+      "id": "sc_first-direct-250584fa",
+      "store": "First Direct",
+      "item": "First Direct Your Reward: £175 Switch to First Direct for £175 bonus. Claim Offer",
+      "deal_price": "£175",
+      "link": "https://www.firstdirect.com",
+      "requirements": "First Direct Your Reward: £175 Switch to First Direct for £175 bonus. Claim Offer",
+      "step_by_step_guide": "1. Open the account using the referral link\n2. Complete the switch or signup requirements\n3. Wait for the cash reward to be paid",
+      "steps": [
+        "Open the account using the referral link",
+        "Complete the switch or signup requirements",
+        "Wait for the cash reward to be paid"
+      ],
+      "type": "scraped_megalist",
+      "source": "Scrimpr Free Money",
+      "category": "bank_switch",
+      "code": "",
+      "last_updated": "2026-03-30 23:40:35",
+      "desc": "First Direct Your Reward: £175 Switch to First Direct for £175 bonus. Claim Offer"
+    }
+  ]
+}

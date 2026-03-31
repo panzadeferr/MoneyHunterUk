@@ -1,18 +1,17 @@
 {
-  "last_updated": "2026-03-31 07:23:58",
-  "total_deals": 43,
-  "manual_count": 32,
-  "supermarket_count": 8,
-  "reddit_count": 0,
-  "news_count": 0,
-  "hotukdeals_count": 3,
-  "unique_scraped_count": 3,
+  "last_updated": "2026-03-31 08:56:29",
+  "total_deals": 18,
+  "manual_count": 18,
+  "supermarket_count": 0,
+  "megalist_count": 0,
+  "cleaned_count": 0,
   "sources": [
     "Manual",
     "Supermarket",
     "Reddit r/beermoneyuk",
     "Google News",
-    "HotUKDeals"
+    "HotUKDeals",
+    "MegaList"
   ],
   "stacking_rates": {
     "Tesco": 5.3,
@@ -26,278 +25,165 @@
   },
   "deals": [
     {
-      "store": "Asda",
-      "item": "Fresh Fruit & Vegetables",
-      "deal_price": "£2.50",
-      "link": "https://groceries.asda.com/deals/fresh-food",
-      "original_price": "£3.50",
-      "saving_percent": 29,
-      "base_price": 2.5,
-      "category": "supermarket",
-      "type": "supermarket",
-      "stacked_price": 2.39,
-      "best_payment_method": "Airtime Rewards (4%) + Asda Rewards",
-      "stacking_rate": 4.5,
-      "last_updated": "2026-03-31 07:23:58"
-    },
-    {
-      "store": "Sainsbury's",
-      "item": "Meal Deal - Lunch",
-      "deal_price": "£3.50",
-      "link": "https://www.sainsburys.co.uk/meal-deal",
-      "original_price": "£5.00",
-      "saving_percent": 30,
-      "base_price": 3.5,
-      "category": "supermarket",
-      "type": "supermarket",
-      "stacked_price": 3.35,
-      "best_payment_method": "JamDoughnut (4.1%) + Nectar",
-      "stacking_rate": 4.4,
-      "last_updated": "2026-03-31 07:23:58"
-    },
-    {
-      "store": "Tesco",
-      "item": "Fresh Meat & Fish",
-      "deal_price": "£7.00",
-      "link": "https://www.tesco.com/groceries/en-GB/shop/fresh-food/all",
-      "original_price": "£10.00",
-      "saving_percent": 30,
-      "base_price": 7,
-      "category": "supermarket",
-      "type": "supermarket",
-      "stacked_price": 6.63,
-      "best_payment_method": "EverUp (4.9%) + Clubcard",
-      "stacking_rate": 5.3,
-      "last_updated": "2026-03-31 07:23:58"
-    },
-    {
-      "store": "Iceland",
-      "item": "Family Favourites Bundle",
-      "deal_price": "£8.00",
-      "link": "https://www.iceland.co.uk/family-meals",
-      "original_price": "£12.00",
-      "saving_percent": 33,
-      "base_price": 8,
-      "category": "supermarket",
-      "type": "supermarket",
-      "stacked_price": 7.6,
-      "best_payment_method": "TopCashback (3.5%) + Bonus Card",
-      "stacking_rate": 5.0,
-      "last_updated": "2026-03-31 07:23:58"
-    },
-    {
-      "store": "Iceland",
-      "item": "3 for £10 - Selected Frozen",
-      "deal_price": "£10.00",
-      "link": "https://www.iceland.co.uk/offers",
-      "original_price": "£15.00",
-      "saving_percent": 33,
-      "base_price": 10,
-      "category": "supermarket",
-      "type": "supermarket",
-      "stacked_price": 9.5,
-      "best_payment_method": "TopCashback (3.5%) + Bonus Card",
-      "stacking_rate": 5.0,
-      "last_updated": "2026-03-31 07:23:58"
-    },
-    {
-      "store": "Sainsbury's",
-      "item": "Nectar Prices - Members Only",
-      "deal_price": "Exclusive prices",
-      "link": "https://www.sainsburys.co.uk/nectar-prices",
-      "original_price": "Varies",
-      "saving_percent": 25,
-      "base_price": 12,
-      "category": "supermarket",
-      "type": "supermarket",
-      "stacked_price": 11.47,
-      "best_payment_method": "JamDoughnut (4.1%) + Nectar",
-      "stacking_rate": 4.4,
-      "last_updated": "2026-03-31 07:23:58"
-    },
-    {
-      "store": "Asda",
-      "item": "Payday Deals - Selected Items",
-      "deal_price": "Up to 40% off",
-      "link": "https://www.asda.com/deals",
-      "original_price": "Varies",
-      "saving_percent": 40,
-      "base_price": 15,
-      "category": "supermarket",
-      "type": "supermarket",
-      "stacked_price": 14.32,
-      "best_payment_method": "Airtime Rewards (4%) + Asda Rewards",
-      "stacking_rate": 4.5,
-      "last_updated": "2026-03-31 07:23:58"
-    },
-    {
-      "store": "Tesco",
-      "item": "Clubcard Prices - Selected Items",
-      "deal_price": "Up to 50% off",
-      "link": "https://www.tesco.com/clubcard/prices/",
-      "original_price": "Varies",
-      "saving_percent": 50,
-      "base_price": 20,
-      "category": "supermarket",
-      "type": "supermarket",
-      "stacked_price": 18.94,
-      "best_payment_method": "EverUp (4.9%) + Clubcard",
-      "stacking_rate": 5.3,
-      "last_updated": "2026-03-31 07:23:58"
-    },
-    {
       "store": "Worldfirst",
-      "item": "Business - Up to £355 Reward",
-      "deal_price": "£355",
+      "item": "Business - Up to 355 Reward",
+      "deal_price": "355",
       "link": "https://s.worldfirst.com/2TuviC?default_source=WF-Ts00000OCun2&referral_id=WF-Ts00000OCun2&utm_campaign=COE_MGM_UK_2602&utm_date=app&lang=en_GB",
-      "original_price": "£0",
+      "original_price": "0",
       "saving_percent": 100,
       "type": "business",
       "code": "",
       "steps": [
         "Open WorldFirst",
         "Make qualifying transactions",
-        "Get up to £355"
+        "Get up to 355"
       ],
       "timeFrame": "Varies",
       "category": "business",
       "stacked_price": 0,
       "best_payment_method": "N/A",
       "stacking_rate": 0,
-      "last_updated": "2026-03-31 07:23:58"
+      "last_updated": "2026-03-30 23:11:31",
+      "id": "worldfirst-business-up-to-355-reward-355-5fb43582"
     },
     {
       "store": "Lloyds Bank",
       "item": "Open Account + Switch",
-      "deal_price": "£250",
+      "deal_price": "250",
       "link": "https://apply.lloydsbank.co.uk/sales-content/cwa/l/onboardpca/index-app.html?from=ob&webDirect=true&redesign=true&token=JpGVwskEUPxoFpO3Mg4RTAUZg6q6Emjz578QtNaABT8=&redesign=true#/refer-friend",
-      "original_price": "£0",
+      "original_price": "0",
       "saving_percent": 100,
       "type": "bank_switch",
       "code": "",
       "steps": [
         "Open account",
         "Switch using CASS",
-        "Get £250"
+        "Get 250"
       ],
       "timeFrame": "30 days",
       "category": "bank_switch",
       "stacked_price": 0,
       "best_payment_method": "N/A",
       "stacking_rate": 0,
-      "last_updated": "2026-03-31 07:23:58"
+      "last_updated": "2026-03-30 23:11:31",
+      "id": "lloyds-bank-open-account-switch-250-1da17f03"
     },
     {
       "store": "Natwest",
-      "item": "Switch Account → £200",
-      "deal_price": "£200",
+      "item": "Switch Account  200",
+      "deal_price": "200",
       "link": "https://www.natwest.com/current-accounts/switch/",
-      "original_price": "£0",
+      "original_price": "0",
       "saving_percent": 100,
       "type": "bank_switch",
       "code": "",
       "steps": [
         "Switch using CASS",
         "2 direct debits",
-        "Get £200"
+        "Get 200"
       ],
       "timeFrame": "30 days",
       "category": "bank_switch",
       "stacked_price": 0,
       "best_payment_method": "N/A",
       "stacking_rate": 0,
-      "last_updated": "2026-03-31 07:23:58"
+      "last_updated": "2026-03-30 23:11:31",
+      "id": "natwest-switch-account-200-200-b5ed11b0"
     },
     {
       "store": "First Direct",
-      "item": "Switch Account → £175",
-      "deal_price": "£175",
+      "item": "Switch Account  175",
+      "deal_price": "175",
       "link": "https://www.firstdirect.com/banking/switch/",
-      "original_price": "£0",
+      "original_price": "0",
       "saving_percent": 100,
       "type": "bank_switch",
       "code": "",
       "steps": [
         "Switch using CASS",
-        "Pay in £1,000",
-        "Get £175"
+        "Pay in 1,000",
+        "Get 175"
       ],
       "timeFrame": "30 days",
       "category": "bank_switch",
       "stacked_price": 0,
       "best_payment_method": "N/A",
       "stacking_rate": 0,
-      "last_updated": "2026-03-31 07:23:58"
+      "last_updated": "2026-03-30 23:11:31",
+      "id": "first-direct-switch-account-175-175-19e7938a"
     },
     {
       "store": "Halifax",
-      "item": "Switch Account → £150",
-      "deal_price": "£150",
+      "item": "Switch Account  150",
+      "deal_price": "150",
       "link": "https://www.halifax.co.uk/currentaccounts/",
-      "original_price": "£0",
+      "original_price": "0",
       "saving_percent": 100,
       "type": "bank_switch",
       "code": "",
       "steps": [
         "Switch using CASS",
-        "Pay in £1,500",
-        "Get £150"
+        "Pay in 1,500",
+        "Get 150"
       ],
       "timeFrame": "30 days",
       "category": "bank_switch",
       "stacked_price": 0,
       "best_payment_method": "N/A",
       "stacking_rate": 0,
-      "last_updated": "2026-03-31 07:23:58"
+      "last_updated": "2026-03-30 23:11:31",
+      "id": "halifax-switch-account-150-150-1109a826"
     },
     {
       "store": "Amex",
-      "item": "Spend £3,000 → £150+",
-      "deal_price": "£150",
+      "item": "Spend 3,000  150+",
+      "deal_price": "150",
       "link": "https://americanexpress.com/en-gb/referral/platinum-charge?ref=aLBERBf3Ob&XL=MNMNS",
-      "original_price": "£0",
+      "original_price": "0",
       "saving_percent": 100,
       "type": "credit",
       "code": "",
       "steps": [
         "Apply for AMEX",
-        "Spend £3,000 in 3 months",
-        "Get £150"
+        "Spend 3,000 in 3 months",
+        "Get 150"
       ],
       "timeFrame": "3 months",
       "category": "other",
       "stacked_price": 0,
       "best_payment_method": "N/A",
       "stacking_rate": 0,
-      "last_updated": "2026-03-31 07:23:58"
+      "last_updated": "2026-03-30 23:11:31",
+      "id": "amex-spend-3-000-150-150-0d768522"
     },
     {
       "store": "Plum",
-      "item": "Refer 3 Friends → £75",
-      "deal_price": "£75",
+      "item": "Refer 3 Friends  75",
+      "deal_price": "75",
       "link": "https://friends.withplum.com/r/RxK7c2fUNa",
-      "original_price": "£0",
+      "original_price": "0",
       "saving_percent": 100,
       "type": "invest",
       "code": "",
       "steps": [
         "Join Plum",
         "Refer 3 friends",
-        "Get £75"
+        "Get 75"
       ],
       "timeFrame": "Expires April 7th",
       "category": "investment",
       "stacked_price": 0,
       "best_payment_method": "N/A",
       "stacking_rate": 0,
-      "last_updated": "2026-03-31 07:23:58"
+      "last_updated": "2026-03-30 23:11:31",
+      "id": "plum-refer-3-friends-75-75-3ea9ba96"
     },
     {
       "store": "Tide",
-      "item": "Business Account - £75 Free",
-      "deal_price": "£75",
+      "item": "Business Account - 75 Free",
+      "deal_price": "75",
       "link": "https://www.tide.co/",
-      "original_price": "£0",
+      "original_price": "0",
       "saving_percent": 100,
       "type": "business",
       "code": "3834VA",
@@ -311,230 +197,195 @@
       "stacked_price": 0,
       "best_payment_method": "N/A",
       "stacking_rate": 0,
-      "last_updated": "2026-03-31 07:23:58"
-    },
-    {
-      "store": "Nintendo Switch 2 Mario Kart + Donkey Ko",
-      "item": "Nintendo Switch 2 Mario Kart + Donkey kong, Nintendo joy-cons £64.99, £60 PSN et",
-      "deal_price": "£64.99",
-      "link": "https://www.hotukdeals.com/deals/30-off-60-spend-credit-to-account-eg-nintendo-switch-2-mario-kart-donkey-kong-399-joy-cons-3299-60-psn-credit-for-30-etc-at-very-4854076",
-      "original_price": "£0",
-      "saving_percent": 100,
-      "type": "scraped_hotukdeals",
-      "code": "",
-      "steps": [
-        "Check the HotUKDeals post",
-        "Follow the deal link",
-        "Complete required steps"
-      ],
-      "timeFrame": "Check post",
-      "source": "HotUKDeals",
-      "last_updated": "2026-03-31 07:23:58",
-      "category": "other",
-      "stacked_price": 0,
-      "best_payment_method": "N/A",
-      "stacking_rate": 0
+      "last_updated": "2026-03-30 23:11:31",
+      "id": "tide-business-account-75-free-75-db118fce"
     },
     {
       "store": "Chase Uk",
-      "item": "Deposit £1,000 → £50",
-      "deal_price": "£50",
+      "item": "Deposit 1,000  50",
+      "deal_price": "50",
       "link": "https://chase.co.uk/raf",
-      "original_price": "£0",
+      "original_price": "0",
       "saving_percent": 100,
       "type": "bank_switch",
       "code": "J2SK9W",
       "steps": [
         "Copy code J2SK9W",
         "Open account",
-        "Deposit £1,000 in 30 days"
+        "Deposit 1,000 in 30 days"
       ],
       "timeFrame": "30 days",
       "category": "bank_switch",
       "stacked_price": 0,
       "best_payment_method": "N/A",
       "stacking_rate": 0,
-      "last_updated": "2026-03-31 07:23:58"
+      "last_updated": "2026-03-30 23:11:31",
+      "id": "chase-uk-deposit-1-000-50-50-4b0a5458"
     },
     {
       "store": "Webull",
-      "item": "Deposit £500 → £50 Credit",
-      "deal_price": "£50",
+      "item": "Deposit 500  50 Credit",
+      "deal_price": "50",
       "link": "https://www.webull-uk.com/s/zEUukbJam8GjmUx6yq",
-      "original_price": "£500",
+      "original_price": "500",
       "saving_percent": 10,
       "type": "invest",
       "code": "",
       "steps": [
-        "Deposit £500",
+        "Deposit 500",
         "Keep 60 days",
-        "Get £50"
+        "Get 50"
       ],
       "timeFrame": "60 days",
       "category": "investment",
       "stacked_price": 0,
       "best_payment_method": "N/A",
       "stacking_rate": 0,
-      "last_updated": "2026-03-31 07:23:58"
+      "last_updated": "2026-03-30 23:11:31",
+      "id": "webull-deposit-500-50-credit-50-be81aa32"
     },
     {
       "store": "Wealthify",
-      "item": "Invest £1,000 → £50 Bonus",
-      "deal_price": "£50",
+      "item": "Invest 1,000  50 Bonus",
+      "deal_price": "50",
       "link": "https://invest.wealthify.com/refer/81122944",
-      "original_price": "£1,000",
+      "original_price": "1,000",
       "saving_percent": 5,
       "type": "invest",
       "code": "",
       "steps": [
-        "Invest £1,000",
+        "Invest 1,000",
         "Hold 6 months",
-        "Get £50"
+        "Get 50"
       ],
       "timeFrame": "6 months",
       "category": "investment",
       "stacked_price": 0,
       "best_payment_method": "N/A",
       "stacking_rate": 0,
-      "last_updated": "2026-03-31 07:23:58"
+      "last_updated": "2026-03-30 23:11:31",
+      "id": "wealthify-invest-1-000-50-bonus-50-5585e90e"
     },
     {
       "store": "Octopus Energy",
-      "item": "Switch Energy - £50 Credit",
-      "deal_price": "£50",
+      "item": "Switch Energy - 50 Credit",
+      "deal_price": "50",
       "link": "https://share.octopus.energy/ocean-quoll-258",
-      "original_price": "£0",
+      "original_price": "0",
       "saving_percent": 100,
       "type": "utilities",
       "code": "",
       "steps": [
         "Switch to Octopus",
         "Use referral link",
-        "Both get £50"
+        "Both get 50"
       ],
       "timeFrame": "After switch",
       "category": "utilities",
       "stacked_price": 0,
       "best_payment_method": "N/A",
       "stacking_rate": 0,
-      "last_updated": "2026-03-31 07:23:58"
+      "last_updated": "2026-03-30 23:11:31",
+      "id": "octopus-energy-switch-energy-50-credit-50-0a772c91"
     },
     {
       "store": "Pensionbee",
-      "item": "Sign Up → £50 in Pension",
-      "deal_price": "£50",
+      "item": "Sign Up  50 in Pension",
+      "deal_price": "50",
       "link": "https://www.pensionbee.com/",
-      "original_price": "£0",
+      "original_price": "0",
       "saving_percent": 100,
       "type": "pension",
       "code": "",
       "steps": [
         "Sign up for PensionBee",
-        "Get £50 in your pension"
+        "Get 50 in your pension"
       ],
       "timeFrame": "~1 month",
       "category": "investment",
       "stacked_price": 0,
       "best_payment_method": "N/A",
       "stacking_rate": 0,
-      "last_updated": "2026-03-31 07:23:58"
+      "last_updated": "2026-03-30 23:11:31",
+      "id": "pensionbee-sign-up-50-in-pension-50-d6a28878"
     },
     {
       "store": "Rakuten",
-      "item": "Cashback Site - £25 Bonus",
-      "deal_price": "£25",
+      "item": "Cashback Site - 25 Bonus",
+      "deal_price": "25",
       "link": "https://www.rakuten.co.uk/r/ALBERT24541?eeid=28187",
-      "original_price": "£50",
+      "original_price": "50",
       "saving_percent": 50,
       "type": "cashback",
       "code": "",
       "steps": [
         "Join Rakuten",
-        "Spend £50 + VAT",
-        "Get £25"
+        "Spend 50 + VAT",
+        "Get 25"
       ],
       "timeFrame": "After first purchase",
       "category": "cashback",
       "stacked_price": 0,
       "best_payment_method": "N/A",
       "stacking_rate": 0,
-      "last_updated": "2026-03-31 07:23:58"
-    },
-    {
-      "store": "£25 Referral Bonus + £20 For Your Friend",
-      "item": "£25 Referral Bonus + £20 For Your Friend (When They Reach £5 Cashback)",
-      "deal_price": "£25",
-      "link": "https://www.hotukdeals.com/deals/ps25-for-you-ps20-for-your-friend-4835297",
-      "original_price": "£0",
-      "saving_percent": 100,
-      "type": "scraped_hotukdeals",
-      "code": "",
-      "steps": [
-        "Check the HotUKDeals post",
-        "Follow the deal link",
-        "Complete required steps"
-      ],
-      "timeFrame": "Check post",
-      "source": "HotUKDeals",
-      "last_updated": "2026-03-31 07:23:58",
-      "category": "cashback",
-      "stacked_price": 0,
-      "best_payment_method": "N/A",
-      "stacking_rate": 0
+      "last_updated": "2026-03-30 23:11:31",
+      "id": "rakuten-cashback-site-25-bonus-25-8cbc5511"
     },
     {
       "store": "Revolut",
-      "item": "Spend £1 → Get £20",
-      "deal_price": "£20",
+      "item": "Spend 1  Get 20",
+      "deal_price": "20",
       "link": "https://revolut.com/referral/?referral-code=ludoviv2sq!MAR1-26-AR-H2&geo-redirect",
-      "original_price": "£1",
+      "original_price": "1",
       "saving_percent": 95,
       "type": "referral",
       "code": "",
       "steps": [
         "Sign up",
-        "Spend £1",
-        "Get £20"
+        "Spend 1",
+        "Get 20"
       ],
       "timeFrame": "~1 month",
       "category": "bank_switch",
       "stacked_price": 0,
       "best_payment_method": "N/A",
       "stacking_rate": 0,
-      "last_updated": "2026-03-31 07:23:58"
+      "last_updated": "2026-03-30 23:11:31",
+      "id": "revolut-spend-1-get-20-20-8401274e"
     },
     {
       "store": "Quidco",
-      "item": "Cashback Site - £20 Bonus",
-      "deal_price": "£20",
+      "item": "Cashback Site - 20 Bonus",
+      "deal_price": "20",
       "link": "https://quidco.onelink.me/nKzg/v2f3f7m0",
-      "original_price": "£0",
+      "original_price": "0",
       "saving_percent": 100,
       "type": "cashback",
       "code": "",
       "steps": [
         "Join Quidco",
-        "Earn £5 cashback",
-        "Get £20"
+        "Earn 5 cashback",
+        "Get 20"
       ],
-      "timeFrame": "After earning £5",
+      "timeFrame": "After earning 5",
       "category": "cashback",
       "stacked_price": 0,
       "best_payment_method": "N/A",
       "stacking_rate": 0,
-      "last_updated": "2026-03-31 07:23:58"
+      "last_updated": "2026-03-30 23:11:31",
+      "id": "quidco-cashback-site-20-bonus-20-d8fa4610"
     },
     {
       "store": "Freetrade",
-      "item": "Deposit £1 → Free Share (£10-£100)",
-      "deal_price": "£10-£100",
+      "item": "Deposit 1  Free Share (10-100)",
+      "deal_price": "10-100",
       "link": "https://magic.freetrade.io/join/alberto/6f308795",
-      "original_price": "£1",
+      "original_price": "1",
       "saving_percent": 90,
       "type": "invest",
       "code": "",
       "steps": [
-        "Deposit £1",
+        "Deposit 1",
         "Get free share"
       ],
       "timeFrame": "Few days",
@@ -542,19 +393,20 @@
       "stacked_price": 0,
       "best_payment_method": "N/A",
       "stacking_rate": 0,
-      "last_updated": "2026-03-31 07:23:58"
+      "last_updated": "2026-03-30 23:11:31",
+      "id": "freetrade-deposit-1-free-share-10-100-10-100-1d0b3720"
     },
     {
       "store": "Robinhood",
-      "item": "Deposit £1 → Free Share",
-      "deal_price": "£10-£140",
+      "item": "Deposit 1  Free Share",
+      "deal_price": "10-140",
       "link": "https://join.robinhood.com/albertb-d5dfe0",
-      "original_price": "£1",
+      "original_price": "1",
       "saving_percent": 90,
       "type": "invest",
       "code": "",
       "steps": [
-        "Deposit £1",
+        "Deposit 1",
         "Get free share"
       ],
       "timeFrame": "Few days",
@@ -562,314 +414,8 @@
       "stacked_price": 0,
       "best_payment_method": "N/A",
       "stacking_rate": 0,
-      "last_updated": "2026-03-31 07:23:58"
-    },
-    {
-      "store": "Topcashback",
-      "item": "Cashback Site - £10 Bonus",
-      "deal_price": "£10",
-      "link": "https://www.topcashback.co.uk/ref/Panzadeferr/?source_id=4",
-      "original_price": "£0",
-      "saving_percent": 100,
-      "type": "cashback",
-      "code": "",
-      "steps": [
-        "Join TopCashback",
-        "Shop through site"
-      ],
-      "timeFrame": "Lifetime",
-      "category": "cashback",
-      "stacked_price": 0,
-      "best_payment_method": "N/A",
-      "stacking_rate": 0,
-      "last_updated": "2026-03-31 07:23:58"
-    },
-    {
-      "store": "Zopa (biscuit)",
-      "item": "Open Account → £10 Free",
-      "deal_price": "£10",
-      "link": "https://www.zopa.com/mgma?referralCode=ed204ce1b3dd265fa533",
-      "original_price": "£0",
-      "saving_percent": 100,
-      "type": "referral",
-      "code": "",
-      "steps": [
-        "Open Biscuit account",
-        "Get £10 instantly"
-      ],
-      "timeFrame": "Instant",
-      "category": "freebies",
-      "stacked_price": 0,
-      "best_payment_method": "N/A",
-      "stacking_rate": 0,
-      "last_updated": "2026-03-31 07:23:58"
-    },
-    {
-      "store": "Monzo",
-      "item": "Spend £1 → Get £5-£50",
-      "deal_price": "£5-£50",
-      "link": "https://join.monzo.com/r/",
-      "original_price": "£1",
-      "saving_percent": 90,
-      "type": "referral",
-      "code": "",
-      "steps": [
-        "Sign up",
-        "Spend £1",
-        "Get bonus"
-      ],
-      "timeFrame": "Immediate",
-      "category": "bank_switch",
-      "stacked_price": 0,
-      "best_payment_method": "N/A",
-      "stacking_rate": 0,
-      "last_updated": "2026-03-31 07:23:58"
-    },
-    {
-      "store": "Zilch",
-      "item": "Sign Up → £5 Free",
-      "deal_price": "£5",
-      "link": "https://zilch.onelink.me/x8EV/zdehyy8s",
-      "original_price": "£0",
-      "saving_percent": 100,
-      "type": "referral",
-      "code": "",
-      "steps": [
-        "Sign up for Zilch",
-        "Get £5 credit instantly"
-      ],
-      "timeFrame": "Instant",
-      "category": "investment",
-      "stacked_price": 0,
-      "best_payment_method": "N/A",
-      "stacking_rate": 0,
-      "last_updated": "2026-03-31 07:23:58"
-    },
-    {
-      "store": "Nintendo Switch Lite Console - Turquoise",
-      "item": "Nintendo Switch Lite Console - Turquoise (+Earn £4 Back In Reward Points)",
-      "deal_price": "£4",
-      "link": "https://www.hotukdeals.com/deals/nintendo-switch-lite-console-turquoise-earn-ps4-back-in-reward-points-4849380",
-      "original_price": "£0",
-      "saving_percent": 100,
-      "type": "scraped_hotukdeals",
-      "code": "",
-      "steps": [
-        "Check the HotUKDeals post",
-        "Follow the deal link",
-        "Complete required steps"
-      ],
-      "timeFrame": "Check post",
-      "source": "HotUKDeals",
-      "last_updated": "2026-03-31 07:23:58",
-      "category": "other",
-      "stacked_price": 0,
-      "best_payment_method": "N/A",
-      "stacking_rate": 0
-    },
-    {
-      "store": "Cheddar",
-      "item": "Gift Card Cashback - £3 Bonus",
-      "deal_price": "£3",
-      "link": "https://get.cheddar.me/app/FVESBGB",
-      "original_price": "£0",
-      "saving_percent": 100,
-      "type": "cashback",
-      "code": "FVESBGB",
-      "steps": [
-        "Use code FVESBGB",
-        "Earn cashback at retailers"
-      ],
-      "timeFrame": "Ongoing",
-      "category": "cashback",
-      "stacked_price": 0,
-      "best_payment_method": "N/A",
-      "stacking_rate": 0,
-      "last_updated": "2026-03-31 07:23:58"
-    },
-    {
-      "store": "Jam Doughnut",
-      "item": "Gift Card Cashback - £3 Bonus",
-      "deal_price": "£3",
-      "link": "https://www.jamdoughnut.com/",
-      "original_price": "£0",
-      "saving_percent": 100,
-      "type": "cashback",
-      "code": "8TGF",
-      "steps": [
-        "Use code 8TGF",
-        "Buy gift cards with cashback"
-      ],
-      "timeFrame": "Immediate",
-      "category": "cashback",
-      "stacked_price": 0,
-      "best_payment_method": "N/A",
-      "stacking_rate": 0,
-      "last_updated": "2026-03-31 07:23:58"
-    },
-    {
-      "store": "Trainpal",
-      "item": "£3 Off Train Tickets",
-      "deal_price": "£3",
-      "link": "https://t.trainpal.com/wUEPLNq",
-      "original_price": "£0",
-      "saving_percent": 100,
-      "type": "travel",
-      "code": "03ba089c$00",
-      "steps": [
-        "Download TrainPal",
-        "Use code 03ba089c$00",
-        "Save on train tickets"
-      ],
-      "timeFrame": "Use within 7 days",
-      "category": "travel",
-      "stacked_price": 0,
-      "best_payment_method": "N/A",
-      "stacking_rate": 0,
-      "last_updated": "2026-03-31 07:23:58"
-    },
-    {
-      "store": "Airtime",
-      "item": "Gift Card Cashback - £2 Bonus",
-      "deal_price": "£2",
-      "link": "https://airtimerewards.app.link/6Waa7E1IF1b",
-      "original_price": "£5",
-      "saving_percent": 40,
-      "type": "cashback",
-      "code": "FRJKFXX3",
-      "steps": [
-        "Use code FRJKFXX3",
-        "Spend £5 in 7 days",
-        "Get £2"
-      ],
-      "timeFrame": "7 days",
-      "category": "cashback",
-      "stacked_price": 0,
-      "best_payment_method": "N/A",
-      "stacking_rate": 0,
-      "last_updated": "2026-03-31 07:23:58"
-    },
-    {
-      "store": "Everup",
-      "item": "Gift Card Cashback",
-      "deal_price": "£2",
-      "link": "https://everup.onelink.me/9lgD/3d22pmln",
-      "original_price": "£0",
-      "saving_percent": 100,
-      "type": "cashback",
-      "code": "",
-      "steps": [
-        "Join EverUp",
-        "Link cards",
-        "Earn cashback"
-      ],
-      "timeFrame": "Ongoing",
-      "category": "cashback",
-      "stacked_price": 0,
-      "best_payment_method": "N/A",
-      "stacking_rate": 0,
-      "last_updated": "2026-03-31 07:23:58"
-    },
-    {
-      "store": "Moneybox",
-      "item": "Save & Invest - Great for DDs",
-      "deal_price": "Bonus",
-      "link": "https://go.onelink.me/5M0L?pid=share&c=EN8YW8",
-      "original_price": "£0",
-      "saving_percent": 0,
-      "type": "invest",
-      "code": "",
-      "steps": [
-        "Download Moneybox",
-        "Perfect for direct debits"
-      ],
-      "timeFrame": "Ongoing",
-      "category": "investment",
-      "stacked_price": 0,
-      "best_payment_method": "N/A",
-      "stacking_rate": 0,
-      "last_updated": "2026-03-31 07:23:58"
-    },
-    {
-      "store": "Lebara",
-      "item": "Mobile SIM - Referral Bonus",
-      "deal_price": "Discount",
-      "link": "https://aklam.io/hgY3HOvR",
-      "original_price": "£0",
-      "saving_percent": 20,
-      "type": "utilities",
-      "code": "",
-      "steps": [
-        "Sign up for Lebara",
-        "Get great SIM deals"
-      ],
-      "timeFrame": "Immediate",
-      "category": "utilities",
-      "stacked_price": 0,
-      "best_payment_method": "N/A",
-      "stacking_rate": 0,
-      "last_updated": "2026-03-31 07:23:58"
-    },
-    {
-      "store": "Costa",
-      "item": "Free Cake + Coffee",
-      "deal_price": "Free",
-      "link": "https://www.costa.co.uk/",
-      "original_price": "£5",
-      "saving_percent": 100,
-      "type": "freebies",
-      "code": "",
-      "steps": [
-        "Sign up for Costa Club",
-        "Get free cake & half drink"
-      ],
-      "timeFrame": "Immediate",
-      "category": "freebies",
-      "stacked_price": 0,
-      "best_payment_method": "N/A",
-      "stacking_rate": 0,
-      "last_updated": "2026-03-31 07:23:58"
-    },
-    {
-      "store": "Waitrose",
-      "item": "Free Coffee Daily",
-      "deal_price": "Free",
-      "link": "https://www.waitrose.com/",
-      "original_price": "£3",
-      "saving_percent": 100,
-      "type": "freebies",
-      "code": "",
-      "steps": [
-        "Get Waitrose card",
-        "Free tea/coffee daily"
-      ],
-      "timeFrame": "Daily",
-      "category": "supermarket",
-      "stacked_price": 0,
-      "best_payment_method": "JamDoughnut (3.5%) + MyWaitrose",
-      "stacking_rate": 3.5,
-      "last_updated": "2026-03-31 07:23:58"
-    },
-    {
-      "store": "Wise",
-      "item": "Free Transfer + Card",
-      "deal_price": "Free",
-      "link": "https://wise.com/invite/ahpc/albertob1508",
-      "original_price": "£5",
-      "saving_percent": 100,
-      "type": "transfer",
-      "code": "",
-      "steps": [
-        "Sign up for Wise",
-        "First transfer free",
-        "Get free card"
-      ],
-      "timeFrame": "Immediate",
-      "category": "freebies",
-      "stacked_price": 0,
-      "best_payment_method": "N/A",
-      "stacking_rate": 0,
-      "last_updated": "2026-03-31 07:23:58"
+      "last_updated": "2026-03-30 23:11:31",
+      "id": "robinhood-deposit-1-free-share-10-140-c3f42cae"
     }
   ]
 }
