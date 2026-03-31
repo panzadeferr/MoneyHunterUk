@@ -685,86 +685,130 @@ def scrape_megalist():
         "1rywry0/the_beermoney_megalist_march_2026_"
         "the_big_list_of/.json"
     )
+    
+    # Stores already in our manual offers - skip these
+    SKIP_STORES = {
+        'lloyds','chase','natwest','first direct',
+        'firstdirect','halifax','santander','barclays',
+        'monzo','revolut','starling','hsbc','zopa',
+        'freetrade','robinhood','webull','wealthify',
+        'wealthyhood','plum','moneybox','pensionbee',
+        'ig ','aj bell','fidelity','topcashback',
+        'quidco','rakuten','airtime','cheddar',
+        'jam doughnut','everup','tide','worldfirst',
+        'amex','american express','wise','octopus',
+        'trainpal','lebara','avios','curve','zilch',
+        'freecash','swagbucks','gemsloot',
+    }
+    
+    def is_manual_offer(name):
+        n = name.lower().strip()
+        return any(s in n or n in s 
+                   for s in SKIP_STORES)
+    
     try:
         r = requests.get(
             megalist_url, headers=headers, timeout=15)
         print(f"Megalist status: {r.status_code}")
         if r.status_code != 200:
             return []
+        
         data = r.json()
         post = data[0]["data"]["children"][0]["data"]
         body = post.get("selftext", "")
-        lines = body.split("\n")
-        for line in lines:
-            line = line.strip()
-            if not line or len(line) > 200:
+        
+        print(f"Megalist body length: {len(body)} chars")
+        
+        # Parse structured format: **[Name](url)**
+        # followed by bullet: * description with £amount
+        pattern = re.compile(
+            r'\*\*\[([^\]]+)\]\(([^\)]+)\)\*\*'
+            r'[^\n]*\n\s+\*\s+([^\n]+)',
+            re.MULTILINE
+        )
+        
+        matches = pattern.findall(body)
+        print(f"Megalist raw matches: {len(matches)}")
+        
+        seen = set()
+        
+        for name, url, desc in matches:
+            name = name.strip()
+            url = url.strip()
+            desc = desc.strip()
+            
+            # Skip if in our manual offers
+            if is_manual_offer(name):
                 continue
-            if "£" not in line:
+            
+            # Skip if no £ in description
+            if '£' not in desc:
                 continue
+            
+            # Extract reward amount
             amounts = re.findall(
-                r'£(\d+(?:\.\d{2})?)', line)
+                r'£(\d+(?:\.\d{2})?)', desc)
             if not amounts:
                 continue
-            amount = float(amounts[0])
-            if amount < 5 or amount > 1000:
+            
+            # Get the reward (not deposit)
+            # Use max amount up to £500
+            valid = [float(a) for a in amounts 
+                    if float(a) <= 500]
+            if not valid:
                 continue
-            # Skip explanatory sentences
-            words = line.split()
-            if len(words) > 15:
+            reward = max(valid)
+            if reward < 5:
                 continue
-            # Clean store name from markdown
-            clean = re.sub(
-                r'\[|\]|\*\*|\*|#{1,3}|'
-                r'[-•>]|\(http\S+\)', 
-                '', line
-            ).strip()
-            store_words = clean.split()
-            store = " ".join(store_words[:3])
-            store = re.sub(
-                r'£\d+|[\(\)]', '', store).strip()
-            if len(store) < 2:
+            
+            # Skip if reddit search link 
+            # (no direct offer URL)
+            # Use reddit search URL as fallback
+            # but prefer direct links
+            offer_url = url
+            
+            # Deduplicate by store name
+            key = name.lower()[:12]
+            if key in seen:
                 continue
-            # Extract URL
-            url_match = re.search(
-                r'https?://[^\s\)\]]+', line)
-            offer_url = (
-                url_match.group(0) if url_match
-                else "https://www.reddit.com/r/"
-                     "beermoneyuk/comments/1rywry0/"
-            )
-            # Clean URL
-            offer_url = offer_url.rstrip('.,)')
-            # Category detection
-            line_lower = line.lower()
-            if any(w in line_lower for w in [
-                'bank','switch','cass',
-                'current account','halifax',
-                'lloyds','natwest','barclays',
-                'santander','hsbc','first direct'
+            seen.add(key)
+            
+            # Determine category
+            desc_lower = (name + ' ' + desc).lower()
+            if any(w in desc_lower for w in [
+                'bank','switch','current account',
+                'account','cass'
             ]):
                 category = 'bank'
-            elif any(w in line_lower for w in [
+            elif any(w in desc_lower for w in [
                 'invest','share','stock','isa',
-                'pension','freetrade','robinhood',
-                'trading','webull','wealthify'
+                'pension','fund','portfolio'
             ]):
                 category = 'invest'
-            elif any(w in line_lower for w in [
-                'cashback','topcashback','quidco',
-                'rakuten'
+            elif any(w in desc_lower for w in [
+                'cashback','gift card','voucher'
             ]):
                 category = 'cashback'
-            elif any(w in line_lower for w in [
-                'gift','card','supermarket',
-                'jam','airtime','cheddar'
+            elif any(w in desc_lower for w in [
+                'broadband','mobile','energy',
+                'fibre','tv','sim'
             ]):
-                category = 'gift'
+                category = 'utilities'
+            elif any(w in desc_lower for w in [
+                'business','ltd','company'
+            ]):
+                category = 'business'
+            elif any(w in desc_lower for w in [
+                'transfer','send money','abroad'
+            ]):
+                category = 'travel'
             else:
                 category = 'freebie'
+            
             deals.append({
-                "store": store[:40],
-                "item": line[:80],
-                "deal_price": f"£{amounts[0]}",
+                "store": name[:40],
+                "item": desc[:80],
+                "deal_price": f"£{reward:.0f}",
                 "link": offer_url,
                 "original_price": "£0",
                 "saving_percent": 100,
@@ -781,16 +825,10 @@ def scrape_megalist():
                 "last_updated": datetime.now()
                     .strftime("%Y-%m-%d %H:%M:%S")
             })
-        # Deduplicate
-        seen = set()
-        unique = []
-        for d in deals:
-            key = d["store"].lower()[:8]
-            if key not in seen:
-                seen.add(key)
-                unique.append(d)
-        print(f"Megalist: found {len(unique)} deals")
-        return unique
+        
+        print(f"Megalist: found {len(deals)} deals")
+        return deals
+        
     except Exception as e:
         print(f"Megalist failed: {e}")
         return []
