@@ -47,7 +47,7 @@
     }
 
 
-    /* ÔöÇÔöÇ LIGHT MODE ÔöÇÔöÇ */
+    /* ── LIGHT MODE ── */
     body.light{
       --bg:#f0f4f8;
       --bg2:#ffffff;
@@ -1452,7 +1452,7 @@
       .profile-grid{grid-template-columns:1fr 1fr}
     }
 
-    /* ÔöÇÔöÇ SLIDE-UP OFFER PANEL (our addition) ÔöÇÔöÇ */
+    /* ── SLIDE-UP OFFER PANEL (our addition) ── */
     .offer-panel{
       position:fixed;inset:0;z-index:80;display:none;flex-direction:column;
       background:var(--bg);padding-bottom:env(safe-area-inset-bottom);
@@ -1546,7 +1546,7 @@
     .step-progress-bar{height:4px;background:var(--bg3);border-radius:999px;overflow:hidden;margin-bottom:8px}
     .step-progress-fill{height:100%;background:linear-gradient(90deg,var(--green),var(--yellow));transition:width .3s}
 
-    /* ÔöÇÔöÇ EMAIL CAPTURE ÔöÇÔöÇ */
+    /* ── EMAIL CAPTURE ── */
     .email-capture{
       background:linear-gradient(135deg,rgba(31,232,135,.08),rgba(99,167,255,.06));
       border:1px solid rgba(31,232,135,.2);
@@ -1609,7 +1609,7 @@
       font-size:16px;cursor:pointer;flex-shrink:0;padding:2px;
     }
 
-    /* ÔöÇÔöÇ AUTH MODAL ÔöÇÔöÇ */
+    /* ── AUTH MODAL ── */
     .auth-modal{position:fixed;inset:0;z-index:200;display:none;align-items:flex-start;justify-content:center;padding:16px;background:rgba(0,0,0,.75);backdrop-filter:blur(8px);overflow-y:auto;-webkit-overflow-scrolling:touch}
     .auth-modal.show{display:flex}
     .auth-box{background:var(--bg2);border:1px solid var(--line-2);border-radius:18px;padding:24px;width:min(100%,380px);animation:panelUp .25s ease;margin:auto 0;max-height:calc(100vh - 32px);overflow-y:auto}
@@ -1669,20 +1669,20 @@
           <div class="user-badge-dot"></div>
           <span id="userBadgeName">Account</span>
         </div>
-        <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme" onclick="toggleTheme()">­ƒîÖ</button>
-          <button class="icon-btn" id="shareBtn" aria-label="Share app">­ƒöù</button>
-          <a class="icon-btn" href="https://t.me/MoneyHunterUk" target="_blank" rel="noreferrer" aria-label="Open Telegram">­ƒô▓</a>
+        <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme" onclick="toggleTheme()">🏅</button>
+          <button class="icon-btn" id="shareBtn" aria-label="Share app">🔗</button>
+          <a class="icon-btn" href="https://t.me/MoneyHunterUk" target="_blank" rel="noreferrer" aria-label="Open Telegram">📲</a>
         </div>
       </div>
 
       <div class="stats">
         <div class="stat">
           <div class="stat-label">Earned</div>
-          <div class="stat-value green" id="statSaved">┬ú0</div>
+          <div class="stat-value green" id="statSaved">£0</div>
         </div>
         <div class="stat">
           <div class="stat-label">Pending</div>
-          <div class="stat-value yellow" id="statPending">┬ú0</div>
+          <div class="stat-value yellow" id="statPending">£0</div>
         </div>
         <div class="stat">
           <div class="stat-label">XP</div>
@@ -1690,10 +1690,10 @@
         </div>
         <div class="stat">
           <div class="stat-label">Streak</div>
-          <div class="stat-value yellow" id="statStreak">0­ƒöÑ</div>
+          <div class="stat-value yellow" id="statStreak">0🔥</div>
         </div>
       </div>
-    <div class="sync-indicator" id="syncIndicator">Ôÿü´©Å Syncing...</div>
+    <div class="sync-indicator" id="syncIndicator">↻ Syncing...</div>
     </div>
   </header>
 
@@ -1704,13 +1704,13 @@
         <p>Start with the plan, open the best offers, then track payouts as they move from pending to earned.</p>
       </section>
       <div class="install-banner" id="installBanner">
-        <div class="install-icon">­ƒô▓</div>
+        <div class="install-icon">📲</div>
         <div class="install-text">
           <strong>Add to Home Screen</strong>
           <span>Open instantly, works offline</span>
         </div>
         <button class="install-btn" id="installBtn">Install</button>
-        <button class="install-dismiss" onclick="dismissInstall()">Ô£ò</button>
+        <button class="install-dismiss" onclick="dismissInstall()">✓</button>
       </div>
 
       <section class="section">
@@ -1722,7 +1722,7 @@
           <div class="plan-top">
             <div>
               <div class="plan-kicker">You can make today</div>
-              <div class="plan-amount" id="planAmount">┬ú0</div>
+              <div class="plan-amount" id="planAmount">£0</div>
             </div>
             <p class="plan-copy">Tap a task to jump to the right offer immediately.</p>
           </div>
@@ -1733,7 +1733,7 @@
       <section class="section">
         <div class="daily-box card">
           <div class="daily-head">
-            <h2 class="daily-title"><span id="dailyEmoji">­ƒÄü</span> Daily Box</h2>
+            <h2 class="daily-title"><span id="dailyEmoji">🎵</span> Daily Box</h2>
             <div class="daily-status" id="dailyStatus">Ready</div>
           </div>
           <p class="daily-copy" id="dailyCopy">Claim your daily XP bonus and keep your streak moving.</p>
@@ -1845,7 +1845,7 @@
                 <strong>Daily Streak</strong>
                 <span>Days in a row</span>
               </div>
-              <div id="profileStreak">0­ƒöÑ</div>
+              <div id="profileStreak">0🔥</div>
             </div>
           </div>
         </section>
@@ -1859,11 +1859,11 @@
           <div class="money-grid">
             <div class="money-box">
               <div class="money-box-label">Earned</div>
-              <div class="money-box-value green" id="earnedTotal">┬ú0</div>
+              <div class="money-box-value green" id="earnedTotal">£0</div>
             </div>
             <div class="money-box">
               <div class="money-box-label">Pending</div>
-              <div class="money-box-value yellow" id="pendingTotal">┬ú0</div>
+              <div class="money-box-value yellow" id="pendingTotal">£0</div>
             </div>
             <div class="money-box">
               <div class="money-box-label">Active</div>
@@ -1876,8 +1876,8 @@
               <option value="">Select offer</option>
             </select>
             <div class="money-form-row">
-              <input class="money-input" id="earnedInput" type="number" min="0" step="0.01" placeholder="Earned ┬ú">
-              <input class="money-input" id="pendingInput" type="number" min="0" step="0.01" placeholder="Pending ┬ú">
+              <input class="money-input" id="earnedInput" type="number" min="0" step="0.01" placeholder="Earned £">
+              <input class="money-input" id="pendingInput" type="number" min="0" step="0.01" placeholder="Pending £">
               <button class="mini-btn" id="saveMoneyBtn">Save</button>
             </div>
           </div>
@@ -1932,9 +1932,9 @@
           <p>Get the best bank switches, cashback stacks and new offers every week. Free, no spam.</p>
           <div class="email-form" id="emailForm">
             <input class="email-input" type="email" id="emailInput" placeholder="your@email.com" autocomplete="email">
-            <button class="email-submit" onclick="submitEmail()">Get Weekly Deals ÔåÆ</button>
+            <button class="email-submit" onclick="submitEmail()">Get Weekly Deals →</button>
           </div>
-          <div class="email-done" id="emailDone">Ô£à You're in! Check your inbox for a welcome email.</div>
+          <div class="email-done" id="emailDone">✓ You're in! Check your inbox for a welcome email.</div>
         </div>
       </div>
 
@@ -1958,7 +1958,7 @@
   <div class="auth-modal" id="authModal">
     <div class="auth-box">
       <div class="auth-logo">Money<span>Hunters</span></div>
-      <div class="auth-sub">Save your progress ┬À sync across devices ┬À never lose your XP</div>
+      <div class="auth-sub">Save your progress · sync across devices · never lose your XP</div>
       <div class="auth-tabs">
         <button class="auth-tab on" id="tabSignup" onclick="switchAuthTab('signup')">Create Account</button>
         <button class="auth-tab" id="tabLogin" onclick="switchAuthTab('login')">Log In</button>
@@ -1977,7 +1977,7 @@
           <label class="auth-label">Password</label>
           <input class="auth-input" id="authPassword" type="password" placeholder="Min 6 characters">
         </div>
-        <button class="auth-submit" id="authSubmitBtn" onclick="handleSignup()">Create Free Account ÔåÆ</button>
+        <button class="auth-submit" id="authSubmitBtn" onclick="handleSignup()">Create Free Account →</button>
       </div>
       <!-- Login fields -->
       <div id="loginFields" style="display:none">
@@ -1989,7 +1989,7 @@
           <label class="auth-label">Password</label>
           <input class="auth-input" id="loginPassword" type="password" placeholder="Your password">
         </div>
-        <button class="auth-submit" id="loginSubmitBtn" onclick="handleLogin()">Log In ÔåÆ</button>
+        <button class="auth-submit" id="loginSubmitBtn" onclick="handleLogin()">Log In →</button>
         <button class="auth-forgot" onclick="switchAuthTab('reset')">Forgot password?</button>
       </div>
       <!-- Reset password fields -->
@@ -1998,8 +1998,8 @@
           <label class="auth-label">Your email address</label>
           <input class="auth-input" id="resetEmail" type="email" placeholder="you@example.com">
         </div>
-        <button class="auth-submit" id="resetSubmitBtn" onclick="handlePasswordReset()">Send Reset Link ÔåÆ</button>
-        <button class="auth-forgot" onclick="switchAuthTab('login')">ÔåÉ Back to login</button>
+        <button class="auth-submit" id="resetSubmitBtn" onclick="handlePasswordReset()">Send Reset Link →</button>
+        <button class="auth-forgot" onclick="switchAuthTab('login')">← Back to login</button>
       </div>
       <!-- New password fields (shown after clicking reset link) -->
       <div id="newPasswordFields" style="display:none">
@@ -2011,7 +2011,7 @@
           <label class="auth-label">Confirm new password</label>
           <input class="auth-input" id="confirmPassword" type="password" placeholder="Repeat password">
         </div>
-        <button class="auth-submit" id="newPasswordBtn" onclick="handleNewPassword()">Set New Password ÔåÆ</button>
+        <button class="auth-submit" id="newPasswordBtn" onclick="handleNewPassword()">Set New Password →</button>
       </div>
       <div class="auth-error" id="authError"></div>
       <button class="auth-skip" onclick="skipAuth()">Continue without account</button>
@@ -2020,9 +2020,9 @@
 
   <div class="offer-panel" id="offerPanel">
     <div class="panel-hdr">
-      <button class="panel-close" id="panelClose">Ô£ò</button>
+      <button class="panel-close" id="panelClose">✓</button>
       <div class="panel-title" id="panelTitle">Offer</div>
-      <button class="panel-share" id="panelShare">Ôåù</button>
+      <button class="panel-share" id="panelShare">↙</button>
     </div>
     <div class="panel-body" id="panelBody"></div>
     <div class="panel-footer" id="panelFooter"></div>
@@ -2034,7 +2034,7 @@
           <h3 class="drawer-title" id="drawerTitle">Store</h3>
           <div class="drawer-sub" id="drawerSource">Source</div>
         </div>
-        <button class="close-btn" id="closeDrawer" aria-label="Close">Ô£ò</button>
+        <button class="close-btn" id="closeDrawer" aria-label="Close">✓</button>
       </div>
 
       <div class="drawer-rate" id="drawerRate">0%</div>
@@ -2068,23 +2068,23 @@
 
   <nav class="bottom-nav">
     <button class="nav-btn active" data-view="home">
-      <span class="nav-icon">­ƒÅá</span>
+      <span class="nav-icon">🏠</span>
       <span class="nav-label">Home</span>
     </button>
     <button class="nav-btn" data-view="offers">
-      <span class="nav-icon">­ƒöÑ</span>
+      <span class="nav-icon">🔥</span>
       <span class="nav-label">Offers</span>
     </button>
     <button class="nav-btn" data-view="stack">
-      <span class="nav-icon">­ƒº®</span>
+      <span class="nav-icon">⚡</span>
       <span class="nav-label">Stack</span>
     </button>
     <button class="nav-btn" data-view="progress">
-      <span class="nav-icon">­ƒôè</span>
+      <span class="nav-icon">📊</span>
       <span class="nav-label">Progress</span>
     </button>
     <button class="nav-btn" data-view="community">
-      <span class="nav-icon">­ƒÆ¼</span>
+      <span class="nav-icon">👥</span>
       <span class="nav-label">Community</span>
     </button>
   </nav>
@@ -2098,53 +2098,53 @@
       - expectedDays: default pending payout countdown
     */
     const offers = [
-      { id:"chase-uk", name:"Chase UK", action:"Open Chase account", reward:"┬ú50", amount:50, code:"J2SK9W", url:"https://chase.co.uk/raf", desc:"Deposit ┬ú1,000 and follow the current referral steps to get ┬ú50.", badge:"­ƒöÑ TOP PICK", effort:"5 min ┬À requires deposit", steps:["Open the Chase app","Enter referral code J2SK9W","Deposit ┬ú1,000","Wait for payout"], expectedDays:30 },
-      { id:"lloyds-bank", name:"Lloyds Bank", action:"Switch to Lloyds Bank", reward:"┬ú250", amount:250, code:"", url:"https://apply.lloydsbank.co.uk/sales-content/cwa/l/onboardpca/index-app.html?from=ob&webDirect=true&redesign=true&token=JpGVwskEUPxoFpO3Mg4RTAUZg6q6Emjz578QtNaABT8=&redesign=true#/refer-friend", desc:"Switch using CASS, pay in the qualifying amount, and meet the listed conditions for the full reward.", badge:"­ƒÅå BEST VALUE", effort:"12 min ┬À bank switch", steps:["Open Lloyds current account","Start CASS switch","Pay in required amount","Add direct debits","Wait for payout"], expectedDays:30 },
-      { id:"first-direct", name:"First Direct", action:"Switch to First Direct", reward:"┬ú175 + ┬ú50 RAF", amount:225, code:"", url:"https://www.firstdirect.com/banking/switch/", desc:"Switch using CASS and complete the qualifying steps for the current bonus.", badge:"Ô¡É POPULAR", effort:"12 min ┬À bank switch", steps:["Open First Direct account","Start switch","Pay in required amount","Meet current offer rules","Wait for payout"], expectedDays:28 },
-      { id:"natwest", name:"NatWest", action:"Switch to NatWest", reward:"┬ú200", amount:200, code:"", url:"https://www.natwest.com/current-accounts/switch/", desc:"Switch and meet the current direct debit and eligibility requirements.", badge:"Ô¡É POPULAR", effort:"12 min ┬À direct debits needed", steps:["Open NatWest account","Start switch","Add 2 direct debits","Meet switch rules","Wait for payout"], expectedDays:30 },
-      { id:"santander", name:"Santander", action:"Switch to Santander Edge", reward:"┬ú200", amount:200, code:"", url:"https://www.santander.co.uk/personal/current-accounts", desc:"Switch to Santander Edge and complete the provider's current bonus steps.", badge:"­ƒåò NEW", effort:"12 min ┬À bank switch", steps:["Open Santander Edge","Start switch","Meet funding rules","Add required direct debits","Wait for payout"], expectedDays:30 },
-      { id:"barclays", name:"Barclays", action:"Switch to Barclays", reward:"┬ú175", amount:175, code:"", url:"https://www.barclays.co.uk/current-accounts/", desc:"Switch via CASS, pay in the required amount, and check the latest eligibility rules.", badge:"ÔÅ│ ENDS 28 MAY", effort:"12 min ┬À bank switch", steps:["Check eligibility","Open Barclays account","Start switch","Pay in required amount","Wait for payout"], expectedDays:30 },
-      { id:"co-operative-bank", name:"Co-operative Bank", action:"Switch to Co-operative Bank", reward:"┬ú175", amount:175, code:"", url:"https://www.co-operativebank.co.uk/current-accounts", desc:"Open and switch to Co-operative Bank, then follow the active offer terms.", badge:"­ƒåò ADDED", effort:"10 min ┬À bank switch", steps:["Open Co-operative account","Start switch","Meet current offer terms","Wait for payout"], expectedDays:30 },
-      { id:"monzo", name:"Monzo", action:"Open Monzo and spend ┬ú1", reward:"┬ú5-┬ú50", amount:50, code:"", url:"https://join.monzo.com/r/", desc:"Join and complete a qualifying spend to get the current random referral reward.", badge:"­ƒô▒ APP", effort:"4 min ┬À quick signup", steps:["Open Monzo via referral","Verify account","Spend ┬ú1","Wait for reward"], expectedDays:7 },
-      { id:"revolut", name:"Revolut", action:"Open Revolut and complete signup", reward:"┬ú20", amount:20, code:"", url:"https://revolut.com/referral/?referral-code=ludoviv2sq!MAR1-26-AR-H2&geo-redirect", desc:"Sign up and complete the referral actions for the current offer.", badge:"­ƒô▒ APP", effort:"5 min ┬À app signup", steps:["Open Revolut","Verify identity","Complete required card or spend steps","Wait for reward"], expectedDays:7 },
-      { id:"zilch", name:"Zilch", action:"Join Zilch", reward:"┬ú5", amount:5, code:"", url:"https://zilch.onelink.me/x8EV/zdehyy8s", desc:"Quick sign-up bonus with a small instant-style reward.", badge:"ÔÜí INSTANT", effort:"3 min ┬À instant", steps:["Open Zilch","Verify account","Receive reward"], expectedDays:1 },
-      { id:"zopa-biscuit", name:"Zopa Biscuit", action:"Open Zopa Biscuit savings", reward:"┬ú20", amount:20, code:"", url:"https://www.zopa.com/mgma?referralCode=ed204ce1b3dd265fa533", desc:"Open a Biscuit savings account and qualify under the referral terms.", badge:"ÔÜí INSTANT", effort:"5 min ┬À savings account", steps:["Open Zopa Biscuit","Complete verification","Fund if required","Wait for reward"], expectedDays:1 },
-      { id:"curve-pay", name:"Curve Pay", action:"Join Curve Pay", reward:"1% Cashback", amount:1, code:"", url:"https://www.curve.com/join#NQ77G4WE", desc:"Join Curve to stack cards and access cashback and wallet features.", badge:"­ƒÆ│ WALLET", effort:"4 min ┬À app setup", steps:["Open Curve","Add your cards","Use Curve for spend"], expectedDays:1 },
-      { id:"freetrade", name:"Freetrade", action:"Open Freetrade and deposit ┬ú1", reward:"Free Share", amount:100, code:"", url:"https://magic.freetrade.io/join/alberto/6f308795", desc:"Deposit ┬ú1 and get a free share under the current referral campaign.", badge:"­ƒôê INVEST", effort:"5 min ┬À ┬ú1 deposit", steps:["Open Freetrade","Verify identity","Deposit ┬ú1","Claim free share"], expectedDays:7 },
-      { id:"robinhood-uk", name:"Robinhood UK", action:"Open Robinhood UK and deposit ┬ú1", reward:"Free Share", amount:140, code:"", url:"https://join.robinhood.com/albertb-d5dfe0", desc:"Deposit ┬ú1 to unlock a free share, subject to the current referral terms.", badge:"­ƒôê INVEST", effort:"5 min ┬À ┬ú1 deposit", steps:["Open Robinhood UK","Verify identity","Deposit ┬ú1","Claim reward"], expectedDays:7 },
-      { id:"webull", name:"Webull", action:"Open Webull and deposit funds", reward:"┬ú50", amount:50, code:"", url:"https://www.webull-uk.com/s/zEUukbJam8GjmUx6yq", desc:"Deposit the qualifying amount and hold it for the required period.", badge:"­ƒôê INVEST", effort:"7 min ┬À larger deposit", steps:["Open Webull","Verify identity","Deposit qualifying amount","Hold funds","Wait for payout"], expectedDays:60 },
-      { id:"wealthify", name:"Wealthify", action:"Invest through Wealthify", reward:"┬ú50", amount:50, code:"", url:"https://invest.wealthify.com/refer/81122944", desc:"Invest the required amount and hold it for the minimum campaign duration.", badge:"­ƒôê INVEST", effort:"7 min ┬À investment hold", steps:["Open Wealthify","Invest qualifying amount","Hold investment","Wait for payout"], expectedDays:180 },
-      { id:"wealthyhood", name:"Wealthyhood", action:"Join Wealthyhood", reward:"Bonus", amount:10, code:"1461h9hv", url:"https://wealthyhood.com", desc:"Use the code during sign-up to get the current join bonus.", badge:"­ƒôê INVEST", effort:"5 min ┬À code needed", steps:["Open Wealthyhood","Enter code 1461h9hv","Finish signup","Wait for reward"], expectedDays:7 },
-      { id:"ig-trading", name:"IG Trading", action:"Open IG Trading account", reward:"Bonus", amount:10, code:"", url:"https://refer.ig.com/albertob-2757", desc:"Open an account via referral and check the latest qualifying trade terms.", badge:"­ƒôê INVEST", effort:"7 min ┬À trading account", steps:["Open IG account","Verify identity","Complete qualifying trade","Wait for reward"], expectedDays:30 },
-      { id:"ifast-global-bank", name:"iFAST Global Bank", action:"Open iFAST Global Bank", reward:"Bonus", amount:10, code:"", url:"https://www.ifastgb.com/tellafriend/albertob367", desc:"Join via referral and complete setup requirements to qualify.", badge:"­ƒÅª BANK", effort:"6 min ┬À bank signup", steps:["Open iFAST account","Verify identity","Complete qualifying action","Wait for reward"], expectedDays:14 },
-      { id:"plum", name:"Plum", action:"Join Plum", reward:"┬ú75", amount:75, code:"", url:"https://friends.withplum.com/r/RxK7c2fUNa", desc:"Referral campaign reward tied to current Plum terms and friend actions.", badge:"ÔÅ│ ENDING SOON", effort:"4 min ┬À terms vary", steps:["Open Plum","Finish signup","Check current referral terms","Wait for reward"], expectedDays:30 },
-      { id:"pensionbee", name:"PensionBee", action:"Transfer a pension to PensionBee", reward:"┬ú50", amount:50, code:"", url:"https://www.pensionbee.com/", desc:"Transfer a pension and qualify for the provider's current reward.", badge:"­ƒÅª PENSION", effort:"8 min ┬À transfer needed", steps:["Open PensionBee","Start pension transfer","Wait for transfer completion","Wait for reward"], expectedDays:30 },
-      { id:"moneybox", name:"Moneybox", action:"Open a Moneybox savings product", reward:"Bonus Rate", amount:10, code:"", url:"https://go.onelink.me/5M0L?pid=share&c=EN8YW8", desc:"Open the linked savings product to access the active offer.", badge:"­ƒÆ░ SAVINGS", effort:"4 min ┬À savings app", steps:["Open Moneybox","Create savings account","Complete qualifying setup"], expectedDays:1 },
-      { id:"avios-british-airways", name:"Avios / British Airways", action:"Join Avios", reward:"Bonus Avios", amount:10, code:"", url:"https://avios.mention-me.com/m/ol/yn2yt-alberto-bolla", desc:"Join via referral and collect bonus Avios under the live campaign.", badge:"Ô£ê´©Å TRAVEL", effort:"4 min ┬À loyalty signup", steps:["Join Avios","Complete signup","Wait for bonus"], expectedDays:7 },
-      { id:"glint-pay", name:"Glint Pay", action:"Join Glint Pay", reward:"Bonus", amount:10, code:"X2PPG7-VF502", url:"https://glintpay.com", desc:"Use the code during sign-up and complete the qualifying steps.", badge:"­ƒÑç GOLD", effort:"5 min ┬À code needed", steps:["Open Glint","Enter code X2PPG7-VF502","Complete qualifying action","Wait for reward"], expectedDays:7 },
-      { id:"topcashback", name:"TopCashback", action:"Join TopCashback", reward:"┬ú10", amount:10, code:"", url:"https://www.topcashback.co.uk/ref/Panzadeferr/?source_id=4", desc:"Join, track your first cashback, and unlock the current bonus.", badge:"­ƒÆ│ CASHBACK", effort:"3 min ┬À easy start", steps:["Open TopCashback","Create account","Track first cashback","Wait for bonus"], expectedDays:7 },
-      { id:"quidco", name:"Quidco", action:"Join Quidco", reward:"┬ú20 Bonus", amount:20, code:"", url:"https://quidco.onelink.me/nKzg/v2f3f7m0", desc:"Earn the qualifying cashback amount to trigger the join reward.", badge:"­ƒÆ│ CASHBACK", effort:"3 min ┬À easy start", steps:["Open Quidco","Create account","Track qualifying cashback","Wait for bonus"], expectedDays:14 },
-      { id:"rakuten", name:"Rakuten", action:"Join Rakuten and spend through portal", reward:"┬ú25 Bonus", amount:25, code:"", url:"https://www.rakuten.co.uk/r/ALBERT24541?eeid=28187", desc:"Spend the required amount through Rakuten inside the campaign window.", badge:"­ƒÆ│ CASHBACK", effort:"5 min ┬À purchase needed", steps:["Open Rakuten","Create account","Make qualifying purchase","Wait for payout"], expectedDays:90 },
-      { id:"slide", name:"Slide", action:"Join Slide", reward:"Cashback", amount:5, code:"", url:"https://slide.app.link/ho64MGlHF1b", desc:"Join Slide and use it for gift card cashback opportunities.", badge:"­ƒÆ│ CASHBACK", effort:"3 min ┬À app signup", steps:["Open Slide","Create account","Buy gift card"], expectedDays:1 },
-      { id:"airtime-rewards", name:"Airtime Rewards", action:"Join Airtime Rewards", reward:"┬ú2", amount:2, code:"FRJKFXX3", url:"https://airtimerewards.app.link/6Waa7E1IF1b", desc:"Use the code and complete the required spend to get the mobile bill reward.", badge:"­ƒÄü GIFT CARD", effort:"3 min ┬À spend ┬ú5", steps:["Open Airtime Rewards","Enter code FRJKFXX3","Spend ┬ú5","Wait for reward"], expectedDays:7 },
-      { id:"cheddar", name:"Cheddar", action:"Join Cheddar and link card", reward:"┬ú3 Bonus", amount:3, code:"FVESBGB", url:"https://get.cheddar.me/app/FVESBGB", desc:"Sign up, add the code, link your card, and complete the qualifying cashback action.", badge:"­ƒÄü GIFT CARD", effort:"4 min ┬À link bank card", steps:["Open Cheddar","Enter code FVESBGB","Link bank card","Complete cashback action"], expectedDays:14 },
-      { id:"jam-doughnut", name:"Jam Doughnut", action:"Buy gift cards with Jam Doughnut", reward:"3-8%", amount:8, code:"8TGF", url:"https://www.jamdoughnut.com/", desc:"Best rates on Tesco, Sainsbury's, Waitrose and more. Use code 8TGF. Always check rates before buying.", badge:"­ƒÄü GIFT CARD", effort:"2 min ┬À instant use", steps:["Open Jam Doughnut","Enter code 8TGF","Buy gift card","Use gift card"], expectedDays:1 },
-      { id:"everup", name:"EverUp", action:"Use EverUp gift cards", reward:"Cashback", amount:5, code:"", url:"https://everup.onelink.me/9lgD/3d22pmln", desc:"Link your bank cards and use partner deals to earn cashback.", badge:"­ƒÄü GIFT CARD", effort:"3 min ┬À compare rates", steps:["Open EverUp","Link payment method","Buy gift card"], expectedDays:1 },
-      { id:"tide", name:"Tide", action:"Open Tide business account", reward:"┬ú75", amount:75, code:"3834VA", url:"https://www.tide.co/", desc:"Business account referral offer with a qualifying first transaction.", badge:"­ƒÆ╝ BUSINESS", effort:"7 min ┬À business account", steps:["Open Tide","Enter code 3834VA","Complete verification","Make qualifying transaction","Wait for payout"], expectedDays:14 },
-      { id:"worldfirst", name:"WorldFirst", action:"Open WorldFirst account", reward:"Up to ┬ú355", amount:355, code:"", url:"https://s.worldfirst.com/2TuviC?default_source=WF-Ts00000OCun2&referral_id=WF-Ts00000OCun2&utm_campaign=COE_MGM_UK_2602&utm_date=app&lang=en_GB", desc:"Open the FX account and complete qualifying transaction steps.", badge:"­ƒÆ╝ BUSINESS", effort:"8 min ┬À verification needed", steps:["Open WorldFirst","Complete verification","Make qualifying transactions","Wait for payout"], expectedDays:30 },
-      { id:"amex-business-platinum", name:"Amex Business Platinum", action:"Apply for Amex Business Platinum", reward:"130k Points", amount:130, code:"", url:"https://americanexpress.com/en-gb/referral/platinum-charge?ref=aLBERBf3Ob&XL=MNMNS", desc:"Hit the spend target in the required period to unlock the current points offer.", badge:"­ƒÆ│ PREMIUM", effort:"8 min ┬À high spend", steps:["Apply for card","Get approved","Hit spend target","Wait for points"], expectedDays:90 },
-      { id:"freecash", name:"Freecash", action:"Join Freecash", reward:"Bonus Cash", amount:5, code:"", url:"https://freecash.com/r/89cab33004", desc:"Sign up and complete tasks, surveys, or offers for the platform reward.", badge:"­ƒÆ╗ EARN", effort:"3 min ┬À quick start", steps:["Open Freecash","Create account","Complete first task"], expectedDays:1 },
-      { id:"swagbucks", name:"Swagbucks", action:"Join Swagbucks", reward:"Bonus SB", amount:5, code:"", url:"https://www.swagbucks.com/p/register?rb=150886036", desc:"Create an account and complete early actions to start earning points.", badge:"­ƒÆ╗ EARN", effort:"3 min ┬À quick start", steps:["Open Swagbucks","Create account","Complete first task"], expectedDays:1 },
-      { id:"gemsloot", name:"Gemsloot", action:"Join Gemsloot", reward:"Bonus", amount:5, code:"", url:"https://gemsloot.com/?aff=Panza", desc:"Join and complete platform tasks or offers to earn value.", badge:"­ƒÆ╗ EARN", effort:"3 min ┬À quick start", steps:["Open Gemsloot","Create account","Complete first task"], expectedDays:1 },
-      { id:"cash-in-style", name:"Cash in Style", action:"Join Cash in Style", reward:"Bonus", amount:5, code:"", url:"https://cashinstyle.com/?ref=69bdbedalvc1bahm", desc:"Join the platform and use its offers to earn shopping-related rewards.", badge:"­ƒÆ╗ EARN", effort:"3 min ┬À quick start", steps:["Open Cash in Style","Create account","Complete first task"], expectedDays:1 },
-      { id:"lebara-mobile", name:"Lebara Mobile", action:"Switch to Lebara Mobile", reward:"Bonus", amount:10, code:"", url:"https://aklam.io/hgY3HOvR", desc:"Switch to Lebara and follow the qualifying referral steps.", badge:"­ƒô▒ MOBILE", effort:"5 min ┬À SIM signup", steps:["Open Lebara","Choose SIM plan","Complete order","Wait for reward"], expectedDays:7 },
-      { id:"octopus-energy", name:"Octopus Energy", action:"Switch energy to Octopus", reward:"┬ú50", amount:50, code:"", url:"https://share.octopus.energy/ocean-quoll-258", desc:"Switch energy supplier and both sides receive account credit.", badge:"ÔÜí UTILITIES", effort:"7 min ┬À switch supplier", steps:["Open Octopus","Start energy switch","Complete switch","Wait for reward"], expectedDays:30 },
-      { id:"costa-coffee", name:"Costa Coffee", action:"Join Costa Club", reward:"Free Coffee", amount:5, code:"", url:"https://www.costa.co.uk/costa-club", desc:"Join Costa Club to access the current welcome freebie.", badge:"Ôÿò FREEBIE", effort:"2 min ┬À freebie", steps:["Open Costa Club","Create account","Claim welcome reward"], expectedDays:1 },
-      { id:"trainpal", name:"TrainPal", action:"Book first trip with TrainPal", reward:"┬ú3 Off", amount:3, code:"03ba089c$00", url:"https://t.trainpal.com/wUEPLNq", desc:"Use the code on your first booking to reduce the fare.", badge:"­ƒÜå TRAVEL", effort:"2 min ┬À code needed", steps:["Open TrainPal","Enter code 03ba089c$00","Book first trip"], expectedDays:1 },
-      { id:"wise", name:"Wise", action:"Join Wise", reward:"Free Transfer", amount:5, code:"", url:"https://wise.com/invite/ahpc/albertob1508", desc:"Join through referral and use the fee-free first transfer benefit.", badge:"­ƒÆ© TRANSFER", effort:"4 min ┬À transfer account", steps:["Open Wise","Create account","Complete first transfer"], expectedDays:1 },
-      { id:"trading-212", name:"Trading 212", action:"Watch Trading 212 for return", reward:"Coming Soon", amount:0, code:"", url:"https://www.trading212.com", desc:"Referral campaign paused for now, but worth watching.", badge:"ÔÅ©´©Å PAUSED", effort:"No action yet", steps:["Wait for campaign to return"], expectedDays:0 },
-      { id:"nx-rewards", name:"NX Rewards", action:"Buy discounted gift cards on NX Rewards", reward:"Up to 15%", amount:15, code:"", url:"https://www.nxrewards.co.uk/", desc:"Buy discounted gift cards for major retailers at up to 15% off face value. No account needed for some cards.", badge:"­ƒÄü GIFT CARD", effort:"2 min ┬À instant saving", steps:["Go to nxrewards.co.uk","Browse available gift cards","Check the discount percentage","Buy the gift card for your chosen retailer","Use immediately in store or online"], expectedDays:1 },
-      { id:"complete-savings", name:"Complete Savings", action:"Join Complete Savings cashback", reward:"┬ú15/month", amount:15, code:"", url:"https://www.completesavings.co.uk/", desc:"Monthly cashback on purchases. Often triggered automatically after an online purchase. Check terms carefully ÔÇö there is a monthly subscription fee after a trial period.", badge:"­ƒÆ│ CASHBACK", effort:"5 min ┬À check terms", steps:["Check if you were auto-enrolled after an online purchase","If not, sign up at completesavings.co.uk","Complete a qualifying purchase","Claim monthly cashback","Important: cancel before trial ends if you don't want to continue paying"], expectedDays:30 }
+      { id:"chase-uk", name:"Chase UK", action:"Open Chase account", reward:"£50", amount:50, code:"J2SK9W", url:"https://chase.co.uk/raf", desc:"Deposit £1,000 and follow the current referral steps to get £50.", badge:"🔥 TOP PICK", effort:"5 min · requires deposit", steps:["Open the Chase app","Enter referral code J2SK9W","Deposit £1,000","Wait for payout"], expectedDays:30 },
+      { id:"lloyds-bank", name:"Lloyds Bank", action:"Switch to Lloyds Bank", reward:"£250", amount:250, code:"", url:"https://apply.lloydsbank.co.uk/sales-content/cwa/l/onboardpca/index-app.html?from=ob&webDirect=true&redesign=true&token=JpGVwskEUPxoFpO3Mg4RTAUZg6q6Emjz578QtNaABT8=&redesign=true#/refer-friend", desc:"Switch using CASS, pay in the qualifying amount, and meet the listed conditions for the full reward.", badge:"­ƒÅå BEST VALUE", effort:"12 min · bank switch", steps:["Open Lloyds current account","Start CASS switch","Pay in required amount","Add direct debits","Wait for payout"], expectedDays:30 },
+      { id:"first-direct", name:"First Direct", action:"Switch to First Direct", reward:"£175 + £50 RAF", amount:225, code:"", url:"https://www.firstdirect.com/banking/switch/", desc:"Switch using CASS and complete the qualifying steps for the current bonus.", badge:"⭐ POPULAR", effort:"12 min · bank switch", steps:["Open First Direct account","Start switch","Pay in required amount","Meet current offer rules","Wait for payout"], expectedDays:28 },
+      { id:"natwest", name:"NatWest", action:"Switch to NatWest", reward:"£200", amount:200, code:"", url:"https://www.natwest.com/current-accounts/switch/", desc:"Switch and meet the current direct debit and eligibility requirements.", badge:"⭐ POPULAR", effort:"12 min · direct debits needed", steps:["Open NatWest account","Start switch","Add 2 direct debits","Meet switch rules","Wait for payout"], expectedDays:30 },
+      { id:"santander", name:"Santander", action:"Switch to Santander Edge", reward:"£200", amount:200, code:"", url:"https://www.santander.co.uk/personal/current-accounts", desc:"Switch to Santander Edge and complete the provider's current bonus steps.", badge:"­ƒåò NEW", effort:"12 min · bank switch", steps:["Open Santander Edge","Start switch","Meet funding rules","Add required direct debits","Wait for payout"], expectedDays:30 },
+      { id:"barclays", name:"Barclays", action:"Switch to Barclays", reward:"£175", amount:175, code:"", url:"https://www.barclays.co.uk/current-accounts/", desc:"Switch via CASS, pay in the required amount, and check the latest eligibility rules.", badge:"⏳ ENDS 28 MAY", effort:"12 min · bank switch", steps:["Check eligibility","Open Barclays account","Start switch","Pay in required amount","Wait for payout"], expectedDays:30 },
+      { id:"co-operative-bank", name:"Co-operative Bank", action:"Switch to Co-operative Bank", reward:"£175", amount:175, code:"", url:"https://www.co-operativebank.co.uk/current-accounts", desc:"Open and switch to Co-operative Bank, then follow the active offer terms.", badge:"­ƒåò ADDED", effort:"10 min · bank switch", steps:["Open Co-operative account","Start switch","Meet current offer terms","Wait for payout"], expectedDays:30 },
+      { id:"monzo", name:"Monzo", action:"Open Monzo and spend £1", reward:"£5-£50", amount:50, code:"", url:"https://join.monzo.com/r/", desc:"Join and complete a qualifying spend to get the current random referral reward.", badge:"­ƒô▒ APP", effort:"4 min · quick signup", steps:["Open Monzo via referral","Verify account","Spend £1","Wait for reward"], expectedDays:7 },
+      { id:"revolut", name:"Revolut", action:"Open Revolut and complete signup", reward:"£20", amount:20, code:"", url:"https://revolut.com/referral/?referral-code=ludoviv2sq!MAR1-26-AR-H2&geo-redirect", desc:"Sign up and complete the referral actions for the current offer.", badge:"­ƒô▒ APP", effort:"5 min · app signup", steps:["Open Revolut","Verify identity","Complete required card or spend steps","Wait for reward"], expectedDays:7 },
+      { id:"zilch", name:"Zilch", action:"Join Zilch", reward:"£5", amount:5, code:"", url:"https://zilch.onelink.me/x8EV/zdehyy8s", desc:"Quick sign-up bonus with a small instant-style reward.", badge:"✅ INSTANT", effort:"3 min · instant", steps:["Open Zilch","Verify account","Receive reward"], expectedDays:1 },
+      { id:"zopa-biscuit", name:"Zopa Biscuit", action:"Open Zopa Biscuit savings", reward:"£20", amount:20, code:"", url:"https://www.zopa.com/mgma?referralCode=ed204ce1b3dd265fa533", desc:"Open a Biscuit savings account and qualify under the referral terms.", badge:"✅ INSTANT", effort:"5 min · savings account", steps:["Open Zopa Biscuit","Complete verification","Fund if required","Wait for reward"], expectedDays:1 },
+      { id:"curve-pay", name:"Curve Pay", action:"Join Curve Pay", reward:"1% Cashback", amount:1, code:"", url:"https://www.curve.com/join#NQ77G4WE", desc:"Join Curve to stack cards and access cashback and wallet features.", badge:"­ƒÆ│ WALLET", effort:"4 min · app setup", steps:["Open Curve","Add your cards","Use Curve for spend"], expectedDays:1 },
+      { id:"freetrade", name:"Freetrade", action:"Open Freetrade and deposit £1", reward:"Free Share", amount:100, code:"", url:"https://magic.freetrade.io/join/alberto/6f308795", desc:"Deposit £1 and get a free share under the current referral campaign.", badge:"­ƒôê INVEST", effort:"5 min · £1 deposit", steps:["Open Freetrade","Verify identity","Deposit £1","Claim free share"], expectedDays:7 },
+      { id:"robinhood-uk", name:"Robinhood UK", action:"Open Robinhood UK and deposit £1", reward:"Free Share", amount:140, code:"", url:"https://join.robinhood.com/albertb-d5dfe0", desc:"Deposit £1 to unlock a free share, subject to the current referral terms.", badge:"­ƒôê INVEST", effort:"5 min · £1 deposit", steps:["Open Robinhood UK","Verify identity","Deposit £1","Claim reward"], expectedDays:7 },
+      { id:"webull", name:"Webull", action:"Open Webull and deposit funds", reward:"£50", amount:50, code:"", url:"https://www.webull-uk.com/s/zEUukbJam8GjmUx6yq", desc:"Deposit the qualifying amount and hold it for the required period.", badge:"­ƒôê INVEST", effort:"7 min · larger deposit", steps:["Open Webull","Verify identity","Deposit qualifying amount","Hold funds","Wait for payout"], expectedDays:60 },
+      { id:"wealthify", name:"Wealthify", action:"Invest through Wealthify", reward:"£50", amount:50, code:"", url:"https://invest.wealthify.com/refer/81122944", desc:"Invest the required amount and hold it for the minimum campaign duration.", badge:"­ƒôê INVEST", effort:"7 min · investment hold", steps:["Open Wealthify","Invest qualifying amount","Hold investment","Wait for payout"], expectedDays:180 },
+      { id:"wealthyhood", name:"Wealthyhood", action:"Join Wealthyhood", reward:"Bonus", amount:10, code:"1461h9hv", url:"https://wealthyhood.com", desc:"Use the code during sign-up to get the current join bonus.", badge:"­ƒôê INVEST", effort:"5 min · code needed", steps:["Open Wealthyhood","Enter code 1461h9hv","Finish signup","Wait for reward"], expectedDays:7 },
+      { id:"ig-trading", name:"IG Trading", action:"Open IG Trading account", reward:"Bonus", amount:10, code:"", url:"https://refer.ig.com/albertob-2757", desc:"Open an account via referral and check the latest qualifying trade terms.", badge:"­ƒôê INVEST", effort:"7 min · trading account", steps:["Open IG account","Verify identity","Complete qualifying trade","Wait for reward"], expectedDays:30 },
+      { id:"ifast-global-bank", name:"iFAST Global Bank", action:"Open iFAST Global Bank", reward:"Bonus", amount:10, code:"", url:"https://www.ifastgb.com/tellafriend/albertob367", desc:"Join via referral and complete setup requirements to qualify.", badge:"­ƒÅª BANK", effort:"6 min · bank signup", steps:["Open iFAST account","Verify identity","Complete qualifying action","Wait for reward"], expectedDays:14 },
+      { id:"plum", name:"Plum", action:"Join Plum", reward:"£75", amount:75, code:"", url:"https://friends.withplum.com/r/RxK7c2fUNa", desc:"Referral campaign reward tied to current Plum terms and friend actions.", badge:"⏳ ENDING SOON", effort:"4 min · terms vary", steps:["Open Plum","Finish signup","Check current referral terms","Wait for reward"], expectedDays:30 },
+      { id:"pensionbee", name:"PensionBee", action:"Transfer a pension to PensionBee", reward:"£50", amount:50, code:"", url:"https://www.pensionbee.com/", desc:"Transfer a pension and qualify for the provider's current reward.", badge:"­ƒÅª PENSION", effort:"8 min · transfer needed", steps:["Open PensionBee","Start pension transfer","Wait for transfer completion","Wait for reward"], expectedDays:30 },
+      { id:"moneybox", name:"Moneybox", action:"Open a Moneybox savings product", reward:"Bonus Rate", amount:10, code:"", url:"https://go.onelink.me/5M0L?pid=share&c=EN8YW8", desc:"Open the linked savings product to access the active offer.", badge:"­ƒÆ░ SAVINGS", effort:"4 min · savings app", steps:["Open Moneybox","Create savings account","Complete qualifying setup"], expectedDays:1 },
+      { id:"avios-british-airways", name:"Avios / British Airways", action:"Join Avios", reward:"Bonus Avios", amount:10, code:"", url:"https://avios.mention-me.com/m/ol/yn2yt-alberto-bolla", desc:"Join via referral and collect bonus Avios under the live campaign.", badge:"✈️ TRAVEL", effort:"4 min · loyalty signup", steps:["Join Avios","Complete signup","Wait for bonus"], expectedDays:7 },
+      { id:"glint-pay", name:"Glint Pay", action:"Join Glint Pay", reward:"Bonus", amount:10, code:"X2PPG7-VF502", url:"https://glintpay.com", desc:"Use the code during sign-up and complete the qualifying steps.", badge:"­ƒÑç GOLD", effort:"5 min · code needed", steps:["Open Glint","Enter code X2PPG7-VF502","Complete qualifying action","Wait for reward"], expectedDays:7 },
+      { id:"topcashback", name:"TopCashback", action:"Join TopCashback", reward:"£10", amount:10, code:"", url:"https://www.topcashback.co.uk/ref/Panzadeferr/?source_id=4", desc:"Join, track your first cashback, and unlock the current bonus.", badge:"­ƒÆ│ CASHBACK", effort:"3 min · easy start", steps:["Open TopCashback","Create account","Track first cashback","Wait for bonus"], expectedDays:7 },
+      { id:"quidco", name:"Quidco", action:"Join Quidco", reward:"£20 Bonus", amount:20, code:"", url:"https://quidco.onelink.me/nKzg/v2f3f7m0", desc:"Earn the qualifying cashback amount to trigger the join reward.", badge:"­ƒÆ│ CASHBACK", effort:"3 min · easy start", steps:["Open Quidco","Create account","Track qualifying cashback","Wait for bonus"], expectedDays:14 },
+      { id:"rakuten", name:"Rakuten", action:"Join Rakuten and spend through portal", reward:"£25 Bonus", amount:25, code:"", url:"https://www.rakuten.co.uk/r/ALBERT24541?eeid=28187", desc:"Spend the required amount through Rakuten inside the campaign window.", badge:"­ƒÆ│ CASHBACK", effort:"5 min · purchase needed", steps:["Open Rakuten","Create account","Make qualifying purchase","Wait for payout"], expectedDays:90 },
+      { id:"slide", name:"Slide", action:"Join Slide", reward:"Cashback", amount:5, code:"", url:"https://slide.app.link/ho64MGlHF1b", desc:"Join Slide and use it for gift card cashback opportunities.", badge:"­ƒÆ│ CASHBACK", effort:"3 min · app signup", steps:["Open Slide","Create account","Buy gift card"], expectedDays:1 },
+      { id:"airtime-rewards", name:"Airtime Rewards", action:"Join Airtime Rewards", reward:"£2", amount:2, code:"FRJKFXX3", url:"https://airtimerewards.app.link/6Waa7E1IF1b", desc:"Use the code and complete the required spend to get the mobile bill reward.", badge:"🎵 GIFT CARD", effort:"3 min · spend £5", steps:["Open Airtime Rewards","Enter code FRJKFXX3","Spend £5","Wait for reward"], expectedDays:7 },
+      { id:"cheddar", name:"Cheddar", action:"Join Cheddar and link card", reward:"£3 Bonus", amount:3, code:"FVESBGB", url:"https://get.cheddar.me/app/FVESBGB", desc:"Sign up, add the code, link your card, and complete the qualifying cashback action.", badge:"🎵 GIFT CARD", effort:"4 min · link bank card", steps:["Open Cheddar","Enter code FVESBGB","Link bank card","Complete cashback action"], expectedDays:14 },
+      { id:"jam-doughnut", name:"Jam Doughnut", action:"Buy gift cards with Jam Doughnut", reward:"3-8%", amount:8, code:"8TGF", url:"https://www.jamdoughnut.com/", desc:"Best rates on Tesco, Sainsbury's, Waitrose and more. Use code 8TGF. Always check rates before buying.", badge:"🎵 GIFT CARD", effort:"2 min · instant use", steps:["Open Jam Doughnut","Enter code 8TGF","Buy gift card","Use gift card"], expectedDays:1 },
+      { id:"everup", name:"EverUp", action:"Use EverUp gift cards", reward:"Cashback", amount:5, code:"", url:"https://everup.onelink.me/9lgD/3d22pmln", desc:"Link your bank cards and use partner deals to earn cashback.", badge:"🎵 GIFT CARD", effort:"3 min · compare rates", steps:["Open EverUp","Link payment method","Buy gift card"], expectedDays:1 },
+      { id:"tide", name:"Tide", action:"Open Tide business account", reward:"£75", amount:75, code:"3834VA", url:"https://www.tide.co/", desc:"Business account referral offer with a qualifying first transaction.", badge:"­ƒÆ╝ BUSINESS", effort:"7 min · business account", steps:["Open Tide","Enter code 3834VA","Complete verification","Make qualifying transaction","Wait for payout"], expectedDays:14 },
+      { id:"worldfirst", name:"WorldFirst", action:"Open WorldFirst account", reward:"Up to £355", amount:355, code:"", url:"https://s.worldfirst.com/2TuviC?default_source=WF-Ts00000OCun2&referral_id=WF-Ts00000OCun2&utm_campaign=COE_MGM_UK_2602&utm_date=app&lang=en_GB", desc:"Open the FX account and complete qualifying transaction steps.", badge:"­ƒÆ╝ BUSINESS", effort:"8 min · verification needed", steps:["Open WorldFirst","Complete verification","Make qualifying transactions","Wait for payout"], expectedDays:30 },
+      { id:"amex-business-platinum", name:"Amex Business Platinum", action:"Apply for Amex Business Platinum", reward:"130k Points", amount:130, code:"", url:"https://americanexpress.com/en-gb/referral/platinum-charge?ref=aLBERBf3Ob&XL=MNMNS", desc:"Hit the spend target in the required period to unlock the current points offer.", badge:"­ƒÆ│ PREMIUM", effort:"8 min · high spend", steps:["Apply for card","Get approved","Hit spend target","Wait for points"], expectedDays:90 },
+      { id:"freecash", name:"Freecash", action:"Join Freecash", reward:"Bonus Cash", amount:5, code:"", url:"https://freecash.com/r/89cab33004", desc:"Sign up and complete tasks, surveys, or offers for the platform reward.", badge:"­ƒÆ╗ EARN", effort:"3 min · quick start", steps:["Open Freecash","Create account","Complete first task"], expectedDays:1 },
+      { id:"swagbucks", name:"Swagbucks", action:"Join Swagbucks", reward:"Bonus SB", amount:5, code:"", url:"https://www.swagbucks.com/p/register?rb=150886036", desc:"Create an account and complete early actions to start earning points.", badge:"­ƒÆ╗ EARN", effort:"3 min · quick start", steps:["Open Swagbucks","Create account","Complete first task"], expectedDays:1 },
+      { id:"gemsloot", name:"Gemsloot", action:"Join Gemsloot", reward:"Bonus", amount:5, code:"", url:"https://gemsloot.com/?aff=Panza", desc:"Join and complete platform tasks or offers to earn value.", badge:"­ƒÆ╗ EARN", effort:"3 min · quick start", steps:["Open Gemsloot","Create account","Complete first task"], expectedDays:1 },
+      { id:"cash-in-style", name:"Cash in Style", action:"Join Cash in Style", reward:"Bonus", amount:5, code:"", url:"https://cashinstyle.com/?ref=69bdbedalvc1bahm", desc:"Join the platform and use its offers to earn shopping-related rewards.", badge:"­ƒÆ╗ EARN", effort:"3 min · quick start", steps:["Open Cash in Style","Create account","Complete first task"], expectedDays:1 },
+      { id:"lebara-mobile", name:"Lebara Mobile", action:"Switch to Lebara Mobile", reward:"Bonus", amount:10, code:"", url:"https://aklam.io/hgY3HOvR", desc:"Switch to Lebara and follow the qualifying referral steps.", badge:"­ƒô▒ MOBILE", effort:"5 min · SIM signup", steps:["Open Lebara","Choose SIM plan","Complete order","Wait for reward"], expectedDays:7 },
+      { id:"octopus-energy", name:"Octopus Energy", action:"Switch energy to Octopus", reward:"£50", amount:50, code:"", url:"https://share.octopus.energy/ocean-quoll-258", desc:"Switch energy supplier and both sides receive account credit.", badge:"✅ UTILITIES", effort:"7 min · switch supplier", steps:["Open Octopus","Start energy switch","Complete switch","Wait for reward"], expectedDays:30 },
+      { id:"costa-coffee", name:"Costa Coffee", action:"Join Costa Club", reward:"Free Coffee", amount:5, code:"", url:"https://www.costa.co.uk/costa-club", desc:"Join Costa Club to access the current welcome freebie.", badge:"🆓 FREEBIE", effort:"2 min · freebie", steps:["Open Costa Club","Create account","Claim welcome reward"], expectedDays:1 },
+      { id:"trainpal", name:"TrainPal", action:"Book first trip with TrainPal", reward:"£3 Off", amount:3, code:"03ba089c$00", url:"https://t.trainpal.com/wUEPLNq", desc:"Use the code on your first booking to reduce the fare.", badge:"­ƒÜå TRAVEL", effort:"2 min · code needed", steps:["Open TrainPal","Enter code 03ba089c$00","Book first trip"], expectedDays:1 },
+      { id:"wise", name:"Wise", action:"Join Wise", reward:"Free Transfer", amount:5, code:"", url:"https://wise.com/invite/ahpc/albertob1508", desc:"Join through referral and use the fee-free first transfer benefit.", badge:"­ƒÆ© TRANSFER", effort:"4 min · transfer account", steps:["Open Wise","Create account","Complete first transfer"], expectedDays:1 },
+      { id:"trading-212", name:"Trading 212", action:"Watch Trading 212 for return", reward:"Coming Soon", amount:0, code:"", url:"https://www.trading212.com", desc:"Referral campaign paused for now, but worth watching.", badge:"⏸️ PAUSED", effort:"No action yet", steps:["Wait for campaign to return"], expectedDays:0 },
+      { id:"nx-rewards", name:"NX Rewards", action:"Buy discounted gift cards on NX Rewards", reward:"Up to 15%", amount:15, code:"", url:"https://www.nxrewards.co.uk/", desc:"Buy discounted gift cards for major retailers at up to 15% off face value. No account needed for some cards.", badge:"🎵 GIFT CARD", effort:"2 min · instant saving", steps:["Go to nxrewards.co.uk","Browse available gift cards","Check the discount percentage","Buy the gift card for your chosen retailer","Use immediately in store or online"], expectedDays:1 },
+      { id:"complete-savings", name:"Complete Savings", action:"Join Complete Savings cashback", reward:"£15/month", amount:15, code:"", url:"https://www.completesavings.co.uk/", desc:"Monthly cashback on purchases. Often triggered automatically after an online purchase. Check terms carefully — there is a monthly subscription fee after a trial period.", badge:"­ƒÆ│ CASHBACK", effort:"5 min · check terms", steps:["Check if you were auto-enrolled after an online purchase","If not, sign up at completesavings.co.uk","Complete a qualifying purchase","Claim monthly cashback","Important: cancel before trial ends if you don't want to continue paying"], expectedDays:30 }
     ];
 
     const views = ["home", "offers", "stack", "progress", "community"];
@@ -2191,7 +2191,7 @@
         rate:"3.5%",
         source:"Jam Doughnut",
         icon:"­ƒøÆ",
-        tip:"Simple stack for everyday grocery runs. Rates vary ÔÇö always check before buying.",
+        tip:"Simple stack for everyday grocery runs. Rates vary — always check before buying.",
         url:"https://www.jamdoughnut.com/",
         boost:false,
         featured:true,
@@ -2243,7 +2243,7 @@
         url:"https://airtimerewards.app.link/6Waa7E1IF1b",
         boost:false,
         featured:false,
-        steps:["Sign up to Airtime Rewards with code FRJKFXX3","Buy Amazon gift card","Shop as normal ÔÇö cashback applied to mobile bill"],
+        steps:["Sign up to Airtime Rewards with code FRJKFXX3","Buy Amazon gift card","Shop as normal — cashback applied to mobile bill"],
         total:"Potential total stack: about 3%+"
       }
     ];
@@ -2252,7 +2252,7 @@
       {
         title:"Supermarket Shop Stack",
         steps:[
-          "Start with Jam Doughnut (code 8TGF) ÔÇö consistently strong rates across major supermarkets.",
+          "Start with Jam Doughnut (code 8TGF) — consistently strong rates across major supermarkets.",
           "Pay with a cashback card when possible.",
           "Use Clubcard, Nectar, or member prices at checkout.",
           "Log savings so your tracker reflects real wins."
@@ -2396,7 +2396,7 @@
     }
 
     function formatMoney(value) {
-      return `┬ú${Number(value || 0).toFixed(0)}`;
+      return `£${Number(value || 0).toFixed(0)}`;
     }
 
     function parseRewardValue(reward) {
@@ -2566,7 +2566,7 @@
       ui.statSaved.textContent = formatMoney(getEarnedTotal());
       ui.statPending.textContent = formatMoney(getPendingTotal());
       ui.statXp.textContent = String(state.xp);
-      ui.statStreak.textContent = `${state.streak}­ƒöÑ`;
+      ui.statStreak.textContent = `${state.streak}🔥`;
     }
 
     function updateDailyBox() {
@@ -2574,7 +2574,7 @@
       const claimedToday = state.lastDaily === today;
       ui.dailyStatus.textContent = claimedToday ? "Claimed" : "Ready";
       ui.dailyCopy.textContent = claimedToday ? "Come back tomorrow to keep your streak alive." : "Quick XP boost for checking in today.";
-      ui.dailyEmoji.textContent = claimedToday ? "­ƒöô" : "­ƒÄü";
+      ui.dailyEmoji.textContent = claimedToday ? "­ƒöô" : "🎵";
       ui.dailyBtn.disabled = claimedToday;
       ui.dailyBtn.className = claimedToday ? "secondary-btn" : "primary-btn";
       ui.dailyBtn.textContent = claimedToday ? "Daily XP Claimed" : "Claim Daily XP";
@@ -2656,8 +2656,8 @@
     }
 
     function getStatusPill(status) {
-      if (status === "completed") return `<span class="pill status-completed">Ô£ö Completed</span>`;
-      if (status === "pending") return `<span class="pill status-pending">ÔÅ│ Pending</span>`;
+      if (status === "completed") return `<span class="pill status-completed">✅ Completed</span>`;
+      if (status === "pending") return `<span class="pill status-pending">⏳ Pending</span>`;
       return `<span class="pill">Not started</span>`;
     }
 
@@ -2692,8 +2692,8 @@
       const hasClaimed = status !== "none";
 
       // Status label
-      const statusLabel = status === "completed" ? "Ô£à Completed"
-        : status === "pending" ? "ÔÅ│ Pending payout"
+      const statusLabel = status === "completed" ? "✓ Completed"
+        : status === "pending" ? "⏳ Pending payout"
         : "Not started";
       const statusColor = status === "completed" ? "var(--green)"
         : status === "pending" ? "var(--yellow)"
@@ -2703,9 +2703,9 @@
       const btnClass = status === "completed" ? "done-btn"
         : status === "pending" ? "pending-btn"
         : "";
-      const btnText = status === "completed" ? "Ô£à Completed ÔÇö View Details"
-        : status === "pending" ? "ÔÅ│ Pending ÔÇö Track Progress"
-        : "Claim Offer ÔåÆ";
+      const btnText = status === "completed" ? "✓ Completed — View Details"
+        : status === "pending" ? "⏳ Pending — Track Progress"
+        : "Claim Offer →";
 
       return `
         <article class="offer-card ${cardClass}" data-offer-id="${offer.id}">
@@ -2718,9 +2718,9 @@
 
           <div class="offer-card-meta">
             <span class="offer-meta-badge">${offer.badge}</span>
-            <span class="offer-meta-dot">┬À</span>
+            <span class="offer-meta-dot">·</span>
             <span class="offer-meta-badge">${offer.effort}</span>
-            <span class="offer-meta-dot">┬À</span>
+            <span class="offer-meta-dot">·</span>
             <span class="offer-meta-badge" style="color:${statusColor}">${statusLabel}</span>
           </div>
 
@@ -2743,39 +2743,39 @@
     function renderTodayPlan() {
       const dayPlans = {
         0: { // Sunday
-          label: "Sunday ÔÇö set up for the week",
+          label: "Sunday — set up for the week",
           ids: ["lloyds-bank", "chase-uk", "natwest", "topcashback"],
           tip: "Bank switches take 7 working days. Start Sunday, get paid by next Friday."
         },
         1: { // Monday
-          label: "Monday ÔÇö bank switch day",
+          label: "Monday — bank switch day",
           ids: ["lloyds-bank", "first-direct", "natwest", "santander"],
-          tip: "Start a bank switch today ÔÇö they take 7 days. You could have ┬ú200+ by next week."
+          tip: "Start a bank switch today — they take 7 days. You could have £200+ by next week."
         },
         2: { // Tuesday
-          label: "Tuesday ÔÇö invest & grow",
+          label: "Tuesday — invest & grow",
           ids: ["freetrade", "robinhood-uk", "webull", "wealthify"],
-          tip: "Low-effort invest bonuses. Freetrade needs just ┬ú1 deposit for a free share."
+          tip: "Low-effort invest bonuses. Freetrade needs just £1 deposit for a free share."
         },
         3: { // Wednesday
-          label: "Wednesday ÔÇö supermarket stack day",
+          label: "Wednesday — supermarket stack day",
           ids: ["jam-doughnut", "topcashback", "airtime-rewards", "cheddar"],
           tip: "Buy your weekly shop gift card via Jam Doughnut (code 8TGF) before you go to the supermarket."
         },
         4: { // Thursday
-          label: "Thursday ÔÇö cashback check",
+          label: "Thursday — cashback check",
           ids: ["topcashback", "quidco", "rakuten", "jam-doughnut"],
-          tip: "Always check TopCashback before any online purchase ÔÇö it takes 30 seconds and saves real money."
+          tip: "Always check TopCashback before any online purchase — it takes 30 seconds and saves real money."
         },
         5: { // Friday
-          label: "Friday ÔÇö quick wins",
+          label: "Friday — quick wins",
           ids: ["zilch", "curve-pay", "monzo", "revolut"],
           tip: "These take under 5 minutes each. Grab them before the weekend."
         },
         6: { // Saturday
-          label: "Saturday ÔÇö review & track",
+          label: "Saturday — review & track",
           ids: ["jam-doughnut", "airtime-rewards", "everup", "slide"],
-          tip: "Check your pending payouts ÔÇö any bank switches that should have landed?"
+          tip: "Check your pending payouts — any bank switches that should have landed?"
         }
       };
 
@@ -2798,21 +2798,21 @@
       }
 
       const total = tasks.reduce((sum, o) => sum + (o.amount || 0), 0);
-      ui.planAmount.textContent = total ? `┬ú${Math.min(total, 500)}+` : "┬ú0";
+      ui.planAmount.textContent = total ? `£${Math.min(total, 500)}+` : "£0";
 
       ui.todayTasks.innerHTML = `
         <div style="padding:8px 10px;margin-bottom:8px;background:rgba(255,207,90,.08);border-radius:10px;border:1px solid rgba(255,207,90,.2)">
           <div style="font-size:10px;font-weight:700;color:var(--yellow);text-transform:uppercase;letter-spacing:.06em;margin-bottom:3px">${plan.label}</div>
-          <div style="font-size:12px;color:var(--muted);line-height:1.4">­ƒÆí ${plan.tip}</div>
+          <div style="font-size:12px;color:var(--muted);line-height:1.4">🆕 ${plan.tip}</div>
         </div>
         ${tasks.map(offer => {
           const done = getOfferStatus(offer.id) !== "none";
           return `<button class="task-btn" data-plan-offer="${offer.id}" style="${done ? "opacity:.5" : ""}">
             <div class="task-top">
-              <div class="task-title">${done ? "Ô£à " : ""}${offer.name}</div>
+              <div class="task-title">${done ? "✓ " : ""}${offer.name}</div>
               <div class="task-reward">${offer.reward}</div>
             </div>
-            <div class="task-sub">${offer.effort} ${done ? "┬À claimed" : ""}</div>
+            <div class="task-sub">${offer.effort} ${done ? "· claimed" : ""}</div>
           </button>`;
         }).join("")}
       `;
@@ -2923,16 +2923,16 @@
       ui.profileClaims.textContent = String(state.claimed);
       ui.profileCompleted.textContent = String(getCompletedCount());
       ui.profilePendingCount.textContent = String(getPendingCount());
-      ui.profileStreak.textContent = `${state.streak}­ƒöÑ`;
+      ui.profileStreak.textContent = `${state.streak}🔥`;
 
       ui.earnedTotal.textContent = formatMoney(getEarnedTotal());
       ui.pendingTotal.textContent = formatMoney(getPendingTotal());
       ui.activeTotal.textContent = String(getActiveOffersCount());
 
       const milestones = [
-        { name:"First ┬ú50 earned", amount:50, value:getEarnedTotal() },
-        { name:"┬ú100 earned", amount:100, value:getEarnedTotal() },
-        { name:"┬ú250 earned", amount:250, value:getEarnedTotal() },
+        { name:"First £50 earned", amount:50, value:getEarnedTotal() },
+        { name:"£100 earned", amount:100, value:getEarnedTotal() },
+        { name:"£250 earned", amount:250, value:getEarnedTotal() },
         { name:"5 offers completed", amount:5, value:getCompletedCount() },
         { name:"Level 3", amount:120, value:state.xp, xp:true },
         { name:"Level 5", amount:360, value:state.xp, xp:true }
@@ -2947,14 +2947,14 @@
               <strong>${item.name}</strong>
               <span>${label}</span>
             </div>
-            <div>${done ? "Ô£à Done" : "­ƒÄ»"}</div>
+            <div>${done ? "✓ Done" : "­ƒÄ»"}</div>
           </div>
         `;
       }).join("");
 
       ui.moneyOfferSelect.innerHTML = `<option value="">Select offer</option>` + offers.map(offer => {
         const money = state.earningsMap[offer.id] || {};
-        const suffix = money.earned || money.pending ? ` ┬À ${formatMoney(money.earned || 0)} / ${formatMoney(money.pending || 0)}` : "";
+        const suffix = money.earned || money.pending ? ` · ${formatMoney(money.earned || 0)} / ${formatMoney(money.pending || 0)}` : "";
         return `<option value="${offer.id}">${offer.name}${suffix}</option>`;
       }).join("");
 
@@ -2978,7 +2978,7 @@
             <strong>${index < 3 ? ["­ƒÑç","­ƒÑê","­ƒÑë"][index] : "#" + (index + 1)} ${player.name}${player.you ? " (You)" : ""}</strong>
             <span>Leaderboard position</span>
           </div>
-          <div>${player.xp} XP ┬À ${formatMoney(player.saved)}</div>
+          <div>${player.xp} XP · ${formatMoney(player.saved)}</div>
         </div>
       `).join("");
     }
@@ -3003,122 +3003,122 @@
     }
 
 
-    // ÔöÇÔöÇ ENRICHED OFFER DATA (tips, warnings, full steps) ÔöÇÔöÇ
+    // ── ENRICHED OFFER DATA (tips, warnings, full steps) ──
     const offerEnrichment = {
       "chase-uk": {
         tips:[
-          "You don't need ┬ú1,000 sitting in your account ÔÇö you can transfer it in, wait for the bonus, then move it back out",
-          "The ┬ú1,000 can come from any bank account you own ÔÇö just do a bank transfer",
-          "After you get the bonus, Chase is worth keeping as your everyday card ÔÇö it gives you 1% cashback on groceries and transport automatically",
-          "You can open Chase AND switch other banks at the same time ÔÇö they work independently"
+          "You don't need £1,000 sitting in your account — you can transfer it in, wait for the bonus, then move it back out",
+          "The £1,000 can come from any bank account you own — just do a bank transfer",
+          "After you get the bonus, Chase is worth keeping as your everyday card — it gives you 1% cashback on groceries and transport automatically",
+          "You can open Chase AND switch other banks at the same time — they work independently"
         ],
         warnings:[
-          "Never use Chase as the account you switch AWAY FROM ÔÇö only use it as a new account you open",
-          "You must not have had a Chase account before ÔÇö if you have, you won't qualify",
-          "The ┬ú1,000 must stay in the account for the full 30 days ÔÇö don't withdraw it early or the bonus won't pay"
+          "Never use Chase as the account you switch AWAY FROM — only use it as a new account you open",
+          "You must not have had a Chase account before — if you have, you won't qualify",
+          "The £1,000 must stay in the account for the full 30 days — don't withdraw it early or the bonus won't pay"
         ],
         steps:[
           "Download the Chase app from the App Store or Google Play",
-          "Tap 'Open an account' and fill in your details ÔÇö takes about 5 minutes",
+          "Tap 'Open an account' and fill in your details — takes about 5 minutes",
           "When asked for a referral code, enter: J2SK9W",
-          "Once your account is open, transfer ┬ú1,000 into it from your existing bank (use bank transfer, not cash)",
-          "Leave the ┬ú1,000 sitting in Chase for 30 days ÔÇö don't touch it",
-          "Chase will send you ┬ú50 automatically ÔÇö usually within a few days of the 30-day mark",
-          "After that, you can move the ┬ú1,000 back to your main bank if you want"
+          "Once your account is open, transfer £1,000 into it from your existing bank (use bank transfer, not cash)",
+          "Leave the £1,000 sitting in Chase for 30 days — don't touch it",
+          "Chase will send you £50 automatically — usually within a few days of the 30-day mark",
+          "After that, you can move the £1,000 back to your main bank if you want"
         ]
       },
       "lloyds-bank": {
         tips:[
-          "A CASS switch means Lloyds automatically moves all your Direct Debits and Standing Orders from your old bank ÔÇö you don't have to do it manually",
-          "The ┬ú2,000 deposit can be split ÔÇö e.g. pay in ┬ú1,000 twice. It just needs to arrive within 30 days",
-          "Need Direct Debits? Use our Direct Debit service in the Community tab ÔÇö it sets up real DDs for ┬ú1/month each",
-          "This is one of the highest-value bank switches available right now ÔÇö do this one first before others",
-          "After completing Lloyds, wait a few weeks then do NatWest for another ┬ú150"
+          "A CASS switch means Lloyds automatically moves all your Direct Debits and Standing Orders from your old bank — you don't have to do it manually",
+          "The £2,000 deposit can be split — e.g. pay in £1,000 twice. It just needs to arrive within 30 days",
+          "Need Direct Debits? Use our Direct Debit service in the Community tab — it sets up real DDs for £1/month each",
+          "This is one of the highest-value bank switches available right now — do this one first before others",
+          "After completing Lloyds, wait a few weeks then do NatWest for another £150"
         ],
         warnings:[
           "You must not have had a Lloyds, Halifax or Bank of Scotland account in the last 12 months",
-          "You MUST use the official switch service (CASS) ÔÇö you cannot just open an account without switching",
-          "You need BOTH: ┬ú2,000 paid in AND 2 active Direct Debits. Missing either one means no bonus"
+          "You MUST use the official switch service (CASS) — you cannot just open an account without switching",
+          "You need BOTH: £2,000 paid in AND 2 active Direct Debits. Missing either one means no bonus"
         ],
         steps:[
           "Click the link to open a Club Lloyds current account",
-          "During the application, choose 'Switch from another bank' ÔÇö this starts the CASS process",
+          "During the application, choose 'Switch from another bank' — this starts the CASS process",
           "Choose which bank you want to switch FROM (it will close that account and move everything over)",
-          "Pay ┬ú2,000 into your new Lloyds account within 30 days of opening",
-          "Set up 2 Direct Debits ÔÇö use our DD service in the Community tab if you need them",
-          "Wait ÔÇö Lloyds will pay ┬ú200 into your account within 30 days of meeting all conditions",
+          "Pay £2,000 into your new Lloyds account within 30 days of opening",
+          "Set up 2 Direct Debits — use our DD service in the Community tab if you need them",
+          "Wait — Lloyds will pay £200 into your account within 30 days of meeting all conditions",
           "Keep the account open to avoid any clawback"
         ]
       },
       "first-direct": {
-        tips:["Rated best UK bank for customer service","Set up the 7% regular saver immediately after switching ÔÇö one of the best rates available","24/7 customer service is great if switch issues arise"],
-        warnings:["Must not have held First Direct or HSBC previously","Must pay in ┬ú1,000 within 3 months (not 30 days like most)","Must set up at least 1 Direct Debit"],
-        steps:["Open First Direct account via the link","Use CASS to switch your existing account","Pay in ┬ú1,000 within 3 months","Set up 1 Direct Debit","Open the linked 7% regular saver","Receive ┬ú175 bonus within 28 days"]
+        tips:["Rated best UK bank for customer service","Set up the 7% regular saver immediately after switching — one of the best rates available","24/7 customer service is great if switch issues arise"],
+        warnings:["Must not have held First Direct or HSBC previously","Must pay in £1,000 within 3 months (not 30 days like most)","Must set up at least 1 Direct Debit"],
+        steps:["Open First Direct account via the link","Use CASS to switch your existing account","Pay in £1,000 within 3 months","Set up 1 Direct Debit","Open the linked 7% regular saver","Receive £175 bonus within 28 days"]
       },
       "natwest": {
-        tips:["Open the 7% regular saver immediately after switch completes","Bonus usually paid within 10 working days","NatWest and Royal Bank of Scotland are the same group ÔÇö check both"],
-        warnings:["Must not have held NatWest or Royal Bank of Scotland before","Must have 2 active Direct Debits ÔÇö standing orders don't count"],
-        steps:["Open NatWest account via the link","Use CASS to switch your existing account","Set up 2 Direct Debits","Open the 7% regular saver","Receive ┬ú150 bonus within 10 working days"]
+        tips:["Open the 7% regular saver immediately after switch completes","Bonus usually paid within 10 working days","NatWest and Royal Bank of Scotland are the same group — check both"],
+        warnings:["Must not have held NatWest or Royal Bank of Scotland before","Must have 2 active Direct Debits — standing orders don't count"],
+        steps:["Open NatWest account via the link","Use CASS to switch your existing account","Set up 2 Direct Debits","Open the 7% regular saver","Receive £150 bonus within 10 working days"]
       },
       "santander": {
-        tips:["Santander Edge gives 1% cashback on selected bills ÔÇö useful ongoing","Do Lloyds first then switch to Santander next for maximum value"],
-        warnings:["Must switch to Santander Edge specifically ÔÇö other accounts don't qualify","Must set up 2 Direct Debits within 90 days"],
-        steps:["Open Santander Edge account","Use CASS to switch your existing account","Set up 2 Direct Debits within 90 days","Receive ┬ú200 bonus"]
+        tips:["Santander Edge gives 1% cashback on selected bills — useful ongoing","Do Lloyds first then switch to Santander next for maximum value"],
+        warnings:["Must switch to Santander Edge specifically — other accounts don't qualify","Must set up 2 Direct Debits within 90 days"],
+        steps:["Open Santander Edge account","Use CASS to switch your existing account","Set up 2 Direct Debits within 90 days","Receive £200 bonus"]
       },
       "barclays": {
-        tips:["Hard deadline of 28 May 2026 ÔÇö don't delay","Pay in the ┬ú2,000 as soon as possible after opening"],
-        warnings:["Must NOT have held Barclays since 10 March 2026","Offer ends 28 May 2026 ÔÇö hard deadline","Must pay in ┬ú2,000 AND 2 Direct Debits"],
-        steps:["Confirm no Barclays account since 10 March 2026","Open Barclays account via the link","Use CASS to switch","Pay in ┬ú2,000","Set up 2 Direct Debits","Receive ┬ú175 bonus"]
+        tips:["Hard deadline of 28 May 2026 — don't delay","Pay in the £2,000 as soon as possible after opening"],
+        warnings:["Must NOT have held Barclays since 10 March 2026","Offer ends 28 May 2026 — hard deadline","Must pay in £2,000 AND 2 Direct Debits"],
+        steps:["Confirm no Barclays account since 10 March 2026","Open Barclays account via the link","Use CASS to switch","Pay in £2,000","Set up 2 Direct Debits","Receive £175 bonus"]
       },
       "freetrade": {
         tips:[
-          "You only need to deposit ┬ú1 ÔÇö that's literally it. You can withdraw it straight after if you want",
-          "The free share is randomly assigned ÔÇö it can be worth anywhere from ┬ú3 to ┬ú100+",
+          "You only need to deposit £1 — that's literally it. You can withdraw it straight after if you want",
+          "The free share is randomly assigned — it can be worth anywhere from £3 to £100+",
           "Opening a Stocks & Shares ISA wrapper (free) means your share grows tax-free",
           "You can sell the share immediately once it arrives if you don't want to keep it"
         ],
         warnings:[
-          "You must not have had a Freetrade account before ÔÇö new customers only",
-          "Shares can go up or down in value ÔÇö only invest what you can afford to lose",
+          "You must not have had a Freetrade account before — new customers only",
+          "Shares can go up or down in value — only invest what you can afford to lose",
           "The free share takes up to 7 days to appear in your account"
         ],
         steps:[
           "Click the referral link to go to Freetrade's website",
           "Tap 'Get started' and create an account with your email",
-          "Verify your identity ÔÇö you'll need your passport or driving licence photo",
-          "Once approved (usually same day), tap 'Add money' and deposit ┬ú1",
-          "Wait up to 7 days ÔÇö Freetrade will notify you when your free share arrives",
+          "Verify your identity — you'll need your passport or driving licence photo",
+          "Once approved (usually same day), tap 'Add money' and deposit £1",
+          "Wait up to 7 days — Freetrade will notify you when your free share arrives",
           "Go to your portfolio to see what share you received",
-          "You can sell it straight away or keep it ÔÇö up to you"
+          "You can sell it straight away or keep it — up to you"
         ]
       },
       "robinhood-uk": {
-        tips:["Deposit just ┬ú1 to qualify ÔÇö free share can be worth up to ┬ú140"],
+        tips:["Deposit just £1 to qualify — free share can be worth up to £140"],
         warnings:["New Robinhood UK customers only","Capital at risk"],
-        steps:["Sign up via referral link","Complete UK identity verification","Deposit ┬ú1","Receive free share worth up to ┬ú140"]
+        steps:["Sign up via referral link","Complete UK identity verification","Deposit £1","Receive free share worth up to £140"]
       },
       "webull": {
-        tips:["Your ┬ú500 can stay in cash ÔÇö doesn't have to be invested","Set a 60-day calendar reminder so you know when to withdraw"],
-        warnings:["Must hold for a full 60 days ÔÇö withdrawing early forfeits the bonus"],
-        steps:["Sign up via referral link","Complete identity verification","Deposit ┬ú500","Hold for 60 days","Receive ┬ú50 bonus"]
+        tips:["Your £500 can stay in cash — doesn't have to be invested","Set a 60-day calendar reminder so you know when to withdraw"],
+        warnings:["Must hold for a full 60 days — withdrawing early forfeits the bonus"],
+        steps:["Sign up via referral link","Complete identity verification","Deposit £500","Hold for 60 days","Receive £50 bonus"]
       },
       "topcashback": {
         tips:[
-          "Before you buy ANYTHING online ÔÇö check TopCashback first. Even 1-2% on a ┬ú500 purchase is ┬ú5-10 for 30 seconds of effort",
-          "Install the TopCashback browser extension ÔÇö it automatically reminds you when cashback is available on a site you visit",
-          "The TopGiftCards section gives you cashback on gift card purchases ÔÇö use it before your weekly shop",
-          "Cashback stacks with discount codes ÔÇö you can use a voucher AND earn cashback at the same time on many sites"
+          "Before you buy ANYTHING online — check TopCashback first. Even 1-2% on a £500 purchase is £5-10 for 30 seconds of effort",
+          "Install the TopCashback browser extension — it automatically reminds you when cashback is available on a site you visit",
+          "The TopGiftCards section gives you cashback on gift card purchases — use it before your weekly shop",
+          "Cashback stacks with discount codes — you can use a voucher AND earn cashback at the same time on many sites"
         ],
         warnings:[
-          "Cashback takes 30-90 days to become 'payable' ÔÇö it's not instant",
-          "You MUST click through TopCashback before adding items to your basket ÔÇö going direct to the retailer means no cashback",
-          "Don't clear your cookies before completing a purchase ÔÇö it breaks the tracking"
+          "Cashback takes 30-90 days to become 'payable' — it's not instant",
+          "You MUST click through TopCashback before adding items to your basket — going direct to the retailer means no cashback",
+          "Don't clear your cookies before completing a purchase — it breaks the tracking"
         ],
         steps:[
           "Click the referral link and create a free TopCashback account",
-          "Install the browser extension (optional but very useful ÔÇö it reminds you when cashback is available)",
+          "Install the browser extension (optional but very useful — it reminds you when cashback is available)",
           "Next time you want to shop online, search for the retailer on TopCashback first",
-          "Click through to the retailer from TopCashback ÔÇö don't open a new tab or go direct",
+          "Click through to the retailer from TopCashback — don't open a new tab or go direct",
           "Complete your purchase as normal",
           "Cashback will appear in your TopCashback account within a few days",
           "Once it becomes payable (30-90 days), withdraw to your bank account or PayPal"
@@ -3126,68 +3126,68 @@
       },
       "jam-doughnut": {
         tips:[
-          "Think of it like this: if Tesco gift cards are 4.5% off, a ┬ú100 gift card costs you ┬ú95.50 ÔÇö instant saving before you even shop",
+          "Think of it like this: if Tesco gift cards are 4.5% off, a £100 gift card costs you £95.50 — instant saving before you even shop",
           "Pay for your Jam Doughnut gift card with an Amex or cashback card to earn extra rewards on top",
-          "Rates change every day ÔÇö always check the current rate on the app before buying",
-          "Best for your weekly supermarket shop ÔÇö buy the gift card first, then use it to pay in store",
+          "Rates change every day — always check the current rate on the app before buying",
+          "Best for your weekly supermarket shop — buy the gift card first, then use it to pay in store",
           "Code 8TGF gets you a bonus when you sign up"
         ],
         warnings:[
-          "Rates shown are the rate TODAY ÔÇö they can be different tomorrow, so always check before buying",
-          "Only buy what you plan to spend ÔÇö gift cards can't easily be refunded"
+          "Rates shown are the rate TODAY — they can be different tomorrow, so always check before buying",
+          "Only buy what you plan to spend — gift cards can't easily be refunded"
         ],
         steps:[
           "Go to jamdoughnut.com and create a free account",
           "Enter referral code 8TGF during signup to get a bonus",
-          "Browse the available gift cards ÔÇö Tesco, Sainsburys, Waitrose, Boots etc",
+          "Browse the available gift cards — Tesco, Sainsburys, Waitrose, Boots etc",
           "Check the current cashback percentage next to each retailer",
-          "Buy the gift card for the amount you plan to spend (e.g. ┬ú50 for your weekly shop)",
+          "Buy the gift card for the amount you plan to spend (e.g. £50 for your weekly shop)",
           "Pay using your bank card or Amex for extra rewards",
-          "Your discounted gift card appears instantly ÔÇö use it in store or online"
+          "Your discounted gift card appears instantly — use it in store or online"
         ]
       },
       "cheddar": {
         tips:["Stack Cheddar cashback with Clubcard/Nectar prices for double saving at supermarkets"],
         warnings:[],
-        steps:["Sign up via link","Enter code FVESBGB","Link your bank card","Earn ┬ú5 cashback ÔÇö both of you get ┬ú3 bonus"]
+        steps:["Sign up via link","Enter code FVESBGB","Link your bank card","Earn £5 cashback — both of you get £3 bonus"]
       },
       "airtime-rewards": {
-        tips:["Amazon gift cards at 2% off ÔÇö stack with TopCashback portal for extra","Cashback applied to your mobile bill automatically"],
+        tips:["Amazon gift cards at 2% off — stack with TopCashback portal for extra","Cashback applied to your mobile bill automatically"],
         warnings:[],
-        steps:["Sign up via link","Enter code FRJKFXX3","Spend ┬ú5 within 7 days","Receive ┬ú2 off mobile bill"]
+        steps:["Sign up via link","Enter code FRJKFXX3","Spend £5 within 7 days","Receive £2 off mobile bill"]
       },
       "octopus-energy": {
-        tips:["Both you and the referrer get ┬ú50 ÔÇö genuine win-win","One of the best-rated energy suppliers for customer service"],
-        warnings:["Must be switching from another supplier ÔÇö existing Octopus customers don't qualify"],
-        steps:["Click referral link","Switch energy supply to Octopus","Both receive ┬ú50 credit within 90 days"]
+        tips:["Both you and the referrer get £50 — genuine win-win","One of the best-rated energy suppliers for customer service"],
+        warnings:["Must be switching from another supplier — existing Octopus customers don't qualify"],
+        steps:["Click referral link","Switch energy supply to Octopus","Both receive £50 credit within 90 days"]
       },
       "amex-business-platinum": {
-        tips:["Pay your HMRC tax bill via Amex to hit the ┬ú3,000 spend threshold easily","130k points Ôëê ┬ú650-┬ú1,300 of travel value depending on redemption","Business Platinum has excellent perks ÔÇö lounge access, travel credits"],
-        warnings:["Annual fee applies ÔÇö check before applying","Credit check will be performed"],
-        steps:["Apply via referral link","Get approved for Amex Business Platinum","Spend ┬ú3,000 within 3 months (use HMRC payments)","Receive 130,000 MR points"]
+        tips:["Pay your HMRC tax bill via Amex to hit the £3,000 spend threshold easily","130k points → £650-£1,300 of travel value depending on redemption","Business Platinum has excellent perks — lounge access, travel credits"],
+        warnings:["Annual fee applies — check before applying","Credit check will be performed"],
+        steps:["Apply via referral link","Get approved for Amex Business Platinum","Spend £3,000 within 3 months (use HMRC payments)","Receive 130,000 MR points"]
       },
       "tide": {
-        tips:["Excellent for sole traders ÔÇö free basic business account","Useful for accepting Direct Debit mandates"],
-        warnings:["Must be a genuine business account ÔÇö need a business name or structure"],
-        steps:["Sign up via link","Enter code 3834VA","Complete business verification","Make first transaction","Receive ┬ú75"]
+        tips:["Excellent for sole traders — free basic business account","Useful for accepting Direct Debit mandates"],
+        warnings:["Must be a genuine business account — need a business name or structure"],
+        steps:["Sign up via link","Enter code 3834VA","Complete business verification","Make first transaction","Receive £75"]
       },
       "worldfirst": {
         tips:["Best for businesses with international payments","Stack with Amex for MR points on qualifying transactions"],
-        warnings:["Must make qualifying transactions ÔÇö check minimums on WorldFirst site"],
-        steps:["Open WorldFirst account via link","Complete business verification","Make qualifying transactions","Receive up to ┬ú355"]
+        warnings:["Must make qualifying transactions — check minimums on WorldFirst site"],
+        steps:["Open WorldFirst account via link","Complete business verification","Make qualifying transactions","Receive up to £355"]
       },
       "nx-rewards": {
-        tips:["Compare NX Rewards rates against Jam Doughnut and EverUp before buying ÔÇö whichever is highest wins","No loyalty card needed ÔÇö instant saving at checkout","Works for Amazon, Argos, M&S, John Lewis and many more"],
-        warnings:["Some cards are e-codes (digital) and some are physical ÔÇö check before buying","Rates change daily so always verify at time of purchase"],
-        steps:["Go to nxrewards.co.uk","Click on the retailer you want","Check the current discount percentage","Add to basket and pay","You receive a gift card code instantly by email","Use the code at checkout ÔÇö your saving is instant"]
+        tips:["Compare NX Rewards rates against Jam Doughnut and EverUp before buying — whichever is highest wins","No loyalty card needed — instant saving at checkout","Works for Amazon, Argos, M&S, John Lewis and many more"],
+        warnings:["Some cards are e-codes (digital) and some are physical — check before buying","Rates change daily so always verify at time of purchase"],
+        steps:["Go to nxrewards.co.uk","Click on the retailer you want","Check the current discount percentage","Add to basket and pay","You receive a gift card code instantly by email","Use the code at checkout — your saving is instant"]
       },
       "complete-savings": {
-        tips:["If you were enrolled automatically after an online purchase, you may already have cashback waiting","The ┬ú15/month cashback can cover the subscription cost if you use it every month","Works at hundreds of retailers including M&S, Currys, and John Lewis"],
-        warnings:["ÔÜá´©Å IMPORTANT: There is a monthly subscription fee after the free trial ÔÇö set a calendar reminder to cancel if you don't want to continue","You may have been auto-enrolled after buying something online ÔÇö check your bank statements for a charge from Complete Savings","Always read the current terms before signing up"],
-        steps:["Check if you already have an account ÔÇö search your email for Complete Savings","If enrolled, log in and claim any pending cashback","If not enrolled, visit completesavings.co.uk and read the current terms","Make a qualifying purchase through their portal","Claim your ┬ú15 cashback","Set a reminder to cancel before the trial ends if needed"]
+        tips:["If you were enrolled automatically after an online purchase, you may already have cashback waiting","The £15/month cashback can cover the subscription cost if you use it every month","Works at hundreds of retailers including M&S, Currys, and John Lewis"],
+        warnings:["⚠️ IMPORTANT: There is a monthly subscription fee after the free trial — set a calendar reminder to cancel if you don't want to continue","You may have been auto-enrolled after buying something online — check your bank statements for a charge from Complete Savings","Always read the current terms before signing up"],
+        steps:["Check if you already have an account — search your email for Complete Savings","If enrolled, log in and claim any pending cashback","If not enrolled, visit completesavings.co.uk and read the current terms","Make a qualifying purchase through their portal","Claim your £15 cashback","Set a reminder to cancel before the trial ends if needed"]
       },
       "wise": {
-        tips:["Best FX rates available ÔÇö much cheaper than banks for international transfers"],
+        tips:["Best FX rates available — much cheaper than banks for international transfers"],
         warnings:[],
         steps:["Sign up via referral link","Complete identity verification","Make first transfer fee-free","Receive free physical card"]
       },
@@ -3197,24 +3197,24 @@
         steps:["Sign up via link","Add your existing bank cards to Curve","Use Curve card for all spending","Earn 1% cashback for 30 days"]
       },
       "everup": {
-        tips:["Check Jam Doughnut first ÔÇö often has the best rates on major supermarkets","EverUp is worth comparing for Deliveroo and M&S specifically"],
-        warnings:["Rates are boosted rates ÔÇö check current figure before purchase"],
+        tips:["Check Jam Doughnut first — often has the best rates on major supermarkets","EverUp is worth comparing for Deliveroo and M&S specifically"],
+        warnings:["Rates are boosted rates — check current figure before purchase"],
         steps:["Sign up via referral link","Link your payment method","Compare current rates vs other platforms","Buy gift card at the best rate"]
       },
       "co-operative-bank": {
-        tips:["Ethical banking ÔÇö a good option if that matters to you"],
+        tips:["Ethical banking — a good option if that matters to you"],
         warnings:["Check current eligibility requirements on their website before applying"],
-        steps:["Open Co-operative Bank account","Use CASS to switch","Meet eligibility requirements","Receive ┬ú175 bonus"]
+        steps:["Open Co-operative Bank account","Use CASS to switch","Meet eligibility requirements","Receive £175 bonus"]
       },
       "revolut": {
-        tips:["Excellent for travel ÔÇö no foreign transaction fees and great exchange rates"],
+        tips:["Excellent for travel — no foreign transaction fees and great exchange rates"],
         warnings:["Must be a new Revolut customer","Spend must happen within 30 days"],
-        steps:["Sign up via referral link","Complete identity verification","Spend ┬ú1 within 30 days","Receive ┬ú20 bonus"]
+        steps:["Sign up via referral link","Complete identity verification","Spend £1 within 30 days","Receive £20 bonus"]
       },
       "monzo": {
-        tips:["Spend just ┬ú1 on anything ÔÇö a coffee, a bus fare ÔÇö to trigger the reward","Monzo Pots are great for budgeting alongside your main account"],
+        tips:["Spend just £1 on anything — a coffee, a bus fare — to trigger the reward","Monzo Pots are great for budgeting alongside your main account"],
         warnings:["Must not have had a Monzo account before"],
-        steps:["Sign up via referral link","Complete identity verification","Spend ┬ú1 anywhere within 30 days","Receive random reward ┬ú5-┬ú50"]
+        steps:["Sign up via referral link","Complete identity verification","Spend £1 anywhere within 30 days","Receive random reward £5-£50"]
       }
     };
 
@@ -3222,7 +3222,7 @@
       return offerEnrichment[offerId] || { tips:[], warnings:[], steps:[] };
     }
 
-    // ÔöÇÔöÇ SLIDE PANEL ÔöÇÔöÇ
+    // ── SLIDE PANEL ──
     let activePanel = null;
 
     function openPanel(offer) {
@@ -3258,22 +3258,22 @@
       // Status
       html += `<div class="panel-status-row">
         <button class="status-btn ${status==='none'?'active-none':''}" data-status-id="${offer.id}" data-status-value="none">Not started</button>
-        <button class="status-btn ${status==='pending'?'active-pending':''}" data-status-id="${offer.id}" data-status-value="pending">ÔÅ│ Pending</button>
-        <button class="status-btn ${status==='completed'?'active-completed':''}" data-status-id="${offer.id}" data-status-value="completed">Ô£à Done</button>
+        <button class="status-btn ${status==='pending'?'active-pending':''}" data-status-id="${offer.id}" data-status-value="pending">⏳ Pending</button>
+        <button class="status-btn ${status==='completed'?'active-completed':''}" data-status-id="${offer.id}" data-status-value="completed">✓ Done</button>
       </div>`;
 
       // Tips
       if (enrich.tips && enrich.tips.length) {
         html += `<div class="panel-section panel-tips">
-          <div class="panel-section-title">­ƒÆí Hunter Tips</div>
-          ${enrich.tips.map(t => `<div class="panel-tip-row"><span class="panel-tip-arrow">ÔåÆ</span><span>${t}</span></div>`).join("")}
+          <div class="panel-section-title">🆕 Hunter Tips</div>
+          ${enrich.tips.map(t => `<div class="panel-tip-row"><span class="panel-tip-arrow">→</span><span>${t}</span></div>`).join("")}
         </div>`;
       }
 
       // Warnings
       if (enrich.warnings && enrich.warnings.length) {
         html += `<div class="panel-section panel-warnings">
-          <div class="panel-section-title">ÔÜá´©Å Watch Out</div>
+          <div class="panel-section-title">⚠️ Watch Out</div>
           ${enrich.warnings.map(w => `<div class="panel-tip-row"><span class="panel-warn-arrow">!</span><span>${w}</span></div>`).join("")}
         </div>`;
       }
@@ -3282,12 +3282,12 @@
       if (steps.length) {
         const pct = stepsTotal > 0 ? Math.round(stepsDone / stepsTotal * 100) : 0;
         html += `<div class="panel-section">
-          <div class="panel-section-title">­ƒôï Steps ÔÇö ${stepsDone}/${stepsTotal} ┬À ${pct}%</div>
+          <div class="panel-section-title">­ƒôï Steps — ${stepsDone}/${stepsTotal} · ${pct}%</div>
           <div class="step-progress-bar"><div class="step-progress-fill" id="spf_p_${offer.id}" style="width:${pct}%"></div></div>
           ${steps.map((step, i) => {
             const checked = (state.offerSteps[offer.id] || [])[i] || false;
             return `<div class="panel-step-row">
-              <div class="panel-step-check ${checked?'done':''}" onclick="togglePanelStep('${offer.id}', ${i})">${checked?'Ô£ô':''}</div>
+              <div class="panel-step-check ${checked?'done':''}" onclick="togglePanelStep('${offer.id}', ${i})">${checked?'✔':''}</div>
               <div class="panel-step-label ${checked?'done':''}">${step}</div>
             </div>`;
           }).join("")}
@@ -3298,7 +3298,7 @@
       html += `<div class="panel-section">
         <div class="panel-section-title">­ƒÆ░ Log Saving</div>
         <div class="panel-save-row">
-          <input id="panel_save_${offer.id}" type="number" placeholder="┬ú0.00" min="0" step="0.01" value="${saved > 0 ? saved : ''}">
+          <input id="panel_save_${offer.id}" type="number" placeholder="£0.00" min="0" step="0.01" value="${saved > 0 ? saved : ''}">
           <button onclick="panelLogSaving('${offer.id}')">Log</button>
         </div>
       </div>`;
@@ -3309,10 +3309,10 @@
       const footer = document.getElementById("panelFooter");
       if (offer.reward !== "Coming Soon") {
         const isAmber = offer.badge && (offer.badge.includes("BANK") || offer.badge.includes("SWITCH") || offer.badge.includes("INVEST") || offer.badge.includes("PREMIUM") || offer.badge.includes("VALUE"));
-        const btnText = offer.code ? `­ƒôï Copy Code & Claim ÔåÆ` : `­ƒÜÇ Claim Offer ÔåÆ`;
-        footer.innerHTML = `<button class="panel-claim ${isAmber?'amber':''}" onclick="panelClaim()">Open Offer ÔåÆ</button>`;
+        const btnText = offer.code ? `­ƒôï Copy Code & Claim →` : `­ƒÜÇ Claim Offer →`;
+        footer.innerHTML = `<button class="panel-claim ${isAmber?'amber':''}" onclick="panelClaim()">Open Offer →</button>`;
       } else {
-        footer.innerHTML = `<button class="panel-claim" style="background:var(--bg3);color:var(--muted2);cursor:default">ÔÅ©´©Å Paused ÔÇö Check Back Soon</button>`;
+        footer.innerHTML = `<button class="panel-claim" style="background:var(--bg3);color:var(--muted2);cursor:default">⏸️ Paused — Check Back Soon</button>`;
       }
 
       document.getElementById("offerPanel").classList.add("active");
@@ -3351,13 +3351,13 @@
       const check = document.querySelectorAll(".panel-step-check")[idx];
       const label = document.querySelectorAll(".panel-step-label")[idx];
       const isChecked = (state.offerSteps[offerId] || [])[idx];
-      if (check) { check.className = "panel-step-check" + (isChecked?" done":""); check.textContent = isChecked?"Ô£ô":""; }
+      if (check) { check.className = "panel-step-check" + (isChecked?" done":""); check.textContent = isChecked?"✔":""; }
       if (label) { label.className = "panel-step-label" + (isChecked?" done":""); }
       const bar = document.getElementById("spf_p_" + offerId);
       if (bar) bar.style.width = (total > 0 ? done/total*100 : 0) + "%";
       const sectionTitle = document.querySelector("#panelBody .panel-section-title");
       if (sectionTitle && sectionTitle.textContent.includes("Steps")) {
-        sectionTitle.textContent = `­ƒôï Steps ÔÇö ${done}/${total} ┬À ${Math.round(done/total*100)}%`;
+        sectionTitle.textContent = `­ƒôï Steps — ${done}/${total} · ${Math.round(done/total*100)}%`;
       }
       updateTopStats();
       if (done === total && total > 0) toast("­ƒÄë All steps done! +20 XP");
@@ -3374,13 +3374,13 @@
       saveState();
       updateTopStats();
       renderProfile();
-      toast("┬ú" + val.toFixed(2) + " saved!");
+      toast("£" + val.toFixed(2) + " saved!");
       vibrate(30);
     }
 
     function sharePanelOffer() {
       if (!activePanel) return;
-      const text = `­ƒÆ░ ${activePanel.name} ÔÇö ${activePanel.reward}\nhttps://moneyhunters.co.uk`;
+      const text = `­ƒÆ░ ${activePanel.name} — ${activePanel.reward}\nhttps://moneyhunters.co.uk`;
       if (navigator.share) navigator.share({ title: activePanel.name, text, url:"https://moneyhunters.co.uk" });
       else navigator.clipboard?.writeText(text).then(() => toast("Link copied"));
     }
@@ -3431,7 +3431,7 @@
     });
 
 
-    // ÔöÇÔöÇ PWA: SERVICE WORKER ÔöÇÔöÇ
+    // ── PWA: SERVICE WORKER ──
     // Only register SW when on the actual domain (not preview/localhost)
     if ('serviceWorker' in navigator && 
         (location.hostname === 'moneyhunters.co.uk' || 
@@ -3442,7 +3442,7 @@
       });
     }
 
-    // ÔöÇÔöÇ PWA: INSTALL PROMPT ÔöÇÔöÇ
+    // ── PWA: INSTALL PROMPT ──
     let deferredPrompt = null;
 
     window.addEventListener('beforeinstallprompt', e => {
@@ -3456,14 +3456,14 @@
 
     document.getElementById('installBtn').addEventListener('click', async () => {
       if (!deferredPrompt) {
-        // iOS ÔÇö show instructions
-        toast("Tap Share ÔåÆ Add to Home Screen");
+        // iOS — show instructions
+        toast("Tap Share → Add to Home Screen");
         return;
       }
       deferredPrompt.prompt();
       const { outcome } = await deferredPrompt.userChoice;
       if (outcome === 'accepted') {
-        toast('Ô£à Money Hunters installed!');
+        toast('✓ Money Hunters installed!');
         vibrate(100);
       }
       deferredPrompt = null;
@@ -3481,7 +3481,7 @@
       document.getElementById('installBanner').classList.remove('show');
     }
 
-    // iOS ÔÇö show install hint after 30 seconds if not installed
+    // iOS — show install hint after 30 seconds if not installed
     setTimeout(() => {
       const isIOS = /iphone|ipad|ipod/i.test(navigator.userAgent);
       const isStandalone = window.navigator.standalone;
@@ -3491,7 +3491,7 @@
       }
     }, 30000);
 
-    // ÔöÇÔöÇ EMAIL CAPTURE (Brevo) ÔöÇÔöÇ
+    // ── EMAIL CAPTURE (Brevo) ──
     // Replace BREVO_FORM_ID below with your actual Brevo form ID after setup
     // For now, emails are collected locally and logged
     async function submitEmail() {
@@ -3521,7 +3521,7 @@
 
         document.getElementById('emailForm').style.display = 'none';
         document.getElementById('emailDone').style.display = 'block';
-        toast('Ô£à Welcome to Money Hunters!');
+        toast('✓ Welcome to Money Hunters!');
         vibrate(50);
         state.xp += 5;
         saveState();
@@ -3533,7 +3533,7 @@
         localStorage.setItem('mh_emails', JSON.stringify(emails));
         document.getElementById('emailForm').style.display = 'none';
         document.getElementById('emailDone').style.display = 'block';
-        toast("Ô£à You're signed up!");
+        toast("✓ You're signed up!");
       }
     }
 
@@ -3543,7 +3543,7 @@
     });
 
 
-    // ÔöÇÔöÇ SUPABASE AUTH & SYNC ÔöÇÔöÇ
+    // ── SUPABASE AUTH & SYNC ──
     const SUPABASE_URL = 'https://wqcwevcdmiounmoqhqpg.supabase.co';
     const SUPABASE_KEY = 'sb_publishable_S98Xxe9umP419b54jHvOuw_bPEO0qiN';
     const db = window.supabase.createClient(SUPABASE_URL, SUPABASE_KEY);
@@ -3606,7 +3606,7 @@
       } catch(e) {
         errEl.textContent = e.message || 'Signup failed. Try again.';
       } finally {
-        btn.disabled = false; btn.textContent = 'Create Free Account ÔåÆ';
+        btn.disabled = false; btn.textContent = 'Create Free Account →';
       }
     }
 
@@ -3628,12 +3628,12 @@
         currentUser = data.user;
         hideAuthModal();
         await pullProgressFromSupabase();
-        toast('Ô£à Logged in! Progress loaded.');
+        toast('✓ Logged in! Progress loaded.');
         vibrate(30);
       } catch(e) {
         errEl.textContent = e.message || 'Login failed. Check your details.';
       } finally {
-        btn.disabled = false; btn.textContent = 'Log In ÔåÆ';
+        btn.disabled = false; btn.textContent = 'Log In →';
       }
     }
 
@@ -3799,11 +3799,11 @@
     }
 
 
-    // ÔöÇÔöÇ LIGHT / DARK MODE ÔöÇÔöÇ
+    // ── LIGHT / DARK MODE ──
     function toggleTheme() {
       const isLight = document.body.classList.toggle('light');
       localStorage.setItem('mh_theme', isLight ? 'light' : 'dark');
-      document.getElementById('themeToggle').textContent = isLight ? 'ÔÿÇ´©Å' : '­ƒîÖ';
+      document.getElementById('themeToggle').textContent = isLight ? '☀️' : '🏅';
     }
 
     function initTheme() {
@@ -3812,7 +3812,7 @@
       if (saved === 'light') {
         document.body.classList.add('light');
         const btn = document.getElementById('themeToggle');
-        if (btn) btn.textContent = 'ÔÿÇ´©Å';
+        if (btn) btn.textContent = '☀️';
       }
     }
 
@@ -3838,14 +3838,14 @@
         });
         if (error) throw error;
         errEl.style.color = 'var(--green)';
-        errEl.textContent = 'Ô£à Reset link sent! Check your inbox.';
+        errEl.textContent = '✓ Reset link sent! Check your inbox.';
         btn.textContent = 'Email sent!';
         vibrate(30);
       } catch(e) {
         errEl.style.color = 'var(--red)';
         errEl.textContent = e.message || 'Failed to send reset email.';
         btn.disabled = false;
-        btn.textContent = 'Send Reset Link ÔåÆ';
+        btn.textContent = 'Send Reset Link →';
       }
     }
 
@@ -3874,7 +3874,7 @@
         const { error } = await db.auth.updateUser({ password: newPw });
         if (error) throw error;
         errEl.style.color = 'var(--green)';
-        errEl.textContent = 'Ô£à Password updated! You are now logged in.';
+        errEl.textContent = '✓ Password updated! You are now logged in.';
         btn.textContent = 'Password updated!';
         vibrate(50);
         setTimeout(() => hideAuthModal(), 1500);
@@ -3882,7 +3882,7 @@
         errEl.style.color = 'var(--red)';
         errEl.textContent = e.message || 'Failed to update password.';
         btn.disabled = false;
-        btn.textContent = 'Set New Password ÔåÆ';
+        btn.textContent = 'Set New Password →';
       }
     }
 
