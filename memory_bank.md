@@ -194,7 +194,7 @@
 19. **CRIT-07: Skeleton loaders** - Fixed: Added skeleton loading states for offers grid and leaderboard
 20. **CRIT-08: iOS keyboard fix** - Fixed: Added handleIOSKeyboard() function to scroll inputs into view on iOS devices
 
-### New Features & Enhancements (March 29-30, 2026)
+### New Features & Enhancements (March 29-31, 2026)
 1. **Google News Scraper**: Added Google News API integration to scrape 20 high-quality deals with strict filtering:
    - Must contain £ symbol with a number
    - Must contain action words (switch, referral, cashback, bonus, etc.)
@@ -285,7 +285,19 @@
      - Bank offers (First Direct, TSB, Santander, Barclaycard, HSBC)
      - Investment platforms (Charles Stanley, Fidelity, J.P. Morgan, Quilter)
      - Cashback sites and legitimate offers
-10. **Total Deal Count**: Scraper now returns 80 total deals (32 manual offers, 9 supermarket deals, 39 MegaList offers)
+10. **Scrimpr Integration with Manual-First De-duplication (March 31, 2026)**:
+    - **Scrimpr HTML Parser**: Added `parse_scrimpr.py` to extract deals from Scrimpr "Free Money" page
+    - **Manual-First Protection**: Created `deduplicate_manual_first.py` system to protect manual referrals:
+      - **Priority Protection**: Manual deals always take precedence over scraped content
+      - **Intelligent Matching**: Uses store name normalization, item comparison, and link domain analysis
+      - **Conflict Resolution**: When duplicates detected, manual deals are kept, scraped duplicates removed
+      - **Conservative Approach**: Designed to avoid false positives while ensuring referral integrity
+    - **Results Achieved**:
+      - **Manual Deals Protected**: 18 manual referrals preserved
+      - **Conflicts Detected**: 4 scraped deals conflicted with manual offers (Chase UK, Lloyds Bank, NatWest, First Direct)
+      - **Action Taken**: All conflicting scraped deals removed, manual referrals kept intact
+      - **Final Output**: Clean merged dataset with manual-first priority
+    - **Key Features**
 ### Security & Bug Fixes (March 28, 2026)
 **CRITICAL ISSUES:**
 1. **CRIT-01: window.open() popup blocker** - Fixed: Changed `window.open()` to `window.location.href` in app.html to avoid browser popup blockers
@@ -397,23 +409,19 @@ MoneyHunterUk/
 
 ## Last Updated
 - **Memory Bank Created**: March 27, 2026
-- **Memory Bank Updated**: March 30, 2026
-- **Project Last Commit**: a165ce7 (Fix: Refine MegaList scraper filtering to keep valid offers)
-- **Previous Commit**: 66959ba (feat: Add MegaList scraper with AI guide generation)
+- **Memory Bank Updated**: March 31, 2026
+- **Project Last Commit**: 05cdc4c (feat: add manual-first de-duplication system)
+- **Previous Commit**: c4c180c (fix: implement manual-first de-duplication and referral protection)
 - **Data Freshness**: Scraper includes "updated March 2026" references with 80+ live offers
 - **Recent Updates**: 
-  - **Intelligent Filtering Refinement**: Fixed overly aggressive filtering that was rejecting 93% of valid offers
-  - **Reddit Link Handling**: Removed blanket Reddit link blocking to keep valid offers with Reddit redirects
-  - **Sentence Detection**: Added smart filtering for paragraphs (> 8 words = likely guide/explanation)
-  - **Relaxed Junk Phrases**: Reduced from 11 aggressive phrases to 6 specific ones targeting real junk
-  - **Results**: 57 scraped → 39 valid offers (68% kept, within 40-100 target range)
-  - **Total Deals**: 80 offers (32 manual + 9 supermarket + 39 MegaList)
-  - **MegaList Scraper Integration**: High-precision scraper targeting Reddit MegaList with AI guide generation
-  - **AI-Powered Step-by-Step Guides**: 3-step Markdown guides generated for every offer using pattern matching
-  - **Direct URL Extraction**: Bypasses Reddit redirects to capture destination URLs
-  - **Ghost Offer Cleanup**: Removes outdated offers while preserving manual offers and supermarket deals
-  - **UI Integration**: Updated app.js to display AI guides with proper formatting
-  - **Enhanced Reddit scraper**: Structured megathread parsing with improved data quality
+  - **Manual-First De-duplication System**: Created robust protection for manual referrals against scraped duplicates
+  - **Scrimpr Integration**: Added parse_scrimpr.py for extracting deals from Scrimpr "Free Money" page
+  - **Intelligent Conflict Resolution**: When duplicates detected, manual deals are kept, scraped duplicates removed
+  - **Results**: Protected 18 manual referrals, removed 4 conflicting scraped deals (Chase UK, Lloyds Bank, NatWest, First Direct)
+  - **Total Deals**: 18 clean offers (manual-first priority maintained)
+  - **Enhanced Data Integrity**: Conservative matching algorithms prevent false positives while ensuring referral protection
+  - **Git Rebase Completion**: Successfully resolved all merge conflicts and maintained clean commit history
+  - **GitHub Updates**: All changes pushed to GitHub with comprehensive documentation
 ---
 
 *This memory bank serves as a living document for the MoneyHunterUk project. Update regularly as the project evolves.*
