@@ -922,6 +922,7 @@ def run_all_scrapers() -> Dict:
         f"Reddit deals: {len(reddit_deals)}",
         f"Google News deals: {len(news_deals)}",
         f"HotUKDeals deals: {len(hotuk_deals)}",
+        f"Megalist deals: {len(megalist_deals)}",
         f"Cleaned scraped: {len(cleaned_scraped)}",
         f"Unique scraped: {len(unique_scraped)}",
         f"Total written: {len(all_deals)}",
