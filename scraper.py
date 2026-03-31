@@ -71,6 +71,99 @@ BEST_PAYMENT = {
 
 
 # ============================================
+# PROTECTED STORES (Alberto's referral links)
+# ============================================
+
+PROTECTED_STORES = {
+    'lloyds','chase','natwest','first direct',
+    'firstdirect','halifax','santander','barclays',
+    'monzo','revolut','starling','hsbc','barclaycard',
+    'nationwide','metro bank','co-op','cooperative',
+    'tsb','virgin money','virgin','zopa','freetrade',
+    'robinhood','webull','wealthify','wealthyhood',
+    'plum','moneybox','pensionbee','pension bee',
+    'ig group','ifast','charles stanley','aj bell',
+    'ajbell','fidelity','vanguard','nutmeg','moneyfarm',
+    'trading 212','trading212','j.p. morgan',
+    'jp morgan','quilter','beanstalk','topcashback',
+    'top cashback','quidco','rakuten','airtime',
+    'cheddar','jam doughnut','jamdoughnut','everup',
+    'ever up','slide','tide','worldfirst','world first',
+    'amex','american express','wise','octopus',
+    'trainpal','lebara','avios','curve','zilch',
+    'glint','freecash','swagbucks','gemsloot',
+    'cash in style','complete savings','snoop','chip',
+    'currensea','ribbon','gousto','hellofresh',
+    'hello fresh','moneysupermarket','vitality',
+    'currensea','airwallex','prosper','chipapp',
+}
+
+def is_protected(store_name):
+    name = store_name.lower().strip()
+    for p in PROTECTED_STORES:
+        if p in name or name in p:
+            return True
+    return False
+
+
+def is_real_offer(deal):
+    """
+    Returns True only if this looks like a real 
+    actionable offer, not a news article or guide.
+    """
+    store = deal.get('store','').strip()
+    item = deal.get('item','').strip()
+    price = deal.get('deal_price','').strip()
+    link = deal.get('link','')
+    
+    # Must have a real reward amount
+    if not price or price in ['Bonus','Deal','Free','0']:
+        return False
+    
+    # Must have £ with actual number >= £5
+    import re
+    amounts = re.findall(r'£(\d+(?:\.\d{2})?)', price)
+    if not amounts:
+        return False
+    if float(amounts[0]) < 5:
+        return False
+    
+    # Store name must be reasonable length
+    if len(store) < 2 or len(store) > 50:
+        return False
+    
+    # Store name must not look like a sentence
+    if len(store.split()) > 6:
+        return False
+        
+    # Must not be a guide or article
+    junk_words = [
+        'how to','guide','tips','advice','explained',
+        'what is','why you','should you','best way',
+        'weekly','monthly','roundup','update','news',
+        'warning','alert','scam','fraud','deals of',
+        'top 10','top 5','everything you','megalist',
+        'introduction','overview','summary','review of',
+        'comparison','versus','vs ','opinion','thoughts',
+    ]
+    combined = (store + ' ' + item).lower()
+    if any(w in combined for w in junk_words):
+        return False
+    
+    # Must have a real URL (not just reddit homepage)
+    junk_urls = [
+        'reddit.com/r/beermoneyuk\n',
+        'reddit.com/r/beermoneyuk/',
+        'reddit.com/r/beermoneyuk"',
+    ]
+    if any(link == j or link.endswith(j) 
+           for j in junk_urls):
+        return False
+    
+    return True
+
+
+# ============================================
 # 30+ MANUAL OFFERS (Bank Switches, Referrals, Cashback)
 # ============================================
 
@@ -1006,6 +1099,40 @@ def run_all_scrapers() -> Dict:
         else:
             print(f"   Skipping invalid deal: {deal.get('store', 'Unknown')}")
     
+    # Apply filters to scraped deals
+    print(f"Scraped total: {len(scraped)}")
+    
+    # Remove protected stores (Alberto's referral links)
+    not_protected = [
+        d for d in scraped 
+        if not is_protected(d.get('store',''))
+    ]
+    print(f"After protected filter: {len(not_protected)}")
+    
+    # Remove non-offers (articles, guides, junk)
+    real_offers = [
+        d for d in not_protected 
+        if is_real_offer(d)
+    ]
+    print(f"After quality filter: {len(real_offers)}")
+    
+    # Clean and validate real offers
+    cleaned_scraped = []
+    for deal in real_offers:
+        # Clean store name
+        if "store" in deal:
+            deal["store"] = clean_store_name(deal["store"])
+        
+        # Add category if missing
+        if "category" not in deal:
+            deal["category"] = infer_category(deal)
+        
+        # Validate deal
+        if validate_deal(deal):
+            cleaned_scraped.append(deal)
+        else:
+            print(f"   Skipping invalid deal: {deal.get('store', 'Unknown')}")
+    
     # Smart deduplication against manual offers
     manual_store_names = {o["store"].lower() for o in manual_offers}
     unique_scraped = []
@@ -1024,6 +1151,18 @@ def run_all_scrapers() -> Dict:
         
         if not is_duplicate:
             unique_scraped.append(deal)
+    
+    # Final deduplication by store name
+    seen = set()
+    final_unique_scraped = []
+    for d in unique_scraped:
+        key = d.get('store','').lower().strip()[:12]
+        if key not in seen:
+            seen.add(key)
+            final_unique_scraped.append(d)
+    
+    unique_scraped = final_unique_scraped
+    print(f"After dedup: {len(unique_scraped)}")
     
     all_deals.extend(unique_scraped)
     
