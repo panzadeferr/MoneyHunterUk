@@ -1160,8 +1160,10 @@ def run_all_scrapers() -> Dict:
     
     # Reddit random posts disabled - too much junk
     # Megalist scraper covers beermoneyuk properly
+    # reddit_deals = scrape_reddit_beermoneyuk()
     reddit_deals = []
-    print("Reddit random scraper disabled - using megalist")
+    print("Reddit scraper disabled - megalist used instead")
+    print("Reddit scraper disabled - megalist used instead")
     
     # Scrape Google News as MSE replacement - DISABLED for MegaList integration
     print("\n Google News scraping DISABLED (using MegaList instead)...")
@@ -1232,8 +1234,10 @@ def run_all_scrapers() -> Dict:
         else:
             print(f"   Skipping invalid deal: {deal.get('store', 'Unknown')}")
     
-    # Smart deduplication against manual offers
+    # Smart deduplication against manual offers AND supermarket deals
     manual_store_names = {o["store"].lower() for o in manual_offers}
+    supermarket_store_names = {d["store"].lower() for d in supermarket_deals}
+    all_protected_store_names = manual_store_names.union(supermarket_store_names)
     unique_scraped = []
     
     for deal in cleaned_scraped:
@@ -1241,10 +1245,10 @@ def run_all_scrapers() -> Dict:
         is_duplicate = False
         
         # Check for exact matches or partial matches
-        for manual_store in manual_store_names:
-            if (deal_store_lower == manual_store or 
-                manual_store in deal_store_lower or 
-                deal_store_lower in manual_store):
+        for protected_store in all_protected_store_names:
+            if (deal_store_lower == protected_store or 
+                protected_store in deal_store_lower or 
+                deal_store_lower in protected_store):
                 is_duplicate = True
                 break
         

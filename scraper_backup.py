@@ -587,14 +587,10 @@ def scrape_hotukdeals():
 def get_supermarket_deals() -> List[Dict]:
     """Supermarket deals with stacked prices"""
     return [
-        {"store": "Tesco", "item": "Clubcard Prices - Selected Items", "deal_price": "Up to 50% off", "link": "https://www.tesco.com/clubcard/prices/", "original_price": "Varies", "saving_percent": 50, "base_price": 20},
         {"store": "Tesco", "item": "Fresh Meat & Fish", "deal_price": "£7.00", "link": "https://www.tesco.com/groceries/en-GB/shop/fresh-food/all", "original_price": "£10.00", "saving_percent": 30, "base_price": 7},
-        {"store": "Asda", "item": "Payday Deals - Selected Items", "deal_price": "Up to 40% off", "link": "https://www.asda.com/deals", "original_price": "Varies", "saving_percent": 40, "base_price": 15},
         {"store": "Asda", "item": "Fresh Fruit & Vegetables", "deal_price": "£2.50", "link": "https://groceries.asda.com/deals/fresh-food", "original_price": "£3.50", "saving_percent": 29, "base_price": 2.5},
-        {"store": "Sainsbury's", "item": "Nectar Prices - Members Only", "deal_price": "Exclusive prices", "link": "https://www.sainsburys.co.uk/nectar-prices", "original_price": "Varies", "saving_percent": 25, "base_price": 12},
         {"store": "Sainsbury's", "item": "Meal Deal - Lunch", "deal_price": "£3.50", "link": "https://www.sainsburys.co.uk/meal-deal", "original_price": "£5.00", "saving_percent": 30, "base_price": 3.5},
-        {"store": "Iceland", "item": "3 for £10 - Selected Frozen", "deal_price": "£10.00", "link": "https://www.iceland.co.uk/offers", "original_price": "£15.00", "saving_percent": 33, "base_price": 10},
-        {"store": "Iceland", "item": "Family Favourites Bundle", "deal_price": "£8.00", "link": "https://www.iceland.co.uk/family-meals", "original_price": "£12.00", "saving_percent": 33, "base_price": 8}
+        {"store": "Iceland", "item": "3 for £10 - Selected Frozen", "deal_price": "£10.00", "link": "https://www.iceland.co.uk/offers", "original_price": "£15.00", "saving_percent": 33, "base_price": 10}
     ]
 
 
@@ -720,7 +716,9 @@ def run_all_scrapers() -> Dict:
     
     # Scrape Reddit r/beermoneyuk
     print("\n📡 Scraping Reddit r/beermoneyuk...")
-    reddit_deals = scrape_reddit_beermoneyuk()
+    # reddit_deals = scrape_reddit_beermoneyuk()
+    reddit_deals = []
+    print("Reddit scraper disabled - megalist used instead")
     time.sleep(2)
     
     # Scrape Google News as MSE replacement

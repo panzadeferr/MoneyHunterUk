@@ -1,0 +1,479 @@
+#!/usr/bin/env python3
+"""
+Process new_offers.json and convert to Python dictionary format
+for insertion into scraper.py
+"""
+
+import json
+
+# The new_offers.json content from user's message
+new_offers_json = """[
+  {
+    "store": "First Direct",
+    "item": "Switch Account — £175 Cash",
+    "deal_price": "£175",
+    "link": "https://www.firstdirect.com/banking/switch/",
+    "original_price": "£0",
+    "saving_percent": 100,
+    "type": "bank_switch",
+    "category": "bank",
+    "code": "",
+    "expires": "2026-12-31",
+    "steps": [
+      "Open First Direct account",
+      "Start CASS switch",
+      "Pay in £1,000 within 30 days",
+      "Wait for payout ~30 days"
+    ],
+    "badge": "🏦 BANK SWITCH",
+    "effort": "12 min · CASS switch"
+  },
+  {
+    "store": "Santander Edge",
+    "item": "Switch Account — £220 Cash",
+    "deal_price": "£220",
+    "link": "https://www.santander.co.uk/personal/current-accounts",
+    "original_price": "£0",
+    "saving_percent": 100,
+    "type": "bank_switch",
+    "category": "bank",
+    "code": "",
+    "expires": "2026-12-31",
+    "steps": [
+      "Open Santander Edge account",
+      "Start CASS switch",
+      "Add 2 direct debits",
+      "Pay in £1,500",
+      "Wait for payout ~30 days"
+    ],
+    "badge": "🏦 BANK SWITCH",
+    "effort": "12 min · CASS switch"
+  },
+  {
+    "store": "Barclays",
+    "item": "Switch Account — £200 Cash",
+    "deal_price": "£200",
+    "link": "https://www.barclays.co.uk/current-accounts/",
+    "original_price": "£0",
+    "saving_percent": 100,
+    "type": "bank_switch",
+    "category": "bank",
+    "code": "",
+    "expires": "2026-05-28",
+    "steps": [
+      "Open Barclays Blue Rewards account",
+      "Start CASS switch",
+      "Meet eligibility requirements",
+      "Wait for payout ~30 days"
+    ],
+    "badge": "🏦 BANK SWITCH",
+    "effort": "12 min · CASS switch"
+  },
+  {
+    "store": "Barclays Premier",
+    "item": "Premier Switch — £400 Cash",
+    "deal_price": "£400",
+    "link": "https://www.barclays.co.uk/current-accounts/",
+    "original_price": "£0",
+    "saving_percent": 100,
+    "type": "bank_switch",
+    "category": "bank",
+    "code": "",
+    "expires": "2026-04-30",
+    "steps": [
+      "Open Barclays Premier account",
+      "Start CASS switch",
+      "Pay in £4,000",
+      "Wait for payout ~30 days"
+    ],
+    "badge": "🏦 BANK SWITCH",
+    "effort": "15 min · large deposit needed"
+  },
+  {
+    "store": "NatWest",
+    "item": "Switch Account — £150 Cash",
+    "deal_price": "£150",
+    "link": "https://www.natwest.com/current-accounts/switch/",
+    "original_price": "£0",
+    "saving_percent": 100,
+    "type": "bank_switch",
+    "category": "bank",
+    "code": "",
+    "expires": "2026-05-28",
+    "steps": [
+      "Open NatWest account",
+      "Start CASS switch",
+      "Pay in £1,250",
+      "Wait for payout ~30 days"
+    ],
+    "badge": "🏦 BANK SWITCH",
+    "effort": "12 min · CASS switch"
+  },
+  {
+    "store": "RBS",
+    "item": "Switch Account — £150 Cash",
+    "deal_price": "£150",
+    "link": "https://www.rbs.co.uk/current-accounts.html",
+    "original_price": "£0",
+    "saving_percent": 100,
+    "type": "bank_switch",
+    "category": "bank",
+    "code": "",
+    "expires": "2026-05-28",
+    "steps": [
+      "Open RBS account",
+      "Start CASS switch",
+      "Pay in £1,250",
+      "Wait for payout ~30 days"
+    ],
+    "badge": "🏦 BANK SWITCH",
+    "effort": "12 min · CASS switch"
+  },
+  {
+    "store": "Ulster Bank",
+    "item": "Switch Account — £150 Cash",
+    "deal_price": "£150",
+    "link": "https://digital.ulsterbank.co.uk/",
+    "original_price": "£0",
+    "saving_percent": 100,
+    "type": "bank_switch",
+    "category": "bank",
+    "code": "",
+    "expires": "2026-05-28",
+    "steps": [
+      "Open Ulster Bank account",
+      "Start CASS switch",
+      "Pay in £1,250",
+      "Wait for payout ~30 days"
+    ],
+    "badge": "🏦 BANK SWITCH",
+    "effort": "12 min · CASS switch"
+  },
+  {
+    "store": "Co-operative Bank",
+    "item": "Switch Account — £175 Cash",
+    "deal_price": "£175",
+    "link": "https://www.co-operativebank.co.uk/current-accounts",
+    "original_price": "£0",
+    "saving_percent": 100,
+    "type": "bank_switch",
+    "category": "bank",
+    "code": "",
+    "expires": "2026-02-27",
+    "steps": [
+      "Open Co-op Bank account",
+      "Start CASS switch",
+      "Add 2 direct debits",
+      "Wait for payout ~30 days"
+    ],
+    "badge": "🏦 BANK SWITCH",
+    "effort": "12 min · CASS switch"
+  },
+  {
+    "store": "Metro Bank",
+    "item": "Refer a Friend — £50 Cash",
+    "deal_price": "£50",
+    "link": "https://www.metrobankonline.co.uk/",
+    "original_price": "£0",
+    "saving_percent": 100,
+    "type": "referral",
+    "category": "bank",
+    "code": "",
+    "expires": "2026-12-31",
+    "steps": [
+      "Open Metro Bank account",
+      "Use referral link",
+      "Complete account setup",
+      "Wait for payout"
+    ],
+    "badge": "🏦 BANK REFERRAL",
+    "effort": "5 min · sign up"
+  },
+  {
+    "store": "HSBC",
+    "item": "Global Money Account — £100",
+    "deal_price": "£100",
+    "link": "https://www.hsbc.co.uk/",
+    "original_price": "£0",
+    "saving_percent": 100,
+    "type": "bank_switch",
+    "category": "bank",
+    "code": "",
+    "expires": "2026-12-31",
+    "steps": [
+      "Check eligibility in HSBC app",
+      "Open Global Money account",
+      "Complete required steps",
+      "Wait for payout"
+    ],
+    "badge": "🏦 BANK BONUS",
+    "effort": "8 min · eligibility check needed"
+  },
+  {
+    "store": "Monzo",
+    "item": "First Payment — £5 Cash",
+    "deal_price": "£5",
+    "link": "https://monzo.com/",
+    "original_price": "£0",
+    "saving_percent": 100,
+    "type": "referral",
+    "category": "bank",
+    "code": "",
+    "expires": "2026-12-31",
+    "steps": [
+      "Open Monzo account via referral",
+      "Make first card payment in 30 days",
+      "Get £5 credited"
+    ],
+    "badge": "🏦 BANK REFERRAL",
+    "effort": "3 min · quick win"
+  },
+  {
+    "store": "Starling Bank",
+    "item": "Free National Trust Day Pass",
+    "deal_price": "£10",
+    "link": "https://www.starlingbank.com/referral/",
+    "original_price": "£0",
+    "saving_percent": 100,
+    "type": "referral",
+    "category": "bank",
+    "code": "",
+    "expires": "2026-12-31",
+    "steps": [
+      "Open Starling account via referral",
+      "Complete account verification",
+      "Receive National Trust day pass"
+    ],
+    "badge": "🏦 FREEBIE",
+    "effort": "5 min · sign up"
+  },
+  {
+    "store": "Kroo",
+    "item": "Refer a Friend — £10 Cash",
+    "deal_price": "£10",
+    "link": "https://kroo.com/",
+    "original_price": "£0",
+    "saving_percent": 100,
+    "type": "referral",
+    "category": "bank",
+    "code": "",
+    "expires": "2026-12-31",
+    "steps": [
+      "Open Kroo account",
+      "Make a card spend",
+      "Get £10 credited"
+    ],
+    "badge": "🏦 BANK REFERRAL",
+    "effort": "3 min · quick win"
+  },
+  {
+    "store": "Zing",
+    "item": "First Spend — £20 Bonus",
+    "deal_price": "£20",
+    "link": "https://www.zing.me/",
+    "original_price": "£0",
+    "saving_percent": 100,
+    "type": "referral",
+    "category": "bank",
+    "code": "",
+    "expires": "2026-12-31",
+    "steps": [
+      "Download Zing app",
+      "Open account",
+      "Make a £5+ card spend",
+      "Get £20 credited"
+    ],
+    "badge": "🏦 BANK BONUS",
+    "effort": "5 min · quick win"
+  },
+  {
+    "store": "Trading212",
+    "item": "Deposit £1 — Free Share up to £100",
+    "deal_price": "£100",
+    "link": "https://www.trading212.com/",
+    "original_price": "£1",
+    "saving_percent": 99,
+    "type": "invest",
+    "category": "invest",
+    "code": "",
+    "expires": "2026-12-31",
+    "steps": [
+      "Open Trading212 account",
+      "Deposit £1",
+      "Receive random free share worth up to £100"
+    ],
+    "badge": "📈 INVEST",
+    "effort": "5 min · £1 deposit"
+  },
+  {
+    "store": "InvestEngine",
+    "item": "Invest £100 — £10-£50 Bonus",
+    "deal_price": "£50",
+    "link": "https://investengine.com/",
+    "original_price": "£100",
+    "saving_percent": 50,
+    "type": "invest",
+    "category": "invest",
+    "code": "",
+    "expires": "2026-12-31",
+    "steps": [
+      "Open InvestEngine account",
+      "Invest £100",
+      "Hold for 1 year",
+      "Receive £10-£50 bonus"
+    ],
+    "badge": "📈 INVEST",
+    "effort": "7 min · £100 investment"
+  },
+  {
+    "store": "Lightyear",
+    "item": "Deposit £50 — Free Shares",
+    "deal_price": "£100",
+    "link": "https://lightyear.com/",
+    "original_price": "£50",
+    "saving_percent": 50,
+    "type": "invest",
+    "category": "invest",
+    "code": "",
+    "expires": "2026-12-31",
+    "steps": [
+      "Open Lightyear account",
+      "Deposit £50",
+      "Receive 10 free shares instantly"
+    ],
+    "badge": "📈 INVEST",
+    "effort": "5 min · £50 deposit"
+  },
+  {
+    "store": "XTB",
+    "item": "Deposit — Free Share up to £100",
+    "deal_price": "£100",
+    "link": "https://www.xtb.com/uk",
+    "original_price": "£0",
+    "saving_percent": 100,
+    "type": "invest",
+    "category": "invest",
+    "code": "",
+    "expires": "2026-12-31",
+    "steps": [
+      "Open XTB account",
+      "Make a deposit",
+      "Receive free share worth up to £100"
+    ],
+    "badge": "📈 INVEST",
+    "effort": "7 min · deposit required"
+  },
+  {
+    "store": "Chip",
+    "item": "Tiered Savings — £100 Bonus",
+    "deal_price": "£100",
+    "link": "https://getchip.uk/",
+    "original_price": "£0",
+    "saving_percent": 100,
+    "type": "invest",
+    "category": "invest",
+    "code": "",
+    "expires": "2026-12-31",
+    "steps": [
+      "Open Chip account via referral",
+      "Make qualifying savings deposits",
+      "Receive tiered bonus up to £100"
+    ],
+    "badge": "📈 INVEST",
+    "effort": "5 min · savings deposit"
+  },
+  {
+    "store": "Raisin UK",
+    "item": "Save £10k — £100 Bonus",
+    "deal_price": "£100",
+    "link": "https://www.raisin.co.uk/",
+    "original_price": "£10000",
+    "saving_percent": 1,
+    "type": "invest",
+    "category": "invest",
+    "code": "",
+    "expires": "2026-12-31",
+    "steps": [
+      "Open Raisin account",
+      "Deposit £10,000 into a savings bond",
+      "Hold for 12 months",
+      "Receive £100 bonus"
+    ],
+    "badge": "📈 SAVINGS BONUS",
+    "effort": "10 min · £10k needed"
+  },
+  {
+    "store": "PensionBee",
+    "item": "Sign Up — £50 in Pension",
+    "deal_price": "£50",
+    "link": "https://www.pensionbee.com/",
+    "original_price": "£0",
+    "saving_percent": 100,
+    "type": "pension",
+    "category": "invest",
+    "code": "",
+    "expires": "2026-12-31",
+    "steps": [
+      "Sign up to PensionBee",
+      "Transfer or open pension",
+      "Receive £50 in your pension"
+    ],
+    "badge": "🏦 PENSION",
+    "effort": "8 min · pension transfer"
+  },
+  {
+    "store": "Nutmeg",
+    "item": "Refer a Friend — 6 months free",
+    "deal_price": "£50",
+    "link": "https://www.nutmeg.com/",
+    "original_price": "£0",
+    "saving_percent": 100,
+    "type": "invest",
+    "category": "invest",
+    "code": "",
+    "expires": "2026-12-31",
+    "steps": [
+      "Open Nutmeg account via referral",
+      "Start investing",
+      "Get 6 months no management fees"
+    ],
+    "badge": "📈 INVEST",
+    "effort": "7 min · investment needed"
+  },
+  {
+    "store": "Circa5000",
+    "item": "Ethical Investing — up to £100",
+    "deal_price": "£100",
+    "link": "https://circa5000.com/",
+    "original_price": "£0",
+    "saving_percent": 100,
+    "type": "invest",
+    "category": "invest",
+    "code": "",
+    "expires": "2026-12-31",
+    "steps": [
+      "Open Circa5000 account",
+      "Make qualifying investment",
+      "Receive £15-£100 bonus"
+    ],
+    "badge": "📈 ETHICAL INVEST",
+    "effort": "7 min · investment needed"
+  },
+  {
+    "store": "EDF Energy",
+    "item": "Switch Energy — £50 Bill Credit",
+    "deal_price": "£50",
+    "link": "https://www.edfenergy.com/for-homes",
+    "original_price": "£0",
+    "saving_percent": 100,
+    "type": "utilities",
+    "category": "utilities",
+    "code": "",
+    "expires": "2026-12-31",
+    "steps": [
+      "Get EDF quote online",
+      "Switch via referral link",
+      "Both get £50 bill credit after switch"
+    ],
+    "badge": "⚡ UTILITIES",
+    "effort
