@@ -1161,22 +1161,22 @@ def run_all_scrapers() -> Dict:
     # Reddit random posts disabled - too much junk
     # Megalist scraper covers beermoneyuk properly
     reddit_deals = []
-    print("📡 Reddit random scraper disabled - using megalist")
+    print("Reddit random scraper disabled - using megalist")
     
     # Scrape Google News as MSE replacement - DISABLED for MegaList integration
-    print("\n📡 Google News scraping DISABLED (using MegaList instead)...")
+    print("\n Google News scraping DISABLED (using MegaList instead)...")
     news_deals = []  # Empty list instead of scraping
     
     # Scrape HotUKDeals
-    print("\n📡 Scraping HotUKDeals...")
+    print("\n Scraping HotUKDeals...")
     hotuk_deals = scrape_hotukdeals()
     time.sleep(2)
     
-    print("\n📡 Scraping BeermoneyUK Megalist...")
+    print("\n Scraping BeermoneyUK Megalist...")
     megalist_deals = scrape_megalist()
     time.sleep(2)
     
-    print("\n📡 Scraping Scrimpr...")
+    print("\n Scraping Scrimpr...")
     scrimpr_deals = scrape_scrimpr()
     time.sleep(2)
     
@@ -1346,16 +1346,16 @@ def run_all_scrapers() -> Dict:
         f.write("\n".join(log))
     
     print("-" * 40)
-    print(f"✅ Total deals found: {len(all_deals)}")
+    print(f"Total deals found: {len(all_deals)}")
     print(f"   - Manual offers: {len(manual_offers)}")
     print(f"   - Supermarket deals: {len(supermarket_deals)}")
     print(f"   - Reddit deals: {len(reddit_deals)}")
     print(f"   - Google News deals: {len(news_deals)}")
     print(f"   - HotUKDeals deals: {len(hotuk_deals)}")
     print(f"   - Unique scraped: {len(unique_scraped)}")
-    print(f"📊 Data quality: {len(cleaned_scraped)}/{len(scraped)} deals passed validation")
-    print(f"💾 Saved to all_deals.json")
-    print(f"📝 Log written to scrape_log.txt")
+    print(f"Data quality: {len(cleaned_scraped)}/{len(scraped)} deals passed validation")
+    print(f"Saved to all_deals.json")
+    print(f"Log written to scrape_log.txt")
     
     return output
 
