@@ -1,12 +1,12 @@
 {
-  "last_updated": "2026-04-01 23:57:37",
-  "total_deals": 56,
+  "last_updated": "2026-04-01 23:00:09",
+  "total_deals": 57,
   "manual_count": 32,
   "supermarket_count": 4,
   "reddit_count": 0,
   "news_count": 20,
   "hotukdeals_count": 3,
-  "unique_scraped_count": 20,
+  "unique_scraped_count": 21,
   "sources": [
     "Manual",
     "Supermarket",
@@ -38,7 +38,7 @@
       "stacked_price": 2.39,
       "best_payment_method": "Airtime Rewards (4%) + Asda Rewards",
       "stacking_rate": 4.5,
-      "last_updated": "2026-04-01 23:57:37"
+      "last_updated": "2026-04-01 23:00:09"
     },
     {
       "store": "Sainsbury's",
@@ -53,7 +53,7 @@
       "stacked_price": 3.35,
       "best_payment_method": "JamDoughnut (4.1%) + Nectar",
       "stacking_rate": 4.4,
-      "last_updated": "2026-04-01 23:57:37"
+      "last_updated": "2026-04-01 23:00:09"
     },
     {
       "store": "Tesco",
@@ -68,7 +68,7 @@
       "stacked_price": 6.63,
       "best_payment_method": "EverUp (4.9%) + Clubcard",
       "stacking_rate": 5.3,
-      "last_updated": "2026-04-01 23:57:37"
+      "last_updated": "2026-04-01 23:00:09"
     },
     {
       "store": "Iceland",
@@ -83,7 +83,7 @@
       "stacked_price": 9.5,
       "best_payment_method": "TopCashback (3.5%) + Bonus Card",
       "stacking_rate": 5.0,
-      "last_updated": "2026-04-01 23:57:37"
+      "last_updated": "2026-04-01 23:00:09"
     },
     {
       "store": "Barclays Launches New Switching Deal Wor",
@@ -101,7 +101,7 @@
       ],
       "timeFrame": "Check article",
       "source": "Google News",
-      "last_updated": "2026-04-01 23:57:37",
+      "last_updated": "2026-04-01 23:00:09",
       "category": "bank_switch",
       "stacked_price": 0,
       "best_payment_method": "N/A",
@@ -109,7 +109,7 @@
     },
     {
       "store": "Earn Up To £750 Free Cash In New Year Ba",
-      "item": "Earn up to £750 free cash in new year bank account switching deals - Daily Recor",
+      "item": "Earn up to £750 free cash in new year bank account switching deals - dailyrecord",
       "deal_price": "£750",
       "link": "https://news.google.com/rss/articles/CBMijAFBVV95cUxNTXNZZkxZY1NFcDhuLXFudER6eVNqUjBLQVdqQWpRYWtzXzdvdWZoUXdwR3ByUXRnR0xYRVBtWWNkQTduZ2s4WEpZZDdxOHhaakJqbjNkY01VQnBxaktuenFob2EyU1h6d0lSdUtsSWF0RHA5WENVRXRzS0dQUkRsYmRKY2NxNVdvVTlJatIBkgFBVV95cUxNRXlKQ2dPVWFZLWRWd3RXUGJQZHRSM245UVdTc2F6RmtWeWlUZG9TNHh0LWw5dDlOZ0dLUlhUR3dTR1I2TXhqZE5idV9xN0IzOFlaemQzaEdzS2dHeC1vblpPc3hWam1IWkFzRHMySmhQakhHX05pVkFWbHFFMzg5TEhqTUdlai1kekhKUXdjSjVhUQ?oc=5",
       "original_price": "£0",
@@ -123,7 +123,29 @@
       ],
       "timeFrame": "Check article",
       "source": "Google News",
-      "last_updated": "2026-04-01 23:57:37",
+      "last_updated": "2026-04-01 23:00:09",
+      "category": "bank_switch",
+      "stacked_price": 0,
+      "best_payment_method": "N/A",
+      "stacking_rate": 0
+    },
+    {
+      "store": "You Can Get Up To £750 In Cash For Switc",
+      "item": "You can get up to £750 in cash for switching to HSBC banking but there's a catch",
+      "deal_price": "£750",
+      "link": "https://news.google.com/rss/articles/CBMijwFBVV95cUxOdWRNc0U1emMxWTk4ZVdQU0Z4Rk9xUHlHVVRQa2xhN1NhbmdHR1BjMzJPb1JrUUlHNmhKMjZ3MzVESlJvQlloWEVDWU56Q2ZMcnlsMU5pS2lTdWtTUlpBOWxkT09xTGd3TjdfX3N1a3ZweDVsMEhZbnhQTEtVUkNsQXJ3c2c4RFd5WEFVa1JUNA?oc=5",
+      "original_price": "£0",
+      "saving_percent": 100,
+      "type": "scraped_mse",
+      "code": "",
+      "steps": [
+        "Read the full article",
+        "Follow the deal link",
+        "Complete required steps"
+      ],
+      "timeFrame": "Check article",
+      "source": "Google News",
+      "last_updated": "2026-04-01 23:00:09",
       "category": "bank_switch",
       "stacked_price": 0,
       "best_payment_method": "N/A",
@@ -131,7 +153,7 @@
     },
     {
       "store": "American Express Announces New £600 Bonu",
-      "item": "American Express announces new £600 bonus points offer - Daily Express",
+      "item": "American Express announces new £600 bonus points offer - express.co.uk",
       "deal_price": "£600",
       "link": "https://news.google.com/rss/articles/CBMiowFBVV95cUxQb2tzTlp3NEpROEcwSGpPOTVVRWxvRW1lemVDV3llUlZQaHI1ZkVWZDhWZEc3QVJCb3JBT2hfd1k3dWVoXzZBZ2dJNG1pUzk5czlkNENqZTN1bzlsWlJPckdwYnNvUS1vUzUzRThCOHZYc0dBTDRsY2NqNFdmaE9iRXRmRHN5RWFjUzlvX3JPMVVPNzRBcFlOak1ONnlVOTdNcnlF0gGoAUFVX3lxTFBEYjFlOHg0SVNLdDlKQmQzcGJMWFJBbWNoN2FwWS02dG5TbktXeE5Pbm5QQ1RQci15c2kxdWVSN1MwRThEV2c0OXRuMHNaVWxSNmdYd1c1endVbEM3d0JlamgzaUtFanAzR2pQS2c0dnJsaDk3cnhyMXlMa19YVHhiMmkySzJWNHloWVRvSkt5bEptMm9MMFBILWk2RHV0UGtPX1ptaW5tRw?oc=5",
       "original_price": "£0",
@@ -145,7 +167,7 @@
       ],
       "timeFrame": "Check article",
       "source": "Google News",
-      "last_updated": "2026-04-01 23:57:37",
+      "last_updated": "2026-04-01 23:00:09",
       "category": "other",
       "stacked_price": 0,
       "best_payment_method": "N/A",
@@ -167,7 +189,7 @@
       ],
       "timeFrame": "Check article",
       "source": "Google News",
-      "last_updated": "2026-04-01 23:57:37",
+      "last_updated": "2026-04-01 23:00:09",
       "category": "bank_switch",
       "stacked_price": 0,
       "best_payment_method": "N/A",
@@ -189,7 +211,7 @@
       ],
       "timeFrame": "Check article",
       "source": "Google News",
-      "last_updated": "2026-04-01 23:57:37",
+      "last_updated": "2026-04-01 23:00:09",
       "category": "cashback",
       "stacked_price": 0,
       "best_payment_method": "N/A",
@@ -214,11 +236,11 @@
       "stacked_price": 0,
       "best_payment_method": "N/A",
       "stacking_rate": 0,
-      "last_updated": "2026-04-01 23:57:37"
+      "last_updated": "2026-04-01 23:00:09"
     },
     {
       "store": "Nationwide Alert As Customers Could Clai",
-      "item": "Nationwide alert as customers could claim free £275 bonus in 2026 - Daily Expres",
+      "item": "Nationwide alert as customers could claim free £275 bonus in 2026 - express.co.u",
       "deal_price": "£275",
       "link": "https://news.google.com/rss/articles/CBMiqAFBVV95cUxOODhrOWJyR1FhcVB5bjJkdlRpTTlzdGRRcUxSMXVLWG5CemJ5Y2hBcjdzME81M2ZoSHBvdHFFTVM2TjVfUlFHRFJkQkp3RlBtRmlOVFMxcU0tQURyTzlmT2FSX1hhOVNPdVBKRjFUWDlKa3FqN1pMTElEeXMxRjRwYkp5Z3dyaEVXQnpsNlZvaHpLOUxnSGJEYWNJVWZZU0Vlak9scUxuV3PSAa4BQVVfeXFMUEJGRGI3VjJnLXlBWDNQaTdWdUlUdXFkSWsyNnFtVmpLbjZ6eWZyQUFIa0dfQXBtRjZ6MGx1NFo2YUZxVnZNQTlTbWVPdi1sODEwNjREYWx4QVdUM2l3VzVkX2NvaTJuSmRPaFVtX05pWmZIVHJaWndPVFhNVk9RLVBRbWdPbUZic0k1NThfeGV6MUpaSVBNYkdWN01wV2hkZF9kNFhhMDF3TUZhd3Bn?oc=5",
       "original_price": "£0",
@@ -232,7 +254,7 @@
       ],
       "timeFrame": "Check article",
       "source": "Google News",
-      "last_updated": "2026-04-01 23:57:37",
+      "last_updated": "2026-04-01 23:00:09",
       "category": "bank_switch",
       "stacked_price": 0,
       "best_payment_method": "N/A",
@@ -254,7 +276,7 @@
       ],
       "timeFrame": "Check article",
       "source": "Google News",
-      "last_updated": "2026-04-01 23:57:37",
+      "last_updated": "2026-04-01 23:00:09",
       "category": "bank_switch",
       "stacked_price": 0,
       "best_payment_method": "N/A",
@@ -279,7 +301,7 @@
       "stacked_price": 0,
       "best_payment_method": "N/A",
       "stacking_rate": 0,
-      "last_updated": "2026-04-01 23:57:37"
+      "last_updated": "2026-04-01 23:00:09"
     },
     {
       "store": "Best Current Accounts: Get Up To £225 To",
@@ -297,7 +319,7 @@
       ],
       "timeFrame": "Check article",
       "source": "Google News",
-      "last_updated": "2026-04-01 23:57:37",
+      "last_updated": "2026-04-01 23:00:09",
       "category": "cashback",
       "stacked_price": 0,
       "best_payment_method": "N/A",
@@ -322,7 +344,29 @@
       "stacked_price": 0,
       "best_payment_method": "N/A",
       "stacking_rate": 0,
-      "last_updated": "2026-04-01 23:57:37"
+      "last_updated": "2026-04-01 23:00:09"
+    },
+    {
+      "store": "Santander Offers New Customers £200 If",
+      "item": "Santander offers new customers £200 if they switch to them - metro.co.uk",
+      "deal_price": "£200",
+      "link": "https://news.google.com/rss/articles/CBMiigFBVV95cUxPdk4zX0FSelJCRFdoVVJ5XzlRdFNta1dzaktLc1liZ3N0cC1TWFc2a0F5TXR4TlpXUjN5eU1jdEZONUI5dzRoTlBmNWcwZmJLaHV3dWxsSEpQVEFPNnF3MEZ4MHJHLXRyYUtuLVJOdWVtWXRVdmp1WEo0dGZ6NEsyN3RERjNsQmxOOWfSAY8BQVVfeXFMT3VoVmZkTVZRXzFwUkJGT1RpdW12cFNIVTZvcHpmY2s4ZEQwX0pWR0ZyOENSUFgzV2k0VC1BUEFpMzJjTktHWjVkTW04dkFBSW1Wc01nZDRSRFU2S3RkMUVNWTdncHFSUkRMUTE4dHJwN1hsZ3dmdnFXUnJEUFM1clo5SFJya1RZaVpObHBBT0U?oc=5",
+      "original_price": "£0",
+      "saving_percent": 100,
+      "type": "scraped_mse",
+      "code": "",
+      "steps": [
+        "Read the full article",
+        "Follow the deal link",
+        "Complete required steps"
+      ],
+      "timeFrame": "Check article",
+      "source": "Google News",
+      "last_updated": "2026-04-01 23:00:09",
+      "category": "bank_switch",
+      "stacked_price": 0,
+      "best_payment_method": "N/A",
+      "stacking_rate": 0
     },
     {
       "store": "Santander Uk: Expert Martin Lewis Shares",
@@ -340,7 +384,7 @@
       ],
       "timeFrame": "Check article",
       "source": "Google News",
-      "last_updated": "2026-04-01 23:57:37",
+      "last_updated": "2026-04-01 23:00:09",
       "category": "bank_switch",
       "stacked_price": 0,
       "best_payment_method": "N/A",
@@ -362,7 +406,7 @@
       ],
       "timeFrame": "Check article",
       "source": "Google News",
-      "last_updated": "2026-04-01 23:57:37",
+      "last_updated": "2026-04-01 23:00:09",
       "category": "bank_switch",
       "stacked_price": 0,
       "best_payment_method": "N/A",
@@ -384,7 +428,7 @@
       ],
       "timeFrame": "Check article",
       "source": "Google News",
-      "last_updated": "2026-04-01 23:57:37",
+      "last_updated": "2026-04-01 23:00:09",
       "category": "investment",
       "stacked_price": 0,
       "best_payment_method": "N/A",
@@ -409,7 +453,7 @@
       "stacked_price": 0,
       "best_payment_method": "N/A",
       "stacking_rate": 0,
-      "last_updated": "2026-04-01 23:57:37"
+      "last_updated": "2026-04-01 23:00:09"
     },
     {
       "store": "Nationwide Sending Free £175 Into Bank",
@@ -427,7 +471,7 @@
       ],
       "timeFrame": "Check article",
       "source": "Google News",
-      "last_updated": "2026-04-01 23:57:37",
+      "last_updated": "2026-04-01 23:00:09",
       "category": "bank_switch",
       "stacked_price": 0,
       "best_payment_method": "N/A",
@@ -452,7 +496,7 @@
       "stacked_price": 0,
       "best_payment_method": "N/A",
       "stacking_rate": 0,
-      "last_updated": "2026-04-01 23:57:37"
+      "last_updated": "2026-04-01 23:00:09"
     },
     {
       "store": "Amex",
@@ -473,29 +517,7 @@
       "stacked_price": 0,
       "best_payment_method": "N/A",
       "stacking_rate": 0,
-      "last_updated": "2026-04-01 23:57:37"
-    },
-    {
-      "store": "Co-operative Bank Launches £150 Switchin",
-      "item": "Co-operative Bank launches £150 switching deal: is it worth going for? - which.c",
-      "deal_price": "£150",
-      "link": "https://news.google.com/rss/articles/CBMiuAFBVV95cUxQZDJBeVp1MFZGS1RoODF2ZzBKdzZGZXo1TUo3VVF3QnI4WVNiSjNwX0lTdnhXaFU3LUl3c2c0dk90ekxCNVNlTk9fdHZZZXFMM28zdUJMUC1RV1kxNWZqcVF0bnRYZnR1N0pvWVYwRzFpOTVIVnNxNElld3ZTZS0xRXc4OHJrUU5KTWxJV0dMeFFLRFFZQjA0emFMOC1YS1cyUDFGbFAzQUxQemhvZjRNMDBNR0pUaWkz?oc=5",
-      "original_price": "£0",
-      "saving_percent": 100,
-      "type": "scraped_mse",
-      "code": "",
-      "steps": [
-        "Read the full article",
-        "Follow the deal link",
-        "Complete required steps"
-      ],
-      "timeFrame": "Check article",
-      "source": "Google News",
-      "last_updated": "2026-04-01 23:57:37",
-      "category": "bank_switch",
-      "stacked_price": 0,
-      "best_payment_method": "N/A",
-      "stacking_rate": 0
+      "last_updated": "2026-04-01 23:00:09"
     },
     {
       "store": "Nationwide £100 Bonus Returns – Here’s",
@@ -513,17 +535,17 @@
       ],
       "timeFrame": "Check article",
       "source": "Google News",
-      "last_updated": "2026-04-01 23:57:37",
+      "last_updated": "2026-04-01 23:00:09",
       "category": "bank_switch",
       "stacked_price": 0,
       "best_payment_method": "N/A",
       "stacking_rate": 0
     },
     {
-      "store": "Nationwide Will Start Paying The £100 Fa",
-      "item": "Nationwide will start paying the £100 Fairer Share bonus next week – do you qual",
+      "store": "Nationwide Customers Face Tax Questions",
+      "item": "Nationwide Customers Face Tax Questions Over £100 Bonus - evrimagaci.org",
       "deal_price": "£100",
-      "link": "https://news.google.com/rss/articles/CBMiigFBVV95cUxNTU1aUm1kU0kxNUtzV0I4SjZIa3JsTm1Xc2drZ2pyS1RsVEcyUHFqZDg1Z3NxbTNqZkpkMldfRFAxZWxJcHJVUWllUXM5aVFUMkU4Y1FhaGFSZi1ETjlnUnM4ZkxUTjBpRE1TOVRBOEltaE9mRjNOR0YwbExJYWlHLVpfaUx4MFg5eWc?oc=5",
+      "link": "https://news.google.com/rss/articles/CBMikgFBVV95cUxOTUdLbUFaSVhBbnJzcTNEb25jelItSTlhT0MxSXMxMFZ0c0lHWHlXbGRNUDROZGdWbFVuVEwwNzFtU2IxSmRENzMwbVNsS0pDVUhSX3JMQmJrdGlsMmlwM0ZPU2lGWFZwV21UOUdHUmlza2xNb3BJZjJNQk9MZHVfLVNTLVlXVnV4RUJzd0w4bzBFUQ?oc=5",
       "original_price": "£0",
       "saving_percent": 100,
       "type": "scraped_mse",
@@ -535,7 +557,7 @@
       ],
       "timeFrame": "Check article",
       "source": "Google News",
-      "last_updated": "2026-04-01 23:57:37",
+      "last_updated": "2026-04-01 23:00:09",
       "category": "bank_switch",
       "stacked_price": 0,
       "best_payment_method": "N/A",
@@ -557,7 +579,29 @@
       ],
       "timeFrame": "Check article",
       "source": "Google News",
-      "last_updated": "2026-04-01 23:57:37",
+      "last_updated": "2026-04-01 23:00:09",
+      "category": "bank_switch",
+      "stacked_price": 0,
+      "best_payment_method": "N/A",
+      "stacking_rate": 0
+    },
+    {
+      "store": "Nationwide Will Start Paying The £100 Fa",
+      "item": "Nationwide will start paying the £100 Fairer Share bonus next week – do you qual",
+      "deal_price": "£100",
+      "link": "https://news.google.com/rss/articles/CBMiigFBVV95cUxNTU1aUm1kU0kxNUtzV0I4SjZIa3JsTm1Xc2drZ2pyS1RsVEcyUHFqZDg1Z3NxbTNqZkpkMldfRFAxZWxJcHJVUWllUXM5aVFUMkU4Y1FhaGFSZi1ETjlnUnM4ZkxUTjBpRE1TOVRBOEltaE9mRjNOR0YwbExJYWlHLVpfaUx4MFg5eWc?oc=5",
+      "original_price": "£0",
+      "saving_percent": 100,
+      "type": "scraped_mse",
+      "code": "",
+      "steps": [
+        "Read the full article",
+        "Follow the deal link",
+        "Complete required steps"
+      ],
+      "timeFrame": "Check article",
+      "source": "Google News",
+      "last_updated": "2026-04-01 23:00:09",
       "category": "bank_switch",
       "stacked_price": 0,
       "best_payment_method": "N/A",
@@ -582,7 +626,7 @@
       "stacked_price": 0,
       "best_payment_method": "N/A",
       "stacking_rate": 0,
-      "last_updated": "2026-04-01 23:57:37"
+      "last_updated": "2026-04-01 23:00:09"
     },
     {
       "store": "Tide",
@@ -603,7 +647,7 @@
       "stacked_price": 0,
       "best_payment_method": "N/A",
       "stacking_rate": 0,
-      "last_updated": "2026-04-01 23:57:37"
+      "last_updated": "2026-04-01 23:00:09"
     },
     {
       "store": "Nintendo Switch 2 Mario Kart + Donkey Ko",
@@ -621,7 +665,7 @@
       ],
       "timeFrame": "Check post",
       "source": "HotUKDeals",
-      "last_updated": "2026-04-01 23:57:37",
+      "last_updated": "2026-04-01 23:00:09",
       "category": "other",
       "stacked_price": 0,
       "best_payment_method": "N/A",
@@ -646,7 +690,7 @@
       "stacked_price": 0,
       "best_payment_method": "N/A",
       "stacking_rate": 0,
-      "last_updated": "2026-04-01 23:57:37"
+      "last_updated": "2026-04-01 23:00:09"
     },
     {
       "store": "Webull",
@@ -667,7 +711,7 @@
       "stacked_price": 0,
       "best_payment_method": "N/A",
       "stacking_rate": 0,
-      "last_updated": "2026-04-01 23:57:37"
+      "last_updated": "2026-04-01 23:00:09"
     },
     {
       "store": "Wealthify",
@@ -688,7 +732,7 @@
       "stacked_price": 0,
       "best_payment_method": "N/A",
       "stacking_rate": 0,
-      "last_updated": "2026-04-01 23:57:37"
+      "last_updated": "2026-04-01 23:00:09"
     },
     {
       "store": "Octopus Energy",
@@ -709,7 +753,7 @@
       "stacked_price": 0,
       "best_payment_method": "N/A",
       "stacking_rate": 0,
-      "last_updated": "2026-04-01 23:57:37"
+      "last_updated": "2026-04-01 23:00:09"
     },
     {
       "store": "Pensionbee",
@@ -729,29 +773,7 @@
       "stacked_price": 0,
       "best_payment_method": "N/A",
       "stacking_rate": 0,
-      "last_updated": "2026-04-01 23:57:37"
-    },
-    {
-      "store": "Lloyds Explains 30-day Rule Over £50 Bon",
-      "item": "Lloyds explains 30-day rule over £50 bonus payments for customers - Daily Expres",
-      "deal_price": "£50",
-      "link": "https://news.google.com/rss/articles/CBMijAFBVV95cUxNY0lHSThJU2gtSE5VXy1fekhSM1lWcW8tZW5peHlSNjhOR25xckFGTjV3RWEtSEFwQVZxOFBDWmtiWGZnLWh0UmV4dVktN3R6M2tQSHRyQW5zWDNFWTl3UGRQRlc5TW9kUURmNDlVS2YxeUZkbFc0ZWJlMVE4X3RzYWZmVUtDV2ZyRVhIZNIBkgFBVV95cUxObWdkTmhERUkxdkV2TFFTME0zcU9RM1BDTGw3UTJIVE1ETHZfeWo1QmZpODd4Z2p1VEEtb2pvcTd5ZEI2OXN0bXdoTnJsdkhoek5mc0JiM3FYcldMNUFQSk1BS29QYllBSVRyY3ZKMU9PbG1Fczg0Q0ZydGtmTG90NnVhQU1ES0pmbmItR3pIcVZCUQ?oc=5",
-      "original_price": "£0",
-      "saving_percent": 100,
-      "type": "scraped_mse",
-      "code": "",
-      "steps": [
-        "Read the full article",
-        "Follow the deal link",
-        "Complete required steps"
-      ],
-      "timeFrame": "Check article",
-      "source": "Google News",
-      "last_updated": "2026-04-01 23:57:37",
-      "category": "bank_switch",
-      "stacked_price": 0,
-      "best_payment_method": "N/A",
-      "stacking_rate": 0
+      "last_updated": "2026-04-01 23:00:09"
     },
     {
       "store": "Rakuten",
@@ -772,7 +794,7 @@
       "stacked_price": 0,
       "best_payment_method": "N/A",
       "stacking_rate": 0,
-      "last_updated": "2026-04-01 23:57:37"
+      "last_updated": "2026-04-01 23:00:09"
     },
     {
       "store": "£25 Referral Bonus + £20 For Your Friend",
@@ -790,7 +812,7 @@
       ],
       "timeFrame": "Check post",
       "source": "HotUKDeals",
-      "last_updated": "2026-04-01 23:57:37",
+      "last_updated": "2026-04-01 23:00:09",
       "category": "cashback",
       "stacked_price": 0,
       "best_payment_method": "N/A",
@@ -815,7 +837,7 @@
       "stacked_price": 0,
       "best_payment_method": "N/A",
       "stacking_rate": 0,
-      "last_updated": "2026-04-01 23:57:37"
+      "last_updated": "2026-04-01 23:00:09"
     },
     {
       "store": "Quidco",
@@ -836,7 +858,7 @@
       "stacked_price": 0,
       "best_payment_method": "N/A",
       "stacking_rate": 0,
-      "last_updated": "2026-04-01 23:57:37"
+      "last_updated": "2026-04-01 23:00:09"
     },
     {
       "store": "Freetrade",
@@ -856,7 +878,7 @@
       "stacked_price": 0,
       "best_payment_method": "N/A",
       "stacking_rate": 0,
-      "last_updated": "2026-04-01 23:57:37"
+      "last_updated": "2026-04-01 23:00:09"
     },
     {
       "store": "Robinhood",
@@ -876,7 +898,7 @@
       "stacked_price": 0,
       "best_payment_method": "N/A",
       "stacking_rate": 0,
-      "last_updated": "2026-04-01 23:57:37"
+      "last_updated": "2026-04-01 23:00:09"
     },
     {
       "store": "Topcashback",
@@ -896,7 +918,7 @@
       "stacked_price": 0,
       "best_payment_method": "N/A",
       "stacking_rate": 0,
-      "last_updated": "2026-04-01 23:57:37"
+      "last_updated": "2026-04-01 23:00:09"
     },
     {
       "store": "Zopa (biscuit)",
@@ -916,7 +938,7 @@
       "stacked_price": 0,
       "best_payment_method": "N/A",
       "stacking_rate": 0,
-      "last_updated": "2026-04-01 23:57:37"
+      "last_updated": "2026-04-01 23:00:09"
     },
     {
       "store": "Monzo",
@@ -937,7 +959,7 @@
       "stacked_price": 0,
       "best_payment_method": "N/A",
       "stacking_rate": 0,
-      "last_updated": "2026-04-01 23:57:37"
+      "last_updated": "2026-04-01 23:00:09"
     },
     {
       "store": "Zilch",
@@ -957,7 +979,7 @@
       "stacked_price": 0,
       "best_payment_method": "N/A",
       "stacking_rate": 0,
-      "last_updated": "2026-04-01 23:57:37"
+      "last_updated": "2026-04-01 23:00:09"
     },
     {
       "store": "Nintendo Switch Lite Console - Turquoise",
@@ -975,7 +997,7 @@
       ],
       "timeFrame": "Check post",
       "source": "HotUKDeals",
-      "last_updated": "2026-04-01 23:57:37",
+      "last_updated": "2026-04-01 23:00:09",
       "category": "other",
       "stacked_price": 0,
       "best_payment_method": "N/A",
@@ -999,7 +1021,7 @@
       "stacked_price": 0,
       "best_payment_method": "N/A",
       "stacking_rate": 0,
-      "last_updated": "2026-04-01 23:57:37"
+      "last_updated": "2026-04-01 23:00:09"
     },
     {
       "store": "Jam Doughnut",
@@ -1019,7 +1041,7 @@
       "stacked_price": 0,
       "best_payment_method": "N/A",
       "stacking_rate": 0,
-      "last_updated": "2026-04-01 23:57:37"
+      "last_updated": "2026-04-01 23:00:09"
     },
     {
       "store": "Trainpal",
@@ -1040,7 +1062,7 @@
       "stacked_price": 0,
       "best_payment_method": "N/A",
       "stacking_rate": 0,
-      "last_updated": "2026-04-01 23:57:37"
+      "last_updated": "2026-04-01 23:00:09"
     },
     {
       "store": "Airtime",
@@ -1061,7 +1083,7 @@
       "stacked_price": 0,
       "best_payment_method": "N/A",
       "stacking_rate": 0,
-      "last_updated": "2026-04-01 23:57:37"
+      "last_updated": "2026-04-01 23:00:09"
     },
     {
       "store": "Everup",
@@ -1082,7 +1104,7 @@
       "stacked_price": 0,
       "best_payment_method": "N/A",
       "stacking_rate": 0,
-      "last_updated": "2026-04-01 23:57:37"
+      "last_updated": "2026-04-01 23:00:09"
     },
     {
       "store": "Moneybox",
@@ -1102,7 +1124,7 @@
       "stacked_price": 0,
       "best_payment_method": "N/A",
       "stacking_rate": 0,
-      "last_updated": "2026-04-01 23:57:37"
+      "last_updated": "2026-04-01 23:00:09"
     },
     {
       "store": "Lebara",
@@ -1122,7 +1144,7 @@
       "stacked_price": 0,
       "best_payment_method": "N/A",
       "stacking_rate": 0,
-      "last_updated": "2026-04-01 23:57:37"
+      "last_updated": "2026-04-01 23:00:09"
     },
     {
       "store": "Costa",
@@ -1142,7 +1164,7 @@
       "stacked_price": 0,
       "best_payment_method": "N/A",
       "stacking_rate": 0,
-      "last_updated": "2026-04-01 23:57:37"
+      "last_updated": "2026-04-01 23:00:09"
     },
     {
       "store": "Waitrose",
@@ -1162,7 +1184,7 @@
       "stacked_price": 0,
       "best_payment_method": "JamDoughnut (3.5%) + MyWaitrose",
       "stacking_rate": 3.5,
-      "last_updated": "2026-04-01 23:57:37"
+      "last_updated": "2026-04-01 23:00:09"
     },
     {
       "store": "Wise",
@@ -1183,7 +1205,7 @@
       "stacked_price": 0,
       "best_payment_method": "N/A",
       "stacking_rate": 0,
-      "last_updated": "2026-04-01 23:57:37"
+      "last_updated": "2026-04-01 23:00:09"
     }
   ]
 }
