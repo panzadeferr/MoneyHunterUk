@@ -1153,7 +1153,7 @@ def run_all_scrapers() -> Dict:
     print(f"   Found {len(manual_offers)} manual offers")
     
     # Get supermarket deals
-    print("\n📦 Fetching supermarket deals...")
+    print("\n[BOX] Fetching supermarket deals...")
     supermarket_deals = get_supermarket_deals()
     all_deals.extend(supermarket_deals)
     print(f"   Found {len(supermarket_deals)} supermarket deals")
