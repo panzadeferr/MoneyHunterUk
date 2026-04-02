@@ -3188,6 +3188,7 @@
     }
 
     function renderStacks() {
+      if (!ui.stackList) return;
       ui.stackList.innerHTML = stackGuides.map(guide => `
         <article class="stack-card">
           <h3>${guide.title}</h3>
