@@ -1858,6 +1858,184 @@
       margin-top:8px;min-height:40px;
     }
 
+    
+    /* ── NETFLIX-STYLE OFFERS ───────────────────── */
+    .featured-strip {
+      margin-bottom: 8px;
+    }
+    .featured-label {
+      font-size: 11px;
+      font-weight: 800;
+      color: var(--green);
+      text-transform: uppercase;
+      letter-spacing: .08em;
+      margin-bottom: 8px;
+      padding: 0 2px;
+    }
+    .featured-scroll {
+      display: flex;
+      gap: 10px;
+      overflow-x: auto;
+      padding-bottom: 8px;
+      scrollbar-width: none;
+      -ms-overflow-style: none;
+    }
+    .featured-scroll::-webkit-scrollbar { display: none }
+    .featured-card {
+      flex-shrink: 0;
+      width: 200px;
+      background: linear-gradient(135deg, var(--card) 0%, rgba(57,255,100,.06) 100%);
+      border: 1.5px solid var(--green);
+      border-radius: 14px;
+      padding: 14px;
+      cursor: pointer;
+      -webkit-tap-highlight-color: transparent;
+      transition: .15s;
+    }
+    .featured-card:active { transform: scale(.97) }
+    .featured-card-badge {
+      font-size: 10px;
+      font-weight: 800;
+      color: var(--green);
+      background: rgba(57,255,100,.12);
+      border-radius: 6px;
+      padding: 2px 7px;
+      display: inline-block;
+      margin-bottom: 8px;
+    }
+    .featured-card-reward {
+      font-size: 26px;
+      font-weight: 900;
+      color: var(--text);
+      line-height: 1;
+      margin-bottom: 4px;
+    }
+    .featured-card-name {
+      font-size: 13px;
+      font-weight: 700;
+      color: var(--text);
+      margin-bottom: 3px;
+    }
+    .featured-card-desc {
+      font-size: 11px;
+      color: var(--muted2);
+      line-height: 1.4;
+    }
+
+    /* Category rows */
+    .category-row {
+      margin-bottom: 20px;
+    }
+    .category-row-head {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 8px;
+    }
+    .category-row-title {
+      font-size: 14px;
+      font-weight: 800;
+      color: var(--text);
+    }
+    .category-row-count {
+      font-size: 11px;
+      color: var(--muted2);
+    }
+    .category-scroll {
+      display: flex;
+      gap: 8px;
+      overflow-x: auto;
+      padding-bottom: 6px;
+      scrollbar-width: none;
+    }
+    .category-scroll::-webkit-scrollbar { display: none }
+    .mini-card {
+      flex-shrink: 0;
+      width: 155px;
+      background: var(--card);
+      border: 1px solid var(--line);
+      border-radius: 12px;
+      padding: 12px;
+      cursor: pointer;
+      -webkit-tap-highlight-color: transparent;
+      transition: .15s;
+    }
+    .mini-card:active { transform: scale(.97) }
+    .mini-card-reward {
+      font-size: 20px;
+      font-weight: 900;
+      color: var(--green);
+      margin-bottom: 4px;
+      line-height: 1;
+    }
+    .mini-card-name {
+      font-size: 12px;
+      font-weight: 700;
+      color: var(--text);
+      margin-bottom: 2px;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+    .mini-card-desc {
+      font-size: 10px;
+      color: var(--muted2);
+      line-height: 1.3;
+      display: -webkit-box;
+      -webkit-line-clamp: 2;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+    }
+    .mini-card-badge {
+      font-size: 9px;
+      font-weight: 800;
+      color: var(--muted2);
+      margin-top: 6px;
+      text-transform: uppercase;
+      letter-spacing: .05em;
+    }
+
+    /* Search mode - flat grid */
+    .offers-grid.search-mode {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 8px;
+    }
+    .netflix-view { display: block }
+    .netflix-view.hidden { display: none }
+    .search-view { display: none }
+    .search-view.visible { display: block }
+
+    /* Filter pills */
+    .filter-pills {
+      display: flex;
+      gap: 6px;
+      overflow-x: auto;
+      padding-bottom: 4px;
+      scrollbar-width: none;
+      margin-bottom: 12px;
+    }
+    .filter-pills::-webkit-scrollbar { display: none }
+    .pill {
+      flex-shrink: 0;
+      padding: 6px 12px;
+      border-radius: 20px;
+      background: var(--card);
+      border: 1px solid var(--line);
+      font-size: 12px;
+      font-weight: 600;
+      color: var(--muted2);
+      cursor: pointer;
+      -webkit-tap-highlight-color: transparent;
+      font-family: var(--fb);
+      transition: .15s;
+    }
+    .pill.active {
+      background: var(--green);
+      border-color: var(--green);
+      color: #000;
+    }
+
     </style>
 </head>
 <body>
@@ -1962,30 +2140,44 @@
 
     <section id="view-offers" class="view">
       <section class="section">
-        <div class="section-head">
-          <h2 class="section-title">All Offers</h2>
-          <div class="section-note" id="offerCount">0 offers</div>
+
+        <!-- Search bar -->
+        <div class="toolbar" style="margin-bottom:10px">
+          <input class="search" id="searchInput" type="text" placeholder="Search offers..." oninput="onSearchInput()">
         </div>
 
-        <div class="toolbar">
-          <input class="search" id="searchInput" type="text" placeholder="Search offers...">
-          <select class="filter-select" id="filterSelect" aria-label="Filter offers">
-            <option value="all">All offers</option>
-            <option value="bank">🏦 Bank switches</option>
-            <option value="invest">📈 Invest bonuses</option>
-            <option value="cashback">💳 Cashback sites</option>
-            <option value="gift">🎁 Gift card cashback</option>
-            <option value="utilities">⚡ Utilities</option>
-            <option value="earn">💰 Earn online</option>
-            <option value="mobile">📱 Mobile</option>
-            <option value="travel">✈️ Travel</option>
-            <option value="business">💼 Business</option>
-            <option value="travel">Travel / utility</option>
-            <option value="freebie">Freebies / other</option>
-          </select>
+        <!-- Filter pills -->
+        <div class="filter-pills" id="filterPills">
+          <button class="pill active" data-cat="all" onclick="setFilter('all')">All</button>
+          <button class="pill" data-cat="bank" onclick="setFilter('bank')">🏦 Bank</button>
+          <button class="pill" data-cat="invest" onclick="setFilter('invest')">📈 Invest</button>
+          <button class="pill" data-cat="cashback" onclick="setFilter('cashback')">💳 Cashback</button>
+          <button class="pill" data-cat="gift" onclick="setFilter('gift')">🎁 Gift cards</button>
+          <button class="pill" data-cat="utilities" onclick="setFilter('utilities')">⚡ Utilities</button>
+          <button class="pill" data-cat="earn" onclick="setFilter('earn')">💰 Earn</button>
+          <button class="pill" data-cat="mobile" onclick="setFilter('mobile')">📱 Mobile</button>
+          <button class="pill" data-cat="travel" onclick="setFilter('travel')">✈️ Travel</button>
+          <button class="pill" data-cat="business" onclick="setFilter('business')">💼 Business</button>
+          <button class="pill" data-cat="freebie" onclick="setFilter('freebie')">🆓 Freebies</button>
         </div>
 
-        <div class="offers-grid" id="offersGrid"></div>
+        <!-- Netflix view (default) -->
+        <div class="netflix-view" id="netflixView">
+          <!-- Featured strip -->
+          <div class="featured-strip">
+            <div class="featured-label">⭐ Best Right Now</div>
+            <div class="featured-scroll" id="featuredStrip"></div>
+          </div>
+          <!-- Category rows injected here -->
+          <div id="categoryRows"></div>
+        </div>
+
+        <!-- Search/filter results view -->
+        <div class="search-view" id="searchView">
+          <div class="section-note" id="offerCount" style="margin-bottom:8px">0 offers</div>
+          <div class="offers-grid search-mode" id="offersGrid"></div>
+        </div>
+
       </section>
     </section>
 
@@ -2632,7 +2824,7 @@
       bestOffers:document.getElementById("bestOffers"),
       homeOffersPreview:document.getElementById("homeOffersPreview"),
       searchInput:document.getElementById("searchInput"),
-      filterSelect:document.getElementById("filterSelect"),
+      filterSelect:null, // replaced by pills
       offersGrid:document.getElementById("offersGrid"),
       offerCount:document.getElementById("offerCount"),
       battleTable:document.getElementById("battleTable"),
@@ -3140,16 +3332,7 @@
     }
 
     function renderOffers() {
-      const query = ui.searchInput.value.trim().toLowerCase();
-      const filter = ui.filterSelect.value;
-      const filtered = offers.filter((offer) => {
-        const category = inferCategory(offer);
-        const haystack = `${offer.name} ${offer.action} ${offer.reward} ${offer.desc} ${offer.badge} ${offer.code}`.toLowerCase();
-        return (!query || haystack.includes(query)) && (filter === "all" || category === filter);
-      });
-
-      ui.offerCount.textContent = `${filtered.length} offers`;
-      ui.offersGrid.innerHTML = filtered.length ? filtered.map(buildOfferCard).join("") : `<div class="empty">No offers match your search right now.</div>`;
+      renderOffersView();
     }
 
     function renderBattle() {
@@ -4570,6 +4753,165 @@
     }
 
 
+
+    // ── NETFLIX OFFERS SYSTEM ──────────────────────
+    let currentFilter = 'all';
+    let currentSearch = '';
+
+    const CATEGORY_ROWS = [
+      { cat:'bank',      label:'🏦 Bank Switches',        color:'rgba(57,130,255,.08)' },
+      { cat:'invest',    label:'📈 Invest Bonuses',        color:'rgba(57,255,100,.06)' },
+      { cat:'cashback',  label:'💳 Cashback Sites',        color:'rgba(255,200,57,.06)' },
+      { cat:'gift',      label:'🎁 Gift Card Cashback',    color:'rgba(180,57,255,.06)' },
+      { cat:'utilities', label:'⚡ Utilities & Broadband', color:'rgba(255,100,57,.06)' },
+      { cat:'earn',      label:'💰 Earn Online',           color:'rgba(57,200,255,.06)' },
+      { cat:'mobile',    label:'📱 Mobile',                color:'rgba(255,57,200,.06)' },
+      { cat:'travel',    label:'✈️ Travel & Transfer',     color:'rgba(57,255,180,.06)' },
+      { cat:'business',  label:'💼 Business',              color:'rgba(200,200,57,.06)' },
+      { cat:'freebie',   label:'🆓 Freebies',              color:'rgba(150,150,150,.06)' },
+    ];
+
+    // Featured offers - always your top referral offers
+    const FEATURED_IDS = [
+      'lloyds', 'santander', 'barclays', 'natwest',
+      'freetrade', 'robinhood', 'chase', 'revolut'
+    ];
+
+    function getOfferCategory(offer) {
+      if (typeof mapOfferCategory === 'function') return mapOfferCategory(offer);
+      if (typeof inferCategory === 'function') return inferCategory(offer);
+      return offer.category || 'freebie';
+    }
+
+    function getOfferReward(offer) {
+      return offer.reward || offer.deal_price || offer.amount || '?';
+    }
+
+    function getOfferName(offer) {
+      return offer.name || offer.store || 'Offer';
+    }
+
+    function getOfferDesc(offer) {
+      return offer.desc || offer.item || offer.action || '';
+    }
+
+    function setFilter(cat) {
+      currentFilter = cat;
+      // Update pills
+      document.querySelectorAll('.pill').forEach(p => {
+        p.classList.toggle('active', p.dataset.cat === cat);
+      });
+      renderOffersView();
+    }
+
+    function onSearchInput() {
+      currentSearch = document.getElementById('searchInput').value.trim().toLowerCase();
+      renderOffersView();
+    }
+
+    function renderOffersView() {
+      const netflix = document.getElementById('netflixView');
+      const searchView = document.getElementById('searchView');
+      const isSearching = currentSearch.length > 0 || currentFilter !== 'all';
+
+      if (isSearching) {
+        netflix.classList.add('hidden');
+        searchView.classList.add('visible');
+        renderSearchResults();
+      } else {
+        netflix.classList.remove('hidden');
+        searchView.classList.remove('visible');
+        renderNetflix();
+      }
+    }
+
+    function renderSearchResults() {
+      const grid = document.getElementById('offersGrid');
+      const count = document.getElementById('offerCount');
+      if (!grid) return;
+
+      const filtered = offers.filter(offer => {
+        const cat = getOfferCategory(offer);
+        const name = getOfferName(offer).toLowerCase();
+        const desc = getOfferDesc(offer).toLowerCase();
+        const reward = String(getOfferReward(offer)).toLowerCase();
+        const haystack = name + ' ' + desc + ' ' + reward;
+        const matchSearch = !currentSearch || haystack.includes(currentSearch);
+        const matchFilter = currentFilter === 'all' || cat === currentFilter;
+        return matchSearch && matchFilter;
+      });
+
+      if (count) count.textContent = filtered.length + ' offers';
+      grid.innerHTML = filtered.length
+        ? filtered.map(buildOfferCard).join('')
+        : '<div class="empty">No offers match your search.</div>';
+    }
+
+    function renderNetflix() {
+      renderFeaturedStrip();
+      renderCategoryRows();
+    }
+
+    function renderFeaturedStrip() {
+      const el = document.getElementById('featuredStrip');
+      if (!el) return;
+
+      // Pick top manual offers - highest reward amounts
+      const featured = offers
+        .filter(o => {
+          const name = getOfferName(o).toLowerCase();
+          return FEATURED_IDS.some(id => name.includes(id));
+        })
+        .slice(0, 8);
+
+      // Fallback: just pick highest value offers
+      if (featured.length < 3) {
+        const sorted = [...offers].sort((a, b) => {
+          const aVal = parseFloat(String(getOfferReward(a)).replace(/[^0-9.]/g,'')) || 0;
+          const bVal = parseFloat(String(getOfferReward(b)).replace(/[^0-9.]/g,'')) || 0;
+          return bVal - aVal;
+        });
+        featured.push(...sorted.filter(o => !featured.includes(o)).slice(0, 8 - featured.length));
+      }
+
+      el.innerHTML = featured.map(offer => `
+        <div class="featured-card" onclick="openOffer(${JSON.stringify(offer).replace(/"/g,'&quot;')})">
+          <div class="featured-card-badge">${offer.badge || '⭐ TOP PICK'}</div>
+          <div class="featured-card-reward">${getOfferReward(offer)}</div>
+          <div class="featured-card-name">${getOfferName(offer)}</div>
+          <div class="featured-card-desc">${getOfferDesc(offer).slice(0,60)}</div>
+        </div>
+      `).join('');
+    }
+
+    function renderCategoryRows() {
+      const el = document.getElementById('categoryRows');
+      if (!el) return;
+
+      el.innerHTML = CATEGORY_ROWS.map(row => {
+        const rowOffers = offers.filter(o => getOfferCategory(o) === row.cat);
+        if (rowOffers.length === 0) return '';
+        return `
+          <div class="category-row">
+            <div class="category-row-head">
+              <div class="category-row-title">${row.label}</div>
+              <div class="category-row-count">${rowOffers.length} offers</div>
+            </div>
+            <div class="category-scroll">
+              ${rowOffers.map(offer => `
+                <div class="mini-card" onclick="openOffer(${JSON.stringify(offer).replace(/"/g,'&quot;')})" style="background:linear-gradient(135deg,var(--card) 60%,${row.color} 100%)">
+                  <div class="mini-card-reward">${getOfferReward(offer)}</div>
+                  <div class="mini-card-name">${getOfferName(offer)}</div>
+                  <div class="mini-card-desc">${getOfferDesc(offer).slice(0,55)}</div>
+                  <div class="mini-card-badge">${(offer.badge||'').slice(0,20)}</div>
+                </div>
+              `).join('')}
+            </div>
+          </div>
+        `;
+      }).join('');
+    }
+
     function renderAll() {
       updateTopStats();
       updateDailyBox();
@@ -4578,6 +4920,7 @@
       renderHomePreview();
       renderOffers();
       renderBattle();
+      renderNetflix();
       renderStacks();
       renderProfile();
       renderLeaderboard();
@@ -4659,8 +5002,8 @@
     });
 
     ui.dailyBtn.addEventListener("click", claimDaily);
-    ui.searchInput.addEventListener("input", renderOffers);
-    ui.filterSelect.addEventListener("change", renderOffers);
+    ui.searchInput.addEventListener("input", onSearchInput);
+    // filterSelect replaced by pills
     ui.shareBtn.addEventListener("click", shareApp);
     ui.brandHome.addEventListener("click", () => switchView("home"));
     ui.closeDrawer.addEventListener("click", closeBattleDetail);
