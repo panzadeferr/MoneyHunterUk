@@ -4103,6 +4103,7 @@
       if (session?.user) {
         currentUser = session.user;
         await pullProgressFromSupabase();
+        checkAdminAccess();
         const username = localStorage.getItem('mh_username') || session.user.email?.split('@')[0];
         updateUserBadge(username);
       } else {
@@ -4117,6 +4118,7 @@
       db.auth.onAuthStateChange((event, session) => {
         if (event === 'SIGNED_IN' && session?.user) {
           currentUser = session.user;
+        checkAdminAccess();
         } else if (event === 'SIGNED_OUT') {
           currentUser = null;
           document.getElementById('userBadge').style.display = 'none';
