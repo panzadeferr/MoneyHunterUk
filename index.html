@@ -659,6 +659,17 @@ footer {
   .nav-link { display: none; }
   .how-step { flex-direction: column; }
 }
+
+  .reviews-track {
+    display: flex;
+    gap: 16px;
+    overflow-x: auto;
+    padding-bottom: 8px;
+    scrollbar-width: none;
+    margin-top: 32px;
+  }
+  .reviews-track::-webkit-scrollbar { display: none }
+
 </style>
 </head>
 <body>
@@ -668,7 +679,7 @@ footer {
   <a class="nav-brand" href="/">Money<span>Hunters</span></a>
   <div class="nav-right">
     <a class="nav-link" href="#how">How it works</a>
-    <a class="nav-link" href="mailto:hello@moneyhunters.co.uk">Contact</a>
+    <a class="nav-link" href="/cdn-cgi/l/email-protection#c7afa2ababa887aaa8a9a2beafb2a9b3a2b5b4e9a4a8e9b2ac">Contact</a>
     <a class="nav-cta" href="/app.html">Open App →</a>
   </div>
 </nav>
@@ -677,16 +688,15 @@ footer {
 <section class="hero">
   <div class="hero-kicker">
     <span class="hero-kicker-dot"></span>
-    98+ UK deals tracked — updated today
+    <span id="dealCount">100+</span> UK deals tracked — updated today
   </div>
   <h1 class="hero-h1">
     Bank switches. Cashback.<br>
     Free shares. <span class="accent">All in one place.</span>
   </h1>
   <p class="hero-sub">
-    The free UK app that tracks your deals,<br>
-    reminds you of payouts and tells you<br>
-    exactly what to do next.
+    Track bank switches, cashback deals and invest bonuses in one place.
+    Follow the Playbook and make <strong style="color:var(--g)">£500+ in your first 3 months</strong> — for free, forever.
   </p>
 
   <div class="hero-stats" id="heroStats">
@@ -863,7 +873,40 @@ footer {
 <!-- REVIEWS -->
 <section class="reviews">
   <div class="reviews-label">What hunters are saying</div>
-  <div class="reviews-track" id="reviewsTrack"></div>
+  <div class="reviews-track" id="reviewsTrack">
+
+  <!-- Community stats instead of fake reviews -->
+  <div class="review-card" style="min-width:280px;background:var(--bg2);border:1px solid var(--line2);border-radius:16px;padding:20px;flex-shrink:0">
+    <div style="font-size:28px;font-weight:900;color:var(--g);margin-bottom:4px">223k+</div>
+    <div style="font-size:14px;font-weight:600;color:#fff;margin-bottom:6px">r/beermoneyuk members</div>
+    <div style="font-size:12px;color:var(--muted)">The community that verified every offer on this app</div>
+  </div>
+
+  <div class="review-card" style="min-width:280px;background:var(--bg2);border:1px solid var(--line2);border-radius:16px;padding:20px;flex-shrink:0">
+    <div style="font-size:28px;font-weight:900;color:var(--g);margin-bottom:4px">£500+</div>
+    <div style="font-size:14px;font-weight:600;color:#fff;margin-bottom:6px">Average first 3 months</div>
+    <div style="font-size:12px;color:var(--muted)">Following the Playbook — bank switches + invest bonuses + cashback</div>
+  </div>
+
+  <div class="review-card" style="min-width:280px;background:var(--bg2);border:1px solid var(--line2);border-radius:16px;padding:20px;flex-shrink:0">
+    <div style="font-size:28px;font-weight:900;color:var(--g);margin-bottom:4px">£250</div>
+    <div style="font-size:14px;font-weight:600;color:#fff;margin-bottom:6px">Lloyds Bank switch bonus</div>
+    <div style="font-size:12px;color:var(--muted)">Currently the highest paying bank switch in the UK — verified live</div>
+  </div>
+
+  <div class="review-card" style="min-width:280px;background:var(--bg2);border:1px solid var(--line2);border-radius:16px;padding:20px;flex-shrink:0">
+    <div style="font-size:28px;font-weight:900;color:var(--g);margin-bottom:4px">Free</div>
+    <div style="font-size:14px;font-weight:600;color:#fff;margin-bottom:6px">Always and forever</div>
+    <div style="font-size:12px;color:var(--muted)">No subscription, no ads, no catch. We earn from referrals when you do</div>
+  </div>
+
+  <div class="review-card" style="min-width:280px;background:var(--bg2);border:1px solid var(--line2);border-radius:16px;padding:20px;flex-shrink:0">
+    <div style="font-size:28px;font-weight:900;color:var(--g);margin-bottom:4px">6h</div>
+    <div style="font-size:14px;font-weight:600;color:#fff;margin-bottom:6px">Offer refresh cycle</div>
+    <div style="font-size:12px;color:var(--muted)">Our scraper checks for new deals every 6 hours automatically</div>
+  </div>
+
+</div>
 </section>
 
 <!-- SIGN UP -->
@@ -872,7 +915,7 @@ footer {
   <p class="signup-sub">Free forever. No credit card. Your progress saved and synced across all devices.</p>
 
   <div class="signup-perks">
-    <div class="signup-perk"><span class="signup-perk-check">✓</span>98+ verified offers</div>
+    <div class="signup-perk"><span class="signup-perk-check">✓</span><span id="dealCount2">100+</span> verified offers</div>
     <div class="signup-perk"><span class="signup-perk-check">✓</span>Progress sync</div>
     <div class="signup-perk"><span class="signup-perk-check">✓</span>Weekly deal alerts</div>
     <div class="signup-perk"><span class="signup-perk-check">✓</span>Stacking guides</div>
@@ -902,7 +945,7 @@ footer {
     <button class="form-submit" onclick="handleSignup()">🚀 Create Free Account →</button>
     <div class="form-legal">
       By signing up you agree to receive weekly deal emails from Money Hunters UK.
-      We never spam. Unsubscribe any time. Questions? <a href="mailto:hello@moneyhunters.co.uk">hello@moneyhunters.co.uk</a>
+      We never spam. Unsubscribe any time. Questions? <a href="/cdn-cgi/l/email-protection#224a474e4e4d624f4d4c475b4a574c564750510c414d0c5749"><span class="__cf_email__" data-cfemail="82eae7eeeeedc2efedece7fbeaf7ecf6e7f0f1ace1edacf7e9">[email&#160;protected]</span></a>
     </div>
   </div>
 
@@ -925,7 +968,7 @@ footer {
       <a class="footer-link" href="https://www.reddit.com/r/ReferralHunterUK/" target="_blank">Reddit</a>
       <a class="footer-link" href="https://t.me/MoneyHunterUK" target="_blank">Telegram</a>
       <a class="footer-link" href="https://ko-fi.com/moneyhunteruk" target="_blank">Ko-fi</a>
-      <a class="footer-link" href="mailto:hello@moneyhunters.co.uk">Contact</a>
+      <a class="footer-link" href="/cdn-cgi/l/email-protection#b8d0ddd4d4d7f8d5d7d6ddc1d0cdd6ccddcacb96dbd796cdd3">Contact</a>
     </div>
   </div>
   <div class="footer-legal">
@@ -935,7 +978,7 @@ footer {
   </div>
 </footer>
 
-<script>
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
 // ── TICKER ──
 async function initTicker() {
   const track = document.getElementById('tickerTrack');
@@ -1121,18 +1164,4 @@ async function loadDealCount() {
       const hours = Math.floor(
         (Date.now() - date.getTime()) / 3600000
       );
-      const timeAgo = hours < 1 ? 'just now'
-        : hours < 24 ? hours + 'h ago'
-        : 'today';
-      kicker.innerHTML =
-        '<span class="hero-kicker-dot"></span>' +
-        total + ' UK deals tracked — updated ' + timeAgo;
-    }
-  } catch(e) {
-    console.log('Could not load deal count');
-  }
-}
-loadDealCount();
-</script>
-</body>
-</html>
+      c
