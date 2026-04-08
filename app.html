@@ -2179,6 +2179,35 @@
     }
     .panel-close:hover { color:var(--text);border-color:var(--green) }
 
+    
+    /* ── IMPROVED OFFER CARDS ───────────────────── */
+    .offer-cat-label {
+      font-size:10px;font-weight:700;
+      color:var(--green);text-transform:uppercase;
+      letter-spacing:.06em;margin-bottom:2px;
+    }
+    .offer-name {
+      font-size:16px !important;font-weight:700;
+      color:var(--text);line-height:1.3;
+    }
+    .offer-effort {
+      font-size:11px;color:var(--muted2);margin-top:2px;
+    }
+    .offer-status-dot { font-size:10px }
+    .reward {
+      font-size:22px !important;font-weight:900 !important;
+      color:var(--green);letter-spacing:-.5px;
+      line-height:1;
+    }
+    .offer-card-top {
+      display:flex;justify-content:space-between;
+      align-items:flex-start;gap:12px;
+      padding:14px 14px 10px;
+    }
+    .offer-meta-badge {
+      font-size:11px;color:var(--muted2);
+    }
+
     </style>
 </head>
 <body>
@@ -3465,21 +3494,30 @@
         : status === "pending" ? "⏳ Pending — Track Progress"
         : "Claim Offer →";
 
+      // Get category label
+      const catLabels = {
+        bank:'🏦 Bank Switch', invest:'📈 Invest',
+        cashback:'💳 Cashback', gift:'🎁 Gift Cards',
+        utilities:'⚡ Utilities', earn:'💰 Earn',
+        mobile:'📱 Mobile', travel:'✈️ Travel',
+        business:'💼 Business', freebie:'🆓 Freebie',
+        pension:'🏦 Pension'
+      };
+      const cat = getOfferCategory(offer);
+      const catLabel = catLabels[cat] || offer.badge || '';
+
       return `
         <article class="offer-card ${cardClass}" data-offer-id="${offer.id}">
-          <div class="offer-card-top">
+          <div class="offer-card-top" onclick="openPanel(${JSON.stringify(offer).replace(/"/g,'&quot;')})" style="cursor:pointer">
             <div style="min-width:0;flex:1">
-              <h3 class="offer-name" style="margin:0 0 3px">${offer.name}</h3>
+              <div class="offer-cat-label">${catLabel}</div>
+              <h3 class="offer-name" style="margin:2px 0 3px">${offer.name || offer.store}</h3>
+              <div class="offer-effort">${offer.effort || ''}</div>
             </div>
-            <div class="reward">${offer.reward}</div>
-          </div>
-
-          <div class="offer-card-meta">
-            <span class="offer-meta-badge">${offer.badge}</span>
-            <span class="offer-meta-dot">·</span>
-            <span class="offer-meta-badge">${offer.effort}</span>
-            <span class="offer-meta-dot">·</span>
-            <span class="offer-meta-badge" style="color:${statusColor}">${statusLabel}</span>
+            <div>
+              <div class="reward">${offer.reward || offer.deal_price}</div>
+              <div class="offer-status-dot" style="color:${statusColor};font-size:10px;text-align:right;margin-top:3px">${statusLabel}</div>
+            </div>
           </div>
 
           ${hasClaimed ? `
@@ -4091,7 +4129,30 @@
 
     function panelClaim() {
       if (!activePanel) return;
-      openOffer(activePanel);
+      const offer = activePanel;
+      // Copy code if exists
+      if (offer.code) {
+        navigator.clipboard?.writeText(offer.code).catch(() => {});
+        toast('Code copied: ' + offer.code);
+      }
+      // Update state
+      state.claimed += 1;
+      state.xp += 50;
+      if (state.offerStatus[offer.id] === 'none' || !state.offerStatus[offer.id]) {
+        state.offerStatus[offer.id] = 'pending';
+      }
+      saveState();
+      renderAll();
+      checkMilestones();
+      checkNewBadges();
+      // Open the URL
+      if (offer.url && offer.url !== '#') {
+        window.open(offer.url, '_blank', 'noopener,noreferrer');
+      }
+      // Show pending popup for bank switches
+      if ((offer.expectedDays || 0) > 0) {
+        setTimeout(() => openPendingPopup(offer), 300);
+      }
     }
 
     function copyCode(code) {
