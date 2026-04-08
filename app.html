@@ -18,7 +18,7 @@
   <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@700;800&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet" crossorigin="anonymous">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet" crossorigin="anonymous">
   <style>
     :root{
       --bg:#0b0f14;
@@ -40,8 +40,8 @@
       --red:#ff6b6b;
       --radius:14px;
       --radius-sm:10px;
-      --fh:"Syne",sans-serif;
-      --fb:"DM Sans",sans-serif;
+      --fh:"Inter",sans-serif;
+      --fb:"Inter",sans-serif;
       --shadow:0 10px 22px rgba(0,0,0,.2);
       --topbar-bg:rgba(11,15,20,.92);
     }
@@ -169,19 +169,19 @@
     
     /* Font loading optimization */
     @font-face {
-      font-family: 'Syne';
+      font-family: 'Inter';
       font-style: normal;
       font-weight: 700 800;
       font-display: swap;
-      src: local('Syne'), url(https://fonts.gstatic.com/s/syne/v22/8vIS7w4qzmVxsWxjBZRjr0FKM_04uQ6tTYhE.woff2) format('woff2');
+      src: local('Inter'), url(https://fonts.gstatic.com/s/syne/v22/8vIS7w4qzmVxsWxjBZRjr0FKM_04uQ6tTYhE.woff2) format('woff2');
     }
     
     @font-face {
-      font-family: 'DM Sans';
+      font-family: 'Inter';
       font-style: normal;
       font-weight: 400 700;
       font-display: swap;
-      src: local('DM Sans'), url(https://fonts.gstatic.com/s/dmsans/v15/rP2Hp2ywxg089UriCZOIHQ.woff2) format('woff2');
+      src: local('Inter'), url(https://fonts.gstatic.com/s/dmsans/v15/rP2Hp2ywxg089UriCZOIHQ.woff2) format('woff2');
     }
 
     a{color:inherit;text-decoration:none}
@@ -2153,6 +2153,32 @@
     .onboard-earn-row span:last-child{color:var(--green);font-weight:800}
     .onboard-total{display:flex;justify-content:space-between;padding:12px 0 0;font-size:15px;font-weight:800;color:var(--text)}
 
+    
+    /* Panel handle bar */
+    .panel-drag-hint {
+      display:flex;justify-content:center;
+      padding:8px 0 0;cursor:pointer;
+    }
+    .panel-handle-bar {
+      width:36px;height:4px;border-radius:2px;
+      background:var(--line);
+    }
+    /* Panel header redesign */
+    .panel-hdr {
+      display:flex;align-items:center;
+      justify-content:space-between;
+      padding:12px 16px 8px;
+      border-bottom:1px solid var(--line);
+    }
+    .panel-close {
+      width:30px;height:30px;border-radius:8px;
+      background:var(--bg3);border:1px solid var(--line);
+      color:var(--muted2);font-size:14px;
+      cursor:pointer;font-family:var(--fb);
+      display:flex;align-items:center;justify-content:center;
+    }
+    .panel-close:hover { color:var(--text);border-color:var(--green) }
+
     </style>
 </head>
 <body>
@@ -2228,9 +2254,9 @@
           <div class="user-badge-dot"></div>
           <span id="userBadgeName">Account</span>
         </div>
-        <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme" onclick="toggleTheme()">☀️</button>
-          <button class="icon-btn" id="shareBtn" aria-label="Share app">🔗</button>
-          <a class="icon-btn" href="https://t.me/MoneyHunterUk" target="_blank" rel="noreferrer" aria-label="Open Telegram">📲</a>
+        <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme" onclick="toggleTheme()" id="themeIcon">☀️</button>
+          
+          
         </div>
       </div>
 
@@ -2587,6 +2613,14 @@
 
     <section id="view-community" class="view">
       <div class="community-grid">
+
+        <!-- Share the app -->
+        <section class="community-card card" style="background:linear-gradient(135deg,var(--card),rgba(31,232,135,.06));border-color:rgba(31,232,135,.2)">
+          <h3>📲 Share Money Hunters</h3>
+          <p>Know someone who could earn £500+ from UK deals? Share the app and help them start hunting.</p>
+          <button class="primary-btn" onclick="shareApp()" style="width:100%;margin-top:8px">Share with a friend →</button>
+        </section>
+
         <section class="community-card card">
           <h3>r/ReferralHunterUK</h3>
           <p>Share referral codes, discover new deals, and follow stacking ideas from the community.</p>
@@ -2704,9 +2738,11 @@
 
   <div class="offer-panel" id="offerPanel">
     <div class="panel-hdr">
-      <button class="panel-close" id="panelClose">✓</button>
       <div class="panel-title" id="panelTitle">Offer</div>
-      <button class="panel-share" id="panelShare">↙</button>
+      <button class="panel-close" id="panelClose" onclick="closePanel()" aria-label="Close">✕</button>
+    </div>
+    <div class="panel-drag-hint" onclick="closePanel()">
+      <div class="panel-handle-bar"></div>
     </div>
     <div class="panel-body" id="panelBody"></div>
     <div class="panel-footer" id="panelFooter"></div>
@@ -2784,10 +2820,10 @@
     const offers = [
       { id:"chase-uk", name:"Chase UK", action:"Open Chase account", reward:"£50", amount:50, code:"J2SK9W", url:"https://chase.co.uk/raf", desc:"Deposit £1,000 and follow the current referral steps to get £50.", badge:"🔥 TOP PICK", effort:"5 min · requires deposit", steps:["Open the Chase app","Enter referral code J2SK9W","Deposit £1,000","Wait for payout"], expectedDays:30 },
       { id:"lloyds-bank", name:"Lloyds Bank", action:"Switch to Lloyds Bank", reward:"£250", amount:250, code:"", url:"https://apply.lloydsbank.co.uk/sales-content/cwa/l/onboardpca/index-app.html?from=ob&webDirect=true&redesign=true&token=JpGVwskEUPxoFpO3Mg4RTAUZg6q6Emjz578QtNaABT8=&redesign=true#/refer-friend", desc:"Switch using CASS, pay in the qualifying amount, and meet the listed conditions for the full reward.", badge:"🏅 BEST VALUE", effort:"12 min · bank switch", steps:["Open Lloyds current account","Start CASS switch","Pay in required amount","Add direct debits","Wait for payout"], expectedDays:30 },
-      { id:"first-direct", name:"First Direct", action:"Switch to First Direct", reward:"£175 + £50 RAF", amount:225, code:"", url:"https://www.firstdirect.com/banking/switch/", desc:"Switch using CASS and complete the qualifying steps for the current bonus.", badge:"⭐ POPULAR", effort:"12 min · bank switch", steps:["Open First Direct account","Start switch","Pay in required amount","Meet current offer rules","Wait for payout"], expectedDays:28 },
-      { id:"natwest", name:"NatWest", action:"Switch to NatWest", reward:"£200", amount:200, code:"", url:"https://www.natwest.com/current-accounts/switch/", desc:"Switch and meet the current direct debit and eligibility requirements.", badge:"⭐ POPULAR", effort:"12 min · direct debits needed", steps:["Open NatWest account","Start switch","Add 2 direct debits","Meet switch rules","Wait for payout"], expectedDays:30 },
-      { id:"santander", name:"Santander", action:"Switch to Santander Edge", reward:"£200", amount:200, code:"", url:"https://www.santander.co.uk/personal/current-accounts", desc:"Switch to Santander Edge and complete the provider's current bonus steps.", badge:"🛒 NEW", effort:"12 min · bank switch", steps:["Open Santander Edge","Start switch","Meet funding rules","Add required direct debits","Wait for payout"], expectedDays:30 },
-      { id:"barclays", name:"Barclays", action:"Switch to Barclays", reward:"£175", amount:175, code:"", url:"https://www.barclays.co.uk/current-accounts/", desc:"Switch via CASS, pay in the required amount, and check the latest eligibility rules.", badge:"⏳ ENDS 28 MAY", effort:"12 min · bank switch", steps:["Check eligibility","Open Barclays account","Start switch","Pay in required amount","Wait for payout"], expectedDays:30 },
+      { id:"first-direct", name:"First Direct", action:"Switch to First Direct", reward:"£175 + £50 RAF", amount:225, code:"", url:"https://www.firstdirect.com/banking/switching-bank-accounts/", desc:"Switch using CASS and complete the qualifying steps for the current bonus.", badge:"⭐ POPULAR", effort:"12 min · bank switch", steps:["Open First Direct account","Start switch","Pay in required amount","Meet current offer rules","Wait for payout"], expectedDays:28 },
+      { id:"natwest", name:"NatWest", action:"Switch to NatWest", reward:"£150", amount:200, code:"", url:"https://www.natwest.com/current-accounts/switch-your-banking-to-natwest.html", desc:"Switch and meet the current direct debit and eligibility requirements.", badge:"⭐ POPULAR", effort:"12 min · direct debits needed", steps:["Open NatWest account","Start switch","Add 2 direct debits","Meet switch rules","Wait for payout"], expectedDays:30 },
+      { id:"santander", name:"Santander", action:"Switch to Santander Edge", reward:"£180", amount:180, code:"", url:"https://www.santander.co.uk/personal/current-accounts/switch", desc:"Switch to Santander Edge and complete the provider's current bonus steps.", badge:"🛒 NEW", effort:"12 min · bank switch", steps:["Open Santander Edge","Start switch","Meet funding rules","Add required direct debits","Wait for payout"], expectedDays:30 },
+      { id:"barclays", name:"Barclays", action:"Switch to Barclays", reward:"£250", amount:175, code:"", url:"https://www.barclays.co.uk/current-accounts/switch/", desc:"Switch via CASS, pay in the required amount, and check the latest eligibility rules.", badge:"⏳ ENDS 28 MAY", effort:"12 min · bank switch", steps:["Check eligibility","Open Barclays account","Start switch","Pay in required amount","Wait for payout"], expectedDays:30 },
       { id:"co-operative-bank", name:"Co-operative Bank", action:"Switch to Co-operative Bank", reward:"£175", amount:175, code:"", url:"https://www.co-operativebank.co.uk/current-accounts", desc:"Open and switch to Co-operative Bank, then follow the active offer terms.", badge:"🛒 ADDED", effort:"10 min · bank switch", steps:["Open Co-operative account","Start switch","Meet current offer terms","Wait for payout"], expectedDays:30 },
       { id:"monzo", name:"Monzo", action:"Open Monzo and spend £1", reward:"£5-£50", amount:50, code:"", url:"https://join.monzo.com/r/", desc:"Join and complete a qualifying spend to get the current random referral reward.", badge:"📱 APP", effort:"4 min · quick signup", steps:["Open Monzo via referral","Verify account","Spend £1","Wait for reward"], expectedDays:7 },
       { id:"revolut", name:"Revolut", action:"Open Revolut and complete signup", reward:"£20", amount:20, code:"", url:"https://revolut.com/referral/?referral-code=ludoviv2sq!MAR1-26-AR-H2&geo-redirect", desc:"Sign up and complete the referral actions for the current offer.", badge:"📱 APP", effort:"5 min · app signup", steps:["Open Revolut","Verify identity","Complete required card or spend steps","Wait for reward"], expectedDays:7 },
@@ -3339,23 +3375,8 @@
       if (!getOfferClaimedDate(offer.id)) {
         setOfferClaimedDate(offer.id);
       }
-      if (offer.code) {
-        navigator.clipboard?.writeText(offer.code).catch(() => {});
-        toast(`Code copied: ${offer.code}`);
-      } else {
-        toast(`Opening ${offer.name}`);
-      }
-
-      state.claimed += 1;
-      state.xp += 5;
-      if (getOfferStatus(offer.id) === "none") state.offerStatus[offer.id] = "pending";
-      if (!isExpanded(offer.id)) state.expandedOffers.push(offer.id);
-      saveState();
-      renderAll();
-      if (offer.expectedDays > 0) {
-        setTimeout(() => openPendingPopup(offer), 120);
-      }
-      setTimeout(() => window.open(offer.url, "_blank", "noopener,noreferrer"), 140);
+      // Open the slide panel — NOT the URL directly
+      openPanel(offer);
     }
 
     function logSavings(id) {
@@ -4547,17 +4568,23 @@
     function toggleTheme() {
       const isLight = document.body.classList.toggle('light');
       localStorage.setItem('mh_theme', isLight ? 'light' : 'dark');
+      const icon = document.getElementById('themeIcon');
+      if (icon) icon.textContent = isLight ? '🌙' : '☀️';
       document.getElementById('themeToggle').textContent = isLight ? '☀️' : '🏅';
     }
 
     function initTheme() {
       const saved = localStorage.getItem('mh_theme');
-      // Default to dark, respect saved preference
-      if (saved === 'light') {
-        document.body.classList.add('light');
-        const btn = document.getElementById('themeToggle');
-        if (btn) btn.textContent = '☀️';
+      let isLight = false;
+      if (saved) {
+        isLight = saved === 'light';
+      } else {
+        // Auto-detect from system
+        isLight = window.matchMedia('(prefers-color-scheme: light)').matches;
       }
+      document.body.classList.toggle('light', isLight);
+      const icon = document.getElementById('themeIcon');
+      if (icon) icon.textContent = isLight ? '🌙' : '☀️';
     }
 
 
@@ -5262,6 +5289,21 @@
         setTimeout(function() { openOffer(offer); }, 300);
       } else {
         switchView('offers');
+      }
+    }
+
+
+    function shareApp() {
+      if (navigator.share) {
+        navigator.share({
+          title: 'Money Hunters UK',
+          text: 'Free app to track UK bank switch bonuses, cashback deals and free shares. I use it to make extra money!',
+          url: 'https://moneyhunters.co.uk'
+        }).catch(() => {});
+      } else {
+        navigator.clipboard?.writeText('https://moneyhunters.co.uk')
+          .then(() => toast('Link copied to clipboard!'))
+          .catch(() => toast('Visit moneyhunters.co.uk'));
       }
     }
 
