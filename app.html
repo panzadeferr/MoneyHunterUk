@@ -2208,6 +2208,54 @@
       font-size:11px;color:var(--muted2);
     }
 
+    
+    /* ── ACCORDION OFFER CARDS ──────────────────── */
+    .offer-card { cursor:pointer; transition:.15s; }
+    .offer-card:active { transform:scale(.99) }
+    .offer-card-body {
+      max-height:0;overflow:hidden;
+      transition:max-height .35s cubic-bezier(.16,1,.3,1);
+      padding:0 14px;
+    }
+    .offer-card-body.open {
+      max-height:400px;
+      padding:0 14px 14px;
+    }
+    .offer-card-desc {
+      font-size:13px;color:var(--muted);
+      line-height:1.6;margin-bottom:12px;
+      border-top:1px solid var(--line);
+      padding-top:10px;
+    }
+    .offer-card-quick-steps {
+      display:flex;flex-direction:column;gap:6px;
+      margin-bottom:12px;
+    }
+    .offer-card-step {
+      display:flex;gap:8px;align-items:flex-start;
+      font-size:12px;color:var(--text);
+    }
+    .offer-card-step-num {
+      width:18px;height:18px;border-radius:50%;
+      background:var(--green);color:#000;
+      font-size:10px;font-weight:800;
+      display:flex;align-items:center;justify-content:center;
+      flex-shrink:0;margin-top:1px;
+    }
+    .offer-card-claim {
+      width:100%;padding:12px;
+      background:var(--green);color:#000;
+      border:none;border-radius:10px;
+      font-size:13px;font-weight:800;
+      font-family:var(--fb);cursor:pointer;
+    }
+    .offer-card-chevron {
+      font-size:12px;color:var(--muted2);
+      transition:transform .3s;display:inline-block;
+      margin-left:4px;
+    }
+    .offer-card-chevron.open { transform:rotate(180deg) }
+
     </style>
 </head>
 <body>
@@ -3508,10 +3556,10 @@
 
       return `
         <article class="offer-card ${cardClass}" data-offer-id="${offer.id}">
-          <div class="offer-card-top" onclick="openPanel(${JSON.stringify(offer).replace(/"/g,'&quot;')})" style="cursor:pointer">
+          <div class="offer-card-top" onclick="toggleOfferCard('${offer.id}')" style="cursor:pointer">
             <div style="min-width:0;flex:1">
               <div class="offer-cat-label">${catLabel}</div>
-              <h3 class="offer-name" style="margin:2px 0 3px">${offer.name || offer.store}</h3>
+              <h3 class="offer-name" style="margin:2px 0 3px">${offer.name || offer.store} <span class="offer-card-chevron" id="chev_${offer.id}">▾</span></h3>
               <div class="offer-effort">${offer.effort || ''}</div>
             </div>
             <div>
@@ -3531,7 +3579,10 @@
             </div>
           </div>` : ""}
 
-          <button class="offer-card-claim ${btnClass}" data-offer-id="${offer.id}">${btnText}</button>
+          <!-- Accordion body -->
+          <div class="offer-card-body" id="acc_${offer.id}">
+            ${buildAccordionBody(offer, enrich)}
+          </div>
         </article>
       `;
     }
@@ -4113,7 +4164,10 @@
       if (offer.reward !== "Coming Soon") {
         const isAmber = offer.badge && (offer.badge.includes("BANK") || offer.badge.includes("SWITCH") || offer.badge.includes("INVEST") || offer.badge.includes("PREMIUM") || offer.badge.includes("VALUE"));
         const btnText = offer.code ? `📋 Copy Code & Claim →` : `🎯 Claim Offer →`;
-        footer.innerHTML = `<button class="panel-claim ${isAmber?'amber':''}" onclick="panelClaim()">Open Offer →</button>`;
+        footer.innerHTML = `<button class="panel-claim ${isAmber?'amber':''}" onclick="panelClaim()">
+          ${offer.code ? '📋 Copy Code & ' : ''}Open ${offer.name} ↗
+          <span style="font-size:10px;opacity:.6;display:block;margin-top:2px;font-weight:400">Opens in new tab</span>
+        </button>`;
       } else {
         footer.innerHTML = `<button class="panel-claim" style="background:var(--bg3);color:var(--muted2);cursor:default">⏸️ Paused — Check Back Soon</button>`;
       }
@@ -5369,6 +5423,54 @@
           .then(() => toast('Link copied to clipboard!'))
           .catch(() => toast('Visit moneyhunters.co.uk'));
       }
+    }
+
+
+    function toggleOfferCard(offerId) {
+      const body = document.getElementById('acc_' + offerId);
+      const chev = document.getElementById('chev_' + offerId);
+      if (!body) return;
+      const isOpen = body.classList.contains('open');
+      // Close all others
+      document.querySelectorAll('.offer-card-body.open').forEach(el => {
+        el.classList.remove('open');
+      });
+      document.querySelectorAll('.offer-card-chevron.open').forEach(el => {
+        el.classList.remove('open');
+      });
+      // Toggle this one
+      if (!isOpen) {
+        body.classList.add('open');
+        if (chev) chev.classList.add('open');
+      }
+    }
+
+
+    function buildAccordionBody(offer, enrich) {
+      const steps = (enrich.steps && enrich.steps.length) 
+        ? enrich.steps.slice(0,3) 
+        : (offer.steps || []).slice(0,3);
+      const totalSteps = (enrich.steps && enrich.steps.length)
+        ? enrich.steps.length
+        : (offer.steps || []).length;
+      const desc = offer.desc || offer.item || '';
+      
+      let html = '';
+      if (desc) {
+        html += '<div class="offer-card-desc">' + desc + '</div>';
+      }
+      steps.forEach(function(s, i) {
+        html += '<div class="offer-card-step">';
+        html += '<div class="offer-card-step-num">' + (i+1) + '</div>';
+        html += '<div>' + s + '</div>';
+        html += '</div>';
+      });
+      if (totalSteps > 3) {
+        html += '<div style="font-size:11px;color:var(--muted2);margin:6px 0 8px 26px">+ ' + (totalSteps-3) + ' more steps inside →</div>';
+      }
+      html += '<button class="offer-card-claim" style="margin-top:10px" onclick="event.stopPropagation();openPanel(offers.find(function(o){return o.id===\'' + offer.id + '\'}))">';
+      html += 'View Full Guide & Claim →</button>';
+      return html;
     }
 
     function renderAll() {
