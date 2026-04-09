@@ -4659,6 +4659,8 @@
       document.getElementById(`view-${view}`)?.classList.add("active");
       document.querySelector(`.nav-btn[data-view="${view}"]`)?.classList.add("active");
       window.scrollTo({ top: 0, behavior: "smooth" });
+      // Re-render when switching to ensure content shows
+      if (view === 'offers') renderNetflix();
     }
 
     function shareApp() {
@@ -6273,21 +6275,6 @@ function initTheme() {
     }
 
 
-    function shareApp() {
-      if (navigator.share) {
-        navigator.share({
-          title: 'Money Hunters UK',
-          text: 'Free app to track UK bank switch bonuses, cashback deals and free shares. I use it to make extra money!',
-          url: 'https://moneyhunters.co.uk'
-        }).catch(() => {});
-      } else {
-        navigator.clipboard?.writeText('https://moneyhunters.co.uk')
-          .then(() => toast('Link copied to clipboard!'))
-          .catch(() => toast('Visit moneyhunters.co.uk'));
-      }
-    }
-
-
     function toggleOfferCard(el) {
       const offerId = el.dataset ? el.dataset.offerId : el;
       const body = document.getElementById('acc_' + offerId);
@@ -6345,13 +6332,6 @@ function initTheme() {
       html += '🎯 View Full Guide & Claim →</button>';
       return html;
     }
-
-    function openOfferById(id) {
-      const offer = offers.find(function(o) { return o.id === id; });
-      if (offer) openPanel(offer);
-    }
-
-
 
     function openOfferById(id) {
       const offer = offers.find(function(o) { return o.id === id; });
@@ -6421,44 +6401,6 @@ function initTheme() {
       
       // Auto dismiss after 8 seconds
       setTimeout(() => { if (reminder.parentElement) reminder.remove(); }, 8000);
-    }
-
-
-    function checkPayoutReminders() {
-      const today = localStorage.getItem('mh_reminder_shown');
-      const todayStr = new Date().toDateString();
-      if (today === todayStr) return; // only once per day
-
-      // Find offers paying out in ≤7 days
-      const upcoming = offers.filter(o => {
-        if (state.offerStatus[o.id] !== 'pending' && !getOfferClaimedDate(o.id)) return false;
-        const days = getDaysUntilPayout(o.id);
-        return days !== null && days >= 0;
-      }).sort((a, b) => getDaysUntilPayout(a.id) - getDaysUntilPayout(b.id));
-
-      if (upcoming.length === 0) return;
-
-      const offer = upcoming[0];
-      const days = getDaysUntilPayout(offer.id);
-      const name = offer.name || offer.store;
-      const reward = offer.reward || offer.deal_price || '';
-
-      let msg;
-      if (days === 0) {
-        msg = '🎉 ' + name + ' should pay out TODAY! Check your account.';
-      } else if (days === 1) {
-        msg = '⏰ ' + name + ' (' + reward + ') pays out tomorrow!';
-      } else {
-        msg = '📅 ' + name + ' (' + reward + ') pays out in ' + days + ' days';
-      }
-
-      // Show as a dismissible banner on home screen
-      const banner = document.getElementById('payoutReminderBanner');
-      if (banner) {
-        banner.querySelector('.reminder-text').textContent = msg;
-        banner.classList.remove('hidden');
-        localStorage.setItem('mh_reminder_shown', todayStr);
-      }
     }
 
     function dismissPayoutReminder() {
@@ -6573,7 +6515,7 @@ function initTheme() {
       updateWelcomeCard();
       renderOffers();
       renderBattle();
-      if (offers.length > 0) renderNetflix();
+      renderNetflix();
       renderStacks();
       renderProfile();
       renderPendingPayouts();
