@@ -321,7 +321,7 @@
     .blue{color:var(--blue)}
 
     .view{display:none}
-    .view.active{display:block;animation:fadeUp .18s ease;min-height:50vh;background:var(--bg);padding:12px 12px 80px}
+    .view.active{display:block;animation:fadeUp .18s ease;min-height:50vh}
     @keyframes fadeUp{
       from{opacity:0;transform:translateY(4px)}
       to{opacity:1;transform:translateY(0)}
@@ -2503,371 +2503,108 @@
     }
     .xp-explain-row span:first-child { font-size:14px }
 
+        /* OB2 */
+    .onboard-overlay{position:fixed;inset:0;z-index:9999;background:rgba(11,15,20,.96);display:flex;flex-direction:column;align-items:center;justify-content:flex-end;opacity:0;pointer-events:none;transition:opacity .3s}
+    .onboard-overlay.show{opacity:1;pointer-events:all}
+    .onboard-sheet{width:100%;max-width:480px;background:#11161d;border-radius:28px 28px 0 0;border-top:2px solid #1fe887;padding:20px 20px 48px;position:relative;transform:translateY(100%);transition:transform .45s cubic-bezier(.16,1,.3,1)}
+    .onboard-overlay.show .onboard-sheet{transform:translateY(0)}
+    .onboard-handle{width:40px;height:4px;border-radius:2px;background:rgba(255,255,255,.15);margin:0 auto 20px}
+    .onboard-skip{position:absolute;top:20px;right:20px;background:rgba(255,255,255,.08);border:none;color:rgba(255,255,255,.5);font-size:12px;padding:6px 12px;border-radius:20px;cursor:pointer;font-family:inherit}
+    .onboard-dots{display:flex;justify-content:center;gap:6px;margin-bottom:24px}
+    .onboard-dot{height:4px;border-radius:2px;background:rgba(255,255,255,.2);transition:.3s;width:8px}
+    .onboard-dot.active{background:#1fe887;width:24px}
+    .onboard-dot.done{background:rgba(31,232,135,.4)}
+    .onboard-step{display:none}
+    .onboard-step.active{display:block;animation:obIn .3s ease}
+    @keyframes obIn{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:translateY(0)}}
+    .onboard-emoji{font-size:40px;display:block;margin-bottom:14px}
+    .onboard-title{font-size:24px;font-weight:800;color:#f6f8fb;line-height:1.2;margin-bottom:8px}
+    .onboard-sub{font-size:13px;color:#a8b4c1;line-height:1.5;margin-bottom:18px}
+    .onboard-bullet{display:flex;align-items:center;gap:10px;padding:10px 0;border-bottom:1px solid rgba(255,255,255,.06)}
+    .onboard-bullet:last-child{border:none}
+    .onboard-bullet-icon{width:32px;height:32px;border-radius:8px;background:rgba(31,232,135,.12);display:flex;align-items:center;justify-content:center;font-size:16px;flex-shrink:0}
+    .onboard-bullet-val{font-size:11px;color:#1fe887;font-weight:700;margin-top:1px}
+    .onboard-how-step{display:flex;align-items:flex-start;gap:12px;margin-bottom:14px}
+    .onboard-how-num{width:28px;height:28px;border-radius:50%;background:#1fe887;color:#000;font-size:13px;font-weight:800;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+    .onboard-how-title{font-size:14px;font-weight:700;color:#f6f8fb;margin-bottom:2px}
+    .onboard-how-desc{font-size:12px;color:#6f8091}
+    .onboard-calc-q{margin-bottom:14px}
+    .onboard-calc-label{font-size:13px;font-weight:600;color:#f6f8fb;margin-bottom:8px}
+    .onboard-calc-btns{display:flex;gap:8px}
+    .onboard-calc-btn{flex:1;padding:10px;border-radius:10px;border:1.5px solid rgba(255,255,255,.15);background:transparent;color:#a8b4c1;font-size:12px;font-weight:600;cursor:pointer;font-family:inherit;transition:.15s}
+    .onboard-calc-btn.selected{border-color:#1fe887;color:#1fe887;background:rgba(31,232,135,.08)}
+    .onboard-calc-result{background:rgba(31,232,135,.08);border:1px solid rgba(31,232,135,.2);border-radius:12px;padding:14px;margin:12px 0;text-align:center}
+    .onboard-calc-amount{font-size:38px;font-weight:900;color:#1fe887;letter-spacing:-2px}
+    .onboard-calc-desc{font-size:11px;color:#a8b4c1;margin-top:3px}
+    .onboard-offer-card{background:linear-gradient(135deg,#171d25,rgba(31,232,135,.08));border:1.5px solid rgba(31,232,135,.3);border-radius:16px;padding:16px;margin-bottom:16px;cursor:pointer}
+    .onboard-offer-cat{font-size:10px;font-weight:700;color:#1fe887;text-transform:uppercase;letter-spacing:.08em;margin-bottom:6px}
+    .onboard-offer-name{font-size:17px;font-weight:800;color:#f6f8fb;margin-bottom:4px}
+    .onboard-offer-reward{font-size:34px;font-weight:900;color:#1fe887;letter-spacing:-1px;line-height:1;margin-bottom:8px}
+    .onboard-offer-pill{font-size:11px;color:#a8b4c1;background:rgba(255,255,255,.06);padding:3px 8px;border-radius:20px;margin-right:6px}
+    .onboard-btn{width:100%;padding:15px;border:none;border-radius:12px;font-size:15px;font-weight:800;cursor:pointer;font-family:inherit;margin-bottom:8px;transition:.15s}
+    .onboard-btn.primary{background:#1fe887;color:#000}
+    .onboard-btn.secondary{background:transparent;color:rgba(255,255,255,.35);font-size:13px;padding:8px}
     
-    .today-offers-body {
-      max-height:0;overflow:hidden;
-      transition:max-height .4s cubic-bezier(.16,1,.3,1);
-    }
-    .today-offers-body.open { max-height:2000px }
-
-    
-    /* ── TODAY'S MONEY PLAN ─────────────────────── */
-    .plan-collapsed-head {
-      display:flex;align-items:center;justify-content:space-between;
-      background:var(--card);border:1px solid var(--line);
-      border-radius:14px;padding:14px 16px;cursor:pointer;
-      transition:.15s;margin-bottom:0;
-    }
-    .plan-collapsed-head:active { opacity:.8 }
-    .plan-collapsed-label {
-      font-size:12px;font-weight:700;color:var(--muted2);
-      text-transform:uppercase;letter-spacing:.06em;margin-bottom:3px;
-    }
-    .plan-collapsed-amount {
-      font-size:22px;font-weight:900;color:var(--green);
-      letter-spacing:-.5px;
-    }
-    .plan-collapsed-right {
-      display:flex;align-items:center;gap:6px;flex-shrink:0;
-    }
-    .plan-collapsed-hint {
-      font-size:11px;color:var(--muted2);
-    }
-    .plan-chevron {
-      font-size:14px;color:var(--muted2);
-      transition:transform .3s;display:inline-block;
-    }
-    .plan-body {
-      max-height:0;overflow:hidden;
-      transition:max-height .4s cubic-bezier(.16,1,.3,1);
-    }
-    .plan-body.open { max-height:1000px }
-
-    
-    /* ── XP / GAMIFICATION TABLE ────────────────── */
-    .xp-table {
-      background:var(--bg3);border-radius:10px;
-      overflow:hidden;margin-top:8px;
-    }
-    .xp-row {
-      display:flex;justify-content:space-between;
-      align-items:center;padding:9px 12px;
-      border-bottom:1px solid var(--line);
-      font-size:12px;color:var(--text);
-    }
-    .xp-row:last-child { border-bottom:none }
-    .xp-val {
-      font-weight:700;color:var(--green);
-      font-size:11px;text-align:right;
-    }
-    .guide-section-title {
-      font-size:12px;font-weight:800;color:var(--text);
-      text-transform:uppercase;letter-spacing:.06em;
-      margin-bottom:6px;
-    }
-    .guide-p {
-      font-size:13px;color:var(--muted);
-      line-height:1.6;margin-bottom:8px;
-    }
-
-    
-    /* ── FEATURED REVEAL BUTTON ─────────────────── */
-    .featured-reveal-btn {
-      display:flex;align-items:center;justify-content:space-between;
-      background:linear-gradient(135deg,var(--card),rgba(31,232,135,.06));
-      border:1px solid rgba(31,232,135,.25);
-      border-radius:14px;padding:16px;cursor:pointer;
-      margin-bottom:0;transition:.15s;
-    }
-    .featured-reveal-btn:active { transform:scale(.99) }
-    .featured-reveal-label {
-      font-size:12px;font-weight:700;color:var(--muted2);
-      text-transform:uppercase;letter-spacing:.06em;
-      margin-bottom:4px;
-    }
-    .featured-reveal-amount {
-      font-size:22px;font-weight:900;color:var(--green);
-      letter-spacing:-.5px;
-    }
-    .featured-reveal-right {
-      display:flex;flex-direction:column;
-      align-items:flex-end;gap:4px;flex-shrink:0;
-    }
-    .featured-reveal-hint {
-      font-size:12px;font-weight:600;color:var(--muted2);
-      background:var(--bg3);border:1px solid var(--line);
-      padding:4px 10px;border-radius:20px;
-    }
-    .featured-reveal-chevron {
-      font-size:14px;color:var(--muted2);
-      transition:transform .3s;display:block;
-      text-align:right;
-    }
-
-    
-    /* ── HOME WELCOME CARD ──────────────────────── */
+    /* HOME LAYOUT */
     .home-welcome-card {
+      display:flex;align-items:center;justify-content:space-between;
       background:linear-gradient(135deg,var(--bg3),rgba(31,232,135,.08));
-      border:1px solid rgba(31,232,135,.2);
-      border-radius:16px;padding:20px 16px;margin-bottom:12px;
+      border:1px solid rgba(31,232,135,.2);border-radius:16px;
+      padding:20px 16px;margin-bottom:12px;cursor:pointer;transition:.15s;
     }
-    .home-welcome-title {
-      font-size:20px;font-weight:800;color:var(--text);
-      line-height:1.3;margin-bottom:6px;
-    }
-    .home-welcome-sub {
-      font-size:12px;color:var(--muted2);line-height:1.5;
-    }
-
-    /* ── HOME STATS ROW ─────────────────────────── */
-    .home-stats-row {
-      display:grid;grid-template-columns:repeat(4,1fr);
-      gap:8px;margin-bottom:12px;
-    }
-    .home-stat-card {
-      background:var(--card);border:1px solid var(--line);
-      border-radius:12px;padding:10px 8px;
-      text-align:center;
-    }
-    .home-stat-icon { font-size:16px;margin-bottom:4px }
-    .home-stat-val {
-      font-size:15px;font-weight:800;color:var(--text);
-      margin-bottom:2px;
-    }
-    .home-stat-label {
-      font-size:9px;font-weight:600;color:var(--muted2);
-      text-transform:uppercase;letter-spacing:.04em;
-    }
-
-    /* ── HOME IN PROGRESS ───────────────────────── */
-    .home-in-progress {
-      margin-bottom:12px;
-    }
+    .home-welcome-card:active { opacity:.9 }
+    .home-welcome-title { font-size:20px;font-weight:800;color:var(--text);line-height:1.3;margin-bottom:6px }
+    .home-welcome-sub { font-size:12px;color:var(--muted2) }
+    .home-welcome-arrow { font-size:28px;color:var(--green);font-weight:300;flex-shrink:0;margin-left:8px }
+    .home-in-progress { margin-bottom:12px }
     .home-in-progress.hidden { display:none }
-    .home-progress-title {
-      font-size:11px;font-weight:700;color:var(--muted2);
-      text-transform:uppercase;letter-spacing:.06em;
-      margin-bottom:8px;padding:0 2px;
-    }
-    .home-progress-row {
-      background:var(--card);border:1px solid var(--line);
-      border-radius:12px;padding:12px 14px;
-      display:flex;align-items:center;justify-content:space-between;
-      margin-bottom:6px;cursor:pointer;
-    }
-    .home-progress-row:active { opacity:.8 }
-    .home-progress-name {
-      font-size:14px;font-weight:700;color:var(--text);
-    }
-    .home-progress-days {
-      font-size:11px;color:var(--muted2);margin-top:2px;
-    }
-    .home-progress-reward {
-      font-size:18px;font-weight:900;color:var(--green);
-    }
-
-    /* ── PLAYBOOK CTA ───────────────────────────── */
-    .home-playbook-cta {
-      background:var(--green);border-radius:14px;
-      padding:16px;margin-bottom:12px;cursor:pointer;
-      display:flex;align-items:center;justify-content:space-between;
-      transition:.15s;
-    }
+    .home-progress-title { font-size:11px;font-weight:700;color:var(--muted2);text-transform:uppercase;letter-spacing:.06em;margin-bottom:8px;padding:0 2px }
+    .home-progress-row { background:var(--card);border:1px solid var(--line);border-radius:12px;padding:12px 14px;display:flex;align-items:center;justify-content:space-between;margin-bottom:6px;cursor:pointer }
+    .home-progress-name { font-size:14px;font-weight:700;color:var(--text) }
+    .home-progress-days { font-size:11px;color:var(--muted2);margin-top:2px }
+    .home-progress-reward { font-size:18px;font-weight:900;color:var(--green) }
+    .home-playbook-cta { background:var(--green);border-radius:14px;padding:16px;margin-bottom:12px;cursor:pointer;display:flex;align-items:center;justify-content:space-between;transition:.15s }
     .home-playbook-cta:active { transform:scale(.99) }
-    .home-playbook-cta-title {
-      font-size:15px;font-weight:800;color:#000;
-      margin-bottom:3px;
-    }
-    .home-playbook-cta-sub {
-      font-size:12px;color:rgba(0,0,0,.6);
-    }
-    .home-playbook-arrow {
-      font-size:22px;color:#000;font-weight:700;
-      flex-shrink:0;
-    }
-
-    
-    /* ── WELCOME CARD ───────────────────────────── */
-    .home-welcome-card {
-      display:flex;align-items:center;justify-content:space-between;
-    }
-    .home-welcome-arrow {
-      font-size:28px;color:var(--green);font-weight:300;
-      flex-shrink:0;margin-left:8px;
-    }
-
-    /* ── QUICK GUIDE MODAL ──────────────────────── */
-    .quick-guide-overlay {
-      position:fixed;inset:0;z-index:9000;
-      background:rgba(0,0,0,.8);backdrop-filter:blur(6px);
-      display:flex;align-items:flex-end;justify-content:center;
-      transition:.3s;
-    }
+    .home-playbook-cta-title { font-size:15px;font-weight:800;color:#000;margin-bottom:3px }
+    .home-playbook-cta-sub { font-size:12px;color:rgba(0,0,0,.6) }
+    .home-playbook-arrow { font-size:22px;color:#000;font-weight:700;flex-shrink:0 }
+    .plan-collapsed-head { display:flex;align-items:center;justify-content:space-between;background:var(--card);border:1px solid var(--line);border-radius:14px;padding:14px 16px;cursor:pointer;transition:.15s }
+    .plan-collapsed-head:active { opacity:.8 }
+    .plan-collapsed-label { font-size:12px;font-weight:700;color:var(--muted2);text-transform:uppercase;letter-spacing:.06em;margin-bottom:3px }
+    .plan-collapsed-amount { font-size:22px;font-weight:900;color:var(--green);letter-spacing:-.5px }
+    .plan-collapsed-right { display:flex;align-items:center;gap:6px;flex-shrink:0 }
+    .plan-collapsed-hint { font-size:11px;color:var(--muted2) }
+    .plan-chevron { font-size:14px;color:var(--muted2);transition:transform .3s;display:inline-block }
+    .plan-body { max-height:0;overflow:hidden;transition:max-height .4s cubic-bezier(.16,1,.3,1) }
+    .plan-body.open { max-height:1000px }
+    .featured-reveal-btn { display:flex;align-items:center;justify-content:space-between;background:linear-gradient(135deg,var(--card),rgba(31,232,135,.06));border:1px solid rgba(31,232,135,.25);border-radius:14px;padding:16px;cursor:pointer;margin-bottom:0;transition:.15s }
+    .featured-reveal-btn:active { transform:scale(.99) }
+    .featured-reveal-label { font-size:12px;font-weight:700;color:var(--muted2);text-transform:uppercase;letter-spacing:.06em;margin-bottom:4px }
+    .featured-reveal-amount { font-size:22px;font-weight:900;color:var(--green);letter-spacing:-.5px }
+    .featured-reveal-right { display:flex;flex-direction:column;align-items:flex-end;gap:4px;flex-shrink:0 }
+    .featured-reveal-hint { font-size:12px;font-weight:600;color:var(--muted2);background:var(--bg3);border:1px solid var(--line);padding:4px 10px;border-radius:20px }
+    .featured-reveal-chevron { font-size:14px;color:var(--muted2);transition:transform .3s;display:block;text-align:right }
+    .today-offers-body { max-height:0;overflow:hidden;transition:max-height .4s cubic-bezier(.16,1,.3,1) }
+    .today-offers-body.open { max-height:2000px }
+    /* Quick guide modal */
+    .quick-guide-overlay { position:fixed;inset:0;z-index:9000;background:rgba(0,0,0,.8);backdrop-filter:blur(6px);display:flex;align-items:flex-end;justify-content:center }
     .quick-guide-overlay.hidden { display:none }
-    .quick-guide-sheet {
-      background:var(--card);border-radius:24px 24px 0 0;
-      border-top:2px solid var(--green);
-      padding:20px 16px 40px;width:100%;max-width:480px;
-      max-height:85vh;overflow-y:auto;
-    }
-    .quick-guide-handle {
-      width:36px;height:4px;border-radius:2px;
-      background:var(--line);margin:0 auto 16px;
-    }
-    .quick-guide-title {
-      font-size:22px;font-weight:800;color:var(--text);
-      margin-bottom:4px;
-    }
-    .quick-guide-sub {
-      font-size:13px;color:var(--muted2);margin-bottom:20px;
-    }
-    .quick-guide-step {
-      display:flex;gap:12px;margin-bottom:16px;
-      padding-bottom:16px;border-bottom:1px solid var(--line);
-    }
+    .quick-guide-sheet { background:var(--card);border-radius:24px 24px 0 0;border-top:2px solid var(--green);padding:20px 16px 40px;width:100%;max-width:480px;max-height:85vh;overflow-y:auto }
+    .quick-guide-top-row { display:flex;align-items:center;justify-content:center;position:relative;margin-bottom:16px }
+    .quick-guide-handle-inline { width:36px;height:4px;border-radius:2px;background:var(--line) }
+    .quick-guide-x { position:absolute;right:0;top:50%;transform:translateY(-50%);width:30px;height:30px;border-radius:8px;background:var(--bg3);border:1px solid var(--line);color:var(--muted2);font-size:14px;cursor:pointer;font-family:inherit }
+    .quick-guide-title { font-size:22px;font-weight:800;color:var(--text);margin-bottom:4px }
+    .quick-guide-sub { font-size:13px;color:var(--muted2);margin-bottom:20px }
+    .quick-guide-step { display:flex;gap:12px;margin-bottom:16px;padding-bottom:16px;border-bottom:1px solid var(--line) }
     .quick-guide-step:last-of-type { border-bottom:none }
-    .quick-guide-step-num {
-      width:28px;height:28px;border-radius:50%;
-      background:var(--green);color:#000;
-      font-size:13px;font-weight:800;
-      display:flex;align-items:center;justify-content:center;
-      flex-shrink:0;margin-top:2px;
-    }
-    .quick-guide-step-title {
-      font-size:14px;font-weight:700;color:var(--text);
-      margin-bottom:4px;display:flex;align-items:center;gap:6px;flex-wrap:wrap;
-    }
-    .quick-guide-badge {
-      font-size:11px;font-weight:700;color:#000;
-      background:var(--green);padding:2px 7px;border-radius:20px;
-    }
-    .quick-guide-step-desc {
-      font-size:12px;color:var(--muted);line-height:1.5;margin-bottom:8px;
-    }
-    .quick-guide-btn {
-      padding:8px 14px;background:var(--bg3);
-      border:1px solid var(--line);border-radius:8px;
-      font-size:12px;font-weight:700;color:var(--green);
-      cursor:pointer;font-family:var(--fb);
-    }
-    .quick-guide-total {
-      font-size:14px;color:var(--muted);text-align:center;
-      padding:12px 0;margin-bottom:12px;
-    }
-    .quick-guide-close {
-      width:100%;padding:16px;background:var(--green);
-      color:#000;border:none;border-radius:12px;
-      font-size:15px;font-weight:800;
-      font-family:var(--fb);cursor:pointer;
-    }
-
-    
-    .quick-guide-top-row {
-      display:flex;align-items:center;justify-content:center;
-      position:relative;margin-bottom:16px;
-    }
-    .quick-guide-handle-inline {
-      width:36px;height:4px;border-radius:2px;background:var(--line);
-    }
-    .quick-guide-x {
-      position:absolute;right:0;top:50%;transform:translateY(-50%);
-      width:30px;height:30px;border-radius:8px;
-      background:var(--bg3);border:1px solid var(--line);
-      color:var(--muted2);font-size:14px;cursor:pointer;
-      display:flex;align-items:center;justify-content:center;
-      font-family:var(--fb);
-    }
-    .quick-guide-x:hover { color:var(--text) }
-
-    
-    /* ── PLAYBOOK GUIDE CARDS ───────────────────── */
-    .guide-head {
-      display:flex;align-items:center;gap:12px;
-      cursor:pointer;
-    }
-    .guide-icon {
-      width:36px;height:36px;border-radius:10px;
-      display:flex;align-items:center;justify-content:center;
-      font-size:18px;flex-shrink:0;
-      background:var(--bg3);
-    }
-    .guide-icon.green { background:rgba(31,232,135,.15) }
-    .guide-icon.blue { background:rgba(57,130,255,.15) }
-    .guide-icon.yellow { background:rgba(255,207,90,.15) }
-    .guide-icon.purple { background:rgba(180,57,255,.15) }
-    .guide-chevron {
-      margin-left:auto;color:var(--muted2);font-size:12px;
-      transition:transform .3s;
-    }
-    .guide-chevron.open { transform:rotate(180deg) }
-    .guide-body {
-      max-height:0;overflow:hidden;
-      transition:max-height .4s cubic-bezier(.16,1,.3,1);
-      margin-top:0;
-    }
-    .guide-body.open {
-      max-height:3000px;
-      margin-top:12px;
-    }
-    .guide-step {
-      display:flex;gap:10px;padding:8px 0;
-      border-bottom:1px solid var(--line);
-      font-size:13px;color:var(--muted);line-height:1.5;
-    }
-    .guide-step:last-child { border-bottom:none }
-    .guide-step-num {
-      width:20px;height:20px;border-radius:50%;
-      background:var(--green);color:#000;
-      font-size:10px;font-weight:800;
-      display:flex;align-items:center;justify-content:center;
-      flex-shrink:0;margin-top:2px;
-    }
-    .guide-tip {
-      background:rgba(31,232,135,.08);border:1px solid rgba(31,232,135,.2);
-      border-radius:10px;padding:10px 12px;margin-top:10px;
-      font-size:12px;color:var(--muted);line-height:1.5;
-    }
-    .playbook-tip-section {
-      margin-top:24px;
-    }
-    .playbook-tip-title {
-      font-size:12px;font-weight:700;color:var(--muted2);
-      text-transform:uppercase;letter-spacing:.06em;margin-bottom:10px;
-    }
-
-    /* ── OFFERS TAB CATEGORY SECTIONS ───────────── */
-    .cat-section {
-      margin-bottom:16px;
-    }
-    .cat-section-head {
-      display:flex;align-items:center;justify-content:space-between;
-      padding:0 2px 8px;
-    }
-    .cat-section-title {
-      font-size:14px;font-weight:800;color:var(--text);
-    }
-    .cat-section-count {
-      font-size:11px;color:var(--muted2);font-weight:600;
-    }
-    .cat-section-list {
-      display:flex;flex-direction:column;gap:6px;
-    }
-
-    
-    /* Force visibility of offers and playbook content */
-    #view-offers, #view-stack {
-      overflow-y: auto !important;
-    }
-    #categoryRows, #netflixView, .guide-list, .playbook-hero {
-      display: block !important;
-      visibility: visible !important;
-      opacity: 1 !important;
-    }
-    .cat-section, .guide-card {
-      display: block !important;
-    }
-
-    </style>
+    .quick-guide-step-num { width:28px;height:28px;border-radius:50%;background:var(--green);color:#000;font-size:13px;font-weight:800;display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:2px }
+    .quick-guide-step-title { font-size:14px;font-weight:700;color:var(--text);margin-bottom:4px;display:flex;align-items:center;gap:6px;flex-wrap:wrap }
+    .quick-guide-badge { font-size:11px;font-weight:700;color:#000;background:var(--green);padding:2px 7px;border-radius:20px }
+    .quick-guide-step-desc { font-size:12px;color:var(--muted);line-height:1.5;margin-bottom:8px }
+    .quick-guide-btn { padding:8px 14px;background:var(--bg3);border:1px solid var(--line);border-radius:8px;font-size:12px;font-weight:700;color:var(--green);cursor:pointer;font-family:inherit }
+    .quick-guide-total { font-size:14px;color:var(--muted);text-align:center;padding:12px 0;margin-bottom:12px }
+    .quick-guide-close { width:100%;padding:16px;background:var(--green);color:#000;border:none;border-radius:12px;font-size:15px;font-weight:800;font-family:inherit;cursor:pointer }
+</style>
 </head>
 <body>
 
@@ -2980,11 +2717,11 @@
         <button onclick="dismissPayoutReminder()" class="reminder-dismiss">✕</button>
       </div>
 
-      <!-- WELCOME CARD — tappable quick guide -->
+      <!-- WELCOME CARD -->
       <div class="home-welcome-card" id="homeWelcomeCard" onclick="showQuickGuide()" style="cursor:pointer">
         <div class="home-welcome-text">
-          <div class="home-welcome-title" id="homeWelcomeTitle">Make your first £360 this week →</div>
-          <div class="home-welcome-sub" id="homeWelcomeSub">Tap to see the quickest way to earn £360 this week</div>
+          <div class="home-welcome-title" id="homeWelcomeTitle">Make up to £360 this week →</div>
+          <div class="home-welcome-sub" id="homeWelcomeSub">Tap to see the 3 offers that get you there</div>
         </div>
         <div class="home-welcome-arrow">›</div>
       </div>
@@ -2998,52 +2735,44 @@
           </div>
           <div class="quick-guide-title">🎯 Make £360 this week</div>
           <div class="quick-guide-sub">Three simple offers. Takes about 20 minutes total.</div>
-
           <div class="quick-guide-step">
             <div class="quick-guide-step-num">1</div>
             <div class="quick-guide-step-content">
               <div class="quick-guide-step-title">📈 Freetrade — Free Share <span class="quick-guide-badge">up to £100</span></div>
-              <div class="quick-guide-step-desc">Open a Freetrade account and deposit £50. You get a randomly assigned free share worth £10-£100. Takes 5 minutes.</div>
+              <div class="quick-guide-step-desc">Open a Freetrade account and deposit £50. Get a randomly assigned free share worth £10-£100. Takes 5 minutes.</div>
               <button class="quick-guide-btn" onclick="hideQuickGuide();openOfferById('freetrade')">Open Freetrade guide →</button>
             </div>
           </div>
-
           <div class="quick-guide-step">
             <div class="quick-guide-step-num">2</div>
             <div class="quick-guide-step-content">
-              <div class="quick-guide-step-title">💳 TopCashback — Sign Up Bonus <span class="quick-guide-badge">£10 free</span></div>
-              <div class="quick-guide-step-desc">Sign up to TopCashback and earn £10 just for joining. Then get cashback on everything you buy online. Takes 2 minutes.</div>
+              <div class="quick-guide-step-title">💳 TopCashback — Sign Up <span class="quick-guide-badge">£10 free</span></div>
+              <div class="quick-guide-step-desc">Sign up to TopCashback and earn £10 just for joining. Takes 2 minutes.</div>
               <button class="quick-guide-btn" onclick="hideQuickGuide();openOfferById('topcashback')">Open TopCashback guide →</button>
             </div>
           </div>
-
           <div class="quick-guide-step">
             <div class="quick-guide-step-num">3</div>
             <div class="quick-guide-step-content">
               <div class="quick-guide-step-title">🏦 Lloyds Bank Switch <span class="quick-guide-badge">£250</span></div>
-              <div class="quick-guide-step-desc">Switch your current account to Lloyds using CASS. Takes 15 minutes and pays £250 in about 30 days. The biggest single payout available.</div>
+              <div class="quick-guide-step-desc">Switch your current account using CASS. Takes 15 minutes and pays £250 in about 30 days.</div>
               <button class="quick-guide-btn" onclick="hideQuickGuide();openOfferById('lloyds-bank')">Open Lloyds guide →</button>
             </div>
           </div>
-
-          <div class="quick-guide-total">
-            Total from these 3 offers: <strong style="color:var(--green)">up to £360</strong>
-          </div>
-
+          <div class="quick-guide-total">Total from these 3: <strong style="color:var(--green)">up to £360</strong></div>
           <button class="quick-guide-close" onclick="hideQuickGuide()">Got it — start hunting →</button>
         </div>
       </div>
 
-      <!-- Stats IDs kept for JS but displayed in top bar only -->
+      <!-- STATS (hidden, referenced by top bar) -->
       <div style="display:none">
         <span id="statSaved"></span>
         <span id="statPending"></span>
         <span id="statXp"></span>
         <span id="statStreak"></span>
-        <div id="bestOffers"></div>
       </div>
 
-      <!-- IN PROGRESS — shows pending offers -->
+      <!-- IN PROGRESS -->
       <div id="homeInProgress" class="home-in-progress hidden"></div>
 
       <!-- PLAYBOOK CTA -->
@@ -3098,7 +2827,6 @@
         <div id="homeOffersPreview" class="today-offers-body"></div>
       </section>
 
-
     </section>
 
     <section id="view-offers" class="view">
@@ -3137,6 +2865,16 @@
           </div>
           <!-- Category rows injected here -->
           <div id="categoryRows"></div>
+
+          <!-- Cashback Battle Section -->
+          <div id="battleSection" style="margin-top:16px">
+            <div class="cat-section-head">
+              <div class="cat-section-title">⚔️ Cashback Battle</div>
+              <div class="cat-section-count">Best gift card rates</div>
+            </div>
+            <div class="section-note" style="margin-bottom:8px;font-size:12px;color:var(--muted2)">Compare cashback rates across gift card platforms</div>
+            <div id="battleTable"></div>
+          </div>
         </div>
 
         <!-- Search/filter results view -->
@@ -3237,69 +2975,6 @@
         </div>
 
       </div>
-
-      <!-- GAMIFICATION GUIDE -->
-      <div class="guide-list" style="margin-top:8px">
-
-        <div class="guide-card card">
-          <div class="guide-head" onclick="toggleGuide(this)">
-            <span class="guide-icon">🎮</span>
-            <div class="guide-meta">
-              <div class="guide-title">How the Rewards System Works</div>
-              <div class="guide-sub">XP · Badges · Streaks · Missions</div>
-            </div>
-            <span class="guide-chevron">▾</span>
-          </div>
-          <div class="guide-body">
-
-            <div class="guide-section-title">⚡ What is XP?</div>
-            <p class="guide-p">XP (Experience Points) tracks your activity inside Money Hunters. The more offers you explore and complete, the more XP you earn. XP is purely for tracking your progress — it does not affect your earnings.</p>
-            <div class="xp-table">
-              <div class="xp-row"><span>📋 Claim an offer</span><span class="xp-val">+50 XP</span></div>
-              <div class="xp-row"><span>✅ Complete an offer</span><span class="xp-val">+100 XP</span></div>
-              <div class="xp-row"><span>🔥 Daily check-in</span><span class="xp-val">+10 XP</span></div>
-              <div class="xp-row"><span>📅 7-day streak</span><span class="xp-val">+50 XP</span></div>
-              <div class="xp-row"><span>🏆 Complete a mission</span><span class="xp-val">+25 XP</span></div>
-            </div>
-
-            <div class="guide-section-title" style="margin-top:16px">🏅 Badges</div>
-            <p class="guide-p">Badges are earned by hitting milestones. They are displayed on your profile and show off your hunting experience. Some badges are rare — only the most active hunters will unlock them.</p>
-            <div class="xp-table">
-              <div class="xp-row"><span>🥇 First Claim</span><span class="xp-val">Claim your 1st offer</span></div>
-              <div class="xp-row"><span>🔥 On Fire</span><span class="xp-val">7-day streak</span></div>
-              <div class="xp-row"><span>💰 Money Maker</span><span class="xp-val">£100 earned</span></div>
-              <div class="xp-row"><span>🏦 Bank Buster</span><span class="xp-val">Complete 3 bank switches</span></div>
-              <div class="xp-row"><span>📈 Investor</span><span class="xp-val">Complete 3 invest offers</span></div>
-              <div class="xp-row"><span>⚡ Speed Hunter</span><span class="xp-val">5 offers in one week</span></div>
-              <div class="xp-row"><span>🎯 Sharp Shooter</span><span class="xp-val">10 offers completed</span></div>
-              <div class="xp-row"><span>👑 Elite Hunter</span><span class="xp-val">£500 earned total</span></div>
-            </div>
-
-            <div class="guide-section-title" style="margin-top:16px">🔥 Streaks</div>
-            <p class="guide-p">A streak is the number of consecutive days you log in and claim your daily XP. Keep your streak alive to unlock bonus XP and exclusive badges. Miss a day and your streak resets to zero.</p>
-            <div class="xp-table">
-              <div class="xp-row"><span>7-day streak</span><span class="xp-val">🔥 On Fire badge</span></div>
-              <div class="xp-row"><span>14-day streak</span><span class="xp-val">💎 Dedicated badge</span></div>
-              <div class="xp-row"><span>30-day streak</span><span class="xp-val">👑 Legendary badge</span></div>
-            </div>
-
-            <div class="guide-section-title" style="margin-top:16px">🎯 Weekly Missions</div>
-            <p class="guide-p">Every week you get a fresh set of missions to complete. Missions give you a target to aim for and bonus XP when completed. Examples:</p>
-            <div class="xp-table">
-              <div class="xp-row"><span>Claim 3 offers this week</span><span class="xp-val">+75 XP</span></div>
-              <div class="xp-row"><span>Complete a bank switch</span><span class="xp-val">+100 XP</span></div>
-              <div class="xp-row"><span>Log a pending payout</span><span class="xp-val">+25 XP</span></div>
-              <div class="xp-row"><span>Maintain a 7-day streak</span><span class="xp-val">+50 XP</span></div>
-            </div>
-
-            <div class="guide-section-title" style="margin-top:16px">🎟️ Raffle (Coming Soon)</div>
-            <p class="guide-p">Complete real offers to earn raffle tickets. The more offers you complete, the more tickets you get. When we reach 25 active hunters, we will draw a winner for a cash prize. Watch this space!</p>
-
-          </div>
-        </div>
-
-      </div>
-
       <div class="playbook-tip">
         <strong>💡 New deals added daily.</strong> Join our Telegram for instant alerts when new bank switches or invest bonuses go live.
       </div>
@@ -4300,31 +3975,71 @@
     function buildOfferCard(offer) {
       const enrich = getEnrichment(offer.id);
       const status = getOfferStatus(offer.id);
-      const cardClass = status === 'completed' ? 'completed' : status === 'pending' ? 'pending' : '';
-      const statusColor = status === 'completed' ? 'var(--green)'
-        : status === 'pending' ? 'var(--yellow)' : 'transparent';
-      const statusDot = status === 'completed' ? '✓' : status === 'pending' ? '⏳' : '';
-      const name = offer.name || offer.store || 'Offer';
-      const reward = offer.reward || offer.deal_price || '?';
+      const cardClass = status === "completed" ? "completed" : status === "pending" ? "pending" : "";
+      const progress = getOfferProgress(offer);
+      const hasClaimed = status !== "none";
+
+      // Status label
+      const statusLabel = status === "completed" ? "✓ Completed"
+        : status === "pending" ? "⏳ Pending payout"
+        : "Not started";
+      const statusColor = status === "completed" ? "var(--green)"
+        : status === "pending" ? "var(--yellow)"
+        : "var(--muted2)";
+
+      // Claim button style
+      const btnClass = status === "completed" ? "done-btn"
+        : status === "pending" ? "pending-btn"
+        : "";
+      const btnText = status === "completed" ? "✓ Completed — View Details"
+        : status === "pending" ? "⏳ Pending — Track Progress"
+        : "Claim Offer →";
+
+      // Get category label
+      const catLabels = {
+        bank:'🏦 Bank Switch', invest:'📈 Invest',
+        cashback:'💳 Cashback', gift:'🎁 Gift Cards',
+        utilities:'⚡ Utilities', earn:'💰 Earn',
+        mobile:'📱 Mobile', travel:'✈️ Travel',
+        business:'💼 Business', freebie:'🆓 Freebie',
+        pension:'🏦 Pension'
+      };
+      const cat = getOfferCategory(offer);
+      const catLabel = catLabels[cat] || offer.badge || '';
 
       return `
-        <article class="offer-card ${cardClass}">
-          <div class="offer-card-top" onclick="toggleOfferCard(this)" data-offer-id="${offer.id}">
-            <div class="offer-card-name-wrap">
-              ${statusDot ? `<span class="offer-status-pill" style="color:${statusColor}">${statusDot}</span>` : ''}
-              <span class="offer-name">${name}</span>
+        <article class="offer-card ${cardClass}" data-offer-id="${offer.id}">
+          <div class="offer-card-top" onclick="toggleOfferCard(this)" data-offer-id="${offer.id}" style="cursor:pointer">
+            <div style="min-width:0;flex:1">
+              <div class="offer-cat-label">${catLabel}</div>
+              <h3 class="offer-name" style="margin:2px 0 3px">${offer.name || offer.store} <span class="offer-card-chevron" id="chev_${offer.id}">▾</span></h3>
+              <div class="offer-effort">${offer.effort || ''}</div>
             </div>
-            <div class="offer-card-right">
-              <span class="reward">${reward}</span>
-              <span class="offer-card-chevron" id="chev_${offer.id}">▾</span>
+            <div>
+              <div class="reward">${offer.reward || offer.deal_price}</div>
+              <div class="offer-status-dot" style="color:${statusColor};font-size:10px;text-align:right;margin-top:3px">${statusLabel}</div>
             </div>
           </div>
+
+          ${hasClaimed ? `
+          <div class="offer-progress show">
+            <div class="progress-top">
+              <span>Steps: ${progress.done}/${progress.total}</span>
+              <span>${progress.pct}%</span>
+            </div>
+            <div class="progress-bar">
+              <div class="progress-fill" style="width:${progress.pct}%"></div>
+            </div>
+          </div>` : ""}
+
+          <!-- Accordion body -->
           <div class="offer-card-body" id="acc_${offer.id}">
             ${buildAccordionBody(offer, enrich)}
           </div>
         </article>
       `;
     }
+
     function renderTodayPlan() {
       const dayPlans = {
         0: { // Sunday
@@ -4372,7 +4087,7 @@
       const allDone = tasks.every(o => getOfferStatus(o.id) !== "none");
 
       if (allDone) {
-        ui.planAmount.textContent = "All done today! ✓";
+        ui.planAmount.textContent = "All done!";
         ui.todayTasks.innerHTML = `
           <div class="empty" style="text-align:center;padding:18px">
             <div style="font-size:28px;margin-bottom:8px">🎉</div>
@@ -4383,7 +4098,7 @@
       }
 
       const total = tasks.reduce((sum, o) => sum + (o.amount || 0), 0);
-      ui.planAmount.textContent = total ? '£' + Math.min(total, 500) + '+ available' : 'See today\'s offers';
+      ui.planAmount.textContent = total ? `£${Math.min(total, 500)}+` : "£0";
 
       ui.todayTasks.innerHTML = `
         <div style="padding:8px 10px;margin-bottom:8px;background:rgba(255,207,90,.08);border-radius:10px;border:1px solid rgba(255,207,90,.2)">
@@ -4404,39 +4119,55 @@
     }
 
     function renderBestOffers() {
-      // Now merged into renderHomePreview - no separate section
-    }
-
-    function renderHomePreview() {
-      if (!ui.homeOffersPreview) return;
-      // Always show featured referral offers first (your personal referrals)
+      if (!ui.bestOffers) return;
+      // Featured referral offers - fixed order
       const featuredIds = ['lloyds-bank','chase-uk','freetrade','amex-business-platinum','robinhood-uk'];
       const featured = featuredIds.map(function(id) {
         return offers.find(function(o) { return o.id === id; });
       }).filter(Boolean);
-      // Fill remaining slots with daily rotating offers by category
+      // Fallback to highest value if not found
+      if (featured.length === 0) {
+        const best = [...offers].filter(function(o) { return o.amount > 0; })
+          .sort(function(a,b) { return b.amount - a.amount; }).slice(0,4);
+        ui.bestOffers.innerHTML = best.map(buildOfferCard).join('');
+        return;
+      }
+      ui.bestOffers.innerHTML = featured.map(buildOfferCard).join('');
+    }
+
+    function renderHomePreview() {
+      if (!ui.homeOffersPreview) return;
+      // Daily 5 offers - rotate by day of week focusing on different categories
       const dayCategories = {
-        0: 'invest', 1: 'bank', 2: 'cashback',
-        3: 'utilities', 4: 'invest', 5: 'earn', 6: 'gift'
+        0: ['bank','invest'],      // Sunday
+        1: ['bank','cashback'],    // Monday
+        2: ['invest','earn'],      // Tuesday
+        3: ['bank','utilities'],   // Wednesday
+        4: ['invest','cashback'],  // Thursday
+        5: ['bank','gift'],        // Friday
+        6: ['cashback','mobile']   // Saturday
       };
       const today = new Date().getDay();
-      const bonusCat = dayCategories[today];
-      const bonus = offers.filter(function(o) {
-        return getOfferCategory(o) === bonusCat &&
-          !featured.find(function(f) { return f.id === o.id; });
-      }).slice(0, 2);
-      const daily = featured.concat(bonus).slice(0, 7);
+      const cats = dayCategories[today] || ['bank','invest'];
+      let daily = [];
+      cats.forEach(function(cat) {
+        const catOffers = offers.filter(function(o) {
+          return getOfferCategory(o) === cat && getOfferStatus(o.id) !== 'completed';
+        }).slice(0, 3);
+        daily = daily.concat(catOffers);
+      });
+      // Deduplicate and limit to 5
+      const seen = new Set();
+      daily = daily.filter(function(o) {
+        if (seen.has(o.id)) return false;
+        seen.add(o.id);
+        return true;
+      }).slice(0, 5);
+      if (daily.length === 0) daily = offers.slice(0,5);
       const dayNames = ['Sunday','Monday','Tuesday','Wednesday','Thursday','Friday','Saturday'];
       const dayLabel = document.getElementById('todayDayLabel');
       if (dayLabel) dayLabel.textContent = dayNames[today];
       ui.homeOffersPreview.innerHTML = daily.map(buildOfferCard).join('');
-      // Update total amount on reveal button
-      const total = daily.reduce(function(sum, o) {
-        const amt = parseFloat(String(o.reward || o.deal_price || '0').replace(/[^0-9.]/g,'')) || 0;
-        return sum + amt;
-      }, 0);
-      const amtEl = document.getElementById('featuredTotalAmount');
-      if (amtEl && total > 0) amtEl.textContent = 'Up to £' + Math.round(total) + '+ available';
     }
 
     function renderOffers() {
@@ -4675,8 +4406,6 @@
       document.getElementById(`view-${view}`)?.classList.add("active");
       document.querySelector(`.nav-btn[data-view="${view}"]`)?.classList.add("active");
       window.scrollTo({ top: 0, behavior: "smooth" });
-      // Re-render when switching to ensure content shows
-      if (view === 'offers') renderNetflix();
     }
 
     function shareApp() {
@@ -6192,7 +5921,7 @@ function initTheme() {
       }
 
       el.innerHTML = featured.map(offer => `
-        <div class="featured-card" data-fid="${offer.id}" onclick="openOfferById(this.dataset.fid)">
+        <div class="featured-card" onclick="openOffer(${JSON.stringify(offer).replace(/"/g,'&quot;')})">
           <div class="featured-card-badge">${offer.badge || '⭐ TOP PICK'}</div>
           <div class="featured-card-reward">${getOfferReward(offer)}</div>
           <div class="featured-card-name">${getOfferName(offer)}</div>
@@ -6204,11 +5933,6 @@ function initTheme() {
     function renderCategoryRows() {
       const el = document.getElementById('categoryRows');
       if (!el) return;
-
-      if (offers.length === 0) {
-        el.innerHTML = '<div style="padding:32px 16px;text-align:center;color:var(--muted);font-size:13px">Loading offers... If this persists, please refresh the page.</div>';
-        return;
-      }
 
       el.innerHTML = CATEGORY_ROWS.map(function(row) {
         const rowOffers = offers.filter(function(o) { return getOfferCategory(o) === row.cat; });
@@ -6280,6 +6004,13 @@ function initTheme() {
     function onboardNext(step) {
       document.querySelectorAll('.onboard-step')
         .forEach(function(s) { s.classList.remove('active'); });
+      for (var i = 1; i <= 4; i++) {
+        var d = document.getElementById('odot-' + i);
+        if (!d) continue;
+        d.className = 'onboard-dot';
+        if (i < step) d.classList.add('done');
+        else if (i === step) d.classList.add('active');
+      }
       var el = document.getElementById('onboard-' + step);
       if (el) el.classList.add('active');
     }
@@ -6292,6 +6023,21 @@ function initTheme() {
         setTimeout(function() { openOffer(offer); }, 300);
       } else {
         switchView('offers');
+      }
+    }
+
+
+    function shareApp() {
+      if (navigator.share) {
+        navigator.share({
+          title: 'Money Hunters UK',
+          text: 'Free app to track UK bank switch bonuses, cashback deals and free shares. I use it to make extra money!',
+          url: 'https://moneyhunters.co.uk'
+        }).catch(() => {});
+      } else {
+        navigator.clipboard?.writeText('https://moneyhunters.co.uk')
+          .then(() => toast('Link copied to clipboard!'))
+          .catch(() => toast('Visit moneyhunters.co.uk'));
       }
     }
 
@@ -6360,6 +6106,13 @@ function initTheme() {
     }
 
 
+
+    function openOfferById(id) {
+      const offer = offers.find(function(o) { return o.id === id; });
+      if (offer) openPanel(offer);
+    }
+
+
     // ── PENDING PAYOUTS SYSTEM ──────────────────
     function getPayoutDate(offerId) {
       const claimed = getOfferClaimedDate(offerId);
@@ -6390,7 +6143,7 @@ function initTheme() {
       const urgent = offers.filter(o => {
         if (state.offerStatus[o.id] !== 'pending' && !getOfferClaimedDate(o.id)) return false;
         const days = getDaysUntilPayout(o.id);
-        return days !== null && days >= 0;
+        return days !== null && days >= 0 && days <= 7;
       }).sort((a, b) => getDaysUntilPayout(a.id) - getDaysUntilPayout(b.id));
 
       if (urgent.length === 0) return;
@@ -6424,105 +6177,114 @@ function initTheme() {
       setTimeout(() => { if (reminder.parentElement) reminder.remove(); }, 8000);
     }
 
+
+    function checkPayoutReminders() {
+      if (!currentUser) return; // only for signed in users
+      const today = localStorage.getItem('mh_reminder_shown');
+      const todayStr = new Date().toDateString();
+      if (today === todayStr) return; // only once per day
+
+      // Find offers paying out in ≤7 days
+      const upcoming = offers.filter(o => {
+        if (state.offerStatus[o.id] !== 'pending' && !getOfferClaimedDate(o.id)) return false;
+        const days = getDaysUntilPayout(o.id);
+        return days !== null && days >= 0 && days <= 7;
+      }).sort((a, b) => getDaysUntilPayout(a.id) - getDaysUntilPayout(b.id));
+
+      if (upcoming.length === 0) return;
+
+      const offer = upcoming[0];
+      const days = getDaysUntilPayout(offer.id);
+      const name = offer.name || offer.store;
+      const reward = offer.reward || offer.deal_price || '';
+
+      let msg;
+      if (days === 0) {
+        msg = '🎉 ' + name + ' should pay out TODAY! Check your account.';
+      } else if (days === 1) {
+        msg = '⏰ ' + name + ' (' + reward + ') pays out tomorrow!';
+      } else {
+        msg = '📅 ' + name + ' (' + reward + ') pays out in ' + days + ' days';
+      }
+
+      // Show as a dismissible banner on home screen
+      const banner = document.getElementById('payoutReminderBanner');
+      if (banner) {
+        banner.querySelector('.reminder-text').textContent = msg;
+        banner.classList.remove('hidden');
+        localStorage.setItem('mh_reminder_shown', todayStr);
+      }
+    }
+
     function dismissPayoutReminder() {
       const banner = document.getElementById('payoutReminderBanner');
       if (banner) banner.classList.add('hidden');
     }
 
-
-    function toggleTodayOffers() {
-      const body = document.getElementById('homeOffersPreview');
-      const chev = document.getElementById('todayChevron');
-      const btn = document.getElementById('featuredRevealBtn');
+    
+    function showQuickGuide() {
+      var el = document.getElementById('quickGuideOverlay');
+      if (el) el.classList.remove('hidden');
+    }
+    function hideQuickGuide() {
+      var el = document.getElementById('quickGuideOverlay');
+      if (el) el.classList.add('hidden');
+    }
+    function toggleMoneyPlan() {
+      var body = document.getElementById('planBody');
+      var chev = document.getElementById('planChevron');
       if (!body) return;
-      const isOpen = body.classList.contains('open');
+      var isOpen = body.classList.contains('open');
+      body.classList.toggle('open', !isOpen);
+      if (chev) chev.style.transform = isOpen ? '' : 'rotate(180deg)';
+    }
+    function toggleTodayOffers() {
+      var body = document.getElementById('homeOffersPreview');
+      var chev = document.getElementById('todayChevron');
+      var btn = document.getElementById('featuredRevealBtn');
+      if (!body) return;
+      var isOpen = body.classList.contains('open');
       body.classList.toggle('open', !isOpen);
       if (chev) chev.style.transform = isOpen ? '' : 'rotate(180deg)';
       if (btn) btn.style.borderColor = isOpen ? 'rgba(31,232,135,.25)' : 'rgba(31,232,135,.5)';
     }
-
-
-    function toggleMoneyPlan() {
-      const body = document.getElementById('planBody');
-      const chev = document.getElementById('planChevron');
-      if (!body) return;
-      const isOpen = body.classList.contains('open');
-      body.classList.toggle('open', !isOpen);
-      if (chev) chev.style.transform = isOpen ? '' : 'rotate(180deg)';
-    }
-
-
     function renderHomeInProgress() {
-      const el = document.getElementById('homeInProgress');
+      var el = document.getElementById('homeInProgress');
       if (!el) return;
-
-      // Find pending offers with claimed dates
-      const pending = offers.filter(function(o) {
+      var pending = offers.filter(function(o) {
         return (state.offerStatus[o.id] === 'pending' || getOfferClaimedDate(o.id)) &&
                state.offerStatus[o.id] !== 'completed';
       }).slice(0, 3);
-
-      if (pending.length === 0) {
-        el.classList.add('hidden');
-        return;
-      }
-
+      if (pending.length === 0) { el.classList.add('hidden'); return; }
       el.classList.remove('hidden');
-      let html = '<div class="home-progress-title">⏳ In Progress</div>';
+      var html = '<div class="home-progress-title">⏳ In Progress</div>';
       pending.forEach(function(offer) {
-        const days = getDaysUntilPayout(offer.id);
-        const daysText = days === null ? 'Tracking...'
-          : days <= 0 ? '🎉 Due now!'
-          : days + ' days until payout';
-        const daysColor = days !== null && days <= 3 ? '#ff6b35'
-          : days !== null && days <= 7 ? 'var(--yellow)'
-          : 'var(--muted2)';
+        var days = getDaysUntilPayout(offer.id);
+        var daysText = days === null ? 'Tracking...' : days <= 0 ? '🎉 Due now!' : days + ' days until payout';
+        var daysColor = days !== null && days <= 3 ? '#ff6b35' : days !== null && days <= 7 ? 'var(--yellow)' : 'var(--muted2)';
         html += '<div class="home-progress-row" data-pid="' + offer.id + '" onclick="openOfferById(this.dataset.pid)">';
-        html += '<div>';
-        html += '<div class="home-progress-name">' + (offer.name || offer.store) + '</div>';
-        html += '<div class="home-progress-days" style="color:' + daysColor + '">' + daysText + '</div>';
-        html += '</div>';
-        html += '<div class="home-progress-reward">' + (offer.reward || offer.deal_price || '') + '</div>';
-        html += '</div>';
+        html += '<div><div class="home-progress-name">' + (offer.name || offer.store) + '</div>';
+        html += '<div class="home-progress-days" style="color:' + daysColor + '">' + daysText + '</div></div>';
+        html += '<div class="home-progress-reward">' + (offer.reward || offer.deal_price || '') + '</div></div>';
       });
       el.innerHTML = html;
     }
-
     function updateWelcomeCard() {
-      const title = document.getElementById('homeWelcomeTitle');
-      const sub = document.getElementById('homeWelcomeSub');
+      var title = document.getElementById('homeWelcomeTitle');
+      var sub = document.getElementById('homeWelcomeSub');
       if (!title || !sub) return;
       if (currentUser) {
-        const username = localStorage.getItem('mh_username') ||
+        var username = localStorage.getItem('mh_username') ||
           (currentUser.email ? currentUser.email.split('@')[0] : 'Hunter');
-        const pendingCount = Object.keys(state.offerStatus)
+        var pendingCount = Object.keys(state.offerStatus)
           .filter(function(id) { return state.offerStatus[id] === 'pending'; }).length;
         title.textContent = 'Welcome back, ' + username + ' 👋';
-        if (pendingCount > 0) {
-          sub.textContent = pendingCount + ' offer' + (pendingCount > 1 ? 's' : '') + ' pending payout · Keep going!';
-        } else {
-          sub.textContent = 'Ready to earn more? Follow the Playbook ↓';
-        }
+        sub.textContent = pendingCount > 0
+          ? pendingCount + ' offer' + (pendingCount > 1 ? 's' : '') + ' pending payout'
+          : 'Ready to earn more? Follow the Playbook below';
       } else {
         title.textContent = 'Make up to £360 this week →';
         sub.textContent = 'Tap to see the 3 offers that get you there';
-      }
-    }
-
-
-    function showQuickGuide() {
-      const el = document.getElementById('quickGuideOverlay');
-      if (el) {
-        el.classList.remove('hidden');
-        el.classList.add('show');
-      }
-    }
-
-    function hideQuickGuide() {
-      const el = document.getElementById('quickGuideOverlay');
-      if (el) {
-        el.classList.add('hidden');
-        el.classList.remove('show');
       }
     }
 
@@ -6536,7 +6298,7 @@ function initTheme() {
       updateWelcomeCard();
       renderOffers();
       renderBattle();
-      renderNetflix();
+      if (offers.length > 0) renderNetflix();
       renderStacks();
       renderProfile();
       renderPendingPayouts();
@@ -6561,7 +6323,12 @@ function initTheme() {
         return;
       }
 
-      // data-offer-id handled by individual card onclick handlers
+      const offerButton = event.target.closest("[data-offer-id]");
+      if (offerButton) {
+        const offer = offers.find(item => item.id === offerButton.dataset.offerId);
+        if (offer) openPanel(offer);
+        return;
+      }
 
       const saveButton = event.target.closest("[data-save-id]");
       if (saveButton) {
@@ -6736,7 +6503,71 @@ function initTheme() {
       setTimeout(checkPayoutReminders, 1500);
       setTimeout(checkPayoutReminders, 2000);
     })();
-  </script>
+  
+    // OB v2
+    var calcAnswers={},onboardTopOfferObj=null;
+    function showOnboard(){
+      if(localStorage.getItem('mh_onboarded_v2'))return;
+      var top=offers.find(function(o){return o.id==='lloyds-bank';})||offers.filter(function(o){return(o.amount||0)>0;}).sort(function(a,b){return(b.amount||0)-(a.amount||0);})[0];
+      if(top){
+        onboardTopOfferObj=top;
+        var g=function(id){return document.getElementById(id);};
+        if(g('onboardOfferName'))g('onboardOfferName').textContent=top.name||top.store||'Top Offer';
+        if(g('onboardOfferReward'))g('onboardOfferReward').textContent=top.reward||top.deal_price||'250';
+        if(g('onboardOfferTime'))g('onboardOfferTime').textContent='⏱ '+(top.effort||'15 min to start');
+        if(g('onboardClaimBtn'))g('onboardClaimBtn').textContent='Start earning '+(top.reward||'250')+' now';
+        if(g('onboardOfferCat')){
+          var c=getOfferCategory(top);
+          var cl={bank:'🏦 Bank Switch',invest:'📈 Invest',cashback:'💳 Cashback',utilities:'⚡ Utilities',earn:'💰 Earn'};
+          g('onboardOfferCat').textContent=cl[c]||'📋 Top Offer';
+        }
+      }
+      setTimeout(function(){var o=document.getElementById('onboardOverlay');if(o)o.classList.add('show');},800);
+    }
+    function closeOnboard(){
+      var o=document.getElementById('onboardOverlay');
+      if(o)o.classList.remove('show');
+      localStorage.setItem('mh_onboarded_v2','1');
+    }
+    function onboardNext(step){
+      document.querySelectorAll('.onboard-step').forEach(function(s){s.classList.remove('active');});
+      for(var i=1;i<=4;i++){
+        var d=document.getElementById('odot-'+i);
+        if(!d)continue;
+        d.className='onboard-dot';
+        if(i<step)d.classList.add('done');
+        else if(i===step)d.classList.add('active');
+      }
+      var el=document.getElementById('onboard-'+step);
+      if(el)el.classList.add('active');
+    }
+    function calcSelect(type,val){
+      calcAnswers[type]=val;
+      ['yes','no'].forEach(function(v){
+        var b=document.getElementById('calc-'+type+'-'+v);
+        if(b)b.className='onboard-calc-btn'+(v===val?' selected':'');
+      });
+      if(calcAnswers.bank!==undefined&&calcAnswers.invest!==undefined&&calcAnswers.cash!==undefined){
+        var t=0,desc=[];
+        if(calcAnswers.bank==='yes'){t+=250;desc.push('bank switch');}
+        if(calcAnswers.invest==='yes'){t+=100;desc.push('free share');}
+        if(calcAnswers.cash==='yes'){t+=35;desc.push('cashback');}
+        if(t===0){t=35;desc.push('cashback');}
+        var r=document.getElementById('calcResult'),
+            a=document.getElementById('calcAmount'),
+            d2=document.getElementById('calcDesc'),
+            c2=document.getElementById('calcCta');
+        if(a)a.textContent=t+'+';
+        if(d2)d2.textContent=desc.join(' + ')+' waiting for you';
+        if(r)r.style.display='block';
+        if(c2){c2.style.display='block';c2.textContent='Claim my '+t+'+ now';}
+      }
+    }
+    function onboardClaimOffer(){
+      closeOnboard();
+      if(onboardTopOfferObj)setTimeout(function(){openPanel(onboardTopOfferObj);},400);
+    }
+</script>
 
   <!-- Milestone Celebration Overlay -->
   <div class="milestone-overlay" id="milestoneOverlay">
@@ -6788,5 +6619,66 @@ function initTheme() {
   </div>
 
 
+
+  <div class="onboard-overlay" id="onboardOverlay">
+    <div class="onboard-sheet">
+      <button class="onboard-skip" onclick="closeOnboard()">Skip</button>
+      <div class="onboard-handle"></div>
+      <div class="onboard-dots">
+        <div class="onboard-dot active" id="odot-1"></div>
+        <div class="onboard-dot" id="odot-2"></div>
+        <div class="onboard-dot" id="odot-3"></div>
+        <div class="onboard-dot" id="odot-4"></div>
+      </div>
+      <div class="onboard-step active" id="onboard-1">
+        <span class="onboard-emoji">💰</span>
+        <div class="onboard-title">Welcome to MoneyHunters</div>
+        <div class="onboard-sub">Make real money from UK banks and apps — with step-by-step guides.</div>
+        <div style="margin-bottom:16px">
+          <div class="onboard-bullet"><div class="onboard-bullet-icon">🏦</div><div><div style="font-weight:600">Bank Switches</div><div class="onboard-bullet-val">Up to £500 per switch</div></div></div>
+          <div class="onboard-bullet"><div class="onboard-bullet-icon">💳</div><div><div style="font-weight:600">Cashback and Referrals</div><div class="onboard-bullet-val">Up to £100 sign-up bonuses</div></div></div>
+          <div class="onboard-bullet"><div class="onboard-bullet-icon">📈</div><div><div style="font-weight:600">Free Shares</div><div class="onboard-bullet-val">Up to £100 in free shares</div></div></div>
+        </div>
+        <div style="text-align:center;font-size:12px;color:#1fe887;font-weight:700;margin-bottom:18px">Most users earn £300-£1,000+ in their first 3 months</div>
+        <button class="onboard-btn primary" onclick="onboardNext(2)">Show me how →</button>
+      </div>
+      <div class="onboard-step" id="onboard-2">
+        <span class="onboard-emoji">⚡</span>
+        <div class="onboard-title">How it works</div>
+        <div class="onboard-sub">Three steps. That is it.</div>
+        <div style="margin-bottom:20px">
+          <div class="onboard-how-step"><div class="onboard-how-num">1</div><div><div class="onboard-how-title">Pick an offer</div><div class="onboard-how-desc">Browse bank switches, cashback and free shares</div></div></div>
+          <div class="onboard-how-step"><div class="onboard-how-num">2</div><div><div class="onboard-how-title">Follow the guide</div><div class="onboard-how-desc">Step-by-step, no experience needed. Takes 5-15 min</div></div></div>
+          <div class="onboard-how-step"><div class="onboard-how-num">3</div><div><div class="onboard-how-title">Get paid</div><div class="onboard-how-desc">Track payouts in Progress tab — we remind you when money lands</div></div></div>
+        </div>
+        <button class="onboard-btn primary" onclick="onboardNext(3)">Calculate my earnings →</button>
+        <button class="onboard-btn secondary" onclick="onboardNext(4)">Skip to first offer</button>
+      </div>
+      <div class="onboard-step" id="onboard-3">
+        <span class="onboard-emoji">🧮</span>
+        <div class="onboard-title">What is waiting for you?</div>
+        <div class="onboard-sub">3 quick questions.</div>
+        <div class="onboard-calc-q"><div class="onboard-calc-label">🏦 Can you switch a bank account?</div><div class="onboard-calc-btns"><button class="onboard-calc-btn" id="calc-bank-yes" onclick="calcSelect('bank','yes')">Yes — easy £250+</button><button class="onboard-calc-btn" id="calc-bank-no" onclick="calcSelect('bank','no')">Not yet</button></div></div>
+        <div class="onboard-calc-q"><div class="onboard-calc-label">📈 Can you invest £50 for 90 days?</div><div class="onboard-calc-btns"><button class="onboard-calc-btn" id="calc-invest-yes" onclick="calcSelect('invest','yes')">Yes</button><button class="onboard-calc-btn" id="calc-invest-no" onclick="calcSelect('invest','no')">Not now</button></div></div>
+        <div class="onboard-calc-q"><div class="onboard-calc-label">💳 Do you shop online?</div><div class="onboard-calc-btns"><button class="onboard-calc-btn" id="calc-cash-yes" onclick="calcSelect('cash','yes')">Yes</button><button class="onboard-calc-btn" id="calc-cash-no" onclick="calcSelect('cash','no')">Rarely</button></div></div>
+        <div class="onboard-calc-result" id="calcResult" style="display:none"><div class="onboard-calc-amount" id="calcAmount">0</div><div class="onboard-calc-desc" id="calcDesc">in verified UK offers waiting for you</div></div>
+        <button class="onboard-btn primary" id="calcCta" onclick="onboardNext(4)" style="display:none">See my first offer →</button>
+        <button class="onboard-btn secondary" onclick="onboardNext(4)">Skip →</button>
+      </div>
+      <div class="onboard-step" id="onboard-4">
+        <span class="onboard-emoji">🔥</span>
+        <div class="onboard-title">Your first step</div>
+        <div class="onboard-sub">Highest payout, lowest effort. Start here.</div>
+        <div class="onboard-offer-card" onclick="onboardClaimOffer()">
+          <div class="onboard-offer-cat" id="onboardOfferCat">🏦 Bank Switch</div>
+          <div class="onboard-offer-name" id="onboardOfferName">Lloyds Bank Switch</div>
+          <div class="onboard-offer-reward" id="onboardOfferReward">£250</div>
+          <div><span class="onboard-offer-pill" id="onboardOfferTime">⏱ 15 min to start</span><span class="onboard-offer-pill">📋 Step-by-step guide</span><span class="onboard-offer-pill">✅ Verified</span></div>
+        </div>
+        <button class="onboard-btn primary" id="onboardClaimBtn" onclick="onboardClaimOffer()">Start earning →</button>
+        <button class="onboard-btn secondary" onclick="closeOnboard()">Explore the app first</button>
+      </div>
+    </div>
+  </div>
 </body>
 </html>
