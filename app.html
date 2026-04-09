@@ -2779,6 +2779,80 @@
     }
     .quick-guide-x:hover { color:var(--text) }
 
+    
+    /* ── PLAYBOOK GUIDE CARDS ───────────────────── */
+    .guide-head {
+      display:flex;align-items:center;gap:12px;
+      cursor:pointer;
+    }
+    .guide-icon {
+      width:36px;height:36px;border-radius:10px;
+      display:flex;align-items:center;justify-content:center;
+      font-size:18px;flex-shrink:0;
+      background:var(--bg3);
+    }
+    .guide-icon.green { background:rgba(31,232,135,.15) }
+    .guide-icon.blue { background:rgba(57,130,255,.15) }
+    .guide-icon.yellow { background:rgba(255,207,90,.15) }
+    .guide-icon.purple { background:rgba(180,57,255,.15) }
+    .guide-chevron {
+      margin-left:auto;color:var(--muted2);font-size:12px;
+      transition:transform .3s;
+    }
+    .guide-chevron.open { transform:rotate(180deg) }
+    .guide-body {
+      max-height:0;overflow:hidden;
+      transition:max-height .4s cubic-bezier(.16,1,.3,1);
+      margin-top:0;
+    }
+    .guide-body.open {
+      max-height:3000px;
+      margin-top:12px;
+    }
+    .guide-step {
+      display:flex;gap:10px;padding:8px 0;
+      border-bottom:1px solid var(--line);
+      font-size:13px;color:var(--muted);line-height:1.5;
+    }
+    .guide-step:last-child { border-bottom:none }
+    .guide-step-num {
+      width:20px;height:20px;border-radius:50%;
+      background:var(--green);color:#000;
+      font-size:10px;font-weight:800;
+      display:flex;align-items:center;justify-content:center;
+      flex-shrink:0;margin-top:2px;
+    }
+    .guide-tip {
+      background:rgba(31,232,135,.08);border:1px solid rgba(31,232,135,.2);
+      border-radius:10px;padding:10px 12px;margin-top:10px;
+      font-size:12px;color:var(--muted);line-height:1.5;
+    }
+    .playbook-tip-section {
+      margin-top:24px;
+    }
+    .playbook-tip-title {
+      font-size:12px;font-weight:700;color:var(--muted2);
+      text-transform:uppercase;letter-spacing:.06em;margin-bottom:10px;
+    }
+
+    /* ── OFFERS TAB CATEGORY SECTIONS ───────────── */
+    .cat-section {
+      margin-bottom:16px;
+    }
+    .cat-section-head {
+      display:flex;align-items:center;justify-content:space-between;
+      padding:0 2px 8px;
+    }
+    .cat-section-title {
+      font-size:14px;font-weight:800;color:var(--text);
+    }
+    .cat-section-count {
+      font-size:11px;color:var(--muted2);font-weight:600;
+    }
+    .cat-section-list {
+      display:flex;flex-direction:column;gap:6px;
+    }
+
     </style>
 </head>
 <body>
@@ -2952,6 +3026,7 @@
         <span id="statPending"></span>
         <span id="statXp"></span>
         <span id="statStreak"></span>
+        <div id="bestOffers"></div>
       </div>
 
       <!-- IN PROGRESS — shows pending offers -->
@@ -4209,71 +4284,31 @@
     function buildOfferCard(offer) {
       const enrich = getEnrichment(offer.id);
       const status = getOfferStatus(offer.id);
-      const cardClass = status === "completed" ? "completed" : status === "pending" ? "pending" : "";
-      const progress = getOfferProgress(offer);
-      const hasClaimed = status !== "none";
-
-      // Status label
-      const statusLabel = status === "completed" ? "✓ Completed"
-        : status === "pending" ? "⏳ Pending payout"
-        : "Not started";
-      const statusColor = status === "completed" ? "var(--green)"
-        : status === "pending" ? "var(--yellow)"
-        : "var(--muted2)";
-
-      // Claim button style
-      const btnClass = status === "completed" ? "done-btn"
-        : status === "pending" ? "pending-btn"
-        : "";
-      const btnText = status === "completed" ? "✓ Completed — View Details"
-        : status === "pending" ? "⏳ Pending — Track Progress"
-        : "Claim Offer →";
-
-      // Get category label
-      const catLabels = {
-        bank:'🏦 Bank Switch', invest:'📈 Invest',
-        cashback:'💳 Cashback', gift:'🎁 Gift Cards',
-        utilities:'⚡ Utilities', earn:'💰 Earn',
-        mobile:'📱 Mobile', travel:'✈️ Travel',
-        business:'💼 Business', freebie:'🆓 Freebie',
-        pension:'🏦 Pension'
-      };
-      const cat = getOfferCategory(offer);
-      const catLabel = catLabels[cat] || offer.badge || '';
+      const cardClass = status === 'completed' ? 'completed' : status === 'pending' ? 'pending' : '';
+      const statusColor = status === 'completed' ? 'var(--green)'
+        : status === 'pending' ? 'var(--yellow)' : 'transparent';
+      const statusDot = status === 'completed' ? '✓' : status === 'pending' ? '⏳' : '';
+      const name = offer.name || offer.store || 'Offer';
+      const reward = offer.reward || offer.deal_price || '?';
 
       return `
         <article class="offer-card ${cardClass}">
-          <div class="offer-card-top" onclick="toggleOfferCard(this)" data-offer-id="${offer.id}" style="cursor:pointer">
-            <div style="min-width:0;flex:1">
-              <div class="offer-cat-label">${catLabel}</div>
-              <h3 class="offer-name" style="margin:2px 0 3px">${offer.name || offer.store} <span class="offer-card-chevron" id="chev_${offer.id}">▾</span></h3>
-              <div class="offer-effort">${offer.effort || ''}</div>
+          <div class="offer-card-top" onclick="toggleOfferCard(this)" data-offer-id="${offer.id}">
+            <div class="offer-card-name-wrap">
+              ${statusDot ? `<span class="offer-status-pill" style="color:${statusColor}">${statusDot}</span>` : ''}
+              <span class="offer-name">${name}</span>
             </div>
-            <div>
-              <div class="reward">${offer.reward || offer.deal_price}</div>
-              <div class="offer-status-dot" style="color:${statusColor};font-size:10px;text-align:right;margin-top:3px">${statusLabel}</div>
+            <div class="offer-card-right">
+              <span class="reward">${reward}</span>
+              <span class="offer-card-chevron" id="chev_${offer.id}">▾</span>
             </div>
           </div>
-
-          ${hasClaimed ? `
-          <div class="offer-progress show">
-            <div class="progress-top">
-              <span>Steps: ${progress.done}/${progress.total}</span>
-              <span>${progress.pct}%</span>
-            </div>
-            <div class="progress-bar">
-              <div class="progress-fill" style="width:${progress.pct}%"></div>
-            </div>
-          </div>` : ""}
-
-          <!-- Accordion body -->
           <div class="offer-card-body" id="acc_${offer.id}">
             ${buildAccordionBody(offer, enrich)}
           </div>
         </article>
       `;
     }
-
     function renderTodayPlan() {
       const dayPlans = {
         0: { // Sunday
