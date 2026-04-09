@@ -321,7 +321,7 @@
     .blue{color:var(--blue)}
 
     .view{display:none}
-    .view.active{display:block;animation:fadeUp .18s ease;min-height:50vh}
+    .view.active{display:block;animation:fadeUp .18s ease;min-height:50vh;background:var(--bg);padding-bottom:80px}
     @keyframes fadeUp{
       from{opacity:0;transform:translateY(4px)}
       to{opacity:1;transform:translateY(0)}
@@ -2604,6 +2604,181 @@
       text-align:right;
     }
 
+    
+    /* ── HOME WELCOME CARD ──────────────────────── */
+    .home-welcome-card {
+      background:linear-gradient(135deg,var(--bg3),rgba(31,232,135,.08));
+      border:1px solid rgba(31,232,135,.2);
+      border-radius:16px;padding:20px 16px;margin-bottom:12px;
+    }
+    .home-welcome-title {
+      font-size:20px;font-weight:800;color:var(--text);
+      line-height:1.3;margin-bottom:6px;
+    }
+    .home-welcome-sub {
+      font-size:12px;color:var(--muted2);line-height:1.5;
+    }
+
+    /* ── HOME STATS ROW ─────────────────────────── */
+    .home-stats-row {
+      display:grid;grid-template-columns:repeat(4,1fr);
+      gap:8px;margin-bottom:12px;
+    }
+    .home-stat-card {
+      background:var(--card);border:1px solid var(--line);
+      border-radius:12px;padding:10px 8px;
+      text-align:center;
+    }
+    .home-stat-icon { font-size:16px;margin-bottom:4px }
+    .home-stat-val {
+      font-size:15px;font-weight:800;color:var(--text);
+      margin-bottom:2px;
+    }
+    .home-stat-label {
+      font-size:9px;font-weight:600;color:var(--muted2);
+      text-transform:uppercase;letter-spacing:.04em;
+    }
+
+    /* ── HOME IN PROGRESS ───────────────────────── */
+    .home-in-progress {
+      margin-bottom:12px;
+    }
+    .home-in-progress.hidden { display:none }
+    .home-progress-title {
+      font-size:11px;font-weight:700;color:var(--muted2);
+      text-transform:uppercase;letter-spacing:.06em;
+      margin-bottom:8px;padding:0 2px;
+    }
+    .home-progress-row {
+      background:var(--card);border:1px solid var(--line);
+      border-radius:12px;padding:12px 14px;
+      display:flex;align-items:center;justify-content:space-between;
+      margin-bottom:6px;cursor:pointer;
+    }
+    .home-progress-row:active { opacity:.8 }
+    .home-progress-name {
+      font-size:14px;font-weight:700;color:var(--text);
+    }
+    .home-progress-days {
+      font-size:11px;color:var(--muted2);margin-top:2px;
+    }
+    .home-progress-reward {
+      font-size:18px;font-weight:900;color:var(--green);
+    }
+
+    /* ── PLAYBOOK CTA ───────────────────────────── */
+    .home-playbook-cta {
+      background:var(--green);border-radius:14px;
+      padding:16px;margin-bottom:12px;cursor:pointer;
+      display:flex;align-items:center;justify-content:space-between;
+      transition:.15s;
+    }
+    .home-playbook-cta:active { transform:scale(.99) }
+    .home-playbook-cta-title {
+      font-size:15px;font-weight:800;color:#000;
+      margin-bottom:3px;
+    }
+    .home-playbook-cta-sub {
+      font-size:12px;color:rgba(0,0,0,.6);
+    }
+    .home-playbook-arrow {
+      font-size:22px;color:#000;font-weight:700;
+      flex-shrink:0;
+    }
+
+    
+    /* ── WELCOME CARD ───────────────────────────── */
+    .home-welcome-card {
+      display:flex;align-items:center;justify-content:space-between;
+    }
+    .home-welcome-arrow {
+      font-size:28px;color:var(--green);font-weight:300;
+      flex-shrink:0;margin-left:8px;
+    }
+
+    /* ── QUICK GUIDE MODAL ──────────────────────── */
+    .quick-guide-overlay {
+      position:fixed;inset:0;z-index:9000;
+      background:rgba(0,0,0,.8);backdrop-filter:blur(6px);
+      display:flex;align-items:flex-end;justify-content:center;
+      transition:.3s;
+    }
+    .quick-guide-overlay.hidden { display:none }
+    .quick-guide-sheet {
+      background:var(--card);border-radius:24px 24px 0 0;
+      border-top:2px solid var(--green);
+      padding:20px 16px 40px;width:100%;max-width:480px;
+      max-height:85vh;overflow-y:auto;
+    }
+    .quick-guide-handle {
+      width:36px;height:4px;border-radius:2px;
+      background:var(--line);margin:0 auto 16px;
+    }
+    .quick-guide-title {
+      font-size:22px;font-weight:800;color:var(--text);
+      margin-bottom:4px;
+    }
+    .quick-guide-sub {
+      font-size:13px;color:var(--muted2);margin-bottom:20px;
+    }
+    .quick-guide-step {
+      display:flex;gap:12px;margin-bottom:16px;
+      padding-bottom:16px;border-bottom:1px solid var(--line);
+    }
+    .quick-guide-step:last-of-type { border-bottom:none }
+    .quick-guide-step-num {
+      width:28px;height:28px;border-radius:50%;
+      background:var(--green);color:#000;
+      font-size:13px;font-weight:800;
+      display:flex;align-items:center;justify-content:center;
+      flex-shrink:0;margin-top:2px;
+    }
+    .quick-guide-step-title {
+      font-size:14px;font-weight:700;color:var(--text);
+      margin-bottom:4px;display:flex;align-items:center;gap:6px;flex-wrap:wrap;
+    }
+    .quick-guide-badge {
+      font-size:11px;font-weight:700;color:#000;
+      background:var(--green);padding:2px 7px;border-radius:20px;
+    }
+    .quick-guide-step-desc {
+      font-size:12px;color:var(--muted);line-height:1.5;margin-bottom:8px;
+    }
+    .quick-guide-btn {
+      padding:8px 14px;background:var(--bg3);
+      border:1px solid var(--line);border-radius:8px;
+      font-size:12px;font-weight:700;color:var(--green);
+      cursor:pointer;font-family:var(--fb);
+    }
+    .quick-guide-total {
+      font-size:14px;color:var(--muted);text-align:center;
+      padding:12px 0;margin-bottom:12px;
+    }
+    .quick-guide-close {
+      width:100%;padding:16px;background:var(--green);
+      color:#000;border:none;border-radius:12px;
+      font-size:15px;font-weight:800;
+      font-family:var(--fb);cursor:pointer;
+    }
+
+    
+    .quick-guide-top-row {
+      display:flex;align-items:center;justify-content:center;
+      position:relative;margin-bottom:16px;
+    }
+    .quick-guide-handle-inline {
+      width:36px;height:4px;border-radius:2px;background:var(--line);
+    }
+    .quick-guide-x {
+      position:absolute;right:0;top:50%;transform:translateY(-50%);
+      width:30px;height:30px;border-radius:8px;
+      background:var(--bg3);border:1px solid var(--line);
+      color:var(--muted2);font-size:14px;cursor:pointer;
+      display:flex;align-items:center;justify-content:center;
+      font-family:var(--fb);
+    }
+    .quick-guide-x:hover { color:var(--text) }
+
     </style>
 </head>
 <body>
@@ -2710,16 +2885,88 @@
 
   <main class="app">
     <section id="view-home" class="view active">
+
       <!-- Payout Reminder Banner -->
       <div id="payoutReminderBanner" class="payout-reminder-banner hidden">
         <span class="reminder-text"></span>
         <button onclick="dismissPayoutReminder()" class="reminder-dismiss">✕</button>
       </div>
 
-      <section class="compact-hero card">
-        <h1>Fast daily money moves</h1>
-        <p>Start with the plan, open the best offers, then track payouts as they move from pending to earned.</p>
-      </section>
+      <!-- WELCOME CARD — tappable quick guide -->
+      <div class="home-welcome-card" id="homeWelcomeCard" onclick="showQuickGuide()" style="cursor:pointer">
+        <div class="home-welcome-text">
+          <div class="home-welcome-title" id="homeWelcomeTitle">Make your first £360 this week →</div>
+          <div class="home-welcome-sub" id="homeWelcomeSub">Tap to see the quickest way to earn £360 this week</div>
+        </div>
+        <div class="home-welcome-arrow">›</div>
+      </div>
+
+      <!-- QUICK GUIDE MODAL -->
+      <div class="quick-guide-overlay hidden" id="quickGuideOverlay" onclick="hideQuickGuide()">
+        <div class="quick-guide-sheet" onclick="event.stopPropagation()">
+          <div class="quick-guide-top-row">
+            <div class="quick-guide-handle-inline"></div>
+            <button class="quick-guide-x" onclick="hideQuickGuide()">✕</button>
+          </div>
+          <div class="quick-guide-title">🎯 Make £360 this week</div>
+          <div class="quick-guide-sub">Three simple offers. Takes about 20 minutes total.</div>
+
+          <div class="quick-guide-step">
+            <div class="quick-guide-step-num">1</div>
+            <div class="quick-guide-step-content">
+              <div class="quick-guide-step-title">📈 Freetrade — Free Share <span class="quick-guide-badge">up to £100</span></div>
+              <div class="quick-guide-step-desc">Open a Freetrade account and deposit £50. You get a randomly assigned free share worth £10-£100. Takes 5 minutes.</div>
+              <button class="quick-guide-btn" onclick="hideQuickGuide();openOfferById('freetrade')">Open Freetrade guide →</button>
+            </div>
+          </div>
+
+          <div class="quick-guide-step">
+            <div class="quick-guide-step-num">2</div>
+            <div class="quick-guide-step-content">
+              <div class="quick-guide-step-title">💳 TopCashback — Sign Up Bonus <span class="quick-guide-badge">£10 free</span></div>
+              <div class="quick-guide-step-desc">Sign up to TopCashback and earn £10 just for joining. Then get cashback on everything you buy online. Takes 2 minutes.</div>
+              <button class="quick-guide-btn" onclick="hideQuickGuide();openOfferById('topcashback')">Open TopCashback guide →</button>
+            </div>
+          </div>
+
+          <div class="quick-guide-step">
+            <div class="quick-guide-step-num">3</div>
+            <div class="quick-guide-step-content">
+              <div class="quick-guide-step-title">🏦 Lloyds Bank Switch <span class="quick-guide-badge">£250</span></div>
+              <div class="quick-guide-step-desc">Switch your current account to Lloyds using CASS. Takes 15 minutes and pays £250 in about 30 days. The biggest single payout available.</div>
+              <button class="quick-guide-btn" onclick="hideQuickGuide();openOfferById('lloyds-bank')">Open Lloyds guide →</button>
+            </div>
+          </div>
+
+          <div class="quick-guide-total">
+            Total from these 3 offers: <strong style="color:var(--green)">up to £360</strong>
+          </div>
+
+          <button class="quick-guide-close" onclick="hideQuickGuide()">Got it — start hunting →</button>
+        </div>
+      </div>
+
+      <!-- Stats IDs kept for JS but displayed in top bar only -->
+      <div style="display:none">
+        <span id="statSaved"></span>
+        <span id="statPending"></span>
+        <span id="statXp"></span>
+        <span id="statStreak"></span>
+      </div>
+
+      <!-- IN PROGRESS — shows pending offers -->
+      <div id="homeInProgress" class="home-in-progress hidden"></div>
+
+      <!-- PLAYBOOK CTA -->
+      <div class="home-playbook-cta" onclick="switchView('stack')">
+        <div class="home-playbook-cta-left">
+          <div class="home-playbook-cta-title">📖 Follow the Playbook</div>
+          <div class="home-playbook-cta-sub">Step-by-step guide to your first £1,000</div>
+        </div>
+        <div class="home-playbook-arrow">→</div>
+      </div>
+
+      <!-- INSTALL BANNER -->
       <div class="install-banner" id="installBanner">
         <div class="install-icon">📲</div>
         <div class="install-text">
@@ -2730,6 +2977,7 @@
         <button class="install-dismiss" onclick="dismissInstall()">✓</button>
       </div>
 
+      <!-- TODAY'S MONEY PLAN -->
       <section class="section">
         <div class="plan-collapsed-head" onclick="toggleMoneyPlan()" id="planHead">
           <div class="plan-collapsed-left">
@@ -2746,10 +2994,7 @@
         </div>
       </section>
 
-      
-
-      
-
+      <!-- FEATURED OFFERS -->
       <section class="section">
         <div class="featured-reveal-btn" onclick="toggleTodayOffers()" id="featuredRevealBtn">
           <div class="featured-reveal-left">
@@ -2763,7 +3008,7 @@
         </div>
         <div id="homeOffersPreview" class="today-offers-body"></div>
       </section>
-    </section>
+
 
     <section id="view-offers" class="view">
       <section class="section">
@@ -6208,12 +6453,92 @@ function initTheme() {
       if (chev) chev.style.transform = isOpen ? '' : 'rotate(180deg)';
     }
 
+
+    function renderHomeInProgress() {
+      const el = document.getElementById('homeInProgress');
+      if (!el) return;
+
+      // Find pending offers with claimed dates
+      const pending = offers.filter(function(o) {
+        return (state.offerStatus[o.id] === 'pending' || getOfferClaimedDate(o.id)) &&
+               state.offerStatus[o.id] !== 'completed';
+      }).slice(0, 3);
+
+      if (pending.length === 0) {
+        el.classList.add('hidden');
+        return;
+      }
+
+      el.classList.remove('hidden');
+      let html = '<div class="home-progress-title">⏳ In Progress</div>';
+      pending.forEach(function(offer) {
+        const days = getDaysUntilPayout(offer.id);
+        const daysText = days === null ? 'Tracking...'
+          : days <= 0 ? '🎉 Due now!'
+          : days + ' days until payout';
+        const daysColor = days !== null && days <= 3 ? '#ff6b35'
+          : days !== null && days <= 7 ? 'var(--yellow)'
+          : 'var(--muted2)';
+        html += '<div class="home-progress-row" data-pid="' + offer.id + '" onclick="openOfferById(this.dataset.pid)">';
+        html += '<div>';
+        html += '<div class="home-progress-name">' + (offer.name || offer.store) + '</div>';
+        html += '<div class="home-progress-days" style="color:' + daysColor + '">' + daysText + '</div>';
+        html += '</div>';
+        html += '<div class="home-progress-reward">' + (offer.reward || offer.deal_price || '') + '</div>';
+        html += '</div>';
+      });
+      el.innerHTML = html;
+    }
+
+    function updateWelcomeCard() {
+      const title = document.getElementById('homeWelcomeTitle');
+      const sub = document.getElementById('homeWelcomeSub');
+      if (!title || !sub) return;
+      if (currentUser) {
+        const username = localStorage.getItem('mh_username') ||
+          currentUser.email?.split('@')[0] || 'Hunter';
+        const earned = parseFloat(localStorage.getItem('mh_total_saved') || '0');
+        const pending = Object.keys(state.offerStatus)
+          .filter(function(id) { return state.offerStatus[id] === 'pending'; }).length;
+        title.textContent = 'Welcome back, ' + username + ' 👋';
+        if (pending > 0) {
+          sub.textContent = pending + ' offer' + (pending > 1 ? 's' : '') + ' pending payout · Keep going!';
+        } else if (earned > 0) {
+          sub.textContent = '£' + earned.toFixed(0) + ' earned so far · Follow the Playbook for more';
+        } else {
+          sub.textContent = 'Ready to start? Follow the Playbook to make your first £500';
+        }
+      } else {
+        title.textContent = 'Make your first £500 this month';
+        sub.textContent = 'Bank switches · Cashback · Free shares · All in one place';
+      }
+    }
+
+
+    function showQuickGuide() {
+      const el = document.getElementById('quickGuideOverlay');
+      if (el) {
+        el.classList.remove('hidden');
+        el.classList.add('show');
+      }
+    }
+
+    function hideQuickGuide() {
+      const el = document.getElementById('quickGuideOverlay');
+      if (el) {
+        el.classList.add('hidden');
+        el.classList.remove('show');
+      }
+    }
+
     function renderAll() {
       updateTopStats();
       updateDailyBox();
       renderTodayPlan();
       renderBestOffers();
       renderHomePreview();
+      renderHomeInProgress();
+      updateWelcomeCard();
       renderOffers();
       renderBattle();
       if (offers.length > 0) renderNetflix();
