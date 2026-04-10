@@ -2775,6 +2775,16 @@
       -webkit-tap-highlight-color:transparent;
     }
     .offer-card-top:active { opacity:.8 }
+    .offer-logo {
+      width:36px;height:36px;border-radius:8px;
+      background:var(--bg3);border:1px solid var(--line);
+      display:flex;align-items:center;justify-content:center;
+      flex-shrink:0;overflow:hidden;font-size:13px;font-weight:800;
+      color:var(--muted2);
+    }
+    .offer-logo img {
+      width:28px;height:28px;object-fit:contain;
+    }
 
     #view-progress .section { margin-bottom:16px }
     #pendingPayoutsSection .payout-empty {
@@ -3222,32 +3232,7 @@
         <div id="pendingPayoutsList"></div>
       </section>
 
-      <!-- 2. DAILY CHECK-IN -->
-      <div class="section" style="margin-bottom:16px">
-        <div class="section-head">
-          <h2 class="section-title">⚡ Daily Check-in</h2>
-          <div class="section-note" id="dailyStatus">Ready</div>
-        </div>
-        <div class="daily-xp-card card">
-          <div class="daily-xp-top">
-            <span id="dailyEmoji">🎵</span>
-            <div class="daily-xp-info">
-              <div class="daily-xp-title" id="dailyCopy">Claim your daily XP bonus</div>
-              <div class="daily-xp-sub">Keep your streak alive · Earn badges · Unlock rewards</div>
-            </div>
-          </div>
-          <div class="streak-row" id="streakRow"></div>
-          <button class="primary-btn" id="dailyBtn" onclick="claimDaily()" style="width:100%;margin-top:12px">Claim Daily XP</button>
-          <div class="daily-xp-explainer">
-            <div class="xp-explain-row"><span>📋</span><span>Claim an offer → +50 XP</span></div>
-            <div class="xp-explain-row"><span>🔥</span><span>Daily check-in → +10 XP</span></div>
-            <div class="xp-explain-row"><span>🏆</span><span>Complete offer → +100 XP</span></div>
-            <div class="xp-explain-row"><span>🎯</span><span>7-day streak → Unlock badge</span></div>
-          </div>
-        </div>
-      </div>
-
-      <!-- 3. MONEY TRACKER -->
+      <!-- 2. MONEY TRACKER -->
       <section class="section">
         <div class="section-head">
           <h2 class="section-title">💰 Money Tracker</h2>
@@ -3274,6 +3259,31 @@
           </div>
         </div>
       </section>
+
+      <!-- 3. DAILY CHECK-IN -->
+      <div class="section" style="margin-bottom:16px">
+        <div class="section-head">
+          <h2 class="section-title">⚡ Daily Check-in</h2>
+          <div class="section-note" id="dailyStatus">Ready</div>
+        </div>
+        <div class="daily-xp-card card">
+          <div class="daily-xp-top">
+            <span id="dailyEmoji">🎵</span>
+            <div class="daily-xp-info">
+              <div class="daily-xp-title" id="dailyCopy">Claim your daily XP bonus</div>
+              <div class="daily-xp-sub">Keep your streak alive · Earn badges · Unlock rewards</div>
+            </div>
+          </div>
+          <div class="streak-row" id="streakRow"></div>
+          <button class="primary-btn" id="dailyBtn" onclick="claimDaily()" style="width:100%;margin-top:12px">Claim Daily XP</button>
+          <div class="daily-xp-explainer">
+            <div class="xp-explain-row"><span>📋</span><span>Claim an offer → +50 XP</span></div>
+            <div class="xp-explain-row"><span>🔥</span><span>Daily check-in → +10 XP</span></div>
+            <div class="xp-explain-row"><span>🏆</span><span>Complete offer → +100 XP</span></div>
+            <div class="xp-explain-row"><span>🎯</span><span>7-day streak → Unlock badge</span></div>
+          </div>
+        </div>
+      </div>
 
       <!-- 4. MISSIONS -->
       <section class="section" id="missionsSection">
@@ -4219,9 +4229,16 @@
       const cat = getOfferCategory(offer);
       const catLabel = catLabels[cat] || offer.badge || '';
 
+      const domain = getOfferDomain(offer);
+      const fallbackLetter = (offer.name || offer.store || '?')[0].toUpperCase();
+      const logoHtml = domain
+        ? `<div class="offer-logo"><img src="https://www.google.com/s2/favicons?domain=${domain}&sz=64" alt="" onerror="this.parentElement.textContent='${fallbackLetter}'" loading="lazy"></div>`
+        : `<div class="offer-logo">${fallbackLetter}</div>`;
+
       return `
         <article class="offer-card ${cardClass}">
           <div class="offer-card-top" data-offer-id="${offer.id}" style="cursor:pointer">
+            ${logoHtml}
             <div style="min-width:0;flex:1">
               <div class="offer-cat-label">${catLabel}</div>
               <h3 class="offer-name" style="margin:2px 0 3px">${offer.name || offer.store} <span class="offer-card-chevron" id="chev_${offer.id}">▾</span></h3>
@@ -4317,16 +4334,7 @@
           <div style="font-size:10px;font-weight:700;color:var(--yellow);text-transform:uppercase;letter-spacing:.06em;margin-bottom:3px">${plan.label}</div>
           <div style="font-size:12px;color:var(--muted);line-height:1.4">🆕 ${plan.tip}</div>
         </div>
-        ${tasks.map(offer => {
-          const done = getOfferStatus(offer.id) !== "none";
-          return `<button class="task-btn" data-plan-offer="${offer.id}" style="${done ? "opacity:.5" : ""}">
-            <div class="task-top">
-              <div class="task-title">${done ? "✓ " : ""}${offer.name}</div>
-              <div class="task-reward">${offer.reward}</div>
-            </div>
-            <div class="task-sub">${offer.effort} ${done ? "· claimed" : ""}</div>
-          </button>`;
-        }).join("")}
+        ${tasks.map(offer => buildOfferCard(offer)).join('')}
       `;
     }
 
@@ -5220,7 +5228,7 @@
     }
     function hideAuthModal() {
       document.getElementById('authModal').classList.remove('show');
-      document.getElementById('authError').textContent = '';
+      const _ae = document.getElementById('authError'); if(_ae) _ae.textContent = '';
     }
     function skipAuth() {
       localStorage.setItem('mh_auth_skipped', '1');
@@ -5235,7 +5243,7 @@
       document.getElementById('tabLogin').className = 'auth-tab' + (tab === 'login' ? ' on' : '');
       // Hide tabs on reset/newpassword views
       document.querySelector('.auth-tabs').style.display = (tab === 'reset' || tab === 'newpassword') ? 'none' : 'grid';
-      document.getElementById('authError').textContent = '';
+      const _ae = document.getElementById('authError'); if(_ae) _ae.textContent = '';
     }
 
     async function handleSignup() {
@@ -6056,6 +6064,14 @@ function initTheme() {
       return offer.desc || offer.item || offer.action || offer.effort || '';
     }
 
+    function getOfferDomain(offer) {
+      try {
+        if (!offer.url || offer.url === '#') return '';
+        var u = new URL(offer.url);
+        return u.hostname.replace('www.','');
+      } catch(e) { return ''; }
+    }
+
 
     function scrollRow(id, dir) {
       const el = document.getElementById(id);
@@ -6266,23 +6282,23 @@ function initTheme() {
 
     function toggleOfferCard(el) {
       var offerId = el.dataset.offerId;
-      if (!offerId) {
-        // walk up as fallback
-        var t = el;
-        while (t && !t.dataset.offerId) t = t.parentElement;
-        if (!t) return;
-        offerId = t.dataset.offerId;
-      }
-      var body = document.getElementById('acc_' + offerId);
-      var chev = document.getElementById('chev_' + offerId);
+      if (!offerId) return;
+      // Find accordion body as next sibling of parent article — avoids duplicate ID issue
+      var article = el.closest('article') || el.parentElement;
+      var body = article.querySelector('.offer-card-body');
+      var chev = article.querySelector('.offer-card-chevron');
       if (!body) return;
       var isOpen = body.classList.contains('open');
-      document.querySelectorAll('.offer-card-body.open').forEach(function(b) {
-        b.classList.remove('open');
-      });
-      document.querySelectorAll('.offer-card-chevron.open').forEach(function(c) {
-        c.classList.remove('open');
-      });
+      // Close all others in the same container
+      var container = article.parentElement;
+      if (container) {
+        container.querySelectorAll('.offer-card-body.open').forEach(function(b) {
+          b.classList.remove('open');
+        });
+        container.querySelectorAll('.offer-card-chevron.open').forEach(function(c) {
+          c.classList.remove('open');
+        });
+      }
       if (!isOpen) {
         body.classList.add('open');
         if (chev) chev.classList.add('open');
@@ -6622,14 +6638,6 @@ function initTheme() {
       const statusButton = event.target.closest("[data-status-id]");
       if (statusButton) {
         setOfferStatus(statusButton.dataset.statusId, statusButton.dataset.statusValue);
-        return;
-      }
-
-      const taskButton = event.target.closest("[data-plan-offer]");
-      if (taskButton) {
-        const offerId = taskButton.dataset.planOffer;
-        const offer = offers.find(o => o.id === offerId);
-        if (offer) openPanel(offer);
         return;
       }
 
