@@ -1,4 +1,4 @@
-Scrape run: 2026-04-23 19:19:36.965362
+Scrape run: 2026-04-24 03:24:26.802710
 Manual offers: 93
 Supermarket deals: 4
 Reddit deals: 0
