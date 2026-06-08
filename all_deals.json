@@ -1,14 +1,14 @@
 {
-  "last_updated": "2026-06-07 19:39:34",
-  "total_deals": 98,
+  "last_updated": "2026-06-08 04:27:14",
+  "total_deals": 118,
   "manual_count": 93,
   "supermarket_count": 4,
   "reddit_count": 0,
   "news_count": 0,
   "hotukdeals_count": 2,
   "megalist_count": 0,
-  "scrimpr_count": 0,
-  "unique_scraped_count": 1,
+  "scrimpr_count": 39,
+  "unique_scraped_count": 21,
   "sources": [
     "Manual",
     "Supermarket",
@@ -42,7 +42,7 @@
       "stacked_price": 2.39,
       "best_payment_method": "Airtime Rewards (4%) + Asda Rewards",
       "stacking_rate": 4.5,
-      "last_updated": "2026-06-07 19:39:34"
+      "last_updated": "2026-06-08 04:27:14"
     },
     {
       "store": "Sainsbury's",
@@ -57,7 +57,7 @@
       "stacked_price": 3.35,
       "best_payment_method": "JamDoughnut (4.1%) + Nectar",
       "stacking_rate": 4.4,
-      "last_updated": "2026-06-07 19:39:34"
+      "last_updated": "2026-06-08 04:27:14"
     },
     {
       "store": "Tesco",
@@ -72,7 +72,7 @@
       "stacked_price": 6.63,
       "best_payment_method": "EverUp (4.9%) + Clubcard",
       "stacking_rate": 5.3,
-      "last_updated": "2026-06-07 19:39:34"
+      "last_updated": "2026-06-08 04:27:14"
     },
     {
       "store": "Iceland",
@@ -87,7 +87,7 @@
       "stacked_price": 9.5,
       "best_payment_method": "TopCashback (3.5%) + Bonus Card",
       "stacking_rate": 5.0,
-      "last_updated": "2026-06-07 19:39:34"
+      "last_updated": "2026-06-08 04:27:14"
     },
     {
       "store": "Fidelity",
@@ -109,7 +109,7 @@
       "stacked_price": 0,
       "best_payment_method": "N/A",
       "stacking_rate": 0,
-      "last_updated": "2026-06-07 19:39:34"
+      "last_updated": "2026-06-08 04:27:14"
     },
     {
       "store": "Barclays Premier",
@@ -133,7 +133,7 @@
       "stacked_price": 0,
       "best_payment_method": "N/A",
       "stacking_rate": 0,
-      "last_updated": "2026-06-07 19:39:34"
+      "last_updated": "2026-06-08 04:27:14"
     },
     {
       "store": "Worldfirst",
@@ -154,7 +154,7 @@
       "stacked_price": 0,
       "best_payment_method": "N/A",
       "stacking_rate": 0,
-      "last_updated": "2026-06-07 19:39:34"
+      "last_updated": "2026-06-08 04:27:14"
     },
     {
       "store": "Lloyds Bank",
@@ -175,7 +175,7 @@
       "stacked_price": 0,
       "best_payment_method": "N/A",
       "stacking_rate": 0,
-      "last_updated": "2026-06-07 19:39:34"
+      "last_updated": "2026-06-08 04:27:14"
     },
     {
       "store": "Barclays",
@@ -199,7 +199,7 @@
       "stacked_price": 0,
       "best_payment_method": "N/A",
       "stacking_rate": 0,
-      "last_updated": "2026-06-07 19:39:34"
+      "last_updated": "2026-06-08 04:27:14"
     },
     {
       "store": "Santander Edge",
@@ -224,7 +224,7 @@
       "stacked_price": 0,
       "best_payment_method": "N/A",
       "stacking_rate": 0,
-      "last_updated": "2026-06-07 19:39:34"
+      "last_updated": "2026-06-08 04:27:14"
     },
     {
       "store": "Natwest",
@@ -245,7 +245,7 @@
       "stacked_price": 0,
       "best_payment_method": "N/A",
       "stacking_rate": 0,
-      "last_updated": "2026-06-07 19:39:34"
+      "last_updated": "2026-06-08 04:27:14"
     },
     {
       "store": "Investengine",
@@ -269,7 +269,7 @@
       "stacked_price": 0,
       "best_payment_method": "N/A",
       "stacking_rate": 0,
-      "last_updated": "2026-06-07 19:39:34"
+      "last_updated": "2026-06-08 04:27:14"
     },
     {
       "store": "First Direct",
@@ -290,7 +290,7 @@
       "stacked_price": 0,
       "best_payment_method": "N/A",
       "stacking_rate": 0,
-      "last_updated": "2026-06-07 19:39:34"
+      "last_updated": "2026-06-08 04:27:14"
     },
     {
       "store": "First Direct",
@@ -314,7 +314,7 @@
       "stacked_price": 0,
       "best_payment_method": "N/A",
       "stacking_rate": 0,
-      "last_updated": "2026-06-07 19:39:34"
+      "last_updated": "2026-06-08 04:27:14"
     },
     {
       "store": "Co-operative Bank",
@@ -338,7 +338,29 @@
       "stacked_price": 0,
       "best_payment_method": "N/A",
       "stacking_rate": 0,
-      "last_updated": "2026-06-07 19:39:34"
+      "last_updated": "2026-06-08 04:27:14"
+    },
+    {
+      "store": "Bank Of Scotland",
+      "item": "27 Bank of Scotland Bank Switch FCA: 169628 Sign Up Bonus £175 switch bonus Find",
+      "deal_price": "£175",
+      "link": "https://scrimpr.co.uk/bank-switch-offers/bank-of-scotland/",
+      "original_price": "£0",
+      "saving_percent": 100,
+      "type": "scrimpr",
+      "category": "bank_switch",
+      "code": "",
+      "steps": [
+        "Read the full offer on Scrimpr",
+        "Follow the referral link",
+        "Complete required steps"
+      ],
+      "timeFrame": "Check page",
+      "source": "Scrimpr",
+      "last_updated": "2026-06-08 04:27:14",
+      "stacked_price": 0,
+      "best_payment_method": "N/A",
+      "stacking_rate": 0
     },
     {
       "store": "Halifax",
@@ -359,7 +381,7 @@
       "stacked_price": 0,
       "best_payment_method": "N/A",
       "stacking_rate": 0,
-      "last_updated": "2026-06-07 19:39:34"
+      "last_updated": "2026-06-08 04:27:14"
     },
     {
       "store": "Amex",
@@ -380,7 +402,7 @@
       "stacked_price": 0,
       "best_payment_method": "N/A",
       "stacking_rate": 0,
-      "last_updated": "2026-06-07 19:39:34"
+      "last_updated": "2026-06-08 04:27:14"
     },
     {
       "store": "Natwest",
@@ -404,7 +426,7 @@
       "stacked_price": 0,
       "best_payment_method": "N/A",
       "stacking_rate": 0,
-      "last_updated": "2026-06-07 19:39:34"
+      "last_updated": "2026-06-08 04:27:14"
     },
     {
       "store": "Rbs",
@@ -428,7 +450,7 @@
       "stacked_price": 0,
       "best_payment_method": "N/A",
       "stacking_rate": 0,
-      "last_updated": "2026-06-07 19:39:34"
+      "last_updated": "2026-06-08 04:27:14"
     },
     {
       "store": "Trading212",
@@ -451,7 +473,7 @@
       "stacked_price": 0,
       "best_payment_method": "N/A",
       "stacking_rate": 0,
-      "last_updated": "2026-06-07 19:39:34"
+      "last_updated": "2026-06-08 04:27:14"
     },
     {
       "store": "Lightyear",
@@ -474,7 +496,7 @@
       "stacked_price": 0,
       "best_payment_method": "N/A",
       "stacking_rate": 0,
-      "last_updated": "2026-06-07 19:39:34"
+      "last_updated": "2026-06-08 04:27:14"
     },
     {
       "store": "Xtb",
@@ -497,7 +519,7 @@
       "stacked_price": 0,
       "best_payment_method": "N/A",
       "stacking_rate": 0,
-      "last_updated": "2026-06-07 19:39:34"
+      "last_updated": "2026-06-08 04:27:14"
     },
     {
       "store": "Chip",
@@ -520,7 +542,7 @@
       "stacked_price": 0,
       "best_payment_method": "N/A",
       "stacking_rate": 0,
-      "last_updated": "2026-06-07 19:39:34"
+      "last_updated": "2026-06-08 04:27:14"
     },
     {
       "store": "Raisin Uk",
@@ -544,7 +566,7 @@
       "stacked_price": 0,
       "best_payment_method": "N/A",
       "stacking_rate": 0,
-      "last_updated": "2026-06-07 19:39:34"
+      "last_updated": "2026-06-08 04:27:14"
     },
     {
       "store": "Sky",
@@ -567,7 +589,7 @@
       "stacked_price": 0,
       "best_payment_method": "N/A",
       "stacking_rate": 0,
-      "last_updated": "2026-06-07 19:39:34"
+      "last_updated": "2026-06-08 04:27:14"
     },
     {
       "store": "Community Fibre",
@@ -590,7 +612,7 @@
       "stacked_price": 0,
       "best_payment_method": "N/A",
       "stacking_rate": 0,
-      "last_updated": "2026-06-07 19:39:34"
+      "last_updated": "2026-06-08 04:27:14"
     },
     {
       "store": "Youfibre",
@@ -613,7 +635,7 @@
       "stacked_price": 0,
       "best_payment_method": "N/A",
       "stacking_rate": 0,
-      "last_updated": "2026-06-07 19:39:34"
+      "last_updated": "2026-06-08 04:27:14"
     },
     {
       "store": "Vitality",
@@ -636,7 +658,7 @@
       "stacked_price": 0,
       "best_payment_method": "N/A",
       "stacking_rate": 0,
-      "last_updated": "2026-06-07 19:39:34"
+      "last_updated": "2026-06-08 04:27:14"
     },
     {
       "store": "Tembo",
@@ -658,7 +680,7 @@
       "stacked_price": 0,
       "best_payment_method": "N/A",
       "stacking_rate": 0,
-      "last_updated": "2026-06-07 19:39:34"
+      "last_updated": "2026-06-08 04:27:14"
     },
     {
       "store": "Aj Bell",
@@ -680,7 +702,7 @@
       "stacked_price": 0,
       "best_payment_method": "N/A",
       "stacking_rate": 0,
-      "last_updated": "2026-06-07 19:39:34"
+      "last_updated": "2026-06-08 04:27:14"
     },
     {
       "store": "Etoro",
@@ -702,7 +724,7 @@
       "stacked_price": 0,
       "best_payment_method": "N/A",
       "stacking_rate": 0,
-      "last_updated": "2026-06-07 19:39:34"
+      "last_updated": "2026-06-08 04:27:14"
     },
     {
       "store": "Plum",
@@ -723,7 +745,7 @@
       "stacked_price": 0,
       "best_payment_method": "N/A",
       "stacking_rate": 0,
-      "last_updated": "2026-06-07 19:39:34"
+      "last_updated": "2026-06-08 04:27:14"
     },
     {
       "store": "Tide",
@@ -744,7 +766,29 @@
       "stacked_price": 0,
       "best_payment_method": "N/A",
       "stacking_rate": 0,
-      "last_updated": "2026-06-07 19:39:34"
+      "last_updated": "2026-06-08 04:27:14"
+    },
+    {
+      "store": "Green Chef",
+      "item": "39 Green Chef Food and Drink Sign Up Bonus 40% off first box + 25% off next 4 bo",
+      "deal_price": "£59",
+      "link": "https://scrimpr.co.uk/offers/green-chef/",
+      "original_price": "£0",
+      "saving_percent": 100,
+      "type": "scrimpr",
+      "category": "supermarket",
+      "code": "",
+      "steps": [
+        "Read the full offer on Scrimpr",
+        "Follow the referral link",
+        "Complete required steps"
+      ],
+      "timeFrame": "Check page",
+      "source": "Scrimpr",
+      "last_updated": "2026-06-08 04:27:14",
+      "stacked_price": 0,
+      "best_payment_method": "N/A",
+      "stacking_rate": 0
     },
     {
       "store": "Chase Uk",
@@ -765,7 +809,7 @@
       "stacked_price": 0,
       "best_payment_method": "N/A",
       "stacking_rate": 0,
-      "last_updated": "2026-06-07 19:39:34"
+      "last_updated": "2026-06-08 04:27:14"
     },
     {
       "store": "Webull",
@@ -786,7 +830,7 @@
       "stacked_price": 0,
       "best_payment_method": "N/A",
       "stacking_rate": 0,
-      "last_updated": "2026-06-07 19:39:34"
+      "last_updated": "2026-06-08 04:27:14"
     },
     {
       "store": "Wealthify",
@@ -807,7 +851,7 @@
       "stacked_price": 0,
       "best_payment_method": "N/A",
       "stacking_rate": 0,
-      "last_updated": "2026-06-07 19:39:34"
+      "last_updated": "2026-06-08 04:27:14"
     },
     {
       "store": "Octopus Energy",
@@ -828,7 +872,7 @@
       "stacked_price": 0,
       "best_payment_method": "N/A",
       "stacking_rate": 0,
-      "last_updated": "2026-06-07 19:39:34"
+      "last_updated": "2026-06-08 04:27:14"
     },
     {
       "store": "Pensionbee",
@@ -848,7 +892,7 @@
       "stacked_price": 0,
       "best_payment_method": "N/A",
       "stacking_rate": 0,
-      "last_updated": "2026-06-07 19:39:34"
+      "last_updated": "2026-06-08 04:27:14"
     },
     {
       "store": "Pensionbee",
@@ -871,7 +915,7 @@
       "stacked_price": 0,
       "best_payment_method": "N/A",
       "stacking_rate": 0,
-      "last_updated": "2026-06-07 19:39:34"
+      "last_updated": "2026-06-08 04:27:14"
     },
     {
       "store": "Nutmeg",
@@ -894,7 +938,7 @@
       "stacked_price": 0,
       "best_payment_method": "N/A",
       "stacking_rate": 0,
-      "last_updated": "2026-06-07 19:39:34"
+      "last_updated": "2026-06-08 04:27:14"
     },
     {
       "store": "Edf Energy",
@@ -917,7 +961,7 @@
       "stacked_price": 0,
       "best_payment_method": "N/A",
       "stacking_rate": 0,
-      "last_updated": "2026-06-07 19:39:34"
+      "last_updated": "2026-06-08 04:27:14"
     },
     {
       "store": "Eon Next",
@@ -940,7 +984,7 @@
       "stacked_price": 0,
       "best_payment_method": "N/A",
       "stacking_rate": 0,
-      "last_updated": "2026-06-07 19:39:34"
+      "last_updated": "2026-06-08 04:27:14"
     },
     {
       "store": "Good Energy",
@@ -963,7 +1007,7 @@
       "stacked_price": 0,
       "best_payment_method": "N/A",
       "stacking_rate": 0,
-      "last_updated": "2026-06-07 19:39:34"
+      "last_updated": "2026-06-08 04:27:14"
     },
     {
       "store": "So Energy",
@@ -986,7 +1030,7 @@
       "stacked_price": 0,
       "best_payment_method": "N/A",
       "stacking_rate": 0,
-      "last_updated": "2026-06-07 19:39:34"
+      "last_updated": "2026-06-08 04:27:14"
     },
     {
       "store": "Virgin Media",
@@ -1009,7 +1053,7 @@
       "stacked_price": 0,
       "best_payment_method": "N/A",
       "stacking_rate": 0,
-      "last_updated": "2026-06-07 19:39:34"
+      "last_updated": "2026-06-08 04:27:14"
     },
     {
       "store": "Talktalk",
@@ -1032,7 +1076,7 @@
       "stacked_price": 0,
       "best_payment_method": "N/A",
       "stacking_rate": 0,
-      "last_updated": "2026-06-07 19:39:34"
+      "last_updated": "2026-06-08 04:27:14"
     },
     {
       "store": "Hyperoptic",
@@ -1055,7 +1099,73 @@
       "stacked_price": 0,
       "best_payment_method": "N/A",
       "stacking_rate": 0,
-      "last_updated": "2026-06-07 19:39:34"
+      "last_updated": "2026-06-08 04:27:14"
+    },
+    {
+      "store": "Google Store",
+      "item": "14 Google Store Shopping Sign Up Bonus 10% off a Pixel phone discount View on Go",
+      "deal_price": "£50",
+      "link": "https://scrimpr.co.uk/offers/google-pixel-referral/",
+      "original_price": "£0",
+      "saving_percent": 100,
+      "type": "scrimpr",
+      "category": "other",
+      "code": "",
+      "steps": [
+        "Read the full offer on Scrimpr",
+        "Follow the referral link",
+        "Complete required steps"
+      ],
+      "timeFrame": "Check page",
+      "source": "Scrimpr",
+      "last_updated": "2026-06-08 04:27:14",
+      "stacked_price": 0,
+      "best_payment_method": "N/A",
+      "stacking_rate": 0
+    },
+    {
+      "store": "Motorway",
+      "item": "21 Motorway Other Sign Up Bonus £50 gift card View on Motorway* More details Sig",
+      "deal_price": "£50",
+      "link": "https://scrimpr.co.uk/offers/motorway/",
+      "original_price": "£0",
+      "saving_percent": 100,
+      "type": "scrimpr",
+      "category": "other",
+      "code": "",
+      "steps": [
+        "Read the full offer on Scrimpr",
+        "Follow the referral link",
+        "Complete required steps"
+      ],
+      "timeFrame": "Check page",
+      "source": "Scrimpr",
+      "last_updated": "2026-06-08 04:27:14",
+      "stacked_price": 0,
+      "best_payment_method": "N/A",
+      "stacking_rate": 0
+    },
+    {
+      "store": "Simmer",
+      "item": "46 Simmer Food and Drink Sign Up Bonus 50% off your first box discount View on S",
+      "deal_price": "£50",
+      "link": "https://scrimpr.co.uk/offers/simmer/",
+      "original_price": "£0",
+      "saving_percent": 100,
+      "type": "scrimpr",
+      "category": "supermarket",
+      "code": "",
+      "steps": [
+        "Read the full offer on Scrimpr",
+        "Follow the referral link",
+        "Complete required steps"
+      ],
+      "timeFrame": "Check page",
+      "source": "Scrimpr",
+      "last_updated": "2026-06-08 04:27:14",
+      "stacked_price": 0,
+      "best_payment_method": "N/A",
+      "stacking_rate": 0
     },
     {
       "store": "Three Mobile",
@@ -1078,7 +1188,29 @@
       "stacked_price": 0,
       "best_payment_method": "N/A",
       "stacking_rate": 0,
-      "last_updated": "2026-06-07 19:39:34"
+      "last_updated": "2026-06-08 04:27:14"
+    },
+    {
+      "store": "Ig Invest",
+      "item": "Featured 1 IG Invest Investing Sign Up Bonus £40-£300 welcome bonus View on IG I",
+      "deal_price": "£40",
+      "link": "https://scrimpr.co.uk/partner-offers/ig-invest-free-shares/",
+      "original_price": "£0",
+      "saving_percent": 100,
+      "type": "scrimpr",
+      "category": "invest",
+      "code": "",
+      "steps": [
+        "Read the full offer on Scrimpr",
+        "Follow the referral link",
+        "Complete required steps"
+      ],
+      "timeFrame": "Check page",
+      "source": "Scrimpr",
+      "last_updated": "2026-06-08 04:27:14",
+      "stacked_price": 0,
+      "best_payment_method": "N/A",
+      "stacking_rate": 0
     },
     {
       "store": "Airbnb",
@@ -1101,7 +1233,7 @@
       "stacked_price": 0,
       "best_payment_method": "N/A",
       "stacking_rate": 0,
-      "last_updated": "2026-06-07 19:39:34"
+      "last_updated": "2026-06-08 04:27:14"
     },
     {
       "store": "Rakuten",
@@ -1122,7 +1254,7 @@
       "stacked_price": 0,
       "best_payment_method": "N/A",
       "stacking_rate": 0,
-      "last_updated": "2026-06-07 19:39:34"
+      "last_updated": "2026-06-08 04:27:14"
     },
     {
       "store": "O2",
@@ -1145,7 +1277,7 @@
       "stacked_price": 0,
       "best_payment_method": "N/A",
       "stacking_rate": 0,
-      "last_updated": "2026-06-07 19:39:34"
+      "last_updated": "2026-06-08 04:27:14"
     },
     {
       "store": "Vodafone",
@@ -1168,7 +1300,7 @@
       "stacked_price": 0,
       "best_payment_method": "N/A",
       "stacking_rate": 0,
-      "last_updated": "2026-06-07 19:39:34"
+      "last_updated": "2026-06-08 04:27:14"
     },
     {
       "store": "Gousto",
@@ -1192,7 +1324,7 @@
       "stacked_price": 0,
       "best_payment_method": "N/A",
       "stacking_rate": 0,
-      "last_updated": "2026-06-07 19:39:34"
+      "last_updated": "2026-06-08 04:27:14"
     },
     {
       "store": "Expedia",
@@ -1215,7 +1347,7 @@
       "stacked_price": 0,
       "best_payment_method": "N/A",
       "stacking_rate": 0,
-      "last_updated": "2026-06-07 19:39:34"
+      "last_updated": "2026-06-08 04:27:14"
     },
     {
       "store": "Penfold",
@@ -1237,7 +1369,7 @@
       "stacked_price": 0,
       "best_payment_method": "N/A",
       "stacking_rate": 0,
-      "last_updated": "2026-06-07 19:39:34"
+      "last_updated": "2026-06-08 04:27:14"
     },
     {
       "store": "Xe Money Transfer",
@@ -1259,7 +1391,7 @@
       "stacked_price": 0,
       "best_payment_method": "N/A",
       "stacking_rate": 0,
-      "last_updated": "2026-06-07 19:39:34"
+      "last_updated": "2026-06-08 04:27:14"
     },
     {
       "store": "Tell-a-friend Referral - £25 Cashback &",
@@ -1277,7 +1409,7 @@
       ],
       "timeFrame": "Check post",
       "source": "HotUKDeals",
-      "last_updated": "2026-06-07 19:39:34",
+      "last_updated": "2026-06-08 04:27:14",
       "category": "investment",
       "stacked_price": 0,
       "best_payment_method": "N/A",
@@ -1302,7 +1434,7 @@
       "stacked_price": 0,
       "best_payment_method": "N/A",
       "stacking_rate": 0,
-      "last_updated": "2026-06-07 19:39:34"
+      "last_updated": "2026-06-08 04:27:14"
     },
     {
       "store": "Quidco",
@@ -1323,7 +1455,7 @@
       "stacked_price": 0,
       "best_payment_method": "N/A",
       "stacking_rate": 0,
-      "last_updated": "2026-06-07 19:39:34"
+      "last_updated": "2026-06-08 04:27:14"
     },
     {
       "store": "Voxi",
@@ -1346,7 +1478,7 @@
       "stacked_price": 0,
       "best_payment_method": "N/A",
       "stacking_rate": 0,
-      "last_updated": "2026-06-07 19:39:34"
+      "last_updated": "2026-06-08 04:27:14"
     },
     {
       "store": "Tesco Mobile",
@@ -1369,7 +1501,7 @@
       "stacked_price": 0,
       "best_payment_method": "N/A",
       "stacking_rate": 0,
-      "last_updated": "2026-06-07 19:39:34"
+      "last_updated": "2026-06-08 04:27:14"
     },
     {
       "store": "Hello Fresh",
@@ -1393,7 +1525,7 @@
       "stacked_price": 0,
       "best_payment_method": "N/A",
       "stacking_rate": 0,
-      "last_updated": "2026-06-07 19:39:34"
+      "last_updated": "2026-06-08 04:27:14"
     },
     {
       "store": "Gohenry",
@@ -1416,7 +1548,73 @@
       "stacked_price": 0,
       "best_payment_method": "N/A",
       "stacking_rate": 0,
-      "last_updated": "2026-06-07 19:39:34"
+      "last_updated": "2026-06-08 04:27:14"
+    },
+    {
+      "store": "Park Christmas",
+      "item": "19 Park Christmas Finance Sign Up Bonus £20 cash bonus View on Park Christmas* M",
+      "deal_price": "£20",
+      "link": "https://scrimpr.co.uk/offers/park-christmas/",
+      "original_price": "£0",
+      "saving_percent": 100,
+      "type": "scrimpr",
+      "category": "other",
+      "code": "",
+      "steps": [
+        "Read the full offer on Scrimpr",
+        "Follow the referral link",
+        "Complete required steps"
+      ],
+      "timeFrame": "Check page",
+      "source": "Scrimpr",
+      "last_updated": "2026-06-08 04:27:14",
+      "stacked_price": 0,
+      "best_payment_method": "N/A",
+      "stacking_rate": 0
+    },
+    {
+      "store": "Eufy",
+      "item": "23 eufy Shopping Sign Up Bonus Up to £30 off (welcome code stack) discount View ",
+      "deal_price": "£20",
+      "link": "https://scrimpr.co.uk/offers/eufy/",
+      "original_price": "£0",
+      "saving_percent": 100,
+      "type": "scrimpr",
+      "category": "other",
+      "code": "",
+      "steps": [
+        "Read the full offer on Scrimpr",
+        "Follow the referral link",
+        "Complete required steps"
+      ],
+      "timeFrame": "Check page",
+      "source": "Scrimpr",
+      "last_updated": "2026-06-08 04:27:14",
+      "stacked_price": 0,
+      "best_payment_method": "N/A",
+      "stacking_rate": 0
+    },
+    {
+      "store": "Amazon Baby Wishlist",
+      "item": "50 Amazon Baby Wishlist Shopping Sign Up Bonus Free welcome gift + 15% off wishl",
+      "deal_price": "£20",
+      "link": "https://scrimpr.co.uk/offers/amazon-baby-wishlist/",
+      "original_price": "£0",
+      "saving_percent": 100,
+      "type": "scrimpr",
+      "category": "other",
+      "code": "",
+      "steps": [
+        "Read the full offer on Scrimpr",
+        "Follow the referral link",
+        "Complete required steps"
+      ],
+      "timeFrame": "Check page",
+      "source": "Scrimpr",
+      "last_updated": "2026-06-08 04:27:14",
+      "stacked_price": 0,
+      "best_payment_method": "N/A",
+      "stacking_rate": 0
     },
     {
       "store": "Currensea",
@@ -1440,7 +1638,7 @@
       "stacked_price": 0,
       "best_payment_method": "N/A",
       "stacking_rate": 0,
-      "last_updated": "2026-06-07 19:39:34"
+      "last_updated": "2026-06-08 04:27:14"
     },
     {
       "store": "Yougov",
@@ -1464,7 +1662,7 @@
       "stacked_price": 0,
       "best_payment_method": "N/A",
       "stacking_rate": 0,
-      "last_updated": "2026-06-07 19:39:34"
+      "last_updated": "2026-06-08 04:27:14"
     },
     {
       "store": "Freetrade",
@@ -1484,7 +1682,7 @@
       "stacked_price": 0,
       "best_payment_method": "N/A",
       "stacking_rate": 0,
-      "last_updated": "2026-06-07 19:39:34"
+      "last_updated": "2026-06-08 04:27:14"
     },
     {
       "store": "Robinhood",
@@ -1504,7 +1702,7 @@
       "stacked_price": 0,
       "best_payment_method": "N/A",
       "stacking_rate": 0,
-      "last_updated": "2026-06-07 19:39:34"
+      "last_updated": "2026-06-08 04:27:14"
     },
     {
       "store": "Topcashback",
@@ -1524,7 +1722,7 @@
       "stacked_price": 0,
       "best_payment_method": "N/A",
       "stacking_rate": 0,
-      "last_updated": "2026-06-07 19:39:34"
+      "last_updated": "2026-06-08 04:27:14"
     },
     {
       "store": "Zopa (biscuit)",
@@ -1544,7 +1742,7 @@
       "stacked_price": 0,
       "best_payment_method": "N/A",
       "stacking_rate": 0,
-      "last_updated": "2026-06-07 19:39:34"
+      "last_updated": "2026-06-08 04:27:14"
     },
     {
       "store": "Starling Bank",
@@ -1567,7 +1765,7 @@
       "stacked_price": 0,
       "best_payment_method": "N/A",
       "stacking_rate": 0,
-      "last_updated": "2026-06-07 19:39:34"
+      "last_updated": "2026-06-08 04:27:14"
     },
     {
       "store": "Cashback.co.uk",
@@ -1590,7 +1788,7 @@
       "stacked_price": 0,
       "best_payment_method": "N/A",
       "stacking_rate": 0,
-      "last_updated": "2026-06-07 19:39:34"
+      "last_updated": "2026-06-08 04:27:14"
     },
     {
       "store": "Measure (msr)",
@@ -1614,7 +1812,7 @@
       "stacked_price": 0,
       "best_payment_method": "N/A",
       "stacking_rate": 0,
-      "last_updated": "2026-06-07 19:39:34"
+      "last_updated": "2026-06-08 04:27:14"
     },
     {
       "store": "Ribbon",
@@ -1637,7 +1835,7 @@
       "stacked_price": 0,
       "best_payment_method": "N/A",
       "stacking_rate": 0,
-      "last_updated": "2026-06-07 19:39:34"
+      "last_updated": "2026-06-08 04:27:14"
     },
     {
       "store": "Uber Eats",
@@ -1660,7 +1858,7 @@
       "stacked_price": 0,
       "best_payment_method": "N/A",
       "stacking_rate": 0,
-      "last_updated": "2026-06-07 19:39:34"
+      "last_updated": "2026-06-08 04:27:14"
     },
     {
       "store": "Deliveroo",
@@ -1683,7 +1881,7 @@
       "stacked_price": 0,
       "best_payment_method": "N/A",
       "stacking_rate": 0,
-      "last_updated": "2026-06-07 19:39:34"
+      "last_updated": "2026-06-08 04:27:14"
     },
     {
       "store": "Remitly",
@@ -1706,7 +1904,7 @@
       "stacked_price": 0,
       "best_payment_method": "N/A",
       "stacking_rate": 0,
-      "last_updated": "2026-06-07 19:39:34"
+      "last_updated": "2026-06-08 04:27:14"
     },
     {
       "store": "Worldremit",
@@ -1729,7 +1927,7 @@
       "stacked_price": 0,
       "best_payment_method": "N/A",
       "stacking_rate": 0,
-      "last_updated": "2026-06-07 19:39:34"
+      "last_updated": "2026-06-08 04:27:14"
     },
     {
       "store": "Rooster Money",
@@ -1752,7 +1950,7 @@
       "stacked_price": 0,
       "best_payment_method": "N/A",
       "stacking_rate": 0,
-      "last_updated": "2026-06-07 19:39:34"
+      "last_updated": "2026-06-08 04:27:14"
     },
     {
       "store": "Klarna",
@@ -1775,7 +1973,7 @@
       "stacked_price": 0,
       "best_payment_method": "N/A",
       "stacking_rate": 0,
-      "last_updated": "2026-06-07 19:39:34"
+      "last_updated": "2026-06-08 04:27:14"
     },
     {
       "store": "Clearpay",
@@ -1798,7 +1996,7 @@
       "stacked_price": 0,
       "best_payment_method": "N/A",
       "stacking_rate": 0,
-      "last_updated": "2026-06-07 19:39:34"
+      "last_updated": "2026-06-08 04:27:14"
     },
     {
       "store": "Yonder",
@@ -1820,7 +2018,205 @@
       "stacked_price": 0,
       "best_payment_method": "N/A",
       "stacking_rate": 0,
-      "last_updated": "2026-06-07 19:39:34"
+      "last_updated": "2026-06-08 04:27:14"
+    },
+    {
+      "store": "Earnlab",
+      "item": "Featured 7 Earnlab Cashback Sign Up Bonus 3 Mystery Boxes cash (+ cashback) View",
+      "deal_price": "£10",
+      "link": "https://scrimpr.co.uk/offers/earnlab/",
+      "original_price": "£0",
+      "saving_percent": 100,
+      "type": "scrimpr",
+      "category": "cashback",
+      "code": "",
+      "steps": [
+        "Read the full offer on Scrimpr",
+        "Follow the referral link",
+        "Complete required steps"
+      ],
+      "timeFrame": "Check page",
+      "source": "Scrimpr",
+      "last_updated": "2026-06-08 04:27:14",
+      "stacked_price": 0,
+      "best_payment_method": "N/A",
+      "stacking_rate": 0
+    },
+    {
+      "store": "User Interviews",
+      "item": "12 User Interviews Market Research Sign Up Bonus $10 cash bonus View on User Int",
+      "deal_price": "£10",
+      "link": "https://scrimpr.co.uk/offers/user-interviews/",
+      "original_price": "£0",
+      "saving_percent": 100,
+      "type": "scrimpr",
+      "category": "other",
+      "code": "",
+      "steps": [
+        "Read the full offer on Scrimpr",
+        "Follow the referral link",
+        "Complete required steps"
+      ],
+      "timeFrame": "Check page",
+      "source": "Scrimpr",
+      "last_updated": "2026-06-08 04:27:14",
+      "stacked_price": 0,
+      "best_payment_method": "N/A",
+      "stacking_rate": 0
+    },
+    {
+      "store": "Attraction Tickets",
+      "item": "13 Attraction Tickets Travel Sign Up Bonus £10 gift card View on Attraction Tick",
+      "deal_price": "£10",
+      "link": "https://scrimpr.co.uk/offers/attraction-tickets/",
+      "original_price": "£0",
+      "saving_percent": 100,
+      "type": "scrimpr",
+      "category": "travel",
+      "code": "",
+      "steps": [
+        "Read the full offer on Scrimpr",
+        "Follow the referral link",
+        "Complete required steps"
+      ],
+      "timeFrame": "Check page",
+      "source": "Scrimpr",
+      "last_updated": "2026-06-08 04:27:14",
+      "stacked_price": 0,
+      "best_payment_method": "N/A",
+      "stacking_rate": 0
+    },
+    {
+      "store": "Skrill",
+      "item": "24 Skrill Money Transfer FCA: 900001 Sign Up Bonus £10 transfer credit discount ",
+      "deal_price": "£10",
+      "link": "https://scrimpr.co.uk/offers/skrill/",
+      "original_price": "£0",
+      "saving_percent": 100,
+      "type": "scrimpr",
+      "category": "other",
+      "code": "",
+      "steps": [
+        "Read the full offer on Scrimpr",
+        "Follow the referral link",
+        "Complete required steps"
+      ],
+      "timeFrame": "Check page",
+      "source": "Scrimpr",
+      "last_updated": "2026-06-08 04:27:14",
+      "stacked_price": 0,
+      "best_payment_method": "N/A",
+      "stacking_rate": 0
+    },
+    {
+      "store": "Sprive",
+      "item": "28 Sprive Cashback Sign Up Bonus Cashback rate boost cashback boost (+ cashback)",
+      "deal_price": "£10",
+      "link": "https://scrimpr.co.uk/offers/sprive/",
+      "original_price": "£0",
+      "saving_percent": 100,
+      "type": "scrimpr",
+      "category": "cashback",
+      "code": "",
+      "steps": [
+        "Read the full offer on Scrimpr",
+        "Follow the referral link",
+        "Complete required steps"
+      ],
+      "timeFrame": "Check page",
+      "source": "Scrimpr",
+      "last_updated": "2026-06-08 04:27:14",
+      "stacked_price": 0,
+      "best_payment_method": "N/A",
+      "stacking_rate": 0
+    },
+    {
+      "store": "Soundcore",
+      "item": "30 soundcore Shopping Sign Up Bonus 10% off selected products discount View on s",
+      "deal_price": "£10",
+      "link": "https://scrimpr.co.uk/offers/soundcore/",
+      "original_price": "£0",
+      "saving_percent": 100,
+      "type": "scrimpr",
+      "category": "other",
+      "code": "",
+      "steps": [
+        "Read the full offer on Scrimpr",
+        "Follow the referral link",
+        "Complete required steps"
+      ],
+      "timeFrame": "Check page",
+      "source": "Scrimpr",
+      "last_updated": "2026-06-08 04:27:14",
+      "stacked_price": 0,
+      "best_payment_method": "N/A",
+      "stacking_rate": 0
+    },
+    {
+      "store": "Lemfi",
+      "item": "31 LemFi Money Transfer FCA: 900424 Sign Up Bonus £10 cash bonus View on LemFi* ",
+      "deal_price": "£10",
+      "link": "https://scrimpr.co.uk/offers/lemfi/",
+      "original_price": "£0",
+      "saving_percent": 100,
+      "type": "scrimpr",
+      "category": "other",
+      "code": "",
+      "steps": [
+        "Read the full offer on Scrimpr",
+        "Follow the referral link",
+        "Complete required steps"
+      ],
+      "timeFrame": "Check page",
+      "source": "Scrimpr",
+      "last_updated": "2026-06-08 04:27:14",
+      "stacked_price": 0,
+      "best_payment_method": "N/A",
+      "stacking_rate": 0
+    },
+    {
+      "store": "Anker Solix",
+      "item": "37 Anker SOLIX Shopping Sign Up Bonus 10% off first power station discount View ",
+      "deal_price": "£10",
+      "link": "https://scrimpr.co.uk/offers/anker-solix/",
+      "original_price": "£0",
+      "saving_percent": 100,
+      "type": "scrimpr",
+      "category": "other",
+      "code": "",
+      "steps": [
+        "Read the full offer on Scrimpr",
+        "Follow the referral link",
+        "Complete required steps"
+      ],
+      "timeFrame": "Check page",
+      "source": "Scrimpr",
+      "last_updated": "2026-06-08 04:27:14",
+      "stacked_price": 0,
+      "best_payment_method": "N/A",
+      "stacking_rate": 0
+    },
+    {
+      "store": "Anker",
+      "item": "44 Anker Shopping Sign Up Bonus Up to 10% off first order discount View on Anker",
+      "deal_price": "£10",
+      "link": "https://scrimpr.co.uk/offers/anker/",
+      "original_price": "£0",
+      "saving_percent": 100,
+      "type": "scrimpr",
+      "category": "other",
+      "code": "",
+      "steps": [
+        "Read the full offer on Scrimpr",
+        "Follow the referral link",
+        "Complete required steps"
+      ],
+      "timeFrame": "Check page",
+      "source": "Scrimpr",
+      "last_updated": "2026-06-08 04:27:14",
+      "stacked_price": 0,
+      "best_payment_method": "N/A",
+      "stacking_rate": 0
     },
     {
       "store": "Monzo",
@@ -1841,7 +2237,7 @@
       "stacked_price": 0,
       "best_payment_method": "N/A",
       "stacking_rate": 0,
-      "last_updated": "2026-06-07 19:39:34"
+      "last_updated": "2026-06-08 04:27:14"
     },
     {
       "store": "Zilch",
@@ -1861,7 +2257,7 @@
       "stacked_price": 0,
       "best_payment_method": "N/A",
       "stacking_rate": 0,
-      "last_updated": "2026-06-07 19:39:34"
+      "last_updated": "2026-06-08 04:27:14"
     },
     {
       "store": "Monzo",
@@ -1884,7 +2280,7 @@
       "stacked_price": 0,
       "best_payment_method": "N/A",
       "stacking_rate": 0,
-      "last_updated": "2026-06-07 19:39:34"
+      "last_updated": "2026-06-08 04:27:14"
     },
     {
       "store": "Giffgaff",
@@ -1907,7 +2303,7 @@
       "stacked_price": 0,
       "best_payment_method": "N/A",
       "stacking_rate": 0,
-      "last_updated": "2026-06-07 19:39:34"
+      "last_updated": "2026-06-08 04:27:14"
     },
     {
       "store": "In-poll",
@@ -1930,7 +2326,51 @@
       "stacked_price": 0,
       "best_payment_method": "N/A",
       "stacking_rate": 0,
-      "last_updated": "2026-06-07 19:39:34"
+      "last_updated": "2026-06-08 04:27:14"
+    },
+    {
+      "store": "Voi",
+      "item": "29 Voi Travel Sign Up Bonus £5 Voi credit instantly on signup cash bonus View on",
+      "deal_price": "£5",
+      "link": "https://scrimpr.co.uk/offers/voi/",
+      "original_price": "£0",
+      "saving_percent": 100,
+      "type": "scrimpr",
+      "category": "travel",
+      "code": "",
+      "steps": [
+        "Read the full offer on Scrimpr",
+        "Follow the referral link",
+        "Complete required steps"
+      ],
+      "timeFrame": "Check page",
+      "source": "Scrimpr",
+      "last_updated": "2026-06-08 04:27:14",
+      "stacked_price": 0,
+      "best_payment_method": "N/A",
+      "stacking_rate": 0
+    },
+    {
+      "store": "Taptap Send",
+      "item": "45 TapTap Send Money Transfer Sign Up Bonus £5 cash bonus View on TapTap Send* M",
+      "deal_price": "£5",
+      "link": "https://scrimpr.co.uk/offers/taptap-send/",
+      "original_price": "£0",
+      "saving_percent": 100,
+      "type": "scrimpr",
+      "category": "other",
+      "code": "",
+      "steps": [
+        "Read the full offer on Scrimpr",
+        "Follow the referral link",
+        "Complete required steps"
+      ],
+      "timeFrame": "Check page",
+      "source": "Scrimpr",
+      "last_updated": "2026-06-08 04:27:14",
+      "stacked_price": 0,
+      "best_payment_method": "N/A",
+      "stacking_rate": 0
     },
     {
       "store": "Caffe Nero",
@@ -1954,7 +2394,7 @@
       "stacked_price": 0,
       "best_payment_method": "N/A",
       "stacking_rate": 0,
-      "last_updated": "2026-06-07 19:39:34"
+      "last_updated": "2026-06-08 04:27:14"
     },
     {
       "store": "Cheddar",
@@ -1974,7 +2414,7 @@
       "stacked_price": 0,
       "best_payment_method": "N/A",
       "stacking_rate": 0,
-      "last_updated": "2026-06-07 19:39:34"
+      "last_updated": "2026-06-08 04:27:14"
     },
     {
       "store": "Jam Doughnut",
@@ -1994,7 +2434,7 @@
       "stacked_price": 0,
       "best_payment_method": "N/A",
       "stacking_rate": 0,
-      "last_updated": "2026-06-07 19:39:34"
+      "last_updated": "2026-06-08 04:27:14"
     },
     {
       "store": "Trainpal",
@@ -2015,7 +2455,7 @@
       "stacked_price": 0,
       "best_payment_method": "N/A",
       "stacking_rate": 0,
-      "last_updated": "2026-06-07 19:39:34"
+      "last_updated": "2026-06-08 04:27:14"
     },
     {
       "store": "Airtime",
@@ -2036,7 +2476,7 @@
       "stacked_price": 0,
       "best_payment_method": "N/A",
       "stacking_rate": 0,
-      "last_updated": "2026-06-07 19:39:34"
+      "last_updated": "2026-06-08 04:27:14"
     },
     {
       "store": "Everup",
@@ -2057,7 +2497,7 @@
       "stacked_price": 0,
       "best_payment_method": "N/A",
       "stacking_rate": 0,
-      "last_updated": "2026-06-07 19:39:34"
+      "last_updated": "2026-06-08 04:27:14"
     },
     {
       "store": "Custard",
@@ -2080,7 +2520,7 @@
       "stacked_price": 0,
       "best_payment_method": "N/A",
       "stacking_rate": 0,
-      "last_updated": "2026-06-07 19:39:34"
+      "last_updated": "2026-06-08 04:27:14"
     },
     {
       "store": "Moneybox",
@@ -2100,7 +2540,7 @@
       "stacked_price": 0,
       "best_payment_method": "N/A",
       "stacking_rate": 0,
-      "last_updated": "2026-06-07 19:39:34"
+      "last_updated": "2026-06-08 04:27:14"
     },
     {
       "store": "Lebara",
@@ -2120,7 +2560,7 @@
       "stacked_price": 0,
       "best_payment_method": "N/A",
       "stacking_rate": 0,
-      "last_updated": "2026-06-07 19:39:34"
+      "last_updated": "2026-06-08 04:27:14"
     },
     {
       "store": "Costa",
@@ -2140,7 +2580,7 @@
       "stacked_price": 0,
       "best_payment_method": "N/A",
       "stacking_rate": 0,
-      "last_updated": "2026-06-07 19:39:34"
+      "last_updated": "2026-06-08 04:27:14"
     },
     {
       "store": "Waitrose",
@@ -2160,7 +2600,7 @@
       "stacked_price": 0,
       "best_payment_method": "JamDoughnut (3.5%) + MyWaitrose",
       "stacking_rate": 3.5,
-      "last_updated": "2026-06-07 19:39:34"
+      "last_updated": "2026-06-08 04:27:14"
     },
     {
       "store": "Wise",
@@ -2181,7 +2621,7 @@
       "stacked_price": 0,
       "best_payment_method": "N/A",
       "stacking_rate": 0,
-      "last_updated": "2026-06-07 19:39:34"
+      "last_updated": "2026-06-08 04:27:14"
     }
   ]
 }
