@@ -15,6 +15,9 @@ on:
 jobs:
   scrape:
     runs-on: ubuntu-latest
+    permissions:
+      contents: write
+      actions: write
     
     steps:
       - name: Checkout repository
@@ -58,3 +61,9 @@ jobs:
           git add all_deals.json scrape_log.txt
           git commit -m "Auto: scrape $(date +%Y-%m-%d-%H%M)"
           git push
+
+      - name: Trigger site deploy
+        if: steps.git-check.outputs.has_changes == 'true'
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: gh workflow run deploy.yml --ref main
