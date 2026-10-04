@@ -654,7 +654,6 @@ def scrape_hotukdeals():
     import re
     deals = []
     urls = [
-        "https://www.hotukdeals.com/deals/financial",
         "https://www.hotukdeals.com/search?q=bank+switch",
         "https://www.hotukdeals.com/search?q=cashback+referral"
     ]
@@ -733,8 +732,8 @@ def scrape_megalist():
     }
     megalist_url = (
         "https://www.reddit.com/r/beermoneyuk/comments/"
-        "1rywry0/the_beermoney_megalist_march_2026_"
-        "the_big_list_of/.json"
+        "1wv3eo7/the_big_list_of_offers_shared_on_"
+        "beermoneyuk/.json"
     )
     
     # Stores already in our manual offers - skip these
@@ -760,15 +759,26 @@ def scrape_megalist():
                    for s in SKIP_STORES)
     
     try:
+        time.sleep(5)  # reddit rate limits fast
+        rss_url = megalist_url.replace("/.json", "/.rss")
         r = requests.get(
-            megalist_url, headers=headers, timeout=15)
+            rss_url, headers=headers, timeout=20)
         print(f"Megalist status: {r.status_code}")
         if r.status_code != 200:
             return []
         
-        data = r.json()
-        post = data[0]["data"]["children"][0]["data"]
-        body = post.get("selftext", "")
+        # Parse the Atom feed entry (reddit blocks .json now)
+        import xml.etree.ElementTree as ET
+        import html as html_mod
+        ns = {'a': 'http://www.w3.org/2005/Atom'}
+        root = ET.fromstring(r.content)
+        entries = root.findall('a:entry', ns)
+        if not entries:
+            print("Megalist: no entries in feed")
+            return []
+        raw_html = html_mod.unescape(
+            entries[0].findtext('a:content', '', ns))
+        body = re.sub(r'<[^>]+>', '\n', raw_html)
         
         print(f"Megalist body length: {len(body)} chars")
         
@@ -782,6 +792,28 @@ def scrape_megalist():
         
         matches = pattern.findall(body)
         print(f"Megalist raw matches: {len(matches)}")
+        
+        # October 2026 format: plain "Name" line followed by
+        # a "Sign up ... get £X" line (no markdown links)
+        if not matches:
+            lines = [l.strip() for l in body.split('\n') if l.strip()]
+            for i in range(len(lines) - 1):
+                name, desc = lines[i], lines[i + 1]
+                nl, dl = name.lower(), desc.lower()
+                if (len(name) > 45 or not name or '\u00a3' in name
+                        or nl.startswith(('http', 'section', 'note:',
+                                          'capital', 'updated', '\u00a3'))):
+                    continue
+                if ('\u00a3' not in desc or not any(w in dl for w in [
+                        'sign', 'open', 'get ', 'switch', 'refer',
+                        'save', 'invest', 'deposit', 'spend'])):
+                    continue
+                from urllib.parse import quote as _q
+                search_url = (
+                    "https://www.reddit.com/r/beermoneyuk/search/?q="
+                    + _q(name) + "&restrict_sr=1&sort=new")
+                matches.append((name, search_url, desc))
+            print(f"Megalist fallback matches: {len(matches)}")
         
         seen = set()
         
@@ -1162,9 +1194,9 @@ def run_all_scrapers() -> Dict:
     reddit_deals = []
     print("📡 Reddit random scraper disabled - using megalist")
     
-    # Scrape Google News as MSE replacement - DISABLED for MegaList integration
-    print("\n📡 Google News scraping DISABLED (using MegaList instead)...")
-    news_deals = []  # Empty list instead of scraping
+    # Scrape Google News as MSE replacement
+    print("\n📡 Scraping Google News...")
+    news_deals = scrape_google_news_deals()
     
     # Scrape HotUKDeals
     print("\n📡 Scraping HotUKDeals...")
