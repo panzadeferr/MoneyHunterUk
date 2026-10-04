@@ -1168,37 +1168,12 @@ async function handleSignup() {
   localStorage.setItem('mh_user', JSON.stringify(userData));
   localStorage.setItem('mh_username', username);
 
-  // Send to Brevo via Railway proxy (API key is handled server-side)
-  const BREVO_LIST_ID = 2;
-
-  try {
-    const response = await fetch('https://referral-hunter-bot-production.up.railway.app/subscribe', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({
-        email,
-        listIds: [BREVO_LIST_ID],
-        updateEnabled: true,
-        attributes: {
-          FIRSTNAME: firstName,
-          USERNAME: username,
-          SOURCE: 'Landing Page'
-        }
-      })
-    });
-
-    // Check response status
-    if (!response.ok) {
-      throw new Error(`HTTP ${response.status}: ${response.statusText}`);
-    }
-  } catch(e) { 
-    // Graceful degradation - continue with success UI even if API fails
-    console.log('Email subscription failed:', e.message);
-  }
-
-  // Show success and redirect to app after 3 seconds
+  // Newsletter: send the signup through the live Brevo form below instead of
+  // the retired Railway proxy (that endpoint returns 404, signups vanished).
   document.getElementById('signupForm').style.display = 'none';
   document.getElementById('formSuccess').style.display = 'block';
+  const nl = document.getElementById('newsletter');
+  if (nl) setTimeout(() => nl.scrollIntoView({ behavior: 'smooth' }), 400);
   
   // Auto-redirect to app after 3 seconds
   setTimeout(() => {

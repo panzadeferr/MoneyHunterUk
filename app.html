@@ -5738,12 +5738,9 @@
       btn.disabled = true;
 
       try {
-        // Send to Railway proxy which forwards to Brevo securely
-        await fetch('https://referral-hunter-bot-production.up.railway.app/subscribe', {
-          method: 'POST',
-          headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify({ email, source: 'Money Hunters App' })
-        });
+        // The old Railway proxy is retired (404s silently); route to the live
+        // Brevo signup form so the address actually gets subscribed.
+        window.open('https://74f208ba.sibforms.com/serve/MUIFAFatJ19YBCgL_8OC4uZ5fBePkhu7SoQvYgtr0wdDAHDh8p3INb8HL95eBukwXmcw6eSy9l21fAZ9j904cUItf6li832Ro_b8bIkYS6DRWodkrhDtEnh_e_Uby_2jvxs6ApPdjg9-KI3K69aSvIwTx7GL_JoR-9iAg5078QebcnjT28u-EKbYoAA6YamSH3UvqHQA_Nj4w9bvyw==', '_blank');
 
         // Store locally regardless
         const emails = JSON.parse(localStorage.getItem('mh_emails') || '[]');
@@ -5752,7 +5749,7 @@
 
         document.getElementById('emailForm').style.display = 'none';
         document.getElementById('emailDone').style.display = 'block';
-        toast('✓ Welcome to Money Hunters!');
+        toast('✓ Finish on the signup page to confirm');
         vibrate(50);
         state.xp += 5;
         saveState();
