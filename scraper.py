@@ -985,6 +985,15 @@ def scrape_scrimpr():
             link = link_elem['href'] if link_elem else url
             if link.startswith('/'):
                 link = 'https://scrimpr.co.uk' + link
+            # Scrimpr's own detail pages occasionally 404 while their
+            # listing still shows them; their /out/<slug> referral links
+            # stay live. Swap known-dead ones for the working referral.
+            dead_scrimpr_links = {
+                'https://scrimpr.co.uk/offers/budgey/':
+                    'https://scrimpr.co.uk/out/budgey',
+            }
+            if link in dead_scrimpr_links:
+                link = dead_scrimpr_links[link]
             
             # Get description from card text
             card_text = card.get_text(separator=' ', strip=True)
