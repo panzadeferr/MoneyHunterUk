@@ -1330,6 +1330,20 @@ def run_all_scrapers() -> Dict:
         
         deal["last_updated"] = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
     
+    # Drop expired deals so stale offers never reach users, whatever the source list says
+    today_str = datetime.now().strftime("%Y-%m-%d")
+    before_expire = len(all_deals)
+    def is_expired(deal):
+        v = deal.get("expires") or deal.get("expiry") or deal.get("end_date")
+        if not v:
+            return False
+        try:
+            return str(v)[:10] < today_str
+        except Exception:
+            return False
+    all_deals = [d for d in all_deals if not is_expired(d)]
+    print(f"Expired deals removed: {before_expire - len(all_deals)}")
+
     # Sort by stacked price (cheapest first), then by deal amount
     def get_sort_key(deal):
         # Try to extract numeric value from deal_price for sorting
