@@ -4030,6 +4030,32 @@
       { id:"complete-savings", name:"Complete Savings", action:"Join Complete Savings cashback", reward:"£15/month", amount:15, code:"", url:"https://www.completesavings.co.uk/", desc:"Monthly cashback on purchases. Often triggered automatically after an online purchase. Check terms carefully — there is a monthly subscription fee after a trial period.", badge:"💳 CASHBACK", effort:"5 min · check terms", steps:["Check if you were auto-enrolled after an online purchase","If not, sign up at completesavings.co.uk","Complete a qualifying purchase","Claim monthly cashback","Important: cancel before trial ends if you do not want to continue paying"], expectedDays:30 }
     ];
 
+    // ── OFFER REVIEW (10 Oct 2026) ─────────────────────────
+    // Facts below follow bank-switch.html, last checked 6 Oct 2026. `verified` is the date a human checked it;
+    // offers without it show no "checked" date. `end` removes the offer automatically after that day.
+    const OFFER_REVIEW = {
+      "barclays": { reward:"up to £300", amount:300, verified:"2026-10-06", badge:"⭐ NEW OFFER",
+        desc:"Up to £300 paid as £30 a month for 5 months. Needs 3 active direct debits moved, £2,000 paid in and 10 debit card payments each month. Not open if you had a Barclays current account open on or before 1 Oct 2026.",
+        steps:["Check you had no open Barclays current account on or before 1 Oct 2026","Open the account through Barclays' own switch offer page","Start a full CASS switch with 3 active direct debits","Pay in £2,000 and make 10 debit card payments each month","Bonus is paid as £30 a month for 5 months"] },
+      "first-direct": { reward:"£175 + £35", amount:210, end:"2026-12-02", verified:"2026-10-06",
+        desc:"£175 switch bonus plus £35 for accounts opened between 14 Sep and 2 Dec 2026. Not available if you have held a first direct product before.",
+        steps:["Check you have never held a first direct product","Open a 1st Account between 14 Sep and 2 Dec 2026","Start a full CASS switch","Meet the pay-in and direct debit conditions on first direct's offer page","Bonus is paid after the conditions are met"] },
+      "natwest": { reward:"£200", amount:200, verified:"2026-10-06", badge:"⏳ LIMITED TIME",
+        desc:"£200 for a full CASS switch. Not available if you have ever had a switching incentive from NatWest, RBS or Ulster Bank, or held a NatWest personal current account on 2 Sep 2026.",
+        steps:["Check you meet the exclusions on NatWest's offer page","Open the account and start a full CASS switch","Meet the pay-in and direct debit conditions","Bonus is paid after the conditions are met"] }
+    };
+    const OFFERS_ENDED = { "santander": "2026-10-07" };
+    (function applyOfferReview() {
+      const today = new Date().toISOString().slice(0, 10);
+      for (let i = offers.length - 1; i >= 0; i--) {
+        const o = offers[i];
+        const rev = OFFER_REVIEW[o.id];
+        if (rev) { Object.assign(o, rev); o.expectedDays = o.expectedDays || 30; }
+        const end = (rev && rev.end) || OFFERS_ENDED[o.id];
+        if (end && end < today) offers.splice(i, 1);
+      }
+    })();
+
     const views = ["home", "offers", "stack", "progress", "community"];
 
     const battleData = [
@@ -4704,13 +4730,7 @@
       const isFeatured = featuredOfferIds.indexOf(offer.id) > -1 && status === 'none';
 
       // Ending soon — offers known to be time-limited (update dates as needed)
-      const endingSoon = {
-        'barclays':       '2026-05-28',
-        'natwest':        '2026-06-30',
-        'first-direct':   '2026-06-30',
-        'santander':      '2026-06-30',
-      };
-      const expiryDate = endingSoon[offer.id];
+      const expiryDate = (OFFER_REVIEW[offer.id] || {}).end;
       const isEndingSoon = expiryDate && status === 'none' && new Date(expiryDate) > new Date();
       const daysLeft = isEndingSoon ? Math.ceil((new Date(expiryDate) - new Date()) / (1000*60*60*24)) : 0;
 
@@ -5213,26 +5233,6 @@
           "After that, you can move the £1,000 back to your main bank if you want"
         ]
       },
-      "first-direct": {
-        tips:["Rated best UK bank for customer service","Set up the 7% regular saver immediately after switching — one of the best rates available","24/7 customer service is great if switch issues arise"],
-        warnings:["Must not have held First Direct or HSBC previously","Must pay in £1,000 within 3 months (not 30 days like most)","Must set up at least 1 Direct Debit"],
-        steps:["Open First Direct account via the link","Use CASS to switch your existing account","Pay in £1,000 within 3 months","Set up 1 Direct Debit","Open the linked 7% regular saver","Receive £175 bonus within 28 days"]
-      },
-      "natwest": {
-        tips:["Open the 7% regular saver immediately after switch completes","Bonus usually paid within 10 working days","NatWest and Royal Bank of Scotland are the same group — check both"],
-        warnings:["Must not have held NatWest or Royal Bank of Scotland before","Must have 2 active Direct Debits — standing orders do not count"],
-        steps:["Open NatWest account via the link","Use CASS to switch your existing account","Set up 2 Direct Debits","Open the 7% regular saver","Receive £150 bonus within 10 working days"]
-      },
-      "santander": {
-        tips:["Santander Edge gives 1% cashback on selected bills — useful ongoing","Do Barclays first then switch to Santander next for maximum value"],
-        warnings:["Must switch to Santander Edge specifically — other accounts do not qualify","Must set up 2 Direct Debits within 90 days"],
-        steps:["Open Santander Edge account","Use CASS to switch your existing account","Set up 2 Direct Debits within 90 days","Receive £200 bonus"]
-      },
-      "barclays": {
-        tips:["Hard deadline of 28 May 2026 — do not delay","Pay in the £2,000 as soon as possible after opening"],
-        warnings:["Must NOT have held Barclays since 10 March 2026","Offer ends 28 May 2026 — hard deadline","Must pay in £2,000 AND 2 Direct Debits"],
-        steps:["Confirm no Barclays account since 10 March 2026","Open Barclays account via the link","Use CASS to switch","Pay in £2,000","Set up 2 Direct Debits","Receive £175 bonus"]
-      },
       "freetrade": {
         tips:[
           "You only need to deposit £1 — that is literally it. You can withdraw it straight after if you want",
@@ -5414,6 +5414,7 @@
         <span class="pill badge">${offer.badge || ""}</span>
         ${offer.effort ? `<span class="pill" style="margin-left:4px">${offer.effort}</span>` : ""}
         <p style="margin:9px 0 0;color:var(--muted);font-size:11px;line-height:1.45">${offer.desc}</p>
+        <p style="margin:7px 0 0;font-size:10px;color:var(--muted2)"><strong>Ad</strong> · referral link, we may earn a commission. ${offer.verified ? 'Last checked ' + new Date(offer.verified).toLocaleDateString('en-GB',{day:'numeric',month:'short',year:'numeric'}) + '.' : 'Not yet checked by us: confirm terms on the provider page.'}</p>
       </div>`;
 
       // Code
@@ -5518,7 +5519,7 @@
         const btnText = offer.code ? `📋 Copy Code & Claim →` : `🎯 Claim Offer →`;
         footer.innerHTML = `<button class="panel-claim ${isAmber?'amber':''}" onclick="panelClaim()">
           ${offer.code ? '📋 Copy Code & ' : ''}Open ${offer.name} ↗
-          <span style="font-size:10px;opacity:.6;display:block;margin-top:2px;font-weight:400">Opens in new tab</span>
+          <span style="font-size:10px;opacity:.6;display:block;margin-top:2px;font-weight:400">Ad · opens in new tab</span>
         </button>`;
       } else {
         footer.innerHTML = `<button class="panel-claim" style="background:var(--bg3);color:var(--muted2);cursor:default">⏸️ Paused — Check Back Soon</button>`;
@@ -6239,7 +6240,6 @@ function initTheme() {
     // ══════════════════════════════════════════════
 
     const RAFFLE_ENABLED = false; // flip true when ready to launch
-    const ADMIN_SECRET = 'mh_admin_2026'; // secret URL param
     const ADMIN_EMAIL = 'hello@moneyhunters.co.uk'; // your email
 
     // ── BADGES DEFINITION ──────────────────────────
@@ -6461,7 +6461,7 @@ function initTheme() {
     // ── ADMIN PANEL ────────────────────────────────
     function checkAdminAccess() {
       const params = new URLSearchParams(window.location.search);
-      if (params.get('admin') !== ADMIN_SECRET) return;
+      // Cosmetic gate only. Real protection must be Supabase row-level security.
       if (!currentUser || currentUser.email !== ADMIN_EMAIL) return;
       document.getElementById('adminPanel').classList.add('visible');
     }
@@ -6947,7 +6947,10 @@ function initTheme() {
         html += '</div>';
       }
 
-      // 4. View Full Guide button
+      // 4. Ad label
+      html += '<div style="margin-top:8px;font-size:10px;opacity:.7"><strong>Ad</strong> · referral link, we may earn a commission' + (offer.verified ? ' · checked ' + new Date(offer.verified).toLocaleDateString('en-GB',{day:'numeric',month:'short'}) : '') + '</div>';
+
+      // 5. View Full Guide button
       html += '<button class="offer-card-claim" style="margin-top:10px" data-open-id="' + offer.id + '" onclick="event.stopPropagation();openOfferById(this.dataset.openId)">';
       html += '🎯 View Full Guide & Claim →</button>';
       return html;
@@ -7461,6 +7464,7 @@ function initTheme() {
           const s = (d.store || '').toLowerCase();
           const t = (d.type || '').toLowerCase();
           if (supermarkets.some(x => s.includes(x))) return false;
+          if (d.expires && String(d.expires).slice(0,10) < new Date().toISOString().slice(0,10)) return false;
           return ['scraped_reddit','scraped_mse','scraped_news',
                   'scraped_hotukdeals','megalist','scrimpr',
                   'bank_switch','invest','cashback','referral',
@@ -7491,6 +7495,7 @@ function initTheme() {
           effort: 'Check source for details',
           desc: (d.item || d.store || '').slice(0,120),
           code: d.code || '',
+          verified: d.last_verified || '',
           url: d.link || '#',
           steps: d.steps || ['Read offer details','Follow link to claim'],
           expectedDays: 30,

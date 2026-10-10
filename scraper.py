@@ -161,17 +161,31 @@ def is_real_offer(deal):
 # 30+ MANUAL OFFERS (Bank Switches, Referrals, Cashback)
 # ============================================
 
+def load_verified() -> Dict:
+    try:
+        with open(os.path.join(os.path.dirname(os.path.abspath(__file__)), "verified.json"), encoding="utf-8") as f:
+            return {k.lower(): v for k, v in json.load(f).items() if not k.startswith("_")}
+    except Exception as e:
+        print(f"verified.json not loaded: {e}")
+        return {}
+
+
+VERIFIED = load_verified()
+
+
 def get_manual_offers() -> List[Dict]:
     """All your original BeermoneyUK offers"""
     return [
         # BANK SWITCH OFFERS
-        {"store": "Lloyds Bank", "item": "Open Account + Switch", "deal_price": "£250", "link": "https://apply.lloydsbank.co.uk/sales-content/cwa/l/onboardpca/index-app.html?from=ob&webDirect=true&redesign=true&token=JpGVwskEUPxoFpO3Mg4RTAUZg6q6Emjz578QtNaABT8=&redesign=true#/refer-friend", "original_price": "£0", "saving_percent": 100, "type": "bank_switch", "code": "", "steps": ["Open account", "Switch using CASS", "Get £250"], "timeFrame": "30 days"},
+        {"store": "Lloyds Bank", "item": "Club Lloyds switch", "deal_price": "£200", "link": "https://apply.lloydsbank.co.uk/sales-content/cwa/l/onboardpca/index-app.html?from=ob&webDirect=true&redesign=true&token=JpGVwskEUPxoFpO3Mg4RTAUZg6q6Emjz578QtNaABT8=&redesign=true#/refer-friend", "original_price": "£0", "saving_percent": 100, "type": "bank_switch", "code": "", "steps": ["Open account", "Switch using CASS", "Get £250"], "timeFrame": "30 days"},
         {"store": "Chase UK", "item": "Deposit £1,000 → £50", "deal_price": "£50", "link": "https://chase.co.uk/raf", "original_price": "£0", "saving_percent": 100, "type": "bank_switch", "code": "J2SK9W", "steps": ["Copy code J2SK9W", "Open account", "Deposit £1,000 in 30 days"], "timeFrame": "30 days"},
         {"store": "Monzo", "item": "Spend £1 → Get £5-£50", "deal_price": "£5-£50", "link": "https://join.monzo.com/r/", "original_price": "£1", "saving_percent": 90, "type": "referral", "code": "", "steps": ["Sign up", "Spend £1", "Get bonus"], "timeFrame": "Immediate"},
         {"store": "Revolut", "item": "Spend £1 → Get £20", "deal_price": "£20", "link": "https://revolut.com/referral/?referral-code=ludoviv2sq!MAR1-26-AR-H2&geo-redirect", "original_price": "£1", "saving_percent": 95, "type": "referral", "code": "", "steps": ["Sign up", "Spend £1", "Get £20"], "timeFrame": "~1 month"},
-        {"store": "First Direct", "item": "Switch Account → £175", "deal_price": "£175", "link": "https://www.firstdirect.com/banking/switch/", "original_price": "£0", "saving_percent": 100, "type": "bank_switch", "code": "", "steps": ["Switch using CASS", "Pay in £1,000", "Get £175"], "timeFrame": "30 days"},
+        {"store": "First Direct", "item": "Switch Account → £175 + £35", "deal_price": "£210", "link": "https://www.firstdirect.com/banking/switch/", "original_price": "£0", "saving_percent": 100, "type": "bank_switch", "code": "", "steps": ["Switch using CASS", "Pay in £1,000", "Get £175"], "timeFrame": "30 days"},
         {"store": "Halifax", "item": "Switch Account → £150", "deal_price": "£150", "link": "https://www.halifax.co.uk/currentaccounts/", "original_price": "£0", "saving_percent": 100, "type": "bank_switch", "code": "", "steps": ["Switch using CASS", "Pay in £1,500", "Get £150"], "timeFrame": "30 days"},
         {"store": "NatWest", "item": "Switch Account → £200", "deal_price": "£200", "link": "https://www.natwest.com/current-accounts.html", "original_price": "£0", "saving_percent": 100, "type": "bank_switch", "code": "", "steps": ["Switch using CASS", "2 direct debits", "Get £200"], "timeFrame": "30 days"},
+        {"store": "HSBC", "item": "Full switch → £220", "deal_price": "£220", "link": "https://www.hsbc.co.uk/current-accounts/", "original_price": "£0", "saving_percent": 100, "type": "bank_switch", "category": "bank", "code": "", "steps": ["Check you have not held an HSBC current account since 1 Jan 2018", "Open the account and start a full CASS switch", "Meet the conditions on HSBC's offer page"], "timeFrame": "~30 days"},
+        {"store": "Nationwide", "item": "FlexDirect switch → £175", "deal_price": "£175", "link": "https://www.nationwide.co.uk/current-accounts/flexdirect", "original_price": "£0", "saving_percent": 100, "type": "bank_switch", "category": "bank", "code": "", "steps": ["Check you are switching from a non-Nationwide, non-Virgin Money account", "Open a FlexDirect and start a full CASS switch", "Meet the conditions on Nationwide's offer page"], "timeFrame": "~30 days"},
         
         # INVESTMENT OFFERS
         {"store": "Freetrade", "item": "Deposit £50 — Free Share (£10-£100)", "deal_price": "£10-£100", "link": "https://magic.freetrade.io/join/alberto/6f308795", "original_price": "£50", "saving_percent": 80, "type": "invest", "code": "", "steps": ["Deposit £50", "Get free share"], "timeFrame": "Few days"},
@@ -217,10 +231,8 @@ def get_manual_offers() -> List[Dict]:
         {"store": "Zilch", "item": "Sign Up → £5 Free", "deal_price": "£5", "link": "https://zilch.onelink.me/x8EV/zdehyy8s", "original_price": "£0", "saving_percent": 100, "type": "referral", "code": "", "steps": ["Sign up for Zilch", "Get £5 credit instantly"], "timeFrame": "Instant"},
         {"store": "Zopa (Biscuit)", "item": "Open Account → £10 Free", "deal_price": "£10", "link": "https://www.zopa.com/mgma?referralCode=ed204ce1b3dd265fa533", "original_price": "£0", "saving_percent": 100, "type": "referral", "code": "", "steps": ["Open Biscuit account", "Get £10 instantly"], "timeFrame": "Instant"},
         {"store": "PensionBee", "item": "Sign Up → £50 in Pension", "deal_price": "£50", "link": "https://www.pensionbee.com/", "original_price": "£0", "saving_percent": 100, "type": "pension", "code": "", "steps": ["Sign up for PensionBee", "Get £50 in your pension"], "timeFrame": "~1 month"},
-        {"store": "First Direct", "item": "Switch Account — £175 Cash", "deal_price": "£175", "link": "https://www.firstdirect.com/banking/switch/", "original_price": "£0", "saving_percent": 100, "type": "bank_switch", "category": "bank", "code": "", "expires": "2026-12-31", "steps": ["Open First Direct account", "Start CASS switch", "Pay in £1,000 within 30 days", "Wait for payout ~30 days"], "badge": "🏦 BANK SWITCH", "effort": "12 min · CASS switch"},
-        {"store": "Santander Edge", "item": "Switch + £180 Cash + £25 Gift Card", "deal_price": "£205", "link": "https://www.santander.co.uk/personal/current-accounts/switch", "original_price": "£0", "saving_percent": 100, "type": "bank_switch", "category": "bank", "code": "", "expires": "2026-12-31", "steps": ["Open Santander Edge account", "Start CASS switch", "Add 2 direct debits", "Pay in £1,500", "Wait for payout ~30 days"], "badge": "🏦 BANK SWITCH", "effort": "12 min · CASS switch"},
-        {"store": "Barclays", "item": "Switch Account — £250 Cash", "deal_price": "£250", "link": "https://www.barclays.co.uk/current-accounts/", "original_price": "£0", "saving_percent": 100, "type": "bank_switch", "category": "bank", "code": "", "expires": "2026-05-28", "steps": ["Open Barclays Blue Rewards account", "Start CASS switch", "Meet eligibility requirements", "Wait for payout ~30 days"], "badge": "🏦 BANK SWITCH", "effort": "12 min · CASS switch"},
-        {"store": "Barclays Premier", "item": "Premier Switch — £400 Cash", "deal_price": "£400", "link": "https://www.barclays.co.uk/current-accounts/", "original_price": "£0", "saving_percent": 100, "type": "bank_switch", "category": "bank", "code": "", "expires": "2026-04-30", "steps": ["Open Barclays Premier account", "Start CASS switch", "Pay in £4,000", "Wait for payout ~30 days"], "badge": "🏦 BANK SWITCH", "effort": "15 min · large deposit needed"},
+        {"store": "Barclays", "item": "Switch Account — up to £300 over 5 months", "deal_price": "£300", "link": "https://www.barclays.co.uk/current-accounts/switch-offer/", "original_price": "£0", "saving_percent": 100, "type": "bank_switch", "category": "bank", "code": "", "steps": ["Open Barclays Blue Rewards account", "Start CASS switch", "Meet eligibility requirements", "Wait for payout ~30 days"], "badge": "🏦 BANK SWITCH", "effort": "12 min · CASS switch"},
+        {"store": "Barclays Premier", "item": "Premier Switch — up to £600", "deal_price": "£600", "link": "https://www.barclays.co.uk/current-accounts/premier-switch-offer/", "original_price": "£0", "saving_percent": 100, "type": "bank_switch", "category": "bank", "code": "", "steps": ["Open Barclays Premier account", "Start CASS switch", "Pay in £4,000", "Wait for payout ~30 days"], "badge": "🏦 BANK SWITCH", "effort": "15 min · large deposit needed"},
         {"store": "Co-operative Bank", "item": "Switch Account — £175 Cash", "deal_price": "£175", "link": "https://www.co-operativebank.co.uk/products/bank-accounts/switch-offer/", "original_price": "£0", "saving_percent": 100, "type": "bank_switch", "category": "bank", "code": "", "expires": "2026-02-27", "steps": ["Open Co-op Bank account", "Start CASS switch", "Add 2 direct debits", "Wait for payout ~30 days"], "badge": "🏦 BANK SWITCH", "effort": "12 min · CASS switch"},
         {"store": "Monzo", "item": "First Payment — £5 Cash", "deal_price": "£5", "link": "https://monzo.com/", "original_price": "£0", "saving_percent": 100, "type": "referral", "category": "bank", "code": "", "expires": "2026-12-31", "steps": ["Open Monzo account via referral", "Make first card payment in 30 days", "Get £5 credited"], "badge": "🏦 BANK REFERRAL", "effort": "3 min · quick win"},
         {"store": "Starling Bank", "item": "Free National Trust Day Pass", "deal_price": "£10", "link": "https://www.starlingbank.com/referral/", "original_price": "£0", "saving_percent": 100, "type": "referral", "category": "bank", "code": "", "expires": "2026-12-31", "steps": ["Open Starling account via referral", "Complete account verification", "Receive National Trust day pass"], "badge": "🏦 FREEBIE", "effort": "5 min · sign up"},
@@ -1115,7 +1127,8 @@ def clean_store_name(store: str) -> str:
         if store.endswith(suffix):
             store = store[:-len(suffix)].strip()
     # Capitalize first letter of each word
-    return ' '.join(word.capitalize() for word in store.split())
+    keep = {"hsbc": "HSBC", "uk": "UK", "natwest": "NatWest", "tsb": "TSB", "rbs": "RBS", "xtb": "XTB", "aj": "AJ", "etoro": "eToro"}
+    return ' '.join(keep.get(word.lower(), word.capitalize()) for word in store.split())
 
 
 def infer_category(deal: Dict) -> str:
@@ -1206,17 +1219,23 @@ def run_all_scrapers() -> Dict:
     news_deals = scrape_google_news_deals()
     
     # Scrape HotUKDeals
-    print("\n📡 Scraping HotUKDeals...")
-    hotuk_deals = scrape_hotukdeals()
-    time.sleep(2)
+    # Competitor sites are off unless explicitly enabled: Scrimpr's terms forbid scraping its data for a commercial site,
+    # and HotUKDeals currently returns nothing. Replace with official feeds or APIs.
+    hotuk_deals = []
+    if os.environ.get("ENABLE_HOTUKDEALS") == "1":
+        print("\n📡 Scraping HotUKDeals...")
+        hotuk_deals = scrape_hotukdeals()
+        time.sleep(2)
     
     print("\n📡 Scraping BeermoneyUK Megalist...")
     megalist_deals = scrape_megalist()
     time.sleep(2)
     
-    print("\n📡 Scraping Scrimpr...")
-    scrimpr_deals = scrape_scrimpr()
-    time.sleep(2)
+    scrimpr_deals = []
+    if os.environ.get("ENABLE_SCRIMPR") == "1":
+        print("\n📡 Scraping Scrimpr...")
+        scrimpr_deals = scrape_scrimpr()
+        time.sleep(2)
     
     scraped = reddit_deals + news_deals + hotuk_deals + megalist_deals + scrimpr_deals
     # Clean and validate scraped deals
@@ -1328,7 +1347,15 @@ def run_all_scrapers() -> Dict:
             deal["best_payment_method"] = "N/A"
             deal["stacking_rate"] = 0
         
-        deal["last_updated"] = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+        deal["last_scraped"] = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+        deal["last_updated"] = deal["last_scraped"]  # kept for older pages; use last_verified for freshness claims
+        meta = VERIFIED.get(deal.get("store", "").lower())
+        if meta:
+            deal["last_verified"] = meta.get("last_verified", "")
+            if meta.get("expires"):
+                deal["expires"] = meta["expires"]
+        elif deal.get("expires") == "2026-12-31":
+            deal.pop("expires")  # placeholder date, not a real expiry
     
     # Drop expired deals so stale offers never reach users, whatever the source list says
     today_str = datetime.now().strftime("%Y-%m-%d")
@@ -1376,6 +1403,9 @@ def run_all_scrapers() -> Dict:
         "deals": all_deals
     }
     
+    for label, count in (("Google News", len(news_deals)), ("Megalist", len(megalist_deals))):
+        if count == 0:
+            print(f"::warning::{label} returned 0 deals this run")
     with open("all_deals.json", "w", encoding="utf-8") as f:
         json.dump(output, f, indent=2, ensure_ascii=False)
     
