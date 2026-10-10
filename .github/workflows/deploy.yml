@@ -110,6 +110,10 @@ jobs:
             console.log('✅ manifest.json valid');
           "
 
+      # ── TEST 5: Data and page checks (amounts, expiry, disclosure) ──
+      - name: Data checks
+        run: python3 tests/check_data.py
+
       - name: All tests passed
         run: echo "✅ All checks passed — deploying..."
 
@@ -129,10 +133,19 @@ jobs:
       - name: Setup GitHub Pages
         uses: actions/configure-pages@v4
 
+      # Publish only the files the site needs, not the scraper, notes or internal documents
+      - name: Build site folder
+        run: |
+          python3 scripts/make_sitemap.py
+          mkdir _site
+          cp index.html app.html bank-switch.html privacy.html sw.js manifest.json all_deals.json robots.txt sitemap.xml CNAME _site/
+          cp *.png googlecc*.html _site/
+          cp UK-rewards-stacking-toolkit.xlsx _site/
+
       - name: Upload site to Pages
         uses: actions/upload-pages-artifact@v3
         with:
-          path: '.'
+          path: '_site'
 
       - name: Deploy to GitHub Pages
         id: deployment

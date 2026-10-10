@@ -1,0 +1,10 @@
+{
+  "_note": "Edit this file, not scraper.py, when a person has checked an offer. last_verified = date a human confirmed the amount and conditions on the provider page. expires = last day the offer can be started. Offers not listed here show no 'checked' date.",
+  "Lloyds Bank":   {"last_verified": "2026-10-06", "expires": "2026-12-09"},
+  "Barclays":      {"last_verified": "2026-10-06"},
+  "Barclays Premier": {"last_verified": "2026-10-06"},
+  "First Direct":  {"last_verified": "2026-10-06", "expires": "2026-12-02"},
+  "NatWest":       {"last_verified": "2026-10-06"},
+  "HSBC":          {"last_verified": "2026-10-06", "expires": "2026-12-02"},
+  "Nationwide":    {"last_verified": "2026-10-06"}
+}
