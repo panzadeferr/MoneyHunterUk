@@ -1409,6 +1409,14 @@ def run_all_scrapers() -> Dict:
     with open("all_deals.json", "w", encoding="utf-8") as f:
         json.dump(output, f, indent=2, ensure_ascii=False)
     
+    # Atom feed for deal readers and aggregators
+    try:
+        from make_feed import write_feed
+        write_feed(output)
+        print("\U0001f4e1 feed.xml written")
+    except Exception as e:
+        print(f"::warning::feed generation failed: {e}")
+    
     # Write detailed scrape log
     log = [
         f"Scrape run: {datetime.now()}",
