@@ -172,6 +172,7 @@
 
 ### Critical Issues Fixed (March 28, 2026)
 1. **CRIT-01: Split app.html into components** - Completed: app.html now uses modular components in `/components/` directory
+   > **Correction (2026-10-10):** No `/components/` directory exists in this repo; CRIT-01 was never completed and app.html is still a single ~366 KB file. The parts-based editing method is documented in CONTRIBUTING.md.
 2. **CRIT-02: renderAll optimization** - Fixed: Implemented efficient rendering with proper state management
 3. **CRIT-03: Sequential Supabase sync loop** - Fixed: Implemented proper async/await pattern for Supabase operations
 4. **CRIT-04: Wire to all_deals.json** - Fixed: app.js now loads offers from all_deals.json with proper error handling
