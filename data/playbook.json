@@ -1,0 +1,505 @@
+{
+ "version": 1,
+ "updated": "2026-10-10",
+ "chapters": [
+  {
+   "id": "banking",
+   "title": "Banking & Switching",
+   "icon": "🏦",
+   "articles": [
+    {
+     "id": "pb-bank-basics",
+     "title": "Current accounts explained",
+     "summary": "Sort codes, account numbers, debit cards, Confirmation of Payee and how to pick an everyday account.",
+     "existing_guide": null,
+     "status": "new",
+     "question_count": 3
+    },
+    {
+     "id": "pb-bank-cass",
+     "title": "How a CASS switch works",
+     "summary": "The 7-working-day switch, choosing a date, the Switch Guarantee and payment redirection.",
+     "existing_guide": "guide-bankswitch",
+     "status": "expand",
+     "question_count": 5
+    },
+    {
+     "id": "pb-bank-switch-bonuses",
+     "title": "Bank switch bonuses: the rules",
+     "summary": "Pay-in amounts, active Direct Debits, eligibility windows, clawbacks and how to never miss a bonus.",
+     "existing_guide": "guide-bankswitch",
+     "status": "expand",
+     "question_count": 6
+    },
+    {
+     "id": "pb-bank-direct-debits",
+     "title": "Direct Debits & standing orders",
+     "summary": "What they are, the Direct Debit Guarantee, and cheap ways to meet switch requirements.",
+     "existing_guide": "guide-directdebit",
+     "status": "expand",
+     "question_count": 3
+    },
+    {
+     "id": "pb-bank-overdrafts",
+     "title": "Overdrafts: the real cost",
+     "summary": "Arranged vs unarranged, interest rates, and how to get out of your overdraft.",
+     "existing_guide": null,
+     "status": "new",
+     "question_count": 3
+    }
+   ]
+  },
+  {
+   "id": "saving",
+   "title": "Saving",
+   "icon": "🐷",
+   "articles": [
+    {
+     "id": "pb-save-aer",
+     "title": "Interest rates explained",
+     "summary": "AER, gross, monthly vs annual interest, and inflation's effect on your savings.",
+     "existing_guide": null,
+     "status": "new",
+     "question_count": 6
+    },
+    {
+     "id": "pb-save-regular-savers",
+     "title": "Regular savers",
+     "summary": "High-rate monthly saving accounts and why the headline rate overstates what you earn.",
+     "existing_guide": null,
+     "status": "new",
+     "question_count": 2
+    },
+    {
+     "id": "pb-save-isas",
+     "title": "ISAs",
+     "summary": "Cash and Stocks & Shares ISAs, the annual allowance and flexible ISAs.",
+     "existing_guide": null,
+     "status": "new",
+     "question_count": 6
+    },
+    {
+     "id": "pb-save-premium-bonds",
+     "title": "Premium Bonds",
+     "summary": "How the prize draw works, what's guaranteed and who they suit.",
+     "existing_guide": null,
+     "status": "new",
+     "question_count": 3
+    },
+    {
+     "id": "pb-save-emergency-fund",
+     "title": "Building an emergency fund",
+     "summary": "How much to keep, where to keep it and how to build it fast.",
+     "existing_guide": null,
+     "status": "new",
+     "question_count": 2
+    },
+    {
+     "id": "pb-save-fscs",
+     "title": "Is my money safe? The FSCS",
+     "summary": "What's protected, the limit, and banking licences.",
+     "existing_guide": null,
+     "status": "new",
+     "question_count": 3
+    }
+   ]
+  },
+  {
+   "id": "investing",
+   "title": "Investing",
+   "icon": "📈",
+   "articles": [
+    {
+     "id": "pb-inv-basics",
+     "title": "Investing basics",
+     "summary": "Risk and return, shares, funds, diversification and time in the market.",
+     "existing_guide": null,
+     "status": "new",
+     "question_count": 7
+    },
+    {
+     "id": "pb-inv-funds-fees",
+     "title": "Funds, platforms & fees",
+     "summary": "Index funds, platform and fund fees, and why small percentages matter.",
+     "existing_guide": null,
+     "status": "new",
+     "question_count": 3
+    },
+    {
+     "id": "pb-inv-free-shares",
+     "title": "Free share offers",
+     "summary": "How free-share sign-up offers work and the terms to check.",
+     "existing_guide": "guide-invest",
+     "status": "expand",
+     "question_count": 1
+    },
+    {
+     "id": "pb-inv-compound",
+     "title": "Compound growth",
+     "summary": "The maths of growth, the Rule of 72 and regular investing.",
+     "existing_guide": null,
+     "status": "new",
+     "question_count": 6
+    },
+    {
+     "id": "pb-inv-crypto-risks",
+     "title": "Crypto: the risks",
+     "summary": "Volatility, no FSCS protection and common crypto scams.",
+     "existing_guide": null,
+     "status": "new",
+     "question_count": 1
+    }
+   ]
+  },
+  {
+   "id": "tax",
+   "title": "Tax",
+   "icon": "🧾",
+   "articles": [
+    {
+     "id": "pb-tax-allowances",
+     "title": "Your tax-free allowances",
+     "summary": "Personal Allowance, savings and dividend allowances, and the tax year.",
+     "existing_guide": null,
+     "status": "new",
+     "question_count": 7
+    },
+    {
+     "id": "pb-tax-side-income",
+     "title": "Side income & HMRC",
+     "summary": "The trading allowance, selling your own stuff, platform reporting and Self Assessment.",
+     "existing_guide": null,
+     "status": "new",
+     "question_count": 5
+    },
+    {
+     "id": "pb-tax-marriage-allowance",
+     "title": "Marriage Allowance",
+     "summary": "Transferring allowance between partners.",
+     "existing_guide": null,
+     "status": "new",
+     "question_count": 1
+    }
+   ]
+  },
+  {
+   "id": "credit",
+   "title": "Credit & Borrowing",
+   "icon": "💳",
+   "articles": [
+    {
+     "id": "pb-credit-score",
+     "title": "Your credit score",
+     "summary": "Hard vs soft searches, utilisation, the electoral roll and how long things stay on file.",
+     "existing_guide": null,
+     "status": "new",
+     "question_count": 10
+    },
+    {
+     "id": "pb-credit-cards",
+     "title": "Credit cards done right",
+     "summary": "Paying in full, Section 75, chargeback and 0% deals.",
+     "existing_guide": null,
+     "status": "new",
+     "question_count": 6
+    },
+    {
+     "id": "pb-credit-borrowing-costs",
+     "title": "The true cost of borrowing",
+     "summary": "APR, minimum payments, payday loans and guarantor loans.",
+     "existing_guide": null,
+     "status": "new",
+     "question_count": 4
+    },
+    {
+     "id": "pb-credit-bnpl",
+     "title": "Buy Now Pay Later",
+     "summary": "How BNPL works and how to avoid its traps.",
+     "existing_guide": null,
+     "status": "new",
+     "question_count": 1
+    }
+   ]
+  },
+  {
+   "id": "budgeting",
+   "title": "Budgeting",
+   "icon": "📊",
+   "articles": [
+    {
+     "id": "pb-budget-basics",
+     "title": "Budgeting basics",
+     "summary": "50/30/20, needs vs wants, pay yourself first and zero-based budgets.",
+     "existing_guide": null,
+     "status": "new",
+     "question_count": 9
+    },
+    {
+     "id": "pb-budget-subscriptions",
+     "title": "Subscription clear-out",
+     "summary": "Finding and cancelling forgotten subscriptions.",
+     "existing_guide": null,
+     "status": "new",
+     "question_count": 2
+    },
+    {
+     "id": "pb-budget-goals",
+     "title": "Saving goals",
+     "summary": "SMART goals and sinking funds.",
+     "existing_guide": null,
+     "status": "new",
+     "question_count": 3
+    }
+   ]
+  },
+  {
+   "id": "shopping",
+   "title": "Smart Shopping",
+   "icon": "🛒",
+   "articles": [
+    {
+     "id": "pb-shop-unit-price",
+     "title": "Unit prices & real value",
+     "summary": "Price per kg/litre, multipacks, offers and shrinkflation.",
+     "existing_guide": null,
+     "status": "new",
+     "question_count": 11
+    },
+    {
+     "id": "pb-shop-supermarket-stacking",
+     "title": "Supermarket stacking",
+     "summary": "Gift cards, cashback cards and loyalty points on one shop.",
+     "existing_guide": "guide-supermarket",
+     "status": "expand",
+     "question_count": 1
+    },
+    {
+     "id": "pb-shop-loyalty",
+     "title": "Loyalty schemes",
+     "summary": "Getting the most from points.",
+     "existing_guide": null,
+     "status": "new",
+     "question_count": 1
+    },
+    {
+     "id": "pb-shop-consumer-rights",
+     "title": "Your consumer rights",
+     "summary": "Refunds, faulty goods and cooling-off periods.",
+     "existing_guide": null,
+     "status": "new",
+     "question_count": 2
+    }
+   ]
+  },
+  {
+   "id": "cashback",
+   "title": "Cashback",
+   "icon": "💸",
+   "articles": [
+    {
+     "id": "pb-cb-sites",
+     "title": "Cashback sites",
+     "summary": "How cashback sites work and how to get paid.",
+     "existing_guide": "guide-cashback",
+     "status": "expand",
+     "question_count": 4
+    },
+    {
+     "id": "pb-cb-tracking",
+     "title": "Making cashback track",
+     "summary": "Cookies, ad blockers, voucher codes and declined cashback.",
+     "existing_guide": "guide-cashback",
+     "status": "expand",
+     "question_count": 5
+    },
+    {
+     "id": "pb-cb-giftcards",
+     "title": "Gift card cashback apps",
+     "summary": "Discounted gift cards and their risks.",
+     "existing_guide": "guide-cashback",
+     "status": "expand",
+     "question_count": 2
+    }
+   ]
+  },
+  {
+   "id": "scams",
+   "title": "Scam Defence",
+   "icon": "🛡️",
+   "articles": [
+    {
+     "id": "pb-scam-phishing",
+     "title": "Phishing texts & emails",
+     "summary": "Spotting fake messages and links.",
+     "existing_guide": null,
+     "status": "new",
+     "question_count": 12
+    },
+    {
+     "id": "pb-scam-app-fraud",
+     "title": "Bank impersonation & APP fraud",
+     "summary": "Safe-account scams, 159, and reimbursement rules.",
+     "existing_guide": null,
+     "status": "new",
+     "question_count": 6
+    },
+    {
+     "id": "pb-scam-investment",
+     "title": "Investment & crypto scams",
+     "summary": "Guaranteed returns, fake platforms and recovery scams.",
+     "existing_guide": null,
+     "status": "new",
+     "question_count": 6
+    },
+    {
+     "id": "pb-scam-shopping",
+     "title": "Shopping & marketplace scams",
+     "summary": "Fake shops, tickets and marketplace tricks.",
+     "existing_guide": null,
+     "status": "new",
+     "question_count": 6
+    },
+    {
+     "id": "pb-scam-jobs-mules",
+     "title": "Job scams & money mules",
+     "summary": "Task scams, fake jobs and money muling.",
+     "existing_guide": null,
+     "status": "new",
+     "question_count": 5
+    },
+    {
+     "id": "pb-scam-reporting",
+     "title": "Reporting scams & staying secure",
+     "summary": "7726, phishing reports, passwords and 2FA.",
+     "existing_guide": null,
+     "status": "new",
+     "question_count": 4
+    }
+   ]
+  },
+  {
+   "id": "side",
+   "title": "Side Income",
+   "icon": "🧰",
+   "articles": [
+    {
+     "id": "pb-side-surveys",
+     "title": "Survey sites",
+     "summary": "What they pay, screen-outs and red flags.",
+     "existing_guide": null,
+     "status": "new",
+     "question_count": 4
+    },
+    {
+     "id": "pb-side-apps-games",
+     "title": "Reward & game apps",
+     "summary": "Play-to-earn milestones, cash-outs and hourly rates.",
+     "existing_guide": null,
+     "status": "new",
+     "question_count": 3
+    },
+    {
+     "id": "pb-side-selling",
+     "title": "Selling your stuff",
+     "summary": "Getting the best price and staying safe.",
+     "existing_guide": null,
+     "status": "new",
+     "question_count": 1
+    },
+    {
+     "id": "pb-side-referrals",
+     "title": "Referral programmes",
+     "summary": "How referrals work and how to share codes honestly.",
+     "existing_guide": null,
+     "status": "new",
+     "question_count": 3
+    }
+   ]
+  },
+  {
+   "id": "bills",
+   "title": "Bills",
+   "icon": "⚡",
+   "articles": [
+    {
+     "id": "pb-bills-energy",
+     "title": "Energy bills",
+     "summary": "The price cap, standing charges and switching.",
+     "existing_guide": "guide-energy",
+     "status": "expand",
+     "question_count": 4
+    },
+    {
+     "id": "pb-bills-broadband-mobile",
+     "title": "Broadband & mobile",
+     "summary": "End-of-contract price rises, SIM-only and social tariffs.",
+     "existing_guide": "guide-energy",
+     "status": "expand",
+     "question_count": 4
+    },
+    {
+     "id": "pb-bills-council-tax",
+     "title": "Council tax & water",
+     "summary": "Discounts, bands and water meters.",
+     "existing_guide": null,
+     "status": "new",
+     "question_count": 2
+    }
+   ]
+  },
+  {
+   "id": "pensions",
+   "title": "Pensions",
+   "icon": "🏖️",
+   "articles": [
+    {
+     "id": "pb-pen-workplace",
+     "title": "Workplace pensions",
+     "summary": "Auto-enrolment, contributions and why opting out costs you.",
+     "existing_guide": null,
+     "status": "new",
+     "question_count": 4
+    },
+    {
+     "id": "pb-pen-tax-relief",
+     "title": "Pension tax relief & access",
+     "summary": "Tax relief, access age and the tax-free lump sum.",
+     "existing_guide": null,
+     "status": "new",
+     "question_count": 3
+    },
+    {
+     "id": "pb-pen-state",
+     "title": "The State Pension",
+     "summary": "State Pension age, NI years and tracing lost pensions.",
+     "existing_guide": null,
+     "status": "new",
+     "question_count": 4
+    }
+   ]
+  },
+  {
+   "id": "plan",
+   "title": "Money Hunter Plans",
+   "icon": "🗺️",
+   "articles": [
+    {
+     "id": "pb-plan-90-day",
+     "title": "Stack £500 in 90 days",
+     "summary": "The step-by-step starter plan.",
+     "existing_guide": "guide-stack",
+     "status": "expand",
+     "question_count": 0
+    },
+    {
+     "id": "pb-plan-mistakes",
+     "title": "Common mistakes",
+     "summary": "The errors that cost hunters their bonuses.",
+     "existing_guide": "guide-mistakes",
+     "status": "expand",
+     "question_count": 0
+    }
+   ]
+  }
+ ]
+}

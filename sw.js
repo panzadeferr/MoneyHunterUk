@@ -1,6 +1,6 @@
 // Money Hunters UK — Service Worker v3
 // Strategy: Network first for HTML + data, cache first for static assets
-const CACHE = 'mh-v3';
+const CACHE = 'mh-v4';
 
 // Static assets to precache (rarely change)
 const PRECACHE = [
@@ -49,7 +49,7 @@ self.addEventListener('fetch', e => {
   }
 
   // ✅ FIX: all_deals.json — always network first, never serve stale cache
-  if (url.pathname.includes('all_deals.json')) {
+  if (url.pathname.includes('all_deals.json') || url.pathname.startsWith('/data/')) {
     e.respondWith(
       fetch(e.request)
         .then(response => {
@@ -77,7 +77,7 @@ self.addEventListener('fetch', e => {
         })
         .catch(() => {
           return caches.match(e.request)
-            .then(cached => cached || caches.match('/index.html'));
+            .then(cached => cached || caches.match(url.pathname.startsWith('/game/') ? '/game/index.html' : '/index.html'));
         })
     );
     return;
