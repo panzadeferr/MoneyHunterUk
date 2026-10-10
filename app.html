@@ -2742,7 +2742,11 @@
     }
 
     /* Home greeting */
-    .home-greeting {
+    .game-entry { display:flex; align-items:center; gap:10px; background:linear-gradient(90deg,#1d3a5f,#16283c); border:1px solid #2c4a68; border-radius:14px; padding:12px 14px; margin:0 16px 12px; text-decoration:none; color:#e8f0f8; }
+.game-entry-title { font-weight:800; color:#ffc94a; }
+.game-entry-sub { font-size:12px; opacity:.75; flex:1; }
+.game-entry-arrow { color:#ffc94a; }
+.home-greeting {
       display:flex;align-items:center;justify-content:space-between;
       padding:4px 2px 14px;
     }
@@ -3098,6 +3102,13 @@
           <span id="greetingStreakVal">0</span>🔥
         </div>
       </div>
+
+      <!-- GAME LINK -->
+      <a class="game-entry" href="/game/" aria-label="Play Coinsworth">
+        <span class="game-entry-title">Play Coinsworth</span>
+        <span class="game-entry-sub">Battle money creatures by answering money questions. Same Hunter level.</span>
+        <span class="game-entry-arrow">▶</span>
+      </a>
 
       <!-- GAMING CARD / HERO -->
       <div class="gaming-card" id="gamingCard">

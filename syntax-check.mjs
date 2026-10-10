@@ -59,6 +59,26 @@ if (existsSync('app.html')) {
   console.log('✅ No dangerous secrets found');
 }
 
+
+console.log('\n🔍 Checking game JS modules...\n');
+
+import { spawnSync } from 'child_process';
+import { mkdtempSync, writeFileSync } from 'fs';
+import { join } from 'path';
+import { tmpdir } from 'os';
+import { readdirSync } from 'fs';
+
+if (existsSync('game/js')) {
+  const dir = tmpdir();
+  for (const f of readdirSync('game/js').filter(f => f.endsWith('.js'))) {
+    const tmp = join(mkdtempSync(join(dir, 'chk-')), f.replace(/\.js$/, '.mjs'));
+    writeFileSync(tmp, readFileSync(join('game/js', f), 'utf8'));
+    const r = spawnSync(process.execPath, ['--check', tmp], { encoding: 'utf8' });
+    if (r.status === 0) console.log(`✅ game/js/${f} — syntax OK`);
+    else { console.log(`❌ game/js/${f} — ERROR: ${(r.stderr || '').trim()}`); passed = false; }
+  }
+}
+
 console.log('\n' + '═'.repeat(50));
 if (passed) {
   console.log('✅  ALL CHECKS PASSED\n');
