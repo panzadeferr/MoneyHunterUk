@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no, viewport-fit=cover">
+<title>Coinsworth - a Money Hunters game</title>
+<meta name="description" content="Coinsworth: explore, battle money creatures by answering money questions, and level up your Hunter. Part of Money Hunters UK.">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div id="wrap">
+  <canvas id="game" width="480" height="320"></canvas>
+
+  <!-- title / starter pick -->
+  <div id="title-screen" class="overlay">
+    <h1>COINSWORTH</h1>
+    <p class="sub">A Money Hunters game</p>
+    <p id="title-continue-wrap" class="hidden"><button id="btn-continue" class="big">Continue</button></p>
+    <div id="starter-pick">
+      <p>Pick your first creature:</p>
+      <div class="starter-row">
+        <button class="starter" data-species="coinling"><span class="dot cash"></span>Coinling<span class="type">Cash</span></button>
+        <button class="starter" data-species="piggle"><span class="dot save"></span>Piggle<span class="type">Save</span></button>
+        <button class="starter" data-species="budgit"><span class="dot grow"></span>Budgit<span class="type">Grow</span></button>
+      </div>
+      <p class="hint">Battle by answering money questions. Three right answers win a creature over. Every answer teaches something real.</p>
+      <p class="hint"><a href="/app.html">Back to Money Hunters</a></p>
+    </div>
+  </div>
+
+  <!-- battle question card -->
+  <div id="battle-ui" class="overlay hidden">
+    <div id="bq-card">
+      <div id="bq-text"></div>
+      <div id="bq-options"></div>
+      <div id="bq-feedback"></div>
+    </div>
+  </div>
+
+  <!-- battle end panel -->
+  <div id="bq-end" class="overlay hidden">
+    <div id="bq-end-card">
+      <div id="bq-end-title"></div>
+      <div id="bq-end-body"></div>
+      <a id="bq-learn" class="hidden" href="#" target="_blank" rel="noopener">Read the guide</a>
+      <button id="bq-continue" class="big">Back to the map</button>
+    </div>
+  </div>
+
+  <!-- world dialog -->
+  <div id="dialog" class="overlay hidden"><div id="dialog-box"><div id="dialog-text"></div><button id="dialog-ok" class="big">OK</button></div></div>
+
+  <!-- touch controls -->
+  <div id="controls">
+    <div id="dpad">
+      <button data-dir="up" class="pad up" aria-label="Up">&#9650;</button>
+      <button data-dir="left" class="pad left" aria-label="Left">&#9664;</button>
+      <button data-dir="right" class="pad right" aria-label="Right">&#9654;</button>
+      <button data-dir="down" class="pad down" aria-label="Down">&#9660;</button>
+    </div>
+    <button id="btn-a" aria-label="Action">A</button>
+  </div>
+</div>
+<script type="module" src="js/main.js"></script>
+</body>
+</html>

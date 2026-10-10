@@ -99,6 +99,40 @@ else:
             print(f"WARNING: question {q.get('id')} is volatile and its review_by ({q['review_by']}) has passed; re-verify")
     print(f"Question checks passed: {len(qs)} questions.")
 
+
+# --- game map checks ---
+import pathlib
+maps = sorted(pathlib.Path("game/maps").glob("*.tmj")) if pathlib.Path("game/maps").exists() else []
+for mp in maps:
+    try:
+        m = json.loads(mp.read_text(encoding="utf-8"))
+    except Exception as e:
+        fail(f"{mp}: invalid JSON ({e})")
+        continue
+    w, h = m.get("width", 0), m.get("height", 0)
+    layers = {l.get("name"): l for l in m.get("layers", [])}
+    for lname in ("ground", "solid"):
+        if lname not in layers:
+            fail(f"{mp}: missing '{lname}' layer")
+        elif len(layers[lname].get("data", [])) != w * h:
+            fail(f"{mp}: '{lname}' layer length != width*height")
+    for ts in m.get("tilesets", []):
+        img = pathlib.Path("game/maps") / ts.get("image", "")
+        if not img.exists():
+            fail(f"{mp}: tileset image {ts.get('image')!r} not found (maps are self-hosted, no external assets)")
+    objs = [o for l in m.get("layers", []) if l.get("type") == "objectgroup" for o in l.get("objects", [])]
+    if not any(o.get("type") == "spawn" for o in objs):
+        fail(f"{mp}: no spawn object")
+    for o in objs:
+        if not o.get("name") or not o.get("type"):
+            fail(f"{mp}: object missing name or type: {o.get('name')!r}")
+    bad_types = [o["type"] for o in objs if o.get("type") not in ("spawn", "encounter", "sign", "npc")]
+    if bad_types:
+        fail(f"{mp}: unknown object types {set(bad_types)}")
+    print(f"Map checks passed: {mp.name} ({w}x{h}, {len(objs)} objects).")
+if not maps:
+    print("note: no game/maps/*.tmj present yet, map checks skipped")
+
 if errors:
     print("DATA CHECKS FAILED:")
     for e in errors:
