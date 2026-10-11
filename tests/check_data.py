@@ -100,9 +100,10 @@ else:
     print(f"Question checks passed: {len(qs)} questions.")
 
 
-# --- game map checks ---
+# --- game map checks (v4 port: letter-grid tmj with a legend tileset, no external images) ---
 import pathlib
 maps = sorted(pathlib.Path("game/maps").glob("*.tmj")) if pathlib.Path("game/maps").exists() else []
+expect = {"town.tmj": (40, 36), "bank.tmj": (12, 10)}
 for mp in maps:
     try:
         m = json.loads(mp.read_text(encoding="utf-8"))
@@ -110,26 +111,31 @@ for mp in maps:
         fail(f"{mp}: invalid JSON ({e})")
         continue
     w, h = m.get("width", 0), m.get("height", 0)
+    exp = expect.get(mp.name)
+    if exp and (w, h) != exp:
+        fail(f"{mp}: expected {exp[0]}x{exp[1]}, got {w}x{h}")
     layers = {l.get("name"): l for l in m.get("layers", [])}
-    for lname in ("ground", "solid"):
-        if lname not in layers:
-            fail(f"{mp}: missing '{lname}' layer")
-        elif len(layers[lname].get("data", [])) != w * h:
-            fail(f"{mp}: '{lname}' layer length != width*height")
+    if "ground" not in layers:
+        fail(f"{mp}: missing 'ground' layer")
+        continue
+    if len(layers["ground"].get("data", [])) != w * h:
+        fail(f"{mp}: 'ground' layer length != width*height")
+    legend = ""
     for ts in m.get("tilesets", []):
-        img = pathlib.Path("game/maps") / ts.get("image", "")
-        if not img.exists():
-            fail(f"{mp}: tileset image {ts.get('image')!r} not found (maps are self-hosted, no external assets)")
-    objs = [o for l in m.get("layers", []) if l.get("type") == "objectgroup" for o in l.get("objects", [])]
-    if not any(o.get("type") == "spawn" for o in objs):
-        fail(f"{mp}: no spawn object")
-    for o in objs:
-        if not o.get("name") or not o.get("type"):
-            fail(f"{mp}: object missing name or type: {o.get('name')!r}")
-    bad_types = [o["type"] for o in objs if o.get("type") not in ("spawn", "encounter", "sign", "npc")]
-    if bad_types:
-        fail(f"{mp}: unknown object types {set(bad_types)}")
-    print(f"Map checks passed: {mp.name} ({w}x{h}, {len(objs)} objects).")
+        for p in ts.get("properties", []):
+            if p.get("name") == "legend":
+                legend = p.get("value", "")
+    if not legend:
+        fail(f"{mp}: missing legend property on tileset")
+    else:
+        mx = max(layers["ground"].get("data", [1])) if layers["ground"].get("data") else 0
+        if mx > len(legend):
+            fail(f"{mp}: gid {mx} exceeds legend length {len(legend)}")
+    for ts in m.get("tilesets", []):
+        img = ts.get("image")
+        if img:
+            fail(f"{mp}: tileset image {img!r} not allowed (v4 maps draw procedurally, legend-only tileset)")
+    print(f"Map checks passed: {mp.name} ({w}x{h}, legend {len(legend)} chars).")
 if not maps:
     print("note: no game/maps/*.tmj present yet, map checks skipped")
 
