@@ -1,0 +1,797 @@
+{
+ "topic": "investing",
+ "questions": [
+  {
+   "id": "inv-001",
+   "topic": "investing",
+   "difficulty": 1,
+   "type": "mc",
+   "question": "Profits inside a Stocks & Shares ISA are\u2026",
+   "options": [
+    "Taxed at 20%",
+    "Tax-free",
+    "Taxed above \u00a33,000"
+   ],
+   "answer": 1,
+   "explanation": "Gains and dividends inside an ISA are tax-free.",
+   "learn_more": "pb-save-isas"
+  },
+  {
+   "id": "inv-002",
+   "topic": "investing",
+   "difficulty": 1,
+   "type": "mc",
+   "question": "Which of these is generally lower risk?",
+   "options": [
+    "One small company's shares",
+    "A global index fund",
+    "A brand-new crypto token"
+   ],
+   "answer": 1,
+   "explanation": "A global index fund spreads your money across thousands of companies.",
+   "learn_more": "pb-inv-basics"
+  },
+  {
+   "id": "inv-003",
+   "topic": "investing",
+   "difficulty": 1,
+   "type": "mc",
+   "question": "A trading app gives you a free share. Before you sell it, check\u2026",
+   "options": [
+    "Any minimum holding period in the terms",
+    "The CEO's name",
+    "Nothing, sell straight away"
+   ],
+   "answer": 0,
+   "explanation": "Many free-share offers require you to keep the share, or the account, for a set time.",
+   "learn_more": "pb-inv-free-shares"
+  },
+  {
+   "id": "inv-004",
+   "topic": "investing",
+   "difficulty": 2,
+   "type": "calc",
+   "question": "Using the Rule of 72, at 6% a year, roughly how long does money take to double?",
+   "options": [
+    "6 years",
+    "12 years",
+    "20 years"
+   ],
+   "answer": 1,
+   "explanation": "72 \u00f7 6 = 12 years.",
+   "learn_more": "pb-inv-compound"
+  },
+  {
+   "id": "inv-005",
+   "topic": "investing",
+   "difficulty": 2,
+   "type": "calc",
+   "question": "Fund A charges 1.5% a year, Fund B 0.2%. On \u00a310,000, how much more does A cost per year?",
+   "options": [
+    "\u00a313",
+    "\u00a3130",
+    "\u00a31,300"
+   ],
+   "answer": 1,
+   "explanation": "1.3% of \u00a310,000 = \u00a3130 a year, and the gap compounds over time.",
+   "learn_more": "pb-inv-funds-fees"
+  },
+  {
+   "id": "inv-006",
+   "topic": "investing",
+   "difficulty": 3,
+   "type": "calc",
+   "question": "\u00a32,000 grows by 7% a year, compounded yearly. Roughly how much after 10 years?",
+   "options": [
+    "\u00a33,400",
+    "\u00a33,930",
+    "\u00a34,800"
+   ],
+   "answer": 1,
+   "explanation": "\u00a32,000 \u00d7 1.07\u00b9\u2070 \u2248 \u00a33,934. Simple interest would only give \u00a33,400.",
+   "learn_more": "pb-inv-compound"
+  },
+  {
+   "id": "inv-007",
+   "topic": "investing",
+   "difficulty": 2,
+   "type": "mc",
+   "question": "Diversification means\u2026",
+   "options": [
+    "Putting everything in one hot stock",
+    "Spreading money across many investments",
+    "Checking prices daily"
+   ],
+   "answer": 1,
+   "explanation": "Spreading your money means one bad pick can't sink you.",
+   "learn_more": "pb-inv-basics"
+  },
+  {
+   "id": "inv-008",
+   "topic": "investing",
+   "difficulty": 2,
+   "type": "mc",
+   "question": "An index fund aims to\u2026",
+   "options": [
+    "Beat the market by picking winners",
+    "Track a market index like the FTSE 100",
+    "Guarantee a return"
+   ],
+   "answer": 1,
+   "explanation": "Index funds track a market rather than trying to beat it, which usually keeps fees low.",
+   "learn_more": "pb-inv-funds-fees"
+  },
+  {
+   "id": "inv-009",
+   "topic": "investing",
+   "difficulty": 2,
+   "type": "mc",
+   "question": "Why do long-term investors often sit tight through short-term drops?",
+   "options": [
+    "Prices only go up",
+    "Markets have historically recovered over long periods, though nothing is guaranteed",
+    "Drops don't count"
+   ],
+   "answer": 1,
+   "explanation": "History favours patience, but past performance isn't a guarantee.",
+   "learn_more": "pb-inv-basics"
+  },
+  {
+   "id": "inv-010",
+   "topic": "investing",
+   "difficulty": 1,
+   "type": "mc",
+   "question": "\u201cInvestments can go down as well as up\u201d means\u2026",
+   "options": [
+    "You could get back less than you put in",
+    "Your money is guaranteed",
+    "Prices change once a year"
+   ],
+   "answer": 0,
+   "explanation": "Investing carries the risk of losing money.",
+   "learn_more": "pb-inv-basics"
+  },
+  {
+   "id": "inv-011",
+   "topic": "investing",
+   "difficulty": 2,
+   "type": "mc",
+   "question": "A dividend is\u2026",
+   "options": [
+    "Part of a company's profits paid to shareholders",
+    "A broker's fee",
+    "A type of loan"
+   ],
+   "answer": 0,
+   "explanation": "Companies may share profits with shareholders as dividends.",
+   "learn_more": "pb-inv-basics"
+  },
+  {
+   "id": "inv-012",
+   "topic": "investing",
+   "difficulty": 2,
+   "type": "mc",
+   "question": "Pound-cost averaging means\u2026",
+   "options": [
+    "Investing a fixed amount regularly, buying more when prices are low",
+    "Converting pounds to dollars",
+    "Paying fees in pounds"
+   ],
+   "answer": 0,
+   "explanation": "Regular investing smooths out the price you pay.",
+   "learn_more": "pb-inv-compound"
+  },
+  {
+   "id": "inv-013",
+   "topic": "investing",
+   "difficulty": 3,
+   "type": "calc",
+   "question": "Your fund rises 10%, then falls 10%. Overall you are\u2026",
+   "options": [
+    "Back where you started",
+    "Down 1%",
+    "Up 1%"
+   ],
+   "answer": 1,
+   "explanation": "1.10 \u00d7 0.90 = 0.99, so you're down 1%.",
+   "learn_more": "pb-inv-compound"
+  },
+  {
+   "id": "inv-014",
+   "topic": "investing",
+   "difficulty": 2,
+   "type": "mc",
+   "question": "Is crypto held on an exchange covered by the FSCS?",
+   "options": [
+    "Yes, up to the limit",
+    "No",
+    "Only Bitcoin"
+   ],
+   "answer": 1,
+   "explanation": "Crypto isn't FSCS protected. If an exchange fails, you could lose everything.",
+   "learn_more": "pb-inv-crypto-risks"
+  },
+  {
+   "id": "inv-015",
+   "topic": "investing",
+   "difficulty": 2,
+   "type": "mc",
+   "question": "Who regulates most UK investment firms?",
+   "options": [
+    "The FCA",
+    "Ofgem",
+    "HMRC"
+   ],
+   "answer": 0,
+   "explanation": "The Financial Conduct Authority regulates investment firms. Check the FCA Register before investing.",
+   "learn_more": "pb-inv-basics"
+  },
+  {
+   "id": "inv-016",
+   "topic": "investing",
+   "difficulty": 3,
+   "type": "calc",
+   "question": "A platform charges 0.45% a year. On \u00a320,000, that's\u2026",
+   "options": [
+    "\u00a39",
+    "\u00a390",
+    "\u00a3900"
+   ],
+   "answer": 1,
+   "explanation": "0.45% of \u00a320,000 = \u00a390 a year.",
+   "learn_more": "pb-inv-funds-fees"
+  },
+  {
+   "id": "inv-017",
+   "topic": "investing",
+   "difficulty": 2,
+   "type": "mc",
+   "question": "An investment promising \u201cguaranteed 20% a month\u201d is\u2026",
+   "options": [
+    "A great deal",
+    "Almost certainly a scam",
+    "Normal for crypto"
+   ],
+   "answer": 1,
+   "explanation": "Guaranteed high returns are the classic scam promise.",
+   "learn_more": "pb-scam-investment"
+  },
+  {
+   "id": "inv-018",
+   "topic": "investing",
+   "difficulty": 2,
+   "type": "mc",
+   "question": "A Stocks & Shares ISA protects you from\u2026",
+   "options": [
+    "Market falls",
+    "Tax on gains and dividends",
+    "All fees"
+   ],
+   "answer": 1,
+   "explanation": "An ISA is a tax wrapper. Your investments can still fall.",
+   "learn_more": "pb-save-isas"
+  },
+  {
+   "id": "inv-019",
+   "topic": "investing",
+   "difficulty": 3,
+   "type": "calc",
+   "question": "Your investments grow 6% in a year when inflation is 4%. Your real return is roughly\u2026",
+   "options": [
+    "10%",
+    "2%",
+    "6%"
+   ],
+   "answer": 1,
+   "explanation": "Real return \u2248 6% \u2212 4% = 2%.",
+   "learn_more": "pb-inv-compound"
+  },
+  {
+   "id": "inv-020",
+   "topic": "investing",
+   "difficulty": 2,
+   "type": "mc",
+   "question": "Before investing, many guides suggest you first\u2026",
+   "options": [
+    "Max out your credit cards",
+    "Build an emergency fund and clear expensive debt",
+    "Borrow money to invest"
+   ],
+   "answer": 1,
+   "explanation": "Expensive debt usually costs more than investments earn, and a buffer stops you selling at a bad time.",
+   "learn_more": "pb-inv-basics"
+  },
+  {
+   "id": "inv-021",
+   "topic": "investing",
+   "difficulty": 1,
+   "type": "mc",
+   "question": "Buying a share means:",
+   "options": [
+    "Lending money to a bank",
+    "Owning a small part of a company",
+    "Renting property",
+    "A savings product"
+   ],
+   "answer": 1,
+   "explanation": "Shares are ownership stakes; their value moves with the company and market.",
+   "learn_more": "pb-inv-basics"
+  },
+  {
+   "id": "inv-022",
+   "topic": "investing",
+   "difficulty": 1,
+   "type": "mc",
+   "question": "An index fund invests in:",
+   "options": [
+    "One company",
+    "All the companies in an index, like the FTSE 100 or S&P 500, in one fund",
+    "Only government bonds",
+    "Only gold"
+   ],
+   "answer": 1,
+   "explanation": "Index funds track a whole market slice, giving instant diversification at low cost.",
+   "learn_more": "pb-inv-basics"
+  },
+  {
+   "id": "inv-023",
+   "topic": "investing",
+   "difficulty": 2,
+   "type": "mc",
+   "question": "Which type of fund usually has the lowest ongoing fees?",
+   "options": [
+    "Actively managed funds",
+    "Passive index trackers",
+    "Hedge funds",
+    "With-profits funds"
+   ],
+   "answer": 1,
+   "explanation": "Trackers just follow an index, so running costs are far lower than active management.",
+   "learn_more": "pb-inv-funds-fees",
+   "volatile": true
+  },
+  {
+   "id": "inv-024",
+   "topic": "investing",
+   "difficulty": 1,
+   "type": "mc",
+   "question": "The ongoing charges figure (OCF) of a fund:",
+   "options": [
+    "Is irrelevant",
+    "Is the yearly fee deducted from your investment, and small differences compound hugely",
+    "Is paid only once",
+    "Is a government tax"
+   ],
+   "answer": 1,
+   "explanation": "A 1% fee vs 0.1% fee can cost tens of thousands over a lifetime of investing.",
+   "learn_more": "pb-inv-funds-fees",
+   "volatile": true
+  },
+  {
+   "id": "inv-025",
+   "topic": "investing",
+   "difficulty": 2,
+   "type": "mc",
+   "question": "Compound growth in investing works best with:",
+   "options": [
+    "Daily trading",
+    "Time: leaving investments to grow over years or decades",
+    "Panic selling",
+    "Borrowing to invest"
+   ],
+   "answer": 1,
+   "explanation": "Compounding needs time; most of the growth in long investing careers comes from reinvested returns.",
+   "learn_more": "pb-inv-compound"
+  },
+  {
+   "id": "inv-026",
+   "topic": "investing",
+   "difficulty": 1,
+   "type": "mc",
+   "question": "'Time in the market beats timing the market' means:",
+   "options": [
+    "Trade as often as possible",
+    "Staying invested long-term usually beats trying to predict the perfect moment",
+    "Buy only in January",
+    "Sell in dips"
+   ],
+   "answer": 1,
+   "explanation": "Missing the market's best days by sitting out can badly damage long-term returns.",
+   "learn_more": "pb-inv-compound"
+  },
+  {
+   "id": "inv-027",
+   "topic": "investing",
+   "difficulty": 2,
+   "type": "mc",
+   "question": "Volatility in investments is:",
+   "options": [
+    "A sign you were scammed",
+    "Normal: prices move up and down in the short term while long-term growth is uneven",
+    "Only for crypto",
+    "Always bad news"
+   ],
+   "answer": 1,
+   "explanation": "Dips are part of investing; panic-selling during them locks in losses.",
+   "learn_more": "pb-inv-basics"
+  },
+  {
+   "id": "inv-028",
+   "topic": "investing",
+   "difficulty": 2,
+   "type": "mc",
+   "question": "Diversification reduces risk because:",
+   "options": [
+    "It guarantees profit",
+    "Losses in one holding can be offset by others, so you're not betting everything on one outcome",
+    "It removes all risk",
+    "It's required by law"
+   ],
+   "answer": 1,
+   "explanation": "Diversification manages risk; it doesn't eliminate it.",
+   "learn_more": "pb-inv-basics"
+  },
+  {
+   "id": "inv-029",
+   "topic": "investing",
+   "difficulty": 2,
+   "type": "mc",
+   "question": "Money lost when a stock's price falls:",
+   "options": [
+    "Is covered by the FSCS",
+    "Is not covered by the FSCS; the FSCS protects you if the firm fails, not from market losses",
+    "Is refunded by the platform",
+    "Is insured by the government"
+   ],
+   "answer": 1,
+   "explanation": "FSCS covers firm failure up to limits, not investment losses; this is a key difference from cash savings.",
+   "learn_more": "pb-inv-basics",
+   "volatile": true
+  },
+  {
+   "id": "inv-030",
+   "topic": "investing",
+   "difficulty": 2,
+   "type": "mc",
+   "question": "Cryptocurrency investments:",
+   "options": [
+    "Are FSCS protected",
+    "Are generally not FSCS protected and can fall to zero",
+    "Are guaranteed by the Bank of England",
+    "Are the same as savings"
+   ],
+   "answer": 1,
+   "explanation": "Crypto is high risk, largely unregulated for consumer protection, and you can lose everything.",
+   "learn_more": "pb-inv-crypto-risks",
+   "volatile": true
+  },
+  {
+   "id": "inv-031",
+   "topic": "investing",
+   "difficulty": 2,
+   "type": "mc",
+   "question": "A celebrity promotes a coin or investment scheme online. This usually suggests:",
+   "options": [
+    "A safe investment",
+    "A high-risk or scam promotion; celebrities are paid and schemes like this are a classic red flag",
+    "Government backing",
+    "Free money"
+   ],
+   "answer": 1,
+   "explanation": "Endorsed schemes are a well-known scam pattern; assume risk until independently verified.",
+   "learn_more": "pb-inv-crypto-risks",
+   "volatile": true
+  },
+  {
+   "id": "inv-032",
+   "topic": "investing",
+   "difficulty": 1,
+   "type": "mc",
+   "question": "'Pound-cost averaging' means:",
+   "options": [
+    "Investing a fixed amount regularly, so you buy more shares when prices are low",
+    "Converting to dollars",
+    "Paying average fees",
+    "Timing the top"
+   ],
+   "answer": 0,
+   "explanation": "Regular investing smooths your entry price and removes the temptation to time the market.",
+   "learn_more": "pb-inv-basics"
+  },
+  {
+   "id": "inv-033",
+   "topic": "investing",
+   "difficulty": 2,
+   "type": "mc",
+   "question": "Before investing, which should be done first?",
+   "options": [
+    "Buy the trendiest fund",
+    "Pay off high-interest debt and build an emergency fund",
+    "Borrow to invest",
+    "Invest your rent money"
+   ],
+   "answer": 1,
+   "explanation": "Clearing debt that costs 20%+ beats most investment returns, and the buffer stops forced selling.",
+   "learn_more": "pb-inv-basics"
+  },
+  {
+   "id": "inv-034",
+   "topic": "investing",
+   "difficulty": 2,
+   "type": "mc",
+   "question": "Stocks & Shares ISA tax treatment means:",
+   "options": [
+    "You pay no tax on gains or dividends within the ISA, within the annual allowance",
+    "You get a refund on losses",
+    "You pay double tax",
+    "Dividends are taxed at 50%"
+   ],
+   "answer": 0,
+   "explanation": "The ISA wrapper shelters gains and income up to the annual allowance.",
+   "learn_more": "pb-inv-basics",
+   "volatile": true
+  },
+  {
+   "id": "inv-035",
+   "topic": "investing",
+   "difficulty": 2,
+   "type": "mc",
+   "question": "A SIPP is:",
+   "options": [
+    "A savings account",
+    "A personal pension you control, giving tax relief on contributions",
+    "An insurance product",
+    "A crypto wallet"
+   ],
+   "answer": 1,
+   "explanation": "SIPPs attract tax relief on contributions and lock money until pension age.",
+   "learn_more": "pb-inv-basics",
+   "volatile": true
+  },
+  {
+   "id": "inv-036",
+   "topic": "investing",
+   "difficulty": 2,
+   "type": "mc",
+   "question": "'Representative' investment returns shown in adverts are:",
+   "options": [
+    "Guaranteed",
+    "Often past performance, which is not a reliable indicator of future results",
+    "FSCS insured",
+    "Set by law"
+   ],
+   "answer": 1,
+   "explanation": "Past performance is a warning label, not a promise; adverts must say so for a reason.",
+   "learn_more": "pb-inv-funds-fees"
+  },
+  {
+   "id": "inv-037",
+   "topic": "investing",
+   "difficulty": 2,
+   "type": "mc",
+   "question": "Higher-risk asset classes like emerging markets typically offer:",
+   "options": [
+    "Guaranteed higher returns",
+    "Potentially higher returns with much bigger swings and losses",
+    "No risk",
+    "Fixed interest"
+   ],
+   "answer": 1,
+   "explanation": "Risk and potential return travel together; higher reward means higher possible loss.",
+   "learn_more": "pb-inv-basics"
+  },
+  {
+   "id": "inv-038",
+   "topic": "investing",
+   "difficulty": 1,
+   "type": "mc",
+   "question": "Dividends are:",
+   "options": [
+    "Fees you pay",
+    "Payments some companies make to shareholders from profits",
+    "Government benefits",
+    "Interest on loans"
+   ],
+   "answer": 1,
+   "explanation": "Dividend-paying shares give income; within an ISA this income is tax-free.",
+   "learn_more": "pb-inv-basics"
+  },
+  {
+   "id": "inv-039",
+   "topic": "investing",
+   "difficulty": 2,
+   "type": "mc",
+   "question": "Bonds generally are:",
+   "options": [
+    "Higher risk than shares",
+    "Lower risk than shares, paying interest, but can still lose value if sold early or the issuer defaults",
+    "Illegal",
+    "A type of ISA"
+   ],
+   "answer": 1,
+   "explanation": "Bonds sit lower on the risk ladder than shares but are not risk-free.",
+   "learn_more": "pb-inv-basics"
+  },
+  {
+   "id": "inv-040",
+   "topic": "investing",
+   "difficulty": 2,
+   "type": "mc",
+   "question": "Reinvesting dividends instead of taking them as cash:",
+   "options": [
+    "Has no long-term effect",
+    "Feeds compounding and can substantially increase final value over decades",
+    "Is illegal in ISAs",
+    "Costs double tax"
+   ],
+   "answer": 1,
+   "explanation": "Reinvestment is compounding in action.",
+   "learn_more": "pb-inv-compound"
+  },
+  {
+   "id": "inv-041",
+   "topic": "investing",
+   "difficulty": 2,
+   "type": "mc",
+   "question": "An investment platform's fee structure matters because:",
+   "options": [
+    "Fees don't matter",
+    "High platform fees compound against you just like fund fees do",
+    "All platforms are free",
+    "The FSCS pays fees"
+   ],
+   "answer": 1,
+   "explanation": "Compare platform fees, fund fees and dealing charges together, not just fund costs.",
+   "learn_more": "pb-inv-funds-fees",
+   "volatile": true
+  },
+  {
+   "id": "inv-042",
+   "topic": "investing",
+   "difficulty": 1,
+   "type": "mc",
+   "question": "'Fractional shares' let you:",
+   "options": [
+    "Only buy broken companies",
+    "Buy part of a share, so expensive shares become accessible",
+    "Avoid all risk",
+    "Trade without an account"
+   ],
+   "answer": 1,
+   "explanation": "Fractional investing lowers the entry barrier, useful for regular small amounts.",
+   "learn_more": "pb-inv-basics"
+  },
+  {
+   "id": "inv-043",
+   "topic": "investing",
+   "difficulty": 2,
+   "type": "mc",
+   "question": "'Free share' sign-up offers usually require:",
+   "options": [
+    "Nothing",
+    "You to open an account, sometimes deposit or trade first; read the terms before assuming it's free",
+    "A credit check that damages your score always",
+    "Buying a house"
+   ],
+   "answer": 1,
+   "explanation": "The shares are often conditional on deposits or trades; worth it only if you'd use the platform anyway.",
+   "learn_more": "pb-inv-free-shares",
+   "volatile": true
+  },
+  {
+   "id": "inv-044",
+   "topic": "investing",
+   "difficulty": 2,
+   "type": "mc",
+   "question": "An investment that guarantees a high fixed return with no risk is:",
+   "options": [
+    "The best find ever",
+    "Almost certainly a scam; genuinely risky-free high returns don't exist",
+    "A government bond",
+    "An ISA"
+   ],
+   "answer": 1,
+   "explanation": "Guaranteed high returns with no risk is the textbook scam pitch.",
+   "learn_more": "pb-inv-crypto-risks"
+  },
+  {
+   "id": "inv-045",
+   "topic": "investing",
+   "difficulty": 2,
+   "type": "mc",
+   "question": "The FCA Register is used to:",
+   "options": [
+    "Find romance partners",
+    "Check that a firm or person is authorised to give financial services in the UK",
+    "Track crypto prices",
+    "Compare savings rates"
+   ],
+   "answer": 1,
+   "explanation": "Before investing with anyone, check them on the FCA Register; unauthorised firms can't be compensated.",
+   "learn_more": "pb-inv-crypto-risks",
+   "volatile": true
+  },
+  {
+   "id": "inv-046",
+   "topic": "investing",
+   "difficulty": 2,
+   "type": "mc",
+   "question": "A fund that tracks the FTSE 100 holds:",
+   "options": [
+    "The 100 smallest companies",
+    "Shares in the 100 largest UK-listed companies by size",
+    "Only banks",
+    "Property only"
+   ],
+   "answer": 1,
+   "explanation": "Index composition is public; trackers simply hold it.",
+   "learn_more": "pb-inv-basics"
+  },
+  {
+   "id": "inv-047",
+   "topic": "investing",
+   "difficulty": 2,
+   "type": "mc",
+   "question": "Selling investments during a crash typically:",
+   "options": [
+    "Protects your money",
+    "Turns a paper loss into a real one and misses the recovery",
+    "Is free",
+    "Is what professionals always do"
+   ],
+   "answer": 1,
+   "explanation": "Long-term investing means enduring downturns; selling at the bottom is the classic expensive mistake.",
+   "learn_more": "pb-inv-compound"
+  },
+  {
+   "id": "inv-048",
+   "topic": "investing",
+   "difficulty": 2,
+   "type": "mc",
+   "question": "Investment fees of 2% per year versus 0.2% over 30 years can differ by:",
+   "options": [
+    "Nothing meaningful",
+    "Tens of thousands of pounds on a modest portfolio",
+    "Exactly 2%",
+    "1 pence"
+   ],
+   "answer": 1,
+   "explanation": "Fee drag compounds just like returns do, in reverse.",
+   "learn_more": "pb-inv-funds-fees",
+   "volatile": true
+  },
+  {
+   "id": "inv-049",
+   "topic": "investing",
+   "difficulty": 2,
+   "type": "mc",
+   "question": "Which is generally the most tax-efficient home for long-term investments in the UK?",
+   "options": [
+    "A current account",
+    "A Stocks & Shares ISA (up to the allowance)",
+    "A foreign bank account",
+    "Premium Bonds only"
+   ],
+   "answer": 1,
+   "explanation": "ISA wrappers shield investment growth from tax up to the annual allowance.",
+   "learn_more": "pb-inv-basics",
+   "volatile": true
+  },
+  {
+   "id": "inv-050",
+   "topic": "investing",
+   "difficulty": 2,
+   "type": "mc",
+   "question": "'Ponzi scheme' red flags include:",
+   "options": [
+    "Public regulation",
+    "Consistent 'guaranteed' returns paid from new investors' money, and pressure to recruit others",
+    "Low fees",
+    "Being listed on a stock exchange"
+   ],
+   "answer": 1,
+   "explanation": "If returns depend on recruitment or feel too smooth to be real, walk away.",
+   "learn_more": "pb-inv-crypto-risks"
+  }
+ ]
+}

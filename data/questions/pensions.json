@@ -1,0 +1,549 @@
+{
+ "topic": "pensions",
+ "questions": [
+  {
+   "id": "pen-001",
+   "topic": "pensions",
+   "difficulty": 1,
+   "type": "mc",
+   "question": "Employers must auto-enrol eligible workers aged 22+ who earn over\u2026",
+   "options": [
+    "\u00a35,000",
+    "\u00a310,000",
+    "\u00a320,000"
+   ],
+   "answer": 1,
+   "explanation": "The auto-enrolment earnings trigger is \u00a310,000 a year.",
+   "learn_more": "pb-pen-workplace",
+   "volatile": true,
+   "review_by": "2027-04-06",
+   "verify": "Auto-enrolment earnings trigger"
+  },
+  {
+   "id": "pen-002",
+   "topic": "pensions",
+   "difficulty": 2,
+   "type": "mc",
+   "question": "The minimum total auto-enrolment contribution on qualifying earnings is\u2026",
+   "options": [
+    "5%",
+    "8%",
+    "15%"
+   ],
+   "answer": 1,
+   "explanation": "8% in total, with at least 3% from the employer.",
+   "learn_more": "pb-pen-workplace"
+  },
+  {
+   "id": "pen-003",
+   "topic": "pensions",
+   "difficulty": 2,
+   "type": "mc",
+   "question": "The minimum employer contribution under auto-enrolment is\u2026",
+   "options": [
+    "1%",
+    "3%",
+    "8%"
+   ],
+   "answer": 1,
+   "explanation": "Employers must pay at least 3% of qualifying earnings.",
+   "learn_more": "pb-pen-workplace"
+  },
+  {
+   "id": "pen-004",
+   "topic": "pensions",
+   "difficulty": 2,
+   "type": "mc",
+   "question": "Opting out of your workplace pension means\u2026",
+   "options": [
+    "You lose nothing",
+    "You lose your employer's contributions",
+    "You pay less tax"
+   ],
+   "answer": 1,
+   "explanation": "Opting out gives up money your employer would add for you.",
+   "learn_more": "pb-pen-workplace"
+  },
+  {
+   "id": "pen-005",
+   "topic": "pensions",
+   "difficulty": 2,
+   "type": "mc",
+   "question": "Pension tax relief means\u2026",
+   "options": [
+    "The government adds back tax on your contributions",
+    "Your pension is tax-free forever",
+    "You pay tax twice"
+   ],
+   "answer": 0,
+   "explanation": "Contributions get tax relief at your income tax rate, within limits.",
+   "learn_more": "pb-pen-tax-relief"
+  },
+  {
+   "id": "pen-006",
+   "topic": "pensions",
+   "difficulty": 2,
+   "type": "mc",
+   "question": "The normal minimum age to access most private pensions is\u2026",
+   "options": [
+    "50",
+    "55, rising to 57 from 2028",
+    "70"
+   ],
+   "answer": 1,
+   "explanation": "The minimum pension age is set to rise to 57 in 2028.",
+   "learn_more": "pb-pen-tax-relief",
+   "volatile": true,
+   "review_by": "2027-04-06",
+   "verify": "Normal minimum pension age"
+  },
+  {
+   "id": "pen-007",
+   "topic": "pensions",
+   "difficulty": 2,
+   "type": "mc",
+   "question": "The State Pension age is 66 and is rising to\u2026",
+   "options": [
+    "67",
+    "70",
+    "75"
+   ],
+   "answer": 0,
+   "explanation": "It's rising to 67 between 2026 and 2028.",
+   "learn_more": "pb-pen-state",
+   "volatile": true,
+   "review_by": "2027-04-06",
+   "verify": "State Pension age timetable"
+  },
+  {
+   "id": "pen-008",
+   "topic": "pensions",
+   "difficulty": 2,
+   "type": "mc",
+   "question": "To get any new State Pension you usually need at least how many qualifying NI years?",
+   "options": [
+    "10",
+    "35",
+    "5"
+   ],
+   "answer": 0,
+   "explanation": "You usually need 10 years for any State Pension and 35 for the full amount.",
+   "learn_more": "pb-pen-state"
+  },
+  {
+   "id": "pen-009",
+   "topic": "pensions",
+   "difficulty": 3,
+   "type": "calc",
+   "question": "You invest \u00a3100 a month for 30 years at 5% a year. Roughly how much do you end up with?",
+   "options": [
+    "\u00a336,000",
+    "About \u00a383,000",
+    "\u00a3150,000"
+   ],
+   "answer": 1,
+   "explanation": "You pay in \u00a336,000, and compound growth takes it to about \u00a383,000.",
+   "learn_more": "pb-inv-compound"
+  },
+  {
+   "id": "pen-010",
+   "topic": "pensions",
+   "difficulty": 2,
+   "type": "mc",
+   "question": "Most people can take up to what share of their pension tax-free?",
+   "options": [
+    "10%",
+    "25%",
+    "50%"
+   ],
+   "answer": 1,
+   "explanation": "Usually 25%, subject to an overall cap.",
+   "learn_more": "pb-pen-tax-relief",
+   "volatile": true,
+   "review_by": "2027-04-06",
+   "verify": "Tax-free lump sum rules and cap"
+  },
+  {
+   "id": "pen-011",
+   "topic": "pensions",
+   "difficulty": 2,
+   "type": "mc",
+   "question": "Lost track of an old workplace pension? Use\u2026",
+   "options": [
+    "The government's Pension Tracing Service",
+    "Your bank",
+    "Ofgem"
+   ],
+   "answer": 0,
+   "explanation": "It's free on gov.uk.",
+   "learn_more": "pb-pen-state"
+  },
+  {
+   "id": "pen-012",
+   "topic": "pensions",
+   "difficulty": 1,
+   "type": "mc",
+   "question": "Workplace pension auto-enrolment means:",
+   "options": [
+    "You must save all your salary",
+    "Most employees are automatically enrolled into a pension, and can opt out",
+    "Your employer pays everything",
+    "It's a savings account"
+   ],
+   "answer": 1,
+   "explanation": "Auto-enrolment puts you in unless you opt out; the default is designed to build you a pension.",
+   "learn_more": "pb-pen-workplace",
+   "volatile": true
+  },
+  {
+   "id": "pen-013",
+   "topic": "pensions",
+   "difficulty": 2,
+   "type": "mc",
+   "question": "The minimum auto-enrolment contribution is around:",
+   "options": [
+    "1% of salary",
+    "8% of qualifying earnings total, with at least 3% from the employer",
+    "25%",
+    "Nothing"
+   ],
+   "answer": 1,
+   "explanation": "The 8% minimum includes employer 3% and employee 5% (with tax relief); figures can change.",
+   "learn_more": "pb-pen-workplace",
+   "volatile": true
+  },
+  {
+   "id": "pen-014",
+   "topic": "pensions",
+   "difficulty": 2,
+   "type": "mc",
+   "question": "Opting out of your workplace pension means losing:",
+   "options": [
+    "Nothing",
+    "Your employer's contributions and the tax relief, effectively free money",
+    "Your salary",
+    "Your NI number"
+   ],
+   "answer": 1,
+   "explanation": "Opting out saves money today but forfeits employer money and tax relief worth a lot over a career.",
+   "learn_more": "pb-pen-workplace"
+  },
+  {
+   "id": "pen-015",
+   "topic": "pensions",
+   "difficulty": 1,
+   "type": "mc",
+   "question": "Pension tax relief means:",
+   "options": [
+    "You pay tax on pensions",
+    "The government adds back the tax you paid on contributions, boosting what's invested",
+    "Pensions are illegal",
+    "Relief is only for the rich"
+   ],
+   "answer": 1,
+   "explanation": "Basic-rate relief adds 25p for every \u00a31 you contribute; higher earners can claim more.",
+   "learn_more": "pb-pen-tax-relief",
+   "volatile": true
+  },
+  {
+   "id": "pen-016",
+   "topic": "pensions",
+   "difficulty": 2,
+   "type": "mc",
+   "question": "Your employer matches pension contributions. Not contributing enough to get the full match means:",
+   "options": [
+    "Prudent saving",
+    "Turning down part of your salary package permanently",
+    "Better cash flow with no cost",
+    "Higher tax relief"
+   ],
+   "answer": 1,
+   "explanation": "Employer matching is an instant return; capture the full match before other savings.",
+   "learn_more": "pb-pen-workplace"
+  },
+  {
+   "id": "pen-017",
+   "topic": "pensions",
+   "difficulty": 2,
+   "type": "mc",
+   "question": "A pension is different from a savings account because:",
+   "options": [
+    "It's the same",
+    "Money is invested for the long term and usually locked until pension age",
+    "It has no growth",
+    "It's insured by FSCS fully"
+   ],
+   "answer": 1,
+   "explanation": "Pensions trade access for tax relief and long-term growth; keep emergency money separate.",
+   "learn_more": "pb-pen-workplace"
+  },
+  {
+   "id": "pen-018",
+   "topic": "pensions",
+   "difficulty": 1,
+   "type": "mc",
+   "question": "The State Pension requires:",
+   "options": [
+    "No conditions",
+    "Enough qualifying years of National Insurance contributions or credits, usually 35 for the full amount",
+    "A university degree",
+    "Owning a home"
+   ],
+   "answer": 1,
+   "explanation": "Around 35 qualifying years gets the full new State Pension; check your forecast online.",
+   "learn_more": "pb-pen-state",
+   "volatile": true
+  },
+  {
+   "id": "pen-019",
+   "topic": "pensions",
+   "difficulty": 2,
+   "type": "mc",
+   "question": "You can check your State Pension forecast and NI record:",
+   "options": [
+    "Only by post",
+    "Free online via the government's State Pension forecast service",
+    "By asking your employer",
+    "Never"
+   ],
+   "answer": 1,
+   "explanation": "The gov.uk forecast tool shows what you'd get and any gaps to fill.",
+   "learn_more": "pb-pen-state"
+  },
+  {
+   "id": "pen-020",
+   "topic": "pensions",
+   "difficulty": 2,
+   "type": "mc",
+   "question": "The State Pension age is currently:",
+   "options": [
+    "60",
+    "Rising to 67, with further rises legislated",
+    "55",
+    "75"
+   ],
+   "answer": 1,
+   "explanation": "State Pension age is increasing to 67 and later 68 depending on birth date; check your own date.",
+   "learn_more": "pb-pen-state",
+   "volatile": true
+  },
+  {
+   "id": "pen-021",
+   "topic": "pensions",
+   "difficulty": 2,
+   "type": "mc",
+   "question": "Pensions from old employers can be located via:",
+   "options": [
+    "Guesswork",
+    "The government's Pension Tracing Service, free",
+    "A private detective",
+    "Social media"
+   ],
+   "answer": 1,
+   "explanation": "The free tracing service finds contact details for lost pensions; consolidation is a separate decision.",
+   "learn_more": "pb-pen-workplace",
+   "volatile": true
+  },
+  {
+   "id": "pen-022",
+   "topic": "pensions",
+   "difficulty": 2,
+   "type": "mc",
+   "question": "Before consolidating old pensions, check:",
+   "options": [
+    "Nothing, always merge",
+    "Exit fees, fund quality and any guarantees you'd lose",
+    "Only the color of the app",
+    "Your horoscope"
+   ],
+   "answer": 0,
+   "explanation": "Lost guarantees or high exit fees can outweigh simpler admin; compare before merging.",
+   "learn_more": "pb-pen-workplace",
+   "volatile": true
+  },
+  {
+   "id": "pen-023",
+   "topic": "pensions",
+   "difficulty": 1,
+   "type": "mc",
+   "question": "Pension money is normally inaccessible until:",
+   "options": [
+    "Age 18",
+    "Age 55, rising to 57 from 2028 (dates can change)",
+    "60 always",
+    "70"
+   ],
+   "answer": 1,
+   "explanation": "Normal minimum pension age is 55, rising to 57 in 2028; special cases exist.",
+   "learn_more": "pb-pen-workplace",
+   "volatile": true
+  },
+  {
+   "id": "pen-024",
+   "topic": "pensions",
+   "difficulty": 2,
+   "type": "mc",
+   "question": "A pension 'drawdown' means:",
+   "options": [
+    "Cancelling your pension",
+    "Leaving money invested and taking income from it flexibly",
+    "A bank loan",
+    "A tax fine"
+   ],
+   "answer": 1,
+   "explanation": "Drawdown keeps investments growing while you take income; annuities buy guaranteed income instead.",
+   "learn_more": "pb-pen-workplace",
+   "volatile": true
+  },
+  {
+   "id": "pen-025",
+   "topic": "pensions",
+   "difficulty": 2,
+   "type": "mc",
+   "question": "Pension scammers often promise:",
+   "options": [
+    "Modest market returns",
+    "Guaranteed high returns, early access, or 'free pension reviews' out of the blue",
+    "Higher NI",
+    "Free tax"
+   ],
+   "answer": 1,
+   "explanation": "Cold calls about pensions are illegal; hang up and use regulated advisers only.",
+   "learn_more": "pb-pen-workplace",
+   "volatile": true
+  },
+  {
+   "id": "pen-026",
+   "topic": "pensions",
+   "difficulty": 2,
+   "type": "mc",
+   "question": "A LISA versus a pension for retirement savings:",
+   "options": [
+    "LISA is always better",
+    "LISAs suit some basic-rate savers; pensions usually win with employer contributions or higher-rate relief",
+    "They're identical",
+    "Pensions are illegal for self-employed"
+   ],
+   "answer": 1,
+   "explanation": "Employer match and tax relief usually favour pensions; LISAs add flexibility for first homes.",
+   "learn_more": "pb-pen-workplace",
+   "volatile": true
+  },
+  {
+   "id": "pen-027",
+   "topic": "pensions",
+   "difficulty": 1,
+   "type": "mc",
+   "question": "Annual allowance for pension contributions is roughly:",
+   "options": [
+    "\u00a31,000",
+    "\u00a360,000 (can change, tapered for very high earners)",
+    "\u00a3500,000",
+    "Unlimited"
+   ],
+   "answer": 1,
+   "explanation": "Most people can contribute up to \u00a360,000 a year with relief; very high incomes taper it.",
+   "learn_more": "pb-pen-tax-relief",
+   "volatile": true
+  },
+  {
+   "id": "pen-028",
+   "topic": "pensions",
+   "difficulty": 2,
+   "type": "mc",
+   "question": "The earlier you start pension contributions, the more you benefit from:",
+   "options": [
+    "Fees",
+    "Decades of compounding, so small early amounts beat big late ones",
+    "Nothing",
+    "Marketing"
+   ],
+   "answer": 1,
+   "explanation": "\u00a350 a month from 25 can beat \u00a3200 a month from 45, purely through time.",
+   "learn_more": "pb-pen-workplace",
+   "volatile": true
+  },
+  {
+   "id": "pen-029",
+   "topic": "pensions",
+   "difficulty": 2,
+   "type": "mc",
+   "question": "Self-employed people building a pension typically use:",
+   "options": [
+    "Nothing exists",
+    "A personal pension or SIPP with tax relief",
+    "Employer schemes only",
+    "Premium Bonds only"
+   ],
+   "answer": 1,
+   "explanation": "SIPPs and personal pensions give self-employed workers the same relief and compounding.",
+   "learn_more": "pb-pen-tax-relief"
+  },
+  {
+   "id": "pen-030",
+   "topic": "pensions",
+   "difficulty": 2,
+   "type": "mc",
+   "question": "If you die before drawing your pension, it generally:",
+   "options": [
+    "Disappears",
+    "Can pass to beneficiaries, often tax-free if you die before 75 (rules are nuanced)",
+    "Goes to your employer",
+    "Is taxed at 100%"
+   ],
+   "answer": 1,
+   "explanation": "Pension death benefit rules are favourable but complex; nominate beneficiaries with your provider.",
+   "learn_more": "pb-pen-workplace",
+   "volatile": true
+  },
+  {
+   "id": "pen-031",
+   "topic": "pensions",
+   "difficulty": 2,
+   "type": false,
+   "question": "Pension contributions reduce the take-home pay cut because of tax relief: contributing \u00a380 net can mean \u00a3100 invested for a basic-rate taxpayer, so the real cost of \u00a3100 saved is:",
+   "options": [
+    "\u00a3100",
+    "\u00a380",
+    "\u00a360",
+    "\u00a350"
+   ],
+   "answer": 1,
+   "explanation": "That's relief in action: \u00a380 out of your net pay becomes \u00a3100 in the pension.",
+   "learn_more": "pb-pen-tax-relief",
+   "volatile": true
+  },
+  {
+   "id": "pen-032",
+   "topic": "pensions",
+   "difficulty": 1,
+   "type": "mc",
+   "question": "The State Pension is paid:",
+   "options": [
+    "As a lump sum at 80",
+    "Weekly, for life, once you reach State Pension age",
+    "Only to homeowners",
+    "In vouchers"
+   ],
+   "answer": 1,
+   "explanation": "It's a regular lifetime income, which is why NI years are valuable.",
+   "learn_more": "pb-pen-state"
+  },
+  {
+   "id": "pen-033",
+   "topic": "pensions",
+   "difficulty": 2,
+   "type": "mc",
+   "question": "Checking your payslip for pension contributions shows:",
+   "options": [
+    "Nothing ever",
+    "Whether you're enrolled, how much goes in, and whether employer money is included",
+    "Your tax code only",
+    "Your holiday"
+   ],
+   "answer": 1,
+   "explanation": "Read the payslip: verify you're in the scheme and the contributions match what was promised.",
+   "learn_more": "pb-pen-workplace"
+  }
+ ]
+}

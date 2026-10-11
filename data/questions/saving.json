@@ -1,0 +1,756 @@
+{
+ "topic": "saving",
+ "questions": [
+  {
+   "id": "save-001",
+   "topic": "saving",
+   "difficulty": 1,
+   "type": "mc",
+   "question": "What does AER stand for on a savings account?",
+   "options": [
+    "Annual Equivalent Rate",
+    "Average Earnings Return",
+    "Account Entry Rate"
+   ],
+   "answer": 0,
+   "explanation": "AER shows what you'd earn over a year, including compounding.",
+   "learn_more": "pb-save-aer"
+  },
+  {
+   "id": "save-002",
+   "topic": "saving",
+   "difficulty": 2,
+   "type": "mc",
+   "question": "Why use AER to compare savings accounts?",
+   "options": [
+    "It includes compounding, so accounts compare fairly",
+    "It's always the biggest number",
+    "It's set by the government"
+   ],
+   "answer": 0,
+   "explanation": "AER puts accounts with different interest payment schedules on a level footing.",
+   "learn_more": "pb-save-aer"
+  },
+  {
+   "id": "save-003",
+   "topic": "saving",
+   "difficulty": 2,
+   "type": "mc",
+   "question": "Easy-access vs fixed-term savings: what's the usual trade-off?",
+   "options": [
+    "Fixed usually pays more but locks your money away",
+    "Easy access always pays more",
+    "There's no difference"
+   ],
+   "answer": 0,
+   "explanation": "Fixed-term accounts often pay more in exchange for tying your money up.",
+   "learn_more": "pb-save-aer"
+  },
+  {
+   "id": "save-004",
+   "topic": "saving",
+   "difficulty": 3,
+   "type": "calc",
+   "question": "Account A pays 5% on the first \u00a31,000 and 1% on the rest. Account B pays 4% on everything. With \u00a35,000 for a year, which earns more?",
+   "options": [
+    "Account A",
+    "Account B",
+    "They're the same"
+   ],
+   "answer": 1,
+   "explanation": "A: \u00a350 + \u00a340 = \u00a390. B: \u00a3200. The headline rate isn't the whole story.",
+   "learn_more": "pb-save-aer"
+  },
+  {
+   "id": "save-005",
+   "topic": "saving",
+   "difficulty": 2,
+   "type": "mc",
+   "question": "A regular saver account typically\u2026",
+   "options": [
+    "Lets you pay in a limited amount each month at a higher rate",
+    "Pays interest daily in cash",
+    "Has no rules"
+   ],
+   "answer": 0,
+   "explanation": "Regular savers cap monthly deposits, often with a higher rate.",
+   "learn_more": "pb-save-regular-savers"
+  },
+  {
+   "id": "save-006",
+   "topic": "saving",
+   "difficulty": 3,
+   "type": "calc",
+   "question": "A regular saver pays 6% AER. You pay in \u00a3200 a month for 12 months. Roughly how much interest do you earn?",
+   "options": [
+    "\u00a3144",
+    "About \u00a378",
+    "\u00a314.40"
+   ],
+   "answer": 1,
+   "explanation": "6% of the final \u00a32,400 is \u00a3144, but the money isn't all there for the whole year. Your average balance is about \u00a31,300, so you earn roughly \u00a378.",
+   "learn_more": "pb-save-regular-savers"
+  },
+  {
+   "id": "save-007",
+   "topic": "saving",
+   "difficulty": 1,
+   "type": "mc",
+   "question": "What is an emergency fund?",
+   "options": [
+    "Money set aside for surprises like a broken boiler or job loss",
+    "A loan from your bank",
+    "Holiday money"
+   ],
+   "answer": 0,
+   "explanation": "It's a cash buffer so surprises don't push you into debt.",
+   "learn_more": "pb-save-emergency-fund"
+  },
+  {
+   "id": "save-008",
+   "topic": "saving",
+   "difficulty": 2,
+   "type": "mc",
+   "question": "A common guideline for an emergency fund is\u2026",
+   "options": [
+    "One week of spending",
+    "3\u20136 months of essential spending",
+    "Five years of salary"
+   ],
+   "answer": 1,
+   "explanation": "Many guides suggest 3\u20136 months of essential costs, built up gradually.",
+   "learn_more": "pb-save-emergency-fund"
+  },
+  {
+   "id": "save-009",
+   "topic": "saving",
+   "difficulty": 1,
+   "type": "mc",
+   "question": "The FSCS protects eligible savings per person, per\u2026",
+   "options": [
+    "Account",
+    "Banking licence",
+    "Branch"
+   ],
+   "answer": 1,
+   "explanation": "Protection works per banking licence, so brands sharing a licence share one limit.",
+   "learn_more": "pb-save-fscs"
+  },
+  {
+   "id": "save-010",
+   "topic": "saving",
+   "difficulty": 2,
+   "type": "mc",
+   "question": "Which of these is NOT protected by the FSCS?",
+   "options": [
+    "Savings at a UK-authorised bank",
+    "A current account at a UK-authorised bank",
+    "Money held on a crypto exchange"
+   ],
+   "answer": 2,
+   "explanation": "Crypto isn't FSCS protected.",
+   "learn_more": "pb-save-fscs"
+  },
+  {
+   "id": "save-011",
+   "topic": "saving",
+   "difficulty": 3,
+   "type": "mc",
+   "question": "Two bank brands share one banking licence and you have savings in both. Under the FSCS\u2026",
+   "options": [
+    "Each brand is protected separately",
+    "They share a single protection limit",
+    "Neither is protected"
+   ],
+   "answer": 1,
+   "explanation": "Check which brands share a licence before spreading large sums around.",
+   "learn_more": "pb-save-fscs"
+  },
+  {
+   "id": "save-012",
+   "topic": "saving",
+   "difficulty": 2,
+   "type": "mc",
+   "question": "Instead of interest, Premium Bonds give you\u2026",
+   "options": [
+    "A fixed 4% a year",
+    "Entries into monthly prize draws",
+    "Shares in NS&I"
+   ],
+   "answer": 1,
+   "explanation": "Each \u00a31 bond is entered into a monthly prize draw.",
+   "learn_more": "pb-save-premium-bonds"
+  },
+  {
+   "id": "save-013",
+   "topic": "saving",
+   "difficulty": 2,
+   "type": "mc",
+   "question": "Premium Bonds are backed by\u2026",
+   "options": [
+    "The FSCS only",
+    "HM Treasury",
+    "A private insurer"
+   ],
+   "answer": 1,
+   "explanation": "NS&I is backed by HM Treasury.",
+   "learn_more": "pb-save-premium-bonds"
+  },
+  {
+   "id": "save-014",
+   "topic": "saving",
+   "difficulty": 2,
+   "type": "mc",
+   "question": "Premium Bond prizes are\u2026",
+   "options": [
+    "Taxed as income",
+    "Tax-free",
+    "Taxed at 20%"
+   ],
+   "answer": 1,
+   "explanation": "Prizes are tax-free.",
+   "learn_more": "pb-save-premium-bonds"
+  },
+  {
+   "id": "save-015",
+   "topic": "saving",
+   "difficulty": 1,
+   "type": "mc",
+   "question": "Interest earned in a Cash ISA is\u2026",
+   "options": [
+    "Tax-free",
+    "Taxed at 20%",
+    "Tax-free only for over-65s"
+   ],
+   "answer": 0,
+   "explanation": "ISA interest is tax-free.",
+   "learn_more": "pb-save-isas"
+  },
+  {
+   "id": "save-016",
+   "topic": "saving",
+   "difficulty": 2,
+   "type": "mc",
+   "question": "How much can you pay into ISAs in total in the 2026/27 tax year?",
+   "options": [
+    "\u00a34,000",
+    "\u00a320,000",
+    "\u00a350,000"
+   ],
+   "answer": 1,
+   "explanation": "The overall ISA allowance is \u00a320,000, split across your ISAs however you like.",
+   "learn_more": "pb-save-isas",
+   "volatile": true,
+   "review_by": "2027-04-06",
+   "verify": "Overall ISA allowance and any Cash ISA limit changes on gov.uk"
+  },
+  {
+   "id": "save-017",
+   "topic": "saving",
+   "difficulty": 3,
+   "type": "mc",
+   "question": "You take \u00a31,000 out of a standard (non-flexible) Cash ISA, then put it back in the same tax year. What happens?",
+   "options": [
+    "Nothing, it's ignored",
+    "Putting it back uses up more of your allowance",
+    "It's not allowed"
+   ],
+   "answer": 1,
+   "explanation": "With a non-flexible ISA, money paid back counts as a new subscription. Flexible ISAs work differently.",
+   "learn_more": "pb-save-isas"
+  },
+  {
+   "id": "save-018",
+   "topic": "saving",
+   "difficulty": 2,
+   "type": "mc",
+   "question": "Inflation is 4% and your savings earn 2%. In real terms your money is\u2026",
+   "options": [
+    "Growing 2% a year",
+    "Losing about 2% of its buying power a year",
+    "Staying the same"
+   ],
+   "answer": 1,
+   "explanation": "Prices are rising faster than your interest.",
+   "learn_more": "pb-save-aer"
+  },
+  {
+   "id": "save-019",
+   "topic": "saving",
+   "difficulty": 3,
+   "type": "mc",
+   "question": "Same gross rate: interest paid monthly vs annually. Which grows slightly more if you leave the interest in?",
+   "options": [
+    "Annually",
+    "Monthly",
+    "Exactly the same"
+   ],
+   "answer": 1,
+   "explanation": "Monthly interest starts earning interest sooner, so it grows slightly more.",
+   "learn_more": "pb-save-aer"
+  },
+  {
+   "id": "save-020",
+   "topic": "saving",
+   "difficulty": 1,
+   "type": "mc",
+   "question": "AER stands for:",
+   "options": [
+    "Annual Equivalent Rate",
+    "Automatic Earnings Return",
+    "Average Excess Return",
+    "Annual Extra Reward"
+   ],
+   "answer": 0,
+   "explanation": "AER lets you compare accounts fairly because it includes the effect of interest being paid more often than yearly.",
+   "learn_more": "pb-save-aer"
+  },
+  {
+   "id": "save-021",
+   "topic": "saving",
+   "difficulty": 2,
+   "type": "mc",
+   "question": "Compound interest means:",
+   "options": [
+    "Interest only on your original deposit",
+    "Interest earned on your interest as well, so savings grow faster over time",
+    "A penalty",
+    "A fee"
+   ],
+   "answer": 1,
+   "explanation": "Compounding is what makes long-term saving powerful: growth builds on growth.",
+   "learn_more": "pb-save-aer"
+  },
+  {
+   "id": "save-022",
+   "topic": "saving",
+   "difficulty": 1,
+   "type": "mc",
+   "question": "An easy access savings account lets you:",
+   "options": [
+    "Never withdraw",
+    "Withdraw any time without penalty",
+    "Withdraw only monthly",
+    "Withdraw after 5 years"
+   ],
+   "answer": 1,
+   "explanation": "Easy access accounts trade a lower rate for full flexibility.",
+   "learn_more": "pb-save-aer"
+  },
+  {
+   "id": "save-023",
+   "topic": "saving",
+   "difficulty": 2,
+   "type": "mc",
+   "question": "Fixed-rate savings bonds typically offer:",
+   "options": [
+    "Worse rates than easy access",
+    "Higher rates because you lock your money for a set term",
+    "No interest",
+    "Only for businesses"
+   ],
+   "answer": 1,
+   "explanation": "Fixing your money for a term usually buys a better rate, at the cost of flexibility.",
+   "learn_more": "pb-save-aer",
+   "volatile": true
+  },
+  {
+   "id": "save-024",
+   "topic": "saving",
+   "difficulty": 1,
+   "type": "mc",
+   "question": "A regular saver account usually requires:",
+   "options": [
+    "A single large deposit",
+    "Monthly deposits, often capped, usually for 12 months at a higher rate",
+    "A mortgage",
+    "A job at the bank"
+   ],
+   "answer": 1,
+   "explanation": "Regular savers reward consistent monthly deposits with some of the best rates around.",
+   "learn_more": "pb-save-regular-savers",
+   "volatile": true
+  },
+  {
+   "id": "save-025",
+   "topic": "saving",
+   "difficulty": 2,
+   "type": "mc",
+   "question": "If inflation is higher than your savings rate, in real terms your money is:",
+   "options": [
+    "Growing",
+    "Losing purchasing power",
+    "Safe and unaffected",
+    "Doubling"
+   ],
+   "answer": 1,
+   "explanation": "Real return = rate minus inflation. Below-inflation rates mean your cash buys less over time.",
+   "learn_more": "pb-save-aer"
+  },
+  {
+   "id": "save-026",
+   "topic": "saving",
+   "difficulty": 1,
+   "type": "mc",
+   "question": "The ISA allowance means each tax year you can save or invest tax-efficiently up to:",
+   "options": [
+    "\u00a31,000",
+    "\u00a320,000",
+    "\u00a350,000",
+    "\u00a35,000"
+   ],
+   "answer": 1,
+   "explanation": "The annual ISA allowance is \u00a320,000 per person per tax year (this figure can change).",
+   "learn_more": "pb-save-isas",
+   "volatile": true
+  },
+  {
+   "id": "save-027",
+   "topic": "saving",
+   "difficulty": 2,
+   "type": "mc",
+   "question": "Money inside a Stocks & Shares ISA:",
+   "options": [
+    "Is guaranteed not to fall",
+    "Grows free of tax on gains and income, but its value can still go down",
+    "Pays fixed interest",
+    "Is government backed"
+   ],
+   "answer": 1,
+   "explanation": "The ISA wrapper shields returns from tax; it doesn't protect you from market falls.",
+   "learn_more": "pb-save-isas"
+  },
+  {
+   "id": "save-028",
+   "topic": "saving",
+   "difficulty": 2,
+   "type": "mc",
+   "question": "A Lifetime ISA (LISA) offers:",
+   "options": [
+    "A 10% bonus",
+    "A 25% government bonus on up to \u00a34,000 saved each year, for first homes or retirement",
+    "Unlimited deposits",
+    "No rules on withdrawals"
+   ],
+   "answer": 1,
+   "explanation": "LISAs add 25% to deposits up to \u00a34,000/year, but non-qualifying withdrawals lose 25%, which is more than the bonus you got.",
+   "learn_more": "pb-save-isas",
+   "volatile": true
+  },
+  {
+   "id": "save-029",
+   "topic": "saving",
+   "difficulty": 2,
+   "type": "mc",
+   "question": "Withdrawing from a LISA before 60 or without buying a first home normally costs:",
+   "options": [
+    "Nothing",
+    "A 25% charge on the withdrawal, so you can end up with less than you paid in",
+    "A small fee of \u00a35",
+    "Your whole balance"
+   ],
+   "answer": 1,
+   "explanation": "The 25% charge exceeds the 25% bonus in real terms, roughly a 6.25% net loss.",
+   "learn_more": "pb-save-isas",
+   "volatile": true
+  },
+  {
+   "id": "save-030",
+   "topic": "saving",
+   "difficulty": 1,
+   "type": "mc",
+   "question": "Premium Bonds:",
+   "options": [
+    "Pay guaranteed interest",
+    "Enter your savings in a monthly prize draw instead of paying interest, and you can get your money back",
+    "Are a crypto",
+    "Pay double always"
+   ],
+   "answer": 1,
+   "explanation": "Premium Bonds are NS&I savings with prize-draw odds instead of interest; returns are not guaranteed.",
+   "learn_more": "pb-save-premium-bonds",
+   "volatile": true
+  },
+  {
+   "id": "save-031",
+   "topic": "saving",
+   "difficulty": 2,
+   "type": "mc",
+   "question": "With Premium Bonds, the maximum you can hold and the minimum buy-in are:",
+   "options": [
+    "\u00a350,000 max, \u00a325 min",
+    "\u00a310,000 max, \u00a31 min",
+    "Unlimited",
+    "\u00a31m max"
+   ],
+   "answer": 0,
+   "explanation": "Premium Bonds run from \u00a325 to a \u00a350,000 holding limit per person.",
+   "learn_more": "pb-save-premium-bonds",
+   "volatile": true
+  },
+  {
+   "id": "save-032",
+   "topic": "saving",
+   "difficulty": 1,
+   "type": "mc",
+   "question": "How much emergency fund do most experts suggest for an adult with steady income?",
+   "options": [
+    "\u00a310",
+    "One to three months of essential spending",
+    "Ten years of salary",
+    "Nothing"
+   ],
+   "answer": 1,
+   "explanation": "One to three months of essentials is the common starting target; more if income is unstable.",
+   "learn_more": "pb-save-emergency-fund"
+  },
+  {
+   "id": "save-033",
+   "topic": "saving",
+   "difficulty": 2,
+   "type": "mc",
+   "question": "An emergency fund should be kept:",
+   "options": [
+    "In stocks for growth",
+    "Somewhere safe and instantly accessible, like an easy access account",
+    "Locked in a 5-year bond",
+    "In crypto"
+   ],
+   "answer": 1,
+   "explanation": "Emergencies need instant access and capital safety, not maximum growth.",
+   "learn_more": "pb-save-emergency-fund"
+  },
+  {
+   "id": "save-034",
+   "topic": "saving",
+   "difficulty": 1,
+   "type": "mc",
+   "question": "The FSCS protects eligible savings up to:",
+   "options": [
+    "\u00a38,500 per bank",
+    "\u00a385,000 per person, per authorised bank or building society",
+    "\u00a31m",
+    "\u00a3850,000"
+   ],
+   "answer": 1,
+   "explanation": "The FSCS limit is \u00a385,000 per person per authorised firm; this cap can change.",
+   "learn_more": "pb-save-fscs",
+   "volatile": true
+  },
+  {
+   "id": "save-035",
+   "topic": "saving",
+   "difficulty": 2,
+   "type": "mc",
+   "question": "A couple with a joint savings account is typically FSCS-protected up to:",
+   "options": [
+    "\u00a385,000 total",
+    "\u00a3170,000 for the joint account, as \u00a385,000 each",
+    "\u00a385,000 each, everywhere",
+    "Unlimited"
+   ],
+   "answer": 1,
+   "explanation": "Joint accounts usually get double protection since each holder counts for \u00a385,000.",
+   "learn_more": "pb-save-fscs",
+   "volatile": true
+  },
+  {
+   "id": "save-036",
+   "topic": "saving",
+   "difficulty": 2,
+   "type": "mc",
+   "question": "You have \u00a3150,000 and want full FSCS cover. The standard approach is:",
+   "options": [
+    "Put it all in one bank",
+    "Spread it across different authorised banks so no single one holds over the limit",
+    "Put it in a current account",
+    "Buy premium bonds only"
+   ],
+   "answer": 1,
+   "explanation": "Splitting across different authorised institutions keeps every pound within the protection cap.",
+   "learn_more": "pb-save-fscs",
+   "volatile": true
+  },
+  {
+   "id": "save-037",
+   "topic": "saving",
+   "difficulty": 2,
+   "type": "mc",
+   "question": "A notice account requires:",
+   "options": [
+    "Instant withdrawals",
+    "You give advance notice, often 30-120 days, before withdrawing",
+    "A solicitor's letter",
+    "Monthly deposits"
+   ],
+   "answer": 1,
+   "explanation": "Notice accounts pay more than instant access in exchange for waiting out the notice period.",
+   "learn_more": "pb-save-aer",
+   "volatile": true
+  },
+  {
+   "id": "save-038",
+   "topic": "saving",
+   "difficulty": 2,
+   "type": "mc",
+   "question": "Interest on UK savings is paid to you by most banks:",
+   "options": [
+    "After deducting tax",
+    "Gross, without tax deducted; you may owe tax yourself only if you exceed your personal savings allowance",
+    "Always taxed at 40%",
+    "Never"
+   ],
+   "answer": 1,
+   "explanation": "Banks pay interest gross; you only pay tax above your personal savings allowance, which depends on your income tax band.",
+   "learn_more": "pb-save-aer",
+   "volatile": true
+  },
+  {
+   "id": "save-039",
+   "topic": "saving",
+   "difficulty": 2,
+   "type": "mc",
+   "question": "Chasing the top savings rate matters most when:",
+   "options": [
+    "You have small savings",
+    "You have larger balances, where each 1% of rate is real money",
+    "You owe money",
+    "You're paid monthly"
+   ],
+   "answer": 1,
+   "explanation": "On \u00a310,000, moving from 1% to 4% is \u00a3300 a year for an hour of admin.",
+   "learn_more": "pb-save-aer"
+  },
+  {
+   "id": "save-040",
+   "topic": "saving",
+   "difficulty": 2,
+   "type": "mc",
+   "question": "Best use of a windfall like a bonus or gift:",
+   "options": [
+    "Spend it all immediately",
+    "Park it in savings while you decide, so the choice isn't rushed",
+    "Lend it out",
+    "Give it away"
+   ],
+   "answer": 1,
+   "explanation": "Decide calmly; a temporary home in easy access beats rushed decisions.",
+   "learn_more": "pb-save-emergency-fund"
+  },
+  {
+   "id": "save-041",
+   "topic": "saving",
+   "difficulty": 1,
+   "type": "mc",
+   "question": "Which habit builds savings most reliably?",
+   "options": [
+    "Saving whatever is left at month end",
+    "Paying yourself first: moving savings out on payday before spending",
+    "Saving only in December",
+    "Saving loose change only"
+   ],
+   "answer": 1,
+   "explanation": "Automating savings on payday makes it the default, not the leftover.",
+   "learn_more": "pb-save-emergency-fund"
+  },
+  {
+   "id": "save-042",
+   "topic": "saving",
+   "difficulty": 2,
+   "type": "mc",
+   "question": "A children's Junior ISA allowance is:",
+   "options": [
+    "\u00a31,000 a year",
+    "\u00a39,000 a year (figure can change)",
+    "\u00a320,000 a year",
+    "Unlimited"
+   ],
+   "answer": 1,
+   "explanation": "Junior ISAs have their own annual allowance, separate from the adult \u00a320,000.",
+   "learn_more": "pb-save-isas",
+   "volatile": true
+  },
+  {
+   "id": "save-043",
+   "topic": "saving",
+   "difficulty": 2,
+   "type": "mc",
+   "question": "Round-up apps that save your card change work because:",
+   "options": [
+    "They invest in crypto",
+    "Small automatic amounts add up without you noticing",
+    "Banks subsidise them",
+    "They're tax free"
+   ],
+   "answer": 1,
+   "explanation": "Automating micro-savings removes the willpower problem entirely.",
+   "learn_more": "pb-save-emergency-fund"
+  },
+  {
+   "id": "save-044",
+   "topic": "saving",
+   "difficulty": 1,
+   "type": "mc",
+   "question": "Before you start investing seriously, you should first have:",
+   "options": [
+    "A brand new car",
+    "An emergency fund and expensive debt paid off",
+    "A mortgage",
+    "A finance degree"
+   ],
+   "answer": 1,
+   "explanation": "Investing while carrying 25% APR debt or with no buffer usually loses on balance.",
+   "learn_more": "pb-save-emergency-fund"
+  },
+  {
+   "id": "save-045",
+   "topic": "saving",
+   "difficulty": 2,
+   "type": "mc",
+   "question": "Fixed-rate bond, withdraw early:",
+   "options": [
+    "No penalty ever",
+    "Usually means losing interest or a charge, depending on the provider's terms",
+    "You get a bonus",
+    "Illegal"
+   ],
+   "answer": 1,
+   "explanation": "Read the early-access terms before locking money away; some allow none at all.",
+   "learn_more": "pb-save-aer",
+   "volatile": true
+  },
+  {
+   "id": "save-046",
+   "topic": "saving",
+   "difficulty": 1,
+   "type": "mc",
+   "question": "The personal savings allowance for a basic-rate taxpayer lets you earn interest up to:",
+   "options": [
+    "\u00a3100 tax free",
+    "\u00a31,000 tax free each year",
+    "\u00a310,000",
+    "Nothing"
+   ],
+   "answer": 1,
+   "explanation": "Basic-rate taxpayers can earn \u00a31,000 of savings interest tax-free; higher-rate gets \u00a3500 (figures can change).",
+   "learn_more": "pb-save-aer",
+   "volatile": true
+  },
+  {
+   "id": "save-047",
+   "topic": "saving",
+   "difficulty": 2,
+   "type": "mc",
+   "question": "Savings rates quoted 'gross' and 'AER' differ when:",
+   "options": [
+    "Never",
+    "Interest is paid more often than yearly, like monthly",
+    "On weekends",
+    "The bank is foreign"
+   ],
+   "answer": 1,
+   "explanation": "AER smooths monthly-paid interest into an annual figure so comparisons are honest.",
+   "learn_more": "pb-save-aer"
+  }
+ ]
+}

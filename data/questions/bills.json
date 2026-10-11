@@ -1,0 +1,568 @@
+{
+ "topic": "bills",
+ "questions": [
+  {
+   "id": "bills-001",
+   "topic": "bills",
+   "difficulty": 2,
+   "type": "mc",
+   "question": "The energy price cap limits\u2026",
+   "options": [
+    "Your total bill",
+    "The unit rates and standing charges on default tariffs",
+    "Prices for businesses"
+   ],
+   "answer": 1,
+   "explanation": "It caps rates, not your total bill. Use more and you pay more.",
+   "learn_more": "pb-bills-energy"
+  },
+  {
+   "id": "bills-002",
+   "topic": "bills",
+   "difficulty": 1,
+   "type": "mc",
+   "question": "An energy standing charge is\u2026",
+   "options": [
+    "A fixed daily charge, however much you use",
+    "A charge for queueing",
+    "A tax"
+   ],
+   "answer": 0,
+   "explanation": "You pay it even if you use no energy.",
+   "learn_more": "pb-bills-energy"
+  },
+  {
+   "id": "bills-003",
+   "topic": "bills",
+   "difficulty": 2,
+   "type": "mc",
+   "question": "Who sets the energy price cap?",
+   "options": [
+    "Ofgem",
+    "The FCA",
+    "Your supplier"
+   ],
+   "answer": 0,
+   "explanation": "Ofgem reviews the cap regularly.",
+   "learn_more": "pb-bills-energy"
+  },
+  {
+   "id": "bills-004",
+   "topic": "bills",
+   "difficulty": 2,
+   "type": "mc",
+   "question": "When a broadband or mobile contract ends, prices often\u2026",
+   "options": [
+    "Drop automatically",
+    "Rise unless you renegotiate or switch",
+    "Stay frozen"
+   ],
+   "answer": 1,
+   "explanation": "Providers must tell you when your contract ends, so use that to haggle.",
+   "learn_more": "pb-bills-broadband-mobile"
+  },
+  {
+   "id": "bills-005",
+   "topic": "bills",
+   "difficulty": 2,
+   "type": "mc",
+   "question": "A SIM-only deal makes the most sense when\u2026",
+   "options": [
+    "You own your phone and don't need a new one",
+    "You want a free new phone",
+    "Never"
+   ],
+   "answer": 0,
+   "explanation": "Keeping your phone and going SIM-only is often far cheaper.",
+   "learn_more": "pb-bills-broadband-mobile"
+  },
+  {
+   "id": "bills-006",
+   "topic": "bills",
+   "difficulty": 2,
+   "type": "mc",
+   "question": "The council tax discount for a single adult living alone is\u2026",
+   "options": [
+    "10%",
+    "25%",
+    "50%"
+   ],
+   "answer": 1,
+   "explanation": "Adults living alone usually get 25% off.",
+   "learn_more": "pb-bills-council-tax"
+  },
+  {
+   "id": "bills-007",
+   "topic": "bills",
+   "difficulty": 3,
+   "type": "calc",
+   "question": "Option 1: a phone contract at \u00a345/month for 24 months. Option 2: buy the phone for \u00a3600 plus SIM-only at \u00a312/month. How much does option 2 save over 24 months?",
+   "options": [
+    "\u00a392",
+    "\u00a3192",
+    "\u00a3492"
+   ],
+   "answer": 1,
+   "explanation": "Option 1: \u00a31,080. Option 2: \u00a3600 + \u00a3288 = \u00a3888. Saving: \u00a3192.",
+   "learn_more": "pb-bills-broadband-mobile"
+  },
+  {
+   "id": "bills-008",
+   "topic": "bills",
+   "difficulty": 2,
+   "type": "mc",
+   "question": "Broadband \u201csocial tariffs\u201d are for\u2026",
+   "options": [
+    "People on certain benefits, such as Universal Credit",
+    "Anyone under 30",
+    "Businesses"
+   ],
+   "answer": 0,
+   "explanation": "They're cheaper packages for eligible households.",
+   "learn_more": "pb-bills-broadband-mobile"
+  },
+  {
+   "id": "bills-009",
+   "topic": "bills",
+   "difficulty": 2,
+   "type": "mc",
+   "question": "A water meter often saves money when\u2026",
+   "options": [
+    "Fewer people live in the home than there are bedrooms",
+    "You have a big family",
+    "Never"
+   ],
+   "answer": 0,
+   "explanation": "Smaller households often pay less on a meter.",
+   "learn_more": "pb-bills-council-tax"
+  },
+  {
+   "id": "bills-010",
+   "topic": "bills",
+   "difficulty": 2,
+   "type": "mc",
+   "question": "Paying for energy by monthly Direct Debit is usually\u2026",
+   "options": [
+    "More expensive",
+    "Cheaper than paying when the bill arrives",
+    "The same"
+   ],
+   "answer": 1,
+   "explanation": "Suppliers usually charge less for Direct Debit.",
+   "learn_more": "pb-bills-energy"
+  },
+  {
+   "id": "bills-011",
+   "topic": "bills",
+   "difficulty": 1,
+   "type": "mc",
+   "question": "Council tax is based on:",
+   "options": [
+    "Your income",
+    "The valuation band of your home",
+    "Your energy use",
+    "Your car"
+   ],
+   "answer": 1,
+   "explanation": "Every home is assigned a band based on its value; the band sets the amount.",
+   "learn_more": "pb-bills-council-tax"
+  },
+  {
+   "id": "bills-012",
+   "topic": "bills",
+   "difficulty": 1,
+   "type": "mc",
+   "question": "People living alone can usually get a council tax discount of:",
+   "options": [
+    "5%",
+    "25%",
+    "50%",
+    "100%"
+   ],
+   "answer": 1,
+   "explanation": "Single-adult households typically get 25% off their council tax.",
+   "learn_more": "pb-bills-council-tax"
+  },
+  {
+   "id": "bills-013",
+   "topic": "bills",
+   "difficulty": 2,
+   "type": "mc",
+   "question": "Full-time students living only with other full-time students are usually:",
+   "options": [
+    "Charged double council tax",
+    "Exempt from council tax",
+    "Charged the same",
+    "Charged half"
+   ],
+   "answer": 1,
+   "explanation": "Households of only full-time students are generally exempt; apply to the council rather than assuming.",
+   "learn_more": "pb-bills-council-tax",
+   "volatile": true
+  },
+  {
+   "id": "bills-014",
+   "topic": "bills",
+   "difficulty": 2,
+   "type": "mc",
+   "question": "Your energy bill is unusually high. First checks:",
+   "options": [
+    "Pay it and forget",
+    "Compare the meter reading to the bill and check it wasn't an estimated reading",
+    "Cancel the direct debit",
+    "Turn everything off for a month"
+   ],
+   "answer": 1,
+   "explanation": "Estimated readings cause bill shocks; submitting actual readings gets the bill recalculated.",
+   "learn_more": "pb-bills-energy"
+  },
+  {
+   "id": "bills-015",
+   "topic": "bills",
+   "difficulty": 2,
+   "type": "mc",
+   "question": "Why do suppliers ask for regular meter readings?",
+   "options": [
+    "To annoy you",
+    "So bills reflect real usage instead of estimates that build up debt or credit",
+    "For marketing",
+    "For the price cap"
+   ],
+   "answer": 1,
+   "explanation": "Actual readings keep your account accurate, avoiding a nasty catch-up bill later.",
+   "learn_more": "pb-bills-energy"
+  },
+  {
+   "id": "bills-016",
+   "topic": "bills",
+   "difficulty": 1,
+   "type": "mc",
+   "question": "A smart meter's main benefit is:",
+   "options": [
+    "It makes energy cheaper automatically",
+    "Automatic readings, so accurate bills and real-time usage visibility",
+    "It stores electricity",
+    "It is required by law"
+   ],
+   "answer": 1,
+   "explanation": "Smart meters send readings automatically; they show usage but don't change your tariff by themselves.",
+   "learn_more": "pb-bills-energy"
+  },
+  {
+   "id": "bills-017",
+   "topic": "bills",
+   "difficulty": 2,
+   "type": "mc",
+   "question": "Moving home with a fixed energy deal usually means:",
+   "options": [
+    "The deal follows you",
+    "The deal usually ends, so check exit fees and the new home's tariff before moving",
+    "You pay double",
+    "You must stay"
+   ],
+   "answer": 1,
+   "explanation": "Fixed deals are attached to the property, so plan ahead: check exit fees and new-home options.",
+   "learn_more": "pb-bills-energy",
+   "volatile": true
+  },
+  {
+   "id": "bills-018",
+   "topic": "bills",
+   "difficulty": 1,
+   "type": "mc",
+   "question": "Since 2019, switching energy supplier typically takes:",
+   "options": [
+    "About 5 working days",
+    "6 months",
+    "1 hour",
+    "17 days"
+   ],
+   "answer": 0,
+   "explanation": "The energy switching process was standardised to around 5 working days, including a 14-day cooling-off period.",
+   "learn_more": "pb-bills-energy",
+   "volatile": true
+  },
+  {
+   "id": "bills-019",
+   "topic": "bills",
+   "difficulty": 1,
+   "type": "mc",
+   "question": "What is the energy price cap?",
+   "options": [
+    "A maximum you can ever pay",
+    "A limit on the unit price and standing charge suppliers can charge on standard tariffs",
+    "A fine for suppliers",
+    "A government rebate"
+   ],
+   "answer": 1,
+   "explanation": "The cap limits unit rates, not your bill; use more, pay more. It changes periodically.",
+   "learn_more": "pb-bills-energy",
+   "volatile": true
+  },
+  {
+   "id": "bills-020",
+   "topic": "bills",
+   "difficulty": 2,
+   "type": "mc",
+   "question": "Your total energy bill depends on:",
+   "options": [
+    "Only the unit price",
+    "Unit price, standing charge and how much energy you use",
+    "Only the standing charge",
+    "Only your supplier's adverts"
+   ],
+   "answer": 1,
+   "explanation": "Two homes on identical tariffs can have very different bills because usage differs.",
+   "learn_more": "pb-bills-energy"
+  },
+  {
+   "id": "bills-021",
+   "topic": "bills",
+   "difficulty": 2,
+   "type": "mc",
+   "question": "Direct debits for energy are typically reviewed and adjusted to:",
+   "options": [
+    "Stay the same forever",
+    "Match your expected annual usage, so they can rise after a review or in winter",
+    "Double every year",
+    "Follow inflation only"
+   ],
+   "answer": 1,
+   "explanation": "Suppliers smooth your annual usage across 12 payments and rebalance when usage or prices change.",
+   "learn_more": "pb-bills-energy",
+   "volatile": true
+  },
+  {
+   "id": "bills-022",
+   "topic": "bills",
+   "difficulty": 2,
+   "type": "mc",
+   "question": "In shared rented housing, an energy account in your name means:",
+   "options": [
+    "Housemates' debt is never your problem legally",
+    "You're liable for the bills, so get written agreements and meter readings when people move in or out",
+    "The landlord pays",
+    "Bills split automatically"
+   ],
+   "answer": 1,
+   "explanation": "The named account holder is liable, so sort arrangements in writing at move-in and move-out.",
+   "learn_more": "pb-bills-energy",
+   "volatile": true
+  },
+  {
+   "id": "bills-023",
+   "topic": "bills",
+   "difficulty": 1,
+   "type": "mc",
+   "question": "The one-click switching rules for broadband mean:",
+   "options": [
+    "Your new provider handles the switch and tells your old one",
+    "You must call your old provider repeatedly to cancel",
+    "You need a solicitor",
+    "Switching takes 6 weeks"
+   ],
+   "answer": 0,
+   "explanation": "UK one-click switching means the new provider manages the switchover, including notifying the old one.",
+   "learn_more": "pb-bills-broadband-mobile"
+  },
+  {
+   "id": "bills-024",
+   "topic": "bills",
+   "difficulty": 2,
+   "type": "mc",
+   "question": "Mid-contract price rises for broadband and mobile are often linked to:",
+   "options": [
+    "The weather",
+    "Inflation (CPI or RPI) plus a fixed percentage, as written in your contract",
+    "The company's profits",
+    "Nothing, they're fixed forever"
+   ],
+   "answer": 1,
+   "explanation": "Many contracts allow CPI plus an extra percent each year; check your contract's small print before signing.",
+   "learn_more": "pb-bills-broadband-mobile",
+   "volatile": true
+  },
+  {
+   "id": "bills-025",
+   "topic": "bills",
+   "difficulty": 2,
+   "type": "mc",
+   "question": "You're out of contract on broadband. You should expect to:",
+   "options": [
+    "Be moved to a cheaper rate",
+    "Pay noticeably more than new-customer deals, so it pays to renegotiate or switch",
+    "Get free WiFi",
+    "Lose service instantly"
+   ],
+   "answer": 1,
+   "explanation": "Out-of-contract rates are often much higher; switching or asking for a better deal is worth the few minutes.",
+   "learn_more": "pb-bills-broadband-mobile"
+  },
+  {
+   "id": "bills-026",
+   "topic": "bills",
+   "difficulty": 2,
+   "type": "mc",
+   "question": "Switching energy supplier while owing them money:",
+   "options": [
+    "Is never possible",
+    "Can be possible; small debts may transfer to the new supplier, while larger debts can block the switch",
+    "Erases the debt",
+    "Requires a lawyer"
+   ],
+   "answer": 1,
+   "explanation": "Debts under a threshold can move with you; bigger arrears usually must be settled first.",
+   "learn_more": "pb-bills-energy",
+   "volatile": true
+  },
+  {
+   "id": "bills-027",
+   "topic": "bills",
+   "difficulty": 2,
+   "type": "mc",
+   "question": "The Priority Services Register is for:",
+   "options": [
+    "Wealthy customers",
+    "People who need extra support, like those with medical equipment or disability, giving extra help from suppliers",
+    "Landlords only",
+    "Businesses"
+   ],
+   "answer": 1,
+   "explanation": "It gives free extra support such as advance notice of outages and accessible information.",
+   "learn_more": "pb-bills-energy",
+   "volatile": true
+  },
+  {
+   "id": "bills-028",
+   "topic": "bills",
+   "difficulty": 1,
+   "type": "mc",
+   "question": "Which usually works out cheaper for water, if your usage is low?",
+   "options": [
+    "Rateable value billing is always cheaper",
+    "A water meter, if you use relatively little water",
+    "Never metering",
+    "Bottled water"
+   ],
+   "answer": 1,
+   "explanation": "Households with low usage or fewer occupants than bedrooms often save with a meter; many suppliers let you trial one.",
+   "learn_more": "pb-bills-broadband-mobile",
+   "volatile": true
+  },
+  {
+   "id": "bills-029",
+   "topic": "bills",
+   "difficulty": 2,
+   "type": "mc",
+   "question": "A TV Licence is legally needed in the UK to:",
+   "options": [
+    "Own any TV",
+    "Watch or record live TV, and to use BBC iPlayer",
+    "Use Netflix only",
+    "Have a TV aerial in the loft"
+   ],
+   "answer": 1,
+   "explanation": "Streaming on-demand services other than iPlayer doesn't need one; live TV and iPlayer do.",
+   "learn_more": "pb-bills-broadband-mobile",
+   "volatile": true
+  },
+  {
+   "id": "bills-030",
+   "topic": "bills",
+   "difficulty": 2,
+   "type": "mc",
+   "question": "Cancelling a direct debit for a service you still use leads to:",
+   "options": [
+    "Nothing happening",
+    "The company chasing payment and possible late fees or service loss, so cancel the service properly",
+    "Free service",
+    "A fine from the council"
+   ],
+   "answer": 1,
+   "explanation": "Cancel the subscription or contract first, then the direct debit; doing only the latter doesn't end the debt.",
+   "learn_more": "pb-bank-direct-debits"
+  },
+  {
+   "id": "bills-031",
+   "topic": "bills",
+   "difficulty": 2,
+   "type": "mc",
+   "question": "Auto-renewal on insurance policies often results in:",
+   "options": [
+    "The best price",
+    "A higher premium than new customers get, so compare before silently renewing",
+    "A refund",
+    "Higher cover automatically"
+   ],
+   "answer": 1,
+   "explanation": "Loyalty often costs more in insurance; new-customer prices undercut renewals, so shop around each year.",
+   "learn_more": "pb-bills-broadband-mobile",
+   "volatile": true
+  },
+  {
+   "id": "bills-032",
+   "topic": "bills",
+   "difficulty": 2,
+   "type": "mc",
+   "question": "When you switch energy supplier, your supply:",
+   "options": [
+    "Gets cut off for a week",
+    "Continues seamlessly through the same pipes and wires; only the billing company changes",
+    "Needs new pipes",
+    "Doubles in cost"
+   ],
+   "answer": 1,
+   "explanation": "Switching is a billing change only; the physical supply never stops.",
+   "learn_more": "pb-bills-energy"
+  },
+  {
+   "id": "bills-033",
+   "topic": "bills",
+   "difficulty": 1,
+   "type": "mc",
+   "question": "Annual or irregular bills like car tax or insurance are easier to afford if you:",
+   "options": [
+    "Ignore them",
+    "Set aside a monthly amount so the bill never lands as a shock",
+    "Put them on a credit card and forget",
+    "Pay them late"
+   ],
+   "answer": 1,
+   "explanation": "A sinking fund for annual bills turns a lumpy cost into a smooth monthly amount.",
+   "learn_more": "pb-bills-council-tax"
+  },
+  {
+   "id": "bills-034",
+   "topic": "bills",
+   "difficulty": 2,
+   "type": "mc",
+   "question": "If you can't pay an energy bill, the right first step is:",
+   "options": [
+    "Ignore the letters",
+    "Contact the supplier early; they must offer payment plans and there may be hardship schemes",
+    "Move house",
+    "Cancel the meter"
+   ],
+   "answer": 1,
+   "explanation": "Suppliers have obligations to offer affordable arrangements, and early contact keeps options open.",
+   "learn_more": "pb-bills-energy",
+   "volatile": true
+  },
+  {
+   "id": "bills-035",
+   "topic": "bills",
+   "difficulty": 2,
+   "type": "mc",
+   "question": "Bills in your name but for a previous home can mean:",
+   "options": [
+    "Nothing, they disappear",
+    "Chasing debt later, so always take final meter readings and give a forwarding address when moving",
+    "Free electricity",
+    "Higher credit score"
+   ],
+   "answer": 1,
+   "explanation": "Close accounts properly with final readings to avoid debts following you.",
+   "learn_more": "pb-bills-energy"
+  }
+ ]
+}

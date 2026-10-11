@@ -1,0 +1,761 @@
+{
+ "topic": "credit",
+ "questions": [
+  {
+   "id": "cred-001",
+   "topic": "credit",
+   "difficulty": 1,
+   "type": "mc",
+   "question": "Checking your own credit score\u2026",
+   "options": [
+    "Lowers it",
+    "Doesn't affect it",
+    "Costs \u00a350"
+   ],
+   "answer": 1,
+   "explanation": "Checking your own score is a soft search. Lenders can't see it and it doesn't affect your score.",
+   "learn_more": "pb-credit-score"
+  },
+  {
+   "id": "cred-002",
+   "topic": "credit",
+   "difficulty": 2,
+   "type": "mc",
+   "question": "Hard search vs soft search:",
+   "options": [
+    "A hard search is visible to lenders and can affect your score; a soft one isn't",
+    "Both lower your score permanently",
+    "Soft searches are only for mortgages"
+   ],
+   "answer": 0,
+   "explanation": "Hard searches happen when you apply for credit. Soft searches include eligibility checks.",
+   "learn_more": "pb-credit-score"
+  },
+  {
+   "id": "cred-003",
+   "topic": "credit",
+   "difficulty": 2,
+   "type": "mc",
+   "question": "Being on the electoral roll\u2026",
+   "options": [
+    "Can help your credit score",
+    "Lowers it",
+    "Has no effect"
+   ],
+   "answer": 0,
+   "explanation": "Lenders use it to confirm your identity and address.",
+   "learn_more": "pb-credit-score"
+  },
+  {
+   "id": "cred-004",
+   "topic": "credit",
+   "difficulty": 2,
+   "type": "mc",
+   "question": "\u201cCredit utilisation\u201d means\u2026",
+   "options": [
+    "How much of your available credit you're using",
+    "How often you use your card abroad",
+    "Your salary"
+   ],
+   "answer": 0,
+   "explanation": "High utilisation can make lenders cautious.",
+   "learn_more": "pb-credit-score"
+  },
+  {
+   "id": "cred-005",
+   "topic": "credit",
+   "difficulty": 3,
+   "type": "calc",
+   "question": "Credit limit \u00a32,000, balance \u00a31,800. Your utilisation is\u2026",
+   "options": [
+    "9%",
+    "90%",
+    "18%"
+   ],
+   "answer": 1,
+   "explanation": "\u00a31,800 \u00f7 \u00a32,000 = 90%, which is high.",
+   "learn_more": "pb-credit-score"
+  },
+  {
+   "id": "cred-006",
+   "topic": "credit",
+   "difficulty": 2,
+   "type": "mc",
+   "question": "Section 75 protection applies to credit card purchases costing between\u2026",
+   "options": [
+    "\u00a31 and \u00a3100",
+    "\u00a3100 and \u00a330,000",
+    "Any amount"
+   ],
+   "answer": 1,
+   "explanation": "Section 75 makes the card provider jointly liable for items or services costing \u00a3100\u2013\u00a330,000.",
+   "learn_more": "pb-credit-cards"
+  },
+  {
+   "id": "cred-007",
+   "topic": "credit",
+   "difficulty": 2,
+   "type": "mc",
+   "question": "For a debit card purchase that goes wrong, the route to ask your bank for money back is\u2026",
+   "options": [
+    "Section 75",
+    "Chargeback",
+    "The FSCS"
+   ],
+   "answer": 1,
+   "explanation": "Chargeback is a card-scheme process, not a legal right, but banks use it routinely.",
+   "learn_more": "pb-credit-cards"
+  },
+  {
+   "id": "cred-008",
+   "topic": "credit",
+   "difficulty": 1,
+   "type": "mc",
+   "question": "APR shows\u2026",
+   "options": [
+    "The yearly cost of borrowing, including interest and fees",
+    "The savings rate",
+    "Tax on loans"
+   ],
+   "answer": 0,
+   "explanation": "APR lets you compare the cost of credit.",
+   "learn_more": "pb-credit-borrowing-costs"
+  },
+  {
+   "id": "cred-009",
+   "topic": "credit",
+   "difficulty": 2,
+   "type": "mc",
+   "question": "Only paying the minimum on a credit card each month\u2026",
+   "options": [
+    "Clears the debt fast",
+    "Makes the debt take much longer and cost far more",
+    "Means no interest"
+   ],
+   "answer": 1,
+   "explanation": "Minimum payments mostly cover interest, so the debt lingers.",
+   "learn_more": "pb-credit-borrowing-costs"
+  },
+  {
+   "id": "cred-010",
+   "topic": "credit",
+   "difficulty": 2,
+   "type": "mc",
+   "question": "A 0% balance transfer card usually charges\u2026",
+   "options": [
+    "Nothing at all",
+    "A one-off fee, often a few percent of the balance",
+    "\u00a350 a month"
+   ],
+   "answer": 1,
+   "explanation": "Check the transfer fee and how long the 0% lasts.",
+   "learn_more": "pb-credit-cards"
+  },
+  {
+   "id": "cred-011",
+   "topic": "credit",
+   "difficulty": 3,
+   "type": "calc",
+   "question": "You move \u00a33,000 to a 0% card with a 3% transfer fee, and the 0% lasts 20 months. What monthly payment clears it in time?",
+   "options": [
+    "\u00a3150",
+    "About \u00a3154.50",
+    "\u00a3100"
+   ],
+   "answer": 1,
+   "explanation": "\u00a33,000 + \u00a390 fee = \u00a33,090. \u00a33,090 \u00f7 20 = \u00a3154.50.",
+   "learn_more": "pb-credit-cards"
+  },
+  {
+   "id": "cred-012",
+   "topic": "credit",
+   "difficulty": 2,
+   "type": "mc",
+   "question": "When a 0% deal ends, any remaining balance\u2026",
+   "options": [
+    "Is wiped",
+    "Starts being charged at the normal rate",
+    "Gets the card cancelled"
+   ],
+   "answer": 1,
+   "explanation": "Plan to clear it before the deal ends.",
+   "learn_more": "pb-credit-cards"
+  },
+  {
+   "id": "cred-013",
+   "topic": "credit",
+   "difficulty": 1,
+   "type": "mc",
+   "question": "Missing a credit card payment can\u2026",
+   "options": [
+    "Hurt your credit file and trigger fees",
+    "Improve your score",
+    "Do nothing"
+   ],
+   "answer": 0,
+   "explanation": "Set up at least a minimum-payment Direct Debit.",
+   "learn_more": "pb-credit-score"
+  },
+  {
+   "id": "cred-014",
+   "topic": "credit",
+   "difficulty": 2,
+   "type": "mc",
+   "question": "What's the main risk with Buy Now Pay Later?",
+   "options": [
+    "It always charges very high interest",
+    "It's easy to overspend, and missed payments can mean fees and debt collection",
+    "You can't pay early"
+   ],
+   "answer": 1,
+   "explanation": "BNPL feels painless, which makes it easy to stack up repayments.",
+   "learn_more": "pb-credit-bnpl"
+  },
+  {
+   "id": "cred-015",
+   "topic": "credit",
+   "difficulty": 1,
+   "type": "mc",
+   "question": "Payday loans are\u2026",
+   "options": [
+    "The cheapest way to borrow",
+    "Among the most expensive ways to borrow",
+    "Free"
+   ],
+   "answer": 1,
+   "explanation": "Their costs are very high even with the cap.",
+   "learn_more": "pb-credit-borrowing-costs"
+  },
+  {
+   "id": "cred-016",
+   "topic": "credit",
+   "difficulty": 3,
+   "type": "mc",
+   "question": "Which usually helps build a thin credit file?",
+   "options": [
+    "Closing every account",
+    "Using a credit card a little and paying in full every month",
+    "Applying for five cards at once"
+   ],
+   "answer": 1,
+   "explanation": "Small, regular, fully repaid spending shows you manage credit well.",
+   "learn_more": "pb-credit-score"
+  },
+  {
+   "id": "cred-017",
+   "topic": "credit",
+   "difficulty": 2,
+   "type": "mc",
+   "question": "A joint account or joint loan with your partner means\u2026",
+   "options": [
+    "Their credit history can affect how lenders see you",
+    "Your neighbours are linked to you",
+    "Nothing changes"
+   ],
+   "answer": 0,
+   "explanation": "Joint products create a financial association on your files.",
+   "learn_more": "pb-credit-score"
+  },
+  {
+   "id": "cred-018",
+   "topic": "credit",
+   "difficulty": 2,
+   "type": "mc",
+   "question": "If you pay your credit card balance in full every month\u2026",
+   "options": [
+    "You still pay interest on purchases",
+    "You usually pay no interest on purchases",
+    "Your score drops"
+   ],
+   "answer": 1,
+   "explanation": "Paying in full avoids purchase interest on most cards.",
+   "learn_more": "pb-credit-cards"
+  },
+  {
+   "id": "cred-019",
+   "topic": "credit",
+   "difficulty": 2,
+   "type": "mc",
+   "question": "How long do missed payments usually stay on a UK credit file?",
+   "options": [
+    "One month",
+    "Six years",
+    "Forever"
+   ],
+   "answer": 1,
+   "explanation": "Most records stay for six years.",
+   "learn_more": "pb-credit-score"
+  },
+  {
+   "id": "cred-020",
+   "topic": "credit",
+   "difficulty": 2,
+   "type": "mc",
+   "question": "A guarantor loan means\u2026",
+   "options": [
+    "Someone else agrees to repay if you can't",
+    "The government repays it",
+    "There's no interest"
+   ],
+   "answer": 0,
+   "explanation": "The guarantor is on the hook, so these loans can strain relationships.",
+   "learn_more": "pb-credit-borrowing-costs"
+  },
+  {
+   "id": "cred-021",
+   "topic": "credit",
+   "difficulty": 1,
+   "type": "mc",
+   "question": "Your credit score is based on:",
+   "options": [
+    "Your salary alone",
+    "Your history of borrowing and repaying, from your credit file",
+    "Your savings",
+    "Your postcode only"
+   ],
+   "answer": 1,
+   "explanation": "Scores come from your credit file: repayment history, balances, applications and more.",
+   "learn_more": "pb-credit-score"
+  },
+  {
+   "id": "cred-022",
+   "topic": "credit",
+   "difficulty": 1,
+   "type": "mc",
+   "question": "Missed payments can stay on your credit file for:",
+   "options": [
+    "6 months",
+    "6 years",
+    "2 years",
+    "Forever"
+   ],
+   "answer": 1,
+   "explanation": "Most negative marks, including missed payments and defaults, stay for 6 years.",
+   "learn_more": "pb-credit-score"
+  },
+  {
+   "id": "cred-023",
+   "topic": "credit",
+   "difficulty": 2,
+   "type": "mc",
+   "question": "Checking your own credit report:",
+   "options": [
+    "Damages your score",
+    "Is free and does not affect it; only applications leave hard searches",
+    "Costs \u00a350",
+    "Is illegal"
+   ],
+   "answer": 1,
+   "explanation": "Your own checks are soft searches with no impact; you can check free with all three main agencies.",
+   "learn_more": "pb-credit-score"
+  },
+  {
+   "id": "cred-024",
+   "topic": "credit",
+   "difficulty": 1,
+   "type": "mc",
+   "question": "The three main UK credit reference agencies are:",
+   "options": [
+    "Visa, Mastercard, Amex",
+    "Experian, Equifax and TransUnion",
+    "HMRC, DWP, FSCS",
+    "Barclays, Lloyds, HSBC"
+   ],
+   "answer": 1,
+   "explanation": "Each agency holds its own data, so your score can differ between them.",
+   "learn_more": "pb-credit-score"
+  },
+  {
+   "id": "cred-025",
+   "topic": "credit",
+   "difficulty": 2,
+   "type": "mc",
+   "question": "Credit utilisation means:",
+   "options": [
+    "How often you use cash",
+    "The percentage of your available credit you're using; lower is generally better",
+    "Your card's interest rate",
+    "Number of cards"
+   ],
+   "answer": 1,
+   "explanation": "Keeping card balances below around 30% of limits is a common guideline for score health.",
+   "learn_more": "pb-credit-score",
+   "volatile": true
+  },
+  {
+   "id": "cred-026",
+   "topic": "credit",
+   "difficulty": 2,
+   "type": "mc",
+   "question": "A hard search on your file:",
+   "options": [
+    "Happens every time you check your own report",
+    "Happens when you apply for credit and can temporarily lower your score",
+    "Is invisible to lenders",
+    "Lasts 10 years"
+   ],
+   "answer": 1,
+   "explanation": "Applications leave hard searches; clusters of them suggest risk and can hurt applications.",
+   "learn_more": "pb-credit-score"
+  },
+  {
+   "id": "cred-027",
+   "topic": "credit",
+   "difficulty": 2,
+   "type": "mc",
+   "question": "Closing an old, unused credit card can:",
+   "options": [
+    "Always boost your score",
+    "Shorten your credit history and reduce total available credit, which can hurt your score",
+    "Have no possible effect on score",
+    "Make you rich"
+   ],
+   "answer": 1,
+   "explanation": "Long account history and low utilisation both help; closing old cards can remove both.",
+   "learn_more": "pb-credit-score"
+  },
+  {
+   "id": "cred-028",
+   "topic": "credit",
+   "difficulty": 2,
+   "type": "mc",
+   "question": "Paying only the minimum on a credit card means:",
+   "options": [
+    "You clear the debt quickly",
+    "Debt lasts years longer and interest costs balloon",
+    "No interest is charged",
+    "You build the best score"
+   ],
+   "answer": 1,
+   "explanation": "Minimum payments keep you legal but are designed to stretch debt, and interest, out for years.",
+   "learn_more": "pb-credit-cards"
+  },
+  {
+   "id": "cred-029",
+   "topic": "credit",
+   "difficulty": 1,
+   "type": "mc",
+   "question": "APR stands for:",
+   "options": [
+    "Annual Payment Ratio",
+    "Annual Percentage Rate: the yearly cost of borrowing including interest and some fees",
+    "Account Payment Reminder",
+    "Average Price Rate"
+   ],
+   "answer": 1,
+   "explanation": "APR makes different borrowing costs comparable; lower is cheaper.",
+   "learn_more": "pb-credit-borrowing-costs"
+  },
+  {
+   "id": "cred-030",
+   "topic": "credit",
+   "difficulty": 2,
+   "type": "mc",
+   "question": "A card's 'representative APR' applies to:",
+   "options": [
+    "All approved applicants",
+    "At least 51% of approved applicants, so yours may differ",
+    "Nobody",
+    "Only students"
+   ],
+   "answer": 1,
+   "explanation": "Representative means 51% or more of accepted applicants get that rate; others may pay more.",
+   "learn_more": "pb-credit-borrowing-costs"
+  },
+  {
+   "id": "cred-031",
+   "topic": "credit",
+   "difficulty": 2,
+   "type": "mc",
+   "question": "A 0% purchase card's main danger is:",
+   "options": [
+    "Nothing",
+    "The deal ends; after that the rate jumps, so have a plan to clear or transfer the balance by then",
+    "You can't spend",
+    "Cashback stops"
+   ],
+   "answer": 1,
+   "explanation": "0% deals end; the standard rate afterwards is often very high.",
+   "learn_more": "pb-credit-cards",
+   "volatile": true
+  },
+  {
+   "id": "cred-032",
+   "topic": "credit",
+   "difficulty": 2,
+   "type": "mc",
+   "question": "Balance transfer cards usually charge:",
+   "options": [
+    "Nothing ever",
+    "An upfront fee, often a percentage of the amount transferred",
+    "Double interest",
+    "No fee always"
+   ],
+   "answer": 1,
+   "explanation": "Transfer fees, often around 3%, are part of the real cost comparison.",
+   "learn_more": "pb-credit-cards",
+   "volatile": true
+  },
+  {
+   "id": "cred-033",
+   "topic": "credit",
+   "difficulty": 2,
+   "type": "mc",
+   "question": "Withdrawing cash on a credit card is usually:",
+   "options": [
+    "Free",
+    "Expensive: fees plus immediate interest at high rates, and it can look risky to lenders",
+    "The cheapest borrowing",
+    "Interest-free for 56 days"
+   ],
+   "answer": 1,
+   "explanation": "Cash advances start charging interest immediately and often carry fees; avoid if possible.",
+   "learn_more": "pb-credit-cards",
+   "volatile": true
+  },
+  {
+   "id": "cred-034",
+   "topic": "credit",
+   "difficulty": 1,
+   "type": "mc",
+   "question": "A payday loan is:",
+   "options": [
+    "A cheap way to borrow",
+    "Very expensive short-term borrowing, capped in cost but still far pricier than alternatives",
+    "Free money",
+    "A pension product"
+   ],
+   "answer": 1,
+   "explanation": "Payday loans solve minutes and create months of cost; treat as a last resort.",
+   "learn_more": "pb-credit-borrowing-costs",
+   "volatile": true
+  },
+  {
+   "id": "cred-035",
+   "topic": "credit",
+   "difficulty": 2,
+   "type": "mc",
+   "question": "Being on the electoral roll at your current address:",
+   "options": [
+    "Is unrelated to credit",
+    "Helps lenders verify you and usually supports your credit file",
+    "Is required to have a bank account",
+    "Hurts your score"
+   ],
+   "answer": 1,
+   "explanation": "Registering to vote is one of the easiest free credit-score improvements.",
+   "learn_more": "pb-credit-score"
+  },
+  {
+   "id": "cred-036",
+   "topic": "credit",
+   "difficulty": 2,
+   "type": "mc",
+   "question": "A default on your file means:",
+   "options": [
+    "You saved well",
+    "A creditor has recorded an unpaid debt after formal notices, badly affecting credit for 6 years",
+    "A card expired",
+    "You moved house"
+   ],
+   "answer": 1,
+   "explanation": "Defaults are serious marks; if one is wrong, dispute it with the agency and creditor.",
+   "learn_more": "pb-credit-score"
+  },
+  {
+   "id": "cred-037",
+   "topic": "credit",
+   "difficulty": 2,
+   "type": "mc",
+   "question": "A CCJ (County Court Judgment) for unpaid debt:",
+   "options": [
+    "Is a minor note",
+    "Is a court order to pay that severely damages credit for 6 years unless settled within a month",
+    "Can be avoided by ignoring letters",
+    "Only applies in Scotland"
+   ],
+   "answer": 1,
+   "explanation": "Responding to county court letters early can avoid CCJs entirely; ignoring them makes it worse.",
+   "learn_more": "pb-credit-score"
+  },
+  {
+   "id": "cred-038",
+   "topic": "credit",
+   "difficulty": 2,
+   "type": "mc",
+   "question": "Buy Now Pay Later (BNPL) schemes like Klarna or Clearpay typically:",
+   "options": [
+    "Are recorded on all credit files like loans",
+    "Often don't appear on credit files yet, and miss their affordability checks, but regulation is changing this",
+    "Charge 30% interest always",
+    "Need a credit check always"
+   ],
+   "answer": 1,
+   "explanation": "BNPL has been light on credit checks and file reporting; treat it as real debt regardless.",
+   "learn_more": "pb-credit-bnpl",
+   "volatile": true
+  },
+  {
+   "id": "cred-039",
+   "topic": "credit",
+   "difficulty": 2,
+   "type": "mc",
+   "question": "The risk of stacking multiple BNPL purchases is:",
+   "options": [
+    "None",
+    "Several small repayments become a big monthly commitment with no central view of what you owe",
+    "Higher salary",
+    "Better credit score automatically"
+   ],
+   "answer": 1,
+   "explanation": "BNPL's ease hides its weight; track every plan or it bites.",
+   "learn_more": "pb-credit-bnpl"
+  },
+  {
+   "id": "cred-040",
+   "topic": "credit",
+   "difficulty": 2,
+   "type": "mc",
+   "question": "A credit builder card typically has:",
+   "options": [
+    "High limits and low rates",
+    "Low limits and high APR, designed to demonstrate repayment behaviour",
+    "No checks",
+    "Free cash"
+   ],
+   "answer": 1,
+   "explanation": "Used carefully: spend small, repay in full, and the file improves; used badly, it's expensive.",
+   "learn_more": "pb-credit-score",
+   "volatile": true
+  },
+  {
+   "id": "cred-041",
+   "topic": "credit",
+   "difficulty": 2,
+   "type": "mc",
+   "question": "Applying for several credit cards in a short period:",
+   "options": [
+    "Improves approval odds",
+    "Can look desperate to lenders and reduce approval chances",
+    "Is free of searches",
+    "Helps your score"
+   ],
+   "answer": 1,
+   "explanation": "Space out applications; each leaves a hard search.",
+   "learn_more": "pb-credit-score"
+  },
+  {
+   "id": "cred-042",
+   "topic": "credit",
+   "difficulty": 2,
+   "type": "mc",
+   "question": "Lenders see your income directly when you apply:",
+   "options": [
+    "Always, from credit files",
+    "No; credit files don't show income, they ask you and use affordability checks",
+    "Never ask",
+    "Only from HMRC"
+   ],
+   "answer": 1,
+   "explanation": "Your file shows behaviour, not salary; affordability is assessed from what you declare and bank data where shared.",
+   "learn_more": "pb-credit-score"
+  },
+  {
+   "id": "cred-043",
+   "topic": "credit",
+   "difficulty": 1,
+   "type": "mc",
+   "question": "Paying your credit card in full every month:",
+   "options": [
+    "Wastes your credit score",
+    "Builds history while costing nothing in interest if there's a grace period",
+    "Is not possible",
+    "Hurts your score"
+   ],
+   "answer": 1,
+   "explanation": "Full repayment builds a healthy file with zero interest cost.",
+   "learn_more": "pb-credit-cards"
+  },
+  {
+   "id": "cred-044",
+   "topic": "credit",
+   "difficulty": 2,
+   "type": "mc",
+   "question": "Being a 'financial associate' through a joint mortgage or account means:",
+   "options": [
+    "Nothing",
+    "Their bad credit can affect joint applications, and disassociation takes effort after separation",
+    "You inherit their debt always",
+    "Your score doubles"
+   ],
+   "answer": 1,
+   "explanation": "Financial links matter; sever them formally after separations so ex-partners' issues don't drag you.",
+   "learn_more": "pb-credit-score"
+  },
+  {
+   "id": "cred-045",
+   "topic": "credit",
+   "difficulty": 2,
+   "type": "mc",
+   "question": "Before a mortgage application, you should:",
+   "options": [
+    "Apply for 3 new credit cards",
+    "Avoid new applications, keep utilisation low, and check all three reports for errors",
+    "Close all accounts",
+    "Miss a payment to test them"
+   ],
+   "answer": 1,
+   "explanation": "Clean, calm files in the months before an application improve outcomes.",
+   "learn_more": "pb-credit-score"
+  },
+  {
+   "id": "cred-046",
+   "topic": "credit",
+   "difficulty": 2,
+   "type": "mc",
+   "question": "Rent payments normally appear on credit files:",
+   "options": [
+    "Always automatically",
+    "Only if reported through a rent-reporting scheme, which some renters use to build history",
+    "Never",
+    "Only in London"
+   ],
+   "answer": 1,
+   "explanation": "Rent isn't automatically reported; services can add it if your landlord or platform participates.",
+   "learn_more": "pb-credit-score",
+   "volatile": true
+  },
+  {
+   "id": "cred-047",
+   "topic": "credit",
+   "difficulty": 2,
+   "type": "mc",
+   "question": "A prepay card or top-up card usually:",
+   "options": [
+    "Builds credit history",
+    "Doesn't build credit history because nothing is being borrowed",
+    "Hurts your score",
+    "Is a credit card"
+   ],
+   "answer": 1,
+   "explanation": "No borrowing means no credit history from it.",
+   "learn_more": "pb-credit-score"
+  },
+  {
+   "id": "cred-048",
+   "topic": "credit",
+   "difficulty": 2,
+   "type": "mc",
+   "question": "If a debt collector contacts you about a debt you don't recognise, first step:",
+   "options": [
+    "Pay it immediately",
+    "Ask for written details and check your credit reports; don't acknowledge the debt as yours until verified",
+    "Ignore all letters forever",
+    "Call the police"
+   ],
+   "answer": 1,
+   "explanation": "Verify before paying; mistaken or fraudulent collections happen, and acknowledgment can restart limitations.",
+   "learn_more": "pb-credit-score"
+  }
+ ]
+}

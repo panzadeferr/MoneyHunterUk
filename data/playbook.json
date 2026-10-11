@@ -1,11 +1,11 @@
 {
  "version": 1,
- "updated": "2026-10-10",
+ "updated": "2026-10-11",
  "chapters": [
   {
    "id": "banking",
    "title": "Banking & Switching",
-   "icon": "🏦",
+   "icon": "\ud83c\udfe6",
    "articles": [
     {
      "id": "pb-bank-basics",
@@ -13,7 +13,8 @@
      "summary": "Sort codes, account numbers, debit cards, Confirmation of Payee and how to pick an everyday account.",
      "existing_guide": null,
      "status": "new",
-     "question_count": 3
+     "question_count": 18,
+     "body": "A current account is the hub of your money: your salary lands in it, your bills leave it, and your card spends from it. Every UK account has a sort code (6 digits, identifying the bank and branch), an account number (8 digits), and a debit card. That's the whole skeleton; everything else is extras.\n\nWhen choosing an account, compare what actually matters to you:\n- Monthly fees: most everyday accounts are free; packaged accounts charging \u00a310-20/month rarely pay off unless you use their perks heavily.\n- Overdraft rate: if you sometimes run dry, this is the most expensive feature to get wrong.\n- App quality: switching cards, freezing cards and setting limits in-app saves real hassle.\n- Cashback or interest: nice, but usually small; never let it outweigh fees.\n\nTwo protections to know: Confirmation of Payee warns you when the name you type doesn't match the receiving account, and the Current Account Switch Service moves your whole setup in 7 working days. If you've been refused an account, basic bank accounts exist with no credit check."
     },
     {
      "id": "pb-bank-cass",
@@ -21,7 +22,7 @@
      "summary": "The 7-working-day switch, choosing a date, the Switch Guarantee and payment redirection.",
      "existing_guide": "guide-bankswitch",
      "status": "expand",
-     "question_count": 5
+     "question_count": 11
     },
     {
      "id": "pb-bank-switch-bonuses",
@@ -29,7 +30,7 @@
      "summary": "Pay-in amounts, active Direct Debits, eligibility windows, clawbacks and how to never miss a bonus.",
      "existing_guide": "guide-bankswitch",
      "status": "expand",
-     "question_count": 6
+     "question_count": 8
     },
     {
      "id": "pb-bank-direct-debits",
@@ -37,7 +38,7 @@
      "summary": "What they are, the Direct Debit Guarantee, and cheap ways to meet switch requirements.",
      "existing_guide": "guide-directdebit",
      "status": "expand",
-     "question_count": 3
+     "question_count": 7
     },
     {
      "id": "pb-bank-overdrafts",
@@ -45,14 +46,15 @@
      "summary": "Arranged vs unarranged, interest rates, and how to get out of your overdraft.",
      "existing_guide": null,
      "status": "new",
-     "question_count": 3
+     "question_count": 7,
+     "body": "An overdraft is borrowing with your current account as the door: an arranged overdraft is an agreed limit you can dip into, charged interest daily on what you use. Since 2020 rules changed, all overdrafts are priced the same whether arranged or not, and providers must advertise a single APR (often 20-40%).\n\nThree things to know:\n- They're for short gaps, not lifestyle. Interest compounds daily, so a \u00a3200 overdraft used for weeks costs more than it looks.\n- Going over your arranged limit, or having payments bounce, can mean fees or refused payments and can leave marks that affect future applications.\n- If you're repeatedly overdrawn by more than a small amount, a 0% money transfer card or a small loan usually costs less.\n\nThe best overdraft is an unused one. Check your balance before spending, and top up on payday before interest accumulates for long."
     }
    ]
   },
   {
    "id": "saving",
    "title": "Saving",
-   "icon": "🐷",
+   "icon": "\ud83d\udc37",
    "articles": [
     {
      "id": "pb-save-aer",
@@ -60,7 +62,8 @@
      "summary": "AER, gross, monthly vs annual interest, and inflation's effect on your savings.",
      "existing_guide": null,
      "status": "new",
-     "question_count": 6
+     "question_count": 17,
+     "body": "AER (Annual Equivalent Rate) is the standard way UK savings rates are quoted. It exists because accounts pay interest at different frequencies: one account paying 5% once a year and another paying 4.9% monthly can actually be closer than they look. AER converts everything to a comparable yearly figure, including the effect of interest earning interest through the year.\n\nWhen comparing accounts, always use AER rather than the headline rate, and check three extras:\n- Introductory bonuses: some rates include a bonus that expires after 12 months.\n- Conditions: minimum monthly deposits, or rate drops if you withdraw.\n- Interest payment frequency: monthly interest compounds slightly faster if left in.\n\nInterest is paid to you gross (no tax deducted). Most people pay no tax on savings interest at all thanks to the personal savings allowance, and ISAs make interest tax-free outright."
     },
     {
      "id": "pb-save-regular-savers",
@@ -68,7 +71,8 @@
      "summary": "High-rate monthly saving accounts and why the headline rate overstates what you earn.",
      "existing_guide": null,
      "status": "new",
-     "question_count": 2
+     "question_count": 3,
+     "body": "A regular saver is a savings account that rewards the habit rather than the lump sum: you deposit a fixed amount each month (often \u00a325-\u00a3300), usually for a 12-month term, in exchange for some of the highest rates on the high street. At the end of the term the money usually moves to a normal account, and you start again.\n\nWhy they pay more: banks get 12 months of guaranteed new deposits from disciplined savers, and they price that certainty in.\n\nThings to check before opening one:\n- The cap: monthly deposits are often limited, so you can't dump a lump sum in.\n- The rate after maturity: it often drops sharply, so diarise the end date.\n- Withdrawal rules: some allow none without closing.\n\nThe classic strategy: feed a regular saver from your current account each payday, then move the balance to the best easy-access or fixed account when it matures."
     },
     {
      "id": "pb-save-isas",
@@ -76,7 +80,8 @@
      "summary": "Cash and Stocks & Shares ISAs, the annual allowance and flexible ISAs.",
      "existing_guide": null,
      "status": "new",
-     "question_count": 6
+     "question_count": 11,
+     "body": "An ISA (Individual Savings Account) is a wrapper that makes your savings and investments tax-free. Each tax year you can put up to \u00a320,000 per person across your ISAs (this allowance can change), and nothing inside counts toward your tax allowances: no tax on interest, gains or dividends.\n\nThe main types:\n- Cash ISA: like a savings account, but tax-free. Most useful if you earn enough interest to exceed your personal savings allowance.\n- Stocks & Shares ISA: invest in funds and shares, tax-free on growth and dividends.\n- Lifetime ISA (LISA): up to \u00a34,000/year, with a 25% government bonus, but only for a first home (up to \u00a3450,000) or retirement. Withdrawals for anything else lose 25%, which is more than the bonus you received, roughly a 6.25% net loss.\n- Junior ISA: \u00a39,000/year for a child's account.\n\nFor most people, the ISA decision is simple: if your interest or investment growth stays under your tax allowances, a normal account at the best rate wins; if you're earning real interest or investing for years, an ISA wins."
     },
     {
      "id": "pb-save-premium-bonds",
@@ -84,7 +89,8 @@
      "summary": "How the prize draw works, what's guaranteed and who they suit.",
      "existing_guide": null,
      "status": "new",
-     "question_count": 3
+     "question_count": 5,
+     "body": "Premium Bonds, run by NS&I (the government's savings arm), don't pay interest. Instead, every \u00a31 bond is entered into a monthly prize draw, with prizes from \u00a325 to \u00a31m. Your money is fully safe (government-backed, withdrawable any time), but your return is luck: most months you win nothing, and the average return across all holders is set by the prize fund rate.\n\nYou can hold from \u00a325 up to \u00a350,000 per person.\n\nWho they suit:\n- People who'd rather have a lottery-shaped dream than a guaranteed 0.01% elsewhere, with their capital safe.\n- Higher-rate taxpayers, since prizes are tax-free while normal interest is taxable above the allowance.\n\nWho they don't: anyone who needs actual returns. For guaranteed growth, ordinary savings accounts or NS&I's own fixed products usually beat the average Premium Bond payout, and you can check the current prize fund rate before deciding."
     },
     {
      "id": "pb-save-emergency-fund",
@@ -92,7 +98,8 @@
      "summary": "How much to keep, where to keep it and how to build it fast.",
      "existing_guide": null,
      "status": "new",
-     "question_count": 2
+     "question_count": 8,
+     "body": "An emergency fund is money kept somewhere safe and instantly accessible, used only for genuine emergencies: job loss, urgent repairs, a replacement appliance, a gap between contracts. It exists so that life's surprises don't become credit card debt.\n\nHow much: a common starting target is one month of essential spending, building to three. If your income is irregular (freelance, gig work), aim higher, six months.\n\nWhere to keep it:\n- Easy access savings account, in its own bank away from your spending account so it isn't tempting.\n- Not in stocks, not locked in a fixed bond, not in your current account where it gets spent.\n\nHow to build it: automate a transfer on payday, even \u00a325, before you can spend it. Round-up apps and sinking funds accelerate it.\n\nThe test of a real emergency fund is boring: it sits there untouched, and one day it quietly saves you 25% APR."
     },
     {
      "id": "pb-save-fscs",
@@ -100,14 +107,15 @@
      "summary": "What's protected, the limit, and banking licences.",
      "existing_guide": null,
      "status": "new",
-     "question_count": 3
+     "question_count": 6,
+     "body": "The Financial Services Compensation Scheme (FSCS) protects your money if an authorised UK bank, building society or other financial firm fails. For cash savings the limit is \u00a385,000 per person, per authorised firm (this cap can change). It's automatic: you don't apply, you don't pay, and you don't lose your money.\n\nKey details:\n- \"Per authorised firm\" matters: brands sharing a banking licence share the \u00a385,000. Check with the FSCS protection checker before depositing large amounts.\n- Joint accounts usually get \u00a3170,000 (two people's worth).\n- Temporary high balances (like a house sale) can get protection up to \u00a31m for six months.\n\nFSCS does not cover: investment losses from markets falling, or crypto. It protects you from firm failure, not from bad investment choices.\n\nIf you hold over \u00a385,000 anywhere, spread it across different authorised institutions. Five minutes of checking beats \u00a385,000 of exposure."
     }
    ]
   },
   {
    "id": "investing",
    "title": "Investing",
-   "icon": "📈",
+   "icon": "\ud83d\udcc8",
    "articles": [
     {
      "id": "pb-inv-basics",
@@ -115,7 +123,8 @@
      "summary": "Risk and return, shares, funds, diversification and time in the market.",
      "existing_guide": null,
      "status": "new",
-     "question_count": 7
+     "question_count": 22,
+     "body": "Investing means buying assets that can grow: shares (small ownership stakes in companies), bonds (loans to companies or governments), or funds that bundle many of them. The core trade-off: higher potential returns come with higher risk, and prices go down as well as up.\n\nThe standard, boring, effective approach for beginners:\n- Only invest money you won't need for 5+ years, after your emergency fund exists and expensive debt is cleared.\n- Use a tax wrapper first: a Stocks & Shares ISA (up to the \u00a320,000 annual allowance) or a SIPP for retirement.\n- Prefer broad, low-cost index funds that track whole markets over picking individual stocks.\n- Invest regularly and don't check daily.\n\nWhat's NOT protected: market losses. The FSCS protects you if a firm fails, not if your funds fall. Crypto is generally not FSCS-protected at all and can go to zero.\n\nThat's the honest deal: time and diversification in exchange for accepting ups and downs."
     },
     {
      "id": "pb-inv-funds-fees",
@@ -123,7 +132,8 @@
      "summary": "Index funds, platform and fund fees, and why small percentages matter.",
      "existing_guide": null,
      "status": "new",
-     "question_count": 3
+     "question_count": 8,
+     "body": "Fees are the one number in investing you control completely, and they compound against you exactly like returns compound for you. A \u00a310,000 investment growing at 6% becomes about \u00a357,000 in 30 years with no fees. With 1% taken each year, it's around \u00a342,000. The fee ate \u00a315,000.\n\nThe layers to check:\n- Fund OCF (ongoing charges figure): the fund's own yearly fee. Passive index trackers are often 0.05-0.25%; active funds often 0.5-1.5%+.\n- Platform fee: what the broker charges to hold your account, a percentage or flat fee.\n- Dealing charges: per-trade costs, mostly avoided by regular investing plans.\n\nBe sceptical of high-fee funds promising to beat the market: most actively managed funds fail to beat their index after fees over long periods. The cheapest broad tracker in the right tax wrapper is the closest thing to a default answer investing has."
     },
     {
      "id": "pb-inv-free-shares",
@@ -131,7 +141,7 @@
      "summary": "How free-share sign-up offers work and the terms to check.",
      "existing_guide": "guide-invest",
      "status": "expand",
-     "question_count": 1
+     "question_count": 2
     },
     {
      "id": "pb-inv-compound",
@@ -139,7 +149,8 @@
      "summary": "The maths of growth, the Rule of 72 and regular investing.",
      "existing_guide": null,
      "status": "new",
-     "question_count": 6
+     "question_count": 10,
+     "body": "Compounding is returns earning returns, and it's the reason starting early beats starting big. Money invested grows, then the growth itself grows, and the curve steepens with time. Over long periods, most of the final value comes from the later years, which is why the first years feel slow and matter most.\n\nExample: \u00a3200/month at 5% average annual growth is about \u00a382,000 after 25 years, of which only \u00a360,000 is what you paid in. Stretch that to 35 years and it's roughly \u00a3225,000, with the last decade doing most of the lifting.\n\nWhat this means practically:\n- Start now with an amount you won't notice; time beats size.\n- Reinvest dividends rather than taking them as cash.\n- Don't interrupt compounding by cashing out in a dip: selling during crashes turns temporary losses permanent and misses the recovery.\n\nCompounding's evil twin is fee drag; that's why fees matter so much."
     },
     {
      "id": "pb-inv-crypto-risks",
@@ -147,14 +158,15 @@
      "summary": "Volatility, no FSCS protection and common crypto scams.",
      "existing_guide": null,
      "status": "new",
-     "question_count": 1
+     "question_count": 6,
+     "body": "Crypto is a high-risk, largely unregulated investment class. Whatever you think of the technology, go in with clear eyes:\n\n- No FSCS protection: if an exchange collapses or you're hacked, there's generally no compensation. Firms that do fail have left customers with nothing for years.\n- Extreme volatility: 50-80% drawdowns have happened repeatedly, even to major coins.\n- Scam density: fake celebrity endorsements, \"guaranteed returns\", recovery scams targeting previous victims, and clone firms impersonating real platforms are everywhere. Check anyone you deal with on the FCA Register.\n\nIf you still want exposure, the sensible pattern is: only money you can afford to lose entirely, bought through established regulated exchanges, held in a reputable wallet, never borrowed for, and never advertised to you by an influencer promising returns.\n\nCrypto should be the dessert of a portfolio, not the meal, and never the rent money."
     }
    ]
   },
   {
    "id": "tax",
    "title": "Tax",
-   "icon": "🧾",
+   "icon": "\ud83e\uddfe",
    "articles": [
     {
      "id": "pb-tax-allowances",
@@ -162,7 +174,8 @@
      "summary": "Personal Allowance, savings and dividend allowances, and the tax year.",
      "existing_guide": null,
      "status": "new",
-     "question_count": 7
+     "question_count": 24,
+     "body": "UK tax is built on allowances: amounts you can earn, save or receive before tax applies. Knowing them is free money.\n\nThe big ones:\n- Personal allowance: \u00a312,570 of income tax-free each year (currently frozen, thresholds can change).\n- Personal savings allowance: \u00a31,000 of savings interest tax-free for basic-rate taxpayers, \u00a3500 for higher-rate.\n- Dividend allowance: \u00a3500 (recently cut; check current figures).\n- Capital gains annual exempt amount: gains from selling investments or property above the yearly threshold are taxed; it has been cut sharply, so check current figures.\n- Trading allowance: \u00a31,000 of casual self-employment income tax-free.\n- Rent-a-room: \u00a37,500 tax-free for furnished lodgers in your own home.\n\nTwo habits: check your tax code on every payslip (a wrong code means wrong deductions, usually fixable with one call), and claim anything you're entitled to rather than waiting for HMRC to volunteer it."
     },
     {
      "id": "pb-tax-side-income",
@@ -170,7 +183,8 @@
      "summary": "The trading allowance, selling your own stuff, platform reporting and Self Assessment.",
      "existing_guide": null,
      "status": "new",
-     "question_count": 5
+     "question_count": 11,
+     "body": "Earning on the side is genuinely taxed differently depending on how much and what kind, and getting this right is simple.\n\nUnder \u00a31,000/year from self-employment or casual income: the trading allowance covers it. No registration, no declaration (with some exceptions if you also claim expenses).\n\nOver \u00a31,000/year: you must register with HMRC for self-assessment and declare it, even if little tax is due. Deadlines: online returns for a tax year are due by 31 January the following year, and late filing starts with an immediate \u00a3100 penalty even if you owe nothing.\n\nPractical rules:\n- Keep records from day one: income, platform fees, mileage, materials. Allowable expenses reduce your taxable profit.\n- Set aside roughly 25-30% of profit for tax so the bill never surprises you.\n- Gig platform and marketplace data increasingly flows to HMRC; assuming they won't notice is a losing strategy.\n\nDeclaration is not punishment; it's how expenses and allowances get counted in your favour."
     },
     {
      "id": "pb-tax-marriage-allowance",
@@ -178,92 +192,101 @@
      "summary": "Transferring allowance between partners.",
      "existing_guide": null,
      "status": "new",
-     "question_count": 1
+     "question_count": 3,
+     "body": "Marriage Allowance lets one partner transfer 10% of their unused personal allowance (\u00a31,260) to the other, cutting the couple's tax by up to about \u00a3252 a year (figures follow the personal allowance and can change). It's one of the most under-claimed benefits in the UK; hundreds of thousands of eligible couples don't claim.\n\nYou qualify if:\n- One partner earns under the \u00a312,570 personal allowance (or nothing).\n- The other is a basic-rate taxpayer (income up to the higher-rate threshold; the limit is higher in Scotland).\n- Both were born on or after 6 April 1935.\n- You're married or in a civil partnership.\n\nYou apply online at gov.uk, and the higher earner's tax code changes so they pay less each month. You can backdate a claim to previous tax years, which can be worth \u00a31,000+ in a lump sum if you've been eligible for years.\n\nIt's free, it takes ten minutes, and it doesn't affect either partner's credit or benefits. If you fit, claim it."
     }
    ]
   },
   {
    "id": "credit",
    "title": "Credit & Borrowing",
-   "icon": "💳",
+   "icon": "\ud83d\udcb3",
    "articles": [
     {
      "id": "pb-credit-score",
      "title": "Your credit score",
      "summary": "Hard vs soft searches, utilisation, the electoral roll and how long things stay on file.",
      "existing_guide": null,
-     "status": "new",
-     "question_count": 10
+     "status": "written",
+     "question_count": 28,
+     "body": "Your credit score is a summary of your credit file: the record of how you've borrowed and repaid. Lenders use it to decide whether to lend to you and at what price. The three main UK agencies are Experian, Equifax and TransUnion, and each holds its own data, so your score differs between them.\n\nWhat moves your score:\n- Payment history: missed payments and defaults stay on file for 6 years. Pay at least the minimum, always.\n- Credit utilisation: using a small share of your limits (under about 30%) reads as comfortable, not stretched.\n- Application history: each application leaves a hard search; clusters look desperate. Space applications out.\n- Length of history: older accounts help, which is why closing old cards can backfire.\n- Electoral roll: being registered at your current address is the easiest free win.\n\nChecking your own report is free with all three agencies and never affects your score. Check it before any big application, fix errors, and dispute anything wrong."
     },
     {
      "id": "pb-credit-cards",
      "title": "Credit cards done right",
      "summary": "Paying in full, Section 75, chargeback and 0% deals.",
      "existing_guide": null,
-     "status": "new",
-     "question_count": 6
+     "status": "written",
+     "question_count": 11,
+     "body": "A credit card is a revolving loan with a grace period: spend, and if you repay in full by the due date you pay nothing extra. Used that way, it's a free, score-building payment method with Section 75 protection (for purchases of \u00a3100-\u00a330,000, the card company is jointly liable if things go wrong). Used badly, it's one of the most expensive debts there is.\n\nCommon card types:\n- 0% purchase cards: no interest for an intro period that ends, so plan to clear the balance by then.\n- Balance transfer cards: move existing card debt to 0%, usually for an upfront fee (often around 3%). Only a win if you actually clear the balance.\n- Credit builder cards: low limits, high APR, designed to demonstrate repayment.\n\nRules that save real money:\n- Set up a full direct debit so repayment happens automatically.\n- Never withdraw cash on a credit card: fees plus immediate interest.\n- The minimum payment keeps you legal and costs you years of interest; pay the full balance or as much above the minimum as you can."
     },
     {
      "id": "pb-credit-borrowing-costs",
      "title": "The true cost of borrowing",
      "summary": "APR, minimum payments, payday loans and guarantor loans.",
      "existing_guide": null,
-     "status": "new",
-     "question_count": 4
+     "status": "written",
+     "question_count": 7,
+     "body": "The true cost of borrowing is the APR: the yearly cost including interest and certain fees. Comparing APRs is the honest way to compare loans, overdrafts and cards. Lower is cheaper, always.\n\nWhy borrowing costs vary so much:\n- Unsecured loans from banks: typically single-digit to low-teens APR for good applicants, fixed payments.\n- Credit cards: often 20-30% APR.\n- Overdrafts: often 20-40% APR, charged daily.\n- Payday loans: costs are capped by regulation, but they're still by far the most expensive common borrowing.\n- Representative APR applies to at least 51% of approved applicants; your rate may be worse.\n\nBorrowing rules of thumb: borrow for things that last or that you truly need, never for lifestyle; clear the most expensive debt first; and if you're borrowing to pay off other borrowing repeatedly, that's the signal to stop and make a plan rather than shuffle the debt."
     },
     {
      "id": "pb-credit-bnpl",
      "title": "Buy Now Pay Later",
      "summary": "How BNPL works and how to avoid its traps.",
      "existing_guide": null,
-     "status": "new",
-     "question_count": 1
+     "status": "written",
+     "question_count": 3,
+     "body": "Buy Now Pay Later (Klarna, Clearpay, PayPal Pay in 3 and similar) splits purchases into instalments, usually interest-free and usually with light credit checks. It feels like free money; treat it as real debt, because it is.\n\nThe real risks:\n- Stacking: several small plans across apps become a large hidden monthly commitment with no single view of what you owe.\n- Late fees: missing instalments costs money and can affect your ability to use the services.\n- Thin protection: historically BNPL has had weaker consumer protections than credit cards and often doesn't appear on credit files, though regulation is tightening and this is changing.\n\nUse it safely:\n- Track every plan in one place, with the total and the dates.\n- Only for things you'd buy anyway, never to stretch beyond your budget.\n- Never stack BNPL on top of a tight month.\n\nIf a purchase only works because it's split into four, it doesn't work."
     }
    ]
   },
   {
    "id": "budgeting",
    "title": "Budgeting",
-   "icon": "📊",
+   "icon": "\ud83d\udcca",
    "articles": [
     {
      "id": "pb-budget-basics",
      "title": "Budgeting basics",
      "summary": "50/30/20, needs vs wants, pay yourself first and zero-based budgets.",
      "existing_guide": null,
-     "status": "new",
-     "question_count": 9
+     "status": "written",
+     "question_count": 25,
+     "body": "A budget is a plan for money you've already earned, and the simplest one that works is: write down what comes in, assign every pound a job, and review monthly. The famous starting frame is 50/30/20: about 50% of take-home pay on needs, 30% on wants, 20% on savings and debt. Your real numbers won't match that, and that's fine; the frame is for orientation, not guilt.\n\nGetting started:\n- Review one month of actual bank statements, not memory. Real spending is always surprising.\n- Set up separate pots: bills money, spending money, savings money. Separate accounts or banking apps make overspending visible.\n- Automate savings on payday (\"pay yourself first\"), so saving is the default and spending is the decision.\n- Keep a small buffer category for surprises so one parking ticket doesn't derail the month.\n\nThe point of a budget isn't restriction; it's making sure your money goes where you actually want it. Include fun money deliberately, review monthly, and adjust as life changes."
     },
     {
      "id": "pb-budget-subscriptions",
      "title": "Subscription clear-out",
      "summary": "Finding and cancelling forgotten subscriptions.",
      "existing_guide": null,
-     "status": "new",
-     "question_count": 2
+     "status": "written",
+     "question_count": 4,
+     "body": "Subscriptions are the quietest leak in most budgets: individually small, charged automatically, and easy to forget. Ten forgotten \u00a38 subscriptions is \u00a3960 a year.\n\nThe audit:\n- Go through 2-3 months of statements and list every recurring charge.\n- Ask of each: when did I last actually use this? Would I sign up again today at this price?\n- Cancel without mercy; nearly everything can be restarted in two minutes if you miss it.\n\nThen keep it clean:\n- Annual costs (insurance renewals, subscriptions paid yearly) are the sneakiest: put annual renewals in your calendar with a reminder to re-shop before renewal.\n- Check for duplicate services (two streaming services you don't watch, two cloud photo plans).\n- Watch free trials: diarise the date before they convert, or use a dedicated reminder.\n\nFreeing \u00a330-\u00a380/month from subscriptions is one of the fastest budget wins there is, and it costs nothing but an hour."
     },
     {
      "id": "pb-budget-goals",
      "title": "Saving goals",
      "summary": "SMART goals and sinking funds.",
      "existing_guide": null,
-     "status": "new",
-     "question_count": 3
+     "status": "written",
+     "question_count": 10,
+     "body": "Savings goals work when they're specific, dated and funded. \"Save more\" is a wish; \"\u00a3600 for Christmas by December means \u00a350/month\" is a plan.\n\nThe method:\n- Name the goal and the date (holiday, car fund, emergency fund, deposit).\n- Divide the amount by the months remaining; that's your monthly number.\n- Give each goal its own pot (many banks support multiple pots), so progress is visible and money isn't accidentally spent.\n- Automate the transfer on payday.\n\nFor emergencies: build one month of essential spending first, then three. For lumpy annual costs (Christmas, car tax, insurance): sinking funds, one pot per cost. For windfalls (bonuses, gifts, tax refunds): split them deliberately, some fun, most to the goal that matters most, so the windfall doesn't evaporate.\n\nReview goals monthly. When one completes, redirect its payment to the next goal rather than letting it get absorbed into spending."
     }
    ]
   },
   {
    "id": "shopping",
    "title": "Smart Shopping",
-   "icon": "🛒",
+   "icon": "\ud83d\uded2",
    "articles": [
     {
      "id": "pb-shop-unit-price",
      "title": "Unit prices & real value",
      "summary": "Price per kg/litre, multipacks, offers and shrinkflation.",
      "existing_guide": null,
-     "status": "new",
-     "question_count": 11
+     "status": "written",
+     "question_count": 20,
+     "body": "Unit pricing is the single most useful number in a supermarket: the price per 100g, per litre or per item shown on the shelf label. It makes a 400g pack and a 750g pack directly comparable, and it exposes the traps: bigger isn't always cheaper, and \"special offers\" sometimes cost more per unit than the normal price.\n\nUse it like this:\n- Compare unit prices across brands and sizes, not just shelf prices.\n- Check multi-buys: sometimes two singles at normal price beat the deal.\n- Watch the unit price on price changes; shrinking pack sizes at the same price (shrinkflation) only shows up here.\n\nOn top of unit price, the durable food-budget habits are: plan meals around what you already have, shop with a list, buy reduced items only if you'll freeze or eat them, and test own-brand staples, which are often made in the same factories as the brands at a fraction of the price."
     },
     {
      "id": "pb-shop-supermarket-stacking",
@@ -278,23 +301,25 @@
      "title": "Loyalty schemes",
      "summary": "Getting the most from points.",
      "existing_guide": null,
-     "status": "new",
-     "question_count": 1
+     "status": "written",
+     "question_count": 4,
+     "body": "Loyalty schemes (Nectar, Clubcard, Boots, coffee apps and the rest) are discounts in disguise. Used well they're worth real money; used badly they cost you more than they give back.\n\nThe good version:\n- Collect on purchases you were making anyway, and never change what you buy to chase points.\n- Redeem deliberately: points as money off your normal shop, or boosted into vouchers worth several times face value.\n- Watch member pricing: some supermarkets now have two prices, and non-members pay a premium. Compare the member price against other shops to see if the scheme is a genuine discount or just the real price with a toll.\n\nThe bad version:\n- Buying things you don't need to \"earn points\".\n- Hoarding points for years while schemes devalue them.\n\nRule of thumb: loyalty points are a topping, worth maybe 0.5-2% of spend. Cashback sites and discounted gift cards often beat them, and they stack."
     },
     {
      "id": "pb-shop-consumer-rights",
      "title": "Your consumer rights",
      "summary": "Refunds, faulty goods and cooling-off periods.",
      "existing_guide": null,
-     "status": "new",
-     "question_count": 2
+     "status": "written",
+     "question_count": 11,
+     "body": "UK consumer law gives you rights that exist whether or not the shop mentions them.\n\nFor goods (Consumer Rights Act 2015), items must be as described, of satisfactory quality and fit for purpose. If they aren't:\n- Within 30 days: short-term right to reject for a full refund.\n- 30 days to 6 months: you're entitled to repair or replacement, and it's up to the retailer to prove the fault wasn't there at delivery.\n- After 6 months: you still have rights if you can show the fault existed at delivery.\n\nFor online orders, distance selling rules normally give you a 14-day cooling-off period from delivery to cancel and return, even without a fault (some items are excluded).\n\nPractical armour:\n- Keep receipts and order emails.\n- Complain in writing so there's a record.\n- If a retailer refuses something they legally owe you, escalate: the retailer's own ombudsman, Citizens Advice, or a chargeback/Section 75 claim through your bank for card payments."
     }
    ]
   },
   {
    "id": "cashback",
    "title": "Cashback",
-   "icon": "💸",
+   "icon": "\ud83d\udcb8",
    "articles": [
     {
      "id": "pb-cb-sites",
@@ -302,7 +327,7 @@
      "summary": "How cashback sites work and how to get paid.",
      "existing_guide": "guide-cashback",
      "status": "expand",
-     "question_count": 4
+     "question_count": 16
     },
     {
      "id": "pb-cb-tracking",
@@ -310,7 +335,7 @@
      "summary": "Cookies, ad blockers, voucher codes and declined cashback.",
      "existing_guide": "guide-cashback",
      "status": "expand",
-     "question_count": 5
+     "question_count": 12
     },
     {
      "id": "pb-cb-giftcards",
@@ -318,108 +343,118 @@
      "summary": "Discounted gift cards and their risks.",
      "existing_guide": "guide-cashback",
      "status": "expand",
-     "question_count": 2
+     "question_count": 5
     }
    ]
   },
   {
    "id": "scams",
    "title": "Scam Defence",
-   "icon": "🛡️",
+   "icon": "\ud83d\udee1\ufe0f",
    "articles": [
     {
      "id": "pb-scam-phishing",
      "title": "Phishing texts & emails",
      "summary": "Spotting fake messages and links.",
      "existing_guide": null,
-     "status": "new",
-     "question_count": 12
+     "status": "written",
+     "question_count": 6,
+     "body": "Phishing is a fake message pretending to be a real organisation: your bank, HMRC, a delivery firm, PayPal. Its only goal is to get you to click a link, enter credentials, or approve a payment. Sender addresses and phone numbers can be faked, so \"it looked official\" means nothing.\n\nThe tells:\n- Urgency: \"your account will be closed\", \"final notice\", \"act now\".\n- Unexpected requests: you didn't initiate the contact.\n- Links: real organisations won't ask you to fix problems by clicking links in messages.\n- Requests for codes, passwords or PINs: no legitimate company ever needs these.\n\nThe defence is one habit: never act inside the message. If a message claims to be from your bank, close it and contact the bank through the number on your card or the official app. If it claims to be a delivery company, go to the website yourself by typing the address. Treat every unexpected message asking for action as hostile until proven otherwise."
     },
     {
      "id": "pb-scam-app-fraud",
      "title": "Bank impersonation & APP fraud",
      "summary": "Safe-account scams, 159, and reimbursement rules.",
      "existing_guide": null,
-     "status": "new",
-     "question_count": 6
+     "status": "written",
+     "question_count": 4,
+     "body": "APP (Authorised Push Payment) fraud is when you're tricked into transferring money yourself to a scammer: a fake invoice, a \"safe account\", an investment, a romance, a landlord's deposit. Because you authorised the payment, it doesn't reverse automatically like a card fraud would, which is why these scams are so damaging.\n\nThe big one to memorise: your bank will NEVER ask you to move money to a safe account. No real organisation does this. Anyone who does, on any channel, with any story, is a scammer.\n\nNewer protections: since October 2024, mandatory reimbursement rules mean banks must reimburse most APP fraud victims (with an \u00a385,000 cap and some exclusions), but the far better outcome is not paying in the first place.\n\nBefore any transfer to someone new:\n- Call the person or company back on a number you find independently.\n- Check bank details changed by phone, not by email.\n- Slow down: urgency is the scam's engine, so slowness is your counter."
     },
     {
      "id": "pb-scam-investment",
      "title": "Investment & crypto scams",
      "summary": "Guaranteed returns, fake platforms and recovery scams.",
      "existing_guide": null,
-     "status": "new",
-     "question_count": 6
+     "status": "written",
+     "question_count": 4,
+     "body": "Investment scams follow one script: guaranteed returns, urgency, and a smooth talker. The guarantees are the tell; genuine investments can't promise fixed high returns, because genuine markets don't work that way.\n\nThe patterns:\n- Clone firms: scammers impersonate real FCA-authorised firms, copying their websites and names. Always check the firm on the FCA Register yourself, and check the contact details match.\n- Crypto pumps: fake platforms showing fake profits until you try to withdraw.\n- Recovery scams: after you've been burned, \"firms\" offering to recover your money for an upfront fee. The second scam targets the first.\n- Social proof: fake reviews, fake celebrity endorsements, WhatsApp and Telegram groups where everyone else is \"winning\".\n\nThe defence: check the FCA Register before engaging with anyone, refuse cold approaches (cold calls about investments are illegal in the UK), and remember that if an offer needs urgency, it needs your guard down."
     },
     {
      "id": "pb-scam-shopping",
      "title": "Shopping & marketplace scams",
      "summary": "Fake shops, tickets and marketplace tricks.",
      "existing_guide": null,
-     "status": "new",
-     "question_count": 6
+     "status": "written",
+     "question_count": 2,
+     "body": "Shopping scams spike at Christmas and sales season: too-good prices, fake websites, and payment methods with no protection.\n\nThe tells:\n- Price: a \u00a3400 item for \u00a390 is the pitch. If it's below the market on a site you've never heard of, assume scam until verified.\n- Domain: look carefully at the web address. Slight misspellings and odd endings (instead of .co.uk) are the classic fakes.\n- Payment: gift cards, bank transfer, crypto, or \"pay a small fee to release your parcel\" are all scam payment rails. Card payments and buyer-protected platforms offer recourse; these don't.\n- Pressure: \"only 2 left\", \"price rises in an hour\".\n\nThe checks: search the site name plus \"reviews\" or \"scam\", look for a real address and Companies House registration, and check how long the site has existed. On marketplaces, buy through the platform's own payment system, never direct transfer, and never continue a deal off-platform."
     },
     {
      "id": "pb-scam-jobs-mules",
      "title": "Job scams & money mules",
      "summary": "Task scams, fake jobs and money muling.",
      "existing_guide": null,
-     "status": "new",
-     "question_count": 5
+     "status": "written",
+     "question_count": 3,
+     "body": "Job and money-mule scams target people looking for income, often students and young people, and they end in a criminal record.\n\nMoney muling: you're offered easy money to receive payments into your account and forward them. The money is stolen or criminal, you're laundering it, and banks close accounts of mules permanently. \"Receive \u00a3200/week for using your bank account\" is always this.\n\nFake job scams: upfront fees for training, equipment or background checks; pay for a \"starter kit\" that never arrives; or salaries wildly above market for zero-experience work.\n\nThe checks:\n- No legitimate employer asks you to pay to work.\n- No legitimate employer asks you to receive and forward money through your personal account.\n- Research the company independently: real website, Companies House listing, real reviews from employees.\n- If a job offer arrives before you applied, or the recruiter avoids video calls, walk away."
     },
     {
      "id": "pb-scam-reporting",
      "title": "Reporting scams & staying secure",
      "summary": "7726, phishing reports, passwords and 2FA.",
      "existing_guide": null,
-     "status": "new",
-     "question_count": 4
+     "status": "written",
+     "question_count": 4,
+     "body": "If you've been scammed or nearly scammed, speed matters, and there's a clear sequence.\n\nIf money has left your account:\n1. Call your bank immediately using the number on your card; ask them to freeze and try to recall the payment.\n2. Report to Action Fraud (or Police Scotland in Scotland), which gives you a crime reference number.\n3. Ask your bank about reimbursement; APP fraud rules now require reimbursement in most cases.\n4. Change passwords for any accounts involved, and check email security settings.\n\nIf your identity was stolen:\n- Contact CIFAS about protective registration, which adds checks before credit is taken in your name.\n- Check your credit reports with all three agencies for accounts you don't recognise.\n\nUseful numbers: 159 routes you safely to your bank if you suspect fraud (the banks' shared anti-fraud line). Report phishing texts by forwarding to 7726.\n\nOne more thing: recovery scams target recent victims, so treat anyone who contacts you offering to get your money back as a suspect too."
     }
    ]
   },
   {
    "id": "side",
    "title": "Side Income",
-   "icon": "🧰",
+   "icon": "\ud83e\uddf0",
    "articles": [
     {
      "id": "pb-side-surveys",
      "title": "Survey sites",
      "summary": "What they pay, screen-outs and red flags.",
      "existing_guide": null,
-     "status": "new",
-     "question_count": 4
+     "status": "written",
+     "question_count": 9,
+     "body": "Survey and research sites pay small amounts for your opinions: realistic earnings are \u00a320-\u00a3100 a month for consistent effort, not a salary. The skill is avoiding the time-wasters.\n\nWhat works:\n- Reputable panels pay reliably, even if slowly; research them on independent review sites before committing.\n- Screeners mean you'll be disqualified often; that's normal, don't take it personally.\n- Product testing and focus groups pay far more per hour than surveys, and are worth prioritising when offered.\n\nWhat to avoid:\n- Any panel that asks you to pay to join.\n- Payout thresholds so high you never reach them.\n- Sites that promise full-time income from surveys.\n\nLog your hours for the first two weeks and compute your effective hourly rate; that number tells you whether to continue, and it makes the trade-off honest. Income above the \u00a31,000 trading allowance needs declaring to HMRC."
     },
     {
      "id": "pb-side-apps-games",
      "title": "Reward & game apps",
      "summary": "Play-to-earn milestones, cash-outs and hourly rates.",
      "existing_guide": null,
-     "status": "new",
-     "question_count": 3
+     "status": "written",
+     "question_count": 6,
+     "body": "Reward apps and play-to-earn games pay small amounts for your time and attention. Some are legitimate; most pay far less than they imply. The effective hourly rate is the only metric that matters.\n\nCategories worth knowing:\n- Receipt-scanning and cashback apps: low but passive, stackable with other methods.\n- Game reward apps: usually pay pennies per hour once the bonus levels are done.\n- Task apps (mystery shopping, gig tasks): can pay properly, but check travel time and expenses against the pay.\n- Play-to-earn crypto games: treat with maximum suspicion; most token rewards collapse in value.\n\nBefore committing time to any app: read independent reviews (not the app store page), check payout thresholds and methods, and confirm people actually get paid. Set a timer for your first week, calculate your real hourly rate, and drop anything below your minimum.\n\nRemember the \u00a31,000 trading allowance: above it, this is taxable income."
     },
     {
      "id": "pb-side-selling",
      "title": "Selling your stuff",
      "summary": "Getting the best price and staying safe.",
      "existing_guide": null,
-     "status": "new",
-     "question_count": 1
+     "status": "written",
+     "question_count": 11,
+     "body": "Selling online is the most accessible side income: you can start this week with things you already own. Realistic paths, in order of simplicity:\n\n- Decluttering: sell your own unused items on marketplaces. Best margins you'll ever see, and it ends when the house is empty.\n- Reselling: buy low (car boot sales, charity shops, clearance), sell higher. Works, but it's a real skill: knowledge of a niche (games, books, clothing brands, electronics) is the whole edge.\n- Handmade: Etsy and craft markets suit makers; check platform fees carefully, they're 10-20%.\n- Digital products: templates, printables, guides. Build once, sell repeatedly; the slowest to start, the best long-term, because income stops being tied to your hours.\n\nSafety and admin basics: platform-managed payments only (never direct bank transfer to strangers), watch for overpayment scams, photograph items honestly, and remember income above the trading allowance is taxable. Reinvest part of early profits into stock or tools; that's what turns a pound-finding exercise into a business."
     },
     {
      "id": "pb-side-referrals",
      "title": "Referral programmes",
      "summary": "How referrals work and how to share codes honestly.",
      "existing_guide": null,
-     "status": "new",
-     "question_count": 3
+     "status": "written",
+     "question_count": 7,
+     "body": "Referral income works by recommending things you genuinely use, and it scales better than hours-based side work. But the rules are strict, and the line between recommendation and deception is a legal one.\n\nLegitimate routes:\n- Cashback and bank referral schemes: most financial apps pay \u00a310-\u00a3100 for successful referrals. Only share with people who'd genuinely benefit.\n- Affiliate links: if you create content, affiliate programmes pay commission on purchases made through your links. UK ad rules require clear disclosure; \"I earn commission\" costs you nothing and keeps you legal.\n- Refer-a-friend on services you already use: the easiest, zero-setup money there is.\n\nHard lines:\n- Never write fake reviews or testimonials; that's illegal and platforms ban for it.\n- Never recommend something you haven't used or don't believe in; your credibility is the asset that makes referrals work at all.\n- Never spam; one honest recommendation to the right person beats fifty cold ones.\n\nReferral income is taxable above the trading allowance."
     }
    ]
   },
   {
    "id": "bills",
    "title": "Bills",
-   "icon": "⚡",
+   "icon": "\u26a1",
    "articles": [
     {
      "id": "pb-bills-energy",
@@ -427,7 +462,7 @@
      "summary": "The price cap, standing charges and switching.",
      "existing_guide": "guide-energy",
      "status": "expand",
-     "question_count": 4
+     "question_count": 18
     },
     {
      "id": "pb-bills-broadband-mobile",
@@ -435,57 +470,61 @@
      "summary": "End-of-contract price rises, SIM-only and social tariffs.",
      "existing_guide": "guide-energy",
      "status": "expand",
-     "question_count": 4
+     "question_count": 10
     },
     {
      "id": "pb-bills-council-tax",
      "title": "Council tax & water",
      "summary": "Discounts, bands and water meters.",
      "existing_guide": null,
-     "status": "new",
-     "question_count": 2
+     "status": "written",
+     "question_count": 6,
+     "body": "Council tax funds local services and is based on your home's valuation band, not your income. Every address is in a band (A-H in England), and the band sets the amount. Two identical homes in different bands can pay very different amounts.\n\nDiscounts and exemptions worth checking:\n- Single adult household: 25% discount (this applies automatically to most people who live alone, but check your bill).\n- Full-time students: usually exempt; households of only full-time students pay nothing, but you must apply.\n- Severely mentally impaired people, some carers, and care leavers: various exemptions.\n- Second adult rebate: if other adults in your home are on low incomes, you may qualify even with a partner.\n\nPractical points: councils must offer payment schedules (typically 10 or 12 monthly instalments) if you ask, and falling behind is best handled by early contact, since councils have strong enforcement powers. If you think your band is wrong, you can challenge it, but research carefully: successful challenges are rare, and a revaluation can also go up."
     }
    ]
   },
   {
    "id": "pensions",
    "title": "Pensions",
-   "icon": "🏖️",
+   "icon": "\ud83c\udfd6\ufe0f",
    "articles": [
     {
      "id": "pb-pen-workplace",
      "title": "Workplace pensions",
      "summary": "Auto-enrolment, contributions and why opting out costs you.",
      "existing_guide": null,
-     "status": "new",
-     "question_count": 4
+     "status": "written",
+     "question_count": 18,
+     "body": "A workplace pension is the best deal in UK finance, and the most underused. Auto-enrolment means most employees are put into one automatically, contributing around 8% of qualifying earnings (with at least 3% from your employer; figures can change).\n\nWhy it's so good:\n- Employer money: every \u00a31 you contribute is topped up by your employer up to the match. Opt out and you permanently turn down part of your salary package.\n- Tax relief: the government adds back the tax you paid on contributions. \u00a380 from your net pay becomes \u00a3100 invested.\n- Compounding: decades of tax-free growth, which is why starting early beats starting big.\n\nWhat to check on your payslip: that you're enrolled, that contributions match what was promised, and where your money is invested (default funds are usually reasonable, but check fees).\n\nThe catch: it's locked until age 55 (rising to 57). That's a feature; the lock is why you get the tax treatment. Never opt out to solve a short-term cash problem without understanding what you're giving up."
     },
     {
      "id": "pb-pen-tax-relief",
      "title": "Pension tax relief & access",
      "summary": "Tax relief, access age and the tax-free lump sum.",
      "existing_guide": null,
-     "status": "new",
-     "question_count": 3
+     "status": "written",
+     "question_count": 7,
+     "body": "Pension tax relief is the government boosting your retirement savings: for every \u00a31 you contribute, the tax you'd have paid on it goes into your pension too. For a basic-rate taxpayer, \u00a380 of take-home pay becomes \u00a3100 in the pension; higher-rate taxpayers can claim more.\n\nHow it works:\n- Workplace schemes: relief is usually added automatically (net pay or relief-at-source methods both end up with you better off).\n- Personal pensions and SIPPs: the provider claims basic-rate relief; higher-rate taxpayers claim the extra through self-assessment.\n- Annual allowance: roughly \u00a360,000/year of contributions attract relief (can change, tapered for very high incomes).\n\nTwo practical notes: contributing enough to get your full employer match is the priority, since matching plus relief can effectively double your money on day one. And relief isn't the only consideration: pension money is locked until mid-50s, while ISA money is accessible anytime, so long-term goals favour pensions, medium-term flexibility favours ISAs."
     },
     {
      "id": "pb-pen-state",
      "title": "The State Pension",
      "summary": "State Pension age, NI years and tracing lost pensions.",
      "existing_guide": null,
-     "status": "new",
-     "question_count": 4
+     "status": "written",
+     "question_count": 8,
+     "body": "The State Pension is a regular, lifetime income paid by the government once you reach State Pension age, which is rising to 67 and later 68 depending on when you were born (check your own date on gov.uk).\n\nIt's earned through National Insurance contributions or credits, and you typically need around 35 qualifying years for the full amount. Fewer years means a reduced pension.\n\nThree things everyone should do:\n- Check your forecast free on gov.uk: it shows what you'd get and when.\n- Check your NI record for gaps. Gaps from years you were studying, living abroad, or earning below the threshold can often be filled with voluntary contributions, which are usually excellent value.\n- Know the fraud rules: cold calls about pension releases or \"free pension reviews\" are scams; the government never sells you pension unlocking.\n\nThe State Pension alone is modest; it's a floor, not a plan. Its role in your planning is baseline income, which your workplace and personal pensions sit on top of."
     }
    ]
   },
   {
    "id": "plan",
    "title": "Money Hunter Plans",
-   "icon": "🗺️",
+   "icon": "\ud83d\uddfa\ufe0f",
    "articles": [
     {
      "id": "pb-plan-90-day",
-     "title": "Stack £500 in 90 days",
+     "title": "Stack \u00a3500 in 90 days",
      "summary": "The step-by-step starter plan.",
      "existing_guide": "guide-stack",
      "status": "expand",

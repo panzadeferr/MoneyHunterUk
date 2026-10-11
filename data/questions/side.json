@@ -1,0 +1,540 @@
+{
+ "topic": "side",
+ "questions": [
+  {
+   "id": "side-001",
+   "topic": "side",
+   "difficulty": 1,
+   "type": "mc",
+   "question": "Refer-a-friend: you get a bonus when a friend joins. Your friend usually\u2026",
+   "options": [
+    "Has to pay a fee",
+    "Often gets a bonus too, so check both sides' terms",
+    "Can't use any other offer"
+   ],
+   "answer": 1,
+   "explanation": "Many schemes reward both sides.",
+   "learn_more": "pb-side-referrals"
+  },
+  {
+   "id": "side-002",
+   "topic": "side",
+   "difficulty": 1,
+   "type": "mc",
+   "question": "A legit survey site will never ask you to\u2026",
+   "options": [
+    "Verify your email",
+    "Pay a joining fee",
+    "Fill in a profile"
+   ],
+   "answer": 1,
+   "explanation": "Paying to join is a red flag.",
+   "learn_more": "pb-side-surveys"
+  },
+  {
+   "id": "side-003",
+   "topic": "side",
+   "difficulty": 2,
+   "type": "calc",
+   "question": "A game app pays \u00a315 if you reach level 30 in 14 days. It takes about 25 hours. Your hourly rate?",
+   "options": [
+    "60p",
+    "\u00a31.50",
+    "\u00a36.00"
+   ],
+   "answer": 0,
+   "explanation": "\u00a315 \u00f7 25 hours = 60p an hour.",
+   "learn_more": "pb-side-apps-games"
+  },
+  {
+   "id": "side-004",
+   "topic": "side",
+   "difficulty": 3,
+   "type": "calc",
+   "question": "A survey site pays 40p per survey with a \u00a35 minimum cash-out. Half your attempts get screened out. Roughly how many attempts to cash out?",
+   "options": [
+    "About 13",
+    "About 25",
+    "About 50"
+   ],
+   "answer": 1,
+   "explanation": "You need 13 completed surveys, so about 25 attempts.",
+   "learn_more": "pb-side-surveys"
+  },
+  {
+   "id": "side-005",
+   "topic": "side",
+   "difficulty": 2,
+   "type": "calc",
+   "question": "Survey A pays \u00a31 for 10 minutes. Survey B pays \u00a32.50 for 30 minutes. Which pays more per hour?",
+   "options": [
+    "Survey A",
+    "Survey B",
+    "The same"
+   ],
+   "answer": 0,
+   "explanation": "A is \u00a36/hour, B is \u00a35/hour.",
+   "learn_more": "pb-side-surveys"
+  },
+  {
+   "id": "side-006",
+   "topic": "side",
+   "difficulty": 1,
+   "type": "mc",
+   "question": "Survey sites typically pay\u2026",
+   "options": [
+    "A few pence to a couple of pounds per survey",
+    "\u00a350 per survey",
+    "Nothing"
+   ],
+   "answer": 0,
+   "explanation": "It's pocket money for spare minutes.",
+   "learn_more": "pb-side-surveys"
+  },
+  {
+   "id": "side-007",
+   "topic": "side",
+   "difficulty": 2,
+   "type": "mc",
+   "question": "Before putting hours into a rewards app, check\u2026",
+   "options": [
+    "The minimum cash-out and recent payout reviews",
+    "The logo colour",
+    "How many ads it shows"
+   ],
+   "answer": 0,
+   "explanation": "Some apps set cash-outs high enough that few people reach them.",
+   "learn_more": "pb-side-apps-games"
+  },
+  {
+   "id": "side-008",
+   "topic": "side",
+   "difficulty": 2,
+   "type": "mc",
+   "question": "What helps you sell unwanted items faster and for more?",
+   "options": [
+    "Clear photos and an honest description",
+    "Blurry photos",
+    "The highest price you can think of"
+   ],
+   "answer": 0,
+   "explanation": "Good photos and honesty build trust.",
+   "learn_more": "pb-side-selling"
+  },
+  {
+   "id": "side-009",
+   "topic": "side",
+   "difficulty": 2,
+   "type": "mc",
+   "question": "What's the honest way to share referral codes?",
+   "options": [
+    "Share where the rules allow, never spam or fake reviews",
+    "Post in every forum",
+    "Create fake accounts"
+   ],
+   "answer": 0,
+   "explanation": "Spam gets codes banned and communities annoyed.",
+   "learn_more": "pb-side-referrals"
+  },
+  {
+   "id": "side-010",
+   "topic": "side",
+   "difficulty": 3,
+   "type": "mc",
+   "question": "Using fake or duplicate accounts to claim referral bonuses is\u2026",
+   "options": [
+    "Clever",
+    "Against the terms, can be fraud, and leads to clawbacks or bans",
+    "Fine if the amounts are small"
+   ],
+   "answer": 1,
+   "explanation": "Companies check for duplicate accounts.",
+   "learn_more": "pb-side-referrals"
+  },
+  {
+   "id": "side-011",
+   "topic": "side",
+   "difficulty": 2,
+   "type": "mc",
+   "question": "You miss a play-to-earn milestone deadline by one day. Usually you get\u2026",
+   "options": [
+    "Part of the reward",
+    "Nothing",
+    "Double the reward"
+   ],
+   "answer": 1,
+   "explanation": "Deadlines are strict, so check them before you start.",
+   "learn_more": "pb-side-apps-games"
+  },
+  {
+   "id": "side-012",
+   "topic": "side",
+   "difficulty": 2,
+   "type": "mc",
+   "question": "A \u201cmystery shopper\u201d job sends you a cheque to cash, asking you to wire part of it back. This is\u2026",
+   "options": [
+    "A normal assignment",
+    "A fake-cheque scam",
+    "An HMRC rule"
+   ],
+   "answer": 1,
+   "explanation": "The cheque bounces later and you lose the money you sent.",
+   "learn_more": "pb-scam-jobs-mules"
+  },
+  {
+   "id": "side-013",
+   "topic": "side",
+   "difficulty": 1,
+   "type": "mc",
+   "question": "Paid online surveys typically pay:",
+   "options": [
+    "\u00a350 an hour",
+    "Small amounts per survey, so they suit spare minutes rather than serious income",
+    "Nothing ever",
+    "Only in vouchers"
+   ],
+   "answer": 1,
+   "explanation": "Surveys are low-pay but easy; treat as pocket money, not a job.",
+   "learn_more": "pb-side-surveys"
+  },
+  {
+   "id": "side-014",
+   "topic": "side",
+   "difficulty": 2,
+   "type": "mc",
+   "question": "Selling your unwanted items online earns best when you:",
+   "options": [
+    "List everything at once at high prices",
+    "Price realistically, photograph well and include postage in your thinking",
+    "Only sell on weekends",
+    "Refuse all offers"
+   ],
+   "answer": 1,
+   "explanation": "Speed of sale beats maximum price for clutter; good photos double response.",
+   "learn_more": "pb-side-selling"
+  },
+  {
+   "id": "side-015",
+   "topic": "side",
+   "difficulty": 2,
+   "type": "mc",
+   "question": "A buyer offers to overpay you and asks you to refund the difference. This is:",
+   "options": [
+    "Good luck",
+    "A classic overpayment scam; the original payment will reverse",
+    "Normal negotiation",
+    "A loyalty scheme"
+   ],
+   "answer": 1,
+   "explanation": "Never refund 'overpayments'; block and report.",
+   "learn_more": "pb-side-selling"
+  },
+  {
+   "id": "side-016",
+   "topic": "side",
+   "difficulty": 2,
+   "type": "mc",
+   "question": "Selling locally for cash vs posting: posting to strangers needs:",
+   "options": [
+    "Nothing",
+    "Payment protection, like platform-managed payments, not direct bank transfer to unknown buyers",
+    "Their bank details on trust",
+    "Cash in envelopes"
+   ],
+   "answer": 1,
+   "explanation": "Platform payments offer some recourse; direct transfers to strangers often don't.",
+   "learn_more": "pb-side-selling"
+  },
+  {
+   "id": "side-017",
+   "topic": "side",
+   "difficulty": 1,
+   "type": "mc",
+   "question": "Making money from surveys and apps requires declaring income above:",
+   "options": [
+    "Nothing ever",
+    "The \u00a31,000 trading allowance per tax year",
+    "\u00a310,000",
+    "No threshold"
+   ],
+   "answer": 1,
+   "explanation": "Total self-employment income above \u00a31,000 needs declaring; small amounts under it don't.",
+   "learn_more": "pb-side-surveys",
+   "volatile": true
+  },
+  {
+   "id": "side-018",
+   "topic": "side",
+   "difficulty": 2,
+   "type": "mc",
+   "question": "Getting paid to write fake reviews is:",
+   "options": [
+    "A good side income",
+    "Illegal and undermines trust; platforms and the law treat it as deceptive",
+    "Only wrong for big brands",
+    "Tax free"
+   ],
+   "answer": 1,
+   "explanation": "Fake reviews are banned practice; they can get you and the seller in real trouble.",
+   "learn_more": "pb-side-referrals"
+  },
+  {
+   "id": "side-019",
+   "topic": "side",
+   "difficulty": 2,
+   "type": "mc",
+   "question": "Sharing referral links is most effective and honest when:",
+   "options": [
+    "Spammed everywhere",
+    "Shared genuinely with people who'd actually benefit, with disclosure that you earn",
+    "Hidden so people don't know",
+    "Used on fake accounts"
+   ],
+   "answer": 1,
+   "explanation": "Disclosure is required by ad rules and builds trust that makes referrals work.",
+   "learn_more": "pb-side-referrals"
+  },
+  {
+   "id": "side-020",
+   "topic": "side",
+   "difficulty": 2,
+   "type": "mc",
+   "question": "Play-to-earn and reward apps realistically deliver:",
+   "options": [
+    "Full-time income",
+    "Small rewards for significant time, so check the effective hourly rate",
+    "Guaranteed profit",
+    "Free hardware"
+   ],
+   "answer": 1,
+   "explanation": "Most reward apps pay pennies per hour; a few pay well; always compute your effective rate.",
+   "learn_more": "pb-side-apps-games",
+   "volatile": true
+  },
+  {
+   "id": "side-021",
+   "topic": "side",
+   "difficulty": 2,
+   "type": "mc",
+   "question": "A tutoring side income can be scaled by:",
+   "options": [
+    "Working more hours only",
+    "Group sessions or recorded materials, raising hourly value over time",
+    "Cutting prices to zero",
+    "Tutoring for free"
+   ],
+   "answer": 1,
+   "explanation": "Trading hours has a ceiling; leverage (groups, courses) breaks it.",
+   "learn_more": "pb-side-apps-games"
+  },
+  {
+   "id": "side-022",
+   "topic": "side",
+   "difficulty": 2,
+   "type": "mc",
+   "question": "Before buying equipment for a side hustle, you should:",
+   "options": [
+    "Buy the best immediately",
+    "Validate demand cheaply first, borrowing or renting before owning",
+    "Never buy anything",
+    "Buy 10 of everything"
+   ],
+   "answer": 1,
+   "explanation": "Validate first; equipment bought before demand is a common small-business trap.",
+   "learn_more": "pb-side-selling"
+  },
+  {
+   "id": "side-023",
+   "topic": "side",
+   "difficulty": 2,
+   "type": "mc",
+   "question": "A digital product (template, guide, course) differs from selling hours because:",
+   "options": [
+    "It doesn't earn",
+    "It can sell repeatedly without more of your time",
+    "It's illegal",
+    "It needs no work"
+   ],
+   "answer": 1,
+   "explanation": "Products decouple income from hours, which is the whole point of building assets.",
+   "learn_more": "pb-side-selling"
+  },
+  {
+   "id": "side-024",
+   "topic": "side",
+   "difficulty": 2,
+   "type": "mc",
+   "question": "The safest way to take payments for a small side business is:",
+   "options": [
+    "Cash only, always",
+    "A platform with buyer/seller protection or a proper payment account",
+    "Direct bank transfer from strangers",
+    "Crypto from unknown buyers"
+   ],
+   "answer": 1,
+   "explanation": "Protection rails cost small fees and prevent the classic 'I've paid, send it' scam.",
+   "learn_more": "pb-side-selling"
+  },
+  {
+   "id": "side-025",
+   "topic": "side",
+   "difficulty": 2,
+   "type": "mc",
+   "question": "If a 'side income opportunity' requires recruiting others to earn, it is likely:",
+   "options": [
+    "A franchise",
+    "A pyramid or MLM structure, where most participants lose money",
+    "Government backed",
+    "A charity"
+   ],
+   "answer": 1,
+   "explanation": "Earnings that depend on recruitment rather than product sales are the MLM signature.",
+   "learn_more": "pb-side-referrals"
+  },
+  {
+   "id": "side-026",
+   "topic": "side",
+   "difficulty": 2,
+   "type": "mc",
+   "question": "A realistic first target for a side income build is:",
+   "options": [
+    "\u00a310,000/month immediately",
+    "Something small and repeatable, like \u00a350-\u00a3100/month, then compounding what works",
+    "Nothing",
+    "Whatever an advert promises"
+   ],
+   "answer": 1,
+   "explanation": "Small, repeatable, real beats big, imaginary, never. Scale what works.",
+   "learn_more": "pb-side-selling"
+  },
+  {
+   "id": "side-027",
+   "topic": "side",
+   "difficulty": 1,
+   "type": "mc",
+   "question": "Money earned from side income should ideally be:",
+   "options": [
+    "Spent immediately",
+    "Partly reinvested or saved, so the side income builds assets",
+    "Given away",
+    "Hidden"
+   ],
+   "answer": 1,
+   "explanation": "The point is building assets; paying yourself some and reinvesting the rest compounds it.",
+   "learn_more": "pb-side-selling"
+  },
+  {
+   "id": "side-028",
+   "topic": "side",
+   "difficulty": 2,
+   "type": "mc",
+   "question": "Selling services (design, writing, repair) needs:",
+   "options": [
+    "No contracts ever",
+    "Clear scope and payment terms agreed in writing before starting",
+    "A company office",
+    "A law degree"
+   ],
+   "answer": 1,
+   "explanation": "Written scope and terms prevent the classic 'scope creep and no payment' spiral.",
+   "learn_more": "pb-side-selling"
+  },
+  {
+   "id": "side-029",
+   "topic": "side",
+   "difficulty": 2,
+   "type": "mc",
+   "question": "A side hustle that survives is usually one that:",
+   "options": [
+    "Requires your constant presence forever",
+    "Fits your existing skills and schedule, with demand you've verified",
+    "Needs \u00a35,000 startup cost",
+    "Only works at night"
+   ],
+   "answer": 1,
+   "explanation": "Fit and verified demand beat novelty; most failed hustles skipped the demand check.",
+   "learn_more": "pb-side-selling"
+  },
+  {
+   "id": "side-030",
+   "topic": "side",
+   "difficulty": 2,
+   "type": "mc",
+   "question": "Income from gig platforms (delivery, rides) is:",
+   "options": [
+    "Tax free",
+    "Taxable self-employment income; platforms report data to HMRC increasingly",
+    "Employment with benefits",
+    "A pension"
+   ],
+   "answer": 1,
+   "explanation": "Gig work is self-employment: register above the allowance, track mileage and costs.",
+   "learn_more": "pb-side-surveys",
+   "volatile": true
+  },
+  {
+   "id": "side-031",
+   "topic": "side",
+   "difficulty": 2,
+   "type": "mc",
+   "question": "Tracking expenses for a side business matters because:",
+   "options": [
+    "HMRC enjoys paperwork",
+    "Allowable expenses reduce your taxable profit, so good records mean paying less tax legitimately",
+    "It's fun",
+    "Expenses are ignored"
+   ],
+   "answer": 1,
+   "explanation": "Mileage, materials, platform fees and home office use can all count; no records, no relief.",
+   "learn_more": "pb-side-surveys"
+  },
+  {
+   "id": "side-032",
+   "topic": "side",
+   "difficulty": 1,
+   "type": "mc",
+   "question": "A simple way to separate side income is:",
+   "options": [
+    "Mixing it into your main account",
+    "A separate account or pot for side income, costs and tax set-aside",
+    "A shoebox",
+    "Ignoring it"
+   ],
+   "answer": 1,
+   "explanation": "Separation makes tax time trivial and shows whether the hustle really pays.",
+   "learn_more": "pb-side-surveys"
+  },
+  {
+   "id": "side-033",
+   "topic": "side",
+   "difficulty": 2,
+   "type": "mc",
+   "question": "Before signing up to any 'get paid to' platform, check:",
+   "options": [
+    "The promised earnings only",
+    "Reviews on independent sites, payout thresholds, and how people actually get paid",
+    "The logo",
+    "The CEO's photo"
+   ],
+   "answer": 1,
+   "explanation": "Payout reliability is the whole game; many platforms never pay out in practice.",
+   "learn_more": "pb-side-apps-games"
+  },
+  {
+   "id": "side-034",
+   "topic": "side",
+   "difficulty": 2,
+   "type": "mc",
+   "question": "Someone offers you \u00a3200 to receive money into your bank account and forward it. This is:",
+   "options": [
+    "Easy money",
+    "Money muling, a money-laundering crime that can get your bank accounts closed and a criminal record",
+    "A government scheme",
+    "Normal banking"
+   ],
+   "answer": 1,
+   "explanation": "Money muling is serious crime with lasting consequences, however innocent it's made to sound.",
+   "learn_more": "pb-side-referrals"
+  }
+ ]
+}

@@ -1,0 +1,673 @@
+{
+ "topic": "tax",
+ "questions": [
+  {
+   "id": "tax-001",
+   "topic": "tax",
+   "difficulty": 1,
+   "type": "mc",
+   "question": "The UK tax year runs from\u2026",
+   "options": [
+    "1 January to 31 December",
+    "6 April to 5 April",
+    "1 April to 31 March"
+   ],
+   "answer": 1,
+   "explanation": "The tax year runs from 6 April to 5 April.",
+   "learn_more": "pb-tax-allowances"
+  },
+  {
+   "id": "tax-002",
+   "topic": "tax",
+   "difficulty": 2,
+   "type": "mc",
+   "question": "The standard Personal Allowance (income you can earn tax-free) is\u2026",
+   "options": [
+    "\u00a310,000",
+    "\u00a312,570",
+    "\u00a320,000"
+   ],
+   "answer": 1,
+   "explanation": "The standard Personal Allowance is \u00a312,570. It's reduced for very high earners.",
+   "learn_more": "pb-tax-allowances",
+   "volatile": true,
+   "review_by": "2027-04-06",
+   "verify": "Personal Allowance on gov.uk"
+  },
+  {
+   "id": "tax-003",
+   "topic": "tax",
+   "difficulty": 2,
+   "type": "mc",
+   "question": "How much savings interest can a basic-rate taxpayer earn tax-free (Personal Savings Allowance)?",
+   "options": [
+    "\u00a3500",
+    "\u00a31,000",
+    "\u00a35,000"
+   ],
+   "answer": 1,
+   "explanation": "Basic-rate taxpayers get \u00a31,000. Higher-rate taxpayers get \u00a3500.",
+   "learn_more": "pb-tax-allowances",
+   "volatile": true,
+   "review_by": "2027-04-06",
+   "verify": "Personal Savings Allowance on gov.uk"
+  },
+  {
+   "id": "tax-004",
+   "topic": "tax",
+   "difficulty": 3,
+   "type": "mc",
+   "question": "The Personal Savings Allowance for a higher-rate taxpayer is\u2026",
+   "options": [
+    "\u00a31,000",
+    "\u00a3500",
+    "\u00a30"
+   ],
+   "answer": 1,
+   "explanation": "Higher-rate taxpayers get \u00a3500. Additional-rate taxpayers get nothing.",
+   "learn_more": "pb-tax-allowances",
+   "volatile": true,
+   "review_by": "2027-04-06",
+   "verify": "Personal Savings Allowance on gov.uk"
+  },
+  {
+   "id": "tax-005",
+   "topic": "tax",
+   "difficulty": 2,
+   "type": "mc",
+   "question": "HMRC's trading allowance lets you earn how much a year in side income before you need to tell them?",
+   "options": [
+    "\u00a3500",
+    "\u00a31,000",
+    "\u00a312,570"
+   ],
+   "answer": 1,
+   "explanation": "The trading allowance covers up to \u00a31,000 of gross trading income.",
+   "learn_more": "pb-tax-side-income",
+   "volatile": true,
+   "review_by": "2027-04-06",
+   "verify": "Trading allowance on gov.uk"
+  },
+  {
+   "id": "tax-006",
+   "topic": "tax",
+   "difficulty": 2,
+   "type": "mc",
+   "question": "Selling your own old clothes online for less than you paid is usually\u2026",
+   "options": [
+    "Taxable trading income",
+    "Not trading, so normally no tax",
+    "Subject to VAT"
+   ],
+   "answer": 1,
+   "explanation": "Selling personal belongings isn't trading. Buying items to resell for profit is.",
+   "learn_more": "pb-tax-side-income"
+  },
+  {
+   "id": "tax-007",
+   "topic": "tax",
+   "difficulty": 3,
+   "type": "mc",
+   "question": "Online marketplaces now share seller details with HMRC once you sell around\u2026",
+   "options": [
+    "Any single item",
+    "30 items, or about \u00a31,700, in a year",
+    "\u00a3100 in a year"
+   ],
+   "answer": 1,
+   "explanation": "Platforms report sellers who hit 30 sales or about \u00a31,700 a year. Reporting isn't the same as owing tax.",
+   "learn_more": "pb-tax-side-income",
+   "volatile": true,
+   "review_by": "2027-04-06",
+   "verify": "Digital platform reporting thresholds on gov.uk"
+  },
+  {
+   "id": "tax-008",
+   "topic": "tax",
+   "difficulty": 2,
+   "type": "mc",
+   "question": "The deadline for filing an online Self Assessment tax return is\u2026",
+   "options": [
+    "31 January after the tax year ends",
+    "5 April",
+    "31 December"
+   ],
+   "answer": 0,
+   "explanation": "Online returns are due by 31 January after the end of the tax year.",
+   "learn_more": "pb-tax-side-income"
+  },
+  {
+   "id": "tax-009",
+   "topic": "tax",
+   "difficulty": 2,
+   "type": "mc",
+   "question": "The dividend allowance (2026/27) is\u2026",
+   "options": [
+    "\u00a3500",
+    "\u00a32,000",
+    "\u00a35,000"
+   ],
+   "answer": 0,
+   "explanation": "You can earn \u00a3500 of dividends tax-free outside an ISA.",
+   "learn_more": "pb-tax-allowances",
+   "volatile": true,
+   "review_by": "2027-04-06",
+   "verify": "Dividend allowance on gov.uk"
+  },
+  {
+   "id": "tax-010",
+   "topic": "tax",
+   "difficulty": 2,
+   "type": "mc",
+   "question": "The Capital Gains Tax annual exempt amount is\u2026",
+   "options": [
+    "\u00a33,000",
+    "\u00a312,300",
+    "\u00a30"
+   ],
+   "answer": 0,
+   "explanation": "You can make \u00a33,000 of gains a year tax-free outside an ISA.",
+   "learn_more": "pb-tax-allowances",
+   "volatile": true,
+   "review_by": "2027-04-06",
+   "verify": "CGT annual exempt amount on gov.uk"
+  },
+  {
+   "id": "tax-011",
+   "topic": "tax",
+   "difficulty": 2,
+   "type": "mc",
+   "question": "Marriage Allowance lets a lower earner transfer\u2026",
+   "options": [
+    "Their whole allowance",
+    "\u00a31,260 of their Personal Allowance to a basic-rate partner",
+    "\u00a35,000 in cash"
+   ],
+   "answer": 1,
+   "explanation": "Eligible couples can transfer \u00a31,260, which saves up to \u00a3252 a year.",
+   "learn_more": "pb-tax-marriage-allowance",
+   "volatile": true,
+   "review_by": "2027-04-06",
+   "verify": "Marriage Allowance on gov.uk"
+  },
+  {
+   "id": "tax-012",
+   "topic": "tax",
+   "difficulty": 2,
+   "type": "mc",
+   "question": "Does Cash ISA interest use up your Personal Savings Allowance?",
+   "options": [
+    "Yes",
+    "No: ISA interest is tax-free and separate",
+    "Only above \u00a3500"
+   ],
+   "answer": 1,
+   "explanation": "ISA interest doesn't count towards your Personal Savings Allowance.",
+   "learn_more": "pb-save-isas"
+  },
+  {
+   "id": "tax-013",
+   "topic": "tax",
+   "difficulty": 2,
+   "type": "mc",
+   "question": "Your tax code tells your employer\u2026",
+   "options": [
+    "How much tax-free pay you get",
+    "Your bank details",
+    "Your pension age"
+   ],
+   "answer": 0,
+   "explanation": "The tax code reflects your allowances so the right tax is taken.",
+   "learn_more": "pb-tax-allowances"
+  },
+  {
+   "id": "tax-014",
+   "topic": "tax",
+   "difficulty": 1,
+   "type": "mc",
+   "question": "National Insurance contributions build up your entitlement to\u2026",
+   "options": [
+    "The State Pension",
+    "Free bus travel",
+    "A council tax discount"
+   ],
+   "answer": 0,
+   "explanation": "Your NI record decides your State Pension.",
+   "learn_more": "pb-pen-state"
+  },
+  {
+   "id": "tax-015",
+   "topic": "tax",
+   "difficulty": 3,
+   "type": "mc",
+   "question": "You earn \u00a3800 from a small side hustle and have no other self-employed income. Under the trading allowance\u2026",
+   "options": [
+    "You must register as self-employed",
+    "You normally don't need to tell HMRC",
+    "You pay 20% on it"
+   ],
+   "answer": 1,
+   "explanation": "Under \u00a31,000 of gross trading income is usually covered by the trading allowance.",
+   "learn_more": "pb-tax-side-income",
+   "volatile": true,
+   "review_by": "2027-04-06",
+   "verify": "Trading allowance on gov.uk"
+  },
+  {
+   "id": "tax-016",
+   "topic": "tax",
+   "difficulty": 1,
+   "type": "mc",
+   "question": "The UK personal allowance means the first \u00a312,570 of most people's income is:",
+   "options": [
+    "Taxed at 20%",
+    "Tax free (this threshold can change over time)",
+    "Taxed at 40%",
+    "Doubled"
+   ],
+   "answer": 1,
+   "explanation": "The personal allowance is currently frozen at \u00a312,570; thresholds can change.",
+   "learn_more": "pb-tax-allowances",
+   "volatile": true
+  },
+  {
+   "id": "tax-017",
+   "topic": "tax",
+   "difficulty": 2,
+   "type": "mc",
+   "question": "Most employees pay income tax through:",
+   "options": [
+    "Self-assessment",
+    "PAYE, deducted by the employer automatically",
+    "Cash on payday",
+    "A yearly cheque"
+   ],
+   "answer": 1,
+   "explanation": "PAYE handles most employees' tax automatically; check your tax code matches reality.",
+   "learn_more": "pb-tax-allowances"
+  },
+  {
+   "id": "tax-018",
+   "topic": "tax",
+   "difficulty": 2,
+   "type": "mc",
+   "question": "Your tax code tells you:",
+   "options": [
+    "Your age",
+    "How much tax-free pay you get before tax kicks in",
+    "Your pension amount",
+    "Your NI number"
+   ],
+   "answer": 1,
+   "explanation": "A wrong tax code means wrong deductions; check it against your actual situation.",
+   "learn_more": "pb-tax-allowances"
+  },
+  {
+   "id": "tax-019",
+   "topic": "tax",
+   "difficulty": 1,
+   "type": "mc",
+   "question": "National Insurance contributions build entitlement to:",
+   "options": [
+    "Free cinema",
+    "Certain benefits including the State Pension",
+    "Council tax",
+    "Bus passes"
+   ],
+   "answer": 1,
+   "explanation": "NI is separate from income tax and earns qualifying years toward benefits and the State Pension.",
+   "learn_more": "pb-tax-allowances"
+  },
+  {
+   "id": "tax-020",
+   "topic": "tax",
+   "difficulty": 2,
+   "type": "mc",
+   "question": "The trading allowance lets you earn up to what from self-employment or casual income before declaring it:",
+   "options": [
+    "\u00a3100",
+    "\u00a31,000",
+    "\u00a35,000",
+    "\u00a310,000"
+   ],
+   "answer": 1,
+   "explanation": "The \u00a31,000 trading allowance covers casual income like small selling or odd jobs; above it you must register.",
+   "learn_more": "pb-tax-side-income",
+   "volatile": true
+  },
+  {
+   "id": "tax-021",
+   "topic": "tax",
+   "difficulty": 2,
+   "type": "mc",
+   "question": "If your side income exceeds \u00a31,000 in a tax year, you should:",
+   "options": [
+    "Hide it",
+    "Register with HMRC and declare it, even if little or no tax is due",
+    "Stop earning",
+    "Wait for HMRC to ask"
+   ],
+   "answer": 1,
+   "explanation": "Above the allowance, registration and declaration are required; that doesn't always mean tax is owed.",
+   "learn_more": "pb-tax-side-income",
+   "volatile": true
+  },
+  {
+   "id": "tax-022",
+   "topic": "tax",
+   "difficulty": 2,
+   "type": "mc",
+   "question": "Marriage Allowance lets a lower earner transfer 10% of their personal allowance to a partner, worth roughly:",
+   "options": [
+    "\u00a31,000",
+    "Up to about \u00a3250 a year",
+    "\u00a35,000",
+    "Nothing"
+   ],
+   "answer": 1,
+   "explanation": "Marriage Allowance is worth up to about \u00a3252 a year in reduced tax (figure can change with allowances).",
+   "learn_more": "pb-tax-marriage-allowance",
+   "volatile": true
+  },
+  {
+   "id": "tax-023",
+   "topic": "tax",
+   "difficulty": 2,
+   "type": "mc",
+   "question": "Marriage Allowance eligibility requires the higher earner to be:",
+   "options": [
+    "Unemployed",
+    "A basic-rate taxpayer, with the transferor earning under the personal allowance",
+    "A company director",
+    "Over 60"
+   ],
+   "answer": 1,
+   "explanation": "It works when one partner earns under \u00a312,570 and the other is a basic-rate taxpayer.",
+   "learn_more": "pb-tax-marriage-allowance",
+   "volatile": true
+  },
+  {
+   "id": "tax-024",
+   "topic": "tax",
+   "difficulty": 1,
+   "type": "mc",
+   "question": "Dividend income above your dividend allowance is taxed:",
+   "options": [
+    "Not at all",
+    "At dividend tax rates depending on your band",
+    "At 50% always",
+    "Like salary, exactly"
+   ],
+   "answer": 1,
+   "explanation": "Dividends have their own allowance and rates; within ISAs they're tax-free.",
+   "learn_more": "pb-tax-allowances",
+   "volatile": true
+  },
+  {
+   "id": "tax-025",
+   "topic": "tax",
+   "difficulty": 2,
+   "type": "mc",
+   "question": "Child Benefit starts to be reduced when one parent's income exceeds roughly:",
+   "options": [
+    "\u00a310,000",
+    "\u00a350,000-\u00a360,000, via the High Income Child Benefit Charge",
+    "\u00a3100,000 always",
+    "\u00a320,000"
+   ],
+   "answer": 1,
+   "explanation": "The charge claws back Child Benefit gradually from around \u00a350k-\u00a360k; thresholds change.",
+   "learn_more": "pb-tax-allowances",
+   "volatile": true
+  },
+  {
+   "id": "tax-026",
+   "topic": "tax",
+   "difficulty": 1,
+   "type": "mc",
+   "question": "VAT in the UK is generally:",
+   "options": [
+    "5%",
+    "20% on most goods and services",
+    "40%",
+    "0%"
+   ],
+   "answer": 1,
+   "explanation": "Standard-rate VAT is 20%, with reduced rates for some items.",
+   "learn_more": "pb-tax-allowances"
+  },
+  {
+   "id": "tax-027",
+   "topic": "tax",
+   "difficulty": 2,
+   "type": "mc",
+   "question": "If you sell an item you've owned for years at a profit on a marketplace:",
+   "options": [
+    "It's always tax free",
+    "Personal possessions sales are often outside tax, but regular buying-to-sell counts as trading, so know the difference",
+    "You owe 40%",
+    "It's illegal"
+   ],
+   "answer": 1,
+   "explanation": "Clearing out your own things is usually fine; systematic reselling is a business with tax duties.",
+   "learn_more": "pb-tax-side-income"
+  },
+  {
+   "id": "tax-028",
+   "topic": "tax",
+   "difficulty": 2,
+   "type": "mc",
+   "question": "Self-assessment tax returns for a tax year are normally due:",
+   "options": [
+    "Any time",
+    "Online by 31 January the following year",
+    "The same day",
+    "In 6 months"
+   ],
+   "answer": 1,
+   "explanation": "Miss 31 January and penalties start immediately, even if no tax is owed.",
+   "learn_more": "pb-tax-side-income",
+   "volatile": true
+  },
+  {
+   "id": "tax-029",
+   "topic": "tax",
+   "difficulty": 1,
+   "type": "mc",
+   "question": "The penalty for a late self-assessment return starts at:",
+   "options": [
+    "Nothing",
+    "An immediate \u00a3100 fine, growing with further delay",
+    "\u00a31,000",
+    "Prison"
+   ],
+   "answer": 1,
+   "explanation": "The \u00a3100 penalty applies even if you owe no tax, so file on time regardless.",
+   "learn_more": "pb-tax-side-income",
+   "volatile": true
+  },
+  {
+   "id": "tax-030",
+   "topic": "tax",
+   "difficulty": 2,
+   "type": "mc",
+   "question": "Emergency tax can hit you when:",
+   "options": [
+    "You get a raise",
+    "You start a new job or cash in a pension without the right tax code",
+    "You pay bills",
+    "You save money"
+   ],
+   "answer": 1,
+   "explanation": "Emergency tax is usually corrected automatically once the right code applies, but worth checking.",
+   "learn_more": "pb-tax-allowances"
+  },
+  {
+   "id": "tax-031",
+   "topic": "tax",
+   "difficulty": 2,
+   "type": "mc",
+   "question": "Salary sacrifice into a pension:",
+   "options": [
+    "Increases your take-home pay",
+    "Reduces gross salary, cutting both tax and NI while boosting your pension",
+    "Is illegal",
+    "Only works for directors"
+   ],
+   "answer": 1,
+   "explanation": "Sacrifice saves NI as well as tax; check your employer's scheme before assuming.",
+   "learn_more": "pb-tax-allowances",
+   "volatile": true
+  },
+  {
+   "id": "tax-032",
+   "topic": "tax",
+   "difficulty": 1,
+   "type": "mc",
+   "question": "Tips you receive at work are:",
+   "options": [
+    "Never taxable",
+    "Taxable income; how they're taxed depends on how they're distributed",
+    "Tax free always",
+    "Only for waiting staff"
+   ],
+   "answer": 1,
+   "explanation": "Tips are taxable whether cash or card; payroll handles card tips, cash tips you declare.",
+   "learn_more": "pb-tax-allowances",
+   "volatile": true
+  },
+  {
+   "id": "tax-033",
+   "topic": "tax",
+   "difficulty": 2,
+   "type": "mc",
+   "question": "Gains from selling investments or property above your annual capital gains allowance are:",
+   "options": [
+    "Tax free",
+    "Subject to capital gains tax at rates depending on your band",
+    "Always 50%",
+    "Illegal"
+   ],
+   "answer": 1,
+   "explanation": "CGT applies above the annual exempt amount (which has been cut recently, so check current figures).",
+   "learn_more": "pb-tax-allowances",
+   "volatile": true
+  },
+  {
+   "id": "tax-034",
+   "topic": "tax",
+   "difficulty": 2,
+   "type": "mc",
+   "question": "The rental income property allowance covers up to what for casual property income like lodgers or storage:",
+   "options": [
+    "\u00a3100",
+    "\u00a31,000",
+    "\u00a37,500 via rent-a-room for furnished lodgings in your home",
+    "\u00a310,000"
+   ],
+   "answer": 1,
+   "explanation": "\u00a31,000 is the property allowance; rent-a-room relief is up to \u00a37,500 for furnished lodgers in your own home.",
+   "learn_more": "pb-tax-side-income",
+   "volatile": true
+  },
+  {
+   "id": "tax-035",
+   "topic": "tax",
+   "difficulty": 2,
+   "type": "mc",
+   "question": "National Insurance voluntary contributions can be worth paying when:",
+   "options": [
+    "Never",
+    "You have gaps in your record that would reduce your State Pension",
+    "You're under 16",
+    "You have a pension already"
+   ],
+   "answer": 1,
+   "explanation": "Filling qualifying-year gaps can add meaningful State Pension for a small voluntary payment.",
+   "learn_more": "pb-tax-allowances",
+   "volatile": true
+  },
+  {
+   "id": "tax-036",
+   "topic": "tax",
+   "difficulty": 1,
+   "type": "mc",
+   "question": "Your P60 shows:",
+   "options": [
+    "Your tax code history",
+    "Your total pay and deductions for the tax year, from your employer",
+    "Your credit score",
+    "Your pension forecast"
+   ],
+   "answer": 1,
+   "explanation": "Keep P60s; they're proof of income and tax paid for the year.",
+   "learn_more": "pb-tax-allowances"
+  },
+  {
+   "id": "tax-037",
+   "topic": "tax",
+   "difficulty": 2,
+   "type": "mc",
+   "question": "A P45 is issued when:",
+   "options": [
+    "You retire",
+    "You leave a job; it stops you being emergency-taxed at the next one",
+    "You get a bonus",
+    "You change address"
+   ],
+   "answer": 1,
+   "explanation": "Pass the P45 to a new employer or keep it if not working.",
+   "learn_more": "pb-tax-allowances"
+  },
+  {
+   "id": "tax-038",
+   "topic": "tax",
+   "difficulty": 2,
+   "type": "mc",
+   "question": "Working from home may let you claim:",
+   "options": [
+    "Your full rent",
+    "Limited tax relief for extra household costs, via your employer or tax return",
+    "New furniture",
+    "A car"
+   ],
+   "answer": 1,
+   "explanation": "The relief is for extra costs of working from home, not general living costs; claims are modest.",
+   "learn_more": "pb-tax-allowances",
+   "volatile": true
+  },
+  {
+   "id": "tax-039",
+   "topic": "tax",
+   "difficulty": 2,
+   "type": "mc",
+   "question": "Gifting money and inheritance tax: gifts made within 7 years of death can:",
+   "options": [
+    "Always be tax free",
+    "Count toward the estate if you die within 7 years, tapering with time",
+    "Be doubled by HMRC",
+    "Be reclaimed"
+   ],
+   "answer": 1,
+   "explanation": "Large gifts aren't immediately tax-free; the 7-year clock matters for estates above thresholds.",
+   "learn_more": "pb-tax-allowances",
+   "volatile": true
+  },
+  {
+   "id": "tax-040",
+   "topic": "tax",
+   "difficulty": 2,
+   "type": "mc",
+   "question": "If HMRC sends you a tax calculation (P800) showing you've overpaid tax:",
+   "options": [
+    "Do nothing, they keep it",
+    "Check it and claim your refund; you're entitled to your own money",
+    "Pay more",
+    "Ignore all letters"
+   ],
+   "answer": 1,
+   "explanation": "P800s can show refunds owed or underpayments; verify before acting either way.",
+   "learn_more": "pb-tax-allowances"
+  }
+ ]
+}
