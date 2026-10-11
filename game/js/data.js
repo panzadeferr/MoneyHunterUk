@@ -30,6 +30,7 @@ async function loadData() {
   ]);
   const playbook = (p && p.chapters) ? p : { chapters: [] };
   let questions = [];
+  let investigations = [];
   if (qIndex && qIndex.files) {
     // legacy single-file fallback if the index lists it
     const parts = await Promise.all(
@@ -40,6 +41,13 @@ async function loadData() {
         questions = questions.concat(part.questions);
       }
     }
+    // investigations live in their own reviewed file, pointed to by the index
+    if (qIndex.investigations_file) {
+      const inv = await fetchJSON('/data/questions/' + qIndex.investigations_file);
+      if (inv && inv.investigations && inv.investigations.length) {
+        investigations = inv.investigations;
+      }
+    }
   } else {
     const legacy = await fetchJSON('/data/questions.json');
     if (legacy && legacy.questions) questions = legacy.questions;
@@ -48,7 +56,11 @@ async function loadData() {
   for (const question of questions) {
     (byTopic[question.topic || 'general'] = byTopic[question.topic || 'general'] || []).push(question);
   }
-  return { questions, byTopic, playbook };
+  const investigationsByTopic = {};
+  for (const investigation of investigations) {
+    (investigationsByTopic[investigation.topic || 'general'] = investigationsByTopic[investigation.topic || 'general'] || []).push(investigation);
+  }
+  return { questions, byTopic, investigations, investigationsByTopic, playbook };
 }
 
 // pick a question for a creature, avoiding recently seen ones (no-repeat rotation)

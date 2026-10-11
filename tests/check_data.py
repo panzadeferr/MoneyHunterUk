@@ -95,7 +95,30 @@ if idx.exists():
         for q in part.get("questions", []):
             if q.get("topic") != topic:
                 fail(f"{fname}: question {q.get('id')} topic {q.get('topic')!r} != file topic {topic!r}")
+        expected = index_data.get("counts", {}).get(topic)
+        if expected is not None and len(part.get("questions", [])) != expected:
+            extra = [q.get("id") for q in part.get("questions", [])[expected:]]
+            fail(f"{fname}: {len(part.get('questions', []))} questions but index counts {topic}={expected}; ids not in index counts: {extra[:10]}")
         qs.extend(part.get("questions", []))
+    ids = [q.get("id") for q in qs]
+    dups = sorted({i for i in ids if ids.count(i) > 1})
+    if dups:
+        fail(f"duplicate question ids across topic files: {dups[:10]}")
+    inv_file = index_data.get("investigations_file")
+    if inv_file:
+        ipath = qdir / inv_file
+        if not ipath.exists():
+            fail(f"data/questions/index.json: investigations_file {inv_file} is missing")
+        else:
+            inv = json.loads(ipath.read_text(encoding="utf-8")).get("investigations", [])
+            exp_inv = index_data.get("investigations_count")
+            if exp_inv is not None and len(inv) != exp_inv:
+                fail(f"{inv_file}: {len(inv)} investigations but index counts {exp_inv}")
+            inv_ids = [i.get("id") for i in inv]
+            inv_dups = sorted({i for i in inv_ids if inv_ids.count(i) > 1})
+            if inv_dups:
+                fail(f"duplicate investigation ids: {inv_dups[:10]}")
+            print(f"Investigation checks passed: {len(inv)} investigations, no duplicate ids.")
 else:
     print("note: data/questions/index.json not present yet, question checks skipped")
 # --- game map checks ---
