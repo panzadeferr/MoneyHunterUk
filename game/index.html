@@ -2,65 +2,43 @@
 <html lang="en-GB">
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no, viewport-fit=cover">
-<title>Coinsworth - a Money Hunters game</title>
-<meta name="description" content="Coinsworth: explore, battle money creatures by answering money questions, and level up your Hunter. Part of Money Hunters UK.">
-<link rel="stylesheet" href="style.css">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<title>Coinsworth: a money adventure | Money Hunters</title>
+<link rel="stylesheet" href="style.css?v=4">
 </head>
 <body>
-<div id="wrap">
-  <canvas id="game" width="480" height="320"></canvas>
 
-  <!-- title / starter pick -->
-  <div id="title-screen" class="overlay">
-    <h1>COINSWORTH</h1>
-    <p class="sub">A Money Hunters game</p>
-    <p id="title-continue-wrap" class="hidden"><button id="btn-continue" class="big">Continue</button></p>
-    <div id="starter-pick">
-      <p>Pick your first creature:</p>
-      <div class="starter-row">
-        <button class="starter" data-species="coinling"><span class="dot cash"></span>Coinling<span class="type">Cash</span></button>
-        <button class="starter" data-species="piggle"><span class="dot save"></span>Piggle<span class="type">Save</span></button>
-        <button class="starter" data-species="budgit"><span class="dot grow"></span>Budgit<span class="type">Grow</span></button>
-      </div>
-      <p class="hint">Battle by answering money questions. Three right answers win a creature over. Every answer teaches something real.</p>
-      <p class="hint"><a href="/app.html">Back to Money Hunters</a></p>
-    </div>
+<div class="app">
+  <div class="topbar" id="topbar" hidden>
+    <span class="who" id="tWho">LV 1</span>
+    <div class="hpwrap"><div class="bar"><i id="tHp"></i></div><div class="bar xp"><i id="tXp"></i></div></div>
+    <span>&#9702; <b id="tCoins">0</b></span>
+    <button class="icon" id="mute" aria-label="Toggle sound">&#9834;</button>
   </div>
-
-  <!-- battle question card -->
-  <div id="battle-ui" class="overlay hidden">
-    <div id="bq-card">
-      <div id="bq-text"></div>
-      <div id="bq-options"></div>
-      <div id="bq-feedback"></div>
-    </div>
+  <div class="screen">
+    <canvas id="cv" width="240" height="208" aria-label="Game screen"></canvas>
+    <div class="banner" id="banner" hidden></div>
+    <div class="dialog" id="dialog" hidden role="dialog"><div class="spk" id="spk"></div><p id="dtext"></p><div class="choices" id="choices"></div><span class="more" id="more">&#9660;</span></div>
   </div>
-
-  <!-- battle end panel -->
-  <div id="bq-end" class="overlay hidden">
-    <div id="bq-end-card">
-      <div id="bq-end-title"></div>
-      <div id="bq-end-body"></div>
-      <a id="bq-learn" class="hidden" href="#" target="_blank" rel="noopener">Read the guide</a>
-      <button id="bq-continue" class="big">Back to the map</button>
+  <div class="controls" id="controls" hidden>
+    <div class="pad" aria-label="Move">
+      <span></span><button data-d="0" aria-label="Up">&#9650;</button><span></span>
+      <button data-d="3" aria-label="Left">&#9664;</button><span></span><button data-d="1" aria-label="Right">&#9654;</button>
+      <span></span><button data-d="2" aria-label="Down">&#9660;</button><span></span>
     </div>
+    <div class="rightctl"><button class="abtn" id="abtn" aria-label="A: talk, read, open">A</button><button class="menubtn" id="menubtn">MENU</button></div>
   </div>
-
-  <!-- world dialog -->
-  <div id="dialog" class="overlay hidden"><div id="dialog-box"><div id="dialog-text"></div><button id="dialog-ok" class="big">OK</button></div></div>
-
-  <!-- touch controls -->
-  <div id="controls">
-    <div id="dpad">
-      <button data-dir="up" class="pad up" aria-label="Up">&#9650;</button>
-      <button data-dir="left" class="pad left" aria-label="Left">&#9664;</button>
-      <button data-dir="right" class="pad right" aria-label="Right">&#9654;</button>
-      <button data-dir="down" class="pad down" aria-label="Down">&#9660;</button>
-    </div>
-    <button id="btn-a" aria-label="Action">A</button>
-  </div>
+  <div class="bpanel" id="bpanel"></div>
+  <p class="small" style="text-align:center">Some links on Money Hunters pay us. They never affect the game.</p>
 </div>
-<script type="module" src="js/main.js"></script>
+<div class="overlay" id="ov" hidden><div class="box" id="box" role="dialog" aria-modal="true"></div></div>
+<div class="toast" id="toast" hidden></div>
+
+<script src="js/data.js"></script>
+<script src="js/world.js"></script>
+<script src="js/save.js"></script>
+<script src="js/battle.js"></script>
+<script src="js/main.js"></script>
 </body>
 </html>
