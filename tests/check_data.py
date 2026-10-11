@@ -128,6 +128,51 @@ for mp in maps:
     if bad_types:
         fail(f"{mp}: unknown object types {set(bad_types)}")
     print(f"Map checks passed: {mp.name} ({w}x{h}, {len(objs)} objects).")
+
+# --- playbook.json checks ---
+pb_path = pathlib.Path("data/playbook.json")
+if pb_path.exists():
+    pb = json.loads(pb_path.read_text())
+    pb_chs = pb.get("chapters", [])
+    if not pb_chs:
+        fail("data/playbook.json: no chapters")
+    ALLOWED_BLOCKS = {"p", "h", "key", "steps", "warn", "tip", "list"}
+    ALLOWED_STATUS = {"written", "new", "expand"}
+    app_text = pathlib.Path("app.html").read_text() if pathlib.Path("app.html").exists() else ""
+    seen_pb = {}
+    for ch in pb_chs:
+        if not ch.get("id") or not ch.get("title"):
+            fail(f"playbook.json: chapter missing id/title: {ch.get('id')}")
+        for a in ch.get("articles", []):
+            aid = a.get("id")
+            if not aid:
+                fail(f"playbook.json: article in {ch.get('id')} missing id")
+                continue
+            if aid in seen_pb:
+                fail(f"playbook.json: duplicate article id {aid}")
+            seen_pb[aid] = True
+            st = a.get("status")
+            if st not in ALLOWED_STATUS:
+                fail(f"playbook.json: {aid} bad status {st!r}")
+            body = a.get("body")
+            if body is not None and not isinstance(body, (str, list)):
+                fail(f"playbook.json: {aid} body must be string or block list")
+            if isinstance(body, list):
+                for b in body:
+                    if not isinstance(b, dict) or b.get("type") not in ALLOWED_BLOCKS:
+                        fail(f"playbook.json: {aid} bad block {b if not isinstance(b, dict) else b.get('type')!r}")
+                    if b.get("type") in ("key", "steps", "list") and not isinstance(b.get("items"), list):
+                        fail(f"playbook.json: {aid} block {b.get('type')} missing items list")
+            for src in a.get("sources", []):
+                if not str(src).startswith("https://"):
+                    fail(f"playbook.json: {aid} non-https source {src!r}")
+            eg = a.get("existing_guide")
+            if eg and app_text and eg not in app_text:
+                fail(f"playbook.json: {aid} existing_guide {eg} not found in app.html")
+    n_bodies = sum(1 for ch in pb_chs for a in ch.get("articles", []) if a.get("body"))
+    print(f"Playbook checks passed: {len(pb_chs)} chapters, {len(seen_pb)} articles, {n_bodies} with bodies.")
+else:
+    print("note: data/playbook.json not present, playbook checks skipped")
 if not maps:
     print("note: no game/maps/*.tmj present yet, map checks skipped")
 
