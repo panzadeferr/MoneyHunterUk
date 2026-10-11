@@ -77,7 +77,7 @@ self.addEventListener('fetch', e => {
         })
         .catch(() => {
           return caches.match(e.request)
-            .then(cached => cached || caches.match(url.pathname.startsWith('/game/') ? '/game/index.html' : '/index.html'));
+            .then(cached => cached || caches.match('/index.html'));
         })
     );
     return;

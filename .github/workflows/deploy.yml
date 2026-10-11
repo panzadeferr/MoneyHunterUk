@@ -141,9 +141,8 @@ jobs:
           cp index.html app.html bank-switch.html privacy.html sw.js manifest.json all_deals.json robots.txt sitemap.xml feed.xml CNAME _site/
           cp *.png googlecc*.html _site/
           cp UK-rewards-stacking-toolkit.xlsx _site/
-          mkdir -p _site/data _site/game
+          mkdir -p _site/data
           [ -d data ] && cp -r data/. _site/data/ || true
-          [ -d game ] && cp -r game/. _site/game/ || true
 
       - name: Upload site to Pages
         uses: actions/upload-pages-artifact@v3
