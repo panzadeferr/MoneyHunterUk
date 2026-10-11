@@ -327,54 +327,336 @@
           "title": "Interest rates explained",
           "summary": "AER, gross, monthly vs annual interest, and inflation's effect on your savings.",
           "existing_guide": null,
-          "status": "new",
-          "question_count": 9,
-          "body": "AER (Annual Equivalent Rate) is the standard way UK savings rates are quoted. It exists because accounts pay interest at different frequencies: one account paying 5% once a year and another paying 4.9% monthly can actually be closer than they look. AER converts everything to a comparable yearly figure, including the effect of interest earning interest through the year.\n\nWhen comparing accounts, always use AER rather than the headline rate, and check three extras:\n- Introductory bonuses: some rates include a bonus that expires after 12 months.\n- Conditions: minimum monthly deposits, or rate drops if you withdraw.\n- Interest payment frequency: monthly interest compounds slightly faster if left in.\n\nInterest is paid to you gross (no tax deducted). Most people pay no tax on savings interest at all thanks to the personal savings allowance, and ISAs make interest tax-free outright."
+          "status": "written",
+          "read_minutes": 5,
+          "reviewed": "2026-10-11",
+          "body": [
+            {
+              "type": "p",
+              "text": "Interest rates look simple, but the way they're quoted changes what you actually earn. Here's how to compare like for like."
+            },
+            {
+              "type": "h",
+              "text": "The terms"
+            },
+            {
+              "type": "list",
+              "items": [
+                "AER (Annual Equivalent Rate): what you'd earn over a year including interest on interest. Use this to compare accounts.",
+                "Gross: the rate before tax.",
+                "Fixed vs variable: a fixed rate is locked for a term, and a variable rate can change at any time.",
+                "Easy access, notice and fixed term: how quickly you can get your money out."
+              ]
+            },
+            {
+              "type": "key",
+              "items": [
+                "£10,000 at 4% AER earns about £400 in a year",
+                "The same £10,000 at 1% earns about £100",
+                "Moving savings can be the easiest money you'll ever make"
+              ]
+            },
+            {
+              "type": "h",
+              "text": "Watch the small print"
+            },
+            {
+              "type": "list",
+              "items": [
+                "Teaser or bonus rates that drop after a few months.",
+                "Tiered rates where the headline rate only applies to the first slice of your money.",
+                "Withdrawal limits on “easy access” accounts.",
+                "Interest paid monthly vs yearly. Monthly grows very slightly faster if you leave it in."
+              ]
+            },
+            {
+              "type": "h",
+              "text": "Inflation"
+            },
+            {
+              "type": "p",
+              "text": "If prices rise faster than your interest rate, your savings lose buying power even as the balance grows. That's why the rate matters so much, and why long-term money may belong in investments rather than cash."
+            },
+            {
+              "type": "tip",
+              "text": "Set a reminder for the day any bonus rate ends, then move your money if the rate drops."
+            }
+          ],
+          "sources": [
+            "https://www.moneyhelper.org.uk/en/savings/types-of-savings/savings-accounts-explained"
+          ],
+          "question_count": 9
         },
         {
           "id": "pb-save-regular-savers",
           "title": "Regular savers",
           "summary": "High-rate monthly saving accounts and why the headline rate overstates what you earn.",
           "existing_guide": null,
-          "status": "new",
-          "question_count": 2,
-          "body": "A regular saver is a savings account that rewards the habit rather than the lump sum: you deposit a fixed amount each month (often £25-£300), usually for a 12-month term, in exchange for some of the highest rates on the high street. At the end of the term the money usually moves to a normal account, and you start again.\n\nWhy they pay more: banks get 12 months of guaranteed new deposits from disciplined savers, and they price that certainty in.\n\nThings to check before opening one:\n- The cap: monthly deposits are often limited, so you can't dump a lump sum in.\n- The rate after maturity: it often drops sharply, so diarise the end date.\n- Withdrawal rules: some allow none without closing.\n\nThe classic strategy: feed a regular saver from your current account each payday, then move the balance to the best easy-access or fixed account when it matures."
+          "status": "written",
+          "read_minutes": 4,
+          "reviewed": "2026-10-11",
+          "body": [
+            {
+              "type": "p",
+              "text": "Regular savers pay a high rate on money you add each month, up to a cap. They're a great habit-builder, but the headline rate is misleading."
+            },
+            {
+              "type": "h",
+              "text": "Why you earn less than you'd think"
+            },
+            {
+              "type": "p",
+              "text": "You only pay in a little at a time, so most of your money isn't there for the whole year. At 6% AER, paying in £200 a month for 12 months (£2,400 in total) earns roughly £78, not £144, because your average balance is only about £1,300."
+            },
+            {
+              "type": "h",
+              "text": "Typical rules"
+            },
+            {
+              "type": "list",
+              "items": [
+                "A monthly maximum (and sometimes a minimum).",
+                "Missed months can't be made up later.",
+                "Withdrawals may be limited or close the account.",
+                "Often you need a current account with the same bank.",
+                "A fixed term (usually 12 months), then the money moves to a lower rate."
+              ]
+            },
+            {
+              "type": "tip",
+              "text": "Use a regular saver to drip money in from your main account, while keeping the rest of your savings in the best easy-access account."
+            }
+          ],
+          "sources": [
+            "https://www.moneyhelper.org.uk/en/savings/types-of-savings/savings-accounts-explained"
+          ],
+          "question_count": 2
         },
         {
           "id": "pb-save-isas",
           "title": "ISAs",
           "summary": "Cash and Stocks & Shares ISAs, the annual allowance and flexible ISAs.",
           "existing_guide": null,
-          "status": "new",
-          "question_count": 7,
-          "body": "An ISA (Individual Savings Account) is a wrapper that makes your savings and investments tax-free. Each tax year you can put up to £20,000 per person across your ISAs (this allowance can change), and nothing inside counts toward your tax allowances: no tax on interest, gains or dividends.\n\nThe main types:\n- Cash ISA: like a savings account, but tax-free. Most useful if you earn enough interest to exceed your personal savings allowance.\n- Stocks & Shares ISA: invest in funds and shares, tax-free on growth and dividends.\n- Lifetime ISA (LISA): up to £4,000/year, with a 25% government bonus, but only for a first home (up to £450,000) or retirement. Withdrawals for anything else lose 25%, which is more than the bonus you received, roughly a 6.25% net loss.\n- Junior ISA: £9,000/year for a child's account.\n\nFor most people, the ISA decision is simple: if your interest or investment growth stays under your tax allowances, a normal account at the best rate wins; if you're earning real interest or investing for years, an ISA wins."
+          "status": "written",
+          "read_minutes": 6,
+          "reviewed": "2026-10-11",
+          "body": [
+            {
+              "type": "p",
+              "text": "An ISA (Individual Savings Account) is a tax-free wrapper. Interest, dividends and gains inside it are free of UK tax, and you don't need to declare them."
+            },
+            {
+              "type": "key",
+              "items": [
+                "Overall ISA allowance: £20,000 per tax year (6 April to 5 April)",
+                "From 6 April 2027, under-65s can put a maximum of £12,000 a year into Cash ISAs (the overall £20,000 stays)",
+                "Unused allowance can't be carried forward"
+              ]
+            },
+            {
+              "type": "h",
+              "text": "The main types"
+            },
+            {
+              "type": "list",
+              "items": [
+                "Cash ISA: savings, with interest tax-free.",
+                "Stocks & Shares ISA: investments, with gains and dividends tax-free. Value can go up or down.",
+                "Lifetime ISA: for a first home or retirement, with a government bonus. It has strict rules and penalties, so read the details first.",
+                "Innovative Finance ISA: higher-risk lending products."
+              ]
+            },
+            {
+              "type": "h",
+              "text": "Rules that catch people out"
+            },
+            {
+              "type": "list",
+              "items": [
+                "The £20,000 limit is for all your ISAs combined.",
+                "Moving an ISA? Use an ISA transfer. Withdrawing it yourself can lose the tax-free status.",
+                "With a non-flexible ISA, money you withdraw and put back counts again towards your allowance. Flexible ISAs let you replace it in the same tax year."
+              ]
+            },
+            {
+              "type": "h",
+              "text": "Do you even need one?"
+            },
+            {
+              "type": "p",
+              "text": "Most people get a Personal Savings Allowance (£1,000 of interest tax-free for basic-rate taxpayers, £500 for higher-rate). If your interest is below that, a normal savings account paying more may beat a Cash ISA. For investments, a Stocks & Shares ISA is almost always worth it."
+            },
+            {
+              "type": "warn",
+              "text": "ISA rules change. Figures were checked in October 2026. Check gov.uk before each new tax year."
+            }
+          ],
+          "sources": [
+            "https://www.gov.uk/individual-savings-accounts",
+            "https://www.closesavings.co.uk/personal/news/cash-isas-how-they-work-and-whats-changing-in-april-2027"
+          ],
+          "question_count": 7
         },
         {
           "id": "pb-save-premium-bonds",
           "title": "Premium Bonds",
           "summary": "How the prize draw works, what's guaranteed and who they suit.",
           "existing_guide": null,
-          "status": "new",
-          "question_count": 3,
-          "body": "Premium Bonds, run by NS&I (the government's savings arm), don't pay interest. Instead, every £1 bond is entered into a monthly prize draw, with prizes from £25 to £1m. Your money is fully safe (government-backed, withdrawable any time), but your return is luck: most months you win nothing, and the average return across all holders is set by the prize fund rate.\n\nYou can hold from £25 up to £50,000 per person.\n\nWho they suit:\n- People who'd rather have a lottery-shaped dream than a guaranteed 0.01% elsewhere, with their capital safe.\n- Higher-rate taxpayers, since prizes are tax-free while normal interest is taxable above the allowance.\n\nWho they don't: anyone who needs actual returns. For guaranteed growth, ordinary savings accounts or NS&I's own fixed products usually beat the average Premium Bond payout, and you can check the current prize fund rate before deciding."
+          "status": "written",
+          "read_minutes": 4,
+          "reviewed": "2026-10-11",
+          "body": [
+            {
+              "type": "p",
+              "text": "Premium Bonds are run by NS&I and backed by HM Treasury. Instead of interest, each £1 bond gets entered into a monthly prize draw."
+            },
+            {
+              "type": "key",
+              "items": [
+                "Hold from £25 up to £50,000",
+                "Prizes are tax-free",
+                "100% backed by HM Treasury",
+                "You can cash them in at any time"
+              ]
+            },
+            {
+              "type": "h",
+              "text": "The trade-off"
+            },
+            {
+              "type": "p",
+              "text": "The advertised “prize fund rate” is an average. Most holders with small amounts win little or nothing in many months, so your actual return can be well below a good savings account. Big wins are very rare."
+            },
+            {
+              "type": "h",
+              "text": "Who they suit"
+            },
+            {
+              "type": "list",
+              "items": [
+                "Higher-rate taxpayers who've used their Personal Savings Allowance (prizes are tax-free).",
+                "People with savings above the FSCS limit who want Treasury backing.",
+                "People who enjoy the draw and accept a lower expected return."
+              ]
+            },
+            {
+              "type": "tip",
+              "text": "Compare the prize fund rate with the best easy-access rate after tax. For many people, a savings account wins."
+            }
+          ],
+          "sources": [
+            "https://www.nsandi.com/products/premium-bonds"
+          ],
+          "question_count": 3
         },
         {
           "id": "pb-save-emergency-fund",
           "title": "Building an emergency fund",
           "summary": "How much to keep, where to keep it and how to build it fast.",
           "existing_guide": null,
-          "status": "new",
-          "question_count": 3,
-          "body": "An emergency fund is money kept somewhere safe and instantly accessible, used only for genuine emergencies: job loss, urgent repairs, a replacement appliance, a gap between contracts. It exists so that life's surprises don't become credit card debt.\n\nHow much: a common starting target is one month of essential spending, building to three. If your income is irregular (freelance, gig work), aim higher, six months.\n\nWhere to keep it:\n- Easy access savings account, in its own bank away from your spending account so it isn't tempting.\n- Not in stocks, not locked in a fixed bond, not in your current account where it gets spent.\n\nHow to build it: automate a transfer on payday, even £25, before you can spend it. Round-up apps and sinking funds accelerate it.\n\nThe test of a real emergency fund is boring: it sits there untouched, and one day it quietly saves you 25% APR."
+          "status": "written",
+          "read_minutes": 4,
+          "reviewed": "2026-10-11",
+          "body": [
+            {
+              "type": "p",
+              "text": "An emergency fund is cash set aside for the unexpected: a broken boiler, a car repair, a gap between jobs. It stops a bad week becoming expensive debt."
+            },
+            {
+              "type": "h",
+              "text": "How much?"
+            },
+            {
+              "type": "p",
+              "text": "A common guide is 3–6 months of essential spending (rent, bills, food, transport). Start smaller: even £500 to £1,000 covers many surprises."
+            },
+            {
+              "type": "h",
+              "text": "Where to keep it"
+            },
+            {
+              "type": "list",
+              "items": [
+                "Easy access, so you can get it within a day.",
+                "A separate account or pot, so you don't dip into it.",
+                "Cash, not investments, because shares might be down exactly when you need the money.",
+                "An FSCS-protected bank or building society."
+              ]
+            },
+            {
+              "type": "h",
+              "text": "How to build it"
+            },
+            {
+              "type": "steps",
+              "items": [
+                "Set a starter goal (e.g. £500).",
+                "Automate a transfer the day you're paid.",
+                "Add windfalls: tax refunds, switch bonuses, cashback payouts.",
+                "Refill it after you use it."
+              ]
+            },
+            {
+              "type": "tip",
+              "text": "Bank switch bonuses are a great way to kick-start an emergency fund."
+            }
+          ],
+          "sources": [
+            "https://www.moneyhelper.org.uk/en/savings/how-to-save/emergency-savings-how-much-is-enough"
+          ],
+          "question_count": 3
         },
         {
           "id": "pb-save-fscs",
           "title": "Is my money safe? The FSCS",
           "summary": "What's protected, the limit, and banking licences.",
           "existing_guide": null,
-          "status": "new",
-          "question_count": 3,
-          "body": "The Financial Services Compensation Scheme (FSCS) protects your money if an authorised UK bank, building society or other financial firm fails. For cash savings the limit is £85,000 per person, per authorised firm (this cap can change). It's automatic: you don't apply, you don't pay, and you don't lose your money.\n\nKey details:\n- \"Per authorised firm\" matters: brands sharing a banking licence share the £85,000. Check with the FSCS protection checker before depositing large amounts.\n- Joint accounts usually get £170,000 (two people's worth).\n- Temporary high balances (like a house sale) can get protection up to £1m for six months.\n\nFSCS does not cover: investment losses from markets falling, or crypto. It protects you from firm failure, not from bad investment choices.\n\nIf you hold over £85,000 anywhere, spread it across different authorised institutions. Five minutes of checking beats £85,000 of exposure."
+          "status": "written",
+          "read_minutes": 4,
+          "reviewed": "2026-10-11",
+          "body": [
+            {
+              "type": "p",
+              "text": "The Financial Services Compensation Scheme (FSCS) protects your money if a UK-authorised bank, building society or credit union fails."
+            },
+            {
+              "type": "key",
+              "items": [
+                "Up to £120,000 per person, per banking licence (since 1 December 2025)",
+                "Joint accounts: up to £120,000 for each person",
+                "Higher temporary protection for some life events (like a house sale) for a limited time"
+              ]
+            },
+            {
+              "type": "h",
+              "text": "Banking licences"
+            },
+            {
+              "type": "p",
+              "text": "Some bank brands share one licence, so savings across them share one £120,000 limit. If you hold a lot, check which brands belong together."
+            },
+            {
+              "type": "h",
+              "text": "What's not covered"
+            },
+            {
+              "type": "list",
+              "items": [
+                "Crypto, and money held on crypto exchanges.",
+                "Most investment losses from normal market falls (FSCS protects against firm failure, not bad performance).",
+                "Firms that aren't UK-authorised."
+              ]
+            },
+            {
+              "type": "tip",
+              "text": "Use the FSCS online protection checker to see whether a provider is covered."
+            }
+          ],
+          "sources": [
+            "https://www.fscs.org.uk/",
+            "https://www.bankofengland.co.uk/news/2025/november/pra-confirms-fscs-deposit-limit-to-be-increased-to-120000-from-1-december"
+          ],
+          "question_count": 3
         }
       ]
     },
@@ -388,25 +670,167 @@
           "title": "Investing basics",
           "summary": "Risk and return, shares, funds, diversification and time in the market.",
           "existing_guide": null,
-          "status": "new",
-          "question_count": 16,
-          "body": "Investing means buying assets that can grow: shares (small ownership stakes in companies), bonds (loans to companies or governments), or funds that bundle many of them. The core trade-off: higher potential returns come with higher risk, and prices go down as well as up.\n\nThe standard, boring, effective approach for beginners:\n- Only invest money you won't need for 5+ years, after your emergency fund exists and expensive debt is cleared.\n- Use a tax wrapper first: a Stocks & Shares ISA (up to the £20,000 annual allowance) or a SIPP for retirement.\n- Prefer broad, low-cost index funds that track whole markets over picking individual stocks.\n- Invest regularly and don't check daily.\n\nWhat's NOT protected: market losses. The FSCS protects you if a firm fails, not if your funds fall. Crypto is generally not FSCS-protected at all and can go to zero.\n\nThat's the honest deal: time and diversification in exchange for accepting ups and downs."
+          "status": "written",
+          "read_minutes": 6,
+          "reviewed": "2026-10-11",
+          "body": [
+            {
+              "type": "p",
+              "text": "Investing means putting money into things like shares, bonds or funds, in the hope it grows faster than cash over the long term. It comes with risk: values go down as well as up, and you could get back less than you put in."
+            },
+            {
+              "type": "h",
+              "text": "The building blocks"
+            },
+            {
+              "type": "list",
+              "items": [
+                "Shares: part-ownership of a company. Higher potential returns, bigger swings.",
+                "Bonds: loans to governments or companies that pay interest. Usually steadier.",
+                "Funds: one product holding many shares or bonds, so you're spread out automatically.",
+                "Cash: safe and steady, but can lose value to inflation."
+              ]
+            },
+            {
+              "type": "h",
+              "text": "Before you invest"
+            },
+            {
+              "type": "steps",
+              "items": [
+                "Clear expensive debt first (credit cards, overdrafts).",
+                "Build an emergency fund in cash.",
+                "Only invest money you won't need for at least 5 years.",
+                "Use a tax wrapper (Stocks & Shares ISA, or a pension)."
+              ]
+            },
+            {
+              "type": "h",
+              "text": "Principles that matter most"
+            },
+            {
+              "type": "list",
+              "items": [
+                "Diversify: spread across many companies and countries.",
+                "Keep costs low: fees compound against you.",
+                "Time in the market beats timing the market.",
+                "Don't panic-sell in a crash. Selling locks in the loss."
+              ]
+            },
+            {
+              "type": "warn",
+              "text": "Be wary of apps that make trading feel like a game (confetti, leaderboards, constant alerts). The FCA has warned these features can push people into riskier, more frequent trading."
+            },
+            {
+              "type": "p",
+              "text": "This is education, not personal advice. If you're unsure, MoneyHelper offers free guidance."
+            }
+          ],
+          "sources": [
+            "https://www.fca.org.uk/investsmart",
+            "https://www.moneyhelper.org.uk/en/savings/investing"
+          ],
+          "question_count": 16
         },
         {
           "id": "pb-inv-funds-fees",
           "title": "Funds, platforms & fees",
           "summary": "Index funds, platform and fund fees, and why small percentages matter.",
           "existing_guide": null,
-          "status": "new",
-          "question_count": 6,
-          "body": "Fees are the one number in investing you control completely, and they compound against you exactly like returns compound for you. A £10,000 investment growing at 6% becomes about £57,000 in 30 years with no fees. With 1% taken each year, it's around £42,000. The fee ate £15,000.\n\nThe layers to check:\n- Fund OCF (ongoing charges figure): the fund's own yearly fee. Passive index trackers are often 0.05-0.25%; active funds often 0.5-1.5%+.\n- Platform fee: what the broker charges to hold your account, a percentage or flat fee.\n- Dealing charges: per-trade costs, mostly avoided by regular investing plans.\n\nBe sceptical of high-fee funds promising to beat the market: most actively managed funds fail to beat their index after fees over long periods. The cheapest broad tracker in the right tax wrapper is the closest thing to a default answer investing has."
+          "status": "written",
+          "read_minutes": 5,
+          "reviewed": "2026-10-11",
+          "body": [
+            {
+              "type": "p",
+              "text": "Fees look tiny as percentages, but they're taken every year and compound against you."
+            },
+            {
+              "type": "h",
+              "text": "The fees you'll see"
+            },
+            {
+              "type": "list",
+              "items": [
+                "Fund fee (ongoing charges figure, OCF): the yearly cost of running the fund.",
+                "Platform fee: what the app or broker charges to hold your investments.",
+                "Dealing fees: per buy or sell, on some platforms.",
+                "FX fees: when buying assets priced in other currencies."
+              ]
+            },
+            {
+              "type": "key",
+              "items": [
+                "1.5% vs 0.2% on £10,000 is £130 a year",
+                "0.45% a year on £20,000 is £90",
+                "Over decades, high fees can eat a large share of your growth"
+              ]
+            },
+            {
+              "type": "h",
+              "text": "Index funds and ETFs"
+            },
+            {
+              "type": "p",
+              "text": "Index funds and ETFs track a market (like a global stock index) instead of paying managers to pick winners. That usually means lower fees and broad diversification, which is why many beginners start there."
+            },
+            {
+              "type": "h",
+              "text": "Accumulation vs income"
+            },
+            {
+              "type": "p",
+              "text": "Accumulation units reinvest dividends automatically. Income units pay them out. For long-term growth, accumulation keeps your money compounding."
+            },
+            {
+              "type": "tip",
+              "text": "Compare platforms by total yearly cost for YOUR pot size. Flat fees suit bigger pots, percentage fees suit smaller ones."
+            }
+          ],
+          "sources": [
+            "https://www.moneyhelper.org.uk/en/savings/investing"
+          ],
+          "question_count": 6
         },
         {
           "id": "pb-inv-free-shares",
           "title": "Free share offers",
           "summary": "How free-share sign-up offers work and the terms to check.",
           "existing_guide": "guide-invest",
-          "status": "expand",
+          "status": "written",
+          "read_minutes": 4,
+          "reviewed": "2026-10-11",
+          "body": [
+            {
+              "type": "p",
+              "text": "Some trading apps give you a free share, or cash to invest, when you sign up or refer a friend. It can be a nice bonus, but it's still an investment."
+            },
+            {
+              "type": "h",
+              "text": "Check before you sign up"
+            },
+            {
+              "type": "list",
+              "items": [
+                "Is the firm authorised? Check the FCA Register.",
+                "Minimum deposit or holding period before you can sell or withdraw.",
+                "The range of possible share values. Most people get the lower end.",
+                "Fees once the promotion ends.",
+                "Whether the account is a Stocks & Shares ISA or a taxable account."
+              ]
+            },
+            {
+              "type": "warn",
+              "text": "The value of the share can fall. Don't deposit more than you're comfortable investing just to unlock a bonus."
+            },
+            {
+              "type": "tip",
+              "text": "Treat the free share as a way to learn how a platform works, not as a reason to start trading frequently."
+            }
+          ],
+          "sources": [
+            "https://register.fca.org.uk/"
+          ],
           "question_count": 1
         },
         {
@@ -414,18 +838,105 @@
           "title": "Compound growth",
           "summary": "The maths of growth, the Rule of 72 and regular investing.",
           "existing_guide": null,
-          "status": "new",
-          "question_count": 8,
-          "body": "Compounding is returns earning returns, and it's the reason starting early beats starting big. Money invested grows, then the growth itself grows, and the curve steepens with time. Over long periods, most of the final value comes from the later years, which is why the first years feel slow and matter most.\n\nExample: £200/month at 5% average annual growth is about £82,000 after 25 years, of which only £60,000 is what you paid in. Stretch that to 35 years and it's roughly £225,000, with the last decade doing most of the lifting.\n\nWhat this means practically:\n- Start now with an amount you won't notice; time beats size.\n- Reinvest dividends rather than taking them as cash.\n- Don't interrupt compounding by cashing out in a dip: selling during crashes turns temporary losses permanent and misses the recovery.\n\nCompounding's evil twin is fee drag; that's why fees matter so much."
+          "status": "written",
+          "read_minutes": 5,
+          "reviewed": "2026-10-11",
+          "body": [
+            {
+              "type": "p",
+              "text": "Compounding means your growth earns growth. Over long periods it's the most powerful force in personal finance, for savings and for debt."
+            },
+            {
+              "type": "key",
+              "items": [
+                "£2,000 growing 7% a year becomes about £3,930 in 10 years",
+                "£100 a month at 5% for 30 years grows to about £83,000 (you pay in £36,000)",
+                "Rule of 72: years to double ≈ 72 ÷ growth rate"
+              ]
+            },
+            {
+              "type": "h",
+              "text": "Start early"
+            },
+            {
+              "type": "p",
+              "text": "Two people invest £100 a month at 6% until 65. The one who starts at 25 ends up with far more than the one who starts at 35, much more than the extra £12,000 paid in, because of 10 extra years of compounding."
+            },
+            {
+              "type": "h",
+              "text": "Falls hurt more than you think"
+            },
+            {
+              "type": "p",
+              "text": "If an investment falls 50%, it needs to rise 100% to get back to where it was. A 10% rise followed by a 10% fall leaves you down 1%. That's why diversification and staying invested matter."
+            },
+            {
+              "type": "h",
+              "text": "Regular investing"
+            },
+            {
+              "type": "p",
+              "text": "Investing a fixed amount every month (pound-cost averaging) means you automatically buy more when prices are low and less when they're high, without trying to predict the market."
+            },
+            {
+              "type": "tip",
+              "text": "Compounding works against you on debt too: a credit card balance at 24% roughly doubles in 3 years if you don't pay it."
+            }
+          ],
+          "sources": [
+            "https://www.moneyhelper.org.uk/en/savings/investing"
+          ],
+          "question_count": 8
         },
         {
           "id": "pb-inv-crypto-risks",
           "title": "Crypto: the risks",
           "summary": "Volatility, no FSCS protection and common crypto scams.",
           "existing_guide": null,
-          "status": "new",
-          "question_count": 1,
-          "body": "Crypto is a high-risk, largely unregulated investment class. Whatever you think of the technology, go in with clear eyes:\n\n- No FSCS protection: if an exchange collapses or you're hacked, there's generally no compensation. Firms that do fail have left customers with nothing for years.\n- Extreme volatility: 50-80% drawdowns have happened repeatedly, even to major coins.\n- Scam density: fake celebrity endorsements, \"guaranteed returns\", recovery scams targeting previous victims, and clone firms impersonating real platforms are everywhere. Check anyone you deal with on the FCA Register.\n\nIf you still want exposure, the sensible pattern is: only money you can afford to lose entirely, bought through established regulated exchanges, held in a reputable wallet, never borrowed for, and never advertised to you by an influencer promising returns.\n\nCrypto should be the dessert of a portfolio, not the meal, and never the rent money."
+          "status": "written",
+          "read_minutes": 5,
+          "reviewed": "2026-10-11",
+          "body": [
+            {
+              "type": "p",
+              "text": "Crypto assets can swing wildly in value, and they have far fewer protections than savings or regulated investments."
+            },
+            {
+              "type": "h",
+              "text": "The key risks"
+            },
+            {
+              "type": "list",
+              "items": [
+                "Extreme volatility: prices can fall 50% or more quickly.",
+                "No FSCS protection if an exchange fails.",
+                "No Financial Ombudsman route for many complaints.",
+                "Scams are common: fake exchanges, “pump” groups, fake celebrity ads and romance scams."
+              ]
+            },
+            {
+              "type": "h",
+              "text": "If you choose to buy"
+            },
+            {
+              "type": "steps",
+              "items": [
+                "Only use money you could afford to lose entirely.",
+                "Use firms registered with the FCA for crypto activities, and check the FCA Warning List.",
+                "Never share wallet recovery phrases. Anyone with them owns your crypto.",
+                "Be suspicious of anyone who contacted you first or promises returns."
+              ]
+            },
+            {
+              "type": "warn",
+              "text": "Anyone asking you to pay in crypto, whether a “bank”, “HMRC” or an “investment manager”, is almost certainly a scammer."
+            }
+          ],
+          "sources": [
+            "https://www.fca.org.uk/investsmart/crypto-basics",
+            "https://www.fca.org.uk/scamsmart"
+          ],
+          "question_count": 1
         }
       ]
     },
