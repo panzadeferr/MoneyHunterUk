@@ -1,0 +1,527 @@
+{
+ "topic": "cashback",
+ "questions": [
+  {
+   "id": "cb-001",
+   "topic": "cashback",
+   "difficulty": 1,
+   "type": "mc",
+   "question": "How does a cashback site make money to pay you?",
+   "options": [
+    "It shares the commission retailers pay it when you buy via its link",
+    "It prints money",
+    "It lends you money"
+   ],
+   "answer": 0,
+   "explanation": "Retailers pay commission and the site passes part of it to you.",
+   "learn_more": "pb-cb-sites"
+  },
+  {
+   "id": "cb-002",
+   "topic": "cashback",
+   "difficulty": 2,
+   "type": "mc",
+   "question": "To make sure cashback tracks, you should\u2026",
+   "options": [
+    "Use an ad blocker",
+    "Click through from the cashback site and accept cookies",
+    "Buy through the retailer's app directly"
+   ],
+   "answer": 1,
+   "explanation": "Tracking relies on cookies. Ad blockers and some extensions can break it.",
+   "learn_more": "pb-cb-tracking"
+  },
+  {
+   "id": "cb-003",
+   "topic": "cashback",
+   "difficulty": 2,
+   "type": "mc",
+   "question": "Using a voucher code that isn't listed on the cashback site can\u2026",
+   "options": [
+    "Double your cashback",
+    "Void your cashback",
+    "Do nothing"
+   ],
+   "answer": 1,
+   "explanation": "Many retailers decline cashback when unauthorised codes are used.",
+   "learn_more": "pb-cb-tracking"
+  },
+  {
+   "id": "cb-004",
+   "topic": "cashback",
+   "difficulty": 2,
+   "type": "mc",
+   "question": "Cashback marked \u201cpending\u201d means\u2026",
+   "options": [
+    "It's been paid",
+    "The retailer hasn't confirmed it yet, which can take weeks",
+    "It's been rejected"
+   ],
+   "answer": 1,
+   "explanation": "Pending cashback can still be declined.",
+   "learn_more": "pb-cb-tracking"
+  },
+  {
+   "id": "cb-005",
+   "topic": "cashback",
+   "difficulty": 2,
+   "type": "mc",
+   "question": "Which of these commonly gets cashback declined?",
+   "options": [
+    "Returning or cancelling the order",
+    "Paying by debit card",
+    "Using a laptop"
+   ],
+   "answer": 0,
+   "explanation": "No sale, no commission, no cashback.",
+   "learn_more": "pb-cb-tracking"
+  },
+  {
+   "id": "cb-006",
+   "topic": "cashback",
+   "difficulty": 3,
+   "type": "calc",
+   "question": "A \u00a3400 laptop: 3% from a cashback site plus 1% from a cashback card. Total back?",
+   "options": [
+    "\u00a34",
+    "\u00a316",
+    "\u00a312"
+   ],
+   "answer": 1,
+   "explanation": "\u00a312 + \u00a34 = \u00a316.",
+   "learn_more": "pb-cb-sites"
+  },
+  {
+   "id": "cb-007",
+   "topic": "cashback",
+   "difficulty": 2,
+   "type": "calc",
+   "question": "Buy a \u00a360 supermarket gift card at 5% back. You earn\u2026",
+   "options": [
+    "60p",
+    "\u00a33",
+    "\u00a36"
+   ],
+   "answer": 1,
+   "explanation": "5% of \u00a360 = \u00a33.",
+   "learn_more": "pb-cb-giftcards"
+  },
+  {
+   "id": "cb-008",
+   "topic": "cashback",
+   "difficulty": 2,
+   "type": "mc",
+   "question": "What's a sensible rule with gift card cashback apps?",
+   "options": [
+    "Only buy for shops you'll definitely spend at, and spend it fairly soon",
+    "Buy as many as possible",
+    "Gift cards never lose value"
+   ],
+   "answer": 0,
+   "explanation": "Unused balances, or a retailer going bust, can lose you money.",
+   "learn_more": "pb-cb-giftcards"
+  },
+  {
+   "id": "cb-009",
+   "topic": "cashback",
+   "difficulty": 1,
+   "type": "mc",
+   "question": "Why compare two cashback sites before buying?",
+   "options": [
+    "Rates for the same shop can differ",
+    "They're always identical",
+    "It's required"
+   ],
+   "answer": 0,
+   "explanation": "One site may pay double the other for the same retailer.",
+   "learn_more": "pb-cb-sites"
+  },
+  {
+   "id": "cb-010",
+   "topic": "cashback",
+   "difficulty": 2,
+   "type": "mc",
+   "question": "Cashback is best treated as\u2026",
+   "options": [
+    "Guaranteed money",
+    "A bonus that's only real once it's paid out",
+    "A loan"
+   ],
+   "answer": 1,
+   "explanation": "Don't spend it until it lands.",
+   "learn_more": "pb-cb-tracking"
+  },
+  {
+   "id": "cb-011",
+   "topic": "cashback",
+   "difficulty": 2,
+   "type": "mc",
+   "question": "Buying something you don't need just to get cashback\u2026",
+   "options": [
+    "Saves money",
+    "Still costs more than not buying it",
+    "Is free money"
+   ],
+   "answer": 1,
+   "explanation": "10% back on something you didn't need is still 90% spent.",
+   "learn_more": "pb-cb-sites"
+  },
+  {
+   "id": "cb-012",
+   "topic": "cashback",
+   "difficulty": 1,
+   "type": "mc",
+   "question": "How do cashback sites earn money?",
+   "options": [
+    "Donations",
+    "Retailers pay them commission for sending shoppers, and they share some with you",
+    "Selling your data only",
+    "Interest"
+   ],
+   "answer": 1,
+   "explanation": "Retailers pay affiliate commission; the cashback site shares part of it with you.",
+   "learn_more": "pb-cb-sites"
+  },
+  {
+   "id": "cb-013",
+   "topic": "cashback",
+   "difficulty": 2,
+   "type": "mc",
+   "question": "Cashback usually pays out when?",
+   "options": [
+    "Instantly at checkout",
+    "After the retailer confirms the sale, which can take weeks to a few months",
+    "Only at Christmas",
+    "Never"
+   ],
+   "answer": 1,
+   "explanation": "Cashback is 'pending' until the retailer validates the transaction, often 30-90+ days.",
+   "learn_more": "pb-cb-tracking"
+  },
+  {
+   "id": "cb-014",
+   "topic": "cashback",
+   "difficulty": 2,
+   "type": "mc",
+   "question": "Your cashback shows as declined. Most common cause is:",
+   "options": [
+    "The tracking was broken or the order didn't meet terms, like exclusions or returns",
+    "The site hates you",
+    "You used a phone",
+    "It's random"
+   ],
+   "answer": 0,
+   "explanation": "Declines usually come from broken tracking, returns, gift cards at checkout, or terms exclusions.",
+   "learn_more": "pb-cb-tracking"
+  },
+  {
+   "id": "cb-015",
+   "topic": "cashback",
+   "difficulty": 1,
+   "type": "mc",
+   "question": "To maximise the chance cashback tracks, you should:",
+   "options": [
+    "Add items from a different site",
+    "Click through from the cashback site, then complete the purchase in the same session without detours",
+    "Use an ad blocker",
+    "Browse for an hour first"
+   ],
+   "answer": 1,
+   "explanation": "Start from the cashback link and buy in the same session; detours and blockers can break tracking.",
+   "learn_more": "pb-cb-tracking"
+  },
+  {
+   "id": "cb-016",
+   "topic": "cashback",
+   "difficulty": 1,
+   "type": "mc",
+   "question": "Cashback is best treated as:",
+   "options": [
+    "Guaranteed income you can budget for",
+    "A bonus you only count once it's actually paid",
+    "A reason to buy things you don't need",
+    "A scam"
+   ],
+   "answer": 1,
+   "explanation": "Never buy on the promise of cashback; treat it as a bonus on purchases you were making anyway.",
+   "learn_more": "pb-cb-sites"
+  },
+  {
+   "id": "cb-017",
+   "topic": "cashback",
+   "difficulty": 2,
+   "type": "mc",
+   "question": "Which combination usually stacks best?",
+   "options": [
+    "Cashback site + discount code from the retailer + loyalty points",
+    "Cashback site + a random code from an unofficial site, which may invalidate the sale",
+    "Two cashback sites for one order",
+    "Cashback + returning half the order"
+   ],
+   "answer": 0,
+   "explanation": "Retailer's own codes plus loyalty points usually stack with cashback, but always check the cashback terms.",
+   "learn_more": "pb-cb-sites"
+  },
+  {
+   "id": "cb-018",
+   "topic": "cashback",
+   "difficulty": 2,
+   "type": "mc",
+   "question": "Why do cashback sites offer higher rates for buying gift cards?",
+   "options": [
+    "Gift cards are free money",
+    "They earn commission on card sales, and you then spend the card at the retailer",
+    "Gift cards expire",
+    "It's a promotion only"
+   ],
+   "answer": 1,
+   "explanation": "Buying a retailer gift card through a cashback site can stack: a rate on the card plus the retailer's own loyalty on the spend.",
+   "learn_more": "pb-cb-giftcards",
+   "volatile": true
+  },
+  {
+   "id": "cb-019",
+   "topic": "cashback",
+   "difficulty": 2,
+   "type": "mc",
+   "question": "A risk of buying discounted gift cards from third parties is:",
+   "options": [
+    "They may be void, stolen or revoked with no comeback",
+    "They expire in 100 years",
+    "They only work abroad",
+    "Nothing, zero risk"
+   ],
+   "answer": 0,
+   "explanation": "Third-party cards can be invalid or clawed back; buy from trusted sources and treat big discounts as a warning.",
+   "learn_more": "pb-cb-giftcards",
+   "volatile": true
+  },
+  {
+   "id": "cb-020",
+   "topic": "cashback",
+   "difficulty": 1,
+   "type": "mc",
+   "question": "What should you check before signing up to a cashback site?",
+   "options": [
+    "The celebrity adverts",
+    "The payout minimum, how you get paid and the site's track record",
+    "The logo colours",
+    "Only the sign-up bonus"
+   ],
+   "answer": 1,
+   "explanation": "Check minimum payout, payout methods and reviews; reputable sites are free to join.",
+   "learn_more": "pb-cb-sites"
+  },
+  {
+   "id": "cb-021",
+   "topic": "cashback",
+   "difficulty": 2,
+   "type": "mc",
+   "question": "Some banks or cards offer cashback automatically on all spending. The catch is usually:",
+   "options": [
+    "You must keep a huge balance or it's only worth it if the account suits you",
+    "It's illegal",
+    "It never exists",
+    "You pay tax on it always"
+   ],
+   "answer": 0,
+   "explanation": "Built-in card cashback is real but small; it's only a win if the account or card fits your spending without fees.",
+   "learn_more": "pb-cb-sites",
+   "volatile": true
+  },
+  {
+   "id": "cb-022",
+   "topic": "cashback",
+   "difficulty": 2,
+   "type": "mc",
+   "question": "In-store cashback apps typically work by:",
+   "options": [
+    "Guessing your spending",
+    "Linking your card so qualifying purchases trigger cashback automatically",
+    "You posting receipts to a depot",
+    "Cash only"
+   ],
+   "answer": 1,
+   "explanation": "Linked-card apps track purchases against offers automatically once your card is registered.",
+   "learn_more": "pb-cb-sites"
+  },
+  {
+   "id": "cb-023",
+   "topic": "cashback",
+   "difficulty": 2,
+   "type": "mc",
+   "question": "Why can cashback on insurance or finance products be unreliable?",
+   "options": [
+    "Insurers ban it entirely, always",
+    "Tracking is trickier for long application processes and policies must often stay active a set time",
+    "It's paid in vouchers only",
+    "Insurers don't sell online"
+   ],
+   "answer": 1,
+   "explanation": "Finance cashback often requires a completed application and a policy held for months, so declines are common.",
+   "learn_more": "pb-cb-tracking",
+   "volatile": true
+  },
+  {
+   "id": "cb-024",
+   "topic": "cashback",
+   "difficulty": 1,
+   "type": "mc",
+   "question": "What's the smartest way to use a sign-up cashback bonus?",
+   "options": [
+    "Buy something you didn't need",
+    "Plan it around a purchase you were already going to make, meeting the minimum spend",
+    "Open ten accounts in one day",
+    "Ignore terms"
+   ],
+   "answer": 1,
+   "explanation": "Meet the minimum spend with real purchases you'd make anyway; don't spend to chase the bonus.",
+   "learn_more": "pb-cb-sites"
+  },
+  {
+   "id": "cb-025",
+   "topic": "cashback",
+   "difficulty": 2,
+   "type": "mc",
+   "question": "Cashback earned through sites is usually paid:",
+   "options": [
+    "In cash to your bank or PayPal, sometimes with a gift card bonus option",
+    "In diamonds",
+    "Only as shopping vouchers with no cash option",
+    "In crypto"
+   ],
+   "answer": 0,
+   "explanation": "Most sites pay to bank or PayPal, with gift cards sometimes paying a few percent more.",
+   "learn_more": "pb-cb-giftcards"
+  },
+  {
+   "id": "cb-026",
+   "topic": "cashback",
+   "difficulty": 2,
+   "type": "mc",
+   "question": "You're about to make a big purchase. Best order of operations?",
+   "options": [
+    "Buy, then think about cashback",
+    "Check the cashback rate, any voucher codes and loyalty value first, then buy via the best stack",
+    "Buy on the most expensive site",
+    "Ask a friend to buy it for you"
+   ],
+   "answer": 1,
+   "explanation": "A minute of checking before a big buy can add real money; after purchase, tracking is too late.",
+   "learn_more": "pb-cb-tracking"
+  },
+  {
+   "id": "cb-027",
+   "topic": "cashback",
+   "difficulty": 2,
+   "type": "mc",
+   "question": "Why do cashback rates vary between sites for the same shop?",
+   "options": [
+    "Randomness",
+    "Different affiliate deals and different shares of commission passed to you",
+    "Shop location",
+    "Day of the week"
+   ],
+   "answer": 1,
+   "explanation": "Sites negotiate different commission deals and keep different cuts, so compare before clicking.",
+   "learn_more": "pb-cb-sites"
+  },
+  {
+   "id": "cb-028",
+   "topic": "cashback",
+   "difficulty": 1,
+   "type": "mc",
+   "question": "If a retailer you use often isn't listed on your cashback site, you can:",
+   "options": [
+    "Give up forever",
+    "Check the other major cashback site, which may have different retailers",
+    "Email the shop's CEO",
+    "Buy twice"
+   ],
+   "answer": 1,
+   "explanation": "Retailer coverage differs between cashback sites, so checking both is free money.",
+   "learn_more": "pb-cb-sites"
+  },
+  {
+   "id": "cb-029",
+   "topic": "cashback",
+   "difficulty": 2,
+   "type": "mc",
+   "question": "Returning part of your order usually affects cashback how?",
+   "options": [
+    "Cashback is only paid on kept items, or the whole order may be declined",
+    "You still get it all",
+    "You get double",
+    "Returns don't matter"
+   ],
+   "answer": 0,
+   "explanation": "Returns void cashback on returned items and sometimes the whole tracked amount.",
+   "learn_more": "pb-cb-tracking",
+   "volatile": true
+  },
+  {
+   "id": "cb-030",
+   "topic": "cashback",
+   "difficulty": 1,
+   "type": "mc",
+   "question": "What's a healthy attitude to cashback and reward apps?",
+   "options": [
+    "Let them dictate purchases",
+    "Let them add value to purchases you already planned",
+    "Open every account possible",
+    "Spend to earn"
+   ],
+   "answer": 1,
+   "explanation": "Cashback works for you when it follows your plan, not when it drives spending.",
+   "learn_more": "pb-cb-sites"
+  },
+  {
+   "id": "cb-031",
+   "topic": "cashback",
+   "difficulty": 2,
+   "type": "mc",
+   "question": "Referral schemes on cashback sites typically pay you when?",
+   "options": [
+    "When someone clicks your link",
+    "When your referral signs up and earns or reaches a threshold",
+    "Immediately on sending",
+    "Never"
+   ],
+   "answer": 1,
+   "explanation": "Referral bonuses usually require the new user to actually earn cashback, not just sign up.",
+   "learn_more": "pb-cb-sites"
+  },
+  {
+   "id": "cb-032",
+   "topic": "cashback",
+   "difficulty": 2,
+   "type": "mc",
+   "question": "You bought via a cashback link but nothing tracked. First move:",
+   "options": [
+    "Buy again immediately",
+    "Wait a couple of days for tracking, then raise a missing-cashback claim with your receipt",
+    "Accept it instantly as lost",
+    "Complain publicly first"
+   ],
+   "answer": 1,
+   "explanation": "Tracking can lag; if still missing after the site's stated window, submit a claim with order details.",
+   "learn_more": "pb-cb-tracking"
+  },
+  {
+   "id": "cb-033",
+   "topic": "cashback",
+   "difficulty": 1,
+   "type": "mc",
+   "question": "Cashback sites are generally free to use because:",
+   "options": [
+    "They're charities",
+    "They keep a share of the retailer commission",
+    "Your bank pays them",
+    "Shops charge you extra"
+   ],
+   "answer": 1,
+   "explanation": "The business model is commission sharing; you should never pay to join a mainstream cashback site.",
+   "learn_more": "pb-cb-sites"
+  }
+ ]
+}

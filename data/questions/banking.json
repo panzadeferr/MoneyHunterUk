@@ -1,0 +1,805 @@
+{
+ "topic": "banking",
+ "questions": [
+  {
+   "id": "bank-001",
+   "topic": "banking",
+   "difficulty": 1,
+   "type": "mc",
+   "question": "How long does a full switch with the Current Account Switch Service (CASS) take?",
+   "options": [
+    "24 hours",
+    "7 working days",
+    "30 days"
+   ],
+   "answer": 1,
+   "explanation": "A full CASS switch takes 7 working days, and you choose the switch date.",
+   "learn_more": "pb-bank-cass"
+  },
+  {
+   "id": "bank-002",
+   "topic": "banking",
+   "difficulty": 1,
+   "type": "mc",
+   "question": "How much does it cost a customer to use CASS?",
+   "options": [
+    "\u00a325",
+    "Nothing, it's free",
+    "A fee taken later by your new bank"
+   ],
+   "answer": 1,
+   "explanation": "CASS is free for customers.",
+   "learn_more": "pb-bank-cass"
+  },
+  {
+   "id": "bank-003",
+   "topic": "banking",
+   "difficulty": 2,
+   "type": "mc",
+   "question": "What does the Current Account Switch Guarantee promise?",
+   "options": [
+    "Your new bank will pay you a bonus",
+    "Interest and charges caused by a failed switch are refunded",
+    "Your credit score won't change"
+   ],
+   "answer": 1,
+   "explanation": "If anything goes wrong with the switch, the Guarantee means interest and charges caused by it are refunded.",
+   "learn_more": "pb-bank-cass"
+  },
+  {
+   "id": "bank-004",
+   "topic": "banking",
+   "difficulty": 2,
+   "type": "mc",
+   "question": "After a full CASS switch, payments sent to your old account details are\u2026",
+   "options": [
+    "Returned to the sender",
+    "Redirected to your new account",
+    "Frozen until you call your old bank"
+   ],
+   "answer": 1,
+   "explanation": "CASS redirects payments sent to your old details, so nothing gets lost.",
+   "learn_more": "pb-bank-cass"
+  },
+  {
+   "id": "bank-005",
+   "topic": "banking",
+   "difficulty": 1,
+   "type": "mc",
+   "question": "A \u201cfull switch\u201d with CASS means\u2026",
+   "options": [
+    "Your old account closes and everything moves to the new one",
+    "You keep both accounts and copy some payments",
+    "Only your salary moves"
+   ],
+   "answer": 0,
+   "explanation": "In a full switch, payments move across and the old account closes.",
+   "learn_more": "pb-bank-cass"
+  },
+  {
+   "id": "bank-006",
+   "topic": "banking",
+   "difficulty": 2,
+   "type": "mc",
+   "question": "Why do most bank switch bonuses need a FULL switch, not a partial one?",
+   "options": [
+    "Partial switches are illegal",
+    "The bonus terms usually say so: the bank wants your whole account",
+    "Partial switches take six months"
+   ],
+   "answer": 1,
+   "explanation": "Switch bonuses usually require a full CASS switch. A partial switch typically won't qualify.",
+   "learn_more": "pb-bank-switch-bonuses"
+  },
+  {
+   "id": "bank-007",
+   "topic": "banking",
+   "difficulty": 2,
+   "type": "mc",
+   "question": "A switch offer says \u201cpay in \u00a31,000\u201d. Usually that means\u2026",
+   "options": [
+    "Keep \u00a31,000 in the account forever",
+    "Deposit at least \u00a31,000 within the deadline, often from an external account",
+    "Pay the bank a \u00a31,000 fee"
+   ],
+   "answer": 1,
+   "explanation": "It's a deposit requirement, usually within a time limit. Check whether transfers between your own accounts at that bank count.",
+   "learn_more": "pb-bank-switch-bonuses"
+  },
+  {
+   "id": "bank-008",
+   "topic": "banking",
+   "difficulty": 3,
+   "type": "mc",
+   "question": "A switch offer needs 2 active Direct Debits. What does \u201cactive\u201d usually mean?",
+   "options": [
+    "Set up, even if not yet collected",
+    "At least one payment has actually been collected",
+    "Approved by your old bank"
+   ],
+   "answer": 1,
+   "explanation": "Active usually means at least one payment has gone out. Set Direct Debits up early.",
+   "learn_more": "pb-bank-switch-bonuses"
+  },
+  {
+   "id": "bank-009",
+   "topic": "banking",
+   "difficulty": 2,
+   "type": "mc",
+   "question": "Many switch offers exclude you if, in a set period, you've had\u2026",
+   "options": [
+    "Any credit card",
+    "A previous switch bonus or account with that same bank",
+    "A mortgage with any lender"
+   ],
+   "answer": 1,
+   "explanation": "Eligibility rules often exclude recent customers or previous bonus claimants of the same bank (or bank group).",
+   "learn_more": "pb-bank-switch-bonuses"
+  },
+  {
+   "id": "bank-010",
+   "topic": "banking",
+   "difficulty": 2,
+   "type": "mc",
+   "question": "What's a \u201cclawback\u201d in an offer's terms?",
+   "options": [
+    "A bonus paid twice",
+    "The bank taking the bonus back if you break the conditions, e.g. closing the account early",
+    "A hidden monthly fee"
+   ],
+   "answer": 1,
+   "explanation": "Some offers can reclaim the bonus if you close the account or break the terms within a set period.",
+   "learn_more": "pb-bank-switch-bonuses"
+  },
+  {
+   "id": "bank-011",
+   "topic": "banking",
+   "difficulty": 1,
+   "type": "mc",
+   "question": "What is a Direct Debit?",
+   "options": [
+    "A payment you push yourself each time",
+    "An instruction letting a company collect payments, which can vary, from your account",
+    "A type of cheque"
+   ],
+   "answer": 1,
+   "explanation": "A Direct Debit lets an organisation collect money from your account. The amount can change, but you must be told in advance.",
+   "learn_more": "pb-bank-direct-debits"
+  },
+  {
+   "id": "bank-012",
+   "topic": "banking",
+   "difficulty": 2,
+   "type": "mc",
+   "question": "Direct Debit vs standing order: what's the key difference?",
+   "options": [
+    "There's no difference",
+    "You set and control a standing order; a Direct Debit is collected by the company and can vary",
+    "Standing orders are only for businesses"
+   ],
+   "answer": 1,
+   "explanation": "You control a standing order's amount and dates. A Direct Debit is pulled by the company.",
+   "learn_more": "pb-bank-direct-debits"
+  },
+  {
+   "id": "bank-013",
+   "topic": "banking",
+   "difficulty": 1,
+   "type": "mc",
+   "question": "The Direct Debit Guarantee means\u2026",
+   "options": [
+    "You get an immediate refund from your bank if a payment is taken in error",
+    "Your bills are capped",
+    "Your bank pays your bills if you can't"
+   ],
+   "answer": 0,
+   "explanation": "If an error is made, your bank must refund you straight away.",
+   "learn_more": "pb-bank-direct-debits"
+  },
+  {
+   "id": "bank-014",
+   "topic": "banking",
+   "difficulty": 2,
+   "type": "mc",
+   "question": "Since 2020, UK overdrafts are mostly charged as\u2026",
+   "options": [
+    "Daily fees",
+    "A single annual interest rate",
+    "A flat \u00a350 a month"
+   ],
+   "answer": 1,
+   "explanation": "FCA rules banned fixed daily and monthly overdraft fees. Overdrafts are now priced with a simple interest rate.",
+   "learn_more": "pb-bank-overdrafts"
+  },
+  {
+   "id": "bank-015",
+   "topic": "banking",
+   "difficulty": 2,
+   "type": "mc",
+   "question": "Compared with an arranged overdraft, an unarranged overdraft's rate can be\u2026",
+   "options": [
+    "Higher",
+    "No higher",
+    "Double"
+   ],
+   "answer": 1,
+   "explanation": "FCA rules stop banks charging more for unarranged overdrafts than arranged ones.",
+   "learn_more": "pb-bank-overdrafts"
+  },
+  {
+   "id": "bank-016",
+   "topic": "banking",
+   "difficulty": 1,
+   "type": "mc",
+   "question": "A sort code identifies\u2026",
+   "options": [
+    "Your bank and branch",
+    "Your credit score",
+    "Your account type"
+   ],
+   "answer": 0,
+   "explanation": "The sort code identifies the bank and branch. The account number identifies your account.",
+   "learn_more": "pb-bank-basics"
+  },
+  {
+   "id": "bank-017",
+   "topic": "banking",
+   "difficulty": 2,
+   "type": "mc",
+   "question": "Why does a bank check your ID when you open an account?",
+   "options": [
+    "Marketing",
+    "Anti-money-laundering rules require it",
+    "It's optional"
+   ],
+   "answer": 1,
+   "explanation": "Banks must verify who their customers are under anti-money-laundering rules.",
+   "learn_more": "pb-bank-basics"
+  },
+  {
+   "id": "bank-018",
+   "topic": "banking",
+   "difficulty": 3,
+   "type": "calc",
+   "question": "Your overdraft rate is 39.9% EAR. Roughly what does staying \u00a3500 overdrawn for a whole year cost?",
+   "options": [
+    "About \u00a320",
+    "About \u00a3200",
+    "About \u00a32,000"
+   ],
+   "answer": 1,
+   "explanation": "39.9% of \u00a3500 is about \u00a3200 a year.",
+   "learn_more": "pb-bank-overdrafts"
+  },
+  {
+   "id": "bank-019",
+   "topic": "banking",
+   "difficulty": 2,
+   "type": "mc",
+   "question": "What is Confirmation of Payee?",
+   "options": [
+    "A check that the name you enter matches the account you're paying",
+    "A receipt from a shop",
+    "A credit check"
+   ],
+   "answer": 0,
+   "explanation": "It warns you if the name doesn't match the account, which helps stop mistakes and scams.",
+   "learn_more": "pb-bank-basics"
+  },
+  {
+   "id": "bank-020",
+   "topic": "banking",
+   "difficulty": 3,
+   "type": "mc",
+   "question": "Before switching your only current account for a bonus, what's a sensible safeguard?",
+   "options": [
+    "Nothing needed",
+    "Open a second account to switch from, so your salary and bills aren't disrupted",
+    "Cancel all your Direct Debits first"
+   ],
+   "answer": 1,
+   "explanation": "Many hunters keep a spare account just for switching, so their main money never moves.",
+   "learn_more": "pb-bank-switch-bonuses"
+  },
+  {
+   "id": "bank-021",
+   "topic": "banking",
+   "difficulty": 2,
+   "type": "mc",
+   "question": "When you apply for a new current account, the bank\u2026",
+   "options": [
+    "Never checks your credit",
+    "Often runs a hard search, especially if there's an overdraft, which shows on your file",
+    "Always lowers your score permanently"
+   ],
+   "answer": 1,
+   "explanation": "Many current account applications involve a hard credit search. Space applications out if you're planning a mortgage.",
+   "learn_more": "pb-credit-score"
+  },
+  {
+   "id": "bank-022",
+   "topic": "banking",
+   "difficulty": 1,
+   "type": "mc",
+   "question": "What does a UK sort code identify?",
+   "options": [
+    "Your exact account number",
+    "The bank and branch your account is held at",
+    "Your card type",
+    "Your postcode"
+   ],
+   "answer": 1,
+   "explanation": "A sort code is 6 digits and identifies the bank and branch holding the account.",
+   "learn_more": "pb-bank-basics"
+  },
+  {
+   "id": "bank-023",
+   "topic": "banking",
+   "difficulty": 1,
+   "type": "mc",
+   "question": "What is a standing order?",
+   "options": [
+    "A company taking payment when it chooses",
+    "A fixed payment you set up to leave your account on set dates",
+    "A one-off bank transfer",
+    "A card payment"
+   ],
+   "answer": 1,
+   "explanation": "Standing orders are fixed amounts you control, sent on dates you choose.",
+   "learn_more": "pb-bank-direct-debits"
+  },
+  {
+   "id": "bank-024",
+   "topic": "banking",
+   "difficulty": 2,
+   "type": "mc",
+   "question": "What is the key difference between a Direct Debit and a standing order?",
+   "options": [
+    "Direct Debits are free, standing orders cost money",
+    "With a Direct Debit the company takes what it's owed with advance notice; a standing order sends a fixed amount you set",
+    "Direct Debits are only for bills",
+    "There is no difference"
+   ],
+   "answer": 1,
+   "explanation": "Direct Debit gives the company control of the amount with notice; standing orders are fixed and fully under your control.",
+   "learn_more": "pb-bank-direct-debits"
+  },
+  {
+   "id": "bank-025",
+   "topic": "banking",
+   "difficulty": 1,
+   "type": "mc",
+   "question": "Under the Direct Debit Guarantee, if a company takes the wrong amount you are entitled to:",
+   "options": [
+    "Half the amount back",
+    "A full and immediate refund from your bank",
+    "Nothing, it's your problem",
+    "Store credit"
+   ],
+   "answer": 1,
+   "explanation": "The Direct Debit Guarantee means any wrong payment is refunded in full and immediately by your bank.",
+   "learn_more": "pb-bank-direct-debits"
+  },
+  {
+   "id": "bank-026",
+   "topic": "banking",
+   "difficulty": 1,
+   "type": "mc",
+   "question": "What is an arranged overdraft?",
+   "options": [
+    "Free money from the bank",
+    "An agreed amount you can go overdrawn up to, usually charged interest daily",
+    "A savings account",
+    "A type of loan with fixed monthly payments"
+   ],
+   "answer": 1,
+   "explanation": "An arranged overdraft lets you borrow up to an agreed limit, and interest is charged on what you use.",
+   "learn_more": "pb-bank-overdrafts"
+  },
+  {
+   "id": "bank-027",
+   "topic": "banking",
+   "difficulty": 2,
+   "type": "mc",
+   "question": "As a general rule, overdrafts are usually:",
+   "options": [
+    "Cheaper than most credit cards",
+    "One of the more expensive ways to borrow, with APRs often comparable to or above credit cards",
+    "Interest free",
+    "Only for homeowners"
+   ],
+   "answer": 1,
+   "explanation": "Overdraft rates are often high, so they should be for short-term gaps, not regular borrowing.",
+   "learn_more": "pb-bank-overdrafts",
+   "volatile": true
+  },
+  {
+   "id": "bank-028",
+   "topic": "banking",
+   "difficulty": 1,
+   "type": "mc",
+   "question": "Which is a habit that reduces overdraft costs?",
+   "options": [
+    "Using the overdraft as extra income each month",
+    "Checking your balance before spending and moving money on payday",
+    "Never checking statements",
+    "Paying bills late"
+   ],
+   "answer": 1,
+   "explanation": "Most overdraft cost comes from drifting into it; checking your balance and topping up quickly keeps interest small.",
+   "learn_more": "pb-bank-overdrafts"
+  },
+  {
+   "id": "bank-029",
+   "topic": "banking",
+   "difficulty": 2,
+   "type": "mc",
+   "question": "What does Confirmation of Payee do?",
+   "options": [
+    "Blocks all payments",
+    "Checks the name you enter matches the account name before the payment goes",
+    "Guarantees you get money back if scammed",
+    "Confirms your identity to your employer"
+   ],
+   "answer": 1,
+   "explanation": "CoP warns you when the name you type doesn't match the receiving account, catching mistyped and fraudulent details.",
+   "learn_more": "pb-bank-basics"
+  },
+  {
+   "id": "bank-030",
+   "topic": "banking",
+   "difficulty": 1,
+   "type": "mc",
+   "question": "Faster Payments transfers between UK accounts usually arrive:",
+   "options": [
+    "Within a few seconds to a couple of hours",
+    "The next working day",
+    "In 7 days",
+    "Only on Mondays"
+   ],
+   "answer": 0,
+   "explanation": "Faster Payments run 24/7 and typically arrive in seconds, though they can take up to two hours.",
+   "learn_more": "pb-bank-basics"
+  },
+  {
+   "id": "bank-031",
+   "topic": "banking",
+   "difficulty": 1,
+   "type": "mc",
+   "question": "With a basic bank account you generally get:",
+   "options": [
+    "A cheque book and overdraft",
+    "A place to receive money and pay bills, without an overdraft",
+    "Cashback on everything",
+    "A credit card"
+   ],
+   "answer": 1,
+   "explanation": "Basic accounts let you receive, pay and withdraw, usually with no overdraft and no credit check.",
+   "learn_more": "pb-bank-basics",
+   "volatile": true
+  },
+  {
+   "id": "bank-032",
+   "topic": "banking",
+   "difficulty": 2,
+   "type": "mc",
+   "question": "When paying someone abroad, which detail set is typically used for a European transfer?",
+   "options": [
+    "Sort code and account number",
+    "IBAN and BIC/SWIFT",
+    "National Insurance number",
+    "Passport number"
+   ],
+   "answer": 1,
+   "explanation": "International payments use IBAN and BIC/SWIFT rather than a UK sort code.",
+   "learn_more": "pb-bank-basics"
+  },
+  {
+   "id": "bank-033",
+   "topic": "banking",
+   "difficulty": 1,
+   "type": "mc",
+   "question": "CASS moving your account will transfer:",
+   "options": [
+    "Only your card",
+    "Your balance, direct debits and standing orders, and redirect payments to the new account",
+    "Only your direct debits",
+    "Your credit history only"
+   ],
+   "answer": 2,
+   "explanation": "CASS moves the balance and payments, redirects anything sent to the old account, and closes the old account.",
+   "learn_more": "pb-bank-cass"
+  },
+  {
+   "id": "bank-034",
+   "topic": "banking",
+   "difficulty": 2,
+   "type": "mc",
+   "question": "Can you use CASS if you're overdrawn?",
+   "options": [
+    "No, never",
+    "Often yes, if your new bank agrees to take on the overdraft",
+    "Only if you clear it in full first",
+    "Only for under \u00a310"
+   ],
+   "answer": 1,
+   "explanation": "Switching with a negative balance is possible if the new bank accepts the overdraft; some may ask you to reduce it first.",
+   "learn_more": "pb-bank-cass"
+  },
+  {
+   "id": "bank-035",
+   "topic": "banking",
+   "difficulty": 2,
+   "type": "mc",
+   "question": "If a payment arrives at your old account after a CASS switch, what happens?",
+   "options": [
+    "It is lost",
+    "It is redirected to your new account for as long as needed",
+    "It is kept by the old bank",
+    "It is returned to sender"
+   ],
+   "answer": 1,
+   "explanation": "CASS redirects payments to the old account to your new one, so you don't miss incoming money.",
+   "learn_more": "pb-bank-cass"
+  },
+  {
+   "id": "bank-036",
+   "topic": "banking",
+   "difficulty": 2,
+   "type": "mc",
+   "question": "Cash bonuses for switching a personal current account are generally:",
+   "options": [
+    "Taxable income",
+    "Not treated as taxable income for most people",
+    "Only tax-free for students",
+    "Taxed at 50%"
+   ],
+   "answer": 1,
+   "explanation": "HMRC treats most personal current account switching incentives as not taxable, but rules can change so check current guidance.",
+   "learn_more": "pb-bank-switch-bonuses",
+   "volatile": true
+  },
+  {
+   "id": "bank-037",
+   "topic": "banking",
+   "difficulty": 1,
+   "type": "mc",
+   "question": "What is CHAPS mainly used for?",
+   "options": [
+    "Small daily payments",
+    "Large or time-critical payments such as house purchases, usually same-day and sometimes with a fee",
+    "Free international transfers",
+    "Paying in cash"
+   ],
+   "answer": 1,
+   "explanation": "CHAPS guarantees same-day transfer for large amounts, commonly used for property purchases, and some banks charge.",
+   "learn_more": "pb-bank-basics"
+  },
+  {
+   "id": "bank-038",
+   "topic": "banking",
+   "difficulty": 1,
+   "type": "mc",
+   "question": "When you switch using CASS, your old account:",
+   "options": [
+    "Stays open with your card",
+    "Closes automatically",
+    "Becomes a savings account",
+    "Keeps your direct debits"
+   ],
+   "answer": 1,
+   "explanation": "CASS closes the old account as part of the switch.",
+   "learn_more": "pb-bank-cass"
+  },
+  {
+   "id": "bank-039",
+   "topic": "banking",
+   "difficulty": 1,
+   "type": "mc",
+   "question": "Which of these can banks lawfully do?",
+   "options": [
+    "Ask for your full password over the phone",
+    "Close an account, with notice, giving a reason unless legally barred",
+    "Charge you for receiving money",
+    "Freeze your account to sell you products"
+   ],
+   "answer": 1,
+   "explanation": "Banks can close accounts with reasonable notice; they never need your full password or PIN.",
+   "learn_more": "pb-bank-basics"
+  },
+  {
+   "id": "bank-040",
+   "topic": "banking",
+   "difficulty": 2,
+   "type": "mc",
+   "question": "For a joint account, switching via CASS requires:",
+   "options": [
+    "Only one holder's signature",
+    "Both holders to agree",
+    "Neither holder, banks decide",
+    "A solicitor"
+   ],
+   "answer": 1,
+   "explanation": "Both account holders must agree to a joint account switch.",
+   "learn_more": "pb-bank-cass"
+  },
+  {
+   "id": "bank-041",
+   "topic": "banking",
+   "difficulty": 1,
+   "type": "mc",
+   "question": "Some current accounts pay interest on credit balances, but usually:",
+   "options": [
+    "Higher than savings accounts",
+    "Lower than you could get from a dedicated savings account",
+    "Tax free with no ISA needed",
+    "Only in December"
+   ],
+   "answer": 1,
+   "explanation": "Current account interest is usually modest; dedicated savings or ISAs usually beat it.",
+   "learn_more": "pb-bank-basics"
+  },
+  {
+   "id": "bank-042",
+   "topic": "banking",
+   "difficulty": 2,
+   "type": "mc",
+   "question": "If you dispute a card payment for goods that never arrived, the first step is:",
+   "options": [
+    "Do nothing and wait",
+    "Contact the retailer, then ask your bank about a chargeback or Section 75 if paid by credit card",
+    "Report your card lost",
+    "Cancel your direct debits"
+   ],
+   "answer": 2,
+   "explanation": "Complain to the retailer first; your bank can then consider chargeback, and credit card payments over \u00a3100 may get Section 75 protection.",
+   "learn_more": "pb-bank-basics"
+  },
+  {
+   "id": "bank-043",
+   "topic": "banking",
+   "difficulty": 1,
+   "type": "mc",
+   "question": "A adult current account in the UK normally requires you to be at least:",
+   "options": [
+    "12",
+    "16 or 18 depending on the account",
+    "21",
+    "25"
+   ],
+   "answer": 1,
+   "explanation": "Adult current accounts generally start at 16-18; under-16s get child or teen accounts.",
+   "learn_more": "pb-bank-basics",
+   "volatile": true
+  },
+  {
+   "id": "bank-044",
+   "topic": "banking",
+   "difficulty": 2,
+   "type": "mc",
+   "question": "What is an IBAN?",
+   "options": [
+    "A UK card number",
+    "An international bank account number used for cross-border payments",
+    "A sort code alias",
+    "A reference for standing orders"
+   ],
+   "answer": 1,
+   "explanation": "IBANs identify accounts internationally; UK IBANs start with GB.",
+   "learn_more": "pb-bank-basics"
+  },
+  {
+   "id": "bank-045",
+   "topic": "banking",
+   "difficulty": 2,
+   "type": "mc",
+   "question": "Going overdrawn regularly without an arrangement can lead to:",
+   "options": [
+    "Nothing at all",
+    "Refused payments, fees or the bank reducing your options, and can affect future applications",
+    "Higher salary",
+    "Better credit score"
+   ],
+   "answer": 1,
+   "explanation": "Unarranged overdrafts can mean refused payments and marks that hurt future applications.",
+   "learn_more": "pb-bank-overdrafts"
+  },
+  {
+   "id": "bank-046",
+   "topic": "banking",
+   "difficulty": 2,
+   "type": "mc",
+   "question": "Why do banks offer switch bonuses?",
+   "options": [
+    "They're losing money otherwise",
+    "Current accounts are profitable, so they pay to win customers from rivals",
+    "The government subsidises them",
+    "To close branches"
+   ],
+   "answer": 1,
+   "explanation": "Banks profit from current accounts through fees, lending and deposits, so paying to acquire you can be worth it.",
+   "learn_more": "pb-bank-switch-bonuses"
+  },
+  {
+   "id": "bank-047",
+   "topic": "banking",
+   "difficulty": 2,
+   "type": "mc",
+   "question": "Before switching away from a bank you owe money to, you should:",
+   "options": [
+    "Hide the debt",
+    "Check how the overdraft or debt is handled, as some debts can block or complicate the switch",
+    "Ignore it",
+    "Transfer the debt to a friend"
+   ],
+   "answer": 1,
+   "explanation": "Understand what happens to any overdraft or arranged borrowing before starting the switch.",
+   "learn_more": "pb-bank-cass"
+  },
+  {
+   "id": "bank-048",
+   "topic": "banking",
+   "difficulty": 1,
+   "type": "mc",
+   "question": "What does 'authorised push payment' (APP) mean?",
+   "options": [
+    "A card payment in a shop",
+    "You yourself authorise a transfer to a scammer's account",
+    "A direct debit",
+    "A standing order"
+   ],
+   "answer": 1,
+   "explanation": "APP fraud is when you're tricked into making the transfer yourself, which is why it's harder to reverse.",
+   "learn_more": "pb-bank-basics"
+  },
+  {
+   "id": "bank-049",
+   "topic": "banking",
+   "difficulty": 2,
+   "type": "mc",
+   "question": "Which is the safest way to check a message really came from your bank?",
+   "options": [
+    "Reply to the message asking",
+    "Use the phone number printed on your card or the official app, never the number in the message",
+    "Click the link in the message",
+    "Trust the caller ID"
+   ],
+   "answer": 1,
+   "explanation": "Caller ID and sender addresses can be spoofed; always contact your bank through official channels.",
+   "learn_more": "pb-bank-basics"
+  },
+  {
+   "id": "bank-050",
+   "topic": "banking",
+   "difficulty": 2,
+   "type": "mc",
+   "question": "Your bank calls saying your account is at risk and asks you to move money to a 'safe account'. This is:",
+   "options": [
+    "Standard procedure",
+    "A scam; banks never ask you to move money to a safe account",
+    "Only done on Fridays",
+    "Fine if they know your name"
+   ],
+   "answer": 1,
+   "explanation": "'Safe account' requests are always fraud. Hang up and call your bank using the number on your card.",
+   "learn_more": "pb-bank-basics",
+   "volatile": true
+  },
+  {
+   "id": "bank-051",
+   "topic": "banking",
+   "difficulty": 1,
+   "type": "mc",
+   "question": "What's the simplest first defence against overspending from your current account?",
+   "options": [
+    "Closing the account",
+    "Setting up a separate bills account and keeping spending money elsewhere",
+    "Never using your card",
+    "Asking your bank for a limit"
+   ],
+   "answer": 1,
+   "explanation": "Separating bills money from spending money is a simple, effective way to stop accidental overspend.",
+   "learn_more": "pb-bank-basics"
+  }
+ ]
+}

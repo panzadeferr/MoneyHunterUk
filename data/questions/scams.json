@@ -1,0 +1,323 @@
+{
+ "topic": "scams",
+ "questions": [
+  {
+   "id": "scam-001",
+   "topic": "scams",
+   "difficulty": 1,
+   "type": "mc",
+   "question": "A text claiming to be your bank asks you to reply with a code you just received. You should\u2026",
+   "options": [
+    "Reply with the code",
+    "Never share it: the code is only for you",
+    "Share only the first 3 digits"
+   ],
+   "answer": 1,
+   "explanation": "One-time codes are for you only.",
+   "learn_more": "pb-scam-phishing"
+  },
+  {
+   "id": "scam-002",
+   "topic": "scams",
+   "difficulty": 1,
+   "type": "mc",
+   "question": "A stranger offers you \u00a3200 to let money pass through your bank account. This is\u2026",
+   "options": [
+    "Easy side income",
+    "Money muling, which is illegal",
+    "Fine if you keep receipts"
+   ],
+   "answer": 1,
+   "explanation": "Money mules can be prosecuted and lose their bank accounts.",
+   "learn_more": "pb-scam-jobs-mules"
+  },
+  {
+   "id": "scam-003",
+   "topic": "scams",
+   "difficulty": 1,
+   "type": "mc",
+   "question": "Where can you forward a scam text for free in the UK?",
+   "options": [
+    "7726",
+    "999",
+    "Your contacts"
+   ],
+   "answer": 0,
+   "explanation": "7726 spells SPAM on a keypad.",
+   "learn_more": "pb-scam-reporting"
+  },
+  {
+   "id": "scam-004",
+   "topic": "scams",
+   "difficulty": 1,
+   "type": "mc",
+   "question": "A Marketplace seller insists on a bank transfer and refuses PayPal Goods & Services. The main risk?",
+   "options": [
+    "None",
+    "You lose buyer protection",
+    "Bank transfers are always refunded"
+   ],
+   "answer": 1,
+   "explanation": "Protected payment methods let you get money back if the item never arrives.",
+   "learn_more": "pb-scam-shopping"
+  },
+  {
+   "id": "scam-005",
+   "topic": "scams",
+   "difficulty": 2,
+   "type": "mc",
+   "question": "Authorised Push Payment (APP) fraud is when\u2026",
+   "options": [
+    "Someone steals your card",
+    "You're tricked into sending the money yourself",
+    "A bank charges you by mistake"
+   ],
+   "answer": 1,
+   "explanation": "You make the payment, tricked by someone posing as your bank, a seller or a friend.",
+   "learn_more": "pb-scam-app-fraud"
+  },
+  {
+   "id": "scam-006",
+   "topic": "scams",
+   "difficulty": 2,
+   "type": "mc",
+   "question": "Which web address is most likely fake?",
+   "options": [
+    "www.gov.uk/check-state-pension",
+    "gov-uk-refund.com/hmrc",
+    "www.tax.service.gov.uk"
+   ],
+   "answer": 1,
+   "explanation": "Real UK government sites end in .gov.uk.",
+   "learn_more": "pb-scam-phishing"
+  },
+  {
+   "id": "scam-007",
+   "topic": "scams",
+   "difficulty": 2,
+   "type": "mc",
+   "question": "After losing money to a scam, someone offers to recover it for an upfront fee. This is\u2026",
+   "options": [
+    "A legit service",
+    "Usually a second scam",
+    "Run by the police"
+   ],
+   "answer": 1,
+   "explanation": "Recovery scams target people who've already been scammed.",
+   "learn_more": "pb-scam-investment"
+  },
+  {
+   "id": "scam-008",
+   "topic": "scams",
+   "difficulty": 2,
+   "type": "mc",
+   "question": "A caller says they're from your bank and you're unsure. Safest move?",
+   "options": [
+    "Call back the number they gave you",
+    "Hang up and call 159 or the number on your card",
+    "Ask them to read out your balance"
+   ],
+   "answer": 1,
+   "explanation": "Scammers can fake caller ID.",
+   "learn_more": "pb-scam-app-fraud"
+  },
+  {
+   "id": "scam-009",
+   "topic": "scams",
+   "difficulty": 3,
+   "type": "mc",
+   "question": "A website shows a padlock next to its address. That means\u2026",
+   "options": [
+    "The site is definitely genuine",
+    "Only that the connection is encrypted",
+    "The government has checked it"
+   ],
+   "answer": 1,
+   "explanation": "Scam sites can have padlocks too.",
+   "learn_more": "pb-scam-phishing"
+  },
+  {
+   "id": "scam-010",
+   "topic": "scams",
+   "difficulty": 2,
+   "type": "mc",
+   "question": "Your bank will never ask you to\u2026",
+   "options": [
+    "Log into your app",
+    "Move money to a \u201csafe account\u201d",
+    "Choose a password"
+   ],
+   "answer": 1,
+   "explanation": "\u201cSafe account\u201d requests are always scams.",
+   "learn_more": "pb-scam-app-fraud"
+  },
+  {
+   "id": "scam-011",
+   "topic": "scams",
+   "difficulty": 2,
+   "type": "mc",
+   "question": "Since October 2024, mandatory reimbursement for APP fraud victims covers most cases up to\u2026",
+   "options": [
+    "\u00a3500",
+    "\u00a385,000",
+    "Unlimited"
+   ],
+   "answer": 1,
+   "explanation": "Banks must reimburse most APP fraud victims up to \u00a385,000, with some exceptions.",
+   "learn_more": "pb-scam-app-fraud",
+   "volatile": true,
+   "review_by": "2027-04-06",
+   "verify": "PSR APP reimbursement limit"
+  },
+  {
+   "id": "scam-012",
+   "topic": "scams",
+   "difficulty": 2,
+   "type": "mc",
+   "question": "A \u201cHi Mum\u201d scam message usually\u2026",
+   "options": [
+    "Comes from a new number asking for urgent money",
+    "Comes from your bank",
+    "Is a delivery update"
+   ],
+   "answer": 0,
+   "explanation": "Call the real person on their old number first.",
+   "learn_more": "pb-scam-phishing"
+  },
+  {
+   "id": "scam-013",
+   "topic": "scams",
+   "difficulty": 2,
+   "type": "mc",
+   "question": "A text says your parcel has a \u00a31.45 fee to pay via a link. Best move?",
+   "options": [
+    "Pay it quickly",
+    "Treat it as a likely scam and check via the courier's official site",
+    "Reply with your card details"
+   ],
+   "answer": 1,
+   "explanation": "Small fees are the hook to steal card details.",
+   "learn_more": "pb-scam-phishing"
+  },
+  {
+   "id": "scam-014",
+   "topic": "scams",
+   "difficulty": 1,
+   "type": "mc",
+   "question": "Which is the strongest password habit?",
+   "options": [
+    "The same password everywhere",
+    "Unique passwords or passphrases, a password manager and 2FA",
+    "Writing it on your card"
+   ],
+   "answer": 1,
+   "explanation": "Reused passwords let one breach unlock everything.",
+   "learn_more": "pb-scam-reporting"
+  },
+  {
+   "id": "scam-015",
+   "topic": "scams",
+   "difficulty": 2,
+   "type": "mc",
+   "question": "Two-factor authentication (2FA) means\u2026",
+   "options": [
+    "Two passwords",
+    "A second check, like a code or app approval, on top of your password",
+    "Two bank accounts"
+   ],
+   "answer": 1,
+   "explanation": "Even if a password leaks, 2FA blocks most break-ins.",
+   "learn_more": "pb-scam-reporting"
+  },
+  {
+   "id": "scam-016",
+   "topic": "scams",
+   "difficulty": 2,
+   "type": "mc",
+   "question": "A QR code sticker on a parking meter could be\u2026",
+   "options": [
+    "Always safe",
+    "A \u201cquishing\u201d scam leading to a fake payment page",
+    "A council discount"
+   ],
+   "answer": 1,
+   "explanation": "Use the official app or the meter itself where possible.",
+   "learn_more": "pb-scam-phishing"
+  },
+  {
+   "id": "scam-017",
+   "topic": "scams",
+   "difficulty": 3,
+   "type": "mc",
+   "question": "What can happen to someone caught acting as a money mule?",
+   "options": [
+    "Nothing",
+    "Prosecution, bank account closure and years of trouble getting credit",
+    "A small fine only"
+   ],
+   "answer": 1,
+   "explanation": "Consequences can last for years.",
+   "learn_more": "pb-scam-jobs-mules"
+  },
+  {
+   "id": "scam-018",
+   "topic": "scams",
+   "difficulty": 2,
+   "type": "mc",
+   "question": "A ticket seller on social media only accepts bank transfer. Safer option?",
+   "options": [
+    "Pay fast before it sells",
+    "Use official resale sites, or pay by credit card or PayPal Goods & Services",
+    "Pay in crypto"
+   ],
+   "answer": 1,
+   "explanation": "Ticket scams thrive on unprotected payments.",
+   "learn_more": "pb-scam-shopping"
+  },
+  {
+   "id": "scam-019",
+   "topic": "scams",
+   "difficulty": 2,
+   "type": "mc",
+   "question": "In the UK, you can report a suspicious email by forwarding it to\u2026",
+   "options": [
+    "report@phishing.gov.uk",
+    "999",
+    "Your contacts"
+   ],
+   "answer": 0,
+   "explanation": "The National Cyber Security Centre runs this reporting service.",
+   "learn_more": "pb-scam-reporting"
+  },
+  {
+   "id": "scam-020",
+   "topic": "scams",
+   "difficulty": 3,
+   "type": "mc",
+   "question": "Which is a classic romance-scam warning sign?",
+   "options": [
+    "They're happy to video call early on",
+    "They never meet in person, have repeated emergencies and ask for money",
+    "They introduce you to their friends"
+   ],
+   "answer": 1,
+   "explanation": "Never send money to someone you've only met online.",
+   "learn_more": "pb-scam-investment"
+  },
+  {
+   "id": "scam-021",
+   "topic": "scams",
+   "difficulty": 2,
+   "type": "mc",
+   "question": "An investment app shows big gains, but you must pay a \u201ctax\u201d or \u201cfee\u201d before you can withdraw. This is\u2026",
+   "options": [
+    "Normal",
+    "A classic scam sign",
+    "An FCA requirement"
+   ],
+   "answer": 1,
+   "explanation": "Fake platforms invent fees to squeeze out more money.",
+   "learn_more": "pb-scam-investment"
+  }
+ ]
+}

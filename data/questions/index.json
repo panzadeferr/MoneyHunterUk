@@ -1,0 +1,39 @@
+{
+ "version": 2,
+ "updated": "2026-10-11",
+ "schema": {
+  "answer": "index into options",
+  "difficulty": "1 easy, 2 medium, 3 hard",
+  "type": "mc | calc | investigate",
+  "learn_more": "Playbook article id (playbook.json)",
+  "volatile": "figure may change; re-check by review_by"
+ },
+ "files": {
+  "banking": "banking.json",
+  "bills": "bills.json",
+  "budgeting": "budgeting.json",
+  "cashback": "cashback.json",
+  "credit": "credit.json",
+  "investing": "investing.json",
+  "pensions": "pensions.json",
+  "saving": "saving.json",
+  "scams": "scams.json",
+  "shopping": "shopping.json",
+  "side": "side.json",
+  "tax": "tax.json"
+ },
+ "counts": {
+  "banking": 21,
+  "bills": 10,
+  "budgeting": 14,
+  "cashback": 11,
+  "credit": 20,
+  "investing": 20,
+  "pensions": 11,
+  "saving": 19,
+  "scams": 21,
+  "shopping": 15,
+  "side": 12,
+  "tax": 15
+ }
+}

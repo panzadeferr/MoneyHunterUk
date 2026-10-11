@@ -1,0 +1,618 @@
+{
+ "topic": "budgeting",
+ "questions": [
+  {
+   "id": "bud-001",
+   "topic": "budgeting",
+   "difficulty": 1,
+   "type": "mc",
+   "question": "The 50/30/20 rule splits take-home pay into\u2026",
+   "options": [
+    "Needs / wants / savings",
+    "Rent / food / fun",
+    "Tax / NI / pension"
+   ],
+   "answer": 0,
+   "explanation": "50% needs, 30% wants, 20% savings or debt repayment.",
+   "learn_more": "pb-budget-basics"
+  },
+  {
+   "id": "bud-002",
+   "topic": "budgeting",
+   "difficulty": 2,
+   "type": "calc",
+   "question": "On \u00a32,000 take-home a month, how much does 50/30/20 say to save?",
+   "options": [
+    "\u00a3200",
+    "\u00a3400",
+    "\u00a31,000"
+   ],
+   "answer": 1,
+   "explanation": "20% of \u00a32,000 = \u00a3400.",
+   "learn_more": "pb-budget-basics"
+  },
+  {
+   "id": "bud-003",
+   "topic": "budgeting",
+   "difficulty": 1,
+   "type": "mc",
+   "question": "Which of these is a \u201cneed\u201d?",
+   "options": [
+    "A streaming subscription",
+    "Rent",
+    "A takeaway"
+   ],
+   "answer": 1,
+   "explanation": "Needs are essentials such as housing, bills and food.",
+   "learn_more": "pb-budget-basics"
+  },
+  {
+   "id": "bud-004",
+   "topic": "budgeting",
+   "difficulty": 2,
+   "type": "mc",
+   "question": "\u201cPay yourself first\u201d means\u2026",
+   "options": [
+    "Treat yourself on payday",
+    "Move money to savings as soon as you're paid, before spending",
+    "Pay your own wages"
+   ],
+   "answer": 1,
+   "explanation": "Saving first means it actually happens.",
+   "learn_more": "pb-budget-basics"
+  },
+  {
+   "id": "bud-005",
+   "topic": "budgeting",
+   "difficulty": 2,
+   "type": "calc",
+   "question": "A forgotten \u00a312.99-a-month subscription costs you how much a year?",
+   "options": [
+    "\u00a3129.90",
+    "\u00a3155.88",
+    "\u00a399.00"
+   ],
+   "answer": 1,
+   "explanation": "\u00a312.99 \u00d7 12 = \u00a3155.88.",
+   "learn_more": "pb-budget-subscriptions"
+  },
+  {
+   "id": "bud-006",
+   "topic": "budgeting",
+   "difficulty": 2,
+   "type": "mc",
+   "question": "The quickest way to find forgotten subscriptions is\u2026",
+   "options": [
+    "Check your bank app for recurring payments",
+    "Wait for a letter",
+    "Guess"
+   ],
+   "answer": 0,
+   "explanation": "Most banking apps list recurring payments.",
+   "learn_more": "pb-budget-subscriptions"
+  },
+  {
+   "id": "bud-007",
+   "topic": "budgeting",
+   "difficulty": 3,
+   "type": "calc",
+   "question": "Saving \u00a35 a day adds up to roughly how much a year?",
+   "options": [
+    "\u00a3365",
+    "\u00a31,825",
+    "\u00a31,000"
+   ],
+   "answer": 1,
+   "explanation": "\u00a35 \u00d7 365 = \u00a31,825.",
+   "learn_more": "pb-budget-goals"
+  },
+  {
+   "id": "bud-008",
+   "topic": "budgeting",
+   "difficulty": 2,
+   "type": "mc",
+   "question": "A sinking fund is\u2026",
+   "options": [
+    "Money saved bit by bit for a known future cost, like an MOT or Christmas",
+    "A failing investment",
+    "A type of debt"
+   ],
+   "answer": 0,
+   "explanation": "Sinking funds stop predictable costs becoming surprises.",
+   "learn_more": "pb-budget-goals"
+  },
+  {
+   "id": "bud-009",
+   "topic": "budgeting",
+   "difficulty": 2,
+   "type": "mc",
+   "question": "Which is a SMART goal?",
+   "options": [
+    "\u201cSave more\u201d",
+    "\u201cSave \u00a3600 for a holiday by June by putting away \u00a3100 a month\u201d",
+    "\u201cBe rich\u201d"
+   ],
+   "answer": 1,
+   "explanation": "It's specific, measurable, achievable, relevant and time-bound.",
+   "learn_more": "pb-budget-goals"
+  },
+  {
+   "id": "bud-010",
+   "topic": "budgeting",
+   "difficulty": 1,
+   "type": "mc",
+   "question": "If you spend more than you earn, you have\u2026",
+   "options": [
+    "A surplus",
+    "A deficit",
+    "Savings"
+   ],
+   "answer": 1,
+   "explanation": "A deficit means money is running out or debt is building.",
+   "learn_more": "pb-budget-basics"
+  },
+  {
+   "id": "bud-011",
+   "topic": "budgeting",
+   "difficulty": 2,
+   "type": "mc",
+   "question": "Zero-based budgeting means\u2026",
+   "options": [
+    "Spending nothing",
+    "Giving every pound of income a job until nothing is unassigned",
+    "Having \u00a30 savings"
+   ],
+   "answer": 1,
+   "explanation": "Every pound is planned, including savings.",
+   "learn_more": "pb-budget-basics"
+  },
+  {
+   "id": "bud-012",
+   "topic": "budgeting",
+   "difficulty": 3,
+   "type": "calc",
+   "question": "Take-home pay \u00a32,200. Rent \u00a3900, bills \u00a3250, food \u00a3300, transport \u00a3150. What share goes on these needs?",
+   "options": [
+    "About 50%",
+    "About 73%",
+    "About 90%"
+   ],
+   "answer": 1,
+   "explanation": "\u00a31,600 \u00f7 \u00a32,200 \u2248 73%.",
+   "learn_more": "pb-budget-basics"
+  },
+  {
+   "id": "bud-013",
+   "topic": "budgeting",
+   "difficulty": 2,
+   "type": "mc",
+   "question": "A good trick against impulse buying is\u2026",
+   "options": [
+    "Waiting 24\u201348 hours before non-essential purchases",
+    "Buying immediately before the price rises",
+    "Using a credit card"
+   ],
+   "answer": 0,
+   "explanation": "A pause lets the urge pass.",
+   "learn_more": "pb-budget-basics"
+  },
+  {
+   "id": "bud-014",
+   "topic": "budgeting",
+   "difficulty": 2,
+   "type": "mc",
+   "question": "\u201cLifestyle creep\u201d is when\u2026",
+   "options": [
+    "Spending rises with your income, so you don't save more",
+    "A pension grows slowly",
+    "A scam slowly drains your account"
+   ],
+   "answer": 0,
+   "explanation": "Save part of every pay rise before you get used to it.",
+   "learn_more": "pb-budget-basics"
+  },
+  {
+   "id": "bud-015",
+   "topic": "budgeting",
+   "difficulty": 1,
+   "type": "mc",
+   "question": "The 50/30/20 rule suggests splitting take-home pay roughly:",
+   "options": [
+    "50% needs, 30% wants, 20% savings and debt",
+    "50% wants, 30% savings, 20% needs",
+    "50% tax, 30% rent, 20% fun",
+    "Equally in three"
+   ],
+   "answer": 0,
+   "explanation": "50/30/20 is a starting frame for needs, wants and savings, not a rigid law.",
+   "learn_more": "pb-budget-basics"
+  },
+  {
+   "id": "bud-016",
+   "topic": "budgeting",
+   "difficulty": 1,
+   "type": "mc",
+   "question": "'Pay yourself first' means:",
+   "options": [
+    "Reward yourself with spending",
+    "Move money to savings before spending on anything else",
+    "Pay bills last",
+    "Take a bigger salary"
+   ],
+   "answer": 1,
+   "explanation": "Savings get paid like a bill, at the start, so spending fits around them.",
+   "learn_more": "pb-budget-basics"
+  },
+  {
+   "id": "bud-017",
+   "topic": "budgeting",
+   "difficulty": 2,
+   "type": "mc",
+   "question": "A 'sinking fund' is:",
+   "options": [
+    "A failed investment",
+    "Money set aside gradually for a known future cost, like car tax or Christmas",
+    "A type of pension",
+    "An emergency loan"
+   ],
+   "answer": 1,
+   "explanation": "Sinking funds turn lumpy annual costs into smooth monthly amounts.",
+   "learn_more": "pb-budget-goals"
+  },
+  {
+   "id": "bud-018",
+   "topic": "budgeting",
+   "difficulty": 2,
+   "type": "mc",
+   "question": "Budgeting 'zero-based' means:",
+   "options": [
+    "Spend everything",
+    "Every pound is assigned a job until nothing is unallocated",
+    "No budget at all",
+    "Zero savings"
+   ],
+   "answer": 1,
+   "explanation": "Zero-based budgeting gives all income a purpose, including fun and savings.",
+   "learn_more": "pb-budget-basics"
+  },
+  {
+   "id": "bud-019",
+   "topic": "budgeting",
+   "difficulty": 1,
+   "type": "mc",
+   "question": "The fastest way to find budget leaks is to:",
+   "options": [
+    "Guess",
+    "Review a month of bank statements and card transactions line by line",
+    "Ask a friend",
+    "Close your bank account"
+   ],
+   "answer": 1,
+   "explanation": "Actual statements show real spending, which is usually different from what people remember.",
+   "learn_more": "pb-budget-basics"
+  },
+  {
+   "id": "bud-020",
+   "topic": "budgeting",
+   "difficulty": 2,
+   "type": "mc",
+   "question": "Irregular income (freelance, gig work) is best budgeted by:",
+   "options": [
+    "Assuming your best month every month",
+    "Budgeting on a conservative average and saving surplus months for lean ones",
+    "Ignoring income entirely",
+    "Spending as it arrives"
+   ],
+   "answer": 1,
+   "explanation": "Averaging down smooths the swings; treat good months as buffer, not baseline.",
+   "learn_more": "pb-budget-basics"
+  },
+  {
+   "id": "bud-021",
+   "topic": "budgeting",
+   "difficulty": 2,
+   "type": "mc",
+   "question": "Small subscriptions are dangerous because:",
+   "options": [
+    "They're illegal",
+    "They're individually small, feel painless, and quietly add up to a large monthly total",
+    "They're taxed",
+    "They expire"
+   ],
+   "answer": 1,
+   "explanation": "\u00a35 here and \u00a39 there is a \u00a3170/month habit before you notice.",
+   "learn_more": "pb-budget-subscriptions",
+   "volatile": true
+  },
+  {
+   "id": "bud-022",
+   "topic": "budgeting",
+   "difficulty": 1,
+   "type": "mc",
+   "question": "The best tool for cancelling forgotten subscriptions is:",
+   "options": [
+    "Hope",
+    "A statement review plus each service's cancellation flow, or your bank's subscription view",
+    "A new card",
+    "Ignoring direct debits"
+   ],
+   "answer": 1,
+   "explanation": "You can't cancel what you don't know you're paying for; review first, cancel second.",
+   "learn_more": "pb-budget-subscriptions"
+  },
+  {
+   "id": "bud-023",
+   "topic": "budgeting",
+   "difficulty": 2,
+   "type": "mc",
+   "question": "Budgeting for fun is important because:",
+   "options": [
+    "Fun is a luxury no one should have",
+    "Budgets without any enjoyment are usually abandoned, so a fun line makes the plan sustainable",
+    "Fun is tax deductible",
+    "It hides overspending"
+   ],
+   "answer": 1,
+   "explanation": "A sustainable budget includes enjoyment; deprivation budgets fail within weeks.",
+   "learn_more": "pb-budget-basics"
+  },
+  {
+   "id": "bud-024",
+   "topic": "budgeting",
+   "difficulty": 2,
+   "type": "mc",
+   "question": "'No-spend days' work mainly by:",
+   "options": [
+    "Eliminating bills",
+    "Breaking automatic spending habits and revealing how often spending is a reflex",
+    "Saving tax",
+    "Earning interest"
+   ],
+   "answer": 1,
+   "explanation": "No-spend days are habit training more than maths.",
+   "learn_more": "pb-budget-basics"
+  },
+  {
+   "id": "bud-025",
+   "topic": "budgeting",
+   "difficulty": 2,
+   "type": "mc",
+   "question": "A buffer category in a budget is for:",
+   "options": [
+    "Nice-to-haves",
+    "The small unexpected costs that would otherwise break the plan, like a parking ticket",
+    "Savings only",
+    "Salary"
+   ],
+   "answer": 1,
+   "explanation": "A modest buffer absorbs life's small surprises so the budget survives contact with reality.",
+   "learn_more": "pb-budget-basics"
+  },
+  {
+   "id": "bud-026",
+   "topic": "budgeting",
+   "difficulty": 1,
+   "type": "mc",
+   "question": "The debt snowball method means paying off debts:",
+   "options": [
+    "Smallest balance first for quick wins",
+    "Largest interest rate first",
+    "In random order",
+    "Newest first"
+   ],
+   "answer": 0,
+   "explanation": "Snowball = smallest balance first for motivation; avalanche = highest interest first for cheapest outcome.",
+   "learn_more": "pb-budget-goals"
+  },
+  {
+   "id": "bud-027",
+   "topic": "budgeting",
+   "difficulty": 2,
+   "type": "mc",
+   "question": "The debt avalanche method saves the most money because it targets:",
+   "options": [
+    "Smallest debts",
+    "The highest interest rate debts first, cutting total interest paid",
+    "Old debts",
+    "Personal loans only"
+   ],
+   "answer": 1,
+   "explanation": "Avalanche is mathematically optimal; snowball is psychologically easier. Pick the one you'll finish.",
+   "learn_more": "pb-budget-goals"
+  },
+  {
+   "id": "bud-028",
+   "topic": "budgeting",
+   "difficulty": 2,
+   "type": "mc",
+   "question": "Receiving a windfall is best handled by:",
+   "options": [
+    "Spending within 24 hours",
+    "Waiting, then splitting it deliberately between fun, savings and goals",
+    "Lending it all out",
+    "Hiding it"
+   ],
+   "answer": 1,
+   "explanation": "A pause prevents the classic windfall blowout; a deliberate split keeps some joy without losing it all.",
+   "learn_more": "pb-budget-goals"
+  },
+  {
+   "id": "bud-029",
+   "topic": "budgeting",
+   "difficulty": 2,
+   "type": "mc",
+   "question": "Weekly budgeting can work better than monthly because:",
+   "options": [
+    "Pay is always weekly",
+    "Weekly cycles give more frequent feedback and quicker course-correction",
+    "It's the law",
+    "It hides costs"
+   ],
+   "answer": 1,
+   "explanation": "Shorter cycles catch overspending before it snowballs.",
+   "learn_more": "pb-budget-basics"
+  },
+  {
+   "id": "bud-030",
+   "topic": "budgeting",
+   "difficulty": 1,
+   "type": "mc",
+   "question": "If your budget says you overspend on food, the highest-impact fix is usually:",
+   "options": [
+    "Switching supermarkets alone",
+    "Meal planning around what you have and shopping with a list",
+    "Eating out more",
+    "Buying branded items"
+   ],
+   "answer": 1,
+   "explanation": "Waste reduction and list discipline beat brand-swapping on most food budgets.",
+   "learn_more": "pb-budget-basics"
+  },
+  {
+   "id": "bud-031",
+   "topic": "budgeting",
+   "difficulty": 2,
+   "type": "mc",
+   "question": "Setting up automatic transfers to savings works best when they:",
+   "options": [
+    "Happen on payday",
+    "Happen at month end with leftovers",
+    "Are random",
+    "Are manual every time"
+   ],
+   "answer": 0,
+   "explanation": "Payday-timed automation makes saving the default and spending the decision.",
+   "learn_more": "pb-budget-goals"
+  },
+  {
+   "id": "bud-032",
+   "topic": "budgeting",
+   "difficulty": 2,
+   "type": "mc",
+   "question": "A budget review should happen:",
+   "options": [
+    "Once, ever",
+    "Regularly, at least monthly, adjusting for real life",
+    "Only in January",
+    "Never"
+   ],
+   "answer": 1,
+   "explanation": "Budgets drift; a monthly review keeps them honest and useful.",
+   "learn_more": "pb-budget-basics"
+  },
+  {
+   "id": "bud-033",
+   "topic": "budgeting",
+   "difficulty": 2,
+   "type": "mc",
+   "question": "If two partners share finances, the foundation is:",
+   "options": [
+    "Separate secret accounts",
+    "Agreed shared goals plus agreed personal spending allowance each",
+    "One person controls everything",
+    "No plan"
+   ],
+   "answer": 1,
+   "explanation": "Shared goals with personal freedom money prevents most money arguments.",
+   "learn_more": "pb-budget-basics"
+  },
+  {
+   "id": "bud-034",
+   "topic": "budgeting",
+   "difficulty": 1,
+   "type": "mc",
+   "question": "'Latte factor' thinking teaches that:",
+   "options": [
+    "Coffee is evil",
+    "Small recurring spends, multiplied over years, are real money worth reviewing",
+    "Cafes should close",
+    "You must never buy coffee"
+   ],
+   "answer": 1,
+   "explanation": "It's about auditing small recurring spends, not banning joy.",
+   "learn_more": "pb-budget-basics"
+  },
+  {
+   "id": "bud-035",
+   "topic": "budgeting",
+   "difficulty": 2,
+   "type": "mc",
+   "question": "When income rises, the biggest budget risk is:",
+   "options": [
+    "Saving more",
+    "Lifestyle inflation quietly absorbing the whole raise",
+    "Paying off debt",
+    "Feeling good"
+   ],
+   "answer": 1,
+   "explanation": "Capturing part of every raise for goals before lifestyle absorbs it is the habit that compounds.",
+   "learn_more": "pb-budget-goals"
+  },
+  {
+   "id": "bud-036",
+   "topic": "budgeting",
+   "difficulty": 2,
+   "type": "mc",
+   "question": "Envelopes (or digital pots) work because:",
+   "options": [
+    "Cash grows inside envelopes",
+    "Money is pre-allocated so overspending in one area is visible immediately",
+    "They're fashionable",
+    "Banks require them"
+   ],
+   "answer": 1,
+   "explanation": "Pre-allocation makes overspending a visible event rather than a slow drift.",
+   "learn_more": "pb-budget-basics"
+  },
+  {
+   "id": "bud-037",
+   "topic": "budgeting",
+   "difficulty": 1,
+   "type": "mc",
+   "question": "The first budget category to fund should be:",
+   "options": [
+    "Holidays",
+    "Essentials and then a small emergency buffer",
+    "Streaming",
+    "Eating out"
+   ],
+   "answer": 1,
+   "explanation": "Security first: essentials and a small buffer make everything else possible.",
+   "learn_more": "pb-budget-basics"
+  },
+  {
+   "id": "bud-038",
+   "topic": "budgeting",
+   "difficulty": 2,
+   "type": false,
+   "question": "A 12-month holiday fund of \u00a3600 means saving monthly:",
+   "options": [
+    "\u00a3600",
+    "\u00a350",
+    "\u00a3100",
+    "\u00a325"
+   ],
+   "answer": 1,
+   "explanation": "\u00a3600 \u00f7 12 = \u00a350 a month, a far smaller monthly bite than the bill in December.",
+   "learn_more": "pb-budget-goals",
+   "volatile": true
+  },
+  {
+   "id": "bud-039",
+   "topic": "budgeting",
+   "difficulty": 2,
+   "type": false,
+   "question": "You spend \u00a33.50 on a meal deal every workday. Rough annual cost is:",
+   "options": [
+    "\u00a391",
+    "\u00a3455",
+    "\u00a3910",
+    "\u00a31,820"
+   ],
+   "answer": 2,
+   "explanation": "\u00a33.50 \u00d7 about 260 workdays \u2248 \u00a3910 a year. Small habits, real money.",
+   "learn_more": "pb-budget-basics",
+   "volatile": true
+  }
+ ]
+}

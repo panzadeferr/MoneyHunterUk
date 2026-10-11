@@ -1,0 +1,570 @@
+{
+ "topic": "shopping",
+ "questions": [
+  {
+   "id": "shop-001",
+   "topic": "shopping",
+   "difficulty": 1,
+   "type": "calc",
+   "question": "Pack A: 6 eggs for \u00a31.50. Pack B: 15 eggs for \u00a33.30. Which is cheaper per egg?",
+   "options": [
+    "Pack A",
+    "Pack B",
+    "The same"
+   ],
+   "answer": 1,
+   "explanation": "A is 25p per egg, B is 22p.",
+   "learn_more": "pb-shop-unit-price"
+  },
+  {
+   "id": "shop-002",
+   "topic": "shopping",
+   "difficulty": 1,
+   "type": "calc",
+   "question": "Cereal A: 500g for \u00a32.00. Cereal B: 750g for \u00a32.70. Which is better value?",
+   "options": [
+    "Cereal A",
+    "Cereal B",
+    "The same"
+   ],
+   "answer": 1,
+   "explanation": "A is \u00a34.00/kg, B is \u00a33.60/kg.",
+   "learn_more": "pb-shop-unit-price"
+  },
+  {
+   "id": "shop-003",
+   "topic": "shopping",
+   "difficulty": 2,
+   "type": "calc",
+   "question": "\u201cWas \u00a35, now \u00a33.50.\u201d What's the discount?",
+   "options": [
+    "15%",
+    "30%",
+    "35%"
+   ],
+   "answer": 1,
+   "explanation": "\u00a31.50 off \u00a35 is 30%.",
+   "learn_more": "pb-shop-unit-price"
+  },
+  {
+   "id": "shop-004",
+   "topic": "shopping",
+   "difficulty": 2,
+   "type": "calc",
+   "question": "A 4-pack of tins costs \u00a34.00, a single tin 95p. Which is cheaper per tin?",
+   "options": [
+    "The 4-pack",
+    "Single tins",
+    "The same"
+   ],
+   "answer": 1,
+   "explanation": "The 4-pack is \u00a31.00 a tin. Multipacks aren't always cheaper.",
+   "learn_more": "pb-shop-unit-price"
+  },
+  {
+   "id": "shop-005",
+   "topic": "shopping",
+   "difficulty": 3,
+   "type": "calc",
+   "question": "Shampoo: 400ml for \u00a33.60 on \u201c3 for 2\u201d, or 1 litre for \u00a37.50. You need 1.2 litres. Cheapest way?",
+   "options": [
+    "Three 400ml bottles on 3 for 2",
+    "A 1 litre bottle plus one 400ml",
+    "The same price"
+   ],
+   "answer": 0,
+   "explanation": "3 for 2 = \u00a37.20 for 1.2 litres. The other way is \u00a311.10.",
+   "learn_more": "pb-shop-unit-price"
+  },
+  {
+   "id": "shop-006",
+   "topic": "shopping",
+   "difficulty": 3,
+   "type": "calc",
+   "question": "Coffee: a 200g jar for \u00a35.00 or a 750g bag for \u00a316.50. How much do you save per 100g with the bag?",
+   "options": [
+    "30p",
+    "50p",
+    "\u00a31.20"
+   ],
+   "answer": 0,
+   "explanation": "\u00a32.50 vs \u00a32.20 per 100g.",
+   "learn_more": "pb-shop-unit-price"
+  },
+  {
+   "id": "shop-007",
+   "topic": "shopping",
+   "difficulty": 1,
+   "type": "mc",
+   "question": "Shrinkflation is when\u2026",
+   "options": [
+    "Prices go down",
+    "The pack shrinks but the price stays the same",
+    "Shops close early"
+   ],
+   "answer": 1,
+   "explanation": "The unit price on the shelf label exposes it.",
+   "learn_more": "pb-shop-unit-price"
+  },
+  {
+   "id": "shop-008",
+   "topic": "shopping",
+   "difficulty": 1,
+   "type": "mc",
+   "question": "1,000 loyalty points are worth \u00a310 at the till or \u00a330 with a partner. The partner option is worth\u2026",
+   "options": [
+    "The same",
+    "Three times as much",
+    "Half as much"
+   ],
+   "answer": 1,
+   "explanation": "Partner rewards can multiply your points' value.",
+   "learn_more": "pb-shop-loyalty"
+  },
+  {
+   "id": "shop-009",
+   "topic": "shopping",
+   "difficulty": 2,
+   "type": "mc",
+   "question": "Under the Consumer Rights Act, you can reject faulty goods for a full refund within\u2026",
+   "options": [
+    "7 days",
+    "30 days",
+    "1 year"
+   ],
+   "answer": 1,
+   "explanation": "You have a 30-day short-term right to reject faulty goods.",
+   "learn_more": "pb-shop-consumer-rights"
+  },
+  {
+   "id": "shop-010",
+   "topic": "shopping",
+   "difficulty": 2,
+   "type": "mc",
+   "question": "Buying online from a UK trader, you usually have a cooling-off period of\u2026",
+   "options": [
+    "24 hours",
+    "14 days",
+    "60 days"
+   ],
+   "answer": 1,
+   "explanation": "For most online purchases you can cancel within 14 days. Some items, like personalised goods, are excluded.",
+   "learn_more": "pb-shop-consumer-rights"
+  },
+  {
+   "id": "shop-011",
+   "topic": "shopping",
+   "difficulty": 2,
+   "type": "mc",
+   "question": "Buy-one-get-one-free is good value only if\u2026",
+   "options": [
+    "Always",
+    "You'll actually use both before they go off",
+    "The packs are large"
+   ],
+   "answer": 1,
+   "explanation": "A free item you bin saves nothing.",
+   "learn_more": "pb-shop-unit-price"
+  },
+  {
+   "id": "shop-012",
+   "topic": "shopping",
+   "difficulty": 2,
+   "type": "mc",
+   "question": "\u201cUp to 70% off\u201d usually means\u2026",
+   "options": [
+    "Everything is 70% off",
+    "Only some items reach 70% off",
+    "You get 70% back later"
+   ],
+   "answer": 1,
+   "explanation": "\u201cUp to\u201d means the biggest discount applies to only a few items.",
+   "learn_more": "pb-shop-unit-price"
+  },
+  {
+   "id": "shop-013",
+   "topic": "shopping",
+   "difficulty": 3,
+   "type": "calc",
+   "question": "Juice: 500ml for \u00a31.75 or 2 litres for \u00a36.00. Which is cheaper per 100ml?",
+   "options": [
+    "The 500ml",
+    "The 2 litre",
+    "The same"
+   ],
+   "answer": 1,
+   "explanation": "35p vs 30p per 100ml.",
+   "learn_more": "pb-shop-unit-price"
+  },
+  {
+   "id": "shop-014",
+   "topic": "shopping",
+   "difficulty": 2,
+   "type": "mc",
+   "question": "When are supermarket reductions (yellow stickers) usually biggest?",
+   "options": [
+    "Early morning only",
+    "Later in the day",
+    "They never change"
+   ],
+   "answer": 1,
+   "explanation": "Prices often drop further towards closing.",
+   "learn_more": "pb-shop-unit-price"
+  },
+  {
+   "id": "shop-015",
+   "topic": "shopping",
+   "difficulty": 2,
+   "type": "calc",
+   "question": "You buy a \u00a350 supermarket gift card at 4% off via a cashback app, then pay with it and still earn 1 point per \u00a31 (1 point = 1p). Total saved?",
+   "options": [
+    "\u00a32.00",
+    "\u00a32.50",
+    "\u00a34.50"
+   ],
+   "answer": 1,
+   "explanation": "\u00a32 cashback + 50p in points = \u00a32.50.",
+   "learn_more": "pb-shop-supermarket-stacking"
+  },
+  {
+   "id": "shop-016",
+   "topic": "shopping",
+   "difficulty": 1,
+   "type": "mc",
+   "question": "The best way to compare two different pack sizes is:",
+   "options": [
+    "Total price",
+    "Price per 100g or per unit, shown on the shelf label",
+    "Brand reputation",
+    "Package colour"
+   ],
+   "answer": 1,
+   "explanation": "Unit pricing makes different sizes directly comparable.",
+   "learn_more": "pb-shop-unit-price"
+  },
+  {
+   "id": "shop-017",
+   "topic": "shopping",
+   "difficulty": 2,
+   "type": "mc",
+   "question": "'Best before' dates tell you about:",
+   "options": [
+    "Safety",
+    "Quality; food is usually safe after this date if it looks, smells and tastes fine",
+    "Exact expiry",
+    "Store rules only"
+   ],
+   "answer": 1,
+   "explanation": "Best before is about quality. 'Use by' is about safety and should be respected.",
+   "learn_more": "pb-shop-consumer-rights"
+  },
+  {
+   "id": "shop-018",
+   "topic": "shopping",
+   "difficulty": 2,
+   "type": "mc",
+   "question": "Reduced items with yellow stickers are best when:",
+   "options": [
+    "You buy them to freeze or use immediately",
+    "They sit in your fridge for a week",
+    "You buy them instead of things you need",
+    "They're dented"
+   ],
+   "answer": 0,
+   "explanation": "Yellow-sticker buys only save money if they get eaten or frozen, not binned.",
+   "learn_more": "pb-shop-unit-price"
+  },
+  {
+   "id": "shop-019",
+   "topic": "shopping",
+   "difficulty": 2,
+   "type": "mc",
+   "question": "Supermarket own brands are usually:",
+   "options": [
+    "Identical price to brands",
+    "Significantly cheaper, often with similar ingredients, sometimes even made in the same factories",
+    "Always worse quality",
+    "Rare"
+   ],
+   "answer": 1,
+   "explanation": "Own-brand staples are often much cheaper and worth testing before assuming brand is better.",
+   "learn_more": "pb-shop-unit-price",
+   "volatile": true
+  },
+  {
+   "id": "shop-020",
+   "topic": "shopping",
+   "difficulty": 2,
+   "type": "mc",
+   "question": "Loyalty points are worth the most when:",
+   "options": [
+    "Collected on things you'd buy anyway and redeemed deliberately",
+    "You change your shopping to chase points",
+    "They're hoarded for decades",
+    "You buy points"
+   ],
+   "answer": 0,
+   "explanation": "Points are a discount on planned spending, not a reason to spend more.",
+   "learn_more": "pb-shop-loyalty"
+  },
+  {
+   "id": "shop-021",
+   "topic": "shopping",
+   "difficulty": 2,
+   "type": "mc",
+   "question": "A loyalty scheme that raises prices for non-members may mean:",
+   "options": [
+    "Nothing changes",
+    "The 'discount' is partly just the normal price, so check baseline prices",
+    "You get free money",
+    "Members pay more"
+   ],
+   "answer": 1,
+   "explanation": "Compare member vs non-member prices against other shops to see if the scheme is a real saving.",
+   "learn_more": "pb-shop-loyalty",
+   "volatile": true
+  },
+  {
+   "id": "shop-022",
+   "topic": "shopping",
+   "difficulty": 1,
+   "type": "mc",
+   "question": "For online orders, UK distance selling rules normally give you:",
+   "options": [
+    "No rights to cancel",
+    "A 14-day cooling-off period to cancel most purchases and return them",
+    "30 days free shipping",
+    "A lifetime guarantee"
+   ],
+   "answer": 1,
+   "explanation": "Most online purchases have a 14-day cancellation right from delivery, with some exceptions.",
+   "learn_more": "pb-shop-consumer-rights"
+  },
+  {
+   "id": "shop-023",
+   "topic": "shopping",
+   "difficulty": 1,
+   "type": "mc",
+   "question": "Under the Consumer Rights Act, goods must be:",
+   "options": [
+    "Cheap",
+    "As described, of satisfactory quality and fit for purpose",
+    "Made in the UK",
+    "Brand new always"
+   ],
+   "answer": 1,
+   "explanation": "These are your core statutory rights for goods, on top of any warranty.",
+   "learn_more": "pb-shop-consumer-rights"
+  },
+  {
+   "id": "shop-024",
+   "topic": "shopping",
+   "difficulty": 2,
+   "type": "mc",
+   "question": "If an item is faulty, you generally have the strongest position:",
+   "options": [
+    "Within 30 days of purchase, with a short-term right to a full refund",
+    "After 2 years",
+    "Never",
+    "Only with a receipt from the exact till"
+   ],
+   "answer": 0,
+   "explanation": "The 30-day short-term right to reject gives a full refund; after that, repair or replacement comes first.",
+   "learn_more": "pb-shop-consumer-rights"
+  },
+  {
+   "id": "shop-025",
+   "topic": "shopping",
+   "difficulty": 2,
+   "type": "mc",
+   "question": "Between 30 days and 6 months, for a faulty item the burden of proof is:",
+   "options": [
+    "On you to prove it was faulty at delivery",
+    "On the retailer to prove the fault wasn't there at delivery",
+    "On the manufacturer",
+    "Shared equally"
+   ],
+   "answer": 1,
+   "explanation": "In the first 6 months it's generally assumed the fault was present unless the retailer proves otherwise.",
+   "learn_more": "pb-shop-consumer-rights"
+  },
+  {
+   "id": "shop-026",
+   "topic": "shopping",
+   "difficulty": 2,
+   "type": "mc",
+   "question": "A free trial that needs card details should be:",
+   "options": [
+    "Forgotten about",
+    "Diarised with a reminder before the charge date, and cancelled if you don't want it",
+    "Kept forever",
+    "Given a spare card you don't use"
+   ],
+   "answer": 1,
+   "explanation": "Subscription traps rely on you forgetting; set a reminder before the trial converts.",
+   "learn_more": "pb-shop-consumer-rights"
+  },
+  {
+   "id": "shop-027",
+   "topic": "shopping",
+   "difficulty": 2,
+   "type": "mc",
+   "question": "Delivery charges can flip which retailer is cheapest, so you should compare:",
+   "options": [
+    "Item price only",
+    "Item price plus delivery, and returns costs",
+    "Only the returns policy",
+    "The checkout total on a different currency"
+   ],
+   "answer": 1,
+   "explanation": "The real total includes delivery and the realistic cost of a return.",
+   "learn_more": "pb-shop-unit-price"
+  },
+  {
+   "id": "shop-028",
+   "topic": "shopping",
+   "difficulty": 2,
+   "type": "mc",
+   "question": "Click & collect is often worth considering because:",
+   "options": [
+    "It's trendy",
+    "It's frequently free and avoids delivery charges and missed-delivery problems",
+    "Stores pay you",
+    "It's faster than delivery always"
+   ],
+   "answer": 1,
+   "explanation": "Free collection beats a \u00a33-6 delivery fee on small orders.",
+   "learn_more": "pb-shop-unit-price"
+  },
+  {
+   "id": "shop-029",
+   "topic": "shopping",
+   "difficulty": 2,
+   "type": "mc",
+   "question": "Black Friday deals can be better judged by:",
+   "options": [
+    "Trusting the '50% off' sticker",
+    "Checking the price history, as some 'deals' match or exceed normal prices",
+    "Buying fast",
+    "Only shopping at night"
+   ],
+   "answer": 1,
+   "explanation": "Some sale prices aren't real discounts; price-history tools or your own notes reveal the truth.",
+   "learn_more": "pb-shop-unit-price",
+   "volatile": true
+  },
+  {
+   "id": "shop-030",
+   "topic": "shopping",
+   "difficulty": 1,
+   "type": "mc",
+   "question": "Refurbished goods from reputable sellers usually come with:",
+   "options": [
+    "No protection",
+    "A warranty, often 12 months, at a meaningful discount",
+    "No returns ever",
+    "Inflated prices"
+   ],
+   "answer": 1,
+   "explanation": "Reputable refurb sellers offer warranties and returns, unlike private 'refurb' listings.",
+   "learn_more": "pb-shop-consumer-rights"
+  },
+  {
+   "id": "shop-031",
+   "topic": "shopping",
+   "difficulty": 2,
+   "type": "mc",
+   "question": "Buying second-hand from private individuals carries more risk because:",
+   "options": [
+    "Statutory consumer rights don't apply between private sellers",
+    "They always lie",
+    "It's illegal",
+    "Prices are higher"
+   ],
+   "answer": 0,
+   "explanation": "Private sales lack the Consumer Rights Act, so inspect carefully and pay in protected ways.",
+   "learn_more": "pb-shop-consumer-rights"
+  },
+  {
+   "id": "shop-032",
+   "topic": "shopping",
+   "difficulty": 2,
+   "type": "mc",
+   "question": "Price-match promises between supermarkets can save time, but check:",
+   "options": [
+    "The exact terms, like identical items and which competitors qualify",
+    "Your horoscope",
+    "Nothing",
+    "Only the date"
+   ],
+   "answer": 0,
+   "explanation": "Price-match schemes have specific rules; they only cover qualifying identical products.",
+   "learn_more": "pb-shop-loyalty",
+   "volatile": true
+  },
+  {
+   "id": "shop-033",
+   "topic": "shopping",
+   "difficulty": 2,
+   "type": "mc",
+   "question": "'Multi-buy' offers are worth checking against:",
+   "options": [
+    "Unit price of buying separately",
+    "Nothing",
+    "The smell",
+    "Store opening hours"
+   ],
+   "answer": 0,
+   "explanation": "Multi-buys sometimes cost the same or more than buying singles at their normal price.",
+   "learn_more": "pb-shop-unit-price"
+  },
+  {
+   "id": "shop-034",
+   "topic": "shopping",
+   "difficulty": 2,
+   "type": "mc",
+   "question": "Cashback and voucher sites save the most when used:",
+   "options": [
+    "Impulsively on anything",
+    "On planned purchases, with a quick check before checkout",
+    "Never",
+    "Only on Mondays"
+   ],
+   "answer": 1,
+   "explanation": "The stacking habit matters more than any single deal.",
+   "learn_more": "pb-shop-unit-price"
+  },
+  {
+   "id": "shop-035",
+   "topic": "shopping",
+   "difficulty": 1,
+   "type": "mc",
+   "question": "A warranty from a manufacturer:",
+   "options": [
+    "Replaces your statutory rights",
+    "Is extra to your statutory rights, which you always keep",
+    "Is legally required",
+    "Is always worth paying for"
+   ],
+   "answer": 1,
+   "explanation": "You can't be made to buy an extended warranty to get your statutory rights.",
+   "learn_more": "pb-shop-consumer-rights"
+  },
+  {
+   "id": "shop-036",
+   "topic": "shopping",
+   "difficulty": 2,
+   "type": "mc",
+   "question": "Food shopping savings that compound hardest over a year are:",
+   "options": [
+    "One big sale item",
+    "Planning meals around what's reduced and in season, cutting waste",
+    "Buying branded water",
+    "Skipping breakfast"
+   ],
+   "answer": 1,
+   "explanation": "Cutting food waste and planning are the durable wins; single deals are one-offs.",
+   "learn_more": "pb-shop-unit-price"
+  }
+ ]
+}

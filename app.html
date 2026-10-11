@@ -5202,6 +5202,53 @@
 
     // Playbook guide deep links: app.html?guide=ID or app.html#ID (guide-* and pb-* ids)
     const GUIDE_ALIASES = { 'pb-bank-cass': 'guide-bankswitch' };
+    // Data-driven guides: articles in playbook.json with a body and no inline guide get rendered here
+    let playbookGuidesLoaded = false;
+    function renderGuideText(text) {
+      function esc(x) { return String(x).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;'); }
+      return String(text).split(/\n\n+/).map(function (p) {
+        const lines = p.split('\n');
+        if (lines.length && lines.every(function (l) { return l.indexOf('- ') === 0; })) {
+          return '<ul class="guide-ul">' + lines.map(function (l) { return '<li>' + esc(l.slice(2)) + '</li>'; }).join('') + '</ul>';
+        }
+        return '<p class="guide-p">' + esc(p) + '</p>';
+      }).join('');
+    }
+    async function loadPlaybookGuides() {
+      if (playbookGuidesLoaded) return;
+      let data = null;
+      try {
+        const res = await fetch('/data/playbook.json?v=' + Date.now());
+        if (!res.ok) return;
+        data = await res.json();
+      } catch (e) { return; }
+      if (!data || !data.chapters) return;
+      const list = document.querySelector('.guide-list');
+      const pills = document.getElementById('playbookPills');
+      if (!list) return;
+      let cards = ''; let newPills = ''; const seenChapters = {};
+      for (const ch of data.chapters) {
+        const arts = (ch.articles || []).filter(function (a) { return a.body && !a.existing_guide; });
+        if (!arts.length) continue;
+        const filterId = 'pbch-' + ch.id;
+        if (!seenChapters[ch.id] && pills) {
+          newPills += '<div class="pb-pill" data-pill="' + filterId + '" onclick="filterPlaybook(\'' + filterId + '\',this)">' + (ch.icon ? ch.icon + ' ' : '') + ch.title + '</div>';
+          seenChapters[ch.id] = true;
+        }
+        for (const a of arts) {
+          const icon = ch.icon || '\uD83D\uDCD8';
+          cards += '<div class="guide-card card" data-guide="' + filterId + '">' +
+            '<div class="guide-card-head" onclick="toggleGuide(\'' + a.id + '\')">' +
+            '<div class="guide-icon green">' + icon + '</div><div><h3>' + a.title + '</h3>' +
+            '<p class="guide-meta">' + (a.summary || '') + '</p></div></div>' +
+            '<button class="guide-expand-btn" id="btn-' + a.id + '" onclick="toggleGuide(\'' + a.id + '\')">Read Guide \u2193</button>' +
+            '<div class="guide-body" id="' + a.id + '">' + renderGuideText(a.body) + '</div></div>';
+        }
+      }
+      if (cards) list.insertAdjacentHTML('beforeend', cards);
+      if (newPills && pills) pills.insertAdjacentHTML('beforeend', newPills);
+      playbookGuidesLoaded = true;
+    }
     function resolveGuideId(v) {
       if (!v) return null;
       if (document.getElementById(v)) return v;
@@ -7596,7 +7643,7 @@ function initTheme() {
       initAuth();
       checkPasswordResetToken();
       checkAdminAccess();
-      initGuideDeepLink();
+      loadPlaybookGuides().catch(function(){}).finally(function(){ initGuideDeepLink(); });
       renderGuideLiveOffers();
       initBackButton();
       showOnboard();

@@ -1,4 +1,5 @@
 // data.js: loads game data from /data/ (network-first, same origin) and picks questions.
+// Questions live in per-topic files under /data/questions/ listed in index.json.
 const CREATURES = {
   coinling: { name: 'Coinling', type: 'cash',  sx: 0,  sy: 48, maxhp: 34, topics: ['banking', 'cashback'] },
   piggle:   { name: 'Piggle',   type: 'save',  sx: 32, sy: 48, maxhp: 38, topics: ['saving', 'bills'] },
@@ -23,12 +24,26 @@ async function fetchJSON(url) {
 }
 
 async function loadData() {
-  const [q, p] = await Promise.all([
-    fetchJSON('/data/questions.json'),
+  const [qIndex, p] = await Promise.all([
+    fetchJSON('/data/questions/index.json'),
     fetchJSON('/data/playbook.json')
   ]);
-  const questions = (q && q.questions) ? q.questions : [];
   const playbook = (p && p.chapters) ? p : { chapters: [] };
+  let questions = [];
+  if (qIndex && qIndex.files) {
+    // legacy single-file fallback if the index lists it
+    const parts = await Promise.all(
+      Object.entries(qIndex.files).map(([topic, file]) => fetchJSON('/data/questions/' + file))
+    );
+    for (const part of parts) {
+      if (part && part.questions && part.questions.length) {
+        questions = questions.concat(part.questions);
+      }
+    }
+  } else {
+    const legacy = await fetchJSON('/data/questions.json');
+    if (legacy && legacy.questions) questions = legacy.questions;
+  }
   const byTopic = {};
   for (const question of questions) {
     (byTopic[question.topic || 'general'] = byTopic[question.topic || 'general'] || []).push(question);
