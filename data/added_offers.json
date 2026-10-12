@@ -1,0 +1,5 @@
+{
+  "schema": 1,
+  "_note": "Offers Alberto approved from newsletter leads via the Telegram bot (Add button). The scraper loads them like manual offers and drops them after their expiry date. Written in our own words; links go to the provider, never to the newsletter.",
+  "offers": []
+}

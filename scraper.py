@@ -119,6 +119,41 @@ def apply_checked_rates(path: str = CASHBACK_RATES_FILE, today=None) -> int:
     return updated
 
 
+ADDED_OFFERS_FILE = os.path.join(
+    os.path.dirname(os.path.abspath(__file__)), "data", "added_offers.json")
+
+
+def load_added_offers(existing, path: str = ADDED_OFFERS_FILE, today=None) -> List[Dict]:
+    """Offers Alberto approved from newsletter leads (data/added_offers.json).
+    They behave like manual offers. Expired ones, malformed ones and stores
+    already in the manual list are skipped."""
+    today = (today or datetime.now().date()).isoformat()
+    try:
+        with open(path, encoding="utf-8") as f:
+            offers = json.load(f).get("offers", [])
+    except (OSError, ValueError, AttributeError) as e:
+        print(f"Added offers file not used ({e})")
+        return []
+    known = {str(o.get("store", "")).strip().lower() for o in existing}
+    out = []
+    for o in offers if isinstance(offers, list) else []:
+        if not isinstance(o, dict):
+            continue
+        store = str(o.get("store", "")).strip()
+        link = str(o.get("link", ""))
+        if not store or not o.get("item") or not o.get("deal_price") \
+                or not link.startswith("https://"):
+            continue
+        if str(o.get("expires") or "")[:10] and str(o["expires"])[:10] < today:
+            continue
+        if store.lower() in known:
+            continue
+        known.add(store.lower())
+        out.append(o)
+    print(f"Added offers (from newsletter leads): {len(out)}")
+    return out
+
+
 # ============================================
 # PROTECTED STORES (Alberto's referral links)
 # ============================================
@@ -1256,6 +1291,7 @@ def run_all_scrapers() -> Dict:
     # Get manual offers (30+)
     print("\n[BOX] Fetching manual offers (bank switches, referrals, cashback)...")
     manual_offers = get_manual_offers()
+    manual_offers += load_added_offers(manual_offers)
     all_deals.extend(manual_offers)
     print(f"   Found {len(manual_offers)} manual offers")
     

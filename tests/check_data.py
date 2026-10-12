@@ -160,6 +160,28 @@ else:
             n_rates += 1
     print(f"Cashback rate checks passed: {n_rates} checked rate(s).")
 
+# ── Offers added from newsletter leads (/data/added_offers.json) ──
+apath = ROOT / "data" / "added_offers.json"
+if apath.exists():
+    adata = json.loads(apath.read_text(encoding="utf-8"))
+    added = adata.get("offers")
+    if not isinstance(added, list):
+        fail("added_offers.json: 'offers' must be a list")
+        added = []
+    for o in added:
+        nm = o.get("store", "?") if isinstance(o, dict) else "?"
+        if not isinstance(o, dict):
+            fail("added_offers.json: every offer must be an object")
+            continue
+        for f in ("store", "item", "deal_price", "link", "type"):
+            if not o.get(f):
+                fail(f"added_offers.json: {nm} missing {f}")
+        if o.get("link") and not str(o["link"]).startswith("https://"):
+            fail(f"added_offers.json: {nm} link must be https")
+        if "moneysavingexpert" in str(o.get("link", "")).lower():
+            fail(f"added_offers.json: {nm} links to the newsletter, not the provider")
+    print(f"Added offer checks passed: {len(added)} offer(s).")
+
 if errors:
     print("DATA CHECKS FAILED:")
     for e in errors:
