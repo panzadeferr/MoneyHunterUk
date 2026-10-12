@@ -1,0 +1,18 @@
+{
+  "schema": 1,
+  "_note": "Gift card cashback per supermarket per app. Updated from Alberto's own app screenshots via the Telegram agent. null = not checked yet. Each rate keeps its own checked_at date. Do not fill from Scrimpr or any other site.",
+  "updated_at": null,
+  "apps": {
+    "jamdoughnut": "Jam Doughnut",
+    "everup": "EverUp",
+    "airtime": "Airtime Rewards"
+  },
+  "retailers": {
+    "Tesco": {"jamdoughnut": null, "everup": null, "airtime": null},
+    "Sainsbury's": {"jamdoughnut": null, "everup": null, "airtime": null},
+    "Asda": {"jamdoughnut": null, "everup": null, "airtime": null},
+    "Iceland": {"jamdoughnut": null, "everup": null, "airtime": null},
+    "Morrisons": {"jamdoughnut": null, "everup": null, "airtime": null},
+    "Waitrose": {"jamdoughnut": null, "everup": null, "airtime": null}
+  }
+}

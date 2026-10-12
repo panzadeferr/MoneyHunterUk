@@ -63,6 +63,61 @@ BEST_PAYMENT = {
     "Lidl": "No gift cards, but use cashback credit card"
 }
 
+# Loyalty-scheme name and its extra % on top of the gift card rate.
+# The extras are what the hardcoded STACKING_RATES above already assumed
+# (stacking rate minus the hardcoded gift card rate).
+LOYALTY = {
+    "Tesco": ("Clubcard", 0.4),
+    "Sainsbury's": ("Nectar", 0.3),
+    "Asda": ("Asda Rewards", 0.5),
+    "Iceland": ("Bonus Card", 1.5),
+    "Morrisons": ("More Card", 1.0),
+    "Waitrose": ("MyWaitrose", 0.0),
+}
+
+CASHBACK_RATES_FILE = os.path.join(
+    os.path.dirname(os.path.abspath(__file__)), "data", "cashback_rates.json")
+RATE_MAX_AGE_DAYS = 21
+
+
+def apply_checked_rates(path: str = CASHBACK_RATES_FILE, today=None) -> int:
+    """Override STACKING_RATES/BEST_PAYMENT with rates Alberto checked in the
+    apps (data/cashback_rates.json). Only rates checked in the last
+    RATE_MAX_AGE_DAYS count; anything missing or stale keeps the hardcoded
+    fallback. Returns how many stores were updated."""
+    today = today or datetime.now().date()
+    try:
+        with open(path, encoding="utf-8") as f:
+            data = json.load(f)
+    except (OSError, ValueError) as e:
+        print(f"Cashback rates file not used ({e}); keeping hardcoded rates")
+        return 0
+    apps = data.get("apps", {})
+    updated = 0
+    for store, by_app in (data.get("retailers") or {}).items():
+        best = None
+        for app_key, entry in (by_app or {}).items():
+            if not isinstance(entry, dict):
+                continue
+            try:
+                rate = float(entry["rate"])
+                checked = datetime.strptime(entry["checked_at"][:10], "%Y-%m-%d").date()
+            except (KeyError, TypeError, ValueError):
+                continue
+            if not 0 < rate <= 25 or (today - checked).days > RATE_MAX_AGE_DAYS:
+                continue
+            if best is None or rate > best[0]:
+                best = (rate, apps.get(app_key, app_key))
+        if best is None:
+            continue
+        rate, app_name = best
+        scheme, extra = LOYALTY.get(store, ("loyalty", 0.0))
+        STACKING_RATES[store] = round(rate + extra, 2)
+        BEST_PAYMENT[store] = f"{app_name} ({rate:g}%) + {scheme}"
+        updated += 1
+    print(f"Cashback rates: {updated} store(s) use app-checked rates")
+    return updated
+
 
 # ============================================
 # PROTECTED STORES (Alberto's referral links)
@@ -1194,6 +1249,7 @@ def run_all_scrapers() -> Dict:
     """Run all scrapers and save results with enhanced data integrity"""
     print("Money Hunters Scraper Starting...")
     print("=" * 50)
+    apply_checked_rates()
     
     all_deals = []
     

@@ -133,6 +133,33 @@ for mp in maps:
 if not maps:
     print("note: no game/maps/*.tmj present yet, map checks skipped")
 
+# ── Gift card cashback rates (/data/cashback_rates.json) ──
+rpath = ROOT / "data" / "cashback_rates.json"
+if not rpath.exists():
+    print("note: data/cashback_rates.json not present, rate checks skipped")
+else:
+    rdata = json.loads(rpath.read_text(encoding="utf-8"))
+    apps = rdata.get("apps") or {}
+    if not apps:
+        fail("cashback_rates.json: no apps listed")
+    n_rates = 0
+    for store, by_app in (rdata.get("retailers") or {}).items():
+        for app_key, entry in (by_app or {}).items():
+            if app_key not in apps:
+                fail(f"cashback_rates.json: {store} has unknown app {app_key!r}")
+            if entry is None:
+                continue
+            if not isinstance(entry, dict):
+                fail(f"cashback_rates.json: {store}/{app_key} must be null or an object")
+                continue
+            rate, checked = entry.get("rate"), str(entry.get("checked_at") or "")
+            if not isinstance(rate, (int, float)) or not 0 < rate <= 25:
+                fail(f"cashback_rates.json: {store}/{app_key} rate {rate!r} not in 0-25%")
+            if not re.fullmatch(r"\d{4}-\d{2}-\d{2}", checked) or checked > today:
+                fail(f"cashback_rates.json: {store}/{app_key} bad checked_at {checked!r}")
+            n_rates += 1
+    print(f"Cashback rate checks passed: {n_rates} checked rate(s).")
+
 if errors:
     print("DATA CHECKS FAILED:")
     for e in errors:
