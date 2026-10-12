@@ -59,9 +59,9 @@ if "ADMIN_SECRET" in (ROOT / "app.html").read_text(encoding="utf-8"):
     fail("app.html still has ADMIN_SECRET")
 
 # ── Game data files (/data/) ──
-qpath = ROOT / "data" / "questions.json"
 ppath = ROOT / "data" / "playbook.json"
 pb_ids = set()
+pb_articles_with_body = 0
 if ppath.exists():
     pdata = json.loads(ppath.read_text(encoding="utf-8"))
     for ch in pdata.get("chapters", []):
@@ -70,36 +70,57 @@ if ppath.exists():
             if aid in pb_ids:
                 fail(f"playbook.json: duplicate article id {aid}")
             pb_ids.add(aid)
+            if art.get("body") and not art.get("existing_guide"):
+                pb_articles_with_body += 1
+            # body must have at least one non-empty paragraph
+            if art.get("body") and not str(art["body"]).strip():
+                fail(f"playbook.json: article {aid} has an empty body")
 else:
     print("note: data/playbook.json not present yet, learn_more resolution skipped")
 
-if not qpath.exists():
-    print("note: data/questions.json not present yet, question checks skipped")
+qdir = ROOT / "data" / "questions"
+idx = qdir / "index.json"
+qs = []
+if idx.exists():
+    index_data = json.loads(idx.read_text(encoding="utf-8"))
+    files = index_data.get("files", {})
+    if not files:
+        fail("data/questions/index.json lists no topic files")
+    for topic, fname in files.items():
+        fpath = qdir / fname
+        if not fpath.exists():
+            fail(f"data/questions/index.json: file {fname} for topic {topic} is missing")
+            continue
+        part = json.loads(fpath.read_text(encoding="utf-8"))
+        for q in part.get("questions", []):
+            if q.get("topic") != topic:
+                fail(f"{fname}: question {q.get('id')} topic {q.get('topic')!r} != file topic {topic!r}")
+        expected = index_data.get("counts", {}).get(topic)
+        if expected is not None and len(part.get("questions", [])) != expected:
+            extra = [q.get("id") for q in part.get("questions", [])[expected:]]
+            fail(f"{fname}: {len(part.get('questions', []))} questions but index counts {topic}={expected}; ids not in index counts: {extra[:10]}")
+        qs.extend(part.get("questions", []))
+    ids = [q.get("id") for q in qs]
+    dups = sorted({i for i in ids if ids.count(i) > 1})
+    if dups:
+        fail(f"duplicate question ids across topic files: {dups[:10]}")
+    inv_file = index_data.get("investigations_file")
+    if inv_file:
+        ipath = qdir / inv_file
+        if not ipath.exists():
+            fail(f"data/questions/index.json: investigations_file {inv_file} is missing")
+        else:
+            inv = json.loads(ipath.read_text(encoding="utf-8")).get("investigations", [])
+            exp_inv = index_data.get("investigations_count")
+            if exp_inv is not None and len(inv) != exp_inv:
+                fail(f"{inv_file}: {len(inv)} investigations but index counts {exp_inv}")
+            inv_ids = [i.get("id") for i in inv]
+            inv_dups = sorted({i for i in inv_ids if inv_ids.count(i) > 1})
+            if inv_dups:
+                fail(f"duplicate investigation ids: {inv_dups[:10]}")
+            print(f"Investigation checks passed: {len(inv)} investigations, no duplicate ids.")
 else:
-    qdata = json.loads(qpath.read_text(encoding="utf-8"))
-    qs = qdata.get("questions", [])
-    qids = set()
-    for q in qs:
-        qid = str(q.get("id", "?"))
-        if qid in qids:
-            fail(f"questions.json: duplicate id {qid}")
-        qids.add(qid)
-        opts = q.get("options") or []
-        a = q.get("answer")
-        if not opts or not isinstance(a, int) or a < 0 or a >= len(opts):
-            fail(f"question {qid}: answer index out of range")
-        if not q.get("explanation"):
-            fail(f"question {qid}: missing explanation")
-        if not q.get("question"):
-            fail(f"question {qid}: missing question text")
-        lm = q.get("learn_more")
-        if lm and pb_ids and lm not in pb_ids:
-            fail(f"question {q.get('id')}: learn_more {lm!r} is not a playbook.json article id")
-        if q.get("volatile") and q.get("review_by") and str(q["review_by"])[:10] < today:
-            print(f"WARNING: question {q.get('id')} is volatile and its review_by ({q['review_by']}) has passed; re-verify")
-    print(f"Question checks passed: {len(qs)} questions.")
-
-
+    print("note: data/questions/index.json not present yet, question checks skipped")
 # --- game map checks ---
 import pathlib
 maps = sorted(pathlib.Path("game/maps").glob("*.tmj")) if pathlib.Path("game/maps").exists() else []
@@ -130,6 +151,51 @@ for mp in maps:
     if bad_types:
         fail(f"{mp}: unknown object types {set(bad_types)}")
     print(f"Map checks passed: {mp.name} ({w}x{h}, {len(objs)} objects).")
+
+# --- playbook.json checks ---
+pb_path = pathlib.Path("data/playbook.json")
+if pb_path.exists():
+    pb = json.loads(pb_path.read_text())
+    pb_chs = pb.get("chapters", [])
+    if not pb_chs:
+        fail("data/playbook.json: no chapters")
+    ALLOWED_BLOCKS = {"p", "h", "key", "steps", "warn", "tip", "list"}
+    ALLOWED_STATUS = {"written", "new", "expand"}
+    app_text = pathlib.Path("app.html").read_text() if pathlib.Path("app.html").exists() else ""
+    seen_pb = {}
+    for ch in pb_chs:
+        if not ch.get("id") or not ch.get("title"):
+            fail(f"playbook.json: chapter missing id/title: {ch.get('id')}")
+        for a in ch.get("articles", []):
+            aid = a.get("id")
+            if not aid:
+                fail(f"playbook.json: article in {ch.get('id')} missing id")
+                continue
+            if aid in seen_pb:
+                fail(f"playbook.json: duplicate article id {aid}")
+            seen_pb[aid] = True
+            st = a.get("status")
+            if st not in ALLOWED_STATUS:
+                fail(f"playbook.json: {aid} bad status {st!r}")
+            body = a.get("body")
+            if body is not None and not isinstance(body, (str, list)):
+                fail(f"playbook.json: {aid} body must be string or block list")
+            if isinstance(body, list):
+                for b in body:
+                    if not isinstance(b, dict) or b.get("type") not in ALLOWED_BLOCKS:
+                        fail(f"playbook.json: {aid} bad block {b if not isinstance(b, dict) else b.get('type')!r}")
+                    if b.get("type") in ("key", "steps", "list") and not isinstance(b.get("items"), list):
+                        fail(f"playbook.json: {aid} block {b.get('type')} missing items list")
+            for src in a.get("sources", []):
+                if not str(src).startswith("https://"):
+                    fail(f"playbook.json: {aid} non-https source {src!r}")
+            eg = a.get("existing_guide")
+            if eg and app_text and eg not in app_text:
+                fail(f"playbook.json: {aid} existing_guide {eg} not found in app.html")
+    n_bodies = sum(1 for ch in pb_chs for a in ch.get("articles", []) if a.get("body"))
+    print(f"Playbook checks passed: {len(pb_chs)} chapters, {len(seen_pb)} articles, {n_bodies} with bodies.")
+else:
+    print("note: data/playbook.json not present, playbook checks skipped")
 if not maps:
     print("note: no game/maps/*.tmj present yet, map checks skipped")
 

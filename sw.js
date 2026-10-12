@@ -1,6 +1,6 @@
 // Money Hunters UK — Service Worker v3
 // Strategy: Network first for HTML + data, cache first for static assets
-const CACHE = 'mh-v4';
+const CACHE = 'mh-v5';
 
 // Static assets to precache (rarely change)
 const PRECACHE = [

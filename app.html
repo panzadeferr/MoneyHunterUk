@@ -2902,6 +2902,10 @@
     .guide-step-num { width:20px;height:20px;border-radius:50%;background:var(--green);color:#000;font-size:10px;font-weight:800;display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:2px }
     .guide-tip { background:rgba(31,232,135,.08);border:1px solid rgba(31,232,135,.2);border-radius:10px;padding:10px 12px;margin-top:10px;font-size:12px;color:var(--muted);line-height:1.5 }
     .guide-warning { background:rgba(255,150,50,.08);border:1px solid rgba(255,150,50,.25);border-radius:10px;padding:10px 12px;margin-top:10px;font-size:12px;color:var(--muted);line-height:1.5 }
+    .guide-ol { margin:4px 0 10px 18px;padding:0;font-size:13px;color:var(--muted);line-height:1.6 }
+    .guide-ol li { margin-bottom:5px }
+    .guide-src { font-size:11px;color:var(--muted2);margin-top:10px }
+    .guide-src a { color:var(--green);text-decoration:none }
     /* XP */
     .xp-table { background:var(--bg3);border-radius:10px;overflow:hidden;margin-top:8px }
     .xp-row { display:flex;justify-content:space-between;align-items:center;padding:9px 12px;border-bottom:1px solid var(--line);font-size:12px;color:var(--text) }
@@ -5195,6 +5199,73 @@
 
     // Playbook guide deep links: app.html?guide=ID or app.html#ID (guide-* and pb-* ids)
     const GUIDE_ALIASES = { 'pb-bank-cass': 'guide-bankswitch' };
+    // Data-driven guides: articles in playbook.json with a body and no inline guide get rendered here
+    let playbookGuidesLoaded = false;
+    function renderGuideText(text, sources) {
+      function esc(x) { return String(x).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;'); }
+      let out = '';
+      if (Array.isArray(text)) {
+        // Structured body: [{type:'p'|'h'|'key'|'steps'|'warn'|'tip'|'list', text|items, sources}]
+        for (const b of text) {
+          const items = (b.items || []).map(function (x) { return '<li>' + esc(x) + '</li>'; }).join('');
+          if (b.type === 'p' && b.text) out += '<p class="guide-p">' + esc(b.text) + '</p>';
+          else if (b.type === 'h' && b.text) out += '<div class="guide-section-title">' + esc(b.text) + '</div>';
+          else if ((b.type === 'key' || b.type === 'list') && b.items) out += '<ul class="guide-ul">' + items + '</ul>';
+          else if (b.type === 'steps' && b.items) out += '<ol class="guide-ol">' + items + '</ol>';
+          else if (b.type === 'warn' && b.text) out += '<div class="guide-warning">&#9888;&#65039; ' + esc(b.text) + '</div>';
+          else if (b.type === 'tip' && b.text) out += '<div class="guide-tip">&#128161; ' + esc(b.text) + '</div>';
+        }
+        if (Array.isArray(sources) && sources.length) {
+          out += '<p class="guide-src">Sources: ' + sources.map(function (u) {
+            let host = u.replace(/^https:\/\//, '').replace(/\/$/, '');
+            return '<a href="' + esc(u) + '" target="_blank" rel="noopener">' + esc(host) + '</a>';
+          }).join(', ') + '</p>';
+        }
+        return out;
+      }
+      return String(text).split(/\n\n+/).map(function (p) {
+        const lines = p.split('\n');
+        if (lines.length && lines.every(function (l) { return l.indexOf('- ') === 0; })) {
+          return '<ul class="guide-ul">' + lines.map(function (l) { return '<li>' + esc(l.slice(2)) + '</li>'; }).join('') + '</ul>';
+        }
+        return '<p class="guide-p">' + esc(p) + '</p>';
+      }).join('');
+    }
+    async function loadPlaybookGuides() {
+      if (playbookGuidesLoaded) return;
+      let data = null;
+      try {
+        const res = await fetch('/data/playbook.json?v=' + Date.now());
+        if (!res.ok) return;
+        data = await res.json();
+      } catch (e) { return; }
+      if (!data || !data.chapters) return;
+      const list = document.querySelector('.guide-list');
+      const pills = document.getElementById('playbookPills');
+      if (!list) return;
+      let cards = ''; let newPills = ''; const seenChapters = {};
+      for (const ch of data.chapters) {
+        const arts = (ch.articles || []).filter(function (a) { return a.body && !a.existing_guide; });
+        if (!arts.length) continue;
+        const filterId = 'pbch-' + ch.id;
+        if (!seenChapters[ch.id] && pills) {
+          newPills += '<div class="pb-pill" data-pill="' + filterId + '" onclick="filterPlaybook(\'' + filterId + '\',this)">' + (ch.icon ? ch.icon + ' ' : '') + ch.title + '</div>';
+          seenChapters[ch.id] = true;
+        }
+        for (const a of arts) {
+          const icon = ch.icon || '\uD83D\uDCD8';
+          cards += '<div class="guide-card card" data-guide="' + filterId + '">' +
+            '<div class="guide-card-head" onclick="toggleGuide(\'' + a.id + '\')">' +
+            '<div class="guide-icon green">' + icon + '</div><div><h3>' + a.title + '</h3>' +
+            '<p class="guide-meta">' + (a.summary || '') + '</p></div></div>' +
+            '<button class="guide-expand-btn" id="btn-' + a.id + '" onclick="toggleGuide(\'' + a.id + '\')">Read Guide \u2193</button>' +
+            '<div class="guide-body" id="' + a.id + '">' + renderGuideText(a.body, a.sources) + '</div></div>';
+        }
+      }
+      if (cards) list.insertAdjacentHTML('beforeend', cards);
+      if (newPills && pills) pills.insertAdjacentHTML('beforeend', newPills);
+      playbookGuidesLoaded = true;
+    }
     function resolveGuideId(v) {
       if (!v) return null;
       if (document.getElementById(v)) return v;
@@ -7589,7 +7660,7 @@ function initTheme() {
       initAuth();
       checkPasswordResetToken();
       checkAdminAccess();
-      initGuideDeepLink();
+      loadPlaybookGuides().catch(function(){}).finally(function(){ initGuideDeepLink(); });
       renderGuideLiveOffers();
       initBackButton();
       showOnboard();
