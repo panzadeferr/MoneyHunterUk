@@ -1268,7 +1268,7 @@ def run_all_scrapers() -> Dict:
     # Reddit random posts disabled - too much junk
     # Megalist scraper covers beermoneyuk properly
     reddit_deals = []
-    print("📡 Reddit random scraper disabled - using megalist")
+    print("📡 Reddit post scraper: switched off on purpose (the megalist covers Reddit)")
     
     # Scrape Google News as MSE replacement
     print("\n📡 Scraping Google News...")
@@ -1287,6 +1287,8 @@ def run_all_scrapers() -> Dict:
     megalist_deals = scrape_megalist()
     time.sleep(2)
     
+    # Keep OFF: Scrimpr's terms forbid scraping their data for a commercial
+    # site (checked 12 Oct 2026). Only enable with their written permission.
     scrimpr_deals = []
     if os.environ.get("ENABLE_SCRIMPR") == "1":
         print("\n📡 Scraping Scrimpr...")
@@ -1478,11 +1480,12 @@ def run_all_scrapers() -> Dict:
         f"Scrape run: {datetime.now()}",
         f"Manual offers: {len(manual_offers)}",
         f"Supermarket deals: {len(supermarket_deals)}",
-        f"Reddit deals: {len(reddit_deals)}",
+        "Reddit posts: 0 (switched off on purpose; the megalist covers Reddit)",
         f"Google News deals: {len(news_deals)}",
-        f"HotUKDeals deals: {len(hotuk_deals)}",
+        (f"HotUKDeals deals: {len(hotuk_deals)}" if os.environ.get("ENABLE_HOTUKDEALS") == "1"
+         else "HotUKDeals: 0 (switched off; set ENABLE_HOTUKDEALS=1 to enable)"),
         f"Megalist deals: {len(megalist_deals)}",
-        f"Scrimpr deals: {len(scrimpr_deals)}",
+        "Scrimpr: 0 (switched off on purpose; their terms forbid reuse on a commercial site)",
         f"Cleaned scraped: {len(cleaned_scraped)}",
         f"Unique scraped: {len(unique_scraped)}",
         f"Total written: {len(all_deals)}",
@@ -1495,9 +1498,10 @@ def run_all_scrapers() -> Dict:
     print(f"✅ Total deals found: {len(all_deals)}")
     print(f"   - Manual offers: {len(manual_offers)}")
     print(f"   - Supermarket deals: {len(supermarket_deals)}")
-    print(f"   - Reddit deals: {len(reddit_deals)}")
+    print("   - Reddit posts: switched off (megalist covers Reddit)")
     print(f"   - Google News deals: {len(news_deals)}")
-    print(f"   - HotUKDeals deals: {len(hotuk_deals)}")
+    print(f"   - HotUKDeals deals: {len(hotuk_deals)}" if os.environ.get("ENABLE_HOTUKDEALS") == "1"
+          else "   - HotUKDeals: switched off")
     print(f"   - Unique scraped: {len(unique_scraped)}")
     print(f"📊 Data quality: {len(cleaned_scraped)}/{len(scraped)} deals passed validation")
     print(f"💾 Saved to all_deals.json")
