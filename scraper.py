@@ -1416,6 +1416,13 @@ def run_all_scrapers() -> Dict:
         print("\U0001f4e1 feed.xml written")
     except Exception as e:
         print(f"::warning::feed generation failed: {e}")
+    # Sitemap with data-following lastmod dates
+    try:
+        from make_sitemap import write_sitemap
+        write_sitemap(output)
+        print("\U0001f4e1 sitemap.xml written")
+    except Exception as e:
+        print(f"::warning::sitemap generation failed: {e}")
     
     # Write detailed scrape log
     log = [
