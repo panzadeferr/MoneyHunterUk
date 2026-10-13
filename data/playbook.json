@@ -1623,6 +1623,82 @@
           ]
         },
         {
+          "id": "pb-rent-rewards",
+          "title": "Rent rewards: ways to pay rent and get something back",
+          "summary": "The UK rent-rewards services compared on rate, fees and catches, with a worked example.",
+          "existing_guide": null,
+          "status": "written",
+          "read_minutes": 6,
+          "reviewed": "2026-10-13",
+          "body": [
+            {
+              "type": "p",
+              "text": "A few UK services let you pay rent and earn points or cashback. The rewards are usually small, and the terms change often, so work out the real value before you switch how you pay your rent. Details below were checked on 13 October 2026, partly from the providers' own pages and partly from third-party reviews."
+            },
+            {
+              "type": "h",
+              "text": "Services that pay your landlord for you"
+            },
+            {
+              "type": "key",
+              "items": [
+                "Ribbon Rewards: you transfer rent into an account in your name, and Ribbon sends it to your landlord or agent on rent day. Its page says it earns 1 point per £1 of rent, with 100 points = £1 in vouchers, so about 1% in vouchers. It lists a higher 'up to 3 points per £1' rate as coming soon. It says the service is free, accounts are provided by Griffin Bank, and eligible deposits are protected by the FSCS up to £120,000. An optional Credit Builder add-on costs £7.99 to £9.99 a month.",
+                "Rentd: an app and debit card. A press release from 1 September 2026 says all tiers earn 1 point per £1 on rent, with boosted points on everyday spending if you hit a monthly spend target. One review (updated 24 September 2026) says 5,000 points now buy a £25 gift card, which is about 0.5p a point, so about 0.5% on rent. Topping up by credit card costs 1.95%. Rentd's own page did not give these figures when I checked, so confirm the current value in the app.",
+                "Yonder, Brick Rewards and Renti Rewards: other services that earn points on rent. Reviews describe different ways of earning, for example Open Banking for Brick Rewards, and 1 point per £1 for Renti Rewards. Rates, conversion values and eligibility were not clear, so check each provider's terms."
+              ]
+            },
+            {
+              "type": "h",
+              "text": "Paying rent by credit card"
+            },
+            {
+              "type": "p",
+              "text": "Services such as Nuba take a card payment and pay your landlord by bank transfer. A January 2026 review lists fees of 1.99% for Visa and Mastercard and 2.49% for American Express. On £1,000 of rent that is £19.90 or £24.90. It only makes sense if your card rewards are worth more than the fee, for example to reach a sign-up bonus spend target. Payments through such services can be final and non-refundable, and a chargeback can still leave you owing the service."
+            },
+            {
+              "type": "h",
+              "text": "A worked example"
+            },
+            {
+              "type": "key",
+              "items": [
+                "£1,000 a month rent, paid through Ribbon at 1 point per £1 and 100 points = £1: about £10 a month, £120 a year, in vouchers.",
+                "The same rent at Rentd at 1 point per £1 and 5,000 points = £25: about £5 a month, £60 a year, if that conversion is still current.",
+                "The same rent by credit card through a service charging 1.99%: a £19.90 fee a month. Card rewards would have to beat that."
+              ]
+            },
+            {
+              "type": "h",
+              "text": "What to check before you switch"
+            },
+            {
+              "type": "steps",
+              "items": [
+                "Is the value in cash, vouchers or points, and can you actually spend it on things you buy anyway?",
+                "Does the service hold your money, and is it protected (for example by the FSCS)?",
+                "Does your tenancy agreement or landlord need to know your new payment details? Tell them and keep proof the rent arrived on time.",
+                "Are there fees, tier spend targets or expiry dates?",
+                "Do any rewards depend on a referral or sign-up bonus that has conditions?"
+              ]
+            },
+            {
+              "type": "warn",
+              "text": "Paying rent late can lead to arrears and, in serious cases, loss of your home. A reward is never worth a missed payment, so keep a buffer and leave extra time for transfers. Rates and terms change often. This is general information, not financial advice. Some of the sources are referral-supported."
+            },
+            {
+              "type": "tip",
+              "text": "Put the real numbers into 'Is this offer worth my time?' in Tools before you switch."
+            }
+          ],
+          "sources": [
+            "https://www.ribbonrewards.io/",
+            "https://www.globenewswire.com/news-release/2026/09/01/3354306/0/en/rentd-launches-uk-s-first-rewards-program-that-turns-rent-into-travel.html",
+            "https://www.mysidegig.co.uk/hacks/rentd-review",
+            "https://www.mysidegig.co.uk/rent",
+            "https://www.pointswellmade.co.uk/post/earn-points-on-rent-pay-rent-using-a-credit-card-with-nuba-rewards"
+          ]
+        },
+        {
           "id": "pb-rent-card",
           "title": "Paying rent by credit card: read this first",
           "summary": "Services that let you pay rent by card, the fees, and the risks.",
