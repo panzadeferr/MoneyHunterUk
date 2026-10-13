@@ -3109,9 +3109,10 @@
 
       <!-- GAMING CARD / HERO -->
       <div class="gaming-card" id="gamingCard">
-        <div class="gaming-card-label">💰 Available to earn right now</div>
+        <div class="gaming-card-label">💰 Up to <span id="gamingMaxTotal">£1,940</span> in current offers</div>
         <div class="gaming-card-amount" id="gamingAmount">£0</div>
-        <div class="gaming-card-tagline">Bank switches, free shares and cashback — all in one place. No experience needed. Follow the guides and get paid.</div>
+        <div class="gaming-card-tagline">Bank switches, free shares and cashback, all in one place. Each offer lists its conditions.</div>
+        <div style="font-size:11px;opacity:.75;margin-top:6px">The maximum if every offer were claimed · last checked 13 Oct 2026</div>
         <div class="gaming-card-breakdown" id="gamingBreakdown">
           <div class="gaming-breakdown-item">
             <div class="gaming-breakdown-val" id="gamingBank">£0</div>
@@ -3129,13 +3130,13 @@
           </div>
         </div>
         <button class="gaming-card-btn" onclick="showQuickGuide()">
-          📖 See your personalised earning plan →
+          📖 See your plan →
         </button>
       </div>
 
       <!-- HERO DESCRIPTION -->
       <div class="hero-desc">
-        🇬🇧 We track every UK bank switch, free share and cashback deal. Follow the simple guides — no experience needed.
+        🇬🇧 We track every UK bank switch, free share and cashback deal. Each guide walks through one offer, step by step.
       </div>
 
       <!-- QUICK GUIDE MODAL -->
@@ -3260,7 +3261,7 @@
       <div id="stackList" style="display:none"></div>
       <div class="playbook-hero">
         <h2>📖 The Playbook</h2>
-        <p>Everything you need to know, explained simply. No experience needed.</p>
+        <p>Everything you need to know, explained simply.</p>
       </div>
       <!-- Filter pills -->
       <div class="playbook-pills" id="playbookPills">
@@ -3320,7 +3321,7 @@
             <div class="guide-icon yellow">💳</div>
             <div>
               <h3>Cashback — The Complete Guide</h3>
-              <p class="guide-meta">Save £200–£500/year · 3 methods · Set and forget</p>
+              <p class="guide-meta">Some people save £200–£500 a year · 3 methods · Set and forget</p>
             </div>
           </div>
           <button class="guide-expand-btn" id="btn-guide-cashback" onclick="toggleGuide('guide-cashback')">Read Guide ↓</button>
@@ -3357,7 +3358,7 @@
             <div class="guide-icon orange">🛒</div>
             <div>
               <h3>Supermarket Stacking</h3>
-              <p class="guide-meta">Save £300–£600/year · 5 min setup · Weekly habit</p>
+              <p class="guide-meta">Some people save £300–£600 a year · 5 min setup · Weekly habit</p>
             </div>
           </div>
           <button class="guide-expand-btn" id="btn-guide-supermarket" onclick="toggleGuide('guide-supermarket')">Read Guide ↓</button>
@@ -3420,7 +3421,7 @@
           </div>
           <button class="guide-expand-btn" id="btn-guide-energy" onclick="toggleGuide('guide-energy')">Read Guide ↓</button>
           <div class="guide-body" id="guide-energy">
-            <p class="guide-p">Switching your energy supplier or broadband provider earns you referral bonuses and cashback on top of any savings on your bill. You are going to pay for energy anyway — you might as well get paid to choose who you pay.</p>
+            <p class="guide-p">Switching your energy supplier or broadband provider can earn you referral bonuses and cashback on top of any savings on your bill. You are going to pay for energy anyway, so it is worth comparing who you pay.</p>
 
             <div class="guide-section-title">Energy switching — Octopus Energy</div>
             <div class="guide-step"><span class="guide-step-num">1</span><span><strong>Switch to Octopus Energy</strong> via the referral link in Offers. Both you and the referrer get £50 credit added to your energy account.</span></div>
@@ -3507,7 +3508,7 @@
             <div class="guide-step"><span class="guide-step-num">→</span><span><strong>Month 3: keep stacking and repeating</strong></span></div>
 
             <div class="guide-section-title">Ongoing — keep the engine running</div>
-            <div class="guide-step"><span class="guide-step-num">→</span><span>Use JamDoughnut + Chase for every weekly shop. £300–£600/year ongoing.</span></div>
+            <div class="guide-step"><span class="guide-step-num">→</span><span>Use JamDoughnut + Chase for every weekly shop. Some people save £300–£600 a year this way.</span></div>
             <div class="guide-step"><span class="guide-step-num">→</span><span>Check the Offers tab for new bank switch deals as they appear. Banks launch new offers every few months.</span></div>
             <div class="guide-step"><span class="guide-step-num">→</span><span>Use TopCashback for every online purchase. Set it as your browser homepage so you never forget.</span></div>
 
@@ -4183,7 +4184,7 @@
           "Start with a high-value switch like First Direct or Barclays.",
           "Set up required direct debits quickly.",
           "Mark as Pending until the payout lands.",
-          "Move it to Completed when you get paid."
+          "Move it to Completed when the money lands."
         ],
         value:"Usually the biggest total return."
       },
@@ -4783,7 +4784,7 @@
         0: { // Sunday
           label: "Sunday — set up for the week",
           ids: ["chase-uk", "first-direct", "natwest", "topcashback"],
-          tip: "Bank switches take 7 working days. Start Sunday, get paid by next Friday."
+          tip: "Bank switches take about 7 working days. Check each offer's terms for the exact timing."
         },
         1: { // Monday
           label: "Monday — bank switch day",
@@ -7407,6 +7408,9 @@ function initTheme() {
         {id:'revolut',        amt:50,  cat:'bank'},
         {id:'monzo',          amt:25,  cat:'bank'},
       ];
+      var maxTotal = 0; CURATED.forEach(function(item){ maxTotal += item.amt; });
+      var mEl = document.getElementById('gamingMaxTotal');
+      if (mEl) mEl.textContent = '£' + Math.round(maxTotal).toLocaleString();
       var total = 0, bank = 0, invest = 0, cash = 0;
       CURATED.forEach(function(item) {
         if (getOfferStatus(item.id) === 'completed') return;
@@ -7809,8 +7813,8 @@ function initTheme() {
         <div class="onboard-sub">Three steps. That is it.</div>
         <div style="margin-bottom:20px">
           <div class="onboard-how-step"><div class="onboard-how-num">1</div><div><div class="onboard-how-title">Pick an offer</div><div class="onboard-how-desc">Browse bank switches, cashback and free shares</div></div></div>
-          <div class="onboard-how-step"><div class="onboard-how-num">2</div><div><div class="onboard-how-title">Follow the guide</div><div class="onboard-how-desc">Step-by-step, no experience needed. Takes 5-15 min</div></div></div>
-          <div class="onboard-how-step"><div class="onboard-how-num">3</div><div><div class="onboard-how-title">Get paid</div><div class="onboard-how-desc">Track payouts in Progress tab — we remind you when money lands</div></div></div>
+          <div class="onboard-how-step"><div class="onboard-how-num">2</div><div><div class="onboard-how-title">Follow the guide</div><div class="onboard-how-desc">Step-by-step. Takes 5-15 min</div></div></div>
+          <div class="onboard-how-step"><div class="onboard-how-num">3</div><div><div class="onboard-how-title">Money lands</div><div class="onboard-how-desc">Track payouts in the Progress tab</div></div></div>
         </div>
         <button class="onboard-btn primary" onclick="onboardNext(3)">Calculate my earnings →</button>
         <button class="onboard-btn secondary" onclick="onboardNext(4)">Skip to first offer</button>
