@@ -113,6 +113,8 @@ jobs:
       # ── TEST 5: Data and page checks (amounts, expiry, disclosure) ──
       - name: Data checks
         run: python3 tests/check_data.py
+      - name: Banned claims
+        run: python3 tests/check_claims.py
 
       - name: All tests passed
         run: echo "✅ All checks passed — deploying..."
