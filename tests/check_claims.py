@@ -24,10 +24,17 @@ HARD = [
     (r'(?i)available\s+to\s+earn', '"available to earn" claim'),
     (r'(?i)get\s+paid', '"get paid" promise'),
     (r'(?i)no\s+experience\s+needed', '"no experience needed" claim'),
+    (r'(?i)claim\s+an\s+offer', 'reward for claiming an offer'),
+    (r'(?i)complete\s+an\s+offer', 'reward for completing an offer'),
+    (r'(?i)earn\s+xp', 'XP reward wording'),
+    (r'(?i)never\s+miss\s+a\s+' + GBP, 'absolute marketing line'),
+    (r'(?i)unlock[^.\n]{0,60}offer|offer[^.\n]{0,60}unlock', 'unlock tied to offers'),
 ]
 # labels that are only warnings inside Albertino's reviewed data files
 SOFT_IN_DATA = {'guarantee claim', '"available to earn" claim', '"get paid" promise',
-                '"no experience needed" claim', 'unqualified annual saving figure'}
+                '"no experience needed" claim', 'unqualified annual saving figure',
+                'reward for claiming an offer', 'reward for completing an offer',
+                'XP reward wording', 'absolute marketing line', 'unlock tied to offers'}
 
 def save_rule_hits(path):
     """Unqualified 'save GBP X ... year' figures; allowed only with
