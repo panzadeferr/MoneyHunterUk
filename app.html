@@ -4,9 +4,9 @@
   <meta charset="UTF-8">
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-  <title>Money Hunters UK | Daily Money Tool</title>
+  <title>Money Hunters UK | Learn UK money, check offers, play</title>
   <meta name="theme-color" content="#0b0f14">
-  <meta name="description" content="Mobile-first UK money-making offer tracker with progress, pending payouts, earnings, and cashback stacks.">
+  <meta name="description" content="Free UK money guides, a game that teaches the rules, and a checked list of offers with their conditions.">
   <link rel="manifest" href="/manifest.json">
   <link rel="apple-touch-icon" href="/apple-touch-icon.png">
   <link rel="icon" type="image/png" sizes="192x192" href="/icon-192.png">
@@ -2998,67 +2998,111 @@
       font-size:13px;color:var(--muted);
     }
 </style>
+
+<style id="learn-first">
+/* Learn-first redesign. Uses the app's existing tokens (colours, Syne/Inter). */
+.lf-card{background:var(--card);border:1px solid var(--line-2);border-radius:var(--radius);padding:16px;margin-bottom:14px}
+body.light .lf-card{box-shadow:0 2px 12px rgba(0,0,0,.06)}
+.lf-eyebrow{font:700 11px/1 var(--fb);letter-spacing:.09em;text-transform:uppercase;color:var(--green)}
+.lf-title{font-family:var(--fh);font-size:21px;line-height:1.2;margin:9px 0 6px;color:var(--text);text-wrap:balance}
+.lf-sub{color:var(--muted);font-size:14px;line-height:1.5}
+.lf-meta{color:var(--muted2);font-size:12.5px;margin-top:8px}
+.lf-btn{display:inline-flex;align-items:center;justify-content:center;gap:6px;margin-top:12px;background:var(--green);color:#04140c;border:0;border-radius:12px;padding:11px 16px;font:700 14px var(--fb);cursor:pointer}
+body.light .lf-btn{color:#fff}
+.lf-btn.ghost{background:transparent;color:var(--green);border:1px solid var(--line-2)}
+.lf-h2{font-family:var(--fh);font-size:17px;margin:22px 2px 10px;color:var(--text)}
+.lf-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.lf-tile{display:flex;flex-direction:column;align-items:flex-start;gap:4px;text-align:left;background:var(--card);border:1px solid var(--line-2);border-radius:14px;padding:13px;color:var(--text);cursor:pointer;min-width:0}
+.lf-tile:active{transform:scale(.98)}
+.lf-tile .i{font-size:22px;line-height:1}
+.lf-tile b{font:700 14px/1.25 var(--fb)}
+.lf-tile span{font-size:12px;color:var(--muted2)}
+.lf-play{border-color:rgba(31,232,135,.3);background:linear-gradient(135deg,var(--card),var(--green-soft))}
+.lf-foot{font-size:11.5px;line-height:1.5;color:var(--muted2);text-align:center;padding:6px 10px 18px}
+.lf-back{display:inline-flex;align-items:center;gap:6px;background:none;border:0;color:var(--green);font:700 13px var(--fb);cursor:pointer;padding:6px 2px 10px}
+.lf-pills{display:flex;gap:8px;overflow-x:auto;padding:2px 0 12px;scrollbar-width:none}
+.lf-pills::-webkit-scrollbar{display:none}
+.lf-pill{flex:none;border:1px solid var(--line-2);background:var(--card);color:var(--muted);border-radius:999px;padding:8px 12px;font:600 13px var(--fb);cursor:pointer;white-space:nowrap}
+.lf-pill.active{background:var(--green);border-color:var(--green);color:#04140c}
+body.light .lf-pill.active{color:#fff}
+.lf-chhead{display:flex;align-items:center;gap:10px;margin:2px 2px 12px}
+.lf-chhead .i{font-size:26px}
+.lf-chhead h2{font-family:var(--fh);font-size:20px;margin:0;color:var(--text)}
+.lf-chhead p{margin:2px 0 0;font-size:12.5px;color:var(--muted2)}
+.guide-meta2{font-size:12px;color:var(--muted2);margin:4px 0 0}
+/* Tools */
+.lf-field{display:flex;justify-content:space-between;align-items:center;gap:10px;padding:8px 0;font-size:14px;color:var(--text);border-top:1px solid var(--line)}
+.lf-field:first-of-type{border-top:0}
+.lf-field small{display:block;color:var(--muted2);font-size:11.5px}
+.lf-field input[type=number]{width:92px;font:600 15px var(--fb);background:var(--bg3);color:var(--text);border:1px solid var(--line-2);border-radius:8px;padding:8px;text-align:right}
+.lf-field select{font:600 14px var(--fb);background:var(--bg3);color:var(--text);border:1px solid var(--line-2);border-radius:8px;padding:8px}
+.lf-result{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:12px}
+.lf-result div{background:var(--bg3);border-radius:12px;padding:12px}
+.lf-result b{display:block;font:800 22px var(--fh);color:var(--text)}
+.lf-result span{font-size:12px;color:var(--muted2)}
+.lf-flags{margin:12px 0 0;padding:0;list-style:none;display:flex;flex-direction:column;gap:6px;font-size:13.5px;color:var(--text)}
+.lf-flags li{background:var(--yellow-soft);border-radius:10px;padding:9px 11px}
+.lf-flags li.ok{background:var(--green-soft)}
+/* Play */
+.lf-stats{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin:12px 0 4px}
+.lf-stats div{background:var(--bg3);border-radius:12px;padding:10px;text-align:center}
+.lf-stats b{display:block;font:800 18px var(--fh);color:var(--text)}
+.lf-stats span{font-size:11px;color:var(--muted2)}
+.lf-dots{display:flex;gap:6px;margin:10px 0 2px}
+.lf-dots i{flex:1;height:8px;border-radius:99px;background:var(--bg4)}
+.lf-dots i.on{background:var(--green)}
+.lf-steps{margin:0;padding-left:20px;font-size:14px;color:var(--muted);display:flex;flex-direction:column;gap:6px}
+#gameOverlay{position:fixed;inset:0;z-index:10000;background:#000;display:none;flex-direction:column}
+#gameOverlay.open{display:flex}
+#gameOverlay .gbar{display:flex;justify-content:space-between;align-items:center;padding:10px 14px;padding-top:calc(10px + env(safe-area-inset-top,0px));background:#0b0f14;color:#f6f8fb;font:700 14px var(--fb)}
+#gameOverlay .gbar button{background:#1fe887;color:#04140c;border:0;border-radius:10px;padding:8px 14px;font:700 13px var(--fb);cursor:pointer}
+#gameOverlay iframe{flex:1;width:100%;border:0;background:#000}
+/* Return-to-game bar when a guide is opened from Coinsworth */
+#gameReturn{position:sticky;top:0;z-index:50;display:none;align-items:center;justify-content:space-between;gap:10px;background:var(--green);color:#04140c;padding:10px 14px;font:700 13px var(--fb);border-radius:12px;margin-bottom:10px}
+body.light #gameReturn{color:#fff}
+#gameReturn.show{display:flex}
+#gameReturn a,#gameReturn button{color:inherit;font:inherit;background:rgba(0,0,0,.15);border:0;border-radius:8px;padding:6px 10px;text-decoration:none;cursor:pointer}
+/* Offer cards: long reward text such as "Free Share" no longer runs into the title */
+.offer-card-top .reward{white-space:normal !important;text-align:right;font-size:clamp(14px,4.4vw,20px) !important;line-height:1.1 !important;overflow-wrap:anywhere;max-width:100%}
+.offer-card-top > div:last-child{max-width:42%;min-width:76px !important}
+.lf-adnote{font-size:11.5px;color:var(--muted2);margin:6px 2px 12px;line-height:1.45}
+.lf-badge-ad{display:inline-block;font:700 10px var(--fb);letter-spacing:.06em;text-transform:uppercase;border:1px solid var(--line-2);border-radius:5px;padding:2px 5px;color:var(--muted2);margin-left:6px;vertical-align:middle}
+.lf-intro-list{margin:6px 0 16px;padding:0;list-style:none;display:flex;flex-direction:column;gap:8px;text-align:left}
+.lf-intro-list li{background:var(--bg3);border-radius:12px;padding:11px 13px;font-size:14px;color:var(--text)}
+.lf-intro-list b{display:block;font-weight:700}
+.lf-intro-list span{color:var(--muted2);font-size:12.5px}
+</style>
 </head>
 <body>
 
   <!-- ONBOARDING MODAL -->
-  <div class="onboard-overlay" id="onboardOverlay">
+    <div class="onboard-overlay" id="onboardOverlay">
     <div class="onboard-sheet">
       <div class="onboard-handle"></div>
       <div class="onboard-step active" id="onboard-1">
-        <span class="onboard-emoji">🎯</span>
-        <div class="onboard-title">Welcome, Hunter!</div>
-        <div class="onboard-sub">UK banks and apps can pay cash bonuses. We list the conditions.</div>
-        <div style="margin-bottom:20px">
-          <div class="onboard-earn-row"><span>🏦 Bank switches</span><span>up to £500</span></div>
-          <div class="onboard-earn-row"><span>📈 Invest bonuses</span><span>up to £100</span></div>
-          <div class="onboard-earn-row"><span>💳 Cashback sign-ups</span><span>up to £25</span></div>
-          <div class="onboard-earn-row"><span>⚡ Energy switches</span><span>up to £50</span></div>
-          <div class="onboard-total"><span>First month potential</span><span>£500+</span></div>
-        </div>
-        <div class="onboard-dots"><div class="onboard-dot active"></div><div class="onboard-dot"></div><div class="onboard-dot"></div></div>
-        <button class="onboard-btn" onclick="onboardNext(2)">Show me the money →</button>
+        <span class="onboard-emoji">📖</span>
+        <div class="onboard-title">Learn how UK money works</div>
+        <div class="onboard-sub">Short guides, a free game, and a list of offers you can look at when you are ready.</div>
+        <ul class="lf-intro-list">
+          <li><b>Learn</b><span>Plain-English guides, checked and dated.</span></li>
+          <li><b>Offers</b><span>Each one lists its conditions and any credit check. Some links pay us a referral fee and are marked Ad.</span></li>
+          <li><b>Play</b><span>A free game for adults that teaches the rules.</span></li>
+        </ul>
+        <div class="onboard-dots"><div class="onboard-dot active"></div><div class="onboard-dot"></div></div>
+        <button class="onboard-btn" onclick="onboardNext(2)">Next →</button>
         <button class="onboard-btn secondary" onclick="closeOnboard()">Skip intro</button>
       </div>
       <div class="onboard-step" id="onboard-2">
-        <span class="onboard-emoji">🚀</span>
-        <div class="onboard-title">Start here this week</div>
-        <div class="onboard-sub">3 quick wins under 15 mins each. Perfect first steps.</div>
-        <div class="onboard-offer-row" onclick="closeOnboardAndOpen('monzo')">
-          <div class="onboard-offer-reward">£5</div>
-          <div><div class="onboard-offer-name">Monzo — First Payment</div><div class="onboard-offer-meta">Open account · spend £1 · instant ⚡</div></div>
-          <div style="color:var(--muted2);margin-left:auto">›</div>
-        </div>
-        <div class="onboard-offer-row" onclick="closeOnboardAndOpen('zopa-biscuit')">
-          <div class="onboard-offer-reward">£10</div>
-          <div><div class="onboard-offer-name">Zopa — Sign Up Bonus</div><div class="onboard-offer-meta">Open account · instant · no deposit ⚡</div></div>
-          <div style="color:var(--muted2);margin-left:auto">›</div>
-        </div>
-        <div class="onboard-offer-row" onclick="closeOnboardAndOpen('freetrade')">
-          <div class="onboard-offer-reward">£100</div>
-          <div><div class="onboard-offer-name">Freetrade — Free Share</div><div class="onboard-offer-meta">Deposit £50 · get free share · few days</div></div>
-          <div style="color:var(--muted2);margin-left:auto">›</div>
-        </div>
-        <div class="onboard-dots" style="margin-top:16px"><div class="onboard-dot"></div><div class="onboard-dot active"></div><div class="onboard-dot"></div></div>
-        <button class="onboard-btn" onclick="onboardNext(3)">Next: The big money →</button>
-        <button class="onboard-btn secondary" onclick="closeOnboard()">Skip intro</button>
-      </div>
-      <div class="onboard-step" id="onboard-3">
-        <span class="onboard-emoji">🏦</span>
-        <div class="onboard-title">The Playbook move</div>
-        <div class="onboard-sub">Bank switches can pay cash bonuses. Each offer page lists the conditions and any credit check.</div>
-        <div class="onboard-offer-row" onclick="closeOnboardAndOpen('chase-uk')">
-          <div class="onboard-offer-reward">£250+</div>
-          <div><div class="onboard-offer-name">Bank Switch Bonus</div><div class="onboard-offer-meta">Live offer · ~45 days · see the Offers tab</div></div>
-          <div style="color:var(--muted2);margin-left:auto">›</div>
-        </div>
-        <div class="onboard-offer-row" onclick="switchView('stack');closeOnboard()">
-          <div class="onboard-offer-reward">📖</div>
-          <div><div class="onboard-offer-name">Read the Bank Switch Bible</div><div class="onboard-offer-meta">Step-by-step guide in the Playbook tab</div></div>
-          <div style="color:var(--muted2);margin-left:auto">›</div>
-        </div>
-        <div class="onboard-dots" style="margin-top:16px"><div class="onboard-dot"></div><div class="onboard-dot"></div><div class="onboard-dot active"></div></div>
-        <button class="onboard-btn" onclick="closeOnboard()">Start hunting →</button>
+        <span class="onboard-emoji">🧭</span>
+        <div class="onboard-title">Where do you want to start?</div>
+        <div class="onboard-sub">You can change your mind at any time.</div>
+        <ul class="lf-intro-list">
+          <li onclick="closeOnboard();switchView('home')"><b>Read this week's lesson</b><span>A short guide to start with</span></li>
+          <li onclick="closeOnboard();switchView('offers')"><b>Look at current offers</b><span>With conditions and last-checked dates</span></li>
+          <li onclick="closeOnboard();switchView('play')"><b>Try the game</b><span>Coinsworth: The Little Penny</span></li>
+        </ul>
+        <div class="onboard-dots"><div class="onboard-dot"></div><div class="onboard-dot active"></div></div>
+        <button class="onboard-btn secondary" onclick="closeOnboard()">Close</button>
       </div>
     </div>
   </div>
@@ -3089,6 +3133,7 @@
   </div>
 
   <main class="app">
+    <div id="gameReturn"><span>You opened this guide from Coinsworth.</span><a href="/play/">Back to the game</a></div>
     <section id="view-home" class="view active">
 
       <div id="payoutReminderBanner" class="payout-reminder-banner hidden">
@@ -3107,8 +3152,40 @@
         </div>
       </div>
 
-      <!-- GAMING CARD / HERO -->
-      <div class="gaming-card" id="gamingCard">
+      
+      <!-- LEARN FIRST -->
+
+      <div class="lf-card" id="lfLesson">
+        <div class="lf-eyebrow">This week's lesson</div>
+        <div class="lf-title" id="lfLessonTitle">Loading this week's lesson…</div>
+        <div class="lf-sub" id="lfLessonSub"></div>
+        <div class="lf-meta" id="lfLessonMeta"></div>
+        <button class="lf-btn" id="lfLessonBtn" onclick="lfOpenLesson()" style="display:none">Read the lesson</button>
+      </div>
+
+      <div class="lf-h2">Start with what you want to do</div>
+      <div class="lf-grid" id="lfPaths">
+        <button class="lf-tile" onclick="lfOpenChapter('banking')"><span class="i">🏦</span><b>Switch my bank</b><span>Rules, risks, timing</span></button>
+        <button class="lf-tile" onclick="lfOpenChapter('scams')"><span class="i">🛡️</span><b>Spot scams</b><span>Quick checks</span></button>
+        <button class="lf-tile" onclick="lfOpenChapter('bills')"><span class="i">⚡</span><b>Cut my bills</b><span>Energy, phone, broadband</span></button>
+        <button class="lf-tile" onclick="lfOpenChapter('saving')"><span class="i">🐷</span><b>Save and invest</b><span>Basics first</span></button>
+        <button class="lf-tile" onclick="lfOpenChapter('tax')"><span class="i">🧾</span><b>Tax and side income</b><span>What to know</span></button>
+        <button class="lf-tile" onclick="lfOpenChapter('cashback')"><span class="i">💸</span><b>Cashback and shopping</b><span>How it works</span></button>
+      </div>
+
+      <div class="lf-h2">Play</div>
+      <div class="lf-card lf-play" id="lfPlayCard">
+        <div class="lf-eyebrow">Coinsworth: The Little Penny</div>
+        <div class="lf-title" id="lfPlayTitle">Learn the rules by playing</div>
+        <div class="lf-sub" id="lfPlaySub">A free game for adults. Run a small shop and beat the scammers by answering real UK money questions.</div>
+        <button class="lf-btn" onclick="switchView('play')">Open Play</button>
+      </div>
+
+      <div class="lf-h2">All chapters</div>
+      <div class="lf-grid" id="lfChapters"></div>
+
+      <!-- GAMING CARD / HERO (kept for the app code, hidden in the learn-first layout) -->
+      <div class="gaming-card" id="gamingCard" style="display:none">
         <div class="gaming-card-label">💰 Up to <span id="gamingMaxTotal">£1,940</span> in featured offers</div>
         <div class="gaming-card-amount" id="gamingAmount">£0</div>
         <div class="gaming-card-tagline">Bank switches, free shares and cashback, all in one place. Each offer lists its conditions.</div>
@@ -3132,11 +3209,6 @@
         <button class="gaming-card-btn" onclick="showQuickGuide()">
           📖 See your plan →
         </button>
-      </div>
-
-      <!-- HERO DESCRIPTION -->
-      <div class="hero-desc">
-        🇬🇧 We track every UK bank switch, free share and cashback deal. Each guide walks through one offer, step by step.
       </div>
 
       <!-- QUICK GUIDE MODAL -->
@@ -3166,23 +3238,14 @@
       <!-- QUICK WINS THIS WEEK -->
       <div class="quick-wins" id="quickWins">
         <div class="quick-wins-header">
-          <div class="quick-wins-title">⚡ Quick wins this week</div>
-          <div class="quick-wins-sub">Start any of these in 5 minutes</div>
+          <div class="quick-wins-title">Current offers</div>
+          <div class="quick-wins-sub">Each one lists its conditions. Links are referral links, marked Ad.</div>
         </div>
         <div class="quick-wins-list" id="quickWinsList"></div>
       </div>
 
       <!-- IN PROGRESS -->
       <div id="homeInProgress" class="home-in-progress hidden"></div>
-
-      <!-- PLAYBOOK CTA -->
-      <div class="home-playbook-cta" onclick="switchView('stack')">
-        <div class="home-playbook-cta-left">
-          <div class="home-playbook-cta-title">📖 Follow the Playbook</div>
-          <div class="home-playbook-cta-sub">Step-by-step guide to your first £1,000</div>
-        </div>
-        <div class="home-playbook-arrow">→</div>
-      </div>
 
       <!-- INSTALL BANNER -->
       <div class="install-banner" id="installBanner">
@@ -3195,28 +3258,14 @@
         <button class="install-dismiss" onclick="dismissInstall()">✓</button>
       </div>
 
-      <!-- TODAY'S MONEY PLAN -->
-      <section class="section">
-        <div class="plan-collapsed-head" onclick="toggleMoneyPlan()" id="planHead">
-          <div class="plan-collapsed-left">
-            <div class="plan-collapsed-label">💰 Today's Money Plan</div>
-            <div class="plan-collapsed-amount" id="planAmount">Tap to reveal</div>
-          </div>
-          <div class="plan-collapsed-right">
-            <span class="plan-collapsed-hint">Tap to collapse</span>
-            <span class="plan-chevron open" id="planChevron">▾</span>
-          </div>
-        </div>
-        <div class="plan-body open" id="planBody">
-          <div class="tasks" id="todayTasks"></div>
-        </div>
-      </section>
+      <div class="lf-foot">Some links pay us a referral fee. They never change what we write or the order we show things. We are not financial advisers and nothing here is advice.</div>
 
     </section>
 
     <section id="view-offers" class="view">
       <section class="section">
 
+        <div class="lf-adnote">Offers include referral links and are marked <b>Ad</b>. Each one lists its conditions and when we last checked it.</div>
         <!-- Search bar -->
         <div class="toolbar" style="margin-bottom:10px">
           <input class="search" id="searchInput" type="text" placeholder="Search 50+ offers... 🔍" oninput="onSearchInput()">
@@ -3253,28 +3302,17 @@
         </div>
 
       </section>
+      <div class="lf-foot">Some links pay us a referral fee. They never change what we write or the order we show things. We are not financial advisers and nothing here is advice.</div>
     </section>
 
     
 
     <section id="view-stack" class="view">
       <div id="stackList" style="display:none"></div>
-      <div class="playbook-hero">
-        <h2>📖 The Playbook</h2>
-        <p>Everything you need to know, explained simply.</p>
-      </div>
-      <!-- Filter pills -->
-      <div class="playbook-pills" id="playbookPills">
-        <div class="pb-pill active" onclick="filterPlaybook('all',this)">All Guides</div>
-        <div class="pb-pill" onclick="filterPlaybook('bank',this)">🏦 Bank Switch</div>
-        <div class="pb-pill" onclick="filterPlaybook('cashback',this)">💳 Cashback</div>
-        <div class="pb-pill" onclick="filterPlaybook('invest',this)">📈 Investing</div>
-        <div class="pb-pill" onclick="filterPlaybook('supermarket',this)">🛒 Supermarket</div>
-        <div class="pb-pill" onclick="filterPlaybook('energy',this)">⚡ Energy</div>
-        <div class="pb-pill" onclick="filterPlaybook('directdebit',this)">🔄 Direct Debits</div>
-        <div class="pb-pill" onclick="filterPlaybook('stack',this)">⚡ 90-Day Plan</div>
-        <div class="pb-pill" onclick="filterPlaybook('mistakes',this)">⚠️ Mistakes</div>
-      </div>
+      <button class="lf-back" onclick="switchView('home')">← Learn</button>
+      <div class="lf-chhead" id="lfChHead"><span class="i">📖</span><div><h2>All guides</h2><p id="lfChSub">Every chapter, in one list</p></div></div>
+      <div class="lf-pills" id="lfPills"></div>
+      <div class="playbook-pills" id="playbookPills" style="display:none"></div>
       <div class="guide-list">
 
         <!-- GUIDE 1: BANK SWITCH BIBLE -->
@@ -3378,7 +3416,7 @@
             <div class="guide-step"><span class="guide-step-num">→</span><span><strong>Compare rates before buying.</strong> JamDoughnut, Everup, and Airtime all have different rates for different supermarkets. The 30 seconds it takes to compare can mean the difference between 3% and 7% back.</span></div>
 
             <div class="guide-warning">⚠️ Watch out for: Buying more gift card value than you need. If you buy £100 but only spend £60, the remaining £40 sits in the gift card — not a problem, but only buy what you will actually use within a reasonable time.</div>
-            <div class="guide-tip">💡 Real numbers: £150/week shopping × 5% JamDoughnut + 1% Chase = £9/week = £468/year. Add loyalty points and Airtime and you are realistically saving £500–£600/year from the exact same shopping you already do.</div>
+            <div class="guide-tip">💡 Real numbers: £150/week shopping × 5% JamDoughnut + 1% Chase = £9/week = £468/year. Loyalty points and Airtime Rewards can add to this. Your own saving depends on how much you spend and which offers you use.</div>
           </div>
         </div>
 
@@ -3606,6 +3644,20 @@
 
     <section id="view-progress" class="view">
 
+      <div class="lf-h2" style="margin-top:2px">Is this offer worth my time?</div>
+      <div class="lf-card" id="lfCalc">
+        <div class="lf-sub" style="margin-bottom:6px">Put in the numbers from the offer's own terms. Nothing here is saved or sent.</div>
+        <label class="lf-field">Bonus<input id="cBonus" type="number" inputmode="decimal" value="175" oninput="lfCalc()"></label>
+        <label class="lf-field"><span>Cash you must put in<small>Usually refundable. Check the terms.</small></span><input id="cDeposit" type="number" inputmode="decimal" value="0" oninput="lfCalc()"></label>
+        <label class="lf-field"><span>Costs you do not get back<small>Fees, lost interest, a paid-for direct debit</small></span><input id="cFees" type="number" inputmode="decimal" value="0" oninput="lfCalc()"></label>
+        <label class="lf-field"><span>Time it takes (hours)<small>Sign-up, switching, checking back</small></span><input id="cHours" type="number" inputmode="decimal" step="0.5" value="3" oninput="lfCalc()"></label>
+        <label class="lf-field"><span>Days until the bonus is paid</span><input id="cDays" type="number" inputmode="numeric" value="30" oninput="lfCalc()"></label>
+        <label class="lf-field">Credit check?<select id="cCheck" onchange="lfCalc()"><option value="unknown">Not sure</option><option value="soft">Soft</option><option value="hard">Hard</option><option value="none">None</option></select></label>
+        <div class="lf-result"><div><b id="rNet">£0</b><span>Bonus after costs</span></div><div><b id="rHr">£0</b><span>Per hour of your time</span></div></div>
+        <ul class="lf-flags" id="rFlags"></ul>
+      </div>
+      <div class="lf-h2">My progress and payouts</div>
+
       <!-- Streak Warning -->
       <div id="streakWarning" class="streak-warning hidden"></div>
 
@@ -3712,6 +3764,52 @@
         <div id="raffleContent"></div>
       </section>
 
+    
+      <div class="lf-h2">Offer ideas</div>
+      <!-- TODAY'S MONEY PLAN -->
+      <section class="section">
+        <div class="plan-collapsed-head" onclick="toggleMoneyPlan()" id="planHead">
+          <div class="plan-collapsed-left">
+            <div class="plan-collapsed-label">📅 Offer ideas for today</div>
+            <div class="plan-collapsed-amount" id="planAmount" style="display:none">Tap to reveal</div>
+          </div>
+          <div class="plan-collapsed-right">
+            <span class="plan-collapsed-hint">Tap to collapse</span>
+            <span class="plan-chevron open" id="planChevron">▾</span>
+          </div>
+        </div>
+        <div class="plan-body open" id="planBody">
+          <div class="tasks" id="todayTasks"></div>
+        </div>
+      </section>
+
+
+      <div class="lf-foot">Some links pay us a referral fee. They never change what we write or the order we show things. We are not financial advisers and nothing here is advice.</div>
+    </section>
+
+
+    <section id="view-play" class="view">
+      <div class="lf-card lf-play">
+        <div class="lf-eyebrow">Coinsworth: The Little Penny</div>
+        <div class="lf-title">Run a shop. Pay the rent. Beat the scammers.</div>
+        <div class="lf-sub">A free game for adults. Each battle is a real UK money question, and every answer links to the guide that explains it.</div>
+        <div id="lfSave"></div>
+        <button class="lf-btn" id="lfPlayBtn" onclick="lfOpenGame()">Play</button>
+      </div>
+      <div class="lf-h2">How it connects to Learn</div>
+      <div class="lf-card">
+        <ol class="lf-steps">
+          <li>Play a chapter and answer the questions.</li>
+          <li>Open the guide behind any answer, from inside the game.</li>
+          <li>Come back and try again. The questions come from the same reviewed question bank.</li>
+        </ol>
+      </div>
+      <div class="lf-card"><div class="lf-sub">For adults (18+). Nothing in the game rewards you for opening or signing up to an offer. Your progress is saved on this device.</div></div>
+      <div class="lf-h2">Keep learning</div>
+      <div class="lf-grid">
+        <button class="lf-tile" onclick="lfOpenChapter('scams')"><span class="i">🛡️</span><b>Scam Defence</b><span>Guides behind the boss fights</span></button>
+        <button class="lf-tile" onclick="lfOpenChapter('budgeting')"><span class="i">📊</span><b>Budgeting</b><span>Guides</span></button>
+      </div>
     </section>
 
     <section id="view-community" class="view">
@@ -3941,13 +4039,19 @@
     </div>
   </div>
 
+
+  <div id="gameOverlay" role="dialog" aria-label="Coinsworth">
+    <div class="gbar"><span>Coinsworth</span><button onclick="lfCloseGame()">Close</button></div>
+    <iframe id="gameFrame" title="Coinsworth: The Little Penny" allow="autoplay"></iframe>
+  </div>
+
   <nav class="bottom-nav">
     <div class="bottom-nav-inner">
     <button class="nav-btn active" data-view="home">
       <div class="nav-icon-wrap">
-        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>
       </div>
-      <span class="nav-label">Home</span>
+      <span class="nav-label">Learn</span>
     </button>
     <button class="nav-btn" data-view="offers">
       <div class="nav-icon-wrap">
@@ -3957,24 +4061,41 @@
     </button>
     <button class="nav-btn" data-view="progress">
       <div class="nav-icon-wrap">
-        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg>
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="2" width="16" height="20" rx="2"/><line x1="8" y1="6" x2="16" y2="6"/><line x1="8" y1="11" x2="8.01" y2="11"/><line x1="12" y1="11" x2="12.01" y2="11"/><line x1="16" y1="11" x2="16.01" y2="11"/><line x1="8" y1="15" x2="8.01" y2="15"/><line x1="12" y1="15" x2="12.01" y2="15"/><line x1="16" y1="15" x2="16.01" y2="15"/></svg>
       </div>
-      <span class="nav-label">Progress</span>
+      <span class="nav-label">Tools</span>
     </button>
-    <button class="nav-btn" data-view="stack">
+    <button class="nav-btn" data-view="play">
       <div class="nav-icon-wrap">
-        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="6" width="20" height="12" rx="6"/><line x1="7" y1="10" x2="7" y2="14"/><line x1="5" y1="12" x2="9" y2="12"/><circle cx="16" cy="11" r="1"/><circle cx="18" cy="13" r="1"/></svg>
       </div>
-      <span class="nav-label">Playbook</span>
+      <span class="nav-label">Play</span>
     </button>
     <button class="nav-btn" data-view="community">
       <div class="nav-icon-wrap">
-        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="5" cy="12" r="1.5"/><circle cx="12" cy="12" r="1.5"/><circle cx="19" cy="12" r="1.5"/></svg>
       </div>
-      <span class="nav-label">Community</span>
+      <span class="nav-label">More</span>
     </button>
     </div>
   </nav>
+
+  <!-- Hidden UI elements referenced by JS -->
+  <div style="display:none">
+    <div id="bestOffers"></div>
+    <div id="battleCount"></div>
+    <select id="moneyOfferSelect"></select>
+    <input id="earnedInput" type="number">
+    <input id="pendingInput" type="number">
+    <button id="saveMoneyBtn"></button>
+    <div id="pendingList"></div>
+    <div id="milestoneList"></div>
+    <div id="earnedTotal"></div>
+    <div id="pendingTotal"></div>
+    <div id="activeTotal"></div>
+    <div id="profilePendingCount"></div>
+    <div id="profileStreak"></div>
+  </div>
 
   <script>
     /*
@@ -4060,7 +4181,7 @@
       }
     })();
 
-    const views = ["home", "offers", "stack", "progress", "community"];
+    const views = ["home", "offers", "stack", "progress", "play", "community"];
 
     const battleData = [
       {
@@ -4707,7 +4828,7 @@
         : "";
       const btnText = status === "completed" ? "✓ Completed — View Details"
         : status === "pending" ? "⏳ Pending — Track Progress"
-        : "Claim Offer →";
+        : "View offer →";
 
       // Get category label
       const catLabels = {
@@ -4782,12 +4903,12 @@
         1: { // Monday
           label: "Monday — bank switch day",
           ids: ["barclays", "first-direct", "natwest", "santander"],
-          tip: "Start a bank switch today — they take 7 days. You could have £200+ by next week."
+          tip: "Bank switches take about 7 working days. Check each offer's terms for the conditions and timing."
         },
         2: { // Tuesday
           label: "Tuesday — invest & grow",
           ids: ["freetrade", "robinhood-uk", "webull", "wealthify"],
-          tip: "Low-effort invest bonuses. Freetrade needs just £1 deposit for a free share."
+          tip: "Invest bonuses have a minimum deposit and a holding period. Check each offer's terms. The value of a share can fall."
         },
         3: { // Wednesday
           label: "Wednesday — supermarket stack day",
@@ -4797,7 +4918,7 @@
         4: { // Thursday
           label: "Thursday — cashback check",
           ids: ["topcashback", "quidco", "rakuten", "jam-doughnut"],
-          tip: "Always check TopCashback before any online purchase — it takes 30 seconds and saves real money."
+          tip: "Always check TopCashback before any online purchase — it takes about 30 seconds and can save you money."
         },
         5: { // Friday
           label: "Friday — quick wins",
@@ -5131,7 +5252,7 @@
         { name:"Level 5", amount:360, value:state.xp, xp:true }
       ];
 
-      ui.milestoneList.innerHTML = milestones.map(item => {
+      (ui.milestoneList || {}).innerHTML = milestones.map(item => {
         const done = item.value >= item.amount;
         const label = item.xp ? `${item.amount} XP target` : item.name.includes("offers") ? `${item.amount} completed target` : `${formatMoney(item.amount)} target`;
         return `
@@ -5249,7 +5370,8 @@
           cards += '<div class="guide-card card" data-guide="' + filterId + '">' +
             '<div class="guide-card-head" onclick="toggleGuide(\'' + a.id + '\')">' +
             '<div class="guide-icon green">' + icon + '</div><div><h3>' + a.title + '</h3>' +
-            '<p class="guide-meta">' + (a.summary || '') + '</p></div></div>' +
+            '<p class="guide-meta">' + (a.summary || '') + '</p>' +
+            '<p class="guide-meta2">' + (a.read_minutes ? a.read_minutes + ' min read' : '') + (a.reviewed ? ' \u00b7 Reviewed ' + new Date(a.reviewed + 'T00:00:00').toLocaleDateString('en-GB', { day: 'numeric', month: 'short', year: 'numeric' }) : '') + '</p></div></div>' +
             '<button class="guide-expand-btn" id="btn-' + a.id + '" onclick="toggleGuide(\'' + a.id + '\')">Read Guide \u2193</button>' +
             '<div class="guide-body" id="' + a.id + '">' + renderGuideText(a.body, a.sources) + '</div></div>';
         }
@@ -5257,6 +5379,8 @@
       if (cards) list.insertAdjacentHTML('beforeend', cards);
       if (newPills && pills) pills.insertAdjacentHTML('beforeend', newPills);
       playbookGuidesLoaded = true;
+      window.PB = data;
+      try { window.lfRenderHome && window.lfRenderHome(); } catch (e) {}
     }
     function resolveGuideId(v) {
       if (!v) return null;
@@ -5278,7 +5402,7 @@
       document.querySelectorAll('.nav-btn').forEach(function (n) { n.classList.remove('active'); });
       const stack = document.getElementById('view-stack');
       if (stack) stack.classList.add('active');
-      const navBtn = document.querySelector('.nav-btn[data-view="stack"]');
+      const navBtn = document.querySelector('.nav-btn[data-view="home"]');
       if (navBtn) navBtn.classList.add('active');
       toggleGuide(id);
       setTimeout(function () {
@@ -5318,10 +5442,11 @@
       document.querySelectorAll(".view").forEach(node => node.classList.remove("active"));
       document.querySelectorAll(".nav-btn").forEach(node => node.classList.remove("active"));
       document.getElementById(`view-${view}`)?.classList.add("active");
-      document.querySelector(`.nav-btn[data-view="${view}"]`)?.classList.add("active");
+      document.querySelector(`.nav-btn[data-view="${view === "stack" ? "home" : view}"]`)?.classList.add("active");
       window.scrollTo({ top: 0, behavior: "smooth" });
       if (view === 'offers') renderNetflix();
-      if (view === 'progress') { renderPendingPayouts(); renderBadges(); renderMissions(); }
+      if (view === 'progress') { renderPendingPayouts(); renderBadges(); renderMissions(); if (window.lfCalc) lfCalc(); }
+      if (view === 'play' && window.lfRenderSave) lfRenderSave();
     }
 
     function shareApp() {
@@ -5642,7 +5767,7 @@
       const footer = document.getElementById("panelFooter");
       if (offer.reward !== "Coming Soon") {
         const isAmber = offer.badge && (offer.badge.includes("BANK") || offer.badge.includes("SWITCH") || offer.badge.includes("INVEST") || offer.badge.includes("PREMIUM") || offer.badge.includes("VALUE"));
-        const btnText = offer.code ? `📋 Copy Code & Claim →` : `🎯 Claim Offer →`;
+        const btnText = offer.code ? `📋 Copy Code & Claim →` : `🎯 View offer →`;
         footer.innerHTML = `<button class="panel-claim ${isAmber?'amber':''}" onclick="panelClaim()">
           ${offer.code ? '📋 Copy Code & ' : ''}Open ${offer.name} ↗
           <span style="font-size:10px;opacity:.6;display:block;margin-top:2px;font-weight:400">Ad · opens in new tab</span>
@@ -6160,10 +6285,7 @@
         updateUserBadge(username);
       } else {
         // Show auth modal after 3 seconds unless skipped before
-        const skipped = localStorage.getItem('mh_auth_skipped');
-        if (!skipped) {
-          setTimeout(() => showAuthModal(), 3000);
-        }
+        // Learn-first: signing in is optional, so no automatic pop-up. The Sign in button stays in the header.
       }
 
       // Listen for auth changes
@@ -6528,9 +6650,9 @@ function initTheme() {
         { threshold: 250,  type:'earn',  emoji:'💎', title:'£250 Milestone!',      sub:'You are a serious Money Hunter now.' },
         { threshold: 500,  type:'earn',  emoji:'🏆', title:'£500 High Roller!',    sub:'Your tracked total passed £500.' },
         { threshold: 1000, type:'earn',  emoji:'🚀', title:'£1,000 Grand Hunter!', sub:'Your tracked total passed £1,000.' },
-        { threshold: 1,    type:'claim', emoji:'🎉', title:'First Hunt!',           sub:'You claimed your first offer. Welcome!' },
-        { threshold: 5,    type:'claim', emoji:'⚡', title:'Stack Master!',         sub:'5 offers claimed. You know what you are doing.' },
-        { threshold: 10,   type:'claim', emoji:'🎪', title:'Deal Stacker!',         sub:'10 offers! You are a proper hunter now.' },
+        { threshold: 1,    type:'claim', emoji:'🎉', title:'First Hunt!',           sub:'You tracked your first offer.' },
+        { threshold: 5,    type:'claim', emoji:'⚡', title:'Stack Master!',         sub:'You have tracked 5 offers.' },
+        { threshold: 10,   type:'claim', emoji:'🎪', title:'Deal Stacker!',         sub:'You have tracked 10 offers.' },
         { threshold: 7,    type:'streak',emoji:'🔥', title:'7-Day Streak!',         sub:'A full week of hunting. You are on fire!' },
         { threshold: 30,   type:'streak',emoji:'📅', title:'30-Day Streak!',        sub:'A whole month. Utterly dedicated.' },
       ];
@@ -6800,9 +6922,21 @@ function initTheme() {
       'freetrade': 'logo-freetrade.png',
     };
 
+    var LOGO_BRANDS = [
+      ['octopus','octopus.energy'],['british gas','britishgas.co.uk'],['edf','edfenergy.com'],['e.on','eon-next.com'],['eon next','eon-next.com'],
+      ['ovo','ovoenergy.com'],['bulb','bulb.co.uk'],['shell energy','shellenergy.co.uk'],['scottish power','scottishpower.co.uk'],['sse','sse.co.uk'],
+      ['utilita','utilita.co.uk'],['so energy','so.energy'],['monzo','monzo.com'],['starling','starlingbank.com'],['chase','chase.co.uk'],
+      ['revolut','revolut.com'],['topcashback','topcashback.co.uk'],['quidco','quidco.com'],['plum','withplum.com'],['trading 212','trading212.com'],
+      ['freetrade','freetrade.io'],['webull','webull.com'],['zopa','zopa.com'],['wise','wise.com'],['amex','americanexpress.com'],['american express','americanexpress.com']
+    ];
+    var AGGREGATOR_DOMAINS = /(^|\.)(reddit\.com|redd\.it|hotukdeals\.com|scrimpr\.com|moneysavingexpert\.com|google\.com|news\.google\.com|bit\.ly|t\.co)$/i;
     function getOfferLogoSrc(offer) {
       if (localLogos[offer.id]) return localLogos[offer.id];
       var domain = getOfferDomain(offer);
+      var nm = String(offer.name || offer.store || offer.id || '').toLowerCase();
+      var brand = LOGO_BRANDS.filter(function (b) { return nm.indexOf(b[0]) > -1; })[0];
+      if (brand) domain = brand[1];
+      else if (!domain || AGGREGATOR_DOMAINS.test(domain)) return '';
       if (!domain) return '';
       return 'https://www.google.com/s2/favicons?domain=' + domain + '&sz=64';
     }
@@ -7776,81 +7910,124 @@ function initTheme() {
 
 
 
-  <div class="onboard-overlay" id="onboardOverlay">
-    <div class="onboard-sheet">
-      <button class="onboard-skip" onclick="closeOnboard()">Skip</button>
-      <div class="onboard-handle"></div>
-      <div class="onboard-dots">
-        <div class="onboard-dot active" id="odot-1"></div>
-        <div class="onboard-dot" id="odot-2"></div>
-        <div class="onboard-dot" id="odot-3"></div>
-        <div class="onboard-dot" id="odot-4"></div>
-      </div>
-      <div class="onboard-step active" id="onboard-1">
-        <span class="onboard-emoji">💰</span>
-        <div class="onboard-title">Welcome to MoneyHunters</div>
-        <div class="onboard-sub">Make real money from UK banks and apps — with step-by-step guides.</div>
-        <div style="margin-bottom:16px">
-          <div class="onboard-bullet"><div class="onboard-bullet-icon">🏦</div><div><div style="font-weight:600;color:#f6f8fb">Bank Switches</div><div class="onboard-bullet-val">Up to £500 per switch</div></div></div>
-          <div class="onboard-bullet"><div class="onboard-bullet-icon">💳</div><div><div style="font-weight:600;color:#f6f8fb">Cashback and Referrals</div><div class="onboard-bullet-val">Up to £100 sign-up bonuses</div></div></div>
-          <div class="onboard-bullet"><div class="onboard-bullet-icon">📈</div><div><div style="font-weight:600;color:#f6f8fb">Free Shares</div><div class="onboard-bullet-val">Up to £100 in free shares</div></div></div>
-        </div>
-        <button class="onboard-btn primary" onclick="onboardNext(2)">Show me how →</button>
-      </div>
-      <div class="onboard-step" id="onboard-2">
-        <span class="onboard-emoji">⚡</span>
-        <div class="onboard-title">How it works</div>
-        <div class="onboard-sub">Three steps. That is it.</div>
-        <div style="margin-bottom:20px">
-          <div class="onboard-how-step"><div class="onboard-how-num">1</div><div><div class="onboard-how-title">Pick an offer</div><div class="onboard-how-desc">Browse bank switches, cashback and free shares</div></div></div>
-          <div class="onboard-how-step"><div class="onboard-how-num">2</div><div><div class="onboard-how-title">Follow the guide</div><div class="onboard-how-desc">Step-by-step. Takes 5-15 min</div></div></div>
-          <div class="onboard-how-step"><div class="onboard-how-num">3</div><div><div class="onboard-how-title">Money lands</div><div class="onboard-how-desc">Track payouts in the Progress tab</div></div></div>
-        </div>
-        <button class="onboard-btn primary" onclick="onboardNext(3)">Calculate my earnings →</button>
-        <button class="onboard-btn secondary" onclick="onboardNext(4)">Skip to first offer</button>
-      </div>
-      <div class="onboard-step" id="onboard-3">
-        <span class="onboard-emoji">🧮</span>
-        <div class="onboard-title">What is waiting for you?</div>
-        <div class="onboard-sub">3 quick questions.</div>
-        <div class="onboard-calc-q"><div class="onboard-calc-label">🏦 Can you switch a bank account?</div><div class="onboard-calc-btns"><button class="onboard-calc-btn" id="calc-bank-yes" onclick="calcSelect('bank','yes')">Yes — easy £250+</button><button class="onboard-calc-btn" id="calc-bank-no" onclick="calcSelect('bank','no')">Not yet</button></div></div>
-        <div class="onboard-calc-q"><div class="onboard-calc-label">📈 Can you invest £50 for 90 days?</div><div class="onboard-calc-btns"><button class="onboard-calc-btn" id="calc-invest-yes" onclick="calcSelect('invest','yes')">Yes</button><button class="onboard-calc-btn" id="calc-invest-no" onclick="calcSelect('invest','no')">Not now</button></div></div>
-        <div class="onboard-calc-q"><div class="onboard-calc-label">💳 Do you shop online?</div><div class="onboard-calc-btns"><button class="onboard-calc-btn" id="calc-cash-yes" onclick="calcSelect('cash','yes')">Yes</button><button class="onboard-calc-btn" id="calc-cash-no" onclick="calcSelect('cash','no')">Rarely</button></div></div>
-        <div class="onboard-calc-result" id="calcResult" style="display:none"><div class="onboard-calc-amount" id="calcAmount">0</div><div class="onboard-calc-desc" id="calcDesc">in verified UK offers waiting for you</div></div>
-        <button class="onboard-btn primary" id="calcCta" onclick="onboardNext(4)" style="display:none">See my first offer →</button>
-        <button class="onboard-btn secondary" onclick="onboardNext(4)">Skip →</button>
-      </div>
-      <div class="onboard-step" id="onboard-4">
-        <span class="onboard-emoji">🔥</span>
-        <div class="onboard-title">Your first step</div>
-        <div class="onboard-sub">Highest payout, lowest effort. Start here.</div>
-        <div class="onboard-offer-card" onclick="onboardClaimOffer()">
-          <div class="onboard-offer-cat" id="onboardOfferCat">🏦 Bank Switch</div>
-          <div class="onboard-offer-name" id="onboardOfferName">First Direct Switch</div>
-          <div class="onboard-offer-reward" id="onboardOfferReward">£250</div>
-          <div><span class="onboard-offer-pill" id="onboardOfferTime">⏱ 15 min to start</span><span class="onboard-offer-pill">📋 Step-by-step guide</span><span class="onboard-offer-pill">✅ Verified</span></div>
-        </div>
-        <button class="onboard-btn primary" id="onboardClaimBtn" onclick="onboardClaimOffer()">Start earning →</button>
-        <button class="onboard-btn secondary" onclick="closeOnboard()">Explore the app first</button>
-      </div>
-    </div>
-  </div>
 
-  <!-- Hidden UI elements referenced by JS -->
-  <div style="display:none">
-    <div id="bestOffers"></div>
-    <div id="battleCount"></div>
-    <select id="moneyOfferSelect"></select>
-    <input id="earnedInput" type="number">
-    <input id="pendingInput" type="number">
-    <button id="saveMoneyBtn"></button>
-    <div id="pendingList"></div>
-    <div id="milestoneList"></div>
-    <div id="earnedTotal"></div>
-    <div id="pendingTotal"></div>
-    <div id="activeTotal"></div>
-    <div id="profilePendingCount"></div>
-    <div id="profileStreak"></div>
-  </div>
+<script id="learn-first-js">
+/* ───────── Learn-first layer ───────── */
+(function(){
+  var ZONES=[["LITTLE PENNY VILLAGE", 6, 100, 52, 135], ["BANK STREET", 6, 48, 54, 84], ["MARKET SQUARE", 84, 58, 142, 96], ["RING ROAD", 152, 84, 200, 118], ["LAKESIDE", 150, 24, 202, 58], ["HARBOUR POINT", 76, 12, 142, 45], ["THE EXCHANGE", 46, 18, 76, 40], ["FIELDWAY", 20, 78, 60, 108], ["THE HEATH", 54, 44, 100, 80], ["RIVERSIDE ROAD", 130, 64, 166, 104], ["PINEWOOD TRAIL", 168, 56, 206, 90], ["THE CAUSEWAY", 118, 2, 156, 44], ["COINSWORTH ISLE", 0, 0, 999, 999]];
+  var AREAS=["LITTLE PENNY VILLAGE","BANK STREET","MARKET SQUARE","RING ROAD","LAKESIDE","HARBOUR POINT"];
+  var BOSSES=["pete","captain","twins","carl","taxman","phisher","grimsby"];
+  var SAVEKEY="mh_coinsworth6";
+  function $(id){return document.getElementById(id)}
+  function esc(x){return String(x==null?'':x).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;')}
+  function fmtDate(s){try{return new Date(s+'T00:00:00').toLocaleDateString('en-GB',{day:'numeric',month:'short',year:'numeric'})}catch(e){return s}}
+
+  /* ---- Chapters, lesson of the week ---- */
+  window.lfChapterId=null;
+  function chapters(){return (window.PB&&window.PB.chapters)||[]}
+  function written(){var out=[];chapters().forEach(function(c){(c.articles||[]).forEach(function(a){if(a.body&&!a.existing_guide)out.push({c:c,a:a})})});return out}
+  function weekIndex(){var d=new Date();var start=new Date(d.getFullYear(),0,1);return Math.floor((d-start)/604800000)}
+  window.lfRenderHome=function(){
+    var w=written();
+    if(w.length){
+      var pick=w[weekIndex()%w.length];
+      window.lfLesson=pick.a.id;
+      $('lfLessonTitle').textContent=pick.a.title;
+      $('lfLessonSub').textContent=pick.a.summary||'';
+      $('lfLessonMeta').textContent=(pick.a.read_minutes?pick.a.read_minutes+' min read':'')+(pick.a.reviewed?' · Reviewed '+fmtDate(pick.a.reviewed):'');
+      $('lfLessonBtn').style.display='';
+    }
+    var g=$('lfChapters');
+    if(g){g.innerHTML=chapters().map(function(c){
+      var n=(c.articles||[]).length;
+      return '<button class="lf-tile" onclick="lfOpenChapter(\''+esc(c.id)+'\')"><span class="i">'+esc(c.icon||'📘')+'</span><b>'+esc(c.title)+'</b><span>'+n+' guide'+(n===1?'':'s')+'</span></button>'}).join('')}
+    var p=$('lfPills');
+    if(p){p.innerHTML='<button class="lf-pill active" data-ch="all" onclick="lfOpenChapter(\'all\')">All</button>'+chapters().map(function(c){return '<button class="lf-pill" data-ch="'+esc(c.id)+'" onclick="lfOpenChapter(\''+esc(c.id)+'\')">'+esc(c.icon||'')+' '+esc(c.title)+'</button>'}).join('')}
+  };
+  window.lfOpenLesson=function(){if(window.lfLesson){switchView('stack');lfOpenChapter('all');setTimeout(function(){try{toggleGuide(window.lfLesson);var e=document.getElementById(window.lfLesson);if(e)e.scrollIntoView({behavior:'smooth',block:'start'})}catch(x){}},150)}};
+
+  /* legacy hand-written guides belong to these chapters */
+  var LEGACY={banking:['bank'],investing:['invest'],shopping:['supermarket'],cashback:['cashback'],bills:['energy','directdebit'],plan:['stack','mistakes','gamification','battle']};
+  window.lfOpenChapter=function(id){
+    if(!document.getElementById('view-stack').classList.contains('active'))switchView('stack');
+    window.lfChapterId=id;
+    document.querySelectorAll('.lf-pill').forEach(function(b){b.classList.toggle('active',b.dataset.ch===id)});
+    var cards=document.querySelectorAll('#view-stack .guide-card[data-guide]');
+    var legacy=LEGACY[id]||[];
+    cards.forEach(function(card){
+      var k=card.dataset.guide;
+      var show=id==='all'||k==='pbch-'+id||legacy.indexOf(k)>-1;
+      card.style.display=show?'':'none';
+    });
+    var ch=chapters().filter(function(c){return c.id===id})[0];
+    var head=$('lfChHead');
+    if(head){
+      if(ch)head.innerHTML='<span class="i">'+esc(ch.icon||'📘')+'</span><div><h2>'+esc(ch.title)+'</h2><p>'+(ch.articles||[]).length+' guides</p></div>';
+      else head.innerHTML='<span class="i">📖</span><div><h2>All guides</h2><p>Every chapter, in one list</p></div>';
+    }
+    window.scrollTo({top:0});
+  };
+
+  /* ---- Tools: offer calculator ---- */
+  window.lfCalc=function(){
+    function n(id){return parseFloat($(id).value)||0}
+    var bonus=n('cBonus'),dep=n('cDeposit'),fees=n('cFees'),hrs=n('cHours'),days=n('cDays'),chk=$('cCheck').value;
+    var net=bonus-fees;
+    $('rNet').textContent=(net<0?'-':'')+'£'+Math.abs(net).toFixed(0);
+    $('rHr').textContent=hrs>0?((net<0?'-':'')+'£'+Math.abs(net/hrs).toFixed(0)):'n/a';
+    var f=[];
+    if(net<=0)f.push(['Costs you do not get back are as big as the bonus or bigger.',0]);
+    else if(hrs>0&&net/hrs<10)f.push(['Under £10 an hour before any risk of missing a condition.',0]);
+    else f.push(['Looks positive on these numbers. Read the offer\'s own terms before you apply.',1]);
+    if(dep>0)f.push(['You need £'+dep.toFixed(0)+' available'+(days>0?' for up to '+days+' days':'')+'. Check the terms for whether it is returned.',0]);
+    if(days>0)f.push(['Payout wait: about '+days+' days. Missing one condition can mean no bonus.',0]);
+    if(chk==='hard')f.push(['A hard credit check is recorded on your credit file. Check the provider\'s terms.',0]);
+    if(chk==='unknown')f.push(['Not sure about the credit check? Look in the provider\'s terms before you apply.',0]);
+    $('rFlags').innerHTML=f.map(function(x){return '<li class="'+(x[1]?'ok':'')+'">'+esc(x[0])+'</li>'}).join('');
+  };
+
+  /* ---- Play: saved game progress ---- */
+  function readSave(){try{var s=JSON.parse(localStorage.getItem(SAVEKEY)||'null');return s&&s.v===6&&s.started?s:null}catch(e){return null}}
+  function zoneOf(pos){
+    if(!pos)return AREAS[0];
+    for(var i=0;i<ZONES.length-1;i++){var z=ZONES[i];if(pos.x>=z[1]&&pos.y>=z[2]&&pos.x<=z[3]&&pos.y<=z[4])return z[0]}
+    return 'COINSWORTH ISLE';
+  }
+  function title(s){return s.toLowerCase().replace(/\b\w/g,function(c){return c.toUpperCase()})}
+  function renderSave(){
+    var s=readSave(),box=$('lfSave'),btn=$('lfPlayBtn');
+    var ps=$('lfPlaySub'),pt=$('lfPlayTitle');
+    if(!s){if(box)box.innerHTML='';if(btn)btn.textContent='Play';return}
+    var ch=Math.min(6,s.ch||1);
+    var defeated=BOSSES.filter(function(b){return s.bossDone&&s.bossDone[b]}).length;
+    var dots='';for(var i=1;i<=6;i++)dots+='<i class="'+(i<=ch?'on':'')+'"></i>';
+    var area=title(zoneOf(s.pos));
+    if(box)box.innerHTML='<div class="lf-stats"><div><b>'+esc(s.lvl||1)+'</b><span>Level</span></div><div><b>'+esc(s.coins||0)+'</b><span>Coins</span></div><div><b>'+defeated+'/7</b><span>Bosses beaten</span></div></div>'
+      +'<div class="lf-dots" aria-label="Chapter '+ch+' of 6">'+dots+'</div><div class="lf-meta">'+esc(s.name||'Hunter')+' · Chapter '+ch+' of 6 · '+esc(area)+'</div>';
+    if(btn)btn.textContent='Continue';
+    if(pt)pt.textContent=(s.name||'Hunter')+', Chapter '+ch+' of 6';
+    if(ps)ps.textContent='You are in '+area+'. Level '+(s.lvl||1)+', '+(s.coins||0)+' coins, '+defeated+' of 7 bosses beaten.';
+  }
+  window.lfRenderSave=renderSave;
+  window.lfOpenGame=function(){
+    var o=$('gameOverlay'),f=$('gameFrame');
+    if(!o)return;
+    if(!f.getAttribute('src')||f.getAttribute('src')==='about:blank')f.setAttribute('src',window.LF_GAME_SRC||'/play/');
+    o.classList.add('open');document.body.style.overflow='hidden';
+  };
+  window.lfCloseGame=function(){
+    var o=$('gameOverlay');if(o)o.classList.remove('open');document.body.style.overflow='';
+    renderSave();
+  };
+
+  /* ---- Guide opened from the game ---- */
+  function fromGame(){try{var q=new URLSearchParams(location.search);return q.get('src')==='coinsworth'}catch(e){return false}}
+  if(fromGame()){document.addEventListener('DOMContentLoaded',function(){var b=$('gameReturn');if(b)b.classList.add('show')});}
+
+  document.addEventListener('DOMContentLoaded',function(){renderSave();lfCalc();});
+  document.addEventListener('visibilitychange',function(){if(!document.hidden)renderSave()});
+})();
+</script>
+
 </body>
 </html>
