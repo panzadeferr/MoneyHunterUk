@@ -3010,6 +3010,7 @@ body.light .lf-card{box-shadow:0 2px 12px rgba(0,0,0,.06)}
 .lf-btn{display:inline-flex;align-items:center;justify-content:center;gap:6px;margin-top:12px;background:var(--green);color:#04140c;border:0;border-radius:12px;padding:11px 16px;font:700 14px var(--fb);cursor:pointer}
 body.light .lf-btn{color:#fff}
 .lf-btn.ghost{background:transparent;color:var(--green);border:1px solid var(--line-2)}
+body.light .lf-btn.ghost{color:var(--green)}
 .lf-h2{font-family:var(--fh);font-size:17px;margin:22px 2px 10px;color:var(--text)}
 .lf-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px}
 .lf-tile{display:flex;flex-direction:column;align-items:flex-start;gap:4px;text-align:left;background:var(--card);border:1px solid var(--line-2);border-radius:14px;padding:13px;color:var(--text);cursor:pointer;min-width:0}
@@ -3071,6 +3072,26 @@ body.light #gameReturn{color:#fff}
 .lf-intro-list li{background:var(--bg3);border-radius:12px;padding:11px 13px;font-size:14px;color:var(--text)}
 .lf-intro-list b{display:block;font-weight:700}
 .lf-intro-list span{color:var(--muted2);font-size:12.5px}
+</style>
+<style id="tracker-css">
+.tk-row{background:var(--card);border:1px solid var(--line-2);border-radius:14px;padding:12px 14px;margin-bottom:10px}
+.tk-top{display:flex;justify-content:space-between;gap:10px;align-items:flex-start}
+.tk-name{font-weight:700;font-size:15px;color:var(--text)}
+.tk-amt{font-weight:800;color:var(--green);white-space:nowrap}
+.tk-line{display:flex;justify-content:space-between;gap:8px;font-size:13px;color:var(--muted);margin-top:6px}
+.tk-line b{color:var(--text);font-weight:600}
+.tk-chip{font-size:12px;font-weight:700;border-radius:999px;padding:3px 9px;background:rgba(127,127,127,.14);color:var(--muted)}
+.tk-chip.soon{background:rgba(245,158,11,.18);color:#b45309}
+.tk-chip.late{background:rgba(220,38,38,.16);color:#b91c1c}
+.tk-chip.ok{background:rgba(5,150,82,.14);color:var(--green)}
+.tk-note{font-size:12.5px;color:var(--muted);margin-top:6px}
+.tk-actions{display:flex;gap:8px;margin-top:8px}
+#tkBox+.lf-h2{margin-top:26px}
+.tk-actions .lf-btn{margin-top:0;padding:8px 12px;font-size:13px}
+.tk-form input,.tk-form select{background:var(--bg2,rgba(127,127,127,.12));color:var(--text);border:1px solid var(--line-2);border-radius:10px;padding:8px 10px;font:14px var(--fb);max-width:170px;min-width:0}
+.tk-form textarea{width:100%;box-sizing:border-box;background:var(--bg2,rgba(127,127,127,.12));color:var(--text);border:1px solid var(--line-2);border-radius:10px;padding:8px 10px;font:14px var(--fb);margin-top:8px}
+#lfDue{display:none;cursor:pointer}
+#lfDue.show{display:block}
 </style>
 </head>
 <body>
@@ -3154,6 +3175,8 @@ body.light #gameReturn{color:#fff}
 
       
       <!-- LEARN FIRST -->
+
+      <div class="lf-card" id="lfDue" onclick="switchView('progress')" role="button"><div class="lf-eyebrow">Coming up</div><div class="lf-sub" id="lfDueText" style="margin-top:8px"></div></div>
 
       <div class="lf-card" id="lfLesson">
         <div class="lf-eyebrow">This week's lesson</div>
@@ -3592,33 +3615,7 @@ body.light #gameReturn{color:#fff}
 
       <!-- GAMIFICATION GUIDE -->
       <div class="guide-list" style="margin-top:8px">
-        <div class="guide-card card" data-guide="gamification">
-          <div class="guide-card-head" onclick="toggleGuide('guide-gamification')">
-            <div class="guide-icon green">🎮</div>
-            <div>
-              <h3>How the Rewards System Works</h3>
-              <p class="guide-meta">XP · Badges · Streaks · Missions</p>
-            </div>
-          </div>
-          <button class="guide-expand-btn" id="btn-guide-gamification" onclick="toggleGuide('guide-gamification')">Read Guide ↓</button>
-          <div class="guide-body" id="guide-gamification">
-            <div class="guide-section-title">⚡ What is XP?</div>
-            <p class="guide-p">XP tracks your learning activity inside Money Hunters: daily check-ins, quizzes and guides.</p>
-            <div class="xp-table">
-              <div class="xp-row"><span>🔥 Daily check-in</span><span class="xp-val">+10 XP</span></div>
-              <div class="xp-row"><span>🎯 7-day streak</span><span class="xp-val">+50 XP</span></div>
-            </div>
-            <div class="guide-section-title" style="margin-top:16px">🏅 Badges</div>
-            <p class="guide-p">Badges mark milestones you reach as you learn and track.</p>
-            <div class="xp-table">
-              <div class="xp-row"><span>🔥 On Fire</span><span class="xp-val">7-day streak</span></div>
-              <div class="xp-row"><span>💰 Money Maker</span><span class="xp-val">£100 tracked</span></div>
-              <div class="xp-row"><span>👑 Elite Hunter</span><span class="xp-val">£500 tracked</span></div>
-            </div>
-            <div class="guide-section-title" style="margin-top:16px">🔥 Streaks</div>
-            <p class="guide-p">Log in and claim daily XP each day to build your streak. Miss a day and it resets to zero.</p>
-          </div>
-        </div>
+        
       </div>
 
       <!-- CASHBACK BATTLE -->
@@ -3644,6 +3641,9 @@ body.light #gameReturn{color:#fff}
 
     <section id="view-progress" class="view">
 
+      <div class="lf-h2">My offers and deadlines</div>
+      <div id="tkBox"></div>
+
       <div class="lf-h2" style="margin-top:2px">Is this offer worth my time?</div>
       <div class="lf-card" id="lfCalc">
         <div class="lf-sub" style="margin-bottom:6px">Put in the numbers from the offer's own terms. Nothing here is saved or sent.</div>
@@ -3656,7 +3656,9 @@ body.light #gameReturn{color:#fff}
         <div class="lf-result"><div><b id="rNet">£0</b><span>Bonus after costs</span></div><div><b id="rHr">£0</b><span>Per hour of your time</span></div></div>
         <ul class="lf-flags" id="rFlags"></ul>
       </div>
-      <div class="lf-h2">My progress and payouts</div>
+
+      <div id="lfLegacyHidden" style="display:none">
+      
 
       <!-- Streak Warning -->
       <div id="streakWarning" class="streak-warning hidden"></div>
@@ -3763,6 +3765,7 @@ body.light #gameReturn{color:#fff}
         </div>
         <div id="raffleContent"></div>
       </section>
+      </div>
 
     
       <div class="lf-h2">Offer ideas</div>
@@ -3911,10 +3914,11 @@ body.light #gameReturn{color:#fff}
 
       <section class="section">
         <div class="section-head">
-          <h2 class="section-title">Leaderboard</h2>
-          <div class="section-note">XP rank</div>
+          <h2 class="section-title">Game leaderboard</h2>
+          <div class="section-note">coming soon</div>
         </div>
-        <div class="leaderboard" id="leaderboard"></div>
+        <div class="lf-sub" style="padding:4px 2px 10px">A shared Coinsworth leaderboard will appear here once enough people are playing. Your own progress is on the Play tab.</div>
+        <div class="leaderboard" id="leaderboard" style="display:none"></div>
         <div class="footer-note">
           Referral links may earn a commission at no extra cost to the user. Always verify current terms directly with the provider.
         </div>
@@ -3929,7 +3933,7 @@ body.light #gameReturn{color:#fff}
   <div class="auth-modal" id="authModal">
     <div class="auth-box">
       <div class="auth-logo">Money<span>Hunters</span></div>
-      <div class="auth-sub">Save your progress · sync across devices · never lose your XP</div>
+      <div class="auth-sub">Save your offers and deadlines · sync across devices</div>
       <div class="auth-tabs">
         <button class="auth-tab on" id="tabSignup" onclick="switchAuthTab('signup')">Create Account</button>
         <button class="auth-tab" id="tabLogin" onclick="switchAuthTab('login')">Log In</button>
@@ -7209,7 +7213,7 @@ function initTheme() {
 
       // 5. View Full Guide button
       html += '<button class="offer-card-claim" style="margin-top:10px" data-open-id="' + offer.id + '" onclick="event.stopPropagation();openOfferById(this.dataset.openId)">';
-      html += '🎯 View Full Guide & Claim →</button>';
+      html += '🎯 View offer details →</button>';
       return html;
     }
 
@@ -8028,6 +8032,118 @@ function initTheme() {
 
   document.addEventListener('DOMContentLoaded',function(){renderSave();lfCalc();});
   document.addEventListener('visibilitychange',function(){if(!document.hidden)renderSave()});
+})();
+</script>
+
+
+<script id="tracker-js">
+(function(){
+  var KEY='mh_tracker_';
+  function $(i){return document.getElementById(i)}
+  function esc(x){return String(x==null?'':x).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;')}
+  function user(){try{return (typeof currentUser!=='undefined'&&currentUser)?currentUser:null}catch(e){return null}}
+  function load(u){try{return JSON.parse(localStorage.getItem(KEY+u.id)||'[]')}catch(e){return []}}
+  function save(u,l){try{localStorage.setItem(KEY+u.id,JSON.stringify(l))}catch(e){}}
+  function today(){var d=new Date();return d.getFullYear()+'-'+('0'+(d.getMonth()+1)).slice(-2)+'-'+('0'+d.getDate()).slice(-2)}
+  function addDays(iso,n){var d=new Date(iso+'T12:00:00');d.setDate(d.getDate()+n);return d.getFullYear()+'-'+('0'+(d.getMonth()+1)).slice(-2)+'-'+('0'+d.getDate()).slice(-2)}
+  function daysTo(iso){if(!iso)return null;return Math.ceil((new Date(iso+'T23:59:00')-new Date())/864e5)}
+  function fmt(iso){try{return new Date(iso+'T12:00:00').toLocaleDateString('en-GB',{day:'numeric',month:'short',year:'numeric'})}catch(e){return iso}}
+  function chip(d){
+    if(d===null)return '';
+    if(d<0)return '<span class="tk-chip late">'+(-d)+' day'+(d===-1?'':'s')+' past</span>';
+    if(d===0)return '<span class="tk-chip soon">today</span>';
+    return '<span class="tk-chip '+(d<=7?'soon':'ok')+'">'+d+' day'+(d===1?'':'s')+' left</span>';
+  }
+  var adding=false;
+  function nextDate(e){var c=[];if(e.doBy)c.push(e.doBy);if(e.payBy)c.push(e.payBy);c=c.filter(function(x){return daysTo(x)>=-30}).sort();return c[0]||null}
+  function mirror(u,e,del){
+    try{
+      if(typeof db==='undefined')return;
+      if(del||e.paid||!e.payBy){db.from('pending_payouts').delete().eq('user_id',u.id).eq('offer_id',e.id).then(function(){},function(){});return}
+      db.from('pending_payouts').upsert({user_id:u.id,offer_id:e.id,offer_name:e.name,reward:e.reward||'',amount:Number(e.amount)||0,due_at:new Date(e.payBy+'T12:00:00').toISOString()},{onConflict:'user_id,offer_id'}).then(function(){},function(){});
+    }catch(x){}
+  }
+  window.tkRender=function(){
+    var box=$('tkBox');if(!box)return;
+    var u=user();
+    if(!u){
+      box.innerHTML='<div class="lf-card"><div class="lf-title" style="font-size:18px;margin-top:0">Keep track of your offers</div><div class="lf-sub">Add an offer you have started, with its deposit or deadline dates, and see what is due next. Signing in saves it to your account. Offers, guides and the game stay free to use without an account.</div><button class="lf-btn" onclick="showAuthModal()">Sign in or create account</button><div class="lf-meta">Telegram reminders for your deadlines are planned. They are not switched on yet.</div></div>';
+      return;
+    }
+    var list=load(u);
+    var open=list.filter(function(e){return !e.paid}).sort(function(a,b){return (nextDate(a)||'9999').localeCompare(nextDate(b)||'9999')});
+    var done=list.filter(function(e){return e.paid});
+    var h='';
+    open.forEach(function(e){
+      var d1=e.doBy?daysTo(e.doBy):null,d2=e.payBy?daysTo(e.payBy):null;
+      h+='<div class="tk-row"><div class="tk-top"><div class="tk-name">'+esc(e.name)+'</div><div class="tk-amt">'+esc(e.reward||'')+'</div></div>';
+      if(e.doBy)h+='<div class="tk-line"><span>'+esc(e.doLabel||'Do by')+' <b>'+fmt(e.doBy)+'</b></span>'+chip(d1)+'</div>';
+      if(e.payBy)h+='<div class="tk-line"><span>Bonus expected by <b>'+fmt(e.payBy)+'</b></span>'+chip(d2)+'</div>';
+      if(e.note)h+='<div class="tk-note">'+esc(e.note)+'</div>';
+      h+='<div class="tk-actions"><button class="lf-btn ghost" onclick="tkPaid(\''+esc(e.id)+'\')">Mark as paid</button><button class="lf-btn ghost" onclick="tkRemove(\''+esc(e.id)+'\')">Remove</button></div></div>';
+    });
+    if(!open.length)h+='<div class="lf-sub" style="padding:2px 4px 10px">Nothing tracked yet.</div>';
+    if(adding){
+      var opts='<option value="">Choose an offer</option>';
+      try{offers.forEach(function(o){opts+='<option value="'+esc(o.id)+'">'+esc(o.name)+'</option>'})}catch(e){}
+      opts+='<option value="__other">Something else</option>';
+      h+='<div class="lf-card tk-form"><label class="lf-field">Offer<select id="tkOffer" onchange="tkPick()">'+opts+'</select></label>'+
+        '<label class="lf-field" id="tkNameRow" style="display:none">Name<input id="tkName" type="text" maxlength="60"></label>'+
+        '<label class="lf-field">Reward (£)<input id="tkAmt" type="number" min="0" inputmode="decimal"></label>'+
+        '<label class="lf-field">Started on<input id="tkStart" type="date" value="'+today()+'" onchange="tkPick(1)"></label>'+
+        '<label class="lf-field">Step to do<input id="tkLabel" type="text" maxlength="40" placeholder="e.g. Deposit and trade"></label>'+
+        '<label class="lf-field">Do it by<input id="tkDoBy" type="date"></label>'+
+        '<label class="lf-field">Bonus expected by<input id="tkPayBy" type="date"></label>'+
+        '<textarea id="tkNote" rows="2" maxlength="200" placeholder="Notes: conditions from the offer terms"></textarea>'+
+        '<div class="tk-actions"><button class="lf-btn" onclick="tkSave()">Save</button><button class="lf-btn ghost" onclick="tkCancel()">Cancel</button></div></div>';
+    }else h+='<button class="lf-btn" onclick="tkAdd()">+ Add an offer</button>';
+    if(done.length){
+      h+='<div class="lf-h2" style="font-size:15px">Done</div>';
+      done.forEach(function(e){h+='<div class="tk-row"><div class="tk-top"><div class="tk-name">'+esc(e.name)+'</div><div class="tk-amt">'+esc(e.reward||'')+'</div></div><div class="tk-note">Marked as paid '+fmt(e.paidOn||today())+'</div><div class="tk-actions"><button class="lf-btn ghost" onclick="tkRemove(\''+esc(e.id)+'\')">Remove</button></div></div>'});
+    }
+    h+='<div class="lf-meta">Saved to your account. Telegram reminders for these dates are planned and not switched on yet, so check this list. Dates and amounts are what you enter. Always check the offer\'s own terms.</div>';
+    box.innerHTML=h;
+  };
+  window.tkAdd=function(){adding=true;tkRender()};
+  window.tkCancel=function(){adding=false;tkRender()};
+  window.tkPick=function(dateOnly){
+    var v=$('tkOffer').value,o=null;
+    try{o=offers.find(function(x){return x.id===v})}catch(e){}
+    $('tkNameRow').style.display=v==='__other'?'':'none';
+    if(dateOnly!==1&&o){
+      if(!$('tkAmt').value)$('tkAmt').value=o.amount||'';
+    }
+    if(o&&o.expectedDays&&$('tkStart').value)$('tkPayBy').value=addDays($('tkStart').value,o.expectedDays);
+  };
+  window.tkSave=function(){
+    var u=user();if(!u)return;
+    var v=$('tkOffer').value,o=null,name='';
+    try{o=offers.find(function(x){return x.id===v})}catch(e){}
+    name=o?o.name:($('tkName').value||'').trim();
+    if(!name){alert('Choose an offer or type a name.');return}
+    var amt=Number($('tkAmt').value||0);
+    var e={id:(o?o.id:'custom-'+Date.now())+(load(u).some(function(x){return o&&x.id===o.id})?'-'+Date.now():''),name:name,amount:amt,reward:amt?'£'+amt:'',start:$('tkStart').value||today(),doLabel:($('tkLabel').value||'').trim(),doBy:$('tkDoBy').value||'',payBy:$('tkPayBy').value||'',note:($('tkNote').value||'').trim(),paid:false};
+    var l=load(u);l.push(e);save(u,l);mirror(u,e);adding=false;tkRender();dueStrip();
+  };
+  window.tkPaid=function(id){var u=user();if(!u)return;var l=load(u);l.forEach(function(e){if(e.id===id){e.paid=true;e.paidOn=today();mirror(u,e,true)}});save(u,l);tkRender();dueStrip()};
+  window.tkRemove=function(id){var u=user();if(!u)return;var l=load(u).filter(function(e){if(e.id===id){mirror(u,e,true);return false}return true});save(u,l);tkRender();dueStrip()};
+  function dueStrip(){
+    var el=$('lfDue'),tx=$('lfDueText');if(!el||!tx)return;
+    var u=user();if(!u){el.classList.remove('show');return}
+    var items=[];
+    load(u).forEach(function(e){if(e.paid)return;[['doBy',e.doLabel||'Do by'],['payBy','Bonus expected']].forEach(function(p){var d=e[p[0]]?daysTo(e[p[0]]):null;if(d!==null&&d<=14&&d>=-7)items.push({d:d,t:e.name+': '+p[1].toLowerCase()+' '+fmt(e[p[0]])})})});
+    items.sort(function(a,b){return a.d-b.d});
+    if(!items.length){el.classList.remove('show');return}
+    tx.innerHTML=items.slice(0,2).map(function(i){return esc(i.t)+' ('+(i.d<0?(-i.d)+' days past':i.d===0?'today':'in '+i.d+' days')+')'}).join('<br>')+(items.length>2?'<br>+'+(items.length-2)+' more':'');
+    el.classList.add('show');
+  }
+  var last='x';
+  function tick(){var u=user();var id=u?u.id:'';if(id!==last){last=id;tkRender();dueStrip()}}
+  setInterval(tick,1000);
+  document.addEventListener('DOMContentLoaded',function(){tkRender();dueStrip()});
+  document.addEventListener('visibilitychange',function(){if(!document.hidden){tkRender();dueStrip()}});
+  var sv=window.switchView;
+  if(typeof sv==='function'){window.switchView=function(v){var r=sv.apply(this,arguments);if(v==='progress')tkRender();if(v==='home')dueStrip();return r}}
 })();
 </script>
 
