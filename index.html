@@ -5,7 +5,7 @@
   <meta name="impact-site-verification" value="03e22ca2-bc2c-46e3-8fcb-7f404a20e9bb">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Money Hunters UK — Make More. Track Everything.</title>
-<meta name="description" content="Free UK money-offer tracker: bank switches, cashback and free shares, with the date each offer was last checked. Club Lloyds £200, NatWest £200, Barclays up to £300. Referral links, we may earn a commission.">
+<meta name="description" content="Free UK money-offer tracker: bank switches, cashback and free shares, with the date each offer was last checked. Guides plus offers with the conditions shown. Referral links, we may earn a commission.">
 <meta name="theme-color" content="#080b10">
 <link rel="canonical" href="https://moneyhunters.co.uk/">
     <link rel="alternate" type="application/atom+xml" title="Money Hunters UK: latest deals" href="https://moneyhunters.co.uk/feed.xml">
@@ -687,6 +687,8 @@ footer {
     .hero-section { padding-top: 60px !important; min-height: unset !important; }
   }
 
+.chip{display:inline-flex;align-items:center;gap:6px;padding:10px 14px;border-radius:999px;border:1px solid var(--line2);background:var(--bg2);color:var(--t);font-size:13px;font-weight:600;text-decoration:none}
+.chip:hover{border-color:var(--g);color:var(--g)}
 </style>
 </head>
 <body>
@@ -696,8 +698,9 @@ footer {
   <a class="nav-brand" href="/">Money<span>Hunters</span></a>
   <div class="nav-right">
     <a class="nav-link" href="#how">How it works</a>
+    <a class="nav-link" href="/play/">Play</a>
     <a class="nav-link" href="mailto:hello@moneyhunters.co.uk">Contact</a>
-    <a class="nav-cta" href="/app.html">🚀 Open App Free</a>
+    <a class="nav-cta" href="/app.html">Open the app</a>
   </div>
 </nav>
 
@@ -705,97 +708,88 @@ footer {
 <section class="hero">
   <div class="hero-kicker">
     <span class="hero-kicker-dot"></span>
-    <span id="dealCount">100+</span> UK offers tracked · each shows when it was last checked
+    Free guides · a money game · checked offers marked Ad
   </div>
   <h1 class="hero-h1">
-    Never miss a<br>
-    <span class="accent">£100+ UK money deal</span><br>
-    again.
+    Learn how UK money works.<br>
+    <span class="accent">Then pick what is worth your time.</span>
   </h1>
   <p class="hero-sub">
-    Bank switches. Cashback. Free shares. All tracked in one free app.<br>
-    Follow the playbook: <strong style="color:var(--g)">reward, steps and terms for every offer</strong>
-    <span style="font-size:12px;color:var(--muted);display:block;margin-top:4px">Amounts vary and conditions apply · ~10-15 mins to start an offer</span>
+    Plain-English guides on banking, saving, tax and renting. A game that teaches the rules. And a list of current offers, each one showing its conditions.
+    <span style="font-size:12px;color:var(--muted);display:block;margin-top:6px">Each guide shows when it was last reviewed and where the facts come from.</span>
   </p>
 
   <div class="hero-stats" id="heroStats">
     <div class="hero-stat">
-      <div class="hero-stat-v green" id="dealCount2">
-        100+
-      </div>
-      <div class="hero-stat-l">
-        Offers tracked
-      </div>
+      <div class="hero-stat-v green" id="guideCount">50+</div>
+      <div class="hero-stat-l">Guides</div>
     </div>
     <div class="hero-stat">
-      <div class="hero-stat-v">
-        <span class="unit">£</span>1,000
-        <span class="unit">+</span>
-      </div>
-      <div class="hero-stat-l">From bank switches alone</div>
+      <div class="hero-stat-v"><span id="chapterCount">14</span></div>
+      <div class="hero-stat-l">Chapters</div>
     </div>
     <div class="hero-stat">
       <div class="hero-stat-v">Free</div>
-      <div class="hero-stat-l">
-        Free to use, funded by referrals
-      </div>
+      <div class="hero-stat-l">Funded by referral links, marked Ad</div>
     </div>
   </div>
 
   <div class="hero-ctas">
-    <a class="btn-primary" href="#signup">
-      See Today's Best Deals →
-    </a>
-    <a class="btn-secondary" href="/app.html">
-      🚀 Open App Free
-    </a>
+    <a class="btn-primary" href="/app.html">Start learning →</a>
+    <a class="btn-secondary" href="/play/">🎮 Play the game</a>
   </div>
 
-
-  <!-- App preview mockup -->
+  <!-- App preview mockup: the Learn home -->
   <div class="app-preview">
     <div class="app-preview-card">
       <div class="app-header-mock">
         <div class="app-brand-mock">Money<span>Hunters</span></div>
-        <span style="font-size:11px;color:var(--tl)">🔗 📲</span>
-      </div>
-      <div class="app-stats-mock">
-        <div class="stat-mock"><div class="stat-mock-l">Deals</div><div class="stat-mock-v" style="color:var(--g)">100+</div></div>
-        <div class="stat-mock"><div class="stat-mock-l">Refresh</div><div class="stat-mock-v" style="color:var(--a)">6h</div></div>
-        <div class="stat-mock"><div class="stat-mock-l">Cost</div><div class="stat-mock-v">£0</div></div>
-        <div class="stat-mock"><div class="stat-mock-l">Ads</div><div class="stat-mock-v" style="color:var(--a)">Labelled</div></div>
+        <span style="font-size:11px;color:var(--tl)">Learn · Offers · Tools · Play</span>
       </div>
       <div class="app-offer-mock g">
         <div>
-          <div class="offer-mock-name">Club Lloyds</div>
-          <div class="offer-mock-sub">CASS switch · 2 DDs needed</div>
+          <div class="offer-mock-sub" style="color:var(--g);font-weight:700;letter-spacing:.08em;text-transform:uppercase;font-size:10px">This week's lesson</div>
+          <div class="offer-mock-name">Current accounts explained</div>
+          <div class="offer-mock-sub">4 min read · reviewed and dated</div>
         </div>
-        <div class="offer-mock-reward a">£200</div>
       </div>
       <div class="app-offer-mock b">
         <div>
-          <div class="offer-mock-name">NatWest</div>
-          <div class="offer-mock-sub">⏳ Pending payout · 12 days</div>
+          <div class="offer-mock-sub" style="color:var(--b);font-weight:700;letter-spacing:.08em;text-transform:uppercase;font-size:10px">Coinsworth: The Little Penny</div>
+          <div class="offer-mock-name">Chapter 3 of 6 · Market Square</div>
+          <div class="offer-mock-sub">Continue where you left off</div>
         </div>
-        <div class="offer-mock-reward" style="color:var(--b)">£150</div>
       </div>
       <div class="app-offer-mock g">
         <div>
-          <div class="offer-mock-name">Freetrade</div>
-          <div class="offer-mock-sub">✅ Completed · free share</div>
+          <div class="offer-mock-name">Is this offer worth my time?</div>
+          <div class="offer-mock-sub">Calculator in Tools · nothing is saved</div>
         </div>
-        <div class="offer-mock-reward g">£34</div>
       </div>
     </div>
+  </div>
+</section>
+
+<!-- CHAPTERS -->
+<section style="padding:40px 20px 8px;max-width:520px;margin:0 auto;text-align:center">
+  <div style="font-size:12px;font-weight:700;color:var(--g);text-transform:uppercase;letter-spacing:.1em;margin-bottom:8px">Start with what you want to do</div>
+  <h2 style="font-size:24px;font-weight:800;color:#fff;margin-bottom:16px">Pick a chapter</h2>
+  <div id="chapterChips" style="display:flex;flex-wrap:wrap;gap:8px;justify-content:center">
+    <a class="chip" href="/app.html?chapter=banking">🏦 Banking and switching</a>
+    <a class="chip" href="/app.html?chapter=renting">🏠 Renting</a>
+    <a class="chip" href="/app.html?chapter=saving">🐷 Saving</a>
+    <a class="chip" href="/app.html?chapter=bills">⚡ Bills</a>
+    <a class="chip" href="/app.html?chapter=tax">🧾 Tax</a>
+    <a class="chip" href="/app.html?chapter=scams">🛡️ Scam defence</a>
   </div>
 </section>
 
 <!-- EARNINGS PROOF SECTION -->
 <section style="padding:48px 20px;max-width:480px;margin:0 auto">
   <div style="text-align:center;margin-bottom:24px">
-    <div style="font-size:12px;font-weight:700;color:var(--g);text-transform:uppercase;letter-spacing:.1em;margin-bottom:8px">💰 Available right now</div>
-    <h2 style="font-size:24px;font-weight:800;color:#fff;margin-bottom:8px">What you can earn this month</h2>
-    <p style="font-size:14px;color:var(--muted)">Examples of current offers. <strong>Ad:</strong> we earn a referral commission on these; amounts are maximums and conditions apply.</p>
+    <div style="font-size:12px;font-weight:700;color:var(--g);text-transform:uppercase;letter-spacing:.1em;margin-bottom:8px">Current offers</div>
+    <h2 style="font-size:24px;font-weight:800;color:#fff;margin-bottom:8px">Offers, with the conditions shown</h2>
+    <p style="font-size:14px;color:var(--muted)">Examples from the app. <strong>Ad:</strong> we may earn a referral commission on these. Amounts are maximums, conditions apply, and each offer in the app shows when we last checked it.</p>
   </div>
 
   <div style="background:var(--bg2);border:1px solid var(--line2);border-radius:16px;overflow:hidden;margin-bottom:16px">
@@ -834,67 +828,60 @@ footer {
       </div>
       <div style="font-size:20px;font-weight:900;color:var(--g)">£50</div>
     </div>
-    <!-- Total row -->
-    <div style="padding:16px;background:rgba(31,232,135,.06);display:flex;justify-content:space-between;align-items:center">
-      <div style="font-size:14px;font-weight:800;color:#fff">These 5 offers, at most =</div>
-      <div style="font-size:26px;font-weight:900;color:var(--g)">£660</div>
-    </div>
   </div>
 
   <div style="text-align:center;font-size:12px;color:var(--muted);margin-bottom:24px">
-    ⏱ ~10–15 mins per offer · free forever
+    Read the conditions before you apply. Some offers involve a credit check.
   </div>
 
   <a href="/app.html" style="display:block;background:var(--g);color:#000;text-align:center;padding:16px;border-radius:12px;font-size:15px;font-weight:800;text-decoration:none">
-    See All Offers →
+    See all offers in the app →
   </a>
 </section>
 
 
 <!-- LIVE TICKER -->
-<div class="ticker-section">
-  <div class="ticker-track" id="tickerTrack"></div>
-</div>
+
 
 <!-- FEATURES -->
 <section class="features">
-  <div class="features-label">What you get</div>
-  <h2 class="features-h2">Everything you need to make the most of UK referral deals</h2>
+  <div class="features-label">What is inside</div>
+  <h2 class="features-h2">Learn first. Offers stay optional.</h2>
   <div class="features-grid">
     <div class="feature-card">
+      <span class="feature-icon">📚</span>
+      <div class="feature-title">Guides you can check</div>
+      <div class="feature-body">Banking, saving, investing, tax, credit, scams, bills, pensions and renting. Each guide shows its review date and sources, and says where the rules differ across the UK.</div>
+      <span class="feature-tag">Reviewed and dated</span>
+    </div>
+    <div class="feature-card">
+      <span class="feature-icon">🎮</span>
+      <div class="feature-title">Coinsworth: the game</div>
+      <div class="feature-body">Run a small shop, pay the rent and face the scammers. Each battle is a real UK money question, and every answer links to the guide that explains it. For adults, free, no sign-up.</div>
+      <span class="feature-tag">Progress saved on your device</span>
+    </div>
+    <div class="feature-card">
+      <span class="feature-icon">🧮</span>
+      <div class="feature-title">Is it worth my time?</div>
+      <div class="feature-body">Enter an offer's bonus, costs, time and payout wait to see what it works out to per hour, and what to check in the terms first. Nothing you type is saved or sent.</div>
+      <span class="feature-tag">In the Tools tab</span>
+    </div>
+    <div class="feature-card">
+      <span class="feature-icon">⏳</span>
+      <div class="feature-title">Deadline tracker</div>
+      <div class="feature-body">Sign in to track the offers you start, with their deposit and payout dates, and see what is due next. Telegram reminders are planned, not switched on yet.</div>
+      <span class="feature-tag">Sign in to use</span>
+    </div>
+    <div class="feature-card">
       <span class="feature-icon">🏦</span>
-      <div class="feature-title">Bank Switch Tracker</div>
-      <div class="feature-body">Never miss a payout date. Track every switch from "opened" to "pending" to "paid". Step-by-step guides for every offer.</div>
-      <span class="feature-tag">Bonuses vary by offer</span>
-    </div>
-    <div class="feature-card">
-      <span class="feature-icon">⚔️</span>
-      <div class="feature-title">Cashback Battle Table</div>
-      <div class="feature-body">Live supermarket gift card rates compared across EverUp, Jam Doughnut, Airtime and TopGiftCards. Always know the best rate before you buy.</div>
-      <span class="feature-tag">Updated daily</span>
-    </div>
-    <div class="feature-card">
-      <span class="feature-icon">🧩</span>
-      <div class="feature-title">Stacking Guides</div>
-      <div class="feature-body">Don't just take one deal — stack them. Jam Doughnut gift card + Amex + Clubcard + cashback portal. Step-by-step guides show you exactly how.</div>
-      <span class="feature-tag">Up to 30% off weekly shop</span>
-    </div>
-    <div class="feature-card">
-      <span class="feature-icon">💸</span>
-      <div class="feature-title">Pending Payout Tracker</div>
-      <div class="feature-body">See exactly when each bank switch or invest bonus is due. Countdown timers, payout amounts, and alerts when money should land.</div>
-      <span class="feature-tag">Never forget a payout</span>
-    </div>
-    <div class="feature-card">
-      <span class="feature-icon">📊</span>
-      <div class="feature-title">Progress & XP System</div>
-      <div class="feature-body">Track your progress with levels, badges and streaks as you explore the app.</div>
-      <span class="feature-tag">Gamified tracking</span>
+      <div class="feature-title">Offers with conditions</div>
+      <div class="feature-body">Bank switches, cashback and free shares, each with its conditions and the date we last checked it. Offers are marked Ad because we may earn a referral commission.</div>
+      <span class="feature-tag">Ad · conditions apply</span>
     </div>
     <div class="feature-card">
       <span class="feature-icon">📲</span>
-      <div class="feature-title">Daily Telegram Alerts</div>
-      <div class="feature-body">New deals every morning at 8am. Bank switches on Monday, invest bonuses Tuesday, stacking guides Wednesday. Never miss a new offer.</div>
+      <div class="feature-title">Telegram and Reddit</div>
+      <div class="feature-body">New offers and updates in our Telegram channel, and referral codes shared by the community on r/ReferralHunterUK.</div>
       <span class="feature-tag">Free to join</span>
     </div>
   </div>
@@ -904,35 +891,27 @@ footer {
 <section class="how" id="how">
   <div class="how-inner">
     <div class="how-label">Simple process</div>
-    <h2 class="how-h2">Start with your first offer</h2>
+    <h2 class="how-h2">Learn, check, then decide</h2>
     <div class="how-steps">
       <div class="how-step">
         <div class="how-num">1</div>
         <div>
-          <div class="how-step-title">Sign up free — takes 30 seconds</div>
-          <div class="how-step-body">No payment needed. Just your email and a username. Your progress syncs across all your devices.</div>
+          <div class="how-step-title">Read a guide or play a chapter</div>
+          <div class="how-step-body">Pick what you want to do, such as switching a bank, cutting bills or spotting scams. No account needed.</div>
         </div>
       </div>
       <div class="how-step">
         <div class="how-num">2</div>
         <div>
-          <div class="how-step-title">Open your first offer</div>
-          <div class="how-step-body">Start with Chase UK — deposit £1,000, get £50 in 30 days. Then a bank switch such as Club Lloyds (£200). The Today's Money Plan tells you exactly what to do.</div>
-          <div class="how-step-reward">💰 Chase £50 + Lloyds £200 = £250 if you meet each offer's conditions</div>
+          <div class="how-step-title">Check an offer's conditions</div>
+          <div class="how-step-body">Every offer lists what you must do, the deposit or direct debits it asks for, and when we last checked it. Use the calculator to see if it is worth your time.</div>
         </div>
       </div>
       <div class="how-step">
         <div class="how-num">3</div>
         <div>
-          <div class="how-step-title">Track your pending payouts</div>
-          <div class="how-step-body">The app shows you exactly when each payout is due. No spreadsheets. No forgotten switches. Just money landing in your account.</div>
-        </div>
-      </div>
-      <div class="how-step">
-        <div class="how-num">4</div>
-        <div>
-          <div class="how-step-title">Stack and repeat</div>
-          <div class="how-step-body">Once you've done bank switches, move to supermarket stacking, gift card arbitrage, and invest bonuses. The app shows you what to do next.</div>
+          <div class="how-step-title">Track your deadlines</div>
+          <div class="how-step-body">If you go ahead, sign in and add the dates. The app shows what is due next. Missing one condition can mean no bonus, so the dates matter.</div>
         </div>
       </div>
     </div>
@@ -941,21 +920,21 @@ footer {
 
 <!-- FACTS (no fake reviews) -->
 <section class="reviews">
-  <div class="reviews-label">The facts</div>
-  <div class="reviews-track" id="reviewsTrack">
-  <div class="review-card" style="min-width:280px;background:var(--bg2);border:1px solid var(--line2);border-radius:16px;padding:20px;flex-shrink:0">
-    <div style="font-size:28px;font-weight:900;color:var(--g);margin-bottom:4px">£200</div>
-    <div style="font-size:14px;font-weight:600;color:#fff;margin-bottom:6px">Club Lloyds switch bonus</div>
-    <div style="font-size:12px;color:var(--muted)">Checked 6 Oct 2026 against the bank and comparison sites. Always verify current terms with the bank.</div>
+  <div class="reviews-label">How we work</div>
+  <div class="reviews-track" id="reviewsTrack" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:12px;overflow:visible">
+  <div class="review-card" style="min-width:0;background:var(--bg2);border:1px solid var(--line2);border-radius:16px;padding:20px;flex-shrink:0">
+    <div style="font-size:28px;font-weight:900;color:var(--g);margin-bottom:4px">58</div>
+    <div style="font-size:14px;font-weight:600;color:#fff;margin-bottom:6px">Guides, with sources</div>
+    <div style="font-size:12px;color:var(--muted)">Each guide lists its sources and the date it was reviewed. Rules change, so always confirm with the provider.</div>
   </div>
 
-  <div class="review-card" style="min-width:280px;background:var(--bg2);border:1px solid var(--line2);border-radius:16px;padding:20px;flex-shrink:0">
+  <div class="review-card" style="min-width:0;background:var(--bg2);border:1px solid var(--line2);border-radius:16px;padding:20px;flex-shrink:0">
     <div style="font-size:28px;font-weight:900;color:var(--g);margin-bottom:4px">6h</div>
     <div style="font-size:14px;font-weight:600;color:#fff;margin-bottom:6px">Offer refresh cycle</div>
     <div style="font-size:12px;color:var(--muted)">A script looks for new deals every 6 hours; each offer shows the date a person last checked it.</div>
   </div>
 
-  <div class="review-card" style="min-width:280px;background:var(--bg2);border:1px solid var(--line2);border-radius:16px;padding:20px;flex-shrink:0">
+  <div class="review-card" style="min-width:0;background:var(--bg2);border:1px solid var(--line2);border-radius:16px;padding:20px;flex-shrink:0">
     <div style="font-size:28px;font-weight:900;color:var(--g);margin-bottom:4px">Free</div>
     <div style="font-size:14px;font-weight:600;color:#fff;margin-bottom:6px">No subscription</div>
     <div style="font-size:12px;color:var(--muted)">Offers are <strong>Ad</strong> referral links. If you take one, the site may earn a commission at no extra cost to you.</div>
@@ -966,16 +945,15 @@ footer {
 
 <!-- SIGN UP -->
 <section class="signup-section" id="signup">
-  <h2 class="signup-h2">Start hunting <span style="color:var(--g)">today</span></h2>
-  <p class="signup-sub">Free forever. No credit card. Your progress saved and synced across all devices.</p>
+  <h2 class="signup-h2">Save your <span style="color:var(--g)">offers and deadlines</span></h2>
+  <p class="signup-sub">Free. No credit card. A free account lets you track offers and sync them across your devices. Guides and the game work without one.</p>
 
   <div class="signup-perks">
-    <div class="signup-perk"><span class="signup-perk-check">✓</span><span id="dealCount3">100+</span> offers tracked</div>
-    <div class="signup-perk"><span class="signup-perk-check">✓</span>Progress sync</div>
-    <div class="signup-perk"><span class="signup-perk-check">✓</span>Weekly deal alerts</div>
-    <div class="signup-perk"><span class="signup-perk-check">✓</span>Stacking guides</div>
-    <div class="signup-perk"><span class="signup-perk-check">✓</span>Payout tracker</div>
-    <div class="signup-perk"><span class="signup-perk-check">✓</span>Free forever</div>
+    <div class="signup-perk"><span class="signup-perk-check">✓</span>Offer and deadline tracker</div>
+    <div class="signup-perk"><span class="signup-perk-check">✓</span>Sync across devices</div>
+    <div class="signup-perk"><span class="signup-perk-check">✓</span>Weekly email (optional)</div>
+    <div class="signup-perk"><span class="signup-perk-check">✓</span>Free</div>
+  </div>
   </div>
 
   <div class="signup-form" id="signupForm">
@@ -993,7 +971,7 @@ footer {
       <label class="form-label" for="username">Choose a username</label>
       <input class="form-input" type="text" id="username" placeholder="DealHunter92" maxlength="20">
     </div>
-    <button class="form-submit" onclick="handleSignup()">🚀 Create Free Account →</button>
+    <button class="form-submit" onclick="handleSignup()">Create free account →</button>
     <div class="form-legal">
       By signing up you agree to receive weekly deal emails from Money Hunters UK.
       We never spam. Unsubscribe any time. Questions? <a href="mailto:hello@moneyhunters.co.uk" style="color:var(--muted)">hello&#64;moneyhunters.co.uk</a>
@@ -1002,10 +980,10 @@ footer {
 
   <div class="form-success" id="formSuccess">
     <span class="form-success-icon">🎉</span>
-    <h3>Account ready, Hunter!</h3>
+    <h3>Account ready</h3>
     <p>One last step: drop your email in the Money Drop box just below to join the weekly list (takes 10 seconds, double opt-in). Nothing lands in your inbox until you confirm there.</p>
     <a class="btn-primary" href="/app.html" style="display:inline-flex;margin:0 auto">
-      Open Money Hunters →
+      Open the app →
     </a>
   </div>
 </section>
@@ -1162,6 +1140,15 @@ document.querySelectorAll('.animate-on-scroll').forEach(el => observer.observe(e
 
 // ── INIT ──
 initTicker();
+</script>
+<script>
+// Fill guide and chapter counts from the playbook data
+(async function(){try{
+  var r=await fetch('/data/playbook.json?v='+Date.now());if(!r.ok)return;
+  var d=await r.json();var n=0;(d.chapters||[]).forEach(function(c){n+=(c.articles||[]).length});
+  var g=document.getElementById('guideCount'),c=document.getElementById('chapterCount');
+  if(g&&n)g.textContent=n;if(c&&d.chapters)c.textContent=d.chapters.length;
+}catch(e){}})();
 </script>
 </body>
 </html>

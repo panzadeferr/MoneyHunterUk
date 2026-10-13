@@ -7936,6 +7936,7 @@ function initTheme() {
 
 
 <script id="learn-first-js">
+(function(){try{var qc=new URLSearchParams(location.search).get('chapter');if(!qc)return;var n=0,t=setInterval(function(){n++;if(window.PB&&typeof lfOpenChapter==='function'){clearInterval(t);try{lfOpenChapter(qc)}catch(e){}}else if(n>32)clearInterval(t)},250)}catch(e){}})();
 /* ───────── Learn-first layer ───────── */
 (function(){
   var ZONES=[["LITTLE PENNY VILLAGE", 6, 100, 52, 135], ["BANK STREET", 6, 48, 54, 84], ["MARKET SQUARE", 84, 58, 142, 96], ["RING ROAD", 152, 84, 200, 118], ["LAKESIDE", 150, 24, 202, 58], ["HARBOUR POINT", 76, 12, 142, 45], ["THE EXCHANGE", 46, 18, 76, 40], ["FIELDWAY", 20, 78, 60, 108], ["THE HEATH", 54, 44, 100, 80], ["RIVERSIDE ROAD", 130, 64, 166, 104], ["PINEWOOD TRAIL", 168, 56, 206, 90], ["THE CAUSEWAY", 118, 2, 156, 44], ["COINSWORTH ISLE", 0, 0, 999, 999]];
