@@ -2732,7 +2732,9 @@
     .quick-win-name { font-size:15px;font-weight:700;color:var(--text);line-height:1.2 }
     .quick-win-meta { font-size:11px;color:var(--muted2);margin-top:3px }
     .quick-win-right { display:flex;flex-direction:column;align-items:flex-end;gap:6px;flex-shrink:0 }
-    .quick-win-reward { font-family:var(--fh);font-size:20px;font-weight:800;color:var(--yellow);letter-spacing:-.03em;line-height:1 }
+    .quick-win-reward { font-family:var(--fh);font-size:clamp(14px,4.6vw,20px);font-weight:800;color:var(--yellow);letter-spacing:-.03em;line-height:1.1;text-align:right;white-space:normal;overflow-wrap:anywhere }
+    .quick-win-right { max-width:38%;min-width:84px }
+    .quick-win-name { overflow-wrap:anywhere }
     .quick-win-btn {
       background:var(--green);color:#000;
       border:none;border-radius:999px;
@@ -3253,7 +3255,7 @@ body.light #gameReturn{color:#fff}
       <div class="quick-start-hint hidden" id="quickStartHint">
         <div class="quick-start-hint-left">
           <div class="quick-start-hint-title">👋 Start with one offer</div>
-          <div class="quick-start-hint-sub">Start with the top bank switch bonus in your Offers tab. Live amounts, updated as deals change.</div>
+          <div class="quick-start-hint-sub">Browse the bank switch offers in the Offers tab. Amounts change, so check each offer's terms first.</div>
         </div>
         <button class="quick-start-hint-dismiss" onclick="dismissQuickStartHint()">✕</button>
       </div>
@@ -4811,6 +4813,23 @@ body.light #gameReturn{color:#fff}
       `;
     }
 
+    // Only the single highest listed bonus in each category gets the badge.
+    // Offers for high earners only are left out, because most people cannot get them.
+    function topOfferIds() {
+      const best = {};
+      offers.forEach(function(o) {
+        const amt = Number(o.amount) || 0;
+        if (amt <= 0) return;
+        if (/high earner|premier|business/i.test((o.effort || '') + ' ' + (o.badge || '') + ' ' + (o.name || ''))) return;
+        const c = getOfferCategory(o);
+        if (!best[c] || amt > best[c].amt) best[c] = { amt: amt, ids: [o.id] };
+        else if (amt === best[c].amt) best[c].ids.push(o.id);
+      });
+      const out = [];
+      Object.keys(best).forEach(function(c) { if (best[c].ids.length === 1) out.push(best[c].ids[0]); });
+      return out;
+    }
+
     function buildOfferCard(offer) {
       const enrich = getEnrichment(offer.id);
       const status = getOfferStatus(offer.id);
@@ -4850,12 +4869,11 @@ body.light #gameReturn{color:#fff}
       const fallbackLetter = (offer.name || offer.store || '?')[0].toUpperCase();
       const logoSrc = getOfferLogoSrc(offer);
       const logoHtml = logoSrc
-        ? `<div class="offer-logo"><img src="${logoSrc}" alt="" onerror="this.parentElement.textContent='${fallbackLetter}'" loading="lazy"></div>`
+        ? `<div class="offer-logo"${localLogos[offer.id] ? ' style="background:#0f172a"' : ''}><img src="${logoSrc}" alt="" onerror="this.parentElement.textContent='${fallbackLetter}'" loading="lazy"></div>`
         : `<div class="offer-logo">${fallbackLetter}</div>`;
 
       // Featured badge — shown on top unclaimed high-value offers
-      const featuredOfferIds = ['first-direct','natwest','chase-uk','barclays','freetrade'];
-      const isFeatured = featuredOfferIds.indexOf(offer.id) > -1 && status === 'none';
+      const isFeatured = topOfferIds().indexOf(offer.id) > -1 && status === 'none';
 
       // Ending soon — offers known to be time-limited (update dates as needed)
       const expiryDate = (OFFER_REVIEW[offer.id] || {}).end;
@@ -4864,7 +4882,7 @@ body.light #gameReturn{color:#fff}
 
       return `
         <article class="offer-card ${cardClass}${isFeatured ? ' offer-card-featured' : ''}">
-          ${isEndingSoon ? `<div class="offer-ending-badge">⏰ Ends in ${daysLeft} day${daysLeft !== 1 ? 's' : ''}</div>` : isFeatured ? '<div class="offer-featured-badge">🔥 Highest right now</div>' : ''}
+          ${isEndingSoon ? `<div class="offer-ending-badge">⏰ Ends in ${daysLeft} day${daysLeft !== 1 ? 's' : ''}</div>` : isFeatured ? '<div class="offer-featured-badge">🔥 Highest bonus' + (catLabel ? ' in ' + String(catLabel).replace(/^[^A-Za-z]+/, '') : '') + '</div>' : ''}
           <div class="offer-card-top" data-offer-id="${offer.id}" style="cursor:pointer">
             ${logoHtml}
             <div style="min-width:0;flex:1">
@@ -5000,20 +5018,20 @@ body.light #gameReturn{color:#fff}
         const letter = (offer.name||offer.store||'?')[0].toUpperCase();
         const logoSrc = getOfferLogoSrc(offer);
         const logoHtml = logoSrc
-          ? `<img src="${logoSrc}" alt="" onerror="this.style.display='none'" loading="lazy">`
+          ? `<img src="${logoSrc}" alt="" onerror="this.parentElement.textContent='${letter}'" loading="lazy">`
           : letter;
         const status = getOfferStatus(offer.id);
         const meta = status === 'pending' ? '⏳ Pending payout' : (offer.effort || 'Quick win');
         return `
           <div class="quick-win-card" onclick="openOfferById('${offer.id}')">
-            <div class="quick-win-logo">${logoHtml}</div>
+            <div class="quick-win-logo"${localLogos[offer.id] ? ' style="background:#0f172a"' : ''}>${logoHtml}</div>
             <div class="quick-win-info">
               <div class="quick-win-name">${offer.name || offer.store}</div>
               <div class="quick-win-meta">${meta}</div>
             </div>
             <div class="quick-win-right">
               <div class="quick-win-reward">${offer.reward || '£' + offer.amount}</div>
-              <button class="quick-win-btn" onclick="event.stopPropagation();openOfferById('${offer.id}')">Start →</button>
+              <button class="quick-win-btn" onclick="event.stopPropagation();openOfferById('${offer.id}')">View →</button>
             </div>
           </div>`;
       }).join('');
@@ -5810,10 +5828,8 @@ body.light #gameReturn{color:#fff}
       if (offer.url && offer.url !== '#') {
         window.open(offer.url, '_blank', 'noopener,noreferrer');
       }
-      // Show pending popup for bank switches
-      if ((offer.expectedDays || 0) > 0) {
-        setTimeout(() => openPendingPopup(offer), 300);
-      }
+      // Add to the signed-in user's tracker (guests get a prompt instead)
+      if (window.tkAutoTrack) window.tkAutoTrack(offer);
     }
 
     function copyCode(code) {
@@ -8054,7 +8070,7 @@ function initTheme() {
     if(d===0)return '<span class="tk-chip soon">today</span>';
     return '<span class="tk-chip '+(d<=7?'soon':'ok')+'">'+d+' day'+(d===1?'':'s')+' left</span>';
   }
-  var adding=false;
+  var adding=false,draft=null;
   function nextDate(e){var c=[];if(e.doBy)c.push(e.doBy);if(e.payBy)c.push(e.payBy);c=c.filter(function(x){return daysTo(x)>=-30}).sort();return c[0]||null}
   function mirror(u,e,del){
     try{
@@ -8079,33 +8095,59 @@ function initTheme() {
       h+='<div class="tk-row"><div class="tk-top"><div class="tk-name">'+esc(e.name)+'</div><div class="tk-amt">'+esc(e.reward||'')+'</div></div>';
       if(e.doBy)h+='<div class="tk-line"><span>'+esc(e.doLabel||'Do by')+' <b>'+fmt(e.doBy)+'</b></span>'+chip(d1)+'</div>';
       if(e.payBy)h+='<div class="tk-line"><span>Bonus expected by <b>'+fmt(e.payBy)+'</b></span>'+chip(d2)+'</div>';
+      if(e.auto)h+='<div class="tk-note">Dates are estimates from the offer page. Check them against the offer\'s own terms and tap Edit to change them.</div>';
       if(e.note)h+='<div class="tk-note">'+esc(e.note)+'</div>';
-      h+='<div class="tk-actions"><button class="lf-btn ghost" onclick="tkPaid(\''+esc(e.id)+'\')">Mark as paid</button><button class="lf-btn ghost" onclick="tkRemove(\''+esc(e.id)+'\')">Remove</button></div></div>';
+      h+='<div class="tk-actions"><button class="lf-btn ghost" onclick="tkPaid(\''+esc(e.id)+'\')">Mark as paid</button><button class="lf-btn ghost" onclick="tkEdit(\''+esc(e.id)+'\')">Edit</button><button class="lf-btn ghost" onclick="tkRemove(\''+esc(e.id)+'\')">Remove</button></div></div>';
     });
     if(!open.length)h+='<div class="lf-sub" style="padding:2px 4px 10px">Nothing tracked yet.</div>';
     if(adding){
       var opts='<option value="">Choose an offer</option>';
       try{offers.forEach(function(o){opts+='<option value="'+esc(o.id)+'">'+esc(o.name)+'</option>'})}catch(e){}
       opts+='<option value="__other">Something else</option>';
+      var D=draft||{};
       h+='<div class="lf-card tk-form"><label class="lf-field">Offer<select id="tkOffer" onchange="tkPick()">'+opts+'</select></label>'+
         '<label class="lf-field" id="tkNameRow" style="display:none">Name<input id="tkName" type="text" maxlength="60"></label>'+
-        '<label class="lf-field">Reward (£)<input id="tkAmt" type="number" min="0" inputmode="decimal"></label>'+
-        '<label class="lf-field">Started on<input id="tkStart" type="date" value="'+today()+'" onchange="tkPick(1)"></label>'+
-        '<label class="lf-field">Step to do<input id="tkLabel" type="text" maxlength="40" placeholder="e.g. Deposit and trade"></label>'+
-        '<label class="lf-field">Do it by<input id="tkDoBy" type="date"></label>'+
-        '<label class="lf-field">Bonus expected by<input id="tkPayBy" type="date"></label>'+
-        '<textarea id="tkNote" rows="2" maxlength="200" placeholder="Notes: conditions from the offer terms"></textarea>'+
+        '<label class="lf-field">Reward (£)<input id="tkAmt" type="number" min="0" inputmode="decimal" value="'+esc(D.amount||'')+'"></label>'+
+        '<label class="lf-field">Started on<input id="tkStart" type="date" value="'+esc(D.start||today())+'" onchange="tkPick(1)"></label>'+
+        '<label class="lf-field">Step to do<input id="tkLabel" type="text" maxlength="40" placeholder="e.g. Deposit and trade" value="'+esc(D.doLabel||'')+'"></label>'+
+        '<label class="lf-field">Do it by<input id="tkDoBy" type="date" value="'+esc(D.doBy||'')+'"></label>'+
+        '<label class="lf-field">Bonus expected by<input id="tkPayBy" type="date" value="'+esc(D.payBy||'')+'"></label>'+
+        '<textarea id="tkNote" rows="2" maxlength="200" placeholder="Notes: conditions from the offer terms">'+esc(D.note||'')+'</textarea>'+
         '<div class="tk-actions"><button class="lf-btn" onclick="tkSave()">Save</button><button class="lf-btn ghost" onclick="tkCancel()">Cancel</button></div></div>';
     }else h+='<button class="lf-btn" onclick="tkAdd()">+ Add an offer</button>';
+    var _pre=adding&&draft?draft.id:null;
     if(done.length){
       h+='<div class="lf-h2" style="font-size:15px">Done</div>';
       done.forEach(function(e){h+='<div class="tk-row"><div class="tk-top"><div class="tk-name">'+esc(e.name)+'</div><div class="tk-amt">'+esc(e.reward||'')+'</div></div><div class="tk-note">Marked as paid '+fmt(e.paidOn||today())+'</div><div class="tk-actions"><button class="lf-btn ghost" onclick="tkRemove(\''+esc(e.id)+'\')">Remove</button></div></div>'});
     }
     h+='<div class="lf-meta">Saved to your account. Telegram reminders for these dates are planned and not switched on yet, so check this list. Dates and amounts are what you enter. Always check the offer\'s own terms.</div>';
     box.innerHTML=h;
+    if(_pre){var sel=$('tkOffer');if(sel){var has=false;for(var i=0;i<sel.options.length;i++)if(sel.options[i].value===_pre)has=true;if(has)sel.value=_pre;else{sel.value='__other';$('tkNameRow').style.display='';$('tkName').value=draft.name||''}}}
   };
-  window.tkAdd=function(){adding=true;tkRender()};
-  window.tkCancel=function(){adding=false;tkRender()};
+  var DEADLINES={freetrade:{label:'Deposit and trade',days:30}};
+  function deadlineFor(o){
+    if(DEADLINES[o.id])return DEADLINES[o.id];
+    var txt=[o.desc||''].concat(o.steps||[]).join('. ');
+    var m=txt.match(/within (\d+) days/i);
+    if(m)return {label:'Meet the conditions',days:Number(m[1])};
+    try{var en=(OFFER_REVIEW[o.id]||{}).end;if(en&&new Date(en)>new Date())return {label:'Offer ends',date:en}}catch(x){}
+    return null;
+  }
+  window.tkAutoTrack=function(o){
+    try{
+      var u=user();
+      if(!u){toast('Sign in to track this offer and its deadlines.');return}
+      var l=load(u);
+      if(l.some(function(e){return e.id===o.id&&!e.paid})){toast('Already in your tracker.');return}
+      var d=deadlineFor(o),t=today();
+      var e={id:o.id,name:o.name||o.store||'Offer',amount:Number(o.amount)||0,reward:o.reward||'',start:t,doLabel:d?d.label:'',doBy:d?(d.date||addDays(t,d.days)):'',payBy:(o.expectedDays&&!(d&&d.days))?addDays(t,o.expectedDays):'',note:'',paid:false,auto:true};
+      l.push(e);save(u,l);mirror(u,e);tkRender();dueStrip();
+      toast('Added to your tracker. Check the dates in Tools.');
+    }catch(x){}
+  };
+  window.tkAdd=function(){adding=true;draft=null;tkRender()};
+  window.tkCancel=function(){adding=false;draft=null;tkRender()};
+  window.tkEdit=function(id){var u=user();if(!u)return;var e=load(u).filter(function(x){return x.id===id})[0];if(!e)return;draft=e;adding=true;tkRender();var b=$('tkBox');if(b)b.scrollIntoView({block:'start'})};
   window.tkPick=function(dateOnly){
     var v=$('tkOffer').value,o=null;
     try{o=offers.find(function(x){return x.id===v})}catch(e){}
@@ -8122,8 +8164,8 @@ function initTheme() {
     name=o?o.name:($('tkName').value||'').trim();
     if(!name){alert('Choose an offer or type a name.');return}
     var amt=Number($('tkAmt').value||0);
-    var e={id:(o?o.id:'custom-'+Date.now())+(load(u).some(function(x){return o&&x.id===o.id})?'-'+Date.now():''),name:name,amount:amt,reward:amt?'£'+amt:'',start:$('tkStart').value||today(),doLabel:($('tkLabel').value||'').trim(),doBy:$('tkDoBy').value||'',payBy:$('tkPayBy').value||'',note:($('tkNote').value||'').trim(),paid:false};
-    var l=load(u);l.push(e);save(u,l);mirror(u,e);adding=false;tkRender();dueStrip();
+    var e={id:draft?draft.id:(o?o.id:'custom-'+Date.now())+(load(u).some(function(x){return o&&x.id===o.id})?'-'+Date.now():''),name:name,amount:amt,reward:amt?'£'+amt:'',start:$('tkStart').value||today(),doLabel:($('tkLabel').value||'').trim(),doBy:$('tkDoBy').value||'',payBy:$('tkPayBy').value||'',note:($('tkNote').value||'').trim(),paid:false};
+    var l=load(u).filter(function(x){return !(draft&&x.id===draft.id)});l.push(e);save(u,l);mirror(u,e);adding=false;draft=null;tkRender();dueStrip();
   };
   window.tkPaid=function(id){var u=user();if(!u)return;var l=load(u);l.forEach(function(e){if(e.id===id){e.paid=true;e.paidOn=today();mirror(u,e,true)}});save(u,l);tkRender();dueStrip()};
   window.tkRemove=function(id){var u=user();if(!u)return;var l=load(u).filter(function(e){if(e.id===id){mirror(u,e,true);return false}return true});save(u,l);tkRender();dueStrip()};
@@ -8137,6 +8179,8 @@ function initTheme() {
     tx.innerHTML=items.slice(0,2).map(function(i){return esc(i.t)+' ('+(i.d<0?(-i.d)+' days past':i.d===0?'today':'in '+i.d+' days')+')'}).join('<br>')+(items.length>2?'<br>+'+(items.length-2)+' more':'');
     el.classList.add('show');
   }
+  // XP was removed, so no badge or milestone pop-ups
+  window.checkNewBadges=function(){};window.checkMilestones=function(){};
   var last='x';
   function tick(){var u=user();var id=u?u.id:'';if(id!==last){last=id;tkRender();dueStrip()}}
   setInterval(tick,1000);
