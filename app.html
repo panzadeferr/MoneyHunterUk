@@ -3178,7 +3178,7 @@ body.light #gameReturn{color:#fff}
         <div class="lf-eyebrow">Coinsworth: The Little Penny</div>
         <div class="lf-title" id="lfPlayTitle">Learn the rules by playing</div>
         <div class="lf-sub" id="lfPlaySub">A free game for adults. Run a small shop and beat the scammers by answering real UK money questions.</div>
-        <button class="lf-btn" onclick="switchView('play')">Open Play</button>
+        <button class="lf-btn" id="lfHomePlayBtn" onclick="switchView('play')">Open Play</button>
       </div>
 
       <div class="lf-h2">All chapters</div>
@@ -7997,7 +7997,9 @@ function initTheme() {
   function renderSave(){
     var s=readSave(),box=$('lfSave'),btn=$('lfPlayBtn');
     var ps=$('lfPlaySub'),pt=$('lfPlayTitle');
-    if(!s){if(box)box.innerHTML='';if(btn)btn.textContent='Play';return}
+    var hb=$('lfHomePlayBtn');
+    if(!s){if(box)box.innerHTML='';if(btn)btn.textContent='Play';if(hb)hb.textContent='Open Play';return}
+    if(hb)hb.textContent='Continue';
     var ch=Math.min(6,s.ch||1);
     var defeated=BOSSES.filter(function(b){return s.bossDone&&s.bossDone[b]}).length;
     var dots='';for(var i=1;i<=6;i++)dots+='<i class="'+(i<=ch?'on':'')+'"></i>';
