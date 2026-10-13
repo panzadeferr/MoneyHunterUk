@@ -7942,6 +7942,7 @@ function initTheme() {
 
 
 <script id="learn-first-js">
+(function(){try{var qv=new URLSearchParams(location.search).get('view');if(qv&&/^(home|offers|stack|progress|play|community)$/.test(qv)){var m=0,tv=setInterval(function(){m++;if(typeof switchView==='function'){clearInterval(tv);try{switchView(qv)}catch(e){}}else if(m>32)clearInterval(tv)},250)}}catch(e){}})();
 (function(){try{var qc=new URLSearchParams(location.search).get('chapter');if(!qc)return;var n=0,t=setInterval(function(){n++;if(window.PB&&typeof lfOpenChapter==='function'){clearInterval(t);try{lfOpenChapter(qc)}catch(e){}}else if(n>32)clearInterval(t)},250)}catch(e){}})();
 /* ───────── Learn-first layer ───────── */
 (function(){

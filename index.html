@@ -689,6 +689,29 @@ footer {
 
 .chip{display:inline-flex;align-items:center;gap:6px;padding:10px 14px;border-radius:999px;border:1px solid var(--line2);background:var(--bg2);color:var(--t);font-size:13px;font-weight:600;text-decoration:none}
 .chip:hover{border-color:var(--g);color:var(--g)}
+
+.peek{padding:48px 0 8px;max-width:1040px;margin:0 auto}
+.peek-head{padding:0 20px;text-align:center;max-width:560px;margin:0 auto 8px}
+.peek-block{margin-top:36px}
+.peek-tag{display:inline-block;font-size:11px;font-weight:800;letter-spacing:.1em;text-transform:uppercase;color:var(--g);margin-bottom:6px}
+.peek-block h3{font-size:22px;font-weight:800;color:#fff;margin:0 0 6px}
+.peek-block p{font-size:14px;color:var(--muted);line-height:1.55;margin:0 0 6px}
+.peek-txt{padding:0 20px;max-width:560px;margin:0 auto;text-align:center}
+.peek-strip{display:flex;align-items:flex-start;gap:14px;overflow-x:auto;scroll-snap-type:x mandatory;padding:16px 20px 8px;justify-content:flex-start;-webkit-overflow-scrolling:touch;scrollbar-width:none}
+.peek-strip::-webkit-scrollbar{display:none}
+@media(min-width:760px){.peek-strip{justify-content:center}}
+.phone{flex:0 0 auto;width:210px;scroll-snap-align:center;border-radius:26px;border:1px solid var(--line2);background:#000;padding:6px;box-shadow:0 14px 40px rgba(0,0,0,.45)}
+.phone img{display:block;width:100%;height:auto;border-radius:20px}
+.phone figcaption{font-size:11px;color:var(--muted);text-align:center;padding:8px 4px 4px}
+.peek-cta{display:inline-block;margin-top:8px;color:var(--g);font-weight:700;font-size:14px;text-decoration:none}
+.tryq{max-width:440px;margin:32px auto 0;padding:20px;border:1px solid var(--line2);border-radius:16px;background:var(--bg2);text-align:left}
+.tryq .qk{font-size:11px;font-weight:800;letter-spacing:.1em;text-transform:uppercase;color:var(--g)}
+.tryq .qt{font-size:17px;font-weight:700;color:#fff;margin:6px 0 12px}
+.tryq button.opt{display:block;width:100%;text-align:left;padding:12px 14px;margin-bottom:8px;border-radius:12px;border:1px solid var(--line2);background:transparent;color:#fff;font:inherit;font-size:14px;cursor:pointer}
+.tryq button.opt.ok{border-color:var(--g);background:rgba(31,232,135,.12)}
+.tryq button.opt.no{border-color:#ff6470;background:rgba(255,100,112,.1)}
+.tryq .ex{display:none;font-size:13px;color:var(--muted);line-height:1.55;margin-top:6px}
+.tryq .ex.show{display:block}
 </style>
 </head>
 <body>
@@ -767,6 +790,53 @@ footer {
         </div>
       </div>
     </div>
+  </div>
+</section>
+
+<!-- LOOK INSIDE -->
+<section class="peek" id="inside">
+  <div class="peek-head">
+    <div class="peek-tag">Look inside</div>
+    <h2 style="font-size:26px;font-weight:800;color:#fff;margin:0 0 8px">Three ways to explore</h2>
+    <p style="font-size:14px;color:var(--muted);line-height:1.55;margin:0">Read it, play it, or browse the offers. Swipe the screens, then try one yourself.</p>
+  </div>
+
+  <div class="peek-block">
+    <div class="peek-txt"><div class="peek-tag">Learn</div><h3>Guides for how UK money works</h3>
+    <p>Plain English, with sources and a review date on each one. From switching banks to renting rights and spotting scams.</p></div>
+    <div class="peek-strip">
+      <figure class="phone"><img src="/shots/app-learn.webp" width="480" height="960" loading="lazy" alt="The Learn home screen with this week's lesson and chapters"><figcaption>This week's lesson</figcaption></figure>
+      <figure class="phone"><img src="/shots/app-guide.webp" width="480" height="960" loading="lazy" alt="A renting guide about deposits and fees"><figcaption>A guide: deposits and fees</figcaption></figure>
+    </div>
+    <div class="peek-txt"><a class="peek-cta" href="/app.html">Open the guides →</a></div>
+  </div>
+
+  <div class="peek-block">
+    <div class="peek-txt"><div class="peek-tag">Play</div><h3>Coinsworth: The Little Penny</h3>
+    <p>A free pixel game for adults. Run a small shop on a quiet island and beat the scammers by answering real UK money questions. No sign-up, and it saves in your browser.</p></div>
+    <div class="peek-strip">
+      <figure class="phone"><img src="/shots/game-title.webp" width="480" height="634" loading="lazy" alt="Coinsworth title screen"><figcaption>Inherit your aunt's shop</figcaption></figure>
+      <figure class="phone"><img src="/shots/game-village.webp" width="480" height="960" loading="lazy" alt="The village in Coinsworth"><figcaption>Explore the island</figcaption></figure>
+      <figure class="phone"><img src="/shots/game-quiz.webp" width="480" height="960" loading="lazy" alt="A money quiz battle against Pickpocket Pete"><figcaption>Answer to win the fight</figcaption></figure>
+    </div>
+    <div class="peek-txt"><a class="peek-cta" href="/play/">Play now, it's free →</a>
+    <div class="tryq" id="tryq">
+      <div class="qk">Try a question from the game</div>
+      <div class="qt">What is an emergency fund?</div>
+      <button class="opt" data-ok="0">Holiday money</button>
+      <button class="opt" data-ok="1">Money set aside for surprises like a broken boiler or job loss</button>
+      <button class="opt" data-ok="0">A loan from your bank</button>
+      <div class="ex" id="tryqEx"></div>
+    </div></div>
+  </div>
+
+  <div class="peek-block">
+    <div class="peek-txt"><div class="peek-tag">Offers</div><h3>Offers, with the conditions shown</h3>
+    <p>Bank switches, cashback and free shares. Each one lists its conditions and when we last checked it. Some links pay us a referral fee and are marked <strong>Ad</strong>.</p></div>
+    <div class="peek-strip">
+      <figure class="phone"><img src="/shots/app-offers.webp" width="480" height="960" loading="lazy" alt="The offers list showing bank switches with conditions"><figcaption>Example screen. Offers change, so check the dates in the app.</figcaption></figure>
+    </div>
+    <div class="peek-txt"><a class="peek-cta" href="/app.html?view=offers">Browse the offers →</a></div>
   </div>
 </section>
 
@@ -1149,6 +1219,17 @@ initTicker();
   var g=document.getElementById('guideCount'),c=document.getElementById('chapterCount');
   if(g&&n)g.textContent=n;if(c&&d.chapters)c.textContent=d.chapters.length;
 }catch(e){}})();
+</script>
+
+<script>
+(function(){var t=document.getElementById('tryq');if(!t)return;
+t.addEventListener('click',function(e){var b=e.target.closest('button.opt');if(!b)return;
+var ok=b.getAttribute('data-ok')==='1';
+t.querySelectorAll('button.opt').forEach(function(x){x.disabled=true;if(x.getAttribute('data-ok')==='1')x.classList.add('ok')});
+if(!ok)b.classList.add('no');
+var ex=document.getElementById('tryqEx');
+ex.textContent=(ok?'Right. ':'Not quite. ')+'An emergency fund is cash kept aside for surprises such as a broken boiler or losing your job. Many guides suggest building up a few months of essential spending, as far as you can.';
+ex.classList.add('show');});})();
 </script>
 </body>
 </html>
