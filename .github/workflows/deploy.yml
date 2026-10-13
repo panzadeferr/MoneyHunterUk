@@ -141,6 +141,7 @@ jobs:
           cp index.html app.html bank-switch.html privacy.html sw.js manifest.json all_deals.json robots.txt sitemap.xml feed.xml CNAME _site/
           cp *.png googlecc*.html _site/
           cp UK-rewards-stacking-toolkit.xlsx _site/
+          cp 9ba589cb48714f42873c1a25a4e74641.txt _site/
           mkdir -p _site/data
           [ -d data ] && cp -r data/. _site/data/ || true
 
@@ -155,4 +156,8 @@ jobs:
 
       - name: Deployed
         run: echo "✅ Live at ${{ steps.deployment.outputs.page_url }}"
+
+      - name: Ping IndexNow
+        continue-on-error: true
+        run: python3 scripts/ping_indexnow.py
         
