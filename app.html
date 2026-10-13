@@ -3206,6 +3206,8 @@ body.light #gameReturn{color:#fff}
         <button class="lf-tile" onclick="lfOpenChapter('cashback')"><span class="i">💸</span><b>Cashback and shopping</b><span>How it works</span></button>
       </div>
 
+      <div class="lf-card" style="display:flex;gap:12px;align-items:center;cursor:pointer" onclick="openDirectDebitGuide()" role="button"><div style="font-size:26px">📋</div><div style="flex:1"><div style="font-weight:700;color:var(--text)">Bank switch asking for 2 direct debits?</div><div class="lf-sub" style="font-size:13px">What they are, and a low-cost way to set them up. Check each offer's terms for what counts.</div></div><div style="color:var(--green);font-weight:800">→</div></div>
+
       <div class="lf-h2">All chapters</div>
       <div class="lf-grid" id="lfChapters"></div>
 
@@ -3291,6 +3293,7 @@ body.light #gameReturn{color:#fff}
       <section class="section">
 
         <div class="lf-adnote">Offers include referral links and are marked <b>Ad</b>. Each one lists its conditions and when we last checked it.</div>
+        <div class="lf-adnote">Bank switch needs direct debits? <a href="#" onclick="openDirectDebitGuide();return false" style="color:var(--green);font-weight:700">How to set them up</a></div>
         <!-- Search bar -->
         <div class="toolbar" style="margin-bottom:10px">
           <input class="search" id="searchInput" type="text" placeholder="Search 50+ offers... 🔍" oninput="onSearchInput()">
@@ -3877,42 +3880,7 @@ body.light #gameReturn{color:#fff}
 
       </div>
 
-      <!-- Direct Debit Guide Panel -->
-      <div class="dd-overlay hidden" id="ddOverlay" onclick="closeDirectDebitGuide()">
-        <div class="dd-sheet" onclick="event.stopPropagation()">
-          <div class="quick-guide-top-row">
-            <div class="quick-guide-handle-inline"></div>
-            <button class="quick-guide-x" onclick="closeDirectDebitGuide()">✕</button>
-          </div>
-          <div class="quick-guide-title">📋 What is a Direct Debit?</div>
-          <div class="quick-guide-sub">Everything you need to know for bank switch bonuses.</div>
 
-          <div class="dd-section">
-            <div class="dd-section-title">What is it?</div>
-            <p class="dd-text">A Direct Debit is an automatic payment that leaves your bank account on a set date — like a subscription, gym membership, or charity donation. The company you're paying controls the amount and timing.</p>
-          </div>
-
-          <div class="dd-section">
-            <div class="dd-section-title">Why do bank switches need them?</div>
-            <p class="dd-text">Banks use active Direct Debits to verify you're a real, active customer. Most switch bonuses (First Direct, NatWest, Barclays) require at least 2 active Direct Debits to qualify for the cash reward.</p>
-          </div>
-
-          <div class="dd-section">
-            <div class="dd-section-title">How to set one up quickly</div>
-            <div class="dd-step"><span class="dd-step-num">1</span><span>Go to any charity or subscription website</span></div>
-            <div class="dd-step"><span class="dd-step-num">2</span><span>Optional: a £1/month charity donation (costs £1/month, check the provider’s terms) counts as an active Direct Debit</span></div>
-            <div class="dd-step"><span class="dd-step-num">3</span><span>Do this twice with two different organisations</span></div>
-            <div class="dd-step"><span class="dd-step-num">4</span><span>Wait 1–2 days for them to appear on your account</span></div>
-          </div>
-
-          <div style="background:rgba(31,232,135,.08);border:1px solid rgba(31,232,135,.2);border-radius:10px;padding:12px;margin:12px 0">
-            <div style="font-size:12px;font-weight:700;color:var(--green);margin-bottom:4px">💡 Pro tip</div>
-            <div style="font-size:12px;color:var(--muted);line-height:1.5">Set up two £1/month charity direct debits. It costs £2/month total and is a common way to meet the direct debit conditions on bank switch offers. Cancel them once the bonus is paid.</div>
-          </div>
-
-          <button class="quick-guide-close" onclick="closeDirectDebitGuide();switchView('stack')">Read Bank Switch Guide →</button>
-        </div>
-      </div>
 
       <section class="section">
         <div class="section-head">
@@ -4051,6 +4019,42 @@ body.light #gameReturn{color:#fff}
     <iframe id="gameFrame" title="Coinsworth: The Little Penny" allow="autoplay"></iframe>
   </div>
 
+      <!-- Direct Debit Guide Panel -->
+      <div class="dd-overlay hidden" id="ddOverlay" onclick="closeDirectDebitGuide()">
+        <div class="dd-sheet" onclick="event.stopPropagation()">
+          <div class="quick-guide-top-row">
+            <div class="quick-guide-handle-inline"></div>
+            <button class="quick-guide-x" onclick="closeDirectDebitGuide()">✕</button>
+          </div>
+          <div class="quick-guide-title">📋 What is a Direct Debit?</div>
+          <div class="quick-guide-sub">Everything you need to know for bank switch bonuses.</div>
+
+          <div class="dd-section">
+            <div class="dd-section-title">What is it?</div>
+            <p class="dd-text">A Direct Debit is an automatic payment that leaves your bank account on a set date — like a subscription, gym membership, or charity donation. The company you're paying controls the amount and timing.</p>
+          </div>
+
+          <div class="dd-section">
+            <div class="dd-section-title">Why do bank switches need them?</div>
+            <p class="dd-text">Banks use active Direct Debits to verify you're a real, active customer. Many switch offers ask for a set number of active Direct Debits (often 2) before the bonus is paid. Check the offer's own terms for the exact rule.</p>
+          </div>
+
+          <div class="dd-section">
+            <div class="dd-section-title">How to set one up quickly</div>
+            <div class="dd-step"><span class="dd-step-num">1</span><span>Go to any charity or subscription website</span></div>
+            <div class="dd-step"><span class="dd-step-num">2</span><span>Optional: a £1/month charity donation (costs £1/month, check the provider’s terms) counts as an active Direct Debit</span></div>
+            <div class="dd-step"><span class="dd-step-num">3</span><span>Do this twice with two different organisations</span></div>
+            <div class="dd-step"><span class="dd-step-num">4</span><span>Wait 1–2 days for them to appear on your account</span></div>
+          </div>
+
+          <div style="background:rgba(31,232,135,.08);border:1px solid rgba(31,232,135,.2);border-radius:10px;padding:12px;margin:12px 0">
+            <div style="font-size:12px;font-weight:700;color:var(--green);margin-bottom:4px">💡 Pro tip</div>
+            <div style="font-size:12px;color:var(--muted);line-height:1.5">Set up two £1/month charity direct debits. It costs £2/month total and is a common way to meet the direct debit conditions on bank switch offers. Check the offer's terms before cancelling them, as some ask you to keep them for a set period.</div>
+          </div>
+
+          <button class="quick-guide-close" onclick="closeDirectDebitGuide();switchView('stack')">Read Bank Switch Guide →</button>
+        </div>
+      </div>
   <nav class="bottom-nav">
     <div class="bottom-nav-inner">
     <button class="nav-btn active" data-view="home">
