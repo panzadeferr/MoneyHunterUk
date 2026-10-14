@@ -4129,7 +4129,7 @@ body.light #gameReturn{color:#fff}
       { id:"barclays", name:"Barclays", action:"Switch to Barclays", reward:"£200", amount:200, code:"", url:"https://www.barclays.co.uk/current-accounts/switch/", desc:"Switch via CASS, deposit £2,000 within 30 days, set up 2 active direct debits. Must use Barclays app to open. Offer ends 28 May 2026.", badge:"⏳ ENDS 28 MAY", effort:"12 min · bank switch", steps:["Open Barclays Current Account via app (9am-5pm only)","Initiate full CASS switch with 2 active direct debits","Deposit £2,000 within 30 days","Bonus paid after conditions met"], expectedDays:30 },
       { id:"hsbc-premier", name:"HSBC Premier", action:"Switch to HSBC Premier", reward:"£500", amount:500, code:"", url:"https://www.hsbc.co.uk/current-accounts/products/premier/", desc:"£500 for switching to HSBC Premier. Requires £100,000+ in savings/investments or £75,000+ salary. No monthly fee but strict eligibility.", badge:"👑 HIGH EARNERS", effort:"12 min · eligibility required", steps:["Check eligibility (£100k savings or £75k salary)","Apply for HSBC Premier account","Complete full CASS switch","Meet all eligibility requirements","Receive £500 bonus"], expectedDays:30 },
       { id:"co-operative-bank", name:"Co-operative Bank", action:"Switch to Co-operative Bank", reward:"£175", amount:175, code:"", url:"https://www.co-operativebank.co.uk/current-accounts", desc:"Open and switch to Co-operative Bank, then follow the active offer terms.", badge:"🛒 ADDED", effort:"10 min · bank switch", steps:["Open Co-operative account","Start switch","Meet current offer terms","Wait for payout"], expectedDays:30 },
-      { id:"monzo", name:"Monzo", action:"Open Monzo and spend £1", reward:"£5-£50", amount:50, code:"", url:"https://join.monzo.com/r/", desc:"Join and complete a qualifying spend to get the current random referral reward.", badge:"📱 APP", effort:"4 min · quick signup", steps:["Open Monzo via referral","Verify account","Spend £1","Wait for reward"], expectedDays:7 },
+      { id:"monzo", name:"Monzo", action:"Open Monzo and spend £1", reward:"£5-£50", amount:50, code:"", url:"https://monzo.com/", desc:"Monzo referral rewards need a friend's invite link. We do not have one, so ask a friend or check the community for a current invite.", badge:"📱 APP", effort:"4 min · quick signup", steps:["Open Monzo via referral","Verify account","Spend £1","Wait for reward"], expectedDays:7 },
       { id:"revolut", name:"Revolut", action:"Open Revolut and complete signup", reward:"£20", amount:20, code:"", url:"https://revolut.com/referral/?referral-code=ludoviv2sq!MAR1-26-AR-H2&geo-redirect", desc:"Sign up and complete the referral actions for the current offer.", badge:"📱 APP", effort:"5 min · app signup", steps:["Open Revolut","Verify identity","Complete required card or spend steps","Wait for reward"], expectedDays:7 },
       { id:"zilch", name:"Zilch", action:"Join Zilch", reward:"£5", amount:5, code:"", url:"https://zilch.onelink.me/x8EV/zdehyy8s", desc:"Quick sign-up bonus with a small instant-style reward.", badge:"✅ INSTANT", effort:"3 min · instant", steps:["Open Zilch","Verify account","Receive reward"], expectedDays:1 },
       { id:"zopa-biscuit", name:"Zopa Biscuit", action:"Open Zopa Biscuit savings", reward:"£20", amount:20, code:"", url:"https://www.zopa.com/mgma?referralCode=ed204ce1b3dd265fa533", desc:"Open a Biscuit savings account and qualify under the referral terms.", badge:"✅ INSTANT", effort:"5 min · savings account", steps:["Open Zopa Biscuit","Complete verification","Fund if required","Wait for reward"], expectedDays:1 },
@@ -5376,6 +5376,9 @@ body.light #gameReturn{color:#fff}
         return '<p class="guide-p">' + esc(p) + '</p>';
       }).join('');
     }
+    window.advUnlocked = function () {
+      try { var s = JSON.parse(localStorage.getItem('mh_coinsworth6') || 'null'); var n = s && s.bossDone ? Object.keys(s.bossDone).filter(function (k) { return s.bossDone[k]; }).length : 0; return n >= 3; } catch (e) { return false; }
+    };
     async function loadPlaybookGuides() {
       if (playbookGuidesLoaded) return;
       let data = null;
@@ -5392,6 +5395,7 @@ body.light #gameReturn{color:#fff}
       for (const ch of data.chapters) {
         const arts = (ch.articles || []).filter(function (a) { return a.body && !a.existing_guide; });
         if (!arts.length) continue;
+        if (ch.locked && !window.advUnlocked()) continue;
         const filterId = 'pbch-' + ch.id;
         if (!seenChapters[ch.id] && pills) {
           newPills += '<div class="pb-pill" data-pill="' + filterId + '" onclick="filterPlaybook(\'' + filterId + '\',this)">' + (ch.icon ? ch.icon + ' ' : '') + ch.title + '</div>';
@@ -5676,6 +5680,10 @@ body.light #gameReturn{color:#fff}
     // ── SLIDE PANEL ──
     let activePanel = null;
 
+    const REF_MARKERS=['Panzadeferr','nKzg/v2f3f7m0','ALBERT24541','150886036','89cab33004','aff=Panza','69bdbedalvc1bahm','FVESBGB','6Waa7E1IF1b','NQ77G4WE','zdehyy8s','3d22pmln','J2SK9W','ludoviv2sq','albertob1508','EN8YW8','RxK7c2fUNa','ed204ce1b3dd265fa533','albertob367','ho64MGlHF1b','2TuviC','6f308795','zEUukbJam8','81122944','1461h9hv','albertob-2757','albertb-d5dfe0','aLBERBf3Ob','yn2yt-alberto','ocean-quoll-258','03ba089c','wUEPLNq','hgY3HOvR','8TGF','3834VA','X2PPG7','token=JpGVwskEUP'];
+    function offerIsRef(o){var u=(o&&o.url)||'',c=(o&&o.code)||'';return REF_MARKERS.some(function(m){return u.indexOf(m)>-1||c.indexOf(m)>-1})}
+    function offerNoLink(o){return !!(o&&(o.noLink||/reddit\.com\/r\/[^\/]+\/search/.test(o.url||'')))}
+    function adLine(o){return offerNoLink(o)?'No referral link from us for this one. Check the community referral thread for a current code, then read the provider\'s own terms.':offerIsRef(o)?'<strong>Ad</strong> · referral link, we may earn a commission.':'Link to the provider\'s site. We do not have a referral link for this one, so check the provider\'s own terms.'}
     function openPanel(offer) {
       history.pushState({ type: 'panel', id: offer.id }, '');
       activePanel = offer;
@@ -5697,7 +5705,7 @@ body.light #gameReturn{color:#fff}
         <span class="pill badge">${offer.badge || ""}</span>
         ${offer.effort ? `<span class="pill" style="margin-left:4px">${offer.effort}</span>` : ""}
         <p style="margin:9px 0 0;color:var(--muted);font-size:11px;line-height:1.45">${offer.desc}</p>
-        <p style="margin:7px 0 0;font-size:10px;color:var(--muted2)"><strong>Ad</strong> · referral link, we may earn a commission. ${offer.verified ? 'Last checked ' + new Date(offer.verified).toLocaleDateString('en-GB',{day:'numeric',month:'short',year:'numeric'}) + '.' : 'Not yet checked by us: confirm terms on the provider page.'}</p>
+        <p style="margin:7px 0 0;font-size:10px;color:var(--muted2)">${adLine(offer)} ${offer.verified ? 'Last checked ' + new Date(offer.verified).toLocaleDateString('en-GB',{day:'numeric',month:'short',year:'numeric'}) + '.' : 'Not yet checked by us: confirm terms on the provider page.'}</p>
       </div>`;
 
       // Code
@@ -5706,6 +5714,7 @@ body.light #gameReturn{color:#fff}
           <div class="panel-code-val">${offer.code}</div>
           <button class="panel-code-copy" onclick="copyCode('${offer.code}')">Copy</button>
         </div>`;
+        html += `<div style="margin:-2px 0 10px;font-size:11px;color:var(--muted);line-height:1.45">Enter this code when you sign up. Some sign-up pages do not add it for you, so check it shows on the screen before you confirm.</div>`;
       }
 
       // Steps
@@ -5801,8 +5810,8 @@ body.light #gameReturn{color:#fff}
         const isAmber = offer.badge && (offer.badge.includes("BANK") || offer.badge.includes("SWITCH") || offer.badge.includes("INVEST") || offer.badge.includes("PREMIUM") || offer.badge.includes("VALUE"));
         const btnText = offer.code ? `📋 Copy Code & Claim →` : `🎯 View offer →`;
         footer.innerHTML = `<button class="panel-claim ${isAmber?'amber':''}" onclick="panelClaim()">
-          ${offer.code ? '📋 Copy Code & ' : ''}Open ${offer.name} ↗
-          <span style="font-size:10px;opacity:.6;display:block;margin-top:2px;font-weight:400">Ad · opens in new tab</span>
+          ${offerNoLink(offer)?'Find a code for '+offer.name+' on Reddit ↗':(offer.code ? '📋 Copy Code & ' : '')+'Open '+offer.name+' ↗'}
+          <span style="font-size:10px;opacity:.6;display:block;margin-top:2px;font-weight:400">${offerNoLink(offer)?'Opens a Reddit search in a new tab':(offerIsRef(offer)?'Ad · opens in new tab':'Opens in new tab')}</span>
         </button>`;
       } else {
         footer.innerHTML = `<button class="panel-claim" style="background:var(--bg3);color:var(--muted2);cursor:default">⏸️ Paused — Check Back Soon</button>`;
@@ -7235,7 +7244,7 @@ function initTheme() {
       }
 
       // 4. Ad label
-      html += '<div style="margin-top:8px;font-size:10px;opacity:.7"><strong>Ad</strong> · referral link, we may earn a commission' + (offer.verified ? ' · checked ' + new Date(offer.verified).toLocaleDateString('en-GB',{day:'numeric',month:'short'}) : '') + '</div>';
+      html += '<div style="margin-top:8px;font-size:10px;opacity:.7">' + (offerNoLink(offer)?'No referral link from us':offerIsRef(offer)?'<strong>Ad</strong> · referral link, we may earn a commission':'Link to the provider\'s site') + (offer.verified ? ' · checked ' + new Date(offer.verified).toLocaleDateString('en-GB',{day:'numeric',month:'short'}) : '') + '</div>';
 
       // 5. View Full Guide button
       html += '<button class="offer-card-claim" style="margin-top:10px" data-open-id="' + offer.id + '" onclick="event.stopPropagation();openOfferById(this.dataset.openId)">';
@@ -7787,6 +7796,7 @@ function initTheme() {
           code: d.code || '',
           verified: d.last_verified || '',
           url: d.link || '#',
+          noLink: /reddit\.com\/r\/[^\/]+\/search/.test(d.link || ''),
           steps: d.steps || ['Read offer details','Follow link to claim'],
           expectedDays: 30,
           tips: ['Always verify current terms before claiming'],
@@ -7957,7 +7967,7 @@ function initTheme() {
   /* ---- Chapters, lesson of the week ---- */
   window.lfChapterId=null;
   function chapters(){return (window.PB&&window.PB.chapters)||[]}
-  function written(){var out=[];chapters().forEach(function(c){(c.articles||[]).forEach(function(a){if(a.body&&!a.existing_guide)out.push({c:c,a:a})})});return out}
+  function written(){var out=[];chapters().forEach(function(c){if(c.locked&&!window.advUnlocked())return;(c.articles||[]).forEach(function(a){if(a.body&&!a.existing_guide)out.push({c:c,a:a})})});return out}
   function weekIndex(){var d=new Date();var start=new Date(d.getFullYear(),0,1);return Math.floor((d-start)/604800000)}
   window.lfRenderHome=function(){
     var w=written();
@@ -7972,9 +7982,10 @@ function initTheme() {
     var g=$('lfChapters');
     if(g){g.innerHTML=chapters().map(function(c){
       var n=(c.articles||[]).length;
+      if(c.locked&&!window.advUnlocked())return '<button class="lf-tile" onclick="lfOpenGame()"><span class="i">🔒</span><b>'+esc(c.title)+'</b><span>'+esc(c.unlock||'Locked')+'</span></button>';
       return '<button class="lf-tile" onclick="lfOpenChapter(\''+esc(c.id)+'\')"><span class="i">'+esc(c.icon||'📘')+'</span><b>'+esc(c.title)+'</b><span>'+n+' guide'+(n===1?'':'s')+'</span></button>'}).join('')}
     var p=$('lfPills');
-    if(p){p.innerHTML='<button class="lf-pill active" data-ch="all" onclick="lfOpenChapter(\'all\')">All</button>'+chapters().map(function(c){return '<button class="lf-pill" data-ch="'+esc(c.id)+'" onclick="lfOpenChapter(\''+esc(c.id)+'\')">'+esc(c.icon||'')+' '+esc(c.title)+'</button>'}).join('')}
+    if(p){p.innerHTML='<button class="lf-pill active" data-ch="all" onclick="lfOpenChapter(\'all\')">All</button>'+chapters().filter(function(c){return !c.locked||window.advUnlocked()}).map(function(c){return '<button class="lf-pill" data-ch="'+esc(c.id)+'" onclick="lfOpenChapter(\''+esc(c.id)+'\')">'+esc(c.icon||'')+' '+esc(c.title)+'</button>'}).join('')}
   };
   window.lfOpenLesson=function(){if(window.lfLesson){switchView('stack');lfOpenChapter('all');setTimeout(function(){try{toggleGuide(window.lfLesson);var e=document.getElementById(window.lfLesson);if(e)e.scrollIntoView({behavior:'smooth',block:'start'})}catch(x){}},150)}};
 
@@ -8052,6 +8063,7 @@ function initTheme() {
   window.lfCloseGame=function(){
     var o=$('gameOverlay');if(o)o.classList.remove('open');document.body.style.overflow='';
     renderSave();
+    try{if(window.advUnlocked()&&window.PB&&!document.getElementById('pb-adv-council-tax-card')){location.reload()}}catch(e){}
   };
 
   /* ---- Guide opened from the game ---- */

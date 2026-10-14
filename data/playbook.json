@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updated": "2026-10-13",
+  "updated": "2026-10-14",
   "chapters": [
     {
       "id": "banking",
@@ -1644,7 +1644,8 @@
               "items": [
                 "Ribbon Rewards: you transfer rent into an account in your name, and Ribbon sends it to your landlord or agent on rent day. Its page says it earns 1 point per £1 of rent, with 100 points = £1 in vouchers, so about 1% in vouchers. It lists a higher 'up to 3 points per £1' rate as coming soon. It says the service is free, accounts are provided by Griffin Bank, and eligible deposits are protected by the FSCS up to £120,000. An optional Credit Builder add-on costs £7.99 to £9.99 a month.",
                 "Rentd: an app and debit card. A press release from 1 September 2026 says all tiers earn 1 point per £1 on rent, with boosted points on everyday spending if you hit a monthly spend target. One review (updated 24 September 2026) says 5,000 points now buy a £25 gift card, which is about 0.5p a point, so about 0.5% on rent. Topping up by credit card costs 1.95%. Rentd's own page did not give these figures when I checked, so confirm the current value in the app.",
-                "Yonder, Brick Rewards and Renti Rewards: other services that earn points on rent. Reviews describe different ways of earning, for example Open Banking for Brick Rewards, and 1 point per £1 for Renti Rewards. Rates, conversion values and eligibility were not clear, so check each provider's terms."
+                "Brick Rewards: run by Rently Solutions, launched in South West London. Moneyhub's Open Banking technology detects when rent is paid, so there is no manual upload. You earn points for paying rent on time and for spending at participating local businesses, and points can be redeemed for gift cards, local perks and rent credits. An optional premium feature can report rent payments to Experian to help build a credit file. The press release does not give the points rate, what a point is worth or the fees. It says the service is currently for renters in London, with a wider rollout planned, so check it covers you and read its terms before relying on it.",
+                "Yonder and Renti Rewards: other services that earn points on rent. Reviews describe different ways of earning, for example 1 point per £1 for Renti Rewards. Rates, conversion values and eligibility were not clear, so check each provider's terms."
               ]
             },
             {
@@ -1695,7 +1696,8 @@
             "https://www.globenewswire.com/news-release/2026/09/01/3354306/0/en/rentd-launches-uk-s-first-rewards-program-that-turns-rent-into-travel.html",
             "https://www.mysidegig.co.uk/hacks/rentd-review",
             "https://www.mysidegig.co.uk/rent",
-            "https://www.pointswellmade.co.uk/post/earn-points-on-rent-pay-rent-using-a-credit-card-with-nuba-rewards"
+            "https://www.pointswellmade.co.uk/post/earn-points-on-rent-pay-rent-using-a-credit-card-with-nuba-rewards",
+            "https://moneyhub.com/press-releases/moneyhub-and-brick-rewards-turn-rent-into-rewards-for-uk-tenants/"
           ]
         },
         {
@@ -3353,6 +3355,75 @@
             "https://www.currentaccountswitch.co.uk/"
           ],
           "question_count": 0
+        }
+      ]
+    },
+    {
+      "id": "advanced",
+      "title": "Advanced guides",
+      "icon": "🎓",
+      "locked": true,
+      "unlock": "Beat 3 bosses in Coinsworth to unlock",
+      "articles": [
+        {
+          "id": "pb-adv-council-tax-card",
+          "title": "Paying council tax by card: check your council first",
+          "summary": "Councils set their own payment rules. How to find out whether your card works, and what to check before you try.",
+          "existing_guide": null,
+          "status": "written",
+          "read_minutes": 4,
+          "reviewed": "2026-10-14",
+          "sources": [
+            "https://www.havering.gov.uk/paycounciltax",
+            "https://www.broxbourne.gov.uk/council-tax/pay-council-tax"
+          ],
+          "body": [
+            {
+              "type": "p",
+              "text": "Some people want to pay council tax on a rewards credit card. Whether you can depends on your own council, because each one sets how it takes payment. There is no single national rule, so start with your council's own page."
+            },
+            {
+              "type": "h",
+              "text": "What two councils say"
+            },
+            {
+              "type": "key",
+              "items": [
+                "Havering's payment page, checked on 14 October 2026, says you can pay online with a valid debit card, or by phone with a card. It does not say credit cards are accepted.",
+                "Broxbourne's page, checked the same day, lists Mastercard, Maestro, Visa and Visa Electron for online payments and says its phone line is for debit and credit cards. It does not say whether the online card types include credit.",
+                "Neither page mentioned a card fee. Your council may differ, so check its page."
+              ]
+            },
+            {
+              "type": "h",
+              "text": "How to check yours"
+            },
+            {
+              "type": "steps",
+              "items": [
+                "Search for your council's name plus 'pay council tax' and open its own website.",
+                "Look for a list of accepted cards, and any line about credit cards or fees.",
+                "If it is not clear, ask the council by phone or its contact form before you pay.",
+                "Check your card issuer's terms to see whether a council payment counts as a normal purchase, or could be charged as a cash advance, which usually carries a fee and interest from the day of the payment."
+              ]
+            },
+            {
+              "type": "warn",
+              "text": "Only pay by credit card if you will clear the balance in full by the statement due date. Interest on an unpaid balance will usually cost more than any rewards, and council tax arrears can lead to court action."
+            },
+            {
+              "type": "h",
+              "text": "The usual alternative"
+            },
+            {
+              "type": "p",
+              "text": "Direct Debit is how most people pay. Some councils let you choose the payment date or spread the bill over ten or twelve months, so ask yours. Our Direct Debit guide explains how they work."
+            },
+            {
+              "type": "tip",
+              "text": "If a card payment is allowed, set a reminder to repay the card on its due date, so the rewards are not wiped out by interest."
+            }
+          ]
         }
       ]
     }
