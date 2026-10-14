@@ -2999,6 +2999,16 @@
       border-radius:12px;padding:16px;text-align:center;
       font-size:13px;color:var(--muted);
     }
+
+    .lf-prac{margin-top:16px;padding:14px;border:1px solid var(--line,rgba(128,128,128,.25));border-radius:14px;background:var(--card,transparent)}
+    .lf-prac h4{margin:0 0 4px;font-size:14px}
+    .lf-prac .qs{font-size:12px;opacity:.75;margin:0 0 10px}
+    .lf-prac .q{font-size:14px;font-weight:700;margin:0 0 10px;line-height:1.4}
+    .lf-prac button.o{display:block;width:100%;text-align:left;padding:10px 12px;margin-bottom:8px;border-radius:10px;border:1px solid var(--line,rgba(128,128,128,.3));background:transparent;color:inherit;font:inherit;font-size:13px;cursor:pointer}
+    .lf-prac button.o.ok{border-color:var(--green);background:rgba(31,232,135,.12)}
+    .lf-prac button.o.no{border-color:#e5484d;background:rgba(229,72,77,.1)}
+    .lf-prac .ex{font-size:12px;line-height:1.5;margin:4px 0 10px;opacity:.9}
+    .lf-prac .row{display:flex;gap:8px;flex-wrap:wrap}
 </style>
 
 <style id="learn-first">
@@ -7952,6 +7962,51 @@ function initTheme() {
 
 
 <script id="learn-first-js">
+
+/* ---- Practice questions at the end of a guide ---- */
+(function(){
+  var QMAP=null,loading=null,FILES=['banking','bills','budgeting','cashback','credit','investing','pensions','saving','scams','shopping','side','tax'];
+  function loadQ(){
+    if(QMAP)return Promise.resolve(QMAP);
+    if(loading)return loading;
+    loading=Promise.all(FILES.map(function(f){return fetch('/data/questions/'+f+'.json').then(function(r){return r.ok?r.json():{questions:[]}}).catch(function(){return {questions:[]}})})).then(function(all){
+      var m={};all.forEach(function(d){(d.questions||[]).forEach(function(q){if(q.type==='mc'&&q.learn_more&&q.options&&q.options.length>1){(m[q.learn_more]=m[q.learn_more]||[]).push(q)}})});
+      QMAP=m;return m}).catch(function(){QMAP={};return QMAP});
+    return loading;
+  }
+  function esc(x){return String(x==null?'':x).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;')}
+  function pick(list){var a=list.slice().sort(function(){return Math.random()-.5}).slice(0,3);return a.sort(function(x,y){return (x.difficulty||1)-(y.difficulty||1)})}
+  function build(box,gid,qs){
+    var set=pick(qs),i=0,score=0;
+    function intro(){box.innerHTML='<h4>Check what you learned</h4><p class="qs">'+set.length+' quick question'+(set.length===1?'':'s')+' on this guide. Nothing is saved or scored.</p><button class="lf-btn" id="pracGo_'+gid+'">Try it</button>';
+      box.querySelector('button').onclick=show}
+    function show(){
+      var q=set[i];
+      box.innerHTML='<p class="qs">Question '+(i+1)+' of '+set.length+'</p><p class="q">'+esc(q.question)+'</p>'+q.options.map(function(o,k){return '<button class="o" data-k="'+k+'">'+esc(o)+'</button>'}).join('')+'<div id="pracEx_'+gid+'"></div>';
+      box.querySelectorAll('button.o').forEach(function(b){b.onclick=function(){
+        var k=+b.dataset.k,ok=k===q.answer;if(ok)score++;
+        box.querySelectorAll('button.o').forEach(function(x){x.disabled=true;if(+x.dataset.k===q.answer)x.classList.add('ok')});
+        if(!ok)b.classList.add('no');
+        var last=i===set.length-1;
+        box.querySelector('#pracEx_'+gid).innerHTML='<p class="ex"><b>'+(ok?'Right. ':'Not quite. ')+'</b>'+esc(q.explanation||'')+'</p><button class="lf-btn" id="pracNext_'+gid+'">'+(last?'See result':'Next')+'</button>';
+        box.querySelector('#pracNext_'+gid).onclick=function(){i++;last?done():show()};
+      }});
+    }
+    function done(){
+      box.innerHTML='<h4>'+score+' of '+set.length+'</h4><p class="qs">'+(score===set.length?'Nice. Want a harder test?':'Re-read the parts you missed, then try again.')+'</p><div class="row"><button class="lf-btn ghost" id="pracAgain_'+gid+'">Try again</button><button class="lf-btn" id="pracPlay_'+gid+'">Practise in Coinsworth</button></div>';
+      box.querySelector('#pracAgain_'+gid).onclick=function(){build(box,gid,qs)};
+      box.querySelector('#pracPlay_'+gid).onclick=function(){if(window.lfOpenGame)lfOpenGame()};
+    }
+    intro();
+  }
+  function attach(id){
+    var el=document.getElementById(id);if(!el||el.querySelector('.lf-prac'))return;
+    loadQ().then(function(m){var qs=m[ALIAS[id]||id];if(!qs||!qs.length||el.querySelector('.lf-prac'))return;
+      var box=document.createElement('div');box.className='lf-prac';el.appendChild(box);build(box,id,qs)});
+  }
+  var ALIAS={'guide-bankswitch':'pb-bank-cass'};
+  try{new MutationObserver(function(ms){ms.forEach(function(m){var t=m.target;if(t.classList&&t.classList.contains('guide-body')&&t.classList.contains('open'))attach(t.id)})}).observe(document.body,{subtree:true,attributes:true,attributeFilter:['class']})}catch(e){}
+})();
 (function(){try{var qv=new URLSearchParams(location.search).get('view');if(qv&&/^(home|offers|stack|progress|play|community)$/.test(qv)){var m=0,tv=setInterval(function(){m++;if(typeof switchView==='function'){clearInterval(tv);try{switchView(qv)}catch(e){}}else if(m>32)clearInterval(tv)},250)}}catch(e){}})();
 (function(){try{var qc=new URLSearchParams(location.search).get('chapter');if(!qc)return;var n=0,t=setInterval(function(){n++;if(window.PB&&typeof lfOpenChapter==='function'){clearInterval(t);try{lfOpenChapter(qc)}catch(e){}}else if(n>32)clearInterval(t)},250)}catch(e){}})();
 /* ───────── Learn-first layer ───────── */
