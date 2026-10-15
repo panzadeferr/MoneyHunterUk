@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updated": "2026-10-14",
+  "updated": "2026-10-15",
   "chapters": [
     {
       "id": "banking",
@@ -2265,7 +2265,7 @@
           "existing_guide": "guide-cashback",
           "status": "written",
           "read_minutes": 4,
-          "reviewed": "2026-10-11",
+          "reviewed": "2026-10-15",
           "body": [
             {
               "type": "p",
@@ -2297,14 +2297,338 @@
               ]
             },
             {
+              "type": "h",
+              "text": "What can go wrong"
+            },
+            {
+              "type": "list",
+              "items": [
+                "If a retailer goes into administration, it can stop accepting gift cards or limit how much of an order they cover.",
+                "Cards often expire one to two years after purchase, and some charge inactivity fees. Read the terms.",
+                "Which? found in 2021 that 38% of people holding vouchers for failed retailers couldn't spend the full balance (survey from October 2021, so check current terms)."
+              ]
+            },
+            {
+              "type": "tip",
+              "text": "If a retailer looks to be in trouble, spend the card quickly. If you paid by credit card, you may be able to make a Section 75 claim with your card provider."
+            },
+            {
               "type": "warn",
               "text": "Anyone who asks you to pay a bill, fine or tax in gift cards is a scammer. No real organisation does this."
             }
           ],
           "sources": [
-            "https://www.moneysavingexpert.com/shopping/"
+            "https://www.moneysavingexpert.com/shopping/",
+            "https://www.which.co.uk/news/article/gift-card-warning-avoid-getting-stuck-with-a-worthless-voucher-this-christmas-aOCFy2W2QVWx"
           ],
           "question_count": 2
+        },
+        {
+          "id": "pb-cb-stacking-basics",
+          "title": "How stacking works",
+          "summary": "The layers you can combine on one purchase, and which ones usually clash.",
+          "existing_guide": null,
+          "status": "written",
+          "read_minutes": 5,
+          "reviewed": "2026-10-15",
+          "body": [
+            {
+              "type": "p",
+              "text": "Stacking means getting more than one saving on the same purchase. Each saving is a separate layer, and the skill is knowing which layers work together."
+            },
+            {
+              "type": "h",
+              "text": "The layers"
+            },
+            {
+              "type": "list",
+              "items": [
+                "A sale price or a voucher code from the shop.",
+                "Cashback from a cashback site, paid on top of what you pay.",
+                "A discounted gift card or a gift card app that pays cashback.",
+                "A rewards or cashback credit card.",
+                "The shop's own loyalty points."
+              ]
+            },
+            {
+              "type": "h",
+              "text": "What usually works"
+            },
+            {
+              "type": "list",
+              "items": [
+                "Loyalty points plus cashback, if the cashback site allows it for that shop.",
+                "A cashback credit card on top of cashback from a site, because the card is only the payment method.",
+                "A gift card bought at a discount, then spent at the shop."
+              ]
+            },
+            {
+              "type": "h",
+              "text": "What usually clashes"
+            },
+            {
+              "type": "list",
+              "items": [
+                "A voucher code the cashback site doesn't list: many sites decline cashback when you use one.",
+                "Gift cards as payment: many shops are excluded from cashback when you pay with one, so read the shop's terms on the cashback site.",
+                "Browser extensions that compete: use only one at a time."
+              ]
+            },
+            {
+              "type": "key",
+              "items": [
+                "Every layer has its own terms. Check the shop's terms on the cashback site before you pay.",
+                "Order matters: see the next guide."
+              ]
+            },
+            {
+              "type": "warn",
+              "text": "Stacking is not worth it if it makes you buy something you wouldn't have bought. 10% back on a purchase you didn't need is still 90% spent."
+            }
+          ],
+          "sources": [
+            "https://www.topcashback.co.uk/help/why-didnt-my-purchase-track/",
+            "https://support.quidco.com/en/articles/4127319-why-can-t-i-raise-a-cashback-claim"
+          ],
+          "question_count": 0
+        },
+        {
+          "id": "pb-cb-order",
+          "title": "Stacking in the right order",
+          "summary": "What to click, and when, so your cashback actually tracks.",
+          "existing_guide": null,
+          "status": "written",
+          "read_minutes": 4,
+          "reviewed": "2026-10-15",
+          "body": [
+            {
+              "type": "p",
+              "text": "Most stacking mistakes come from doing things in the wrong order. This is the routine TopCashback and Quidco describe in their own help pages."
+            },
+            {
+              "type": "steps",
+              "items": [
+                "Decide what you're buying and whether you'd buy it anyway.",
+                "Compare prices first, then do the rest of the steps below. Comparison sites visited after your click can break tracking.",
+                "Open the cashback site, or its app or extension, and check the shop's terms: rate, exclusions, and whether gift cards or voucher codes are allowed.",
+                "Start with an empty basket and one shop tab open.",
+                "Click through from the cashback site, then buy in the same session.",
+                "Pay with the card you chose, and keep the order confirmation."
+              ]
+            },
+            {
+              "type": "h",
+              "text": "Things that break tracking"
+            },
+            {
+              "type": "list",
+              "items": [
+                "VPNs, ad blockers and privacy software.",
+                "Two cashback or voucher extensions at once.",
+                "Clicking through too early, then browsing other sites.",
+                "Several shop tabs open at once.",
+                "Reusing one click for a second order: each order needs its own click."
+              ]
+            },
+            {
+              "type": "tip",
+              "text": "TopCashback says that if your cashback hasn't tracked after 7 days, you can lodge a missing cashback claim. Check the current guidance on their help page."
+            },
+            {
+              "type": "warn",
+              "text": "Help pages change. Treat this as a checklist and check the cashback site's own page for the shop before you buy."
+            }
+          ],
+          "sources": [
+            "https://www.topcashback.co.uk/help/why-didnt-my-purchase-track/",
+            "https://www.quidco.com/article/make-a-claim/"
+          ],
+          "question_count": 0
+        },
+        {
+          "id": "pb-cb-missing",
+          "title": "When cashback goes missing",
+          "summary": "Pending, declined, and how to raise a missing cashback claim.",
+          "existing_guide": null,
+          "status": "written",
+          "read_minutes": 5,
+          "reviewed": "2026-10-15",
+          "body": [
+            {
+              "type": "p",
+              "text": "Cashback does not always track, and it can be declined. Knowing the time limits is what separates a recovered claim from a lost one."
+            },
+            {
+              "type": "h",
+              "text": "What the sites say (checked 15 October 2026)"
+            },
+            {
+              "type": "list",
+              "items": [
+                "Quidco: raise a missing cashback claim within 45 days of the purchase, and wait at least 72 hours after buying first. You need a record of your click-through, and some retailers don't accept claims at all.",
+                "Quidco Compare deals can take up to 120 days to track, and claims can't be raised on them.",
+                "TopCashback: most retailers accept claims for around 100 days from the purchase, and the exact window is in the retailer's terms on the offer page."
+              ]
+            },
+            {
+              "type": "h",
+              "text": "What to keep"
+            },
+            {
+              "type": "list",
+              "items": [
+                "A screenshot of the order confirmation or receipt.",
+                "The shop name, order reference, date, time and total.",
+                "What you bought, how you paid, and any codes or fees."
+              ]
+            },
+            {
+              "type": "h",
+              "text": "Why a claim can be stopped"
+            },
+            {
+              "type": "list",
+              "items": [
+                "The shop doesn't accept manual claims.",
+                "A voucher, payment method or item wasn't eligible.",
+                "The order was returned or cancelled."
+              ]
+            },
+            {
+              "type": "warn",
+              "text": "These time limits come from the sites and can change. Check the shop's page on the cashback site, and don't wait until the end of a window."
+            },
+            {
+              "type": "tip",
+              "text": "Add the expected payout date to the Progress tracker, so you notice when something is overdue."
+            }
+          ],
+          "sources": [
+            "https://www.quidco.com/article/make-a-claim/",
+            "https://support.quidco.com/en/articles/4127319-why-can-t-i-raise-a-cashback-claim",
+            "https://www.topcashback.co.uk/help/lodge-a-missing-cashback-claim/"
+          ],
+          "question_count": 0
+        },
+        {
+          "id": "pb-cb-cards",
+          "title": "Cashback credit cards",
+          "summary": "Why the reward only works if you clear the balance every month.",
+          "existing_guide": null,
+          "status": "written",
+          "read_minutes": 4,
+          "reviewed": "2026-10-15",
+          "body": [
+            {
+              "type": "p",
+              "text": "A cashback credit card pays you a small percentage of what you spend. It can stack with cashback sites, because the card is only how you pay."
+            },
+            {
+              "type": "h",
+              "text": "Who it suits"
+            },
+            {
+              "type": "p",
+              "text": "Only people who clear the balance in full every month. MoneySavingExpert's guide warns that interest wipes out the rewards if you don't, and that reward cards often charge higher rates than standard cards."
+            },
+            {
+              "type": "h",
+              "text": "What to check before applying"
+            },
+            {
+              "type": "list",
+              "items": [
+                "The annual fee, if any.",
+                "Spending caps and how long an introductory rate lasts, since many rates drop after a period.",
+                "The rate on each type of spending.",
+                "Whether you'll use it only for normal spending, never for cash withdrawals or spreading payments."
+              ]
+            },
+            {
+              "type": "h",
+              "text": "Setting it up safely"
+            },
+            {
+              "type": "steps",
+              "items": [
+                "Set up a Direct Debit for the full balance.",
+                "Use the card for spending you were already doing.",
+                "Check the statement each month, then repeat."
+              ]
+            },
+            {
+              "type": "h",
+              "text": "A bonus: Section 75"
+            },
+            {
+              "type": "p",
+              "text": "For an item priced over £100 and up to £30,000, a credit card can give extra protection if the seller fails. It applies per item, and usually doesn't work for third-party sellers or when you pay through some wallets. A part-payment on the card can bring the whole cost under cover."
+            },
+            {
+              "type": "warn",
+              "text": "Every credit application leaves a mark on your credit file. Apply only for a card you want to keep using."
+            }
+          ],
+          "sources": [
+            "https://www.moneysavingexpert.com/cards/cashback-credit-cards",
+            "https://www.experian.co.uk/consumer/credit-cards/guides/section-75-protection.html"
+          ],
+          "question_count": 0
+        },
+        {
+          "id": "pb-cb-not-worth",
+          "title": "When stacking isn't worth it",
+          "summary": "The traps: tiny payouts, time cost, and spending to save.",
+          "existing_guide": null,
+          "status": "written",
+          "read_minutes": 4,
+          "reviewed": "2026-10-15",
+          "body": [
+            {
+              "type": "p",
+              "text": "Stacking is a way to make planned spending cheaper. It stops being worth it in a few common situations."
+            },
+            {
+              "type": "h",
+              "text": "Watch for"
+            },
+            {
+              "type": "list",
+              "items": [
+                "Buying something you didn't need, because there was a deal.",
+                "Spending an hour to save a pound or two.",
+                "Minimum payout limits that leave small balances stuck.",
+                "Cashback that never gets confirmed, because you counted it before it was paid.",
+                "Using credit you can't clear in full, which costs more than you earn.",
+                "Applying for lots of products, which can leave marks on your credit file."
+              ]
+            },
+            {
+              "type": "h",
+              "text": "A quick test"
+            },
+            {
+              "type": "key",
+              "items": [
+                "Would I buy this anyway? If not, stop.",
+                "How long will it take, and what is my time worth?",
+                "Can I pay it off in full this month?"
+              ]
+            },
+            {
+              "type": "tip",
+              "text": "Count cashback as a bonus only when it has landed in your account. The Progress tracker can show you what is pending and what is paid."
+            },
+            {
+              "type": "warn",
+              "text": "Anyone who tells you that you can get rich from cashback is selling something. For most people it's a modest saving on planned purchases."
+            }
+          ],
+          "sources": [
+            "https://www.moneysavingexpert.com/cards/cashback-credit-cards",
+            "https://www.quidco.com/article/make-a-claim/"
+          ],
+          "question_count": 0
         }
       ]
     },
@@ -3240,14 +3564,18 @@
           "id": "pb-plan-90-day",
           "title": "Stack £500 in 90 days",
           "summary": "The step-by-step starter plan.",
-          "existing_guide": "guide-stack",
+          "existing_guide": null,
           "status": "written",
           "read_minutes": 6,
-          "reviewed": "2026-10-11",
+          "reviewed": "2026-10-15",
           "body": [
             {
               "type": "p",
               "text": "A simple 90-day plan to build habits and earn your first few hundred pounds from offers, without risking your main finances."
+            },
+            {
+              "type": "tip",
+              "text": "Offer amounts change, so this plan names no figures. Check the Offers tab for what is live today, and read each offer's conditions and last-checked date."
             },
             {
               "type": "h",
@@ -3305,7 +3633,8 @@
             }
           ],
           "sources": [
-            "https://www.currentaccountswitch.co.uk/"
+            "https://www.currentaccountswitch.co.uk/",
+            "https://www.topcashback.co.uk/help/why-didnt-my-purchase-track/"
           ],
           "question_count": 0
         },

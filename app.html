@@ -3544,54 +3544,6 @@ body.light #gameReturn{color:#fff}
           </div>
         </div>
 
-        <!-- GUIDE 7: STACK £500 IN 90 DAYS -->
-        <div class="guide-card card" data-guide="stack">
-          <div class="guide-card-head" onclick="toggleGuide('guide-stack')">
-            <div class="guide-icon green">⚡</div>
-            <div>
-              <h3>Stack £500 in 90 Days — The Full Plan</h3>
-              <p class="guide-meta">Month by month</p>
-            </div>
-          </div>
-          <button class="guide-expand-btn" id="btn-guide-stack" onclick="toggleGuide('guide-stack')">Read Guide ↓</button>
-          <div class="guide-body" id="guide-stack">
-            <p class="guide-p">This is the complete month-by-month plan. Follow it in order. Each step builds on the last. Do not skip ahead — the order matters.</p>
-
-            <div class="guide-section-title">Week 1 — Quick wins (Day 1–7)</div>
-            <div class="guide-step"><span class="guide-step-num">→</span><span><strong>Sign up to TopCashback</strong> — £10 bonus. Takes 2 minutes.</span></div>
-            <div class="guide-step"><span class="guide-step-num">→</span><span><strong>Sign up to Quidco</strong> — £10 bonus. Takes 2 minutes.</span></div>
-            <div class="guide-step"><span class="guide-step-num">→</span><span><strong>Open Freetrade</strong> via referral, deposit £50, get free share (up to £100). 5 minutes.</span></div>
-            <div class="guide-step"><span class="guide-step-num">→</span><span><strong>Open JamDoughnut</strong> with code 8TGF. Start using it for your weekly shop this week.</span></div>
-            <div class="guide-step"><span class="guide-step-num">→</span><span><strong>Open Chase account</strong> if you do not have one. Use it as your everyday card for 1% cashback.</span></div>
-            <div class="guide-step"><span class="guide-step-num">→</span><span><strong>Week 1 total: £20–£120</strong> depending on your Freetrade share.</span></div>
-
-            <div class="guide-section-title">Month 1 — First bank switch</div>
-            <div class="guide-step"><span class="guide-step-num">→</span><span><strong>Do the Barclays or First Direct bank switch</strong> — £200 bonus. Open the offer in the Offers tab for the full guide. This takes 15 minutes to set up. The bonus arrives in about 30 days.</span></div>
-            <div class="guide-step"><span class="guide-step-num">→</span><span><strong>Open Robinhood UK</strong> — free share bonus. Deposit £1.</span></div>
-            <div class="guide-step"><span class="guide-step-num">→</span><span><strong>Month 1 total so far: £270–£370+</strong></span></div>
-
-            <div class="guide-section-title">Month 2 — Second bank switch</div>
-            <div class="guide-step"><span class="guide-step-num">→</span><span><strong>Do the NatWest switch</strong> — £150–£200 bonus. Switch FROM Chase (not your main account). Takes 15 minutes.</span></div>
-            <div class="guide-step"><span class="guide-step-num">→</span><span><strong>Open Webull</strong> — deposit £100 for bonus. Hold 90 days.</span></div>
-            <div class="guide-step"><span class="guide-step-num">→</span><span><strong>Collect your first bank switch bonus</strong> — it should land this month.</span></div>
-            <div class="guide-step"><span class="guide-step-num">→</span><span><strong>Month 2 total: £420–£570+</strong></span></div>
-
-            <div class="guide-section-title">Month 3 — Third bank switch + collect</div>
-            <div class="guide-step"><span class="guide-step-num">→</span><span><strong>Do First Direct or Barclays switch</strong> — £175–£250 bonus.</span></div>
-            <div class="guide-step"><span class="guide-step-num">→</span><span><strong>Collect your NatWest bonus</strong> — arrives this month.</span></div>
-            <div class="guide-step"><span class="guide-step-num">→</span><span><strong>Sell your Freetrade and Robinhood shares</strong> if holding period is up. Withdraw the cash.</span></div>
-            <div class="guide-step"><span class="guide-step-num">→</span><span><strong>Switch Octopus Energy</strong> if you have not already — £50 credit.</span></div>
-            <div class="guide-step"><span class="guide-step-num">→</span><span><strong>Month 3: keep stacking and repeating</strong></span></div>
-
-            <div class="guide-section-title">Ongoing — keep the engine running</div>
-            <div class="guide-step"><span class="guide-step-num">→</span><span>Use JamDoughnut + Chase for every weekly shop. Some people save £300–£600 a year this way.</span></div>
-            <div class="guide-step"><span class="guide-step-num">→</span><span>Check the Offers tab for new bank switch deals as they appear. Banks launch new offers every few months.</span></div>
-            <div class="guide-step"><span class="guide-step-num">→</span><span>Use TopCashback for every online purchase. Set it as your browser homepage so you never forget.</span></div>
-
-            <div class="guide-tip">💡 Track everything in the Progress tab. Add every pending payout with its expected date. Forgotten payouts are lost payouts — the tracker is there so that never happens to you.</div>
-          </div>
-        </div>
-
         <!-- GUIDE 8: COMMON MISTAKES -->
         <div class="guide-card card" data-guide="mistakes">
           <div class="guide-card-head" onclick="toggleGuide('guide-mistakes')">
@@ -8045,7 +7997,7 @@ function initTheme() {
   window.lfOpenLesson=function(){if(window.lfLesson){switchView('stack');lfOpenChapter('all');setTimeout(function(){try{toggleGuide(window.lfLesson);var e=document.getElementById(window.lfLesson);if(e)e.scrollIntoView({behavior:'smooth',block:'start'})}catch(x){}},150)}};
 
   /* legacy hand-written guides belong to these chapters */
-  var LEGACY={banking:['bank'],investing:['invest'],shopping:['supermarket'],cashback:['cashback'],bills:['energy','directdebit'],plan:['stack','mistakes','gamification','battle']};
+  var LEGACY={banking:['bank'],investing:['invest'],shopping:['supermarket'],cashback:['cashback'],bills:['energy','directdebit'],plan:['mistakes','gamification','battle']};
   window.lfOpenChapter=function(id){
     if(!document.getElementById('view-stack').classList.contains('active'))switchView('stack');
     window.lfChapterId=id;
