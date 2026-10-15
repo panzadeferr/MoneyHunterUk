@@ -21,6 +21,10 @@ MAP = ROOT / "data" / "sovrn_merchants.json"
 
 # Sovrn Commerce (ShareASale) direct-link pattern, merchantID filled per merchant.
 # afftrack carries the deal id so provider-confirmed clicks stay attributable.
+# VERIFIED 15 Oct 2026 pre-approval: Sovrn's link builder refuses every URL while the
+# site campaign is unapproved ("Not eligible", tested Tesco and Iceland URLs). Before
+# any apply run: generate one link in Sovrn's own builder after approval and confirm
+# it matches this TEMPLATE; adjust the template to the real format if it differs.
 TEMPLATE = "https://www.shareasale.com/m-pr.cfm?merchantID={merchant_id}&u={url}&afftrack={afftrack}"
 
 
