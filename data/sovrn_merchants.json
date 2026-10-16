@@ -1,0 +1,4 @@
+{
+  "_comment": "Sovrn Commerce (ShareASale) merchant map: store name (as it appears in all_deals.json) -> merchantID. Empty until Sovrn approves moneyhunters.co.uk; fill from the Sovrn merchant directory after approval. Script stays in dry-run while this is empty.",
+  "merchants": {}
+}
