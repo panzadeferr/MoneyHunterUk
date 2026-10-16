@@ -282,6 +282,7 @@ function on(id,fn){const e=$(id);if(e)e.onclick=fn}
 /* open a Playbook guide in a new tab: save first so the player can come straight back */
 function openGuide(id,qid){
   if(id&&!S.reading.includes(id)){S.reading.push(id);if(S.reading.length>30)S.reading.shift()}
+  if(id)S.lastGuide=id;
   save(true);
   window.open(guideURL(id,qid),"_blank","noopener");
   toast("SAVED ✓ · CLOSE THE GUIDE TO COME BACK");
@@ -1231,11 +1232,12 @@ function libraryPC(){
   const topics={};Object.keys(GUIDES).forEach(g=>{const t=GUIDES[g].tp||"Other";(topics[t]=topics[t]||[]).push(g)});
   modal(`<h2>PLAYBOOK COMPUTER</h2>
     ${st?`<div class="poster"><strong>${st.boss?"BOSS REMATCH: STUDY REQUIRED":"STUDY SESSION"}</strong><p class="small">${st.boss?`Open the guide below, read it, then answer 2 of 3 recall questions to unlock the rematch with ${esc(BOSSES[st.boss].n)}.`:`Open a guide, read it, then answer a question to win back ${Math.ceil(st.lost/2)} coins and a heart.`}</p><button class="go" id="stdy">I'VE READ IT, QUIZ ME</button></div>`:""}
-    <p class="small">Tap a guide to open it on the Money Hunters website.</p>
+    ${!st&&S.lastGuide&&GUIDES[S.lastGuide]?`<div class="poster"><strong>YOU OPENED: ${esc(gTitle(S.lastGuide).toUpperCase())}</strong><p class="small">Finished reading? Take the short recall quiz here to complete it.</p><button class="go" id="lastq">I'VE READ IT, QUIZ ME</button></div>`:""}
+    <p class="small">${!st&&!S.obj.o1b&&S.ch===1?"HOW IT WORKS: 1) Tap any guide below. It opens on the website. 2) Read it, then close that tab to come back. 3) Press QUIZ ME here. That completes the task.":"Tap a guide to open it on the Money Hunters website."}</p>
     ${S.notebook.length?`<button class="ghost" id="nb">HUNTER'S NOTEBOOK (${S.notebook.length})</button>`:""}
     ${Object.entries(topics).map(([t,ids])=>`<details class="topic"${ids.some(g=>guides.includes(g))?" open":""}><summary>${esc(t.toUpperCase())} · ${ids.length}</summary>${ids.map(g=>`<a class="gl${guides.includes(g)?" hot":""}" href="${guideURL(g)}" data-g="${g}"><span>${esc(gTitle(g))}</span><em>${esc((GUIDES[g].s||"").slice(0,90))}</em></a>`).join("")}</details>`).join("")}
     <button class="ghost" id="cl">CLOSE</button>`);
-  on("cl",closeModal);on("stdy",()=>studyFlow(guides.length?guides:[BOSSES[st.boss].guide],true));on("nb",notebook);
+  on("cl",closeModal);on("lastq",()=>studyFlow([S.lastGuide],false));on("stdy",()=>studyFlow(guides.length?guides:[BOSSES[st.boss].guide],true));on("nb",notebook);
 }
 function notebook(){
   modal(`<h2>HUNTER'S NOTEBOOK</h2><p class="small">The questions that tripped you up, most recent first. Read the guide and you won't miss them again.</p>
