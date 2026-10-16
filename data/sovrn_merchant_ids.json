@@ -1,0 +1,12 @@
+{
+  "_comment": "Research file: Sovrn Commerce merchant IDs found in Sovrn's own merchant search (campaign 6631624), pre-approval. NOT the live map: data/sovrn_merchants.json stays empty until Sovrn approves and a real Sovrn-built link confirms the TEMPLATE format in scripts/sovrn_link_swap.py. Found 16 Oct 2026 by Fo via platform.sovrn.com merchant search.",
+  "found": {
+    "Gousto":      {"merchant_id": 35808,  "type": "CPA", "rates": "GBP 0.50 existing customer / 9.00 first purchase (new)", "domains": ["gousto.co.uk"]},
+    "Expedia":     {"merchant_id": 41098,  "type": "CPA", "rates": "1-6 percent; 6 percent hotels gbr, 5 percent car hire", "domains": ["expedia.com", "expedia.co.uk"]},
+    "Airbnb":      {"merchant_id": 95876,  "type": "CPC", "rates": "CPC, no CPA rates shown", "domains": ["airbnb.com"]},
+    "Tesco":       {"merchant_id": 386,    "type": "CPC", "rates": "CPC", "found": "2026-10-15", "domains": ["tesco.com"]},
+    "Iceland":     {"merchant_id": 100860, "type": "CPC", "rates": "CPC", "found": "2026-10-15", "domains": ["iceland.co.uk"]}
+  },
+  "not_found": ["Sky", "Hello Fresh", "Deliveroo"],
+  "remaining_to_check": ["Costa", "Caffe Nero", "Giffgaff", "Asda", "Sainsbury's", "Waitrose", "Uber Eats", "Wise", "Remitly", "Virgin Media", "Talktalk", "Monzo", "Trading212", "Amex", "Pensionbee", "Vitality"]
+}
