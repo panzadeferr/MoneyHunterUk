@@ -529,8 +529,9 @@ function petStep(){PET.fx=PET.x;PET.fy=PET.y;PET.x=P.fx;PET.y=P.fy;PET.mt=0;PET.
 
 /* ---------- movement ---------- */
 function enterMap(id,x,y,dir){
+  const fromRoom=!!(MAP&&MAP.room);
   MAP=id==="isle"?OW:ROOMS[id];
-  P.x=P.fx=x;P.y=P.fy=y;P.dir=dir;P.moving=false;lastZone="";petReset();
+  P.x=P.fx=x;P.y=P.fy=y;P.dir=dir;P.moving=false;lastZone=(id==="isle"&&fromRoom)?zoneOf(x,y):"";petReset();
 }
 function goTo(id,x,y,dir,cb){trans={kind:"fade",t:0,dur:420,mid:false,cb:()=>{enterMap(id,x,y,dir);cb&&cb();save()}}}
 let bumps=0,lastFog=0;
@@ -539,8 +540,8 @@ function freeNear(x,y){for(const[dx,dy]of[[0,1],[1,0],[-1,0],[0,-1],[1,1],[-1,1]
 function tryMove(d){
   if(busy()||P.moving)return;
   P.dir=d;const[dx,dy]=DIRS[d],nx=P.x+dx,ny=P.y+dy;
-  if(MAP.id==="isle"){const b=bldAt(nx,ny);if(b&&dy===-1){enterBuilding(b);return}}
-  else if(MAP.M[ny]&&MAP.M[ny][nx]==="d"){leaveRoom();return}
+  if(MAP.id==="isle"){const b=bldAt(nx,ny)||(dy===-1&&solid(nx,ny)&&(bldAt(nx-1,ny)||bldAt(nx+1,ny)));if(b&&dy===-1){enterBuilding(b);return}}
+  else if(MAP.M[ny]&&(MAP.M[ny][nx]==="d"||(dy===1&&(MAP.M[ny][nx-1]==="d"||MAP.M[ny][nx+1]==="d")))){leaveRoom();return}
   if(MAP.id==="isle"){const g=gateAt(nx,ny);if(g){SFX.bump();fogMsg(g);return}}
   if(solid(nx,ny)){SFX.bump();bumps++;return}
   bumps=0;P.fx=P.x;P.fy=P.y;P.x=nx;P.y=ny;P.moving=true;P.mt=0;if(S.pet)petStep();
@@ -566,7 +567,7 @@ function interact(){
   let[fx,fy]=facing();
   const tile=MAP.room?MAP.M[fy]&&MAP.M[fy][fx]:null;
   let n=npcsHere().find(n=>n.x===fx&&n.y===fy);
-  if(!n&&tile==="c"){const[dx,dy]=DIRS[P.dir];n=npcsHere().find(n=>n.x===fx+dx&&n.y===fy+dy)}
+  if(!n&&MAP.room&&solid(fx,fy)){const[dx,dy]=DIRS[P.dir];n=npcsHere().find(n=>n.x===fx+dx&&n.y===fy+dy)}
   if(n){n.dir=(P.dir+2)%4;talk(n);return}
   const s=(MAP.signs||[]).find(s=>s.x===fx&&s.y===fy);
   if(s){if(s.board)openBoard();else say(s.text);return}
@@ -714,7 +715,7 @@ function talk(n){
     const b=BOSSES[n.boss];
     if(S.study&&S.study.boss===n.boss){say([{s:"",t:"You lost to "+b.n+" last time. Penny says: study first! Visit the Playbook Library, use a computer and finish a study session."}]);return}
     say([{s:b.n.toUpperCase(),t:b.taunt},{s:"",t:"Ready to fight? Boss battles can't be escaped.",choices:[{label:"FIGHT",fn:()=>bossFight(n.boss)},{label:"NOT YET"}]}]);return}
-  if(id==="tilly_out"){
+  if(id==="tilly_out"||(id==="tilly"&&!S.flags.met_tilly)){
     S.flags.met_tilly=true;
     say([{s:"TILLY",t:"So. You're Marguerite's kin. Same stubborn chin. I'm Tilly. Thirty years behind a bank counter, and now I tell people what banks won't."},
      {s:"TILLY",t:"Your aunt left you the Little Penny. And her debts. Twelve months to keep the doors open, she said. Every month ends with Rent Day."},
@@ -1233,7 +1234,7 @@ function libraryPC(){
   modal(`<h2>PLAYBOOK COMPUTER</h2>
     ${st?`<div class="poster"><strong>${st.boss?"BOSS REMATCH: STUDY REQUIRED":"STUDY SESSION"}</strong><p class="small">${st.boss?`Open the guide below, read it, then answer 2 of 3 recall questions to unlock the rematch with ${esc(BOSSES[st.boss].n)}.`:`Open a guide, read it, then answer a question to win back ${Math.ceil(st.lost/2)} coins and a heart.`}</p><button class="go" id="stdy">I'VE READ IT, QUIZ ME</button></div>`:""}
     ${!st&&S.lastGuide&&GUIDES[S.lastGuide]?`<div class="poster"><strong>YOU OPENED: ${esc(gTitle(S.lastGuide).toUpperCase())}</strong><p class="small">Finished reading? Take the short recall quiz here to complete it.</p><button class="go" id="lastq">I'VE READ IT, QUIZ ME</button></div>`:""}
-    <p class="small">${!st&&!S.obj.o1b&&S.ch===1?"HOW IT WORKS: 1) Tap any guide below. It opens on the website. 2) Read it, then close that tab to come back. 3) Press QUIZ ME here. That completes the task.":"Tap a guide to open it on the Money Hunters website."}</p>
+    <p class="small">${!st&&!S.obj.o1b&&S.ch===1?"HOW IT WORKS: 1) Tap any guide below. It opens on the website. 2) Read it, then close that tab to come back. 3) Open this computer again. A QUIZ ME button will be waiting at the top. Pass it to finish the task.":"Tap a guide to open it on the Money Hunters website."}</p>
     ${S.notebook.length?`<button class="ghost" id="nb">HUNTER'S NOTEBOOK (${S.notebook.length})</button>`:""}
     ${Object.entries(topics).map(([t,ids])=>`<details class="topic"${ids.some(g=>guides.includes(g))?" open":""}><summary>${esc(t.toUpperCase())} · ${ids.length}</summary>${ids.map(g=>`<a class="gl${guides.includes(g)?" hot":""}" href="${guideURL(g)}" data-g="${g}"><span>${esc(gTitle(g))}</span><em>${esc((GUIDES[g].s||"").slice(0,90))}</em></a>`).join("")}</details>`).join("")}
     <button class="ghost" id="cl">CLOSE</button>`);
