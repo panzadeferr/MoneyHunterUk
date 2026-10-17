@@ -43,7 +43,8 @@ self.addEventListener('fetch', e => {
     url.hostname.includes('rss2json') ||
     url.hostname.includes('supabase.co') ||
     url.hostname.includes('railway.app') ||
-    url.hostname.includes('brevo.com')
+    url.hostname.includes('brevo.com') ||
+    url.hostname.includes('umami.is')
   ) {
     return;
   }

@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+<script defer src="https://cloud.umami.is/script.js" data-website-id="f9d2c068-643f-4cfc-847e-c22fec24bafe"></script>
+<script>window.mhTrack=function(n,d){try{if(window.umami&&umami.track)umami.track(n,d)}catch(e){}};</script>
   <meta charset="UTF-8">
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
@@ -5791,6 +5793,7 @@ body.light #gameReturn{color:#fff}
     function panelClaim() {
       if (!activePanel) return;
       const offer = activePanel;
+      mhTrack("offer_opened", { offer: offer.id });
       // Copy code if exists
       if (offer.code) {
         navigator.clipboard?.writeText(offer.code).catch(() => {});
