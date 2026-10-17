@@ -1,4 +1,6 @@
 <meta charset="utf-8">
+<script defer src="https://cloud.umami.is/script.js" data-website-id="f9d2c068-643f-4cfc-847e-c22fec24bafe"></script>
+<script>window.mhTrack=function(n,d){try{if(window.umami&&umami.track)umami.track(n,d)}catch(e){}};</script>
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <title>Coinsworth: The Little Penny</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -283,6 +285,7 @@ function on(id,fn){const e=$(id);if(e)e.onclick=fn}
 function openGuide(id,qid){
   if(id&&!S.reading.includes(id)){S.reading.push(id);if(S.reading.length>30)S.reading.shift()}
   if(id)S.lastGuide=id;
+  mhTrack("guide_opened_from_game",{guide:id});
   save(true);
   window.open(guideURL(id,qid),"_blank","noopener");
   toast("SAVED ✓ · CLOSE THE GUIDE TO COME BACK");
@@ -963,7 +966,7 @@ function bVictory(){
   const e=B.e;fx.dead=.99;SFX.win();
   const xp=gainXP(e.xp),coins=gainCoins(e.coins);let extra="";
   if(B.kind==="boss"){
-    const first=!S.bossDone[e.id];S.bossDone[e.id]=true;if(S.study&&S.study.boss===e.id)S.study=null;
+    const first=!S.bossDone[e.id];S.bossDone[e.id]=true;if(first)mhTrack("boss_beaten",{boss:e.id});if(S.study&&S.study.boss===e.id)S.study=null;
     if(first){if(e.id!=="phisher")S.shards.push(e.id);if(!S.tapes.includes(e.ch)&&e.id!=="phisher"){S.tapes.push(e.ch)}
       if(e.id==="grimsby"){S.flags.lampReady=true}
       else if(e.id!=="phisher"&&e.ch<6){S.rentDue=RENT[e.ch]}}
@@ -1438,6 +1441,7 @@ function creator(isNew){
     else{hud();save(true);toast("LOOK SAVED")}});
 }
 function enterWorld(fresh){
+  mhTrack(fresh?"game_new":"game_continue");
   mode="world";introPenny=false;$("topbar").hidden=false;$("controls").hidden=false;$("bpanel").hidden=true;
   const p=fresh?{x:AN.spawn[0],y:AN.spawn[1],dir:0}:S.pos;
   enterMap("isle",p.x,p.y,p.dir);lastZone="";hud();
