@@ -1,12 +1,95 @@
 {
   "_comment": "Research file: Sovrn Commerce merchant IDs found in Sovrn's own merchant search (campaign 6631624), pre-approval. NOT the live map: data/sovrn_merchants.json stays empty until Sovrn approves and a real Sovrn-built link confirms the TEMPLATE format in scripts/sovrn_link_swap.py. Found 16 Oct 2026 by Fo via platform.sovrn.com merchant search.",
   "found": {
-    "Gousto":      {"merchant_id": 35808,  "type": "CPA", "rates": "GBP 0.50 existing customer / 9.00 first purchase (new)", "domains": ["gousto.co.uk"]},
-    "Expedia":     {"merchant_id": 41098,  "type": "CPA", "rates": "1-6 percent; 6 percent hotels gbr, 5 percent car hire", "domains": ["expedia.com", "expedia.co.uk"]},
-    "Airbnb":      {"merchant_id": 95876,  "type": "CPC", "rates": "CPC, no CPA rates shown", "domains": ["airbnb.com"]},
-    "Tesco":       {"merchant_id": 386,    "type": "CPC", "rates": "CPC", "found": "2026-10-15", "domains": ["tesco.com"]},
-    "Iceland":     {"merchant_id": 100860, "type": "CPC", "rates": "CPC", "found": "2026-10-15", "domains": ["iceland.co.uk"]}
+    "Gousto": {
+      "merchant_id": 35808,
+      "type": "CPA",
+      "rates": "GBP 0.50 existing customer / 9.00 first purchase (new)",
+      "domains": [
+        "gousto.co.uk"
+      ]
+    },
+    "Expedia": {
+      "merchant_id": 41098,
+      "type": "CPA",
+      "rates": "1-6 percent; 6 percent hotels gbr, 5 percent car hire",
+      "domains": [
+        "expedia.com",
+        "expedia.co.uk"
+      ]
+    },
+    "Airbnb": {
+      "merchant_id": 95876,
+      "type": "CPC",
+      "rates": "CPC, no CPA rates shown",
+      "domains": [
+        "airbnb.com"
+      ]
+    },
+    "Tesco": {
+      "merchant_id": 386,
+      "type": "CPC",
+      "rates": "CPC",
+      "found": "2026-10-15",
+      "domains": [
+        "tesco.com"
+      ]
+    },
+    "Iceland": {
+      "merchant_id": 100860,
+      "type": "CPC",
+      "rates": "CPC",
+      "found": "2026-10-15",
+      "domains": [
+        "iceland.co.uk"
+      ]
+    },
+    "Giffgaff": {
+      "merchant_id": 2230,
+      "type": "CPA+CPC",
+      "rates": "CPA 3.9 percent, AOV $861.98, EPC $0.12; network rates include GBP 5 on handset purchases; UK only",
+      "found": "2026-10-18",
+      "domains": [
+        "giffgaff.com"
+      ]
+    },
+    "Asda": {
+      "merchant_id": 194,
+      "type": "CPA+CPC",
+      "rates": "CPA 0.75-3 percent, AOV $139.89, EPC $0.11; also ASDA Insurance (CPC) and ASDA photo (5 percent) listed separately; UK only",
+      "found": "2026-10-18",
+      "domains": [
+        "asda.com"
+      ]
+    },
+    "Sainsburys": {
+      "merchant_id": 1070,
+      "type": "CPC",
+      "rates": "CPC only, no rates shown",
+      "found": "2026-10-18",
+      "domains": [
+        "sainsburys.co.uk"
+      ]
+    }
   },
-  "not_found": ["Sky", "Hello Fresh", "Deliveroo"],
-  "remaining_to_check": ["Costa", "Caffe Nero", "Giffgaff", "Asda", "Sainsbury's", "Waitrose", "Uber Eats", "Wise", "Remitly", "Virgin Media", "Talktalk", "Monzo", "Trading212", "Amex", "Pensionbee", "Vitality"]
+  "not_found": [
+    "Costa (coffee chain; only namesakes: Costa Brazil, Costa Cruceros)",
+    "Deliveroo",
+    "Hello Fresh",
+    "Monzo",
+    "Sky"
+  ],
+  "remaining_to_check": [
+    "Caffe Nero",
+    "Waitrose",
+    "Uber Eats",
+    "Wise",
+    "Remitly",
+    "Virgin Media",
+    "Talktalk",
+    "Trading212",
+    "Amex",
+    "Pensionbee",
+    "Vitality"
+  ]
 }
