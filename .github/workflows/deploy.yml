@@ -118,6 +118,9 @@ jobs:
       - name: Question bank
         run: python3 tests/check_questions.py
 
+      - name: Guide pages
+        run: python3 tests/check_guides.py
+
       - name: All tests passed
         run: echo "✅ All checks passed — deploying..."
 
@@ -146,6 +149,7 @@ jobs:
           cp *.png googlecc*.html _site/
           cp UK-rewards-stacking-toolkit.xlsx _site/
           cp 9ba589cb48714f42873c1a25a4e74641.txt _site/
+          [ -d guides ] && cp -r guides _site/guides || true
           mkdir -p _site/data
           [ -d data ] && cp -r data/. _site/data/ || true
           mkdir -p _site/play
