@@ -13,6 +13,7 @@ def slugify(t):
 def nice(d):
     y,m,dd=map(int,d.split("-"));return f"{dd} {datetime.date(y,m,dd).strftime('%B')} {y}"
 pb=json.load(open(os.path.join(ROOT,"data","playbook.json"),encoding="utf-8"))
+NEWS='<div class="box"><div class="lbl">Weekly email</div><p>The Money Drop: one email a week with the freshest UK bank switches, cashback and free-share offers. Free, unsubscribe any time.</p><iframe loading="lazy" title="Subscribe to the Money Drop" width="540" height="305" src="https://74f208ba.sibforms.com/v2/serve/MUIFAFatJ19YBCgL_8OC4uZ5fBePkhu7SoQvYgtr0wdDAHDh8p3INb8HL95eBukwXmcw6eSy9l21fAZ9j904cUItf6li832Ro_b8bIkYS6DRWodkrhDtEnh_e_Uby_2jvxs6ApPdjg9-KI3K69aSvIwTx7GL_JoR-9iAg5078QebcnjT28u-EKbYoAA6YamSH3UvqHQA_Nj4w9bvyw==" frameborder="0" scrolling="auto" style="display:block;max-width:100%;border:0"></iframe></div>'
 UMAMI='<script defer src="https://cloud.umami.is/script.js" data-website-id="f9d2c068-643f-4cfc-847e-c22fec24bafe"></script>'
 CSS="""
 :root{--bg:#080b10;--bg2:#0d1219;--bg3:#131b26;--g:#1fe887;--gl:rgba(31,232,135,.12);--t:#f0f4f8;--tm:#a3b2c4;--tl:#6b7d92;--line:rgba(255,255,255,.08);--warn:#ffb454;--fh:'Inter',system-ui,sans-serif;--fb:'DM Sans',system-ui,sans-serif}
@@ -80,6 +81,8 @@ for c,a,s in pages:
     rel=[x for x in c["articles"] if x["id"]!=a["id"] and x.get("body")][:4]
     relhtml="".join(f'<a href="/guides/{slugs[x["id"]]}/">{E(x["title"])}<span>{E(x["summary"])}</span></a>' for x in rel)
     srcs="".join(f'<li><a href="{E(u)}" rel="noopener" target="_blank">{E(re.sub(r"^https?://(www\.)?","",u))}</a></li>' for u in a.get("sources",[]))
+    qn=a.get("question_count") or 0
+    PRACTICE=(f"There are {qn} practice questions on this topic in the free Coinsworth game. " if qn else "Test yourself with short questions in the free Coinsworth game. ")+"Or open this guide in the app to see live offers and tools."
     page=f"""<!DOCTYPE html>
 <html lang="en-GB">
 <head>
@@ -107,9 +110,10 @@ for c,a,s in pages:
 <p class="lede">{E(desc)}</p>
 <p class="meta">{E(c['title'])} · {a['read_minutes']} min read · Last reviewed {nice(a['reviewed'])}</p>
 {render_body(a['body'])}
-<div class="cta"><h2>Put it into practice</h2><p>Test yourself with short questions in the free Coinsworth game, or open this guide in the app to see live offers and tools.</p><div class="btns"><a class="btn" href="/play/">Play the game</a><a class="btn alt" href="/app.html?guide={E(a['id'])}">Open in the app</a></div></div>
+<div class="cta"><h2>Put it into practice</h2><p>{PRACTICE}</p><div class="btns"><a class="btn" href="/play/?utm_source=guide&amp;utm_medium={E(s)}">Play the game</a><a class="btn alt" href="/app.html?guide={E(a['id'])}">Open in the app</a></div></div>
 <h2>Sources</h2>
 <ul class="src">{srcs}</ul>
+{NEWS}
 <h2>More in {E(c['title'])}</h2>
 <div class="rel">{relhtml or '<p>More guides are on the <a href="/guides/">guides page</a>.</p>'}</div>
 {DISC}

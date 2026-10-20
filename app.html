@@ -5769,7 +5769,7 @@ body.light #gameReturn{color:#fff}
         const btnText = offer.code ? `📋 Copy Code & Claim →` : `🎯 View offer →`;
         footer.innerHTML = `<button class="panel-claim ${isAmber?'amber':''}" onclick="panelClaim()">
           ${offerNoLink(offer)?'Find a code for '+offer.name+' on Reddit ↗':(offer.code ? '📋 Copy Code & ' : '')+'Open '+offer.name+' ↗'}
-          <span style="font-size:10px;opacity:.6;display:block;margin-top:2px;font-weight:400">${offerNoLink(offer)?'Opens a Reddit search in a new tab':(offerIsRef(offer)?'Ad · opens in new tab':'Opens in new tab')}</span>
+          <span style="font-size:10px;opacity:.6;display:block;margin-top:2px;font-weight:400">${offerNoLink(offer)?'Searches r/ReferralHunterUK in a new tab':(offerIsRef(offer)?'Ad · opens in new tab':'Opens in new tab')}</span>
         </button>`;
       } else {
         footer.innerHTML = `<button class="panel-claim" style="background:var(--bg3);color:var(--muted2);cursor:default">⏸️ Paused — Check Back Soon</button>`;
@@ -5802,8 +5802,10 @@ body.light #gameReturn{color:#fff}
       renderAll();
       checkMilestones();
       checkNewBadges();
-      // Open the URL
-      if (offer.url && offer.url !== '#') {
+      // Open the URL (offers with no referral link of ours search our community group for a current code)
+      if (offerNoLink(offer)) {
+        window.open('https://www.reddit.com/r/ReferralHunterUK/search/?q=' + encodeURIComponent(offer.name) + '&restrict_sr=1&sort=new', '_blank', 'noopener,noreferrer');
+      } else if (offer.url && offer.url !== '#') {
         window.open(offer.url, '_blank', 'noopener,noreferrer');
       }
       // Add to the signed-in user's tracker (guests get a prompt instead)

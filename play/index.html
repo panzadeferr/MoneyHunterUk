@@ -282,6 +282,13 @@ function hud(){
 const bp=html=>{$("bpanel").innerHTML=html};
 function on(id,fn){const e=$(id);if(e)e.onclick=fn}
 /* open a Playbook guide in a new tab: save first so the player can come straight back */
+function shareWin(name){
+  const url="https://moneyhunters.co.uk/play/?utm_source=share";
+  const text="I just beat "+name+" in Coinsworth, a free UK money game that teaches real money skills. Play it:";
+  mhTrack("share_clicked",{boss:name});
+  if(navigator.share){navigator.share({title:"Coinsworth: The Little Penny",text,url}).catch(()=>{})}
+  else{try{navigator.clipboard.writeText(text+" "+url);toast("LINK COPIED ✓")}catch(e){toast(url)}}
+}
 function openGuide(id,qid){
   if(id&&!S.reading.includes(id)){S.reading.push(id);if(S.reading.length>30)S.reading.shift()}
   if(id)S.lastGuide=id;
@@ -978,7 +985,8 @@ function bVictory(){
     if(CH_ENEMIES[Math.min(S.ch,6)].includes(e.key))S.kc=(S.kc||0)+1;
     if(S.pet==="dog"&&Math.random()<.25){const it=pick(["potion","scroll"]);give(it);extra=`<p class="small">${esc(S.petName||"Your dog")} sniffed out a ${ITEMS[it].n}!</p>`}
   }
-  bp(`<p class="btext"><b class="ok">VICTORY!</b> ${e.n} was defeated.</p><p class="small">+${xp} XP · +${coins} coins</p>${extra}<button class="go wide" id="bgo">BACK TO MAP</button>`);
+  bp(`<p class="btext"><b class="ok">VICTORY!</b> ${e.n} was defeated.</p><p class="small">+${xp} XP · +${coins} coins</p>${extra}${B.kind==="boss"?`<button class="ghost wide" id="bshare">SHARE THIS WIN</button>`:""}<button class="go wide" id="bgo">BACK TO MAP</button>`);
+  on("bshare",()=>shareWin(e.n));
   on("bgo",()=>{bEnd();if(B===null&&e.id&&S.tapes.includes(e.ch)&&BOSSES[e.id]&&e.id!=="phisher")afterBossStory(e)});$("bgo").focus();
 }
 function bBlackout(){
