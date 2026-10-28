@@ -41,11 +41,14 @@ jobs:
           TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
         run: python scraper.py
       
+      - name: Render static offers page
+        run: python3 scripts/make_offers_page.py
+
       - name: Check for changes
         id: git-check
         run: |
           git status
-          if git diff --quiet all_deals.json feed.xml; then
+          if git diff --quiet all_deals.json feed.xml offers.html; then
             echo "No changes detected"
             echo "has_changes=false" >> $GITHUB_OUTPUT
           else
@@ -58,7 +61,7 @@ jobs:
         run: |
           git config user.name "MoneyHunters Bot"
           git config user.email "hello@moneyhunters.co.uk"
-          git add all_deals.json scrape_log.txt feed.xml
+          git add all_deals.json scrape_log.txt feed.xml offers.html
           git commit -m "Auto: scrape $(date +%Y-%m-%d-%H%M)"
           git push
 
