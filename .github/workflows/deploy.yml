@@ -145,7 +145,7 @@ jobs:
         run: |
           python3 scripts/make_sitemap.py
           mkdir _site
-          cp index.html app.html bank-switch.html privacy.html sw.js manifest.json all_deals.json robots.txt sitemap.xml feed.xml CNAME _site/
+          cp index.html app.html bank-switch.html offers.html privacy.html sw.js manifest.json all_deals.json robots.txt sitemap.xml feed.xml CNAME _site/
           cp *.png googlecc*.html _site/
           cp UK-rewards-stacking-toolkit.xlsx _site/
           cp 9ba589cb48714f42873c1a25a4e74641.txt _site/
