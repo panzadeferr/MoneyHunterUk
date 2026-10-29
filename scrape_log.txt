@@ -1,12 +1,12 @@
-Scrape run: 2026-10-28 22:23:09.849435
+Scrape run: 2026-10-29 05:06:42.428424
 Manual offers: 91
 Supermarket deals: 4
 Reddit deals: 0
-Google News deals: 14
+Google News deals: 20
 HotUKDeals deals: 0
 Megalist deals: 24
 Scrimpr deals: 0
-Cleaned scraped: 20
-Unique scraped: 9
-Total written: 103
-Data quality: 20/38 deals passed validation
+Cleaned scraped: 19
+Unique scraped: 8
+Total written: 102
+Data quality: 19/44 deals passed validation
