@@ -254,7 +254,7 @@ function save(show){try{if(typeof P!=="undefined"&&typeof MAP!=="undefined"&&MAP
 const xpNeed=l=>40*l, maxHP=()=>30+6*(S.lvl-1)+5*S.hearts, atk=()=>8+2*(S.lvl-1), isCls=c=>S.cls===c;
 const limScale=()=>S.slow?1.5:1;
 function gainXP(n){if(isCls("scholar"))n=Math.round(n*1.25);S.xp+=n;let up=false;while(S.xp>=xpNeed(S.lvl)){S.xp-=xpNeed(S.lvl);S.lvl++;up=true}
-  if(up){S.hp=maxHP();setTimeout(()=>{toast(`LEVEL UP! LV ${S.lvl} · HP +6 · ATTACK +2`);SFX.lvl()},400)}return n}
+  if(up){S.hp=maxHP();setTimeout(()=>{toast(`LEVEL UP! LV ${S.lvl} · HP RESTORED · ATTACK +2`);SFX.lvl()},400)}return n}
 function gainCoins(n){if(isCls("trader"))n=Math.round(n*1.25);S.coins+=n;return n}
 function loseCoins(n){n=Math.min(S.coins,Math.max(0,Math.round(n)));S.coins-=n;return n}
 function addHeart(){if(S.hearts<6){S.hearts++;S.hp=Math.min(maxHP(),S.hp+5);return true}return false}
@@ -822,7 +822,7 @@ function bIntro(){
   const e=B.e;let t,tip="";
   if(B.kind==="boss")t=`<strong>${e.n.toUpperCase()}</strong>: “${e.taunt}”`;
   else t=`<strong>${e.n.toUpperCase()}</strong> blocks your path!`;
-  if(e.weak&&S.notes[e.n])tip+=`<p class="tip">Tilly's notes: weak to <b>${e.weak.toUpperCase()}</b>.</p>`;
+  if(e.weak&&typeof e.weak==="string"&&e.weak.trim()&&S.notes[e.n])tip+=`<p class="tip">Tilly's notes: weak to <b>${e.weak.toUpperCase()}</b>.</p>`;
   if(!S.flags.firstBattle){S.flags.firstBattle=true;tip+=`<p class="tip">How battles work: pick a move, then answer its question before the bar runs out. A right answer powers the move. A wrong one costs coins, then the enemy hits back. Every answer comes with an explanation, so you learn either way.</p>`}
   bp(`<p class="btext">${t}</p>${tip}<button class="go wide" id="bgo">CONTINUE</button>`);on("bgo",()=>{SFX.tap();bMenu()});$("bgo").focus();
 }
