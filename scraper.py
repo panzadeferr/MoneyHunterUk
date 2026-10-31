@@ -807,12 +807,20 @@ def scrape_megalist():
         # a "Sign up ... get £X" line (no markdown links)
         if not matches:
             lines = [l.strip() for l in body.split('\n') if l.strip()]
+            # annotation-only lines (BOOSTED / UPDATED / Clear) are not
+            # stores; drop them so they cannot become fake deal names
+            annotations = {'boosted', 'updated', 'clear', 'expired', 'new'}
+            lines = [
+                l for l in lines
+                if l.lower().rstrip('!') not in annotations
+            ]
             for i in range(len(lines) - 1):
                 name, desc = lines[i], lines[i + 1]
                 nl, dl = name.lower(), desc.lower()
                 if (len(name) > 45 or not name or '\u00a3' in name
                         or nl.startswith(('http', 'section', 'note:',
-                                          'capital', 'updated', '\u00a3'))):
+                                          'capital', 'updated', 'boosted',
+                                          'clear', 'expired', '\u00a3'))):
                     continue
                 if ('\u00a3' not in desc or not any(w in dl for w in [
                         'sign', 'open', 'get ', 'switch', 'refer',
