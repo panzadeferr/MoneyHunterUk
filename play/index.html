@@ -819,6 +819,7 @@ function pickQ(type){
   const q=pick(p);markSeen(q.id,false);return q;
 }
 function bIntro(){
+  if(!B)return; // guard: the intro timer can fire after the battle ended
   const e=B.e;let t,tip="";
   if(B.kind==="boss")t=`<strong>${e.n.toUpperCase()}</strong>: “${e.taunt}”`;
   else t=`<strong>${e.n.toUpperCase()}</strong> blocks your path!`;
