@@ -71,6 +71,7 @@ def build_html():
         groups.setdefault(t, []).append(d)
 
     sections = []
+    jsonld_items = []
     seen_types = set()
     for t, label in GROUP_ORDER + FALLBACK_GROUPS:
         if t in seen_types or t not in groups:
@@ -86,22 +87,43 @@ def build_html():
             if not store or not item:
                 continue
             amt_html = '<span class="amt">{}</span>'.format(amt) if amt else ""
+            anchor = "offer-{}".format(len(jsonld_items) + 1)
+            jsonld_items.append({
+                "@type": "ListItem",
+                "position": len(jsonld_items) + 1,
+                "name": html.unescape("{} {}".format(store, amt)).strip(),
+                "url": "{}/offers.html#{}".format(SITE, anchor),
+            })
             rows.append(
-                '<div class="offer">'
+                '<div class="offer" id="{}">'
                 "<h3>{} {}</h3>"
                 "<p>{} · checked {} · "
                 '<a href="{}" rel="nofollow noopener" target="_blank">retailer\'s own page</a>'
-                "</p></div>".format(store, amt_html, item, updated, link)
+                "</p></div>".format(anchor, store, amt_html, item, updated, link)
             )
         if rows:
             sections.append("<h2>{} ({})</h2>\n{}".format(html.escape(label), len(rows), "\n".join(rows)))
 
+    jsonld = ""
+    if jsonld_items:
+        doc = {
+            "@context": "https://schema.org",
+            "@type": "ItemList",
+            "name": "UK money offers ({}), Money Hunters UK".format(month),
+            "url": "{}/offers.html".format(SITE),
+            "numberOfItems": len(jsonld_items),
+            "itemListElement": jsonld_items,
+        }
+        jsonld = '<script type="application/ld+json">{}</script>'.format(
+            json.dumps(doc, ensure_ascii=False)
+        )
     page = PAGE.format(
         site=SITE,
         month=html.escape(month),
         checked=html.escape(checked_long),
         n=len(deals),
         sections="\n".join(sections),
+        jsonld=jsonld,
     )
     OUT.write_text(page, encoding="utf-8")
     return len(deals)
@@ -143,6 +165,7 @@ a {{ color: var(--g); }}
 <p class="updated">{n} tracked offers · last checked {checked} · moneyhunters.co.uk · free, independent, not financial advice</p>
 <p>Amounts are as shown on each retailer's own page when last scraped. Conditions apply and each retailer's page is the source of truth. The labelled referral links live on the full interactive board at app.html; the links here are plain retailer pages.</p>
 {sections}
+{jsonld}
 <div class="cta"><p><a href="/app.html">Open the full interactive board →</a> · <a href="/guides/">Read the guides →</a></p></div>
 </div>
 </body>
