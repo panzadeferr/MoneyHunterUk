@@ -15,7 +15,10 @@
   color-scheme:dark;
 }
 html,body{height:100%}
-body{background:var(--night);color:var(--ink);font-family:var(--body);font-size:17px;padding-inline:16px}
+body{margin:0;background:var(--night);color:var(--ink);font-family:var(--body);font-size:17px;padding-inline:16px}
+/* H1: while a question is on screen the battle scene shrinks so the answers and timer fit on a phone */
+.app.asking #cv{width:auto;height:clamp(130px,26vh,300px);margin:0 auto}
+.app.asking .screen{background:var(--night)}
 .app{max-width:480px;margin:0 auto;display:flex;flex-direction:column;gap:10px;padding-block:10px}
 button{font:inherit;color:inherit;cursor:pointer}
 .app,.screen,.controls,.pad,.pad button,.abtn,.menubtn,#cv{-webkit-user-select:none;user-select:none;-webkit-touch-callout:none;-webkit-tap-highlight-color:transparent}
@@ -284,6 +287,8 @@ function hud(){
   $("tXp").style.width=(S.xp/xpNeed(S.lvl)*100)+"%";$("tCoins").textContent=S.coins;$("mute").style.opacity=S.muted?.4:1;
 }
 const bp=html=>{$("bpanel").innerHTML=html};
+function fitPanel(){const r=$("bpanel").getBoundingClientRect(),vh=innerHeight;if(r.bottom<=vh&&r.top>=0)return;scrollBy({top:r.height>vh-8?r.top-8:r.bottom-vh+8,behavior:"instant"})}
+function asking(on){const a=document.querySelector(".app");if(a.classList.contains("asking")!==on)a.classList.toggle("asking",on);if(on)requestAnimationFrame(()=>{fitPanel();if(B&&B.answering)B.t0=performance.now()});else scrollTo({top:0,behavior:"instant"})}
 function on(id,fn){const e=$(id);if(e)e.onclick=fn}
 /* open a Playbook guide in a new tab: save first so the player can come straight back */
 function shareWin(name){
@@ -586,7 +591,8 @@ function interact(){
   let n=npcsHere().find(n=>n.x===fx&&n.y===fy);
   if(!n&&MAP.room&&solid(fx,fy)){const[dx,dy]=DIRS[P.dir];n=npcsHere().find(n=>n.x===fx+dx&&n.y===fy+dy)}
   if(n){n.dir=(P.dir+2)%4;talk(n);return}
-  const s=(MAP.signs||[]).find(s=>s.x===fx&&s.y===fy);
+  let s=(MAP.signs||[]).find(s=>s.x===fx&&s.y===fy);
+  if(!s&&MAP.id==="isle"&&solid(fx,fy)){const[dx,dy]=DIRS[P.dir];s=(MAP.signs||[]).find(s=>s.x===fx+dx&&s.y===fy+dy)}
   if(s){if(s.board)openBoard();else say(s.text);return}
   if(MAP.room&&tile){const id=ROOMS[MAP.id].acts[tile];if(id){act(id,tile,fx,fy);return}}
   if(MAP.id==="isle"){const b=bldAt(fx,fy);if(b){enterBuilding(b)}}
@@ -640,7 +646,7 @@ const CHAP=[null,
  {n:"Tax",theme:"Side hustles and scary letters",boss:["taxman"],tasks:[["o5a","Finish the tax lesson at the Tax Hall"],["kc2","Beat 2 street cons in the tall grass"],["boss:taxman","Beat the Fake Taxman outside the Tax Hall"],["rent","Pay Rent Day at Little Penny"]]},
  {n:"Scams and debt",theme:"Phishing, pressure and borrowing",boss:["phisher","grimsby"],tasks:[["kc2","Beat 2 street cons in the tall grass"],["boss:phisher","Beat the Phisherman at the docks"],["boss:grimsby","Face Mr Grimsby on the Exchange bridge"],["lamp","Take the six shards to the lighthouse"]]}
 ];
-const taskDone=k=>{if(k==="kc2")return(S.kc||0)>=2;if(k.startsWith("boss:"))return!!S.bossDone[k.slice(5)];if(k==="rent")return S.ch>6||(S.ch===6&&false);if(k==="lamp")return!!S.flags.lampReady;return!!S.obj[k]};
+const taskDone=k=>{if(k==="kc2")return(S.kc||0)>=2;if(k.startsWith("boss:"))return!!S.bossDone[k.slice(5)];if(k==="rent")return S.ch>6||(S.ch===6&&false);if(k==="lamp")return!!S.flags.ending;return!!S.obj[k]};
 function chapTasks(){return CHAP[Math.min(S.ch,6)].tasks}
 function bossUp(id){
   const ch=BOSSES[id].ch;if(S.ch!==ch||S.bossDone[id])return false;
@@ -689,6 +695,8 @@ const TAPES=[null,
  "Tape 5. Tax isn't a monster, it's a letter. A real one knows your name. If it frightens you and wants payment in gift cards, it isn't tax. — M",
  "Tape 6. If you've reached the lighthouse, I owe you an explanation. Bring the six shards. The Lamp only shines with today's truth. — M"];
 
+/* where to earn coins right now: the café opens in chapter 3, the Advice Desk in chapter 2 */
+const earnHint=()=>S.ch>=3?"Work a shift at Joy's Café or the Advice Desk, or beat cons in the tall grass.":S.ch===2?"Work a shift at the Advice Desk on Bank Street, or beat cons in the tall grass.":"Beat more cons in the tall grass. Each one drops coins.";
 /* ---------- objective helpers ---------- */
 function setObj(k){if(S.obj[k])return;S.obj[k]=true;SFX.coin();toast("OBJECTIVE DONE: "+(chapTasks().find(t=>t[0]===k)||[0,""])[1].toUpperCase());save(true)}
 function questTarget(){
@@ -730,12 +738,12 @@ function talk(n){
   const id=n.id,nm=S.name;
   if(n.boss){
     const b=BOSSES[n.boss];
-    if(S.study&&S.study.boss===n.boss){say([{s:"",t:"You lost to "+b.n+" last time. Penny says: study first! Visit the Playbook Library, use a computer and finish a study session."}]);return}
+    if(S.study&&S.study.boss===n.boss){say([{s:"",t:"You lost to "+b.n+" last time. Tilly says: study first! Visit the Playbook Library, use a computer and finish a study session."}]);return}
     say([{s:b.n.toUpperCase(),t:b.taunt},{s:"",t:"Ready to fight? Boss battles can't be escaped.",choices:[{label:"FIGHT",fn:()=>bossFight(n.boss)},{label:"NOT YET"}]}]);return}
   if(id==="tilly_out"||(id==="tilly"&&!S.flags.met_tilly)){
     S.flags.met_tilly=true;
     say([{s:"TILLY",t:"So. You're Marguerite's kin. Same stubborn chin. I'm Tilly. Thirty years behind a bank counter, and now I tell people what banks won't."},
-     {s:"TILLY",t:"Your aunt left you the Little Penny. And her debts. Twelve months to keep the doors open, she said. Every month ends with Rent Day."},
+     {s:"TILLY",t:"Your aunt left you the Little Penny. And her debts. Six months to keep the doors open, she said. Every month ends with Rent Day."},
      {s:"TILLY",t:"Something else too. She kept the Ledger Lamp in the lighthouse, the light that shows the true cost of any deal. It was smashed into six shards, and the small-print fog rolled in."},
      {s:"TILLY",t:"Now the cons work every street. The way to beat them isn't muscle. It's knowledge. Start at the Playbook Library, out west. Read first, fight second."}],
      ()=>{setObj("o1a");S.flags.tutorial=true;save(true)});return}
@@ -750,7 +758,7 @@ function talk(n){
   if(id==="moor"){say([{s:"CAPTAIN MOOR",t:S.ch>=6?"There's a sneaky fisherman down on the docks. Phishing, they call it. Mind the bridge too: someone nasty is waiting for you.":"The Exchange and the warehouse are closed for now. Rumour says the Hype Guy likes to hang about there."}]);return}
   if(id==="mo"){say([{s:"MO",t:"Tip from an old trader: multipacks aren't always cheaper. Check the price per item."}]);return}
   if(id==="dee"){say([{s:"DEE",t:pick(["I keep my subscriptions in one list. Every few months I cancel the ones I forgot about.","A free trial ends the day it ends. Set a reminder when you sign up, not when it renews."])}]);return}
-  if(id==="leo"){say([{s:"LEO",t:"Psst! Every con has a weak spot. Some hate INVESTIGATE, others hate ATTACK. Hit it for 50% extra damage. Penny writes down every weak spot you find."}]);return}
+  if(id==="leo"){say([{s:"LEO",t:"Psst! Every con has a weak spot. Some hate INVESTIGATE, others hate ATTACK. Hit it for 50% extra damage. Tilly writes down every weak spot you find."}]);return}
   if(id==="biscuit"){say([{s:"BISCUIT",t:"Mrrrow. (The shop cat has seen every Rent Day. She doesn't look worried.)"}]);return}
   if(id==="clara"){
     if(!S.flags.bank_intro){S.flags.bank_intro=true}
@@ -778,7 +786,7 @@ function tillyTalk(){
    6:"Chapter six. Scams and debt. The Phisherman's on the docks, and Mr Grimsby holds your aunt's loan. After them, only the lighthouse is left."}[S.ch];
   const lines=[];
   if(first&&intro)lines.push(intro);
-  if(S.rentDue)lines.push(`Rent Day is due. ${S.rentDue} coins at the Little Penny counter. Short? Work a shift at the café or the Advice Desk.`);
+  if(S.rentDue)lines.push(`Rent Day is due. ${S.rentDue} coins at the Little Penny counter. Short? ${earnHint()}`);
   else if(t){const k=t[0];lines.push(k==="kc2"?"Fight a couple of the cons in the tall grass. You'll need the practice.":k.startsWith("boss:")?"The one you're after is waiting out in the open now. Study if you're unsure!":"Next up: "+t[1]+".")}
   else lines.push("You've done everything for now. Keep learning, hunter.");
   if(S.hp<maxHP()){lines.push("You look worn out. Sit down. (HP fully restored.)")}
@@ -810,6 +818,7 @@ function startBattle(kind,e){
     mode="battle";B={kind,e,streak:0,shield:false,counter:false,dazed:false,used:new Set(),free5050:isCls("scholar"),catUsed:false,owlUsed:false,answering:false,missed:[],lostCoins:0,openBook:false};
     Object.assign(fx,{shake:0,flash:0,phit:0,pops:[],parts:[],anim:null,eDisp:e.hp||0,pDisp:S.hp,banner:kind==="boss"?1600:0,kb:0,pkb:0,dead:1,intro:0});
     $("controls").hidden=true;$("bpanel").hidden=false;releaseHeld();releaseFocus();
+    S.inBattle={kind,id:e.id||null};save();
     if(kind==="boss"){SFX.alert();bp(`<p class="btext">...</p>`);setTimeout(bIntro,1600)}else bIntro();
   }};
 }
@@ -835,7 +844,7 @@ function bIntro(){
   bp(`<p class="btext">${t}</p>${tip}<button class="go wide" id="bgo">CONTINUE</button>`);on("bgo",()=>{SFX.tap();bMenu()});$("bgo").focus();
 }
 function bMenu(){
-  finishAnim();B.answering=false;
+  asking(false);finishAnim();B.answering=false;
   const pots=(S.items.potion||0)+(S.items.superpotion||0);
   bp(`<p class="btext">What will you do?${B.streak>=2?` <span class="hint">Streak ×${B.streak}</span>`:""}${B.dazed?` <span class="bad">· DAZED: half time next question</span>`:""}</p>
     <div class="moves">
@@ -854,7 +863,7 @@ function bAsk(move){
   if(!q.parts&&q.t==="deal"&&isCls("trader"))lim+=8000;
   if(B.e.id==="twins"&&B.e.p2done)lim*=.6;
   if(B.dazed){lim*=.5;B.dazed=false}
-  B.limit=lim*limScale();q.parts?renderInv(q):renderMC(q);
+  B.limit=lim*limScale();q.parts?renderInv(q):renderMC(q);asking(true);
 }
 function toolsHTML(q){
   const t=[];
@@ -949,7 +958,7 @@ function resolveInv(timeout){
   hud();feedbackRow(q,msg,`<ul class="flags">${flags.map(i=>`<li>${B.sel.has(i)?"✔":"✘"} <b>${esc(q.parts[i].s.trim())}</b> ${esc(q.parts[i].w)}</li>`).join("")}</ul>`);
 }
 function afterPlayer(){
-  finishAnim();const e=B.e;
+  asking(false);finishAnim();const e=B.e;
   if(e.hp<=0){bVictory();return}
   if(B.kind==="boss"&&!e.p2done&&e.hp<=e.max/2){e.p2done=true;e.atk+=3;e.tier=3;fx.shake=14;fx.banner=1200;SFX.alert();
     bp(`<p class="btext" style="color:var(--bad)">⚠ ${e.p2}</p><button class="go wide" id="bgo">CONTINUE</button>`);on("bgo",bEnemy);$("bgo").focus();return}
@@ -995,26 +1004,29 @@ function bVictory(){
   }
   bp(`<p class="btext"><b class="ok">VICTORY!</b> ${e.n} was defeated.</p><p class="small">+${xp} XP · +${coins} coins</p>${extra}${B.kind==="boss"?`<button class="ghost wide" id="bshare">SHARE THIS WIN</button>`:""}<button class="go wide" id="bgo">BACK TO MAP</button>`);
   on("bshare",()=>shareWin(e.n));
-  on("bgo",()=>{bEnd();if(B===null&&e.id&&S.tapes.includes(e.ch)&&BOSSES[e.id]&&e.id!=="phisher")afterBossStory(e)});$("bgo").focus();
+  on("bgo",()=>{bEnd();if(B===null&&e.id&&BOSSES[e.id]&&(e.id==="phisher"||S.tapes.includes(e.ch)))afterBossStory(e)});$("bgo").focus();
 }
 function bBlackout(){
   SFX.hurt();const e=B.e,boss=B.kind==="boss"?e.id:null;
   const lost=loseCoins(Math.max(1,Math.round(S.coins*.1)));const total=lost+B.lostCoins;
   const missed=B.missed.slice();
   S.study={kind:boss?"boss":"normal",boss,lost:total,guides:missed.length?missed:(boss?[BOSSES[boss].guide]:[]),at:Date.now()};
-  B=null;S.hp=maxHP();{const rp=restPoint();enterMap("isle",rp[0],rp[1],2)}
-  mode="world";$("bpanel").hidden=true;$("controls").hidden=false;releaseFocus($("bpanel"));lastZone="";hud();save(true);
+  B=null;S.inBattle=null;S.hp=maxHP();{const rp=restPoint();enterMap("isle",rp[0],rp[1],2)}
+  asking(false);mode="world";$("bpanel").hidden=true;$("controls").hidden=false;releaseFocus($("bpanel"));lastZone="";hud();save(true);
   say([{s:"TILLY",t:`Ouch! The ${boss?"boss":"cons"} got you that time. Kofi pedalled you back to town and I patched you up. It cost you ${lost} coins.`},
     {s:"TILLY",t:boss?"A boss isn't beaten by luck. You must study before the rematch. Go to the Playbook Library, use a computer and finish a study session.":`Want some of it back? Go to the Playbook Library and study. Read the guide, answer a question and you'll win back ${Math.ceil(total/2)} coins and a heart. Or just carry on. Your choice.`}]);
 }
-function bEnd(){B=null;mode="world";$("bpanel").hidden=true;$("controls").hidden=false;releaseFocus($("bpanel"));releaseHeld();sinceBattle=0;hud();save(true)}
+function bEnd(){B=null;S.inBattle=null;asking(false);mode="world";$("bpanel").hidden=true;$("controls").hidden=false;releaseFocus($("bpanel"));releaseHeld();sinceBattle=0;hud();save(true)}
 
+/* names get the whole top row at one size (17 characters max); the level sits beside the HP bar */
+const SHORTN={"SUBSCRIPTION SALLY":"SUBS SALLY"};
+function fitName(n){n=SHORTN[n]||n;if(n.length>17)n=n.replace(/^THE /,"");return n.length>17?n.slice(0,16)+".":n}
 function wallet(x,name,lv,hp,max,disp,right){
   R(x,6,112,30,"rgba(10,12,30,.82)");R(x,6,112,2,"#ffc94a");
-  txt(name.slice(0,17),right?x+106:x+6,name.length>12?12:11,name.length>12?4:6,"#f3f0ff",right?"right":"left");
-  txt("Lv"+lv,right?x+6:x+106,11,6,"#ffc94a",right?"left":"right");
-  R(x+6,23,100,7,"#2a2e4a");const pr=Math.max(0,disp/max);const w=Math.round(98*pr);R(right?x+7+98-w:x+7,24,w,5,pr>.5?"#4cc27a":pr>.2?"#e8b83a":"#e84a5a");
-  R(right?x+6:x+92,22,9,9,"#ffc94a");R(right?x+8:x+94,24,5,5,"#b8861a");
+  txt(fitName(name),right?x+106:x+6,11,6,"#f3f0ff",right?"right":"left");
+  const bw=74,bx=right?x+106-bw:x+6,pr=Math.max(0,disp/max),w=Math.round((bw-2)*pr);
+  R(bx,23,bw,7,"#2a2e4a");R(right?bx+1+bw-2-w:bx+1,24,w,5,pr>.5?"#4cc27a":pr>.2?"#e8b83a":"#e84a5a");
+  txt("Lv"+lv,right?x+6:x+106,23,6,"#ffc94a",right?"left":"right");
 }
 function drawBattle(t,dt){
   const e=B.e,boss=B.kind==="boss";
@@ -1102,7 +1114,7 @@ function afterBossStory(e){
   if(e.id==="phisher")L.push({s:"CAPTAIN MOOR",t:"Nicely hooked, that one! Now mind the bridge. Somebody very polite is waiting for you there."});
   else if(e.id==="grimsby"){L.push({s:"MR GRIMSBY",t:"I held your aunt's loan. I hold a great many. Vanessa Gloss holds mine."},{s:"MR GRIMSBY",t:"Here. The last shard, and the records. She'll bury everyone unless the Lamp shows the truth. Take them to the lighthouse."},{s:"TILLY",t:"Vanessa Gloss. She was my star trainee at the bank, twenty years ago. I taught her every trick. I never imagined she'd use them for this."})}
   else if(TAPES[e.ch])L.push({s:"TAPE "+e.ch,t:TAPES[e.ch].replace(/^Tape \d\. /,"")});
-  if(e.id==="pete")L.push({s:"KOFI",t:"Nice one! Rent Day is next. Don't panic, I'll point you at the café."});
+  if(e.id==="pete")L.push({s:"KOFI",t:"Nice one! Rent Day is next: 40 coins at the Little Penny counter. Short? The cons in the tall grass drop coins."});
   if(L.length)say(L);
 }
 function lighthouse(){
@@ -1110,7 +1122,10 @@ function lighthouse(){
   say([{s:"",t:"You climb the lighthouse stairs. Six shards fit into the old Lamp, one by one. It flickers, almost bright..."},
        {s:"",t:"But the Lamp only shines with TODAY's truth. It needs the Live Hunt: real, current deals on Money Hunters."},
        {s:"TILLY",t:"Audit Day is coming. Marguerite will be back."},
-       {s:"",t:"END OF THIS BUILD. Audit Day (the Live Hunt) arrives in the next version. Thanks for playing! Please tell Alberto what you thought."}],()=>{S.flags.ending=true;save(true);toast("TO BE CONTINUED...")});
+       {s:"",t:"END OF THIS BUILD. Audit Day (the Live Hunt) arrives in the next version. Thanks for playing!"}],()=>{const first=!S.flags.ending;S.flags.ending=true;save(true);if(first)mhTrack("game_finished");
+    modal(`<h2>TO BE CONTINUED...</h2><p class="q">You finished this build of Coinsworth. What did you think? What was too easy, too hard or confusing?</p>
+      <a class="learn" href="mailto:hello@moneyhunters.co.uk?subject=Coinsworth%20feedback" target="_blank" rel="noopener">Email your feedback ↗</a>
+      <button class="ghost" id="cl">CLOSE</button>`);on("cl",closeModal)});
 }
 
 /* =========================================================
@@ -1173,11 +1188,12 @@ const P2=n=>"£"+(n/100).toFixed(2);
 function distinct(correct,wrongs){const set=[correct];wrongs.forEach(w=>{if(w>0&&!set.includes(w))set.push(w)});let k=1;while(set.length<4){const w=correct+k*(k%2?100:-100);if(w>0&&!set.includes(w))set.push(w);k++}return set.slice(0,4)}
 function genUnitPrice(){
   const names=["cornflakes","pasta","rice","coffee","tea bags","washing powder","porridge oats","dog biscuits"];
-  const nm=pick(names),base=rnd(40)+30; // pence per 100g
-  const sizes=shuffle([250,500,750,1000]).slice(0,3);
-  let packs=sizes.map(s=>{const f=.82+Math.random()*.4;return{s,p:Math.max(50,Math.round(base*s/100*f))}});
-  let per=packs.map(x=>x.p/x.s*100);
-  const sorted=per.slice().sort((a,b)=>a-b);if(sorted[1]-sorted[0]<2){packs[0].p=Math.round(packs[0].p*.9);per=packs.map(x=>x.p/x.s*100)}
+  const nm=pick(names);let packs,per;
+  /* regenerate until the cheapest is clearly cheapest (at least 1p per 100g, as shown to one decimal) */
+  for(let tries=0;tries<80;tries++){const base=rnd(40)+30; // pence per 100g
+    const sizes=shuffle([250,500,750,1000]).slice(0,3);
+    packs=sizes.map(s=>{const f=.82+Math.random()*.4;return{s,p:Math.max(50,Math.round(base*s/100*f))}});
+    per=packs.map(x=>x.p/x.s*100);const r=per.map(v=>Math.round(v*10)/10).sort((a,b)=>a-b);if(r[1]-r[0]>=1)break}
   const best=per.indexOf(Math.min(...per));
   const label=x=>`${x.s}g for ${P2(x.p)}`;
   return{q:`Three packs of ${nm}: ${packs.map(label).join(", ")}. Which one is the best value per 100g?`,o:packs.map(label),a:best,
@@ -1207,7 +1223,7 @@ function genBill(){
 function genChange(){
   const menu=[["flat white",320],["latte",340],["tea",220],["muffin",280],["bagel",350],["cookie",190]];
   const n=2+rnd(2),order=[];for(let k=0;k<n;k++){const it=pick(menu),q=1+rnd(2);order.push({n:it[0],p:it[1],q})}
-  const total=order.reduce((a,x)=>a+x.p*x.q,0),pay=total<500?500:total<1000?1000:2000,change=pay-total;
+  const total=order.reduce((a,x)=>a+x.p*x.q,0),pay=[500,1000,2000,5000].find(n=>n>total),change=pay-total;
   const opts=distinct(change,[change+order[0].p,change-50>0?change-50:change+50,change+100]);const sorted=opts.slice().sort((a,b)=>a-b);
   return{say:`Hi! Could I get ${order.map(x=>`${x.q} ${x.n}`).join(" and ")}, please? They're ${order.map(x=>`${P2(x.p)}`).join(" and ")} each. Here's a ${P2(pay)} note.`,ask:"How much change do you give back?",q:`Order: ${order.map(x=>`${x.q} × ${x.n} at ${P2(x.p)}`).join(", ")}. The customer pays with a ${P2(pay)} note. How much change?`,o:sorted.map(P2),a:sorted.indexOf(change),
    e:`Total: ${order.map(x=>`${x.q} × ${P2(x.p)}`).join(" + ")} = ${P2(total)}. ${P2(pay)} − ${P2(total)} = ${P2(change)}.`,learn:"pb-budget-basics"};
@@ -1321,7 +1337,7 @@ function jobShift(kind){
 function pennyCounter(){
   const due=S.rentDue;
   modal(`<h2>LITTLE PENNY · COUNTER</h2><p class="small">Coins <b>${S.coins}</b>. Chapter ${Math.min(S.ch,6)}: ${esc(CHAP[Math.min(S.ch,6)].n)}.</p>
-    ${due?`<div class="poster"><strong>RENT DAY</strong><p class="small">${due} coins due. Pay it to open the next chapter.</p><button class="go" id="rent" ${S.coins<due?"disabled":""}>PAY ${due} COINS</button>${S.coins<due?`<p class="small">Short by ${due-S.coins}. Work a shift at Joy's Café or the Advice Desk.</p>`:""}</div>`:""}
+    ${due?`<div class="poster"><strong>RENT DAY</strong><p class="small">${due} coins due. Pay it to open the next chapter.</p><button class="go" id="rent" ${S.coins<due?"disabled":""}>PAY ${due} COINS</button>${S.coins<due?`<p class="small">Short by ${due-S.coins}. ${earnHint()}</p>`:""}</div>`:""}
     <div class="list">
       <div class="li"><div><h3>REST AND SAVE</h3><p>Restore HP and save your game.</p></div><button class="go" id="rest">REST</button></div>
       ${Object.entries(ITEMS).map(([k,it])=>`<div class="li"><div><h3>${it.n.toUpperCase()} ×${S.items[k]||0}</h3><p>${it.d}</p></div><button class="go" data-b="${k}" ${S.coins<it.p?"disabled":""}>◉ ${it.p}</button></div>`).join("")}
@@ -1330,7 +1346,7 @@ function pennyCounter(){
   on("cl",closeModal);on("rest",()=>{S.hp=maxHP();hud();save(true);toast("HP RESTORED · SAVED ✓");SFX.coin()});on("look",()=>{closeModal();creator(false)});
   on("rent",()=>{if(S.coins<due)return;S.coins-=due;S.rentDue=0;const prev=S.ch;S.ch++;S.kc=0;S.shifts={};hud();SFX.win();save(true);closeModal();
     const nm=CHAP[Math.min(S.ch,6)];
-    say([{s:"",t:`Rent Day paid: ${due} coins. The landlord tips his hat and leaves.`},{s:"KOFI",t:`Chapter ${S.ch}: ${nm.n}. ${nm.theme}. Tilly wants a word. Her cottage is south-east of the shop.`}])});
+    say([{s:"",t:`Rent Day paid: ${due} coins. The landlord tips his hat and leaves.`},{s:"KOFI",t:`Chapter ${S.ch}: ${nm.n}. ${nm.theme}. Tilly wants a word. Her cottage is just east of the shop.`}])});
   $("box").querySelectorAll("[data-b]").forEach(b=>b.onclick=()=>{const k=b.dataset.b,p=ITEMS[k].p;if(S.coins<p)return;S.coins-=p;give(k);SFX.coin();hud();save();pennyCounter()});
 }
 
@@ -1417,17 +1433,21 @@ function drawTitle(t){
 let introPenny=false;
 function drawIntro(t){R(0,0,240,208,"#0c0f22");stars.forEach(([x,y,p])=>{if(Math.sin(t/500+p)>0)R(x,y+40,1,1,"#8a8fc0")});
   if(introPenny){c.save();c.translate(104,70);c.scale(2,2);drawPerson(c,0,0,2,LOOKS.tilly,0);c.restore()}}
+function importSave(code){try{const o=JSON.parse(decodeURIComponent(escape(atob(String(code).trim()))));if(!o||o.v!==6)return false;S=Object.assign(DEF(),o);sheetCache.clear();save();return true}catch(e){return false}}
 function toTitle(){
   mode="title";$("topbar").hidden=true;$("controls").hidden=true;$("bpanel").hidden=false;$("dialog").hidden=true;DQ=null;closeModal();
   bp(`<div class="titlebtns">${S.started?`<button class="big" id="cont">CONTINUE</button>`:""}<button class="${S.started?"ghost":"big"}" id="newg">NEW GAME</button></div>
     <p class="small">Inherit your aunt's shop, beat the con artists with knowledge and relight the Ledger Lamp. Free, no sign-up. Your game saves in this browser. Adults only (18+).</p>`);
+  $("bpanel").querySelector(".titlebtns").insertAdjacentHTML("beforeend",`<button class="ghost" id="timp">IMPORT SAVE CODE</button>`);
+  on("timp",()=>{SFX.tap();bp(`<p class="btext">Paste the save code from your other device.</p><textarea class="namein" id="code" rows="4" placeholder="Paste a save code"></textarea><div class="row"><button class="ghost" id="n">BACK</button><button class="go" id="idoit">LOAD</button></div><p class="err" id="ierr"></p>`);
+    on("n",toTitle);on("idoit",()=>{if(importSave($("code").value)){toTitle();toast("SAVE LOADED")}else $("ierr").textContent="That code didn't work."})});
   on("cont",()=>{SFX.tap();enterWorld(false)});
   on("newg",()=>{SFX.tap();if(S.started){bp(`<p class="btext">Start a new game? Your current hunter will be erased.</p><div class="row"><button class="go" id="y">START OVER</button><button class="ghost" id="n">BACK</button></div>`);on("n",toTitle);on("y",()=>{S=DEF();startIntro()})}else startIntro()});
 }
 function startIntro(){
   mode="intro";$("bpanel").hidden=true;introPenny=false;$("topbar").hidden=true;
   say([{s:"",t:"Aunt Marguerite ran the Little Penny, a corner shop at the foot of the old lighthouse on Coinsworth Isle. She taught half the island how money really works."},
-   {s:"",t:"One morning she was gone. She left you three things: the shop, her debts, and a note: “Twelve months. Every month ends with Rent Day. Trust Tilly.”"},
+   {s:"",t:"One morning she was gone. She left you three things: the shop, her debts, and a note: “Six months. Every month ends with Rent Day. Trust Tilly.”"},
    {s:"",t:"The island has changed. Smooth-talking con artists work every street, and the small-print fog has swallowed the old lighthouse."}],
   ()=>{introPenny=true;say([{s:"TILLY",t:"You must be Marguerite's kin. I'm Tilly. I'll explain everything once you're settled."},{s:"TILLY",t:"First, who are you? Pick your talent, and then your look."}],chooseClass)});
 }
@@ -1465,7 +1485,18 @@ function enterWorld(fresh){
     say([{s:"TILLY",t:S.age?"Thanks. Every lesson is open to everyone, and any offers live only on the website, clearly labelled.":"No problem. Every lesson is yours. Offers on the website are for adults only."},
       {s:"",t:"Arrows (or WASD) to walk, A to talk or open doors. Walk up into a door to enter. MENU shows your objectives, bag and notes."},
       {s:"",t:"A gold marker, or an arrow at the screen edge, shows where to go next. Tilly is waiting outside her cottage, just east of the shop."}],()=>save(true));
-  }else save();
+  }else if(!forfeitOnLoad())save();
+}
+/* the page was closed or refreshed during a battle: a wild one counts as running away, a boss one as a loss */
+function forfeitOnLoad(){
+  const fb=S.inBattle;S.inBattle=null;if(!fb)return false;
+  if(fb.kind!=="boss"||!BOSSES[fb.id]){save();say([{s:"",t:"You slipped away from that fight while you were gone."}]);return true}
+  const b=BOSSES[fb.id],lost=loseCoins(Math.max(1,Math.round(S.coins*.1)));
+  S.study={kind:"boss",boss:fb.id,lost,guides:[b.guide],at:Date.now()};S.hp=maxHP();
+  {const rp=restPoint();enterMap("isle",rp[0],rp[1],2)}lastZone="";hud();save(true);
+  say([{s:"TILLY",t:`You walked out halfway through the fight with ${b.n}. A boss fight can't be escaped, so it counts as a loss. It cost you ${lost} coins.`},
+    {s:"TILLY",t:"Go to the Playbook Library, use a computer and finish a study session before the rematch."}]);
+  return true;
 }
 
 /* ---------- menu ---------- */
@@ -1502,7 +1533,7 @@ function openMenu(tab){
   on("look",()=>creator(false));on("title",()=>{save();toTitle()});
   on("exp",()=>{save();$("io").innerHTML=`<textarea class="namein" id="code" rows="4" readonly>${btoa(unescape(encodeURIComponent(JSON.stringify(S))))}</textarea><p class="small">Copy this code to keep a backup or move to another device.</p>`;$("code").select()});
   on("imp",()=>{$("io").innerHTML=`<textarea class="namein" id="code" rows="4" placeholder="Paste a save code"></textarea><button class="go" id="idoit">LOAD</button><p class="err" id="ierr"></p>`;
-    on("idoit",()=>{try{const o=JSON.parse(decodeURIComponent(escape(atob($("code").value.trim()))));if(!o||o.v!==6)throw 0;S=Object.assign(DEF(),o);save();closeModal();toTitle();toast("SAVE LOADED")}catch(e){$("ierr").textContent="That code didn't work."}})});
+    on("idoit",()=>{if(importSave($("code").value)){closeModal();toTitle();toast("SAVE LOADED")}else $("ierr").textContent="That code didn't work."})});
   on("reset",()=>{$("rs").innerHTML=`<p class="small">This erases your hunter. Are you sure?</p><div class="row"><button class="go" id="ry" style="background:var(--bad);box-shadow:none">ERASE</button><button class="ghost" id="rn">KEEP</button></div>`;on("rn",()=>$("rs").innerHTML="");on("ry",()=>{try{localStorage.removeItem(SKEY)}catch(e){}S=DEF();toTitle()})});
   on("cl",closeModal);
 }
@@ -1597,7 +1628,8 @@ addEventListener("keydown",e=>{
   if(e.key==="m"&&mode==="world"&&!DQ&&$("ov").hidden)openMenu()});
 addEventListener("keyup",e=>{if(e.key in KEYS&&held===KEYS[e.key])held=null});
 addEventListener("pagehide",()=>save());
-document.addEventListener("visibilitychange",()=>{if(document.hidden)save()});
+let hiddenAt=0;
+document.addEventListener("visibilitychange",()=>{if(document.hidden){hiddenAt=performance.now();save()}else if(hiddenAt){const gap=performance.now()-hiddenAt;hiddenAt=0;if(B&&B.answering)B.t0+=gap}});
 
 let last=performance.now();
 let loopErr="";
