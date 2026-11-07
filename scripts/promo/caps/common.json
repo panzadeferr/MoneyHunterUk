@@ -1,0 +1,19 @@
+[
+ {"name":"caps/end_play.png","html":"<div class='end'><div class='t'>COINSWORTH:<br>THE LITTLE PENNY</div><div class='s'>Free retro money RPG.<br>No sign-up. Plays on your phone.</div><div class='u'>moneyhunters.co.uk/play</div><div class='f'>Link in bio</div></div>"},
+ {"name":"caps/c1_hook.png","html":"<div class='hook'>I made a game where you fight your <b>OVERDRAFT</b></div>"},
+ {"name":"caps/c1_q1.png","html":"<div class='mid'>Answer right = <b>ATTACK</b></div>"},
+ {"name":"caps/c1_q2.png","html":"<div class='mid'>Answer fast = <b>CRITICAL HIT</b></div>"},
+ {"name":"caps/c2_hook.png","html":"<div class='hook'>Most people get this <b>WRONG</b>.<br><i>Can you?</i></div>"},
+ {"name":"caps/c2_3.png","html":"<div class='mid' style='top:150px;font-size:110px;left:400px;right:400px'><b>3</b></div>"},
+ {"name":"caps/c2_2.png","html":"<div class='mid' style='top:150px;font-size:110px;left:400px;right:400px'><b>2</b></div>"},
+ {"name":"caps/c2_1.png","html":"<div class='mid' style='top:150px;font-size:110px;left:400px;right:400px'><b>1</b></div>"},
+ {"name":"caps/c2_end.png","html":"<div class='end'><div class='s'>Did you get it?<br>Comment your answer.</div><div class='t' style='font-size:44px'>367 MORE QUESTIONS<br>IN THE GAME</div><div class='u'>moneyhunters.co.uk/play</div><div class='f'>Free · no sign-up</div></div>"},
+ {"name":"caps/c3_hook.png","html":"<div class='hook'>POV: <b>The Phisherman</b> texts you</div>"},
+ {"name":"caps/c3_mid.png","html":"<div class='mid'>Tap every <b>red flag</b></div>"},
+ {"name":"caps/c3_end.png","html":"<div class='end'><div class='s'>Would you have<br>spotted all of them?</div><div class='t' style='font-size:44px'>40 REAL UK SCAMS<br>TO CATCH</div><div class='u'>moneyhunters.co.uk/play</div><div class='f'>Free · no sign-up</div></div>"},
+ {"name":"caps/c4_a.png","html":"<div class='hook'>I work full time and have kids</div>"},
+ {"name":"caps/c4_b.png","html":"<div class='hook'>so at night I built a <b>Pokémon-style</b> money game</div>"},
+ {"name":"caps/c4_c.png","html":"<div class='hook'>You beat villains like <b>Captain Overdraft</b></div>"},
+ {"name":"caps/c4_d.png","html":"<div class='hook'>by answering real UK money questions</div>"},
+ {"name":"caps/c4_e.png","html":"<div class='hook'><i>6 chapters</i> · <i>368 questions</i></div>"}
+]

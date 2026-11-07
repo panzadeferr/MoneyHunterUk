@@ -1,0 +1,7 @@
+[
+ {"name":"caps/h0.png","html":"<div class='hook'>Can you answer this in <b>5 seconds?</b></div>"},
+ {"name":"caps/h1.png","html":"<div class='hook'>UK money quiz.<br><i>Would you get it right?</i></div>"},
+ {"name":"caps/h2.png","html":"<div class='hook'>Quick one. <b>Do you know this?</b></div>"},
+ {"name":"caps/h3.png","html":"<div class='hook'>Test yourself before the <b>timer</b> runs out</div>"},
+ {"name":"caps/qend.png","html":"<div class='end'><div class='s'>Did you get it?<br>Comment your answer.</div><div class='t' style='font-size:44px'>368 MONEY QUESTIONS<br>IN THE GAME</div><div class='u'>moneyhunters.co.uk/play</div><div class='f'>Free · no sign-up · #Coinsworth</div></div>"}
+]

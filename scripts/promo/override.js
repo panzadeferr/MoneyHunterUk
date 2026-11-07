@@ -1,0 +1,1 @@
+module.exports=(want,hp)=>`(()=>{const want=${JSON.stringify(want)};let i=0;const o=pickQ;pickQ=function(t){if(t!=='inv'&&i<want.length){const id=want[i];i++;const q=QS.find(x=>x.id===id);if(q){markSeen(q.id,false);return q}}return o(t)}})()`;

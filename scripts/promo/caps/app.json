@@ -1,0 +1,7 @@
+[
+ {"name":"caps/a_hook.png","html":"<div class='hook'>Banks will <b>pay you</b> to switch.<br><i>Here's where I check the offers</i></div>"},
+ {"name":"caps/a_mid.png","html":"<div class='mid'>Every offer shows its <b>conditions</b></div>"},
+ {"name":"caps/a_end.png","html":"<div class='end'><div class='t'>MONEY HUNTERS UK</div><div class='s'>Free app: UK bank switch offers,<br>plain-English guides and a game.</div><div class='u'>moneyhunters.co.uk</div><div class='f'>Some links are referral links, marked Ad</div></div>"},
+ {"name":"caps/b_hook.png","html":"<div class='hook'>Beat <b>Captain Overdraft</b> in the game...</div>"},
+ {"name":"caps/b_mid.png","html":"<div class='hook'>...then switch your bank <b>for real</b></div>"}
+]
