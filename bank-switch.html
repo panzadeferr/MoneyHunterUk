@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+<script defer src="https://cloud.umami.is/script.js" data-website-id="f9d2c068-643f-4cfc-847e-c22fec24bafe"></script>
+<script>window.mhTrack=function(n,d){try{if(window.umami&&umami.track)umami.track(n,d)}catch(e){}};</script>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>UK Bank Switch Bonuses (October 2026) — Money Hunters UK</title>
@@ -124,5 +126,14 @@ a { color: var(--g); }
     <p style="margin-bottom:0">More UK money-making offers: <a href="/">moneyhunters.co.uk</a> · <a href="/app.html">Open the deals app</a> · <a href="/privacy.html">Privacy &amp; affiliate disclosure</a></p>
   </div>
 </div>
+<script>
+document.addEventListener('click', function(e) {
+  var a = e.target && e.target.closest ? e.target.closest('a[href^="http"]') : null;
+  if (!a) return;
+  var href = a.getAttribute('href') || '';
+  if (href.indexOf('moneyhunters.co.uk') !== -1) return;
+  mhTrack('outbound_click', { url: href.slice(0, 200), page: location.pathname });
+});
+</script>
 </body>
 </html>
