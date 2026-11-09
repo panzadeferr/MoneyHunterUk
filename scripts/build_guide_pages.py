@@ -48,7 +48,7 @@ strong{color:var(--t)}
 .disc{font-size:13px;color:var(--tl);margin-top:30px;border-top:1px solid var(--line);padding-top:14px}
 .ch h2{margin-top:26px}
 """
-HEAD_FONTS='<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">'
+HEAD_FONTS='<link href="/fonts/fonts.css" rel="stylesheet">'
 NAV='<div class="top"><a class="logo" href="/">Money Hunters UK</a><a href="/guides/">All guides</a><a href="/app.html">App</a><a href="/play/">Game</a></div>'
 DISC='<p class="disc">This is general information, not financial advice. Offers and rules change, so check the provider\'s own terms before you act. Some links on Money Hunters UK are referral links; see our <a href="/privacy.html">privacy and affiliate disclosure</a>.</p>'
 def render_body(body):

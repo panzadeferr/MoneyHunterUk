@@ -121,6 +121,9 @@ jobs:
       - name: Guide pages
         run: python3 tests/check_guides.py
 
+      - name: Affiliate disclosure (Ad labels)
+        run: python3 tests/check_disclosure.py
+
       - name: All tests passed
         run: echo "✅ All checks passed — deploying..."
 
@@ -149,11 +152,13 @@ jobs:
           cp *.png googlecc*.html _site/
           cp UK-rewards-stacking-toolkit.xlsx _site/
           cp 9ba589cb48714f42873c1a25a4e74641.txt _site/
+          cp -r fonts _site/fonts
           [ -d guides ] && cp -r guides _site/guides || true
           mkdir -p _site/data
           [ -d data ] && cp -r data/. _site/data/ || true
           mkdir -p _site/play
           cp play/index.html _site/play/index.html
+          cp play/og.png _site/play/og.png
           mkdir -p _site/shots
           cp shots/*.webp _site/shots/
 

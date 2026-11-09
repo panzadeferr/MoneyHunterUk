@@ -3,8 +3,9 @@
 Reads the deal payload the scraper builds (all_deals.json) and writes
 offers.html: a plain, crawlable snapshot of today's tracked offers.
 Facts only - store, item, amounts and dates come straight from the
-scraper; no finance copy is authored here. The interactive board at
-app.html remains the source for labelled referral links.
+scraper; no finance copy is authored here. Referral links are detected
+with the same REF_MARKERS list app.html uses, and every one is labelled
+"Ad" with a commission disclosure (CAP Code / ASA).
 
 Usable standalone:  python3 scripts/make_offers_page.py
 """
@@ -20,6 +21,18 @@ DATA = ROOT / "all_deals.json"
 OUT = ROOT / "offers.html"
 SITEMAP = ROOT / "sitemap.xml"
 SITE = "https://moneyhunters.co.uk"
+APP = ROOT / "app.html"
+
+
+def ref_markers():
+    """Referral-link markers, read from app.html so both pages stay in sync."""
+    m = re.search(r"const REF_MARKERS=\[(.*?)\];", APP.read_text(encoding="utf-8"), re.S)
+    return re.findall(r"'([^']+)'", m.group(1)) if m else []
+
+
+def is_referral(deal, markers):
+    blob = "{} {}".format(deal.get("link", ""), deal.get("code", ""))
+    return any(mk in blob for mk in markers)
 
 GROUP_ORDER = [
     ("bank_switch", "Bank switch bonuses"),
@@ -61,6 +74,9 @@ def build_html():
     month = datetime.strptime(checked[:10], "%Y-%m-%d").strftime("%B %Y")
     checked_long = datetime.strptime(checked[:10], "%Y-%m-%d").strftime("%-d %B %Y") if sys.platform != "win32" else checked[:10]
 
+    markers = ref_markers()
+    if not markers:
+        raise SystemExit("REF_MARKERS not found in app.html: refusing to build an unlabelled offers page")
     groups = {}
     for d in deals:
         t = d.get("type") or "megalist"
@@ -94,12 +110,19 @@ def build_html():
                 "name": html.unescape("{} {}".format(store, amt)).strip(),
                 "url": "{}/offers.html#{}".format(SITE, anchor),
             })
+            if is_referral(d, markers):
+                link_html = (
+                    '<span class="ad">Ad</span> '
+                    '<a href="{}" rel="sponsored nofollow noopener" target="_blank">referral link</a>'
+                    " · we may earn a commission".format(link)
+                )
+            else:
+                link_html = '<a href="{}" rel="nofollow noopener" target="_blank">provider\'s own page</a>'.format(link)
             rows.append(
                 '<div class="offer" id="{}">'
                 "<h3>{} {}</h3>"
-                "<p>{} · checked {} · "
-                '<a href="{}" rel="nofollow noopener" target="_blank">retailer\'s own page</a>'
-                "</p></div>".format(anchor, store, amt_html, item, updated, link)
+                "<p>{} · checked {} · {}"
+                "</p></div>".format(anchor, store, amt_html, item, updated, link_html)
             )
         if rows:
             sections.append("<h2>{} ({})</h2>\n{}".format(html.escape(label), len(rows), "\n".join(rows)))
@@ -156,6 +179,8 @@ a {{ color: var(--g); }}
 .offer h3 {{ font-family: var(--fh); font-size: 16px; font-weight: 600; color: var(--t); display: flex; justify-content: space-between; flex-wrap: wrap; gap: 6px; }}
 .offer h3 .amt {{ color: var(--g); font-weight: 800; }}
 .offer p {{ margin: 6px 0 0; font-size: 14px; }}
+
+.ad {{ display: inline-block; font-size: 11px; font-weight: 800; color: var(--bg); background: var(--tm); border-radius: 4px; padding: 0 6px; }}
 .cta {{ margin-top: 32px; padding: 16px 20px; background: var(--bg2); border: 1px solid var(--line); border-radius: 12px; }}
 </style>
 <script defer src="https://cloud.umami.is/script.js" data-website-id="f9d2c068-643f-4cfc-847e-c22fec24bafe"></script>
@@ -174,10 +199,10 @@ document.addEventListener('click', function(e) {{
 <div class="wrap">
 <h1>UK money offers ({month})</h1>
 <p class="updated">{n} tracked offers · last checked {checked} · moneyhunters.co.uk · free, independent, not financial advice</p>
-<p>Amounts are as shown on each retailer's own page when last scraped. Conditions apply and each retailer's page is the source of truth. The labelled referral links live on the full interactive board at app.html; the links here are plain retailer pages.</p>
+<p>Amounts are as shown on each retailer's own page when last scraped. Conditions apply and each retailer's page is the source of truth. Links marked <span class="ad">Ad</span> are our referral links: if you sign up through one, we may earn a commission. It never changes what we list or the order. Other links go to the provider's own page.</p>
 {sections}
 {jsonld}
-<div class="cta"><p><a href="/app.html">Open the full interactive board →</a> · <a href="/guides/">Read the guides →</a></p></div>
+<div class="cta"><p><a href="/app.html">Open the full interactive board →</a> · <a href="/guides/">Read the guides →</a> · <a href="/privacy.html">Privacy</a></p></div>
 </div>
 </body>
 </html>

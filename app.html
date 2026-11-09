@@ -25,9 +25,9 @@
   <meta name="apple-mobile-web-app-title" content="Money Hunters">
   <meta name="mobile-web-app-capable" content="yes">
   <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Syne:wght@700;800&display=swap" rel="stylesheet">
+  
+  
+  <link href="/fonts/fonts.css" rel="stylesheet">
   <style>
     :root{
       --bg:#0b0f14;
@@ -3304,7 +3304,7 @@ body.light #gameReturn{color:#fff}
         <button class="install-dismiss" onclick="dismissInstall()">✓</button>
       </div>
 
-      <div class="lf-foot">Some links pay us a referral fee. They never change what we write or the order we show things. We are not financial advisers and nothing here is advice.</div>
+      <div class="lf-foot">Some links pay us a referral fee. They never change what we write or the order we show things. We are not financial advisers and nothing here is advice. <a href="/privacy.html" style="color:inherit;text-decoration:underline">Privacy policy</a></div>
 
     </section>
 
@@ -3349,7 +3349,7 @@ body.light #gameReturn{color:#fff}
         </div>
 
       </section>
-      <div class="lf-foot">Some links pay us a referral fee. They never change what we write or the order we show things. We are not financial advisers and nothing here is advice.</div>
+      <div class="lf-foot">Some links pay us a referral fee. They never change what we write or the order we show things. We are not financial advisers and nothing here is advice. <a href="/privacy.html" style="color:inherit;text-decoration:underline">Privacy policy</a></div>
     </section>
 
     
@@ -3763,7 +3763,7 @@ body.light #gameReturn{color:#fff}
       </section>
 
 
-      <div class="lf-foot">Some links pay us a referral fee. They never change what we write or the order we show things. We are not financial advisers and nothing here is advice.</div>
+      <div class="lf-foot">Some links pay us a referral fee. They never change what we write or the order we show things. We are not financial advisers and nothing here is advice. <a href="/privacy.html" style="color:inherit;text-decoration:underline">Privacy policy</a></div>
     </section>
 
 
@@ -3830,7 +3830,11 @@ body.light #gameReturn{color:#fff}
             <input class="email-input" type="email" id="emailInput" placeholder="your@email.com" autocomplete="email">
             <button class="email-submit" onclick="submitEmail()">Get Weekly Deals →</button>
           </div>
-          <div class="email-done" id="emailDone">✓ You're in! Check your inbox.</div>
+          <label id="emailConsentRow" style="display:flex;gap:8px;align-items:flex-start;margin-top:10px;font-size:12px;line-height:1.4;opacity:.85;cursor:pointer">
+            <input type="checkbox" id="emailConsent" style="margin-top:2px;flex-shrink:0">
+            <span>Yes, send me the Money Hunters weekly deals email. You'll confirm on our email provider's (Brevo) page and by email. Unsubscribe any time. <a href="/privacy.html" style="color:inherit;text-decoration:underline">Privacy policy</a></span>
+          </label>
+          <div class="email-done" id="emailDone">✓ Nearly there: finish on the signup page that opened, then confirm by email.</div>
         </div>
 
         <!-- Share — last, native Android icon -->
@@ -5986,6 +5990,11 @@ body.light #gameReturn{color:#fff}
         toast('Please enter a valid email address');
         return;
       }
+      const consent = document.getElementById('emailConsent');
+      if (consent && !consent.checked) {
+        toast('Tick the box to confirm you want the weekly email');
+        return;
+      }
 
       const btn = document.querySelector('.email-submit');
       btn.textContent = 'Signing you up...';
@@ -6002,6 +6011,7 @@ body.light #gameReturn{color:#fff}
         localStorage.setItem('mh_emails', JSON.stringify(emails));
 
         document.getElementById('emailForm').style.display = 'none';
+        if (document.getElementById('emailConsentRow')) document.getElementById('emailConsentRow').style.display = 'none';
         document.getElementById('emailDone').style.display = 'block';
         toast('✓ Finish on the signup page to confirm');
         vibrate(50);
@@ -6013,8 +6023,9 @@ body.light #gameReturn{color:#fff}
         if (!emails.includes(email)) { emails.push(email); }
         localStorage.setItem('mh_emails', JSON.stringify(emails));
         document.getElementById('emailForm').style.display = 'none';
+        if (document.getElementById('emailConsentRow')) document.getElementById('emailConsentRow').style.display = 'none';
         document.getElementById('emailDone').style.display = 'block';
-        toast("✓ You're signed up!");
+        toast('✓ Finish on the signup page to confirm');
       }
     }
 
