@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-11-10 01:20:45",
+  "last_updated": "2026-11-10 14:37:05",
   "total_deals": 102,
   "manual_count": 90,
   "supermarket_count": 4,
@@ -42,8 +42,8 @@
       "stacked_price": 2.39,
       "best_payment_method": "Airtime Rewards (4%) + Asda Rewards",
       "stacking_rate": 4.5,
-      "last_scraped": "2026-11-10 01:20:45",
-      "last_updated": "2026-11-10 01:20:45"
+      "last_scraped": "2026-11-10 14:37:05",
+      "last_updated": "2026-11-10 14:37:05"
     },
     {
       "store": "Sainsbury's",
@@ -58,8 +58,8 @@
       "stacked_price": 3.35,
       "best_payment_method": "JamDoughnut (4.1%) + Nectar",
       "stacking_rate": 4.4,
-      "last_scraped": "2026-11-10 01:20:45",
-      "last_updated": "2026-11-10 01:20:45"
+      "last_scraped": "2026-11-10 14:37:05",
+      "last_updated": "2026-11-10 14:37:05"
     },
     {
       "store": "Tesco",
@@ -74,8 +74,8 @@
       "stacked_price": 6.63,
       "best_payment_method": "EverUp (4.9%) + Clubcard",
       "stacking_rate": 5.3,
-      "last_scraped": "2026-11-10 01:20:45",
-      "last_updated": "2026-11-10 01:20:45"
+      "last_scraped": "2026-11-10 14:37:05",
+      "last_updated": "2026-11-10 14:37:05"
     },
     {
       "store": "Iceland",
@@ -90,8 +90,8 @@
       "stacked_price": 9.5,
       "best_payment_method": "TopCashback (3.5%) + Bonus Card",
       "stacking_rate": 5.0,
-      "last_scraped": "2026-11-10 01:20:45",
-      "last_updated": "2026-11-10 01:20:45"
+      "last_scraped": "2026-11-10 14:37:05",
+      "last_updated": "2026-11-10 14:37:05"
     },
     {
       "store": "Barclays Premier",
@@ -114,8 +114,8 @@
       "stacked_price": 0,
       "best_payment_method": "N/A",
       "stacking_rate": 0,
-      "last_scraped": "2026-11-10 01:20:45",
-      "last_updated": "2026-11-10 01:20:45",
+      "last_scraped": "2026-11-10 14:37:05",
+      "last_updated": "2026-11-10 14:37:05",
       "last_verified": "2026-10-06"
     },
     {
@@ -137,8 +137,8 @@
       "stacked_price": 0,
       "best_payment_method": "N/A",
       "stacking_rate": 0,
-      "last_scraped": "2026-11-10 01:20:45",
-      "last_updated": "2026-11-10 01:20:45"
+      "last_scraped": "2026-11-10 14:37:05",
+      "last_updated": "2026-11-10 14:37:05"
     },
     {
       "store": "Barclays",
@@ -161,8 +161,8 @@
       "stacked_price": 0,
       "best_payment_method": "N/A",
       "stacking_rate": 0,
-      "last_scraped": "2026-11-10 01:20:45",
-      "last_updated": "2026-11-10 01:20:45",
+      "last_scraped": "2026-11-10 14:37:05",
+      "last_updated": "2026-11-10 14:37:05",
       "last_verified": "2026-10-06"
     },
     {
@@ -181,12 +181,12 @@
       ],
       "timeFrame": "Check article",
       "source": "Google News",
-      "last_updated": "2026-11-10 01:20:45",
+      "last_updated": "2026-11-10 14:37:05",
       "category": "cashback",
       "stacked_price": 0,
       "best_payment_method": "N/A",
       "stacking_rate": 0,
-      "last_scraped": "2026-11-10 01:20:45"
+      "last_scraped": "2026-11-10 14:37:05"
     },
     {
       "store": "HSBC",
@@ -207,8 +207,8 @@
       "stacked_price": 0,
       "best_payment_method": "N/A",
       "stacking_rate": 0,
-      "last_scraped": "2026-11-10 01:20:45",
-      "last_updated": "2026-11-10 01:20:45",
+      "last_scraped": "2026-11-10 14:37:05",
+      "last_updated": "2026-11-10 14:37:05",
       "last_verified": "2026-10-06",
       "expires": "2026-12-02"
     },
@@ -231,8 +231,8 @@
       "stacked_price": 0,
       "best_payment_method": "N/A",
       "stacking_rate": 0,
-      "last_scraped": "2026-11-10 01:20:45",
-      "last_updated": "2026-11-10 01:20:45",
+      "last_scraped": "2026-11-10 14:37:05",
+      "last_updated": "2026-11-10 14:37:05",
       "last_verified": "2026-10-06",
       "expires": "2026-12-02"
     },
@@ -255,8 +255,8 @@
       "stacked_price": 0,
       "best_payment_method": "N/A",
       "stacking_rate": 0,
-      "last_scraped": "2026-11-10 01:20:45",
-      "last_updated": "2026-11-10 01:20:45",
+      "last_scraped": "2026-11-10 14:37:05",
+      "last_updated": "2026-11-10 14:37:05",
       "last_verified": "2026-10-06",
       "expires": "2026-12-09"
     },
@@ -279,8 +279,8 @@
       "stacked_price": 0,
       "best_payment_method": "N/A",
       "stacking_rate": 0,
-      "last_scraped": "2026-11-10 01:20:45",
-      "last_updated": "2026-11-10 01:20:45",
+      "last_scraped": "2026-11-10 14:37:05",
+      "last_updated": "2026-11-10 14:37:05",
       "last_verified": "2026-10-06"
     },
     {
@@ -304,8 +304,8 @@
       "stacked_price": 0,
       "best_payment_method": "N/A",
       "stacking_rate": 0,
-      "last_scraped": "2026-11-10 01:20:45",
-      "last_updated": "2026-11-10 01:20:45"
+      "last_scraped": "2026-11-10 14:37:05",
+      "last_updated": "2026-11-10 14:37:05"
     },
     {
       "store": "Nationwide",
@@ -326,8 +326,8 @@
       "stacked_price": 0,
       "best_payment_method": "N/A",
       "stacking_rate": 0,
-      "last_scraped": "2026-11-10 01:20:45",
-      "last_updated": "2026-11-10 01:20:45",
+      "last_scraped": "2026-11-10 14:37:05",
+      "last_updated": "2026-11-10 14:37:05",
       "last_verified": "2026-10-06"
     },
     {
@@ -349,8 +349,8 @@
       "stacked_price": 0,
       "best_payment_method": "N/A",
       "stacking_rate": 0,
-      "last_scraped": "2026-11-10 01:20:45",
-      "last_updated": "2026-11-10 01:20:45"
+      "last_scraped": "2026-11-10 14:37:05",
+      "last_updated": "2026-11-10 14:37:05"
     },
     {
       "store": "Amex",
@@ -371,8 +371,8 @@
       "stacked_price": 0,
       "best_payment_method": "N/A",
       "stacking_rate": 0,
-      "last_scraped": "2026-11-10 01:20:45",
-      "last_updated": "2026-11-10 01:20:45"
+      "last_scraped": "2026-11-10 14:37:05",
+      "last_updated": "2026-11-10 14:37:05"
     },
     {
       "store": "Trading212",
@@ -394,8 +394,8 @@
       "stacked_price": 0,
       "best_payment_method": "N/A",
       "stacking_rate": 0,
-      "last_scraped": "2026-11-10 01:20:45",
-      "last_updated": "2026-11-10 01:20:45"
+      "last_scraped": "2026-11-10 14:37:05",
+      "last_updated": "2026-11-10 14:37:05"
     },
     {
       "store": "Lightyear",
@@ -417,8 +417,8 @@
       "stacked_price": 0,
       "best_payment_method": "N/A",
       "stacking_rate": 0,
-      "last_scraped": "2026-11-10 01:20:45",
-      "last_updated": "2026-11-10 01:20:45"
+      "last_scraped": "2026-11-10 14:37:05",
+      "last_updated": "2026-11-10 14:37:05"
     },
     {
       "store": "Chip",
@@ -440,8 +440,8 @@
       "stacked_price": 0,
       "best_payment_method": "N/A",
       "stacking_rate": 0,
-      "last_scraped": "2026-11-10 01:20:45",
-      "last_updated": "2026-11-10 01:20:45"
+      "last_scraped": "2026-11-10 14:37:05",
+      "last_updated": "2026-11-10 14:37:05"
     },
     {
       "store": "Raisin UK",
@@ -464,8 +464,8 @@
       "stacked_price": 0,
       "best_payment_method": "N/A",
       "stacking_rate": 0,
-      "last_scraped": "2026-11-10 01:20:45",
-      "last_updated": "2026-11-10 01:20:45"
+      "last_scraped": "2026-11-10 14:37:05",
+      "last_updated": "2026-11-10 14:37:05"
     },
     {
       "store": "Sky",
@@ -487,8 +487,8 @@
       "stacked_price": 0,
       "best_payment_method": "N/A",
       "stacking_rate": 0,
-      "last_scraped": "2026-11-10 01:20:45",
-      "last_updated": "2026-11-10 01:20:45"
+      "last_scraped": "2026-11-10 14:37:05",
+      "last_updated": "2026-11-10 14:37:05"
     },
     {
       "store": "Community Fibre",
@@ -510,8 +510,8 @@
       "stacked_price": 0,
       "best_payment_method": "N/A",
       "stacking_rate": 0,
-      "last_scraped": "2026-11-10 01:20:45",
-      "last_updated": "2026-11-10 01:20:45"
+      "last_scraped": "2026-11-10 14:37:05",
+      "last_updated": "2026-11-10 14:37:05"
     },
     {
       "store": "Youfibre",
@@ -533,8 +533,8 @@
       "stacked_price": 0,
       "best_payment_method": "N/A",
       "stacking_rate": 0,
-      "last_scraped": "2026-11-10 01:20:45",
-      "last_updated": "2026-11-10 01:20:45"
+      "last_scraped": "2026-11-10 14:37:05",
+      "last_updated": "2026-11-10 14:37:05"
     },
     {
       "store": "Vitality",
@@ -556,8 +556,8 @@
       "stacked_price": 0,
       "best_payment_method": "N/A",
       "stacking_rate": 0,
-      "last_scraped": "2026-11-10 01:20:45",
-      "last_updated": "2026-11-10 01:20:45"
+      "last_scraped": "2026-11-10 14:37:05",
+      "last_updated": "2026-11-10 14:37:05"
     },
     {
       "store": "Tembo",
@@ -578,8 +578,8 @@
       "stacked_price": 0,
       "best_payment_method": "N/A",
       "stacking_rate": 0,
-      "last_scraped": "2026-11-10 01:20:45",
-      "last_updated": "2026-11-10 01:20:45"
+      "last_scraped": "2026-11-10 14:37:05",
+      "last_updated": "2026-11-10 14:37:05"
     },
     {
       "store": "AJ Bell",
@@ -600,8 +600,8 @@
       "stacked_price": 0,
       "best_payment_method": "N/A",
       "stacking_rate": 0,
-      "last_scraped": "2026-11-10 01:20:45",
-      "last_updated": "2026-11-10 01:20:45"
+      "last_scraped": "2026-11-10 14:37:05",
+      "last_updated": "2026-11-10 14:37:05"
     },
     {
       "store": "Fidelity",
@@ -622,8 +622,8 @@
       "stacked_price": 0,
       "best_payment_method": "N/A",
       "stacking_rate": 0,
-      "last_scraped": "2026-11-10 01:20:45",
-      "last_updated": "2026-11-10 01:20:45"
+      "last_scraped": "2026-11-10 14:37:05",
+      "last_updated": "2026-11-10 14:37:05"
     },
     {
       "store": "eToro",
@@ -644,8 +644,8 @@
       "stacked_price": 0,
       "best_payment_method": "N/A",
       "stacking_rate": 0,
-      "last_scraped": "2026-11-10 01:20:45",
-      "last_updated": "2026-11-10 01:20:45"
+      "last_scraped": "2026-11-10 14:37:05",
+      "last_updated": "2026-11-10 14:37:05"
     },
     {
       "store": "Fuse Energy",
@@ -664,11 +664,11 @@
       ],
       "timeFrame": "Varies",
       "source": "BeermoneyUK Megalist",
-      "last_updated": "2026-11-10 01:20:45",
+      "last_updated": "2026-11-10 14:37:05",
       "stacked_price": 0,
       "best_payment_method": "N/A",
       "stacking_rate": 0,
-      "last_scraped": "2026-11-10 01:20:45"
+      "last_scraped": "2026-11-10 14:37:05"
     },
     {
       "store": "Plum",
@@ -689,8 +689,8 @@
       "stacked_price": 0,
       "best_payment_method": "N/A",
       "stacking_rate": 0,
-      "last_scraped": "2026-11-10 01:20:45",
-      "last_updated": "2026-11-10 01:20:45"
+      "last_scraped": "2026-11-10 14:37:05",
+      "last_updated": "2026-11-10 14:37:05"
     },
     {
       "store": "Tide",
@@ -711,8 +711,8 @@
       "stacked_price": 0,
       "best_payment_method": "N/A",
       "stacking_rate": 0,
-      "last_scraped": "2026-11-10 01:20:45",
-      "last_updated": "2026-11-10 01:20:45"
+      "last_scraped": "2026-11-10 14:37:05",
+      "last_updated": "2026-11-10 14:37:05"
     },
     {
       "store": "Scottish Power",
@@ -731,11 +731,11 @@
       ],
       "timeFrame": "Varies",
       "source": "BeermoneyUK Megalist",
-      "last_updated": "2026-11-10 01:20:45",
+      "last_updated": "2026-11-10 14:37:05",
       "stacked_price": 0,
       "best_payment_method": "N/A",
       "stacking_rate": 0,
-      "last_scraped": "2026-11-10 01:20:45"
+      "last_scraped": "2026-11-10 14:37:05"
     },
     {
       "store": "Chase UK",
@@ -756,8 +756,8 @@
       "stacked_price": 0,
       "best_payment_method": "N/A",
       "stacking_rate": 0,
-      "last_scraped": "2026-11-10 01:20:45",
-      "last_updated": "2026-11-10 01:20:45"
+      "last_scraped": "2026-11-10 14:37:05",
+      "last_updated": "2026-11-10 14:37:05"
     },
     {
       "store": "Webull",
@@ -778,8 +778,8 @@
       "stacked_price": 0,
       "best_payment_method": "N/A",
       "stacking_rate": 0,
-      "last_scraped": "2026-11-10 01:20:45",
-      "last_updated": "2026-11-10 01:20:45"
+      "last_scraped": "2026-11-10 14:37:05",
+      "last_updated": "2026-11-10 14:37:05"
     },
     {
       "store": "Wealthify",
@@ -800,8 +800,8 @@
       "stacked_price": 0,
       "best_payment_method": "N/A",
       "stacking_rate": 0,
-      "last_scraped": "2026-11-10 01:20:45",
-      "last_updated": "2026-11-10 01:20:45"
+      "last_scraped": "2026-11-10 14:37:05",
+      "last_updated": "2026-11-10 14:37:05"
     },
     {
       "store": "Octopus Energy",
@@ -822,8 +822,8 @@
       "stacked_price": 0,
       "best_payment_method": "N/A",
       "stacking_rate": 0,
-      "last_scraped": "2026-11-10 01:20:45",
-      "last_updated": "2026-11-10 01:20:45"
+      "last_scraped": "2026-11-10 14:37:05",
+      "last_updated": "2026-11-10 14:37:05"
     },
     {
       "store": "Pensionbee",
@@ -843,8 +843,8 @@
       "stacked_price": 0,
       "best_payment_method": "N/A",
       "stacking_rate": 0,
-      "last_scraped": "2026-11-10 01:20:45",
-      "last_updated": "2026-11-10 01:20:45"
+      "last_scraped": "2026-11-10 14:37:05",
+      "last_updated": "2026-11-10 14:37:05"
     },
     {
       "store": "Pensionbee",
@@ -866,8 +866,8 @@
       "stacked_price": 0,
       "best_payment_method": "N/A",
       "stacking_rate": 0,
-      "last_scraped": "2026-11-10 01:20:45",
-      "last_updated": "2026-11-10 01:20:45"
+      "last_scraped": "2026-11-10 14:37:05",
+      "last_updated": "2026-11-10 14:37:05"
     },
     {
       "store": "Nutmeg",
@@ -889,8 +889,8 @@
       "stacked_price": 0,
       "best_payment_method": "N/A",
       "stacking_rate": 0,
-      "last_scraped": "2026-11-10 01:20:45",
-      "last_updated": "2026-11-10 01:20:45"
+      "last_scraped": "2026-11-10 14:37:05",
+      "last_updated": "2026-11-10 14:37:05"
     },
     {
       "store": "Edf Energy",
@@ -912,8 +912,8 @@
       "stacked_price": 0,
       "best_payment_method": "N/A",
       "stacking_rate": 0,
-      "last_scraped": "2026-11-10 01:20:45",
-      "last_updated": "2026-11-10 01:20:45"
+      "last_scraped": "2026-11-10 14:37:05",
+      "last_updated": "2026-11-10 14:37:05"
     },
     {
       "store": "Eon Next",
@@ -935,8 +935,8 @@
       "stacked_price": 0,
       "best_payment_method": "N/A",
       "stacking_rate": 0,
-      "last_scraped": "2026-11-10 01:20:45",
-      "last_updated": "2026-11-10 01:20:45"
+      "last_scraped": "2026-11-10 14:37:05",
+      "last_updated": "2026-11-10 14:37:05"
     },
     {
       "store": "Good Energy",
@@ -958,8 +958,8 @@
       "stacked_price": 0,
       "best_payment_method": "N/A",
       "stacking_rate": 0,
-      "last_scraped": "2026-11-10 01:20:45",
-      "last_updated": "2026-11-10 01:20:45"
+      "last_scraped": "2026-11-10 14:37:05",
+      "last_updated": "2026-11-10 14:37:05"
     },
     {
       "store": "So Energy",
@@ -981,8 +981,8 @@
       "stacked_price": 0,
       "best_payment_method": "N/A",
       "stacking_rate": 0,
-      "last_scraped": "2026-11-10 01:20:45",
-      "last_updated": "2026-11-10 01:20:45"
+      "last_scraped": "2026-11-10 14:37:05",
+      "last_updated": "2026-11-10 14:37:05"
     },
     {
       "store": "Virgin Media",
@@ -1004,8 +1004,8 @@
       "stacked_price": 0,
       "best_payment_method": "N/A",
       "stacking_rate": 0,
-      "last_scraped": "2026-11-10 01:20:45",
-      "last_updated": "2026-11-10 01:20:45"
+      "last_scraped": "2026-11-10 14:37:05",
+      "last_updated": "2026-11-10 14:37:05"
     },
     {
       "store": "Talktalk",
@@ -1027,8 +1027,8 @@
       "stacked_price": 0,
       "best_payment_method": "N/A",
       "stacking_rate": 0,
-      "last_scraped": "2026-11-10 01:20:45",
-      "last_updated": "2026-11-10 01:20:45"
+      "last_scraped": "2026-11-10 14:37:05",
+      "last_updated": "2026-11-10 14:37:05"
     },
     {
       "store": "Hyperoptic",
@@ -1050,8 +1050,8 @@
       "stacked_price": 0,
       "best_payment_method": "N/A",
       "stacking_rate": 0,
-      "last_scraped": "2026-11-10 01:20:45",
-      "last_updated": "2026-11-10 01:20:45"
+      "last_scraped": "2026-11-10 14:37:05",
+      "last_updated": "2026-11-10 14:37:05"
     },
     {
       "store": "Three Mobile",
@@ -1073,8 +1073,8 @@
       "stacked_price": 0,
       "best_payment_method": "N/A",
       "stacking_rate": 0,
-      "last_scraped": "2026-11-10 01:20:45",
-      "last_updated": "2026-11-10 01:20:45"
+      "last_scraped": "2026-11-10 14:37:05",
+      "last_updated": "2026-11-10 14:37:05"
     },
     {
       "store": "Airbnb",
@@ -1096,8 +1096,8 @@
       "stacked_price": 0,
       "best_payment_method": "N/A",
       "stacking_rate": 0,
-      "last_scraped": "2026-11-10 01:20:45",
-      "last_updated": "2026-11-10 01:20:45"
+      "last_scraped": "2026-11-10 14:37:05",
+      "last_updated": "2026-11-10 14:37:05"
     },
     {
       "store": "Monument Bank",
@@ -1116,11 +1116,11 @@
       ],
       "timeFrame": "Varies",
       "source": "BeermoneyUK Megalist",
-      "last_updated": "2026-11-10 01:20:45",
+      "last_updated": "2026-11-10 14:37:05",
       "stacked_price": 0,
       "best_payment_method": "N/A",
       "stacking_rate": 0,
-      "last_scraped": "2026-11-10 01:20:45"
+      "last_scraped": "2026-11-10 14:37:05"
     },
     {
       "store": "Oaknorth Bank",
@@ -1139,11 +1139,11 @@
       ],
       "timeFrame": "Varies",
       "source": "BeermoneyUK Megalist",
-      "last_updated": "2026-11-10 01:20:45",
+      "last_updated": "2026-11-10 14:37:05",
       "stacked_price": 0,
       "best_payment_method": "N/A",
       "stacking_rate": 0,
-      "last_scraped": "2026-11-10 01:20:45"
+      "last_scraped": "2026-11-10 14:37:05"
     },
     {
       "store": "Rakuten",
@@ -1164,8 +1164,8 @@
       "stacked_price": 0,
       "best_payment_method": "N/A",
       "stacking_rate": 0,
-      "last_scraped": "2026-11-10 01:20:45",
-      "last_updated": "2026-11-10 01:20:45"
+      "last_scraped": "2026-11-10 14:37:05",
+      "last_updated": "2026-11-10 14:37:05"
     },
     {
       "store": "O2",
@@ -1187,8 +1187,8 @@
       "stacked_price": 0,
       "best_payment_method": "N/A",
       "stacking_rate": 0,
-      "last_scraped": "2026-11-10 01:20:45",
-      "last_updated": "2026-11-10 01:20:45"
+      "last_scraped": "2026-11-10 14:37:05",
+      "last_updated": "2026-11-10 14:37:05"
     },
     {
       "store": "Vodafone",
@@ -1210,8 +1210,8 @@
       "stacked_price": 0,
       "best_payment_method": "N/A",
       "stacking_rate": 0,
-      "last_scraped": "2026-11-10 01:20:45",
-      "last_updated": "2026-11-10 01:20:45"
+      "last_scraped": "2026-11-10 14:37:05",
+      "last_updated": "2026-11-10 14:37:05"
     },
     {
       "store": "Gousto",
@@ -1234,8 +1234,8 @@
       "stacked_price": 0,
       "best_payment_method": "N/A",
       "stacking_rate": 0,
-      "last_scraped": "2026-11-10 01:20:45",
-      "last_updated": "2026-11-10 01:20:45"
+      "last_scraped": "2026-11-10 14:37:05",
+      "last_updated": "2026-11-10 14:37:05"
     },
     {
       "store": "Expedia",
@@ -1257,8 +1257,8 @@
       "stacked_price": 0,
       "best_payment_method": "N/A",
       "stacking_rate": 0,
-      "last_scraped": "2026-11-10 01:20:45",
-      "last_updated": "2026-11-10 01:20:45"
+      "last_scraped": "2026-11-10 14:37:05",
+      "last_updated": "2026-11-10 14:37:05"
     },
     {
       "store": "Penfold",
@@ -1279,8 +1279,8 @@
       "stacked_price": 0,
       "best_payment_method": "N/A",
       "stacking_rate": 0,
-      "last_scraped": "2026-11-10 01:20:45",
-      "last_updated": "2026-11-10 01:20:45"
+      "last_scraped": "2026-11-10 14:37:05",
+      "last_updated": "2026-11-10 14:37:05"
     },
     {
       "store": "Xe Money Transfer",
@@ -1301,8 +1301,8 @@
       "stacked_price": 0,
       "best_payment_method": "N/A",
       "stacking_rate": 0,
-      "last_scraped": "2026-11-10 01:20:45",
-      "last_updated": "2026-11-10 01:20:45"
+      "last_scraped": "2026-11-10 14:37:05",
+      "last_updated": "2026-11-10 14:37:05"
     },
     {
       "store": "Revolut",
@@ -1323,8 +1323,8 @@
       "stacked_price": 0,
       "best_payment_method": "N/A",
       "stacking_rate": 0,
-      "last_scraped": "2026-11-10 01:20:45",
-      "last_updated": "2026-11-10 01:20:45"
+      "last_scraped": "2026-11-10 14:37:05",
+      "last_updated": "2026-11-10 14:37:05"
     },
     {
       "store": "Quidco",
@@ -1345,8 +1345,8 @@
       "stacked_price": 0,
       "best_payment_method": "N/A",
       "stacking_rate": 0,
-      "last_scraped": "2026-11-10 01:20:45",
-      "last_updated": "2026-11-10 01:20:45"
+      "last_scraped": "2026-11-10 14:37:05",
+      "last_updated": "2026-11-10 14:37:05"
     },
     {
       "store": "Voxi",
@@ -1368,8 +1368,8 @@
       "stacked_price": 0,
       "best_payment_method": "N/A",
       "stacking_rate": 0,
-      "last_scraped": "2026-11-10 01:20:45",
-      "last_updated": "2026-11-10 01:20:45"
+      "last_scraped": "2026-11-10 14:37:05",
+      "last_updated": "2026-11-10 14:37:05"
     },
     {
       "store": "Tesco Mobile",
@@ -1391,8 +1391,8 @@
       "stacked_price": 0,
       "best_payment_method": "N/A",
       "stacking_rate": 0,
-      "last_scraped": "2026-11-10 01:20:45",
-      "last_updated": "2026-11-10 01:20:45"
+      "last_scraped": "2026-11-10 14:37:05",
+      "last_updated": "2026-11-10 14:37:05"
     },
     {
       "store": "Hello Fresh",
@@ -1415,8 +1415,8 @@
       "stacked_price": 0,
       "best_payment_method": "N/A",
       "stacking_rate": 0,
-      "last_scraped": "2026-11-10 01:20:45",
-      "last_updated": "2026-11-10 01:20:45"
+      "last_scraped": "2026-11-10 14:37:05",
+      "last_updated": "2026-11-10 14:37:05"
     },
     {
       "store": "Gohenry",
@@ -1438,8 +1438,8 @@
       "stacked_price": 0,
       "best_payment_method": "N/A",
       "stacking_rate": 0,
-      "last_scraped": "2026-11-10 01:20:45",
-      "last_updated": "2026-11-10 01:20:45"
+      "last_scraped": "2026-11-10 14:37:05",
+      "last_updated": "2026-11-10 14:37:05"
     },
     {
       "store": "Smarty",
@@ -1458,11 +1458,11 @@
       ],
       "timeFrame": "Varies",
       "source": "BeermoneyUK Megalist",
-      "last_updated": "2026-11-10 01:20:45",
+      "last_updated": "2026-11-10 14:37:05",
       "stacked_price": 0,
       "best_payment_method": "N/A",
       "stacking_rate": 0,
-      "last_scraped": "2026-11-10 01:20:45"
+      "last_scraped": "2026-11-10 14:37:05"
     },
     {
       "store": "Currensea",
@@ -1485,8 +1485,8 @@
       "stacked_price": 0,
       "best_payment_method": "N/A",
       "stacking_rate": 0,
-      "last_scraped": "2026-11-10 01:20:45",
-      "last_updated": "2026-11-10 01:20:45"
+      "last_scraped": "2026-11-10 14:37:05",
+      "last_updated": "2026-11-10 14:37:05"
     },
     {
       "store": "Yougov",
@@ -1509,8 +1509,8 @@
       "stacked_price": 0,
       "best_payment_method": "N/A",
       "stacking_rate": 0,
-      "last_scraped": "2026-11-10 01:20:45",
-      "last_updated": "2026-11-10 01:20:45"
+      "last_scraped": "2026-11-10 14:37:05",
+      "last_updated": "2026-11-10 14:37:05"
     },
     {
       "store": "Freetrade",
@@ -1530,8 +1530,8 @@
       "stacked_price": 0,
       "best_payment_method": "N/A",
       "stacking_rate": 0,
-      "last_scraped": "2026-11-10 01:20:45",
-      "last_updated": "2026-11-10 01:20:45"
+      "last_scraped": "2026-11-10 14:37:05",
+      "last_updated": "2026-11-10 14:37:05"
     },
     {
       "store": "Robinhood",
@@ -1551,8 +1551,8 @@
       "stacked_price": 0,
       "best_payment_method": "N/A",
       "stacking_rate": 0,
-      "last_scraped": "2026-11-10 01:20:45",
-      "last_updated": "2026-11-10 01:20:45"
+      "last_scraped": "2026-11-10 14:37:05",
+      "last_updated": "2026-11-10 14:37:05"
     },
     {
       "store": "Topcashback",
@@ -1572,8 +1572,8 @@
       "stacked_price": 0,
       "best_payment_method": "N/A",
       "stacking_rate": 0,
-      "last_scraped": "2026-11-10 01:20:45",
-      "last_updated": "2026-11-10 01:20:45"
+      "last_scraped": "2026-11-10 14:37:05",
+      "last_updated": "2026-11-10 14:37:05"
     },
     {
       "store": "Zopa (biscuit)",
@@ -1593,8 +1593,8 @@
       "stacked_price": 0,
       "best_payment_method": "N/A",
       "stacking_rate": 0,
-      "last_scraped": "2026-11-10 01:20:45",
-      "last_updated": "2026-11-10 01:20:45"
+      "last_scraped": "2026-11-10 14:37:05",
+      "last_updated": "2026-11-10 14:37:05"
     },
     {
       "store": "Starling Bank",
@@ -1616,8 +1616,8 @@
       "stacked_price": 0,
       "best_payment_method": "N/A",
       "stacking_rate": 0,
-      "last_scraped": "2026-11-10 01:20:45",
-      "last_updated": "2026-11-10 01:20:45"
+      "last_scraped": "2026-11-10 14:37:05",
+      "last_updated": "2026-11-10 14:37:05"
     },
     {
       "store": "Cashback.co.uk",
@@ -1639,8 +1639,8 @@
       "stacked_price": 0,
       "best_payment_method": "N/A",
       "stacking_rate": 0,
-      "last_scraped": "2026-11-10 01:20:45",
-      "last_updated": "2026-11-10 01:20:45"
+      "last_scraped": "2026-11-10 14:37:05",
+      "last_updated": "2026-11-10 14:37:05"
     },
     {
       "store": "Measure (msr)",
@@ -1663,8 +1663,8 @@
       "stacked_price": 0,
       "best_payment_method": "N/A",
       "stacking_rate": 0,
-      "last_scraped": "2026-11-10 01:20:45",
-      "last_updated": "2026-11-10 01:20:45"
+      "last_scraped": "2026-11-10 14:37:05",
+      "last_updated": "2026-11-10 14:37:05"
     },
     {
       "store": "Ribbon",
@@ -1686,8 +1686,8 @@
       "stacked_price": 0,
       "best_payment_method": "N/A",
       "stacking_rate": 0,
-      "last_scraped": "2026-11-10 01:20:45",
-      "last_updated": "2026-11-10 01:20:45"
+      "last_scraped": "2026-11-10 14:37:05",
+      "last_updated": "2026-11-10 14:37:05"
     },
     {
       "store": "Uber Eats",
@@ -1709,8 +1709,8 @@
       "stacked_price": 0,
       "best_payment_method": "N/A",
       "stacking_rate": 0,
-      "last_scraped": "2026-11-10 01:20:45",
-      "last_updated": "2026-11-10 01:20:45"
+      "last_scraped": "2026-11-10 14:37:05",
+      "last_updated": "2026-11-10 14:37:05"
     },
     {
       "store": "Deliveroo",
@@ -1732,8 +1732,8 @@
       "stacked_price": 0,
       "best_payment_method": "N/A",
       "stacking_rate": 0,
-      "last_scraped": "2026-11-10 01:20:45",
-      "last_updated": "2026-11-10 01:20:45"
+      "last_scraped": "2026-11-10 14:37:05",
+      "last_updated": "2026-11-10 14:37:05"
     },
     {
       "store": "Remitly",
@@ -1755,8 +1755,8 @@
       "stacked_price": 0,
       "best_payment_method": "N/A",
       "stacking_rate": 0,
-      "last_scraped": "2026-11-10 01:20:45",
-      "last_updated": "2026-11-10 01:20:45"
+      "last_scraped": "2026-11-10 14:37:05",
+      "last_updated": "2026-11-10 14:37:05"
     },
     {
       "store": "Worldremit",
@@ -1778,8 +1778,8 @@
       "stacked_price": 0,
       "best_payment_method": "N/A",
       "stacking_rate": 0,
-      "last_scraped": "2026-11-10 01:20:45",
-      "last_updated": "2026-11-10 01:20:45"
+      "last_scraped": "2026-11-10 14:37:05",
+      "last_updated": "2026-11-10 14:37:05"
     },
     {
       "store": "Rooster Money",
@@ -1801,8 +1801,8 @@
       "stacked_price": 0,
       "best_payment_method": "N/A",
       "stacking_rate": 0,
-      "last_scraped": "2026-11-10 01:20:45",
-      "last_updated": "2026-11-10 01:20:45"
+      "last_scraped": "2026-11-10 14:37:05",
+      "last_updated": "2026-11-10 14:37:05"
     },
     {
       "store": "Klarna",
@@ -1824,8 +1824,8 @@
       "stacked_price": 0,
       "best_payment_method": "N/A",
       "stacking_rate": 0,
-      "last_scraped": "2026-11-10 01:20:45",
-      "last_updated": "2026-11-10 01:20:45"
+      "last_scraped": "2026-11-10 14:37:05",
+      "last_updated": "2026-11-10 14:37:05"
     },
     {
       "store": "Clearpay",
@@ -1847,8 +1847,8 @@
       "stacked_price": 0,
       "best_payment_method": "N/A",
       "stacking_rate": 0,
-      "last_scraped": "2026-11-10 01:20:45",
-      "last_updated": "2026-11-10 01:20:45"
+      "last_scraped": "2026-11-10 14:37:05",
+      "last_updated": "2026-11-10 14:37:05"
     },
     {
       "store": "Yonder",
@@ -1869,8 +1869,8 @@
       "stacked_price": 0,
       "best_payment_method": "N/A",
       "stacking_rate": 0,
-      "last_scraped": "2026-11-10 01:20:45",
-      "last_updated": "2026-11-10 01:20:45"
+      "last_scraped": "2026-11-10 14:37:05",
+      "last_updated": "2026-11-10 14:37:05"
     },
     {
       "store": "Krak Debit Card",
@@ -1889,11 +1889,11 @@
       ],
       "timeFrame": "Varies",
       "source": "BeermoneyUK Megalist",
-      "last_updated": "2026-11-10 01:20:45",
+      "last_updated": "2026-11-10 14:37:05",
       "stacked_price": 0,
       "best_payment_method": "N/A",
       "stacking_rate": 0,
-      "last_scraped": "2026-11-10 01:20:45"
+      "last_scraped": "2026-11-10 14:37:05"
     },
     {
       "store": "Ace Money Transfer",
@@ -1912,11 +1912,11 @@
       ],
       "timeFrame": "Varies",
       "source": "BeermoneyUK Megalist",
-      "last_updated": "2026-11-10 01:20:45",
+      "last_updated": "2026-11-10 14:37:05",
       "stacked_price": 0,
       "best_payment_method": "N/A",
       "stacking_rate": 0,
-      "last_scraped": "2026-11-10 01:20:45"
+      "last_scraped": "2026-11-10 14:37:05"
     },
     {
       "store": "Monzo",
@@ -1937,8 +1937,8 @@
       "stacked_price": 0,
       "best_payment_method": "N/A",
       "stacking_rate": 0,
-      "last_scraped": "2026-11-10 01:20:45",
-      "last_updated": "2026-11-10 01:20:45"
+      "last_scraped": "2026-11-10 14:37:05",
+      "last_updated": "2026-11-10 14:37:05"
     },
     {
       "store": "Zilch",
@@ -1958,8 +1958,8 @@
       "stacked_price": 0,
       "best_payment_method": "N/A",
       "stacking_rate": 0,
-      "last_scraped": "2026-11-10 01:20:45",
-      "last_updated": "2026-11-10 01:20:45"
+      "last_scraped": "2026-11-10 14:37:05",
+      "last_updated": "2026-11-10 14:37:05"
     },
     {
       "store": "Monzo",
@@ -1981,8 +1981,8 @@
       "stacked_price": 0,
       "best_payment_method": "N/A",
       "stacking_rate": 0,
-      "last_scraped": "2026-11-10 01:20:45",
-      "last_updated": "2026-11-10 01:20:45"
+      "last_scraped": "2026-11-10 14:37:05",
+      "last_updated": "2026-11-10 14:37:05"
     },
     {
       "store": "Giffgaff",
@@ -2004,8 +2004,8 @@
       "stacked_price": 0,
       "best_payment_method": "N/A",
       "stacking_rate": 0,
-      "last_scraped": "2026-11-10 01:20:45",
-      "last_updated": "2026-11-10 01:20:45"
+      "last_scraped": "2026-11-10 14:37:05",
+      "last_updated": "2026-11-10 14:37:05"
     },
     {
       "store": "In-poll",
@@ -2027,8 +2027,8 @@
       "stacked_price": 0,
       "best_payment_method": "N/A",
       "stacking_rate": 0,
-      "last_scraped": "2026-11-10 01:20:45",
-      "last_updated": "2026-11-10 01:20:45"
+      "last_scraped": "2026-11-10 14:37:05",
+      "last_updated": "2026-11-10 14:37:05"
     },
     {
       "store": "Sidekick",
@@ -2047,11 +2047,11 @@
       ],
       "timeFrame": "Varies",
       "source": "BeermoneyUK Megalist",
-      "last_updated": "2026-11-10 01:20:45",
+      "last_updated": "2026-11-10 14:37:05",
       "stacked_price": 0,
       "best_payment_method": "N/A",
       "stacking_rate": 0,
-      "last_scraped": "2026-11-10 01:20:45"
+      "last_scraped": "2026-11-10 14:37:05"
     },
     {
       "store": "Caffe Nero",
@@ -2074,8 +2074,8 @@
       "stacked_price": 0,
       "best_payment_method": "N/A",
       "stacking_rate": 0,
-      "last_scraped": "2026-11-10 01:20:45",
-      "last_updated": "2026-11-10 01:20:45"
+      "last_scraped": "2026-11-10 14:37:05",
+      "last_updated": "2026-11-10 14:37:05"
     },
     {
       "store": "Cheddar",
@@ -2095,8 +2095,8 @@
       "stacked_price": 0,
       "best_payment_method": "N/A",
       "stacking_rate": 0,
-      "last_scraped": "2026-11-10 01:20:45",
-      "last_updated": "2026-11-10 01:20:45"
+      "last_scraped": "2026-11-10 14:37:05",
+      "last_updated": "2026-11-10 14:37:05"
     },
     {
       "store": "Jam Doughnut",
@@ -2116,8 +2116,8 @@
       "stacked_price": 0,
       "best_payment_method": "N/A",
       "stacking_rate": 0,
-      "last_scraped": "2026-11-10 01:20:45",
-      "last_updated": "2026-11-10 01:20:45"
+      "last_scraped": "2026-11-10 14:37:05",
+      "last_updated": "2026-11-10 14:37:05"
     },
     {
       "store": "Trainpal",
@@ -2138,8 +2138,8 @@
       "stacked_price": 0,
       "best_payment_method": "N/A",
       "stacking_rate": 0,
-      "last_scraped": "2026-11-10 01:20:45",
-      "last_updated": "2026-11-10 01:20:45"
+      "last_scraped": "2026-11-10 14:37:05",
+      "last_updated": "2026-11-10 14:37:05"
     },
     {
       "store": "Airtime",
@@ -2160,8 +2160,8 @@
       "stacked_price": 0,
       "best_payment_method": "N/A",
       "stacking_rate": 0,
-      "last_scraped": "2026-11-10 01:20:45",
-      "last_updated": "2026-11-10 01:20:45"
+      "last_scraped": "2026-11-10 14:37:05",
+      "last_updated": "2026-11-10 14:37:05"
     },
     {
       "store": "Everup",
@@ -2182,8 +2182,8 @@
       "stacked_price": 0,
       "best_payment_method": "N/A",
       "stacking_rate": 0,
-      "last_scraped": "2026-11-10 01:20:45",
-      "last_updated": "2026-11-10 01:20:45"
+      "last_scraped": "2026-11-10 14:37:05",
+      "last_updated": "2026-11-10 14:37:05"
     },
     {
       "store": "Custard",
@@ -2205,8 +2205,8 @@
       "stacked_price": 0,
       "best_payment_method": "N/A",
       "stacking_rate": 0,
-      "last_scraped": "2026-11-10 01:20:45",
-      "last_updated": "2026-11-10 01:20:45"
+      "last_scraped": "2026-11-10 14:37:05",
+      "last_updated": "2026-11-10 14:37:05"
     },
     {
       "store": "Moneybox",
@@ -2226,8 +2226,8 @@
       "stacked_price": 0,
       "best_payment_method": "N/A",
       "stacking_rate": 0,
-      "last_scraped": "2026-11-10 01:20:45",
-      "last_updated": "2026-11-10 01:20:45"
+      "last_scraped": "2026-11-10 14:37:05",
+      "last_updated": "2026-11-10 14:37:05"
     },
     {
       "store": "Lebara",
@@ -2247,8 +2247,8 @@
       "stacked_price": 0,
       "best_payment_method": "N/A",
       "stacking_rate": 0,
-      "last_scraped": "2026-11-10 01:20:45",
-      "last_updated": "2026-11-10 01:20:45"
+      "last_scraped": "2026-11-10 14:37:05",
+      "last_updated": "2026-11-10 14:37:05"
     },
     {
       "store": "Costa",
@@ -2268,8 +2268,8 @@
       "stacked_price": 0,
       "best_payment_method": "N/A",
       "stacking_rate": 0,
-      "last_scraped": "2026-11-10 01:20:45",
-      "last_updated": "2026-11-10 01:20:45"
+      "last_scraped": "2026-11-10 14:37:05",
+      "last_updated": "2026-11-10 14:37:05"
     },
     {
       "store": "Waitrose",
@@ -2289,8 +2289,8 @@
       "stacked_price": 0,
       "best_payment_method": "JamDoughnut (3.5%) + MyWaitrose",
       "stacking_rate": 3.5,
-      "last_scraped": "2026-11-10 01:20:45",
-      "last_updated": "2026-11-10 01:20:45"
+      "last_scraped": "2026-11-10 14:37:05",
+      "last_updated": "2026-11-10 14:37:05"
     },
     {
       "store": "Wise",
@@ -2311,8 +2311,8 @@
       "stacked_price": 0,
       "best_payment_method": "N/A",
       "stacking_rate": 0,
-      "last_scraped": "2026-11-10 01:20:45",
-      "last_updated": "2026-11-10 01:20:45"
+      "last_scraped": "2026-11-10 14:37:05",
+      "last_updated": "2026-11-10 14:37:05"
     }
   ]
 }
