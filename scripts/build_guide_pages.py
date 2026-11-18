@@ -80,7 +80,8 @@ for c,a,s in pages:
     ld=json.dumps({"@context":"https://schema.org","@type":"Article","headline":a["title"],"description":desc,"dateModified":a["reviewed"],"mainEntityOfPage":url,"author":{"@type":"Organization","name":"Money Hunters UK"},"publisher":{"@type":"Organization","name":"Money Hunters UK"}},ensure_ascii=False)
     rel=[x for x in c["articles"] if x["id"]!=a["id"] and x.get("body")][:4]
     relhtml="".join(f'<a href="/guides/{slugs[x["id"]]}/">{E(x["title"])}<span>{E(x["summary"])}</span></a>' for x in rel)
-    srcs="".join(f'<li><a href="{E(u)}" rel="noopener" target="_blank">{E(re.sub(r"^https?://(www\.)?","",u))}</a></li>' for u in a.get("sources",[]))
+    def short(u):return re.sub(r"^https?://(www\.)?","",u)
+    srcs="".join(f'<li><a href="{E(u)}" rel="noopener" target="_blank">{E(short(u))}</a></li>' for u in a.get("sources",[]))
     qn=a.get("question_count") or 0
     PRACTICE=(f"There are {qn} practice questions on this topic in the free Coinsworth game. " if qn else "Test yourself with short questions in the free Coinsworth game. ")+"Or open this guide in the app to see live offers and tools."
     page=f"""<!DOCTYPE html>
