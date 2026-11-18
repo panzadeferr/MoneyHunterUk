@@ -1197,6 +1197,23 @@ def validate_deal(deal: Dict) -> bool:
     return True
 
 
+def carry_forward_source(prev_deals, source_type, new_deals):
+    """Keep the previous run's deals for a source whose read failed this run.
+
+    One failed fetch must never wipe a whole source off the live site: if a
+    source returns nothing but had deals in the previous run, carry the
+    previous deals forward (their original timestamps preserved so staleness
+    stays visible) and warn in the run log.
+    """
+    if new_deals or not prev_deals:
+        return new_deals
+    carried = [d for d in prev_deals if d.get("type") == source_type]
+    if carried:
+        print(f"::warning::{source_type}: 0 deals this run, "
+              f"carrying forward {len(carried)} from the previous run")
+    return carried
+
+
 def run_all_scrapers() -> Dict:
     """Run all scrapers and save results with enhanced data integrity"""
     print("Money Hunters Scraper Starting...")
@@ -1237,6 +1254,16 @@ def run_all_scrapers() -> Dict:
     print("\n📡 Scraping BeermoneyUK Megalist...")
     megalist_deals = scrape_megalist()
     time.sleep(2)
+
+    # Guard against a failed source read wiping a whole source from the site
+    prev_deals = []
+    try:
+        with open("all_deals.json", encoding="utf-8") as f:
+            prev_deals = json.load(f).get("deals", [])
+    except Exception:
+        prev_deals = []
+    news_deals = carry_forward_source(prev_deals, "scraped_mse", news_deals)
+    megalist_deals = carry_forward_source(prev_deals, "megalist", megalist_deals)
     
     scrimpr_deals = []
     if os.environ.get("ENABLE_SCRIMPR") == "1":
