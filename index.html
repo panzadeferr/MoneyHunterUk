@@ -913,6 +913,41 @@ footer {
 </section>
 
 
+<div id="partnerSlotHome" style="max-width:480px;margin:0 auto 16px;padding:0 20px"></div>
+<script>
+// Partner ad slots: rendered only if data/partner-slots.json lists one (see scripts/build_partner_slots.py).
+window.mhRenderPartnerSlots=function(placement,containerId){
+  try{
+    var box=document.getElementById(containerId);if(!box)return;
+    fetch('/data/partner-slots.json?v='+Date.now()).then(function(r){return r.ok?r.json():{slots:[]}}).then(function(d){
+      box.textContent='';
+      (d.slots||[]).filter(function(s){return (s.placements||[]).indexOf(placement)>-1}).forEach(function(s){
+        var c=document.createElement('div');
+        c.style.cssText='border:1px solid rgba(128,128,128,.35);border-radius:14px;padding:14px;margin:0 0 12px;font-size:13px;line-height:1.5';
+        var t=document.createElement('div');t.style.cssText='font-weight:700;margin-bottom:4px';
+        var ad=document.createElement('span');ad.textContent=s.ad_label||'Ad';ad.style.cssText='font-size:10px;font-weight:800;border:1px solid currentColor;border-radius:4px;padding:0 5px;margin-right:8px;vertical-align:middle';
+        t.appendChild(ad);t.appendChild(document.createTextNode(s.provider+' · '+s.headline));c.appendChild(t);
+        var b=document.createElement('div');b.textContent=s.body;c.appendChild(b);
+        var r=document.createElement('div');r.style.cssText='margin-top:6px;font-weight:600';r.textContent=s.risk;c.appendChild(r);
+        var row=document.createElement('div');row.style.cssText='margin-top:10px;display:flex;gap:12px;flex-wrap:wrap';
+        if(s.url){
+          var a=document.createElement('a');a.textContent=s.cta;a.target='_blank';a.rel='sponsored nofollow noopener';
+          try{var u=new URL(s.url);Object.keys(s.utm||{}).forEach(function(k){u.searchParams.set(k,s.utm[k])});u.searchParams.set('utm_content',placement);a.href=u.toString();}catch(e){a.href=s.url}
+          a.style.fontWeight='700';
+          a.addEventListener('click',function(){if(window.mhTrack)mhTrack(s.events.click,{placement:placement})});
+          row.appendChild(a);
+        }
+        if(s.guide_url){var g=document.createElement('a');g.textContent=s.guide_cta;g.href=s.guide_url;row.appendChild(g);}
+        c.appendChild(row);box.appendChild(c);
+        var fired=false;
+        function view(){if(fired)return;fired=true;if(window.mhTrack)mhTrack(s.events.view,{placement:placement})}
+        if('IntersectionObserver' in window){var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){view();io.disconnect()}})});io.observe(c)}else{view()}
+      });
+    }).catch(function(){});
+  }catch(e){}
+};
+</script>
+<script>window.mhRenderPartnerSlots("home","partnerSlotHome");</script>
 <!-- LIVE TICKER -->
 
 

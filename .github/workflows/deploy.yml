@@ -136,6 +136,9 @@ jobs:
       - name: Moved pages redirect
         run: python3 tests/check_redirects.py
 
+      - name: Partner slots off unless flagged
+        run: python3 tests/check_partner_slots.py
+
       - name: All tests passed
         run: echo "✅ All checks passed — deploying..."
 

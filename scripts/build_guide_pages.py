@@ -154,6 +154,49 @@ hub=f"""<!DOCTYPE html>
 </body>
 </html>
 """
+# Partner draft page: written only when the partner's feature flag is on (see scripts/build_partner_slots.py).
+sys.path.insert(0,os.path.dirname(os.path.abspath(__file__)))
+import build_partner_slots as _bps
+for _p in _bps.enabled_partners():
+    _pg=_p["page"];_slug=_p["guide_slug"];_url=f"{SITE}/guides/{_slug}/"
+    _secs="".join(f"<h2>{E(x['h'])}</h2><p>{E(x['p'])}</p>" for x in _pg["sections"])
+    _draft=not _p.get("approved_copy")
+    _robots='<meta name="robots" content="noindex">' if _draft else ""
+    _cta=""
+    if _p.get("referral_url"):
+        _cta=f'<p><a class="btn" id="partnerGuideCta" href="{E(_p["referral_url"])}" rel="sponsored nofollow noopener" target="_blank"><span class="ad">Ad</span> {E(_p["card"]["cta"])}</a></p>'
+    w(f"guides/{_slug}/index.html",f"""<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>{E(_pg['title'])} | Money Hunters UK</title>
+<meta name="description" content="Ad. {E(_pg['intro'])}">
+<link rel="canonical" href="{_url}">
+{_robots}
+<meta name="theme-color" content="#080b10">
+<link rel="icon" type="image/png" href="/icon-192.png">
+{HEAD_FONTS}
+<style>{CSS}</style>
+{UMAMI}
+</head>
+<body>
+{NAV}
+<main class="wrap">
+<p class="crumbs"><a href="/">Home</a> / <a href="/guides/">Guides</a> / {E(_p['provider'])}</p>
+<h1>{E(_pg['title'])}</h1>
+<p><strong>Ad.</strong> {E(_pg['intro'])}</p>
+<p class="meta">{'Draft page, not approved by the provider yet' if _draft else 'Provider-approved wording'}</p>
+{_secs}
+<p><strong>{E(_p['card']['risk'])}</strong></p>
+{_cta}
+{DISC}
+</main>
+<!-- partner-draft -->
+</body>
+</html>
+""")
+
 # Old URLs that were renamed: a small stub keeps inbound links working (not indexed, not in the sitemap).
 REDIRECTS={"free-share-offers":"share-bonus-offers"}
 for old,new in REDIRECTS.items():
