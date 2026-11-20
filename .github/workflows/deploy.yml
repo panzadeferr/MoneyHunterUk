@@ -121,6 +121,9 @@ jobs:
       - name: Guide pages
         run: python3 tests/check_guides.py
 
+      - name: Deploy list
+        run: python3 tests/check_deploy.py
+
       - name: Affiliate disclosure (Ad labels)
         run: python3 tests/check_disclosure.py
 
