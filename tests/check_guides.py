@@ -20,7 +20,8 @@ for f in sorted(b):
         if need not in t and not f=="index.html" or (f=="index.html" and need in("<title>","rel=\"canonical\"","<h1>") and need not in t):fail.append(f"guides/{f} missing {need}")
 pb=json.load(open(os.path.join(root,"data","playbook.json"),encoding="utf-8"))
 n=sum(1 for c in pb["chapters"] if not c.get("locked") for x in c["articles"] if x.get("body"))
-if len(b)-1!=n:fail.append(f"expected {n} guide pages, found {len(b)-1}")
+stubs=sum(1 for f in b if f!="index.html" and "<!-- redirect-stub -->" in open(os.path.join(root,"guides",f),encoding="utf-8").read())
+if len(b)-1-stubs!=n:fail.append(f"expected {n} guide pages, found {len(b)-1-stubs}")
 if fail:
     print("FAIL");print(*fail[:15],sep="\n");print("Fix: python3 scripts/build_guide_pages.py");sys.exit(1)
 print(f"Guide page checks passed: {n} pages + hub, in sync with playbook.json")

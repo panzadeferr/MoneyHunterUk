@@ -794,7 +794,7 @@
         },
         {
           "id": "pb-inv-free-shares",
-          "title": "Free share offers",
+          "title": "Share bonus offers",
           "summary": "How free-share sign-up offers work and the terms to check.",
           "existing_guide": "guide-invest",
           "status": "written",
@@ -803,7 +803,7 @@
           "body": [
             {
               "type": "p",
-              "text": "Some trading apps give you a free share, or cash to invest, when you sign up or refer a friend. It can be a nice bonus, but it's still an investment."
+              "text": "Some trading apps give you a share bonus, or cash to invest, when you sign up or refer a friend. It can be a nice bonus, but it's still an investment."
             },
             {
               "type": "h",
@@ -825,7 +825,7 @@
             },
             {
               "type": "tip",
-              "text": "Treat the free share as a way to learn how a platform works, not as a reason to start trading frequently."
+              "text": "Treat the share bonus as a way to learn how a platform works, not as a reason to start trading frequently."
             }
           ],
           "sources": [

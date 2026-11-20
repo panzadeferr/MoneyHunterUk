@@ -153,5 +153,19 @@ hub=f"""<!DOCTYPE html>
 </body>
 </html>
 """
+# Old URLs that were renamed: a small stub keeps inbound links working (not indexed, not in the sitemap).
+REDIRECTS={"free-share-offers":"share-bonus-offers"}
+for old,new in REDIRECTS.items():
+    if new in used:
+        w(f"guides/{old}/index.html",f'''<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Moved: share bonus offers | Money Hunters UK</title>
+<link rel="canonical" href="{SITE}/guides/{new}/">
+<meta name="robots" content="noindex">
+<meta http-equiv="refresh" content="0; url=/guides/{new}/">
+<script type="application/ld+json">{{"@context":"https://schema.org","@type":"WebPage","name":"Moved","url":"{SITE}/guides/{old}/"}}</script>
+<!-- redirect-stub -->
+</head><body><h1>This guide has moved</h1><p><a href="/guides/{new}/">Go to the guide</a></p></body></html>
+''')
 w("guides/index.html",hub)
-print(f"built {len(pages)} guide pages + hub")
+print(f"built {len(pages)} guide pages + hub + {len(REDIRECTS)} redirect stub(s)")
