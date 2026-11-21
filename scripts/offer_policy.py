@@ -93,6 +93,9 @@ def max_claim_ok(st):
 def display_amount(st, raw_amount, text=""):
     """Return (amount_text, note). raw_amount is what the scraper or app holds."""
     raw_amount = str(raw_amount or "")
+    ov = (st.get("amount_override") or {}).get("value")
+    if ov and not is_investing(st):
+        raw_amount = str(ov)  # amount read from the provider's own page by the scraper check (auto-update)
     if is_investing(st):
         if max_claim_ok(st):
             mc = st["max_claim"]

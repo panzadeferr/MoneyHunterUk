@@ -44,11 +44,17 @@ jobs:
       - name: Render static offers page
         run: python3 scripts/make_offers_page.py
 
+      - name: Policy check (refuse to commit an offers page that breaks the display rules)
+        run: |
+          python3 tests/check_offer_policy.py
+          python3 tests/check_disclosure.py
+          python3 tests/check_autoupdate.py
+
       - name: Check for changes
         id: git-check
         run: |
           git status
-          if git diff --quiet all_deals.json feed.xml offers.html; then
+          if git diff --quiet all_deals.json feed.xml offers.html data/offer_state.json config/autoupdate_queue.json config/autoupdate_log.json config/autoupdate_digest.json; then
             echo "No changes detected"
             echo "has_changes=false" >> $GITHUB_OUTPUT
           else
@@ -61,7 +67,7 @@ jobs:
         run: |
           git config user.name "MoneyHunters Bot"
           git config user.email "hello@moneyhunters.co.uk"
-          git add all_deals.json scrape_log.txt feed.xml offers.html
+          git add all_deals.json scrape_log.txt feed.xml offers.html data/offer_state.json config/autoupdate_log.json config/autoupdate_queue.json config/autoupdate_digest.json
           git commit -m "Auto: scrape $(date +%Y-%m-%d-%H%M)"
           git push
 
