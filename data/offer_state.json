@@ -634,7 +634,7 @@
    "crypto": false,
    "reward_type": "shares",
    "referral_product": "shares",
-   "conditions": "",
+   "conditions": "Net funding of at least £50, and the friend must fund at least £50 within 30 days. Withdrawal only after 180 days from the award date. Max 10 free shares a month. The page also shows a separate banner for a different 'up to £250' offer, so no maximum is shown here.",
    "listing_terms": "Deposit £50 — share bonus (£10-£100) | See provider page | A sign-up share bonus may be offered if you meet the provider's conditions. Value and terms vary and can change, so check Freetrade's own page. Capital at risk.",
    "max_claim": null,
    "source_url": "",
@@ -645,7 +645,12 @@
    "fca_priority": 1,
    "hidden": false,
    "hidden_reason": "",
-   "notes": ""
+   "notes": "",
+   "conditions_source": {
+    "url": "https://freetrade.io/free-share",
+    "date": "2026-11-21",
+    "how": "read from the provider's own page by Claude; not a person's check"
+   }
   },
   "gemsloot": {
    "provider": "Gemsloot",
@@ -900,7 +905,7 @@
    "crypto": false,
    "reward_type": "other",
    "referral_product": "shares",
-   "conditions": "",
+   "conditions": "Referral covers IG Share Dealing (GIA), Stocks and Shares ISA and SIPP only, not CFD or spread betting. Friend gets a randomly allocated share (£50-£1,000, most likely £50-£70) after a first investment of at least £1,000 within 30 days and a 3-month holding period. Referrer gets £100 cash in a GIA. Max 10 active referrals a month.",
    "listing_terms": "Sign-up reward, value varies | Open a share dealing account via referral. The qualifying terms are on the provider's page. Capital at risk.",
    "max_claim": null,
    "source_url": "",
@@ -911,7 +916,12 @@
    "fca_priority": 1,
    "hidden": false,
    "hidden_reason": "",
-   "notes": "Alberto confirmed 21 Nov 2026: referral terms are for a share dealing account (no CFD or spread betting). Label: Share dealing account."
+   "notes": "Alberto confirmed 21 Nov 2026: referral terms are for a share dealing account (no CFD or spread betting). Label: Share dealing account. Provider page read 21 Nov 2026 confirms share dealing products only.",
+   "conditions_source": {
+    "url": "https://www.ig.com/uk/about-us/refer-a-friend-terms-and-conditions-freeshare",
+    "date": "2026-11-21",
+    "how": "read from the provider's own page by Claude; not a person's check"
+   }
   },
   "inpoll": {
    "provider": "In-poll",
@@ -1033,7 +1043,7 @@
    "crypto": false,
    "reward_type": "shares",
    "referral_product": "shares",
-   "conditions": "",
+   "conditions": "Friend must fund at least 100 GBP within 30 days of using the link. 6-month withdrawal restriction and 6-month minimum funding after the reward. Reward is a random bucket with a top bucket of 76-100; currency is set per campaign and not stated, so no maximum is shown. Terms effective 12 Nov 2026.",
    "listing_terms": "Deposit £100 — share bonus up to £100 | See provider page | Sign-up offer listed. The amount and conditions are on the provider's page. Capital at risk.",
    "max_claim": null,
    "source_url": "https://lightyear.com/",
@@ -1044,7 +1054,12 @@
    "fca_priority": 1,
    "hidden": false,
    "hidden_reason": "",
-   "notes": ""
+   "notes": "",
+   "conditions_source": {
+    "url": "https://lightyear.com/en-gb/referral-scheme-terms",
+    "date": "2026-11-21",
+    "how": "read from the provider's own page by Claude; not a person's check"
+   }
   },
   "lloydsbank": {
    "provider": "Lloyds Bank",
@@ -1318,7 +1333,7 @@
    "crypto": false,
    "reward_type": "cash",
    "referral_product": "unknown",
-   "conditions": "",
+   "conditions": "Plum says referral rewards are offered at its discretion and may not always be available; if the Earn button is not in the app, no programme is running. The page states no amounts and no number of friends, so the '3 sign-ups' condition is not confirmed.",
    "listing_terms": "Refer 3 Friends → £75 | See provider page | A referral reward is listed for referring friends. The conditions and any end date are on Plum's own page, so check them there before you start. Capital at risk.",
    "max_claim": null,
    "source_url": "",
@@ -1329,7 +1344,12 @@
    "fca_priority": 1,
    "hidden": false,
    "hidden_reason": "",
-   "notes": "saving and investing app; kept as a saving tool"
+   "notes": "saving and investing app; kept as a saving tool",
+   "conditions_source": {
+    "url": "https://help.withplum.com/en/articles/9849997-plum-referral-programs",
+    "date": "2026-11-21",
+    "how": "read from the provider's own page by Claude; not a person's check"
+   }
   },
   "quidco": {
    "provider": "Quidco",
