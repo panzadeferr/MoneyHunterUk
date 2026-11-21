@@ -14,7 +14,7 @@ await p.addInitScript(() => {
 await p.goto('http://localhost:8765/app.html');
 await p.waitForTimeout(3500);
 const out = await p.evaluate(() => ({
-  offers: offers.map(o => ({id: o.id, name: o.name, reward: o.reward, amount: o.amount, url: o.url, desc: o.desc, badge: o.badge, category: o.category || '', verified: o.verified || '', end: (OFFER_REVIEW[o.id] || {}).end || '', ref: offerIsRef(o), noLink: offerNoLink(o), investing: offerIsInvesting(o), curated: !/-(s|sc|ml)$/.test(o.id)}))
+  offers: offers.map(o => ({id: o.id, name: o.name, reward: o.reward, amount: o.amount, url: o.url, desc: o.desc, badge: o.badge, category: o.category || '', verified: o.verified || '', end: (OFFER_REVIEW[o.id] || {}).end || '', ref: offerIsRef(o), noLink: offerNoLink(o), investing: offerIsInvesting(o), orig: o._orig || null, curated: !/-(s|sc|ml)$/.test(o.id)}))
 }));
 fs.writeFileSync(process.argv[2], JSON.stringify(out, null, 1));
 console.log('app offers', out.offers.length);

@@ -56,9 +56,13 @@ FALLBACK_GROUPS = [
 
 # Brokers whose main product is leveraged (CFD / spread betting). We do not promote these.
 # Matched on a lower-cased store name with spaces and punctuation removed.
+sys.path.insert(0, str(Path(__file__).resolve().parent))
+import offer_policy as pol  # noqa: E402
+
 HIDDEN_STORES = {"etoro", "xtb", "trading212", "trading212cfd"}
 
-RISK_WARNING = (
+RISK_WARNING = pol.RISK_WARNING
+_OLD_RISK = (
     "Capital at risk. The value of investments can fall as well as rise and you may get back less "
     "than you put in. Nothing here is advice or a personal recommendation. Check that a firm is on "
     "the FCA register before you use it."
@@ -74,9 +78,7 @@ _WORDING = [
 
 
 def plain(text):
-    for rx, rep in _WORDING:
-        text = rx.sub(rep, text)
-    return text
+    return pol.plain(text)
 
 
 def store_key(deal):
@@ -84,7 +86,10 @@ def store_key(deal):
 
 
 def is_hidden(deal):
-    return store_key(deal) in HIDDEN_STORES
+    if store_key(deal) in HIDDEN_STORES or pol.is_hidden_provider(deal.get("store")):
+        return True
+    st = pol.state_for(STATE, deal.get("store"))
+    return bool(st.get("hidden")) or st.get("status") == "ended"
 
 
 def money_bits(deal):
@@ -96,7 +101,7 @@ def money_bits(deal):
     was = str(deal.get("original_price") or "")
     saving = deal.get("saving_percent")
     if price:
-        out.append(price)
+        out.append(pol.display_amount({}, price, "")[0])
     if (deal.get("type") == "supermarket" and was
             and was not in ("£0", "£0.00", "0", "0.00") and saving and 0 < saving < 100):
         out.append("was {} (-{}%)".format(was, saving))
@@ -115,6 +120,9 @@ def verify_text(deal, checked):
     if age > 30:
         return "last checked {}, which is over 30 days ago, so verify it on the provider's page".format(label)
     return "last checked {}, verify it on the provider's page".format(label)
+
+
+STATE = pol.load_state()
 
 
 def build_html():
@@ -154,12 +162,22 @@ def build_html():
         rows = []
         for d in sorted(groups[t], key=lambda x: str(x.get("store", "")).lower()):
             store = html.escape(str(d.get("store", "")))
+            st = pol.state_for(STATE, d.get("store"))
             item = html.escape(plain(str(d.get("item", ""))))
             amt = html.escape(money_bits(d))
-            if t == "invest" and not d.get("last_verified"):
-                # rule: quote only figures verified on the provider's own page, so investing rows show none
-                amt = ""
-                item = "Sign-up offer listed. The amount and conditions are on the provider's page."
+            investing = pol.is_investing(st) or t == "invest"
+            risk_html = ""
+            if investing:
+                # investing: no £ figure unless the provider's own page states a maximum (max_claim), else type + "value varies"
+                a_txt, _note = pol.display_amount(dict(st, investing="yes") if not pol.is_investing(st) else st, "", "")
+                amt = html.escape(a_txt)
+                item = "Sign-up offer. Conditions, such as a minimum deposit or time limit, are on the provider's page."
+                risk_html = '<p class="risk"><strong>Risk warning:</strong> {}</p>'.format(html.escape(RISK_WARNING))
+            elif pol.is_premier(str(d.get("store", "")) + " " + str(d.get("item", ""))):
+                a_txt, _note = pol.display_amount(st, d.get("deal_price"), str(d.get("store", "")) + " " + str(d.get("item", "")))
+                if a_txt != str(d.get("deal_price") or ""):
+                    amt = html.escape(a_txt)
+                    item = "Premier account switch. The provider's eligibility conditions are on its own page."
             link = html.escape(str(d.get("link", "")), quote=True)
             if not store or not item:
                 continue
@@ -179,11 +197,14 @@ def build_html():
                 )
             else:
                 link_html = '<a href="{}" rel="nofollow noopener" target="_blank">provider\'s own page</a>'.format(link)
+            ver = html.escape(pol.verification_label(st))
+            if st.get("source_url") and pol.verified_by_fetch(st):
+                ver = '<a href="{}" rel="nofollow noopener" target="_blank">{}</a>'.format(html.escape(st["source_url"], quote=True), ver)
             rows.append(
                 '<div class="offer" id="{}">'
                 "<h3>{} {}</h3>"
-                "<p>{} · {} · {}"
-                "</p></div>".format(anchor, store, amt_html, item, html.escape(verify_text(d, checked)), link_html)
+                "<p>{} · {}</p>{}"
+                "<p>{}</p></div>".format(anchor, store, amt_html, item, ver, risk_html, link_html)
             )
         if rows:
             warn = '<p class="risk"><strong>Risk warning:</strong> {}</p>\n'.format(html.escape(RISK_WARNING)) if t == "invest" else ""

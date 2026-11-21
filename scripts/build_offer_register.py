@@ -12,6 +12,8 @@ from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).parent))
 import make_offers_page as mop  # noqa: E402
+import offer_policy as pol  # noqa: E402
+STATE = pol.load_state()
 
 ROOT = Path(__file__).resolve().parent.parent
 TODAY = datetime(2026, 11, 20) if "--today" not in sys.argv else datetime.strptime(sys.argv[sys.argv.index("--today") + 1], "%Y-%m-%d")
@@ -75,11 +77,16 @@ def main():
     for o in app:
         row(key(o["name"]), o["name"])["app"].append(o)
 
+    # providers that are hidden everywhere still get a row, so the register shows why
+    for sk, sv in STATE.items():
+        if sv.get("hidden") and not any(match(kk, sk) for kk in rows):
+            rows[sk] = {"provider": sv["provider"], "page": [], "app": [], "deals": []}
     out = []
     for k, r in sorted(rows.items(), key=lambda kv: kv[1]["provider"].lower()):
         deals_r, app_r = r["deals"], r["app"]
         deals_vis = [d for d in deals_r if not mop.is_hidden(d)]
-        is_hid = bool(deals_r) and all(mop.is_hidden(d) for d in deals_r) and not app_r
+        st = pol.state_for(STATE, provider_name := r["provider"])
+        is_hid = bool(st.get("hidden")) or (bool(deals_r) and all(mop.is_hidden(d) for d in deals_r) and not app_r)
         # app hidden rows are not in the dump at all
         provider = r["provider"]
         cat = ""
@@ -105,6 +112,9 @@ def main():
         for d in deals_vis:
             shown.append("offers.html: " + ("no figure (investing, unverified)" if d.get("type") in ("invest", "pension") and not d.get("last_verified") else mop.money_bits(d)))
         amount_shown = " | ".join(dict.fromkeys(shown))
+        inv_state = st.get("investing", "no")
+        if inv_state in ("yes", "borderline") and not is_hid:
+            amount_shown = pol.display_amount(st, "", "")[0] + " (no £ figure)"
         # verification
         ver_dates, ver_src = [], ""
         for a in app_r:
@@ -118,9 +128,9 @@ def main():
                 if not mop.is_referral(d, markers) and not ver_src:
                     ver_src = d.get("link", "")
         vdate = max(ver_dates) if ver_dates else ""
-        verified = ("{} {}".format(vdate[:10], ver_src) if ver_src else "{} (no official page link on record)".format(vdate[:10])) if vdate else "no"
-        age = days_old(vdate) if vdate else None
-        verified_note = ("; over 30 days old, page says verify" if (age is not None and age > 30) else "")
+        verified = pol.verification_label(st)
+        verified_note = ""
+        vdate = ""
         # conditions
         desc_all = " ".join((a.get("desc") or "") for a in app_r)
         cond_words = re.search(r"eligib|new customer|minimum|deposit|within|CASS|direct debit|conditions|terms|sole|18\+|must|requires", desc_all, re.I)
@@ -139,10 +149,10 @@ def main():
             if str(e)[:10] < TODAY.strftime("%Y-%m-%d"):
                 expiry_passed = "Y"
         # investing / leveraged
-        invest = bool(INVEST_RX.search(provider + " " + cat)) or any(a.get("investing") for a in app_r) or any(d.get("type") in ("invest", "pension") for d in deals_vis)
-        lev = LEVERAGED_FLAG.get(k, "")
+        invest = inv_state in ("yes", "borderline")
+        lev = ""
         if is_hid:
-            lev = "CFD / leveraged broker: not promoted"
+            lev = st.get("hidden_reason") or "hidden"
         flag = ("investing" if invest else "") + (("; " if invest and lev else "") + ("LEVERAGED? " + lev if lev else ""))
         risk_shown = ("Y (offers.html invest section + app card and panel)" if invest and not is_hid else "n/a") if invest or lev else "n/a"
         text_all = " ".join([desc_all] + [mop.plain(str(d.get("item", ""))) for d in deals_vis] + [str(a.get("reward")) for a in app_r])
@@ -163,21 +173,21 @@ def main():
             fix.append("hidden: CFD / leveraged broker")
         if k.startswith("trading212") or k == "trading212":
             pass
-        if lev and not is_hid:
-            needs.append(lev)
+        if k.startswith("ig"):
+            needs.append("IG: kept hidden. Confirm the referral terms are for a share dealing account (no CFD or spread betting), then it can be shown as 'Share dealing account'")
         if k.startswith("plum"):
             needs.append("Plum: earlier listing said 'Expires April 7th' with no year; expiry removed, confirm the live terms and end date on Plum's page")
         if k.startswith("natwest") or k.startswith("hsbc") or k.startswith("barclays"):
             needs.append("Same bank appears with different products/amounts (Premier £500/£600 vs standard £200-£300); confirm amounts and eligibility on the bank pages")
-        if invest and not vdate and not is_hid:
-            needs.append("Investing offer: amount hidden until you verify the figure on the provider's own page and give me the date and source")
+        if invest and not is_hid and not pol.max_claim_ok(st):
+            needs.append("Investing: no £ figure shown. Send the provider's own page that states the maximum, with date and source, to show 'up to £X'")
         if k.startswith("freetrade") or k.startswith("robinhood"):
             fix.append("'Free Share' wording replaced with 'share bonus'; unverified £100/£140 amounts removed from the card; risk warning added")
         if expiry_passed == "Y":
             fix.append("expired: remove or hide")
         if any(lab in risky for lab in ("free share", "free money", "guarantee", "risk-free", "easy money")):
             fix.append("risky wording still present: " + ", ".join(risky))
-        if any(d.get("type") != "supermarket" and mop.money_bits(d) != str(d.get("deal_price") or "") for d in deals_vis):
+        if any(d.get("type") != "supermarket" and " (-" in mop.money_bits(d) for d in deals_vis):
             fix.append("was-price still shown on non-supermarket row")
         if label_gap:
             fix.append("referral link without Ad label")
@@ -188,7 +198,7 @@ def main():
         status = "FIX NOW" if remaining_fix else ("NEEDS ALBERTO" if needs else "OK")
         if is_hid:
             status = "HIDDEN (CFD/leveraged)"
-        fca = bool(FCA_RX.search(provider + " " + cat)) or invest or bool(lev)
+        fca = st.get("fca_priority", 0) > 0 or bool(lev)
         out.append({
             "slug": (app_r[0]["id"] if app_r else re.sub(r"[^a-z0-9]+", "-", provider.lower()).strip("-")),
             "provider": provider,
@@ -209,7 +219,17 @@ def main():
             "status": status,
             "fix_applied_in_compliance_a": fix_applied,
             "needs_alberto": " | ".join(needs),
-            "fca_register_check_needed": ("Y: " + HARD_FCA_REASON) if fca else "N",
+            "fca_register_check_needed": ("Y" if fca else "N"),
+            "fca_priority": {1: "1 investing/crypto/broker", 2: "2 bank/payments/credit", 0: ""}.get(st.get("fca_priority", 0), ""),
+            "investing": st.get("investing", "no"),
+            "crypto": "Y" if st.get("crypto") else "N",
+            "reward_type": st.get("reward_type", "") + (" (guess, unconfirmed)" if invest and st.get("reward_type") != "shares" else ""),
+            "max_claim_source": ("{} {} {}".format(st["max_claim"]["amount"], st["max_claim"]["source_url"], st["max_claim"]["date"]) if pol.max_claim_ok(st) else ("none" if invest else "")),
+            "referral_product": st.get("referral_product", "") if invest else "",
+            "conditions_listing": st.get("conditions") or st.get("listing_terms", ""),
+            "source_url": st.get("source_url", ""),
+            "last_checked": st.get("last_checked") or "",
+            "offer_status": st.get("status", "check"),
         })
     out_path = ROOT / "docs" / "offer-register.csv"
     out_path.parent.mkdir(exist_ok=True)
