@@ -1,0 +1,36 @@
+{
+  "_note": "PLACEHOLDER copy only. Final wording must come from Trading.com's approved copy. Do not add a referral_url until Alberto supplies the approved referral URL. Not deployed: scripts/build_partner_slots.py publishes data/partner-slots.json only when TRADING_COM_ENABLED is true.",
+  "id": "trading-com",
+  "provider": "Trading.com",
+  "approved_copy": false,
+  "referral_url": "",
+  "utm": {
+    "utm_source": "moneyhunters",
+    "utm_medium": "referral",
+    "utm_campaign": "trading-com-invest"
+  },
+  "events": {
+    "view": "trading-com-view",
+    "click": "trading-com-click"
+  },
+  "placements": ["home", "app-invest", "guide"],
+  "guide_slug": "trading-com-invest-account",
+  "card": {
+    "ad_label": "Ad",
+    "headline": "Invest account",
+    "body": "Placeholder text. Trading.com's approved wording replaces this before launch.",
+    "risk": "Capital at risk. Not advice or a recommendation. Check the firm on the FCA register.",
+    "cta": "Visit provider",
+    "guide_cta": "Read our page"
+  },
+  "page": {
+    "title": "Trading.com Invest account",
+    "intro": "Placeholder page. Trading.com's approved wording replaces this before launch.",
+    "sections": [
+      {"h": "What this is", "p": "An Invest account from Trading.com. [Approved description goes here.]"},
+      {"h": "Before you decide", "p": "Capital at risk. The value of investments can fall as well as rise and you may get back less than you put in. Nothing on this page is advice or a personal recommendation."},
+      {"h": "Check the firm", "p": "Check that the firm and the product are on the FCA register before you use them. We have not checked this for you."},
+      {"h": "How we are paid", "p": "This is an advertisement. If you use our link, Money Hunters UK may earn a commission, at no extra cost to you."}
+    ]
+  }
+}

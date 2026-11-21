@@ -20,7 +20,8 @@ gdir = root / "guides"
 if gdir.is_dir():
     out += ["  <url>", "    <loc>https://moneyhunters.co.uk/guides/</loc>", f"    <lastmod>{today}</lastmod>", "    <changefreq>weekly</changefreq>", "    <priority>0.8</priority>", "  </url>"]
     for f in sorted(gdir.glob("*/index.html")):
-        if "<!-- redirect-stub -->" in f.read_text(encoding="utf-8"):
+        _t = f.read_text(encoding="utf-8")
+        if "<!-- redirect-stub -->" in _t or "<!-- partner-draft -->" in _t:
             continue
         m = re.search(r'"dateModified": "(\d{4}-\d{2}-\d{2})"', f.read_text(encoding="utf-8"))
         out += ["  <url>", f"    <loc>https://moneyhunters.co.uk/guides/{f.parent.name}/</loc>", f"    <lastmod>{m.group(1) if m else today}</lastmod>", "    <changefreq>monthly</changefreq>", "    <priority>0.7</priority>", "  </url>"]
