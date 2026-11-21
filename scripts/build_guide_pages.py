@@ -14,7 +14,8 @@ def nice(d):
     y,m,dd=map(int,d.split("-"));return f"{dd} {datetime.date(y,m,dd).strftime('%B')} {y}"
 pb=json.load(open(os.path.join(ROOT,"data","playbook.json"),encoding="utf-8"))
 NEWS='<div class="box"><div class="lbl">Weekly email</div><p>The Money Drop: one email a week with the freshest UK bank switches, cashback and free-share offers. Free, unsubscribe any time.</p><iframe loading="lazy" title="Subscribe to the Money Drop" width="540" height="305" src="https://74f208ba.sibforms.com/v2/serve/MUIFAFatJ19YBCgL_8OC4uZ5fBePkhu7SoQvYgtr0wdDAHDh8p3INb8HL95eBukwXmcw6eSy9l21fAZ9j904cUItf6li832Ro_b8bIkYS6DRWodkrhDtEnh_e_Uby_2jvxs6ApPdjg9-KI3K69aSvIwTx7GL_JoR-9iAg5078QebcnjT28u-EKbYoAA6YamSH3UvqHQA_Nj4w9bvyw==" frameborder="0" scrolling="auto" style="display:block;max-width:100%;border:0"></iframe></div>'
-UMAMI='<script defer src="https://cloud.umami.is/script.js" data-website-id="f9d2c068-643f-4cfc-847e-c22fec24bafe"></script>'
+UMAMI_OPTOUT="<script>try{var q=new URLSearchParams(location.search).get('mh_me');if(q==='1')localStorage.setItem('umami.disabled','1');else if(q==='0')localStorage.removeItem('umami.disabled')}catch(e){}</script>"
+UMAMI=UMAMI_OPTOUT+'<script defer src="https://cloud.umami.is/script.js" data-website-id="f9d2c068-643f-4cfc-847e-c22fec24bafe"></script>'
 CSS="""
 :root{--bg:#080b10;--bg2:#0d1219;--bg3:#131b26;--g:#1fe887;--gl:rgba(31,232,135,.12);--t:#f0f4f8;--tm:#a3b2c4;--tl:#6b7d92;--line:rgba(255,255,255,.08);--warn:#ffb454;--fh:'Inter',system-ui,sans-serif;--fb:'DM Sans',system-ui,sans-serif}
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}

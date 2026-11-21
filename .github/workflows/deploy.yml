@@ -130,6 +130,9 @@ jobs:
       - name: Offer display policy
         run: python3 tests/check_offer_policy.py
 
+      - name: Analytics opt-out snippet
+        run: python3 tests/check_tracking.py
+
       - name: All tests passed
         run: echo "✅ All checks passed — deploying..."
 
