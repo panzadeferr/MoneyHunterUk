@@ -1,1 +1,38 @@
-[]
+[
+ {
+  "key": "starlingbank",
+  "source_url": "https://www.starlingbank.com/referral/",
+  "observed_at": "2026-11-21",
+  "kind": "amount",
+  "field": "amount_override",
+  "before": "£10",
+  "after": "£25",
+  "pct": 150.0,
+  "decision": "queue",
+  "reason": "amount read from provider page, change 150.0% is over the 30% limit"
+ },
+ {
+  "key": "tescomobile",
+  "source_url": "https://www.tescomobile.com/",
+  "observed_at": "2026-11-21",
+  "kind": "amount",
+  "field": "amount_override",
+  "before": "£20",
+  "after": "£60",
+  "pct": 200.0,
+  "decision": "queue",
+  "reason": "amount read from provider page, change 200.0% is over the 30% limit"
+ },
+ {
+  "key": "yonder",
+  "source_url": "https://www.yonder.co.uk/",
+  "observed_at": "2026-11-21",
+  "kind": "amount",
+  "field": "amount_override",
+  "before": "£10",
+  "after": "£5990",
+  "pct": 59800.0,
+  "decision": "queue",
+  "reason": "amount read from provider page, change 59800.0% is over the 30% limit"
+ }
+]
