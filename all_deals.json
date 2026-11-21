@@ -331,28 +331,6 @@
       "last_verified": "2026-10-06"
     },
     {
-      "store": "Halifax",
-      "item": "Switch Account → £150",
-      "deal_price": "£150",
-      "link": "https://www.halifax.co.uk/currentaccounts/",
-      "original_price": "£0",
-      "saving_percent": 100,
-      "type": "bank_switch",
-      "code": "",
-      "steps": [
-        "Switch using CASS",
-        "Pay in £1,500",
-        "Get £150"
-      ],
-      "timeFrame": "30 days",
-      "category": "bank_switch",
-      "stacked_price": 0,
-      "best_payment_method": "N/A",
-      "stacking_rate": 0,
-      "last_scraped": "2026-11-21 18:54:59",
-      "last_updated": "2026-11-21 18:54:59"
-    },
-    {
       "store": "Amex",
       "item": "Spend £3,000 → £150+",
       "deal_price": "£150",

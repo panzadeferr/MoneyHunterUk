@@ -795,10 +795,10 @@
    "source_is_provider_page": true,
    "last_checked": null,
    "checked_by": null,
-   "status": "check",
+   "status": "ended",
    "fca_priority": 2,
-   "hidden": false,
-   "hidden_reason": "",
+   "hidden": true,
+   "hidden_reason": "Removed 2026-11-21 at Alberto's request: Halifax is being rebranded to Lloyds and new Halifax accounts can no longer be opened.",
    "notes": ""
   },
   "hellofresh": {
