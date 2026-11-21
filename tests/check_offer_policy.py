@@ -39,13 +39,14 @@ for r in rows:
     if pol.is_investing(s):
         if "£" in txt.split("Risk warning")[0] and not pol.max_claim_ok(s):fail.append("offers.html '%s': investing row shows a £ figure without max_claim"%name)
         if "Risk warning" not in r:fail.append("offers.html '%s': investing row has no risk warning"%name)
-        elif "<a " in r and r.index("Risk warning")>r.index("<a "):fail.append("offers.html '%s': risk warning is below the link"%name)
+        elif "<a " in r and r.index("Risk warning")>r.rindex("<a "):fail.append("offers.html '%s': risk warning is below the link"%name)
         if 'class="ad"' in r and r.index('class="ad"')<r.index("Risk warning"):fail.append("offers.html '%s': Ad label must come after the risk line, directly before the link"%name) if False else None
+    # claim link = last link in the row (the verification label link is a source, not the claim)
     if "premier" in name.lower() and "£" in name and not s.get("conditions"):fail.append("offers.html '%s': Premier amount shown without eligibility conditions"%name)
     if "last checked" in txt and not pol.verified_by_fetch(s):fail.append("offers.html '%s': 'last checked' without a real fetch on the provider page"%name)
     if "last checked" not in txt and "not verified by a person" not in txt:fail.append("offers.html '%s': no verification label"%name)
     if re.search(r'rel="sponsored',r) and 'class="ad"' not in r:fail.append("offers.html '%s': referral link without Ad"%name)
-    if re.search(r'class="ad"',r) and r.index('class="ad"')>r.index("<a "):fail.append("offers.html '%s': Ad label after the link"%name)
+    if re.search(r'class="ad"',r) and r.index('class="ad"')>r.rindex("<a "):fail.append("offers.html '%s': Ad label after the link"%name)
 if re.search(r"etoro|xtb|trading ?212",re.sub(r"<[^>]+>"," ",t),re.I):fail.append("offers.html: CFD broker still listed")
 for sec in re.split(r"<h2>",t)[1:]:
     head=sec.split("</h2>")[0]
