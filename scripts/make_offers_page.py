@@ -54,17 +54,75 @@ FALLBACK_GROUPS = [
 ]
 
 
+# Brokers whose main product is leveraged (CFD / spread betting). We do not promote these.
+# Matched on a lower-cased store name with spaces and punctuation removed.
+sys.path.insert(0, str(Path(__file__).resolve().parent))
+import offer_policy as pol  # noqa: E402
+
+HIDDEN_STORES = {"etoro", "xtb", "trading212", "trading212cfd"}
+
+RISK_WARNING = pol.RISK_WARNING
+_OLD_RISK = (
+    "Capital at risk. The value of investments can fall as well as rise and you may get back less "
+    "than you put in. Nothing here is advice or a personal recommendation. Check that a firm is on "
+    "the FCA register before you use it."
+)
+
+# Wording we do not use. "Free" implies no conditions, so scraped text is rewritten on display.
+_WORDING = [
+    (re.compile(r"\bfree\s+shares?\b", re.I), "share bonus"),
+    (re.compile(r"\bfree\s+money\b", re.I), "bonus"),
+    (re.compile(r"\bguaranteed\b", re.I), "possible"),
+    (re.compile(r"\brisk[- ]free\b", re.I), "lower-risk"),
+]
+
+
+def plain(text):
+    return pol.plain(text)
+
+
+def store_key(deal):
+    return re.sub(r"[^a-z0-9]", "", str(deal.get("store", "")).lower())
+
+
+def is_hidden(deal):
+    if store_key(deal) in HIDDEN_STORES or pol.is_hidden_provider(deal.get("store")):
+        return True
+    st = pol.state_for(STATE, deal.get("store"))
+    return bool(st.get("hidden")) or st.get("status") == "ended"
+
+
 def money_bits(deal):
+    """Amount text. A 'was £X (-N%)' comparison is only valid for supermarket price rows;
+    for referral, bank and investing rows 'original_price' is the scraper's entry cost, not a
+    previous price, so it is never shown there."""
     out = []
     price = str(deal.get("deal_price") or "")
     was = str(deal.get("original_price") or "")
     saving = deal.get("saving_percent")
     if price:
-        out.append(price)
-    # only show a "was" line when it is a real previous price, not a zero placeholder
-    if was and was not in ("£0", "£0.00", "0", "0.00") and saving and 0 < saving < 100:
+        out.append(pol.display_amount({}, price, "")[0])
+    if (deal.get("type") == "supermarket" and was
+            and was not in ("£0", "£0.00", "0", "0.00") and saving and 0 < saving < 100):
         out.append("was {} (-{}%)".format(was, saving))
     return " ".join(out)
+
+
+def verify_text(deal, checked):
+    """Plain wording about how recently a human checked this amount."""
+    lv = str(deal.get("last_verified") or "")[:10]
+    try:
+        vd = datetime.strptime(lv, "%Y-%m-%d")
+        age = (datetime.strptime(checked[:10], "%Y-%m-%d") - vd).days
+        label = vd.strftime("%-d %b %Y") if sys.platform != "win32" else lv
+    except ValueError:
+        return "from the daily scrape and not individually checked, so verify it on the provider's page"
+    if age > 30:
+        return "last checked {}, which is over 30 days ago, so verify it on the provider's page".format(label)
+    return "last checked {}, verify it on the provider's page".format(label)
+
+
+STATE = pol.load_state()
 
 
 def build_html():
@@ -78,7 +136,14 @@ def build_html():
     if not markers:
         raise SystemExit("REF_MARKERS not found in app.html: refusing to build an unlabelled offers page")
     groups = {}
+    seen_rows = set()
     for d in deals:
+        if is_hidden(d):
+            continue
+        dk = (store_key(d), str(d.get("deal_price") or "").strip().lower(), d.get("type"))
+        if dk in seen_rows:
+            continue
+        seen_rows.add(dk)
         t = d.get("type") or "megalist"
         if t in ("pension",):
             t = "invest"
@@ -86,6 +151,7 @@ def build_html():
             t = "earn"
         groups.setdefault(t, []).append(d)
 
+    n_shown = sum(len(v) for v in groups.values())
     sections = []
     jsonld_items = []
     seen_types = set()
@@ -96,10 +162,23 @@ def build_html():
         rows = []
         for d in sorted(groups[t], key=lambda x: str(x.get("store", "")).lower()):
             store = html.escape(str(d.get("store", "")))
-            item = html.escape(str(d.get("item", "")))
+            st = pol.state_for(STATE, d.get("store"))
+            item = html.escape(plain(str(d.get("item", ""))))
             amt = html.escape(money_bits(d))
+            investing = pol.is_investing(st) or t == "invest"
+            risk_html = ""
+            if investing:
+                # investing: no £ figure unless the provider's own page states a maximum (max_claim), else type + "value varies"
+                a_txt, _note = pol.display_amount(dict(st, investing="yes") if not pol.is_investing(st) else st, "", "")
+                amt = html.escape(a_txt)
+                item = "Sign-up offer. Conditions, such as a minimum deposit or time limit, are on the provider's page."
+                risk_html = '<p class="risk"><strong>Risk warning:</strong> {}</p>'.format(html.escape(RISK_WARNING))
+            elif pol.is_premier(str(d.get("store", "")) + " " + str(d.get("item", ""))):
+                a_txt, _note = pol.display_amount(st, d.get("deal_price"), str(d.get("store", "")) + " " + str(d.get("item", "")))
+                if a_txt != str(d.get("deal_price") or ""):
+                    amt = html.escape(a_txt)
+                    item = "Premier account switch. The provider's eligibility conditions are on its own page."
             link = html.escape(str(d.get("link", "")), quote=True)
-            updated = html.escape(str(d.get("last_updated") or checked)[:10])
             if not store or not item:
                 continue
             amt_html = '<span class="amt">{}</span>'.format(amt) if amt else ""
@@ -118,14 +197,18 @@ def build_html():
                 )
             else:
                 link_html = '<a href="{}" rel="nofollow noopener" target="_blank">provider\'s own page</a>'.format(link)
+            ver = html.escape(pol.verification_label(st))
+            if st.get("source_url") and pol.verified_by_fetch(st):
+                ver = '<a href="{}" rel="nofollow noopener" target="_blank">{}</a>'.format(html.escape(st["source_url"], quote=True), ver)
             rows.append(
                 '<div class="offer" id="{}">'
                 "<h3>{} {}</h3>"
-                "<p>{} · checked {} · {}"
-                "</p></div>".format(anchor, store, amt_html, item, updated, link_html)
+                "<p>{} · {}</p>{}"
+                "<p>{}</p></div>".format(anchor, store, amt_html, item, ver, risk_html, link_html)
             )
         if rows:
-            sections.append("<h2>{} ({})</h2>\n{}".format(html.escape(label), len(rows), "\n".join(rows)))
+            warn = '<p class="risk"><strong>Risk warning:</strong> {}</p>\n'.format(html.escape(RISK_WARNING)) if t == "invest" else ""
+            sections.append("<h2>{} ({})</h2>\n{}{}".format(html.escape(label), len(rows), warn, "\n".join(rows)))
 
     jsonld = ""
     if jsonld_items:
@@ -144,7 +227,7 @@ def build_html():
         site=SITE,
         month=html.escape(month),
         checked=html.escape(checked_long),
-        n=len(deals),
+        n=n_shown,
         sections="\n".join(sections),
         jsonld=jsonld,
     )
@@ -180,6 +263,7 @@ a {{ color: var(--g); }}
 .offer h3 .amt {{ color: var(--g); font-weight: 800; }}
 .offer p {{ margin: 6px 0 0; font-size: 14px; }}
 
+.risk {{ border: 1px solid var(--tm); border-radius: 8px; padding: 8px 10px; font-size: 13px; }}
 .ad {{ display: inline-block; font-size: 11px; font-weight: 800; color: var(--bg); background: var(--tm); border-radius: 4px; padding: 0 6px; }}
 .cta {{ margin-top: 32px; padding: 16px 20px; background: var(--bg2); border: 1px solid var(--line); border-radius: 12px; }}
 </style>
@@ -198,7 +282,8 @@ document.addEventListener('click', function(e) {{
 <body>
 <div class="wrap">
 <h1>UK money offers ({month})</h1>
-<p class="updated">{n} tracked offers · last checked {checked} · moneyhunters.co.uk · free, independent, not financial advice</p>
+<p class="updated">{n} tracked offers · last checked {checked} · moneyhunters.co.uk · independent, not financial advice</p>
+<p class="risk"><strong>Investing:</strong> capital at risk. Offers are not advice or a personal recommendation, and amounts are not promised. Check a firm is on the FCA register before you use it.</p>
 <p>Amounts are as shown on each retailer's own page when last scraped. Conditions apply and each retailer's page is the source of truth. Links marked <span class="ad">Ad</span> are our referral links: if you sign up through one, we may earn a commission. It never changes what we list or the order. Other links go to the provider's own page.</p>
 {sections}
 {jsonld}

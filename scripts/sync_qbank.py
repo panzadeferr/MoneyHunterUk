@@ -24,7 +24,7 @@ m=re.search(r'(<script id="guides" type="application/json">)(.*?)(</script>)',s,
 for c in pb['chapters']:
     if c.get('locked'):continue
     for a in c['articles']:
-        if a['id'] not in g and a.get('body'):g[a['id']]={'t':a['title'],'s':a.get('summary',''),'tp':c['title']}
+        if a.get('body'):g[a['id']]={'t':a['title'],'s':a.get('summary',''),'tp':c['title']}
 s=s[:m.start(2)]+json.dumps(g,ensure_ascii=False).replace('</','<\\/')+s[m.end(2):]
 open(gp,'w',encoding='utf-8').write(s)
 print(len(questions),'questions;',len(g),'guides')

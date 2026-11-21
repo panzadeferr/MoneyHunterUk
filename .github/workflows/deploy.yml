@@ -127,6 +127,9 @@ jobs:
       - name: Affiliate disclosure (Ad labels)
         run: python3 tests/check_disclosure.py
 
+      - name: Offer display policy
+        run: python3 tests/check_offer_policy.py
+
       - name: All tests passed
         run: echo "✅ All checks passed — deploying..."
 

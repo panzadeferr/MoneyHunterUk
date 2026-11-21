@@ -1,0 +1,26 @@
+{
+ "display_amount": [
+  {"name": "investing, no max_claim: no £ figure", "state": {"investing": "yes", "reward_type": "shares"}, "raw": "£100", "text": "", "expect": "Share bonus, value varies"},
+  {"name": "borderline investing is treated as investing", "state": {"investing": "borderline", "reward_type": "cash"}, "raw": "£75", "text": "", "expect": "Sign-up reward, value varies"},
+  {"name": "investing with a provider-stated maximum", "state": {"investing": "yes", "max_claim": {"amount": "£100", "source_url": "https://provider.example/terms", "date": "2026-11-20"}}, "raw": "£100", "text": "", "expect": "up to £100"},
+  {"name": "max_claim without a source is ignored", "state": {"investing": "yes", "max_claim": {"amount": "£100", "source_url": "", "date": "2026-11-20"}}, "raw": "£100", "text": "", "expect": "Sign-up reward, value varies"},
+  {"name": "premier without conditions hides the amount", "state": {"investing": "no"}, "raw": "£600", "text": "Barclays Premier switch", "expect": "Premier account (amount hidden)"},
+  {"name": "premier with conditions keeps the amount", "state": {"investing": "no", "conditions": "Premier eligibility: £100k income"}, "raw": "£500", "text": "NatWest Premier", "expect": "£500"},
+  {"name": "non-investing keeps its amount", "state": {"investing": "no"}, "raw": "£200", "text": "NatWest switch", "expect": "£200"},
+  {"name": "price 'Free' is reworded", "state": {"investing": "no"}, "raw": "Free", "text": "Costa", "expect": "Offer, conditions apply"}
+ ],
+ "plain": [
+  ["Deposit £1 — Free Share up to £100", "Deposit £1 — share bonus up to £100"],
+  ["Business Account - £75 Free", "Business Account - £75 bonus"],
+  ["Refer a Friend — 6 months free", "Refer a Friend — 6 months fee waiver"],
+  ["Free Coffee on First Purchase", "Coffee offer on First Purchase"],
+  ["Free National Trust Day Pass", "National Trust day pass offer"],
+  ["Free money, risk-free", "bonus, lower-risk"]
+ ],
+ "verification_label": [
+  {"name": "no fetch: not verified", "state": {"source_url": "https://p.example", "source_is_provider_page": true, "last_checked": "2026-11-20", "checked_by": null}, "expect": "not verified by a person"},
+  {"name": "date without provider page: not verified", "state": {"source_url": "https://p.example", "source_is_provider_page": false, "last_checked": "2026-11-20", "checked_by": "fetch"}, "expect": "not verified by a person"},
+  {"name": "hand-entered date: not verified", "state": {"source_url": "https://p.example", "source_is_provider_page": true, "last_checked": "2026-11-20", "checked_by": "hand"}, "expect": "not verified by a person"},
+  {"name": "real fetch on provider page", "state": {"source_url": "https://p.example", "source_is_provider_page": true, "last_checked": "2026-11-20", "checked_by": "fetch"}, "expect": "last checked 2026-11-20 · provider page"}
+ ]
+}
