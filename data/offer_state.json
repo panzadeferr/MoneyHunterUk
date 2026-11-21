@@ -259,18 +259,19 @@
    "crypto": false,
    "reward_type": "cash",
    "referral_product": "",
-   "conditions": "",
+   "conditions": "£50 each. Friend deposits £1,000 or more within 30 days of opening and enters the code in the app. Referee must not have applied before 3 Dec 2025.",
    "listing_terms": "Deposit £1,000 → £50 | £50 | Deposit £1,000 and follow the current referral steps to get £50.",
    "max_claim": null,
-   "source_url": "",
-   "source_is_provider_page": false,
-   "last_checked": null,
-   "checked_by": null,
+   "source_url": "https://www.chase.co.uk/legal/refer-a-friend-2-terms-and-conditions/",
+   "source_is_provider_page": true,
+   "last_checked": "2026-11-21",
+   "checked_by": "fetch",
    "status": "check",
    "fca_priority": 2,
    "hidden": false,
    "hidden_reason": "",
-   "notes": ""
+   "notes": "2026-11-21 provider terms: £50 each, friend deposits £1,000 within 30 days. Terms: codes only to people you know, not for paid promotion/ads: compliance flag for public listing.",
+   "conditions_source": "https://www.chase.co.uk/legal/refer-a-friend-2-terms-and-conditions/"
   },
   "cheddar": {
    "provider": "Cheddar",
@@ -297,18 +298,23 @@
    "crypto": false,
    "reward_type": "cash",
    "referral_product": "unknown",
-   "conditions": "",
+   "conditions": "£50 bonus for the referrer. Friend deposits at least £1,000 into a Chip account and holds it for 90 consecutive days. Offer window 16:00 11 Nov to 23:59 26 Nov 2026.",
    "listing_terms": "Tiered Savings — £100 Bonus | See provider page | Sign-up offer listed. The amount and conditions are on the provider's page. Capital at risk.",
-   "max_claim": null,
-   "source_url": "https://getchip.uk/",
+   "max_claim": {
+    "amount": "£50",
+    "source_url": "https://www.getchip.uk/promotions/refer-a-friend",
+    "date": "2026-11-21"
+   },
+   "source_url": "https://www.getchip.uk/promotions/refer-a-friend",
    "source_is_provider_page": true,
-   "last_checked": null,
-   "checked_by": null,
+   "last_checked": "2026-11-21",
+   "checked_by": "fetch",
    "status": "check",
    "fca_priority": 1,
    "hidden": false,
    "hidden_reason": "",
-   "notes": "savings app with an investing option | 2026-11-21 provider promo page: £50 each, promotion ended 8 March 2026 (min £5,000 for 90 days). Listing says £100: unverified. Kept listed with no amount; Alberto to confirm whether a current offer exists."
+   "notes": "2026-11-21 provider promo page fetched: £50, window to 26 Nov 2026. Replaces earlier note (older referral50 page, ended 8 Mar 2026). Listing text still says £100: fix. Offer ends 26 Nov, remove or mark ended after that.",
+   "conditions_source": "https://www.getchip.uk/promotions/refer-a-friend"
   },
   "clearpay": {
    "provider": "Clearpay",
@@ -655,7 +661,7 @@
    "fca_priority": 1,
    "hidden": false,
    "hidden_reason": "",
-   "notes": "2026-11-21 provider terms: both 2026 offers pages found are closed (GBP20-100 ran 26 Jun-10 Jul 2026; GBP10-250 ran 25 Sep-9 Oct 2026). No current offer page found. Kept listed with no amount.",
+   "notes": "2026-11-21 provider terms: both 2026 offers pages found are closed (GBP20-100 ran 26 Jun-10 Jul 2026; GBP10-250 ran 25 Sep-9 Oct 2026). No current offer page found. Kept listed with no amount. | 2026-11-21 UPDATE: provider page freetrade.io/free-share shows referral live: free share £10-£100 both sides, £50 net funding within 30 days, no dates. Terms say link must only be shared with family and friends, not on public social media or forums: compliance flag for a public referral link. Earlier note that 2026 offers had closed is superseded.",
    "conditions_source": {
     "url": "https://freetrade.io/free-share",
     "date": "2026-11-21",
@@ -1077,18 +1083,19 @@
    "crypto": false,
    "reward_type": "other",
    "referral_product": "",
-   "conditions": "",
+   "conditions": "£200 when you open a Club Lloyds, Silver, Platinum or Premier account between 17 Sep 2026 and 8 Jan 2027 and switch at least 3 active direct debits. Switch must start by 8 Jan 2027.",
    "listing_terms": "Club Lloyds switch",
    "max_claim": null,
-   "source_url": "",
-   "source_is_provider_page": false,
-   "last_checked": null,
-   "checked_by": null,
-   "status": "check",
+   "source_url": "https://www.lloydsbank.com/current-accounts/switch.html",
+   "source_is_provider_page": true,
+   "last_checked": "2026-11-21",
+   "checked_by": "fetch",
+   "status": "live",
    "fca_priority": 2,
    "hidden": false,
    "hidden_reason": "",
-   "notes": ""
+   "notes": "",
+   "conditions_source": "https://www.lloydsbank.com/current-accounts/switch.html"
   },
   "measuremsr": {
    "provider": "Measure (msr)",
@@ -1507,7 +1514,7 @@
    "fca_priority": 1,
    "hidden": false,
    "hidden_reason": "",
-   "notes": "2026-11-21 provider page: referrer 5 fractional shares, friend 1, up to $1,500 a year, deposit within 14 days; no £ value stated. No amount shown."
+   "notes": "2026-11-21 provider page: referrer 5 fractional shares, friend 1, up to $1,500 a year, deposit within 14 days; no £ value stated. No amount shown. | 2026-11-21 sheet: 2026 UK invite campaign ended 8 Sep 2026; no current campaign found. Kept listed, no amount."
   },
   "robinhooduk": {
    "provider": "Robinhood UK",
@@ -1526,7 +1533,7 @@
    "fca_priority": 0,
    "hidden": false,
    "hidden_reason": "",
-   "notes": ""
+   "notes": "2026-11-21 sheet: 2026 UK invite campaign ended 8 Sep 2026; no current campaign found. Kept listed, no amount."
   },
   "roostermoney": {
    "provider": "Rooster Money",
@@ -1974,7 +1981,7 @@
    "provider": "Webull",
    "investing": "yes",
    "crypto": false,
-   "reward_type": "credit",
+   "reward_type": "shares",
    "referral_product": "unknown",
    "conditions": "",
    "listing_terms": "Deposit £500 → £50 Credit | See provider page | Deposit the qualifying amount and hold it for the required period.",
@@ -1987,7 +1994,7 @@
    "fca_priority": 1,
    "hidden": false,
    "hidden_reason": "",
-   "notes": ""
+   "notes": "2026-11-21 sheet (third-party reads): welcome offer is 5 random free fractional shares (about £12 typical) for a £500 single deposit held 60 days, invitation-based, likely to 31 Mar 2027. Not provider-verified. Listing £50 credit was wrong; reworded to share bonus."
   },
   "wise": {
    "provider": "Wise",
