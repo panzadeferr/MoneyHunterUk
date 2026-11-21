@@ -174,6 +174,50 @@ def load_verified() -> Dict:
 VERIFIED = load_verified()
 
 
+def _ref_markers():
+    """Referral-link markers, read from app.html so scraper and pages stay in sync."""
+    import re
+    try:
+        m = re.search(r"const REF_MARKERS=\[(.*?)\];", open("app.html", encoding="utf-8").read(), re.S)
+        return re.findall(r"'([^']+)'", m.group(1)) if m else []
+    except Exception:
+        return []
+
+
+def apply_referral_links(deals, manual_offers):
+    """Route scraped deals through the owned referral links in the manual offers
+    list when the merchant already has one, so the feed earns like the curated
+    list does. The app and offers.html auto-label these "Ad" via REF_MARKERS."""
+    from urllib.parse import urlparse
+
+    def host_of(url):
+        try:
+            host = urlparse(url).netloc.lower()
+        except Exception:
+            return ""
+        return host[4:] if host.startswith("www.") else host
+
+    markers = _ref_markers()
+    ref_by_domain = {}
+    for o in manual_offers:
+        link = (o.get("link") or "").strip()
+        host = host_of(link)
+        if host and link and any(mk in link for mk in markers):
+            ref_by_domain.setdefault(host, o)
+
+    swapped = 0
+    for d in deals:
+        host = host_of(d.get("link", ""))
+        ref = ref_by_domain.get(host)
+        if ref and d.get("link") != ref["link"]:
+            d["link"] = ref["link"]
+            if not d.get("code") and ref.get("code"):
+                d["code"] = ref["code"]
+            swapped += 1
+    print(f"   Referral link swap: {swapped} scraped deals now use owned referral links")
+    return deals
+
+
 def get_manual_offers() -> List[Dict]:
     """All your original BeermoneyUK offers"""
     return [
@@ -1354,6 +1398,10 @@ def run_all_scrapers() -> Dict:
     
     unique_scraped = final_unique_scraped
     print(f"After dedup: {len(unique_scraped)}")
+
+    # Route scraped deals through the owned referral links where the merchant
+    # already has one, so the feed earns like the curated list does.
+    unique_scraped = apply_referral_links(unique_scraped, manual_offers)
     
     all_deals.extend(unique_scraped)
     
