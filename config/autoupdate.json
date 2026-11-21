@@ -1,0 +1,12 @@
+{
+  "_doc": "Auto-update policy. The scraper is the only writer; Wajo, Fo, Instinct and Claude only report. Not deployed.",
+  "auto_apply": false,
+  "kill_switch": false,
+  "max_change_pct": 30,
+  "writer": "scraper",
+  "allowed": ["mark_ended", "update_amount_from_provider_page_within_limit", "update_last_checked_on_match"],
+  "never_automatic": ["add_offer", "change_referral_or_affiliate_link", "change_wording_ad_label_or_risk_warning", "touch_investing_offer", "touch_trading_com", "apply_change_over_limit"],
+  "queue_path": "config/autoupdate_queue.json",
+  "log_path": "config/autoupdate_log.json",
+  "digest": {"telegram": true, "once_per_day": true}
+}

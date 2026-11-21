@@ -4178,6 +4178,7 @@ body.light #gameReturn{color:#fff}
       var st=offerState(o),og=o._orig,text=(og.name||'')+' '+(og.reward||'')+' '+(og.desc||'');
       o.reward=plainWording(og.reward);o.amount=og.amount;o.desc=plainWording(og.desc);
       if(String(og.reward).trim().toLowerCase()==='free')o.reward='Offer, conditions apply';
+      if(st.amount_override&&st.amount_override.value&&!offerIsInvesting(o))o.reward=st.amount_override.value;
       if(offerIsInvesting(o)){
         o.reward=maxClaimOk(st)?('up to '+st.max_claim.amount):(st.reward_type==='shares'?'Share bonus, value varies':'Sign-up reward, value varies');
         o.amount=0;

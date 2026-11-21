@@ -165,6 +165,9 @@ def build_html():
             st = pol.state_for(STATE, d.get("store"))
             item = html.escape(plain(str(d.get("item", ""))))
             amt = html.escape(money_bits(d))
+            _ov = (st.get("amount_override") or {}).get("value")
+            if _ov and not pol.is_investing(st) and t != "invest":
+                amt = html.escape(str(_ov))
             investing = pol.is_investing(st) or t == "invest"
             risk_html = ""
             if investing:

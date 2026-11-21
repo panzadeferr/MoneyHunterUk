@@ -8,6 +8,7 @@ Complete Money Hunters Scraper
 import json
 import os
 import re
+import sys
 import time
 import requests
 import xml.etree.ElementTree as ET
@@ -1490,3 +1491,11 @@ def run_all_scrapers() -> Dict:
 
 if __name__ == "__main__":
     run_all_scrapers()
+    # Offer auto-update check. Report-only while config/autoupdate.json has auto_apply=false.
+    # The scraper is the only writer; a failure here must never break the scrape.
+    try:
+        sys.path.insert(0, os.path.join(os.path.dirname(os.path.abspath(__file__)), "scripts"))
+        import offer_autoupdate
+        offer_autoupdate.run_from_scraper()
+    except Exception as e:  # noqa: BLE001
+        print(f"auto-update skipped: {e}")
