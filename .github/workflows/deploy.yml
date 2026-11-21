@@ -133,6 +133,9 @@ jobs:
       - name: Analytics opt-out snippet
         run: python3 tests/check_tracking.py
 
+      - name: Moved pages redirect
+        run: python3 tests/check_redirects.py
+
       - name: All tests passed
         run: echo "✅ All checks passed — deploying..."
 
@@ -168,6 +171,8 @@ jobs:
           mkdir -p _site/play
           cp play/index.html _site/play/index.html
           cp play/og.png _site/play/og.png
+          mkdir -p _site/game
+          cp game/index.html _site/game/index.html
           mkdir -p _site/shots
           cp shots/*.webp _site/shots/
 
