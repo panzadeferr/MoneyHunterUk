@@ -1,6 +1,6 @@
 {
   "last_updated": "2026-11-21 06:25:38",
-  "total_deals": 93,
+  "total_deals": 92,
   "manual_count": 90,
   "supermarket_count": 4,
   "reddit_count": 0,
@@ -1817,29 +1817,6 @@
       ],
       "badge": "📱 MOBILE",
       "effort": "2 min · free SIM",
-      "stacked_price": 0,
-      "best_payment_method": "N/A",
-      "stacking_rate": 0,
-      "last_scraped": "2026-11-21 06:25:38",
-      "last_updated": "2026-11-21 06:25:38"
-    },
-    {
-      "store": "In-poll",
-      "item": "5 Surveys — £5 Bonus",
-      "deal_price": "£5",
-      "link": "https://www.in-poll.co.uk/",
-      "original_price": "£0",
-      "saving_percent": 100,
-      "type": "earn",
-      "category": "earn",
-      "code": "",
-      "steps": [
-        "Sign up to In-Poll",
-        "Complete first 5 surveys",
-        "Receive £5 bonus"
-      ],
-      "badge": "💰 EARN",
-      "effort": "15 min · surveys",
       "stacked_price": 0,
       "best_payment_method": "N/A",
       "stacking_rate": 0,
