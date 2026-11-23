@@ -939,25 +939,6 @@
     "how": "read from the provider's own page by Claude; not a person's check"
    }
   },
-  "inpoll": {
-   "provider": "In-poll",
-   "investing": "no",
-   "crypto": false,
-   "reward_type": "cash",
-   "referral_product": "",
-   "conditions": "",
-   "listing_terms": "5 Surveys — £5 Bonus | £5",
-   "max_claim": null,
-   "source_url": "https://www.in-poll.co.uk/",
-   "source_is_provider_page": true,
-   "last_checked": null,
-   "checked_by": null,
-   "status": "check",
-   "fca_priority": 0,
-   "hidden": false,
-   "hidden_reason": "",
-   "notes": ""
-  },
   "investengine": {
    "provider": "Investengine",
    "investing": "yes",
