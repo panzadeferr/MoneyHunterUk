@@ -49,6 +49,7 @@ jobs:
           python3 tests/check_offer_policy.py
           python3 tests/check_disclosure.py
           python3 tests/check_autoupdate.py
+          python3 tests/check_reflink_swap.py
 
       - name: Check for changes
         id: git-check
