@@ -174,6 +174,86 @@ def load_verified() -> Dict:
 VERIFIED = load_verified()
 
 
+def _ref_markers():
+    """Referral-link markers, read from app.html so scraper and pages stay in sync."""
+    import re
+    try:
+        m = re.search(r"const REF_MARKERS=\[(.*?)\];", open("app.html", encoding="utf-8").read(), re.S)
+        return re.findall(r"'([^']+)'", m.group(1)) if m else []
+    except Exception:
+        return []
+
+
+# Providers whose referral terms ban public posting (Alberto decided 21 Nov 2026 to keep the
+# existing curated links, but the scraper must never add more of them automatically).
+REFLINK_SWAP_BLOCKED = {"freetrade", "chase", "chaseuk", "ig", "igsharedealingaccount", "igtrading",
+                        "lightyear", "robinhood", "robinhooduk", "webull", "plum", "moneybox",
+                        "trading212", "etoro", "xtb"}
+
+
+def _offer_state_records():
+    try:
+        with open("data/offer_state.json", encoding="utf-8") as f:
+            return json.load(f).get("offers", {})
+    except Exception:
+        return {}
+
+
+def _swap_blocked(offer, state):
+    """True when a manual offer's referral link must not be copied onto scraped deals."""
+    name = offer.get("store") or offer.get("name") or ""
+    k = re.sub(r"[^a-z0-9]", "", str(name).lower())
+    if k in REFLINK_SWAP_BLOCKED or k.startswith(("freetrade", "chase", "ig", "lightyear", "robinhood", "webull")):
+        return True
+    st = state.get(k) or next((v for sk, v in state.items() if len(k) >= 4 and (k.startswith(sk) or sk.startswith(k))), None)
+    text = " ".join(str(offer.get(x, "")) for x in ("badge", "category", "type")).lower()
+    if any(w in text for w in ("invest", "pension", "crypto", "broker", "trading")):
+        return True
+    if st and (st.get("investing") in ("yes", "borderline") or st.get("crypto") or st.get("hidden")
+               or st.get("fca_priority") == 1):
+        return True
+    return False
+
+
+def apply_referral_links(deals, manual_offers):
+    """Route scraped deals through the owned referral links in the manual offers
+    list when the merchant already has one, so the feed earns like the curated
+    list does. The app and offers.html auto-label these "Ad" via REF_MARKERS."""
+    from urllib.parse import urlparse
+
+    def host_of(url):
+        try:
+            host = urlparse(url).netloc.lower()
+        except Exception:
+            return ""
+        return host[4:] if host.startswith("www.") else host
+
+    markers = _ref_markers()
+    state = _offer_state_records()
+    ref_by_domain = {}
+    for o in manual_offers:
+        # Never route through a referral link for investing/crypto/broker offers,
+        # hidden providers, or providers whose terms ban public referral links.
+        if _swap_blocked(o, state):
+            continue
+        link = (o.get("link") or "").strip()
+        host = host_of(link)
+        if host and link and any(mk in link for mk in markers):
+            ref_by_domain.setdefault(host, o)
+
+    swapped = 0
+    for d in deals:
+        host = host_of(d.get("link", ""))
+        ref = ref_by_domain.get(host)
+        if ref and d.get("link") != ref["link"]:
+            d["link"] = ref["link"]
+            if not d.get("code") and ref.get("code"):
+                d["code"] = ref["code"]
+            swapped += 1
+    print(f"   Referral link swap: {swapped} scraped deals now use owned referral links")
+    return deals
+
+
 def get_manual_offers() -> List[Dict]:
     """All your original BeermoneyUK offers"""
     return [
@@ -1355,6 +1435,10 @@ def run_all_scrapers() -> Dict:
     
     unique_scraped = final_unique_scraped
     print(f"After dedup: {len(unique_scraped)}")
+
+    # Route scraped deals through the owned referral links where the merchant
+    # already has one, so the feed earns like the curated list does.
+    unique_scraped = apply_referral_links(unique_scraped, manual_offers)
     
     all_deals.extend(unique_scraped)
     
