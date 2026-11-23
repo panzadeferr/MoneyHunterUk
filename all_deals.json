@@ -1,7 +1,7 @@
 {
   "last_updated": "2026-11-23 06:46:00",
-  "total_deals": 92,
-  "manual_count": 89,
+  "total_deals": 95,
+  "manual_count": 92,
   "supermarket_count": 4,
   "reddit_count": 0,
   "news_count": 6,
@@ -2084,6 +2084,66 @@
       "stacking_rate": 0,
       "last_scraped": "2026-11-23 06:46:00",
       "last_updated": "2026-11-23 06:46:00"
+    },
+    {
+      "store": "Fuse Energy",
+      "item": "Switch Energy — £50 Bill Credit Each",
+      "deal_price": "£50",
+      "link": "https://www.fuseenergy.com/blog/refer",
+      "original_price": "£0",
+      "saving_percent": 100,
+      "type": "utilities",
+      "category": "utilities",
+      "code": "",
+      "expires": "",
+      "steps": [
+        "Get a Fuse quote on their own site",
+        "Get a referral code from an existing Fuse customer and enter it during sign-up",
+        "Switch and pay your first bill on time",
+        "£50 credit each lands in the Fuse wallet"
+      ],
+      "badge": "⚡ ENERGY",
+      "effort": "10 min · energy switch"
+    },
+    {
+      "store": "Scottish Power",
+      "item": "Switch Energy — £60 Credit Each (dual fuel)",
+      "deal_price": "£60",
+      "link": "https://www.scottishpower.co.uk/referral-offer",
+      "original_price": "£0",
+      "saving_percent": 100,
+      "type": "utilities",
+      "category": "utilities",
+      "code": "",
+      "expires": "",
+      "steps": [
+        "Use a friend's ScottishPower referral link to get a quote",
+        "Switch gas + electricity (£30 each for single fuel)",
+        "Stay on supply 28 days",
+        "£60 credit each applied to both accounts"
+      ],
+      "badge": "⚡ ENERGY",
+      "effort": "10 min · energy switch"
+    },
+    {
+      "store": "OakNorth Bank",
+      "item": "Save £2,000+ — £30 Each",
+      "deal_price": "£30",
+      "link": "https://oaknorth.co.uk/personal-savings/refer-a-friend/",
+      "original_price": "£2000",
+      "saving_percent": 2,
+      "type": "bank",
+      "category": "bank",
+      "code": "",
+      "expires": "",
+      "steps": [
+        "Open an OakNorth Personal Savings account via a friend's referral",
+        "Fund £2,000+ within 14 days of opening",
+        "Keep £2,000+ for 30 consecutive days",
+        "£30 each paid within 60 days; +£10 each for a second account in 90 days"
+      ],
+      "badge": "🏦 SAVINGS",
+      "effort": "15 min · £2k needed"
     }
   ]
 }
