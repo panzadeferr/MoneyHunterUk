@@ -2166,6 +2166,78 @@
    "hidden": false,
    "hidden_reason": "",
    "notes": ""
+  },
+  "fuseenergy": {
+   "provider": "Fuse Energy",
+   "investing": "no",
+   "crypto": false,
+   "reward_type": "cash",
+   "referral_product": "energy",
+   "conditions": "£50 credit each for referrer and referee. Referee must be a new customer, enter a referral code during sign-up while the campaign is live, and must not have joined via a price comparison site. Credit lands after the referee pays their first bill in full and on time.",
+   "listing_terms": "Switch Energy — £50 Bill Credit Each | See provider page | Referral offer listed. The amount and conditions are on the provider's page.",
+   "max_claim": {
+    "amount": "£50",
+    "source_url": "https://www.fuseenergy.com/blog/refer",
+    "date": "2026-11-22"
+   },
+   "source_url": "https://www.fuseenergy.com/blog/refer",
+   "source_is_provider_page": true,
+   "last_checked": "2026-11-22",
+   "checked_by": "fetch",
+   "status": "check",
+   "fca_priority": 1,
+   "hidden": false,
+   "hidden_reason": "",
+   "notes": "22 Nov 2026 provider refer page fetched live: current reward is £50 per customer (page says £50 each if the referee joined on/after 17 Nov 2026; the older £100 campaign has ended). The Megalist's old £100 wording was outdated, so this re-adds the offer at £50.",
+   "conditions_source": "https://www.fuseenergy.com/blog/refer"
+  },
+  "scottishpower": {
+   "provider": "ScottishPower",
+   "investing": "no",
+   "crypto": false,
+   "reward_type": "cash",
+   "referral_product": "energy",
+   "conditions": "£60 energy credit each for a dual fuel switch made through a friend's referral link, £30 each for single fuel. Credit applied once the new customer has been on supply for at least 28 days.",
+   "listing_terms": "Switch Energy — £60 Credit Each (dual fuel) | See provider page | Referral offer listed. The amount and conditions are on the provider's page.",
+   "max_claim": {
+    "amount": "£60",
+    "source_url": "https://www.scottishpower.co.uk/referral-offer",
+    "date": "2026-11-22"
+   },
+   "source_url": "https://www.scottishpower.co.uk/referral-offer",
+   "source_is_provider_page": true,
+   "last_checked": "2026-11-22",
+   "checked_by": "fetch",
+   "status": "check",
+   "fca_priority": 1,
+   "hidden": false,
+   "hidden_reason": "",
+   "notes": "22 Nov 2026 provider referral-offer page fetched live: £60 each dual fuel, £30 each single fuel, 28 days on supply before credit.",
+   "conditions_source": "https://www.scottishpower.co.uk/referral-offer"
+  },
+  "oaknorth": {
+   "provider": "OakNorth Bank",
+   "investing": "no",
+   "crypto": false,
+   "reward_type": "cash",
+   "referral_product": "savings",
+   "conditions": "£30 each when the referred friend opens an OakNorth Personal Savings account and funds it with £2,000+ within 14 days of opening, keeping £2,000+ for 30 consecutive days. Extra £10 each if a second eligible account opens within 90 days. Paid within 60 days of meeting the criteria. (A £1,000 minimum applies only to referral forms submitted on or before 15 June 2026.)",
+   "listing_terms": "Save £2,000+ — £30 Each | See provider page | Referral offer listed. The amount and conditions are on the provider's page.",
+   "max_claim": {
+    "amount": "£30",
+    "source_url": "https://oaknorth.co.uk/personal-savings/refer-a-friend/",
+    "date": "2026-11-22"
+   },
+   "source_url": "https://oaknorth.co.uk/personal-savings/refer-a-friend/",
+   "source_is_provider_page": true,
+   "last_checked": "2026-11-22",
+   "checked_by": "fetch",
+   "status": "check",
+   "fca_priority": 1,
+   "hidden": false,
+   "hidden_reason": "",
+   "notes": "22 Nov 2026 provider refer-a-friend page fetched live: £30 each, £2,000 minimum held 30 days, up to £300 per referrer across 10 referrals, +£10 for a second account. The Megalist's 'Save £2k, get £30' matched.",
+   "conditions_source": "https://oaknorth.co.uk/personal-savings/refer-a-friend/"
   }
  }
 }
