@@ -232,7 +232,7 @@
               "items": [
                 "Direct Debit: the company pulls the money. It can vary. Covered by the Direct Debit Guarantee.",
                 "Standing order: you push a fixed amount on set dates. You control it.",
-                "Card payment: neither of the above, so it doesn't count towards switch bonus rules."
+                "Card payment: neither of the above. It is not a Direct Debit, so check the bank's terms before assuming it counts towards a switch requirement."
               ]
             },
             {
@@ -249,7 +249,7 @@
             },
             {
               "type": "p",
-              "text": "Most switch offers need a number of active Direct Debits. Usually that means each one has collected at least one payment. Everyday bills (phone, energy, council tax, gym) count. Set them up on the new account early."
+              "text": "Most switch offers need a number of active Direct Debits. The rules differ by bank, including which bills count and whether a payment must already have been collected, so check the bank\u2019s own terms for the offer you want. Set them up on the new account early."
             },
             {
               "type": "tip",
