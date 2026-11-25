@@ -695,17 +695,17 @@
     },
     {
       "store": "Webull",
-      "item": "Deposit £500 → £50 Credit",
-      "deal_price": "£50",
-      "link": "https://www.webull-uk.com/s/zEUukbJam8GjmUx6yq",
+      "item": "Deposit £500, hold 60 days → share bonus",
+      "deal_price": "Share bonus",
+      "link": "https://www.webull-uk.com/s/zEUukbJam8GjmUxYhX",
       "original_price": "£500",
-      "saving_percent": 10,
+      "saving_percent": 0,
       "type": "invest",
       "code": "",
       "steps": [
         "Deposit £500",
         "Keep 60 days",
-        "Get £50"
+        "Receive fractional shares (random value). Capital at risk"
       ],
       "timeFrame": "60 days",
       "category": "investment",
@@ -1244,19 +1244,19 @@
     },
     {
       "store": "Revolut",
-      "item": "Spend £1 → Get £20",
-      "deal_price": "£20",
-      "link": "https://revolut.com/referral/?referral-code=ludoviv2sq!MAR1-26-AR-H2&geo-redirect",
-      "original_price": "£1",
-      "saving_percent": 95,
+      "item": "Refer a friend (random reward £10-£200)",
+      "deal_price": "£10-£200",
+      "link": "https://revolut.com/referral/?referral-code=ludoviv2sq!NOV2-26-VR-GB-SAV-CTRL&geo-redirect",
+      "original_price": "£5",
+      "saving_percent": 0,
       "type": "referral",
       "code": "",
       "steps": [
-        "Sign up",
-        "Spend £1",
-        "Get £20"
+        "Sign up with the link before 8 Dec 2026 and verify identity",
+        "Add money, make 3 purchases of £5+",
+        "Order a physical card"
       ],
-      "timeFrame": "~1 month",
+      "timeFrame": "Ends 8 Dec 2026",
       "category": "bank_switch",
       "stacked_price": 0,
       "best_payment_method": "N/A",
@@ -1492,18 +1492,19 @@
     },
     {
       "store": "Zopa (biscuit)",
-      "item": "Open Account → £10 Free",
-      "deal_price": "£10",
-      "link": "https://www.zopa.com/mgma?referralCode=ed204ce1b3dd265fa533",
+      "item": "Open a Biscuit account, 3 card payments → £20 each",
+      "deal_price": "£20",
+      "link": "https://www.zopa.com/mgma?referralCode=4a8afcaad60bd403d93f",
       "original_price": "£0",
       "saving_percent": 100,
       "type": "referral",
       "code": "",
       "steps": [
-        "Open Biscuit account",
-        "Get £10 instantly"
+        "Open a Biscuit bank account with the link",
+        "Make at least 3 card transactions within 30 days",
+        "You both receive £20 within 30 days (reward capped at 10 people)"
       ],
-      "timeFrame": "Instant",
+      "timeFrame": "30 days",
       "category": "freebies",
       "stacked_price": 0,
       "best_payment_method": "N/A",

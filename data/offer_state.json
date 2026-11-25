@@ -1450,7 +1450,7 @@
    "crypto": false,
    "reward_type": "cash",
    "referral_product": "",
-   "conditions": "",
+   "conditions": "Owner-checked in the Revolut app 2026-11-25 (screenshot): friends must sign up with the link before 8 Dec 2026, verify identity, add money by debit card or bank transfer, make 3 purchases of £5 or more (cash-type transactions such as gambling, gift cards and transfers do not count) and order a physical card. Referrer reward is random, £10 to £200, paid a few days after the friend completes all steps; 10 rewards max per period. New-customer reward not shown.",
    "listing_terms": "Spend £1 → Get £20 | £20 | Sign up and complete the referral actions for the current offer.",
    "max_claim": null,
    "source_url": "",
@@ -1461,7 +1461,7 @@
    "fca_priority": 2,
    "hidden": false,
    "hidden_reason": "",
-   "notes": ""
+   "notes": "2026-11-25 owner-reported from app screenshot, not provider-page verified. Old '£1 spend -> £20' campaign (MAR1-26) replaced; link updated to NOV2-26 campaign. Amount 0 so it does not count toward totals."
   },
   "ribbon": {
    "provider": "Ribbon",
@@ -1979,7 +1979,7 @@
    "fca_priority": 1,
    "hidden": false,
    "hidden_reason": "",
-   "notes": "2026-11-21 sheet (third-party reads): welcome offer is 5 random free fractional shares (about £12 typical) for a £500 single deposit held 60 days, invitation-based, likely to 31 Mar 2027. Not provider-verified. Listing £50 credit was wrong; reworded to share bonus."
+   "notes": "2026-11-21 sheet (third-party reads): welcome offer is 5 random free fractional shares (about £12 typical) for a £500 single deposit held 60 days, invitation-based, likely to 31 Mar 2027. Not provider-verified. Listing £50 credit was wrong; reworded to share bonus. 2026-11-25 owner sent a new Webull referral link (ends YhX); site updated and listing text changed from '£50 credit' to share bonus."
   },
   "wise": {
    "provider": "Wise",
@@ -2139,7 +2139,7 @@
    "crypto": false,
    "reward_type": "cash",
    "referral_product": "",
-   "conditions": "",
+   "conditions": "Owner-checked in the Zopa app 2026-11-25 (screenshot): share your link before 5 Jan 2027; friend opens a Biscuit bank account and makes at least 3 card transactions within 30 days; both receive £20 in their accounts within 30 days. Reward capped at 10 people. T&Cs apply (Biscuit referral terms).",
    "listing_terms": "Open Account → £10 bonus | £10",
    "max_claim": null,
    "source_url": "",
@@ -2150,7 +2150,7 @@
    "fca_priority": 2,
    "hidden": false,
    "hidden_reason": "",
-   "notes": ""
+   "notes": "2026-11-25 owner-reported from app screenshot, not provider-page verified. Replaces old '£10 free' listing; link updated to the new referral link."
   },
   "fuseenergy": {
    "provider": "Fuse Energy",
