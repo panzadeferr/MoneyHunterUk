@@ -36,6 +36,11 @@ ul,ol{padding-left:22px;margin-bottom:14px}
 strong{color:var(--t)}
 .box{border-radius:12px;padding:14px 18px;margin:18px 0;border:1px solid var(--line);background:var(--bg3)}
 .box p,.box li{margin-bottom:6px}
+.tablewrap{overflow-x:auto;margin:18px 0}
+table{border-collapse:collapse;width:100%;min-width:600px;font-size:14px}
+caption{text-align:left;font-size:13px;color:var(--tl);margin-bottom:8px}
+th,td{text-align:left;vertical-align:top;padding:8px 10px;border-bottom:1px solid var(--line)}
+th{color:var(--g);font-size:12px;letter-spacing:.04em;text-transform:uppercase}
 .box .lbl{font-size:12px;letter-spacing:.06em;text-transform:uppercase;font-weight:700;margin-bottom:6px;color:var(--g)}
 .box.warn{border-color:rgba(255,180,84,.35)}.box.warn .lbl{color:var(--warn)}
 .cta{background:var(--gl);border:1px solid rgba(31,232,135,.3);border-radius:14px;padding:18px 20px;margin:34px 0}
@@ -63,6 +68,11 @@ def render_body(body):
         elif t=="key":o.append('<div class="box"><div class="lbl">Key points</div><ul>'+"".join(f"<li>{E(i)}</li>" for i in b["items"])+"</ul></div>")
         elif t=="tip":o.append(f'<div class="box"><div class="lbl">Tip</div><p>{E(b["text"])}</p></div>')
         elif t=="warn":o.append(f'<div class="box warn"><div class="lbl">Watch out</div><p>{E(b["text"])}</p></div>')
+        elif t=="table":
+            head="".join(f"<th>{E(h)}</th>" for h in b["head"])
+            rows="".join("<tr>"+"".join(f"<td>{E(c)}</td>" for c in r)+"</tr>" for r in b["rows"])
+            cap=f"<caption>{E(b['caption'])}</caption>" if b.get("caption") else ""
+            o.append(f'<div class="tablewrap"><table>{cap}<thead><tr>{head}</tr></thead><tbody>{rows}</tbody></table></div>')
         else:raise SystemExit("unknown block type "+t)
     return "\n".join(o)
 chapters=[c for c in pb["chapters"] if not c.get("locked")]
@@ -70,7 +80,7 @@ slugs={};used=set();pages=[]
 for c in chapters:
     for a in c["articles"]:
         if not a.get("body"):continue
-        s=slugify(a["title"]);base=s;n=2
+        s=a.get("slug") or slugify(a["title"]);base=s;n=2
         while s in used:s=f"{base}-{n}";n+=1
         used.add(s);slugs[a["id"]]=s;pages.append((c,a,s))
 def w(path,txt):

@@ -159,7 +159,7 @@ if pb_path.exists():
     pb_chs = pb.get("chapters", [])
     if not pb_chs:
         fail("data/playbook.json: no chapters")
-    ALLOWED_BLOCKS = {"p", "h", "key", "steps", "warn", "tip", "list"}
+    ALLOWED_BLOCKS = {"p", "h", "key", "steps", "warn", "tip", "list", "table"}
     ALLOWED_STATUS = {"written", "new", "expand"}
     app_text = pathlib.Path("app.html").read_text() if pathlib.Path("app.html").exists() else ""
     seen_pb = {}
@@ -186,6 +186,11 @@ if pb_path.exists():
                         fail(f"playbook.json: {aid} bad block {b if not isinstance(b, dict) else b.get('type')!r}")
                     if b.get("type") in ("key", "steps", "list") and not isinstance(b.get("items"), list):
                         fail(f"playbook.json: {aid} block {b.get('type')} missing items list")
+                    if b.get("type") == "table":
+                        hd, rws = b.get("head"), b.get("rows")
+                        if not (isinstance(hd, list) and hd and isinstance(rws, list) and rws
+                                and all(isinstance(r, list) and len(r) == len(hd) and all(isinstance(c, str) for c in r) for r in rws)):
+                            fail(f"playbook.json: {aid} table block needs head list and rows of equal-length string lists")
             for src in a.get("sources", []):
                 if not str(src).startswith("https://"):
                     fail(f"playbook.json: {aid} non-https source {src!r}")

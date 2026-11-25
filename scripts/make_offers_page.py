@@ -262,7 +262,7 @@ def build_html():
         site=SITE,
         month=html.escape(month),
         checked=html.escape(checked_long),
-        n=n_shown,
+        n=len(jsonld_items),
         sections="\n".join(sections),
         jsonld=jsonld,
     )

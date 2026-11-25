@@ -5373,13 +5373,14 @@ body.light #gameReturn{color:#fff}
       function esc(x) { return String(x).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;'); }
       let out = '';
       if (Array.isArray(text)) {
-        // Structured body: [{type:'p'|'h'|'key'|'steps'|'warn'|'tip'|'list', text|items, sources}]
+        // Structured body: [{type:'p'|'h'|'key'|'steps'|'warn'|'tip'|'list'|'table', text|items|head+rows, sources}]
         for (const b of text) {
           const items = (b.items || []).map(function (x) { return '<li>' + esc(x) + '</li>'; }).join('');
           if (b.type === 'p' && b.text) out += '<p class="guide-p">' + esc(b.text) + '</p>';
           else if (b.type === 'h' && b.text) out += '<div class="guide-section-title">' + esc(b.text) + '</div>';
           else if ((b.type === 'key' || b.type === 'list') && b.items) out += '<ul class="guide-ul">' + items + '</ul>';
           else if (b.type === 'steps' && b.items) out += '<ol class="guide-ol">' + items + '</ol>';
+          else if (b.type === 'table' && Array.isArray(b.head) && Array.isArray(b.rows)) out += '<div style="overflow-x:auto"><table class="guide-table" style="border-collapse:collapse;font-size:12px;width:100%"><thead><tr>' + b.head.map(function (h) { return '<th style="text-align:left;border-bottom:1px solid var(--border);padding:4px 6px">' + esc(h) + '</th>'; }).join('') + '</tr></thead><tbody>' + b.rows.map(function (r) { return '<tr>' + r.map(function (c) { return '<td style="border-bottom:1px solid var(--border);padding:4px 6px;vertical-align:top">' + esc(c) + '</td>'; }).join('') + '</tr>'; }).join('') + '</tbody></table></div>';
           else if (b.type === 'warn' && b.text) out += '<div class="guide-warning">&#9888;&#65039; ' + esc(b.text) + '</div>';
           else if (b.type === 'tip' && b.text) out += '<div class="guide-tip">&#128161; ' + esc(b.text) + '</div>';
         }
