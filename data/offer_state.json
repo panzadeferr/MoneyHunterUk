@@ -548,20 +548,24 @@
    "provider": "Everup",
    "investing": "no",
    "crypto": false,
-   "reward_type": "other",
+   "reward_type": "cash",
    "referral_product": "",
-   "conditions": "",
+   "conditions": "£5 per valid referral for the referrer, plus tier-dependent in-app coins. You and your friend both verify phone numbers, and your friend redeems £10 or more in cashback or winnings. The page states no deadline or cap and does not say what the friend receives.",
    "listing_terms": "Gift Card Cashback | Cashback | Link your bank cards and use partner deals to earn cashback.",
-   "max_claim": null,
-   "source_url": "",
-   "source_is_provider_page": false,
-   "last_checked": null,
-   "checked_by": null,
+   "max_claim": {
+    "amount": "£5",
+    "source_url": "https://intercom.help/everup/en/articles/8571581-how-referrals-work",
+    "date": "2026-11-25"
+   },
+   "source_url": "https://intercom.help/everup/en/articles/8571581-how-referrals-work",
+   "source_is_provider_page": true,
+   "last_checked": "2026-11-25",
+   "checked_by": "fetch",
    "status": "check",
    "fca_priority": 0,
    "hidden": false,
    "hidden_reason": "",
-   "notes": ""
+   "notes": "2026-11-25 official Everup help article fetched: £5 per valid referral; page undated ('Updated over a week ago'). Friend reward not stated."
   },
   "expedia": {
    "provider": "Expedia",
