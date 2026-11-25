@@ -183,18 +183,22 @@
    "crypto": false,
    "reward_type": "cash",
    "referral_product": "",
-   "conditions": "",
+   "conditions": "£450 first, then £30 a month for the next five months while you continue to qualify (up to £600). New UK customers aged 18+. Open a Premier Current Account in the Barclays app, complete a full CASS switch and move at least 3 active Direct Debits, pay in a salary of at least £5,000 and make at least 10 debit card purchases. Premier eligibility criteria apply. Barclays can withdraw it at any time.",
    "listing_terms": "Premier Switch — up to £600",
-   "max_claim": null,
+   "max_claim": {
+    "amount": "£600",
+    "source_url": "https://www.barclays.co.uk/current-accounts/premier-switch-offer/",
+    "date": "2026-11-25"
+   },
    "source_url": "https://www.barclays.co.uk/current-accounts/premier-switch-offer/",
    "source_is_provider_page": true,
-   "last_checked": null,
-   "checked_by": null,
+   "last_checked": "2026-11-25",
+   "checked_by": "fetch",
    "status": "check",
    "fca_priority": 2,
    "hidden": false,
    "hidden_reason": "",
-   "notes": "2026-11-21 barclays.co.uk switch-offer page fetched shows the 2024 offer (ended). MSE live list 17 Nov 2026: £600 + Apple TV, needs £5,000+/mth salary. Third-party only; amount stays hidden until Barclays page confirms."
+   "notes": "2026-11-21 barclays.co.uk switch-offer page fetched shows the 2024 offer (ended). MSE live list 17 Nov 2026: £600 + Apple TV, needs £5,000+/mth salary. Third-party only; amount stays hidden until Barclays page confirms. 2026-11-25 Barclays' own Premier switch offer page read in the owner's browser: £450 + up to £150 in monthly rewards (£600), matches MSE."
   },
   "caffenero": {
    "provider": "Caffe Nero",
@@ -830,18 +834,22 @@
    "crypto": false,
    "reward_type": "cash",
    "referral_product": "",
-   "conditions": "",
+   "conditions": "£220 for new customers: open an HSBC Bank Account in the HSBC app and, within 60 days, complete a full CASS switch including 2 Direct Debits, pay in £2,000 and spend £500 on the debit card. New customers only (the Basic Bank Account is not eligible). HSBC can withdraw it at any time.",
    "listing_terms": "Full switch → £220",
-   "max_claim": null,
-   "source_url": "https://www.hsbc.co.uk/current-accounts/",
+   "max_claim": {
+    "amount": "£220",
+    "source_url": "https://www.hsbc.co.uk/current-accounts/switching-to-hsbc/",
+    "date": "2026-11-25"
+   },
+   "source_url": "https://www.hsbc.co.uk/current-accounts/switching-to-hsbc/",
    "source_is_provider_page": true,
-   "last_checked": null,
-   "checked_by": null,
+   "last_checked": "2026-11-25",
+   "checked_by": "fetch",
    "status": "check",
    "fca_priority": 2,
    "hidden": false,
    "hidden_reason": "",
-   "notes": ""
+   "notes": "2026-11-25 HSBC's own switching page read in the owner's browser: £220 and £500 Premier shown as current. MSE's link deadline of 4pm 25 Nov applied to MSE's link only."
   },
   "hsbcpremier": {
    "provider": "HSBC Premier",
@@ -2245,7 +2253,7 @@
    "fca_priority": 0,
    "hidden": false,
    "hidden_reason": "",
-   "notes": "2026-11-25 Santander official terms PDF and eligibility page fetched. Terms say the offer starts 1 Sep 2026; bank-switch.html says 27 Oct 2026 (from an earlier check): confirm which is right. Own offer page, no referral link."
+   "notes": "2026-11-25 Santander's own press release says the offer launched 1 Sep 2026, matching the terms; bank-switch.html corrected from 27 Oct to 1 Sep. Own offer page, no referral link."
   },
   "cooperativebank": {
    "provider": "Co-operative Bank",
@@ -2268,7 +2276,7 @@
    "fca_priority": 0,
    "hidden": false,
    "hidden_reason": "",
-   "notes": "2026-11-25 official offer page and Jul-26 terms PDF fetched. Terms say applications from 6 Jul 2026 with no fixed end date (plus a separate £100 for some existing customers, not listed); bank-switch.html says applications from 16 Nov 2026: confirm. Own offer page, no referral link. Replaces the stale £175 listing that ended 27 Feb 2026."
+   "notes": "2026-11-25 official offer page and Jul-26 terms PDF fetched. Terms say applications from 6 Jul 2026 with no fixed end date (plus a separate £100 for some existing customers, not listed); bank-switch.html says applications from 16 Nov 2026: confirm. Own offer page, no referral link. Replaces the stale £175 listing that ended 27 Feb 2026. 2026-11-25 Nov-26 terms PDF read: applications received on or after 16 Nov 2026 until the notified expiry date, so bank-switch.html's 16 Nov is right (the Jul-26 terms were the earlier offer)."
   }
  }
 }
