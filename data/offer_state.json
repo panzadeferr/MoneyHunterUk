@@ -2246,6 +2246,29 @@
    "hidden": false,
    "hidden_reason": "",
    "notes": "2026-11-25 Santander official terms PDF and eligibility page fetched. Terms say the offer starts 1 Sep 2026; bank-switch.html says 27 Oct 2026 (from an earlier check): confirm which is right. Own offer page, no referral link."
+  },
+  "cooperativebank": {
+   "provider": "Co-operative Bank",
+   "investing": "no",
+   "crypto": false,
+   "reward_type": "cash",
+   "referral_product": "",
+   "conditions": "£125 after a full CASS switch to a Standard Current Account or Everyday Extra: within 30 days deposit £1,500, make 5 debit card payments, hold 2 active Direct Debits and register for online or mobile banking. Then £25 a month for up to 3 months for repeating the deposit and card payments and holding 2 Direct Debits. Excludes anyone who has had a Co-operative Bank switch offer since 1 Nov 2022. Can be withdrawn.",
+   "listing_terms": "Switch Account — £125 + £25 a month for 3 months",
+   "max_claim": {
+    "amount": "£200",
+    "source_url": "https://www.co-operativebank.co.uk/products/bank-accounts/switch-offer/",
+    "date": "2026-11-25"
+   },
+   "source_url": "https://www.co-operativebank.co.uk/products/bank-accounts/switch-offer/",
+   "source_is_provider_page": true,
+   "last_checked": "2026-11-25",
+   "checked_by": "fetch",
+   "status": "check",
+   "fca_priority": 0,
+   "hidden": false,
+   "hidden_reason": "",
+   "notes": "2026-11-25 official offer page and Jul-26 terms PDF fetched. Terms say applications from 6 Jul 2026 with no fixed end date (plus a separate £100 for some existing customers, not listed); bank-switch.html says applications from 16 Nov 2026: confirm. Own offer page, no referral link. Replaces the stale £175 listing that ended 27 Feb 2026."
   }
  }
 }
