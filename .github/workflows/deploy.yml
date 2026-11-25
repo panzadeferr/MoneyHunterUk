@@ -12,6 +12,7 @@ permissions:
   contents: read
   pages: write
   id-token: write
+  actions: read  # lets the wait step poll this run's artifacts API
 
 # Prevent concurrent deployments
 concurrency:
@@ -183,6 +184,25 @@ jobs:
         uses: actions/upload-pages-artifact@v3
         with:
           path: '_site'
+
+      # The Pages artifacts API can lag a few seconds behind the upload above;
+      # deploy-pages then fails with "Found 0 artifact(s)". Poll until the
+      # artifact registers before deploying (fixes the intermittent 0-artifact
+      # race seen 22-23 Nov: failed runs 44991577612, 45032800357, 45290705752).
+      - name: Wait for Pages artifact to register
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          for i in $(seq 1 18); do
+            COUNT=$(gh api "repos/${GITHUB_REPOSITORY}/actions/runs/${GITHUB_RUN_ID}/artifacts" --jq '.total_count' 2>/dev/null || echo 0)
+            if [ "${COUNT:-0}" -gt 0 ]; then
+              echo "Pages artifact registered (total_count=$COUNT) on attempt $i"
+              exit 0
+            fi
+            echo "Attempt $i: artifact not visible yet, waiting 10s"
+            sleep 10
+          done
+          echo "Artifact not visible after 180s; attempting deploy anyway"
 
       - name: Deploy to GitHub Pages
         id: deployment
