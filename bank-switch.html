@@ -143,6 +143,7 @@ document.addEventListener('click', function(e) {
   var href = a.getAttribute('href') || '';
   if (href.indexOf('moneyhunters.co.uk') !== -1) return;
   mhTrack('outbound_click', { url: href.slice(0, 200), page: location.pathname });
+  var card = a.closest('li,article,tr,.offer,.card'); var h = card && card.querySelector('h3,h2,strong'); mhTrack('offer-click', { offer: (h ? h.textContent : href).trim().slice(0, 60), page: location.pathname });
 });
 </script>
 </body>

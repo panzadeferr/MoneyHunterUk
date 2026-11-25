@@ -311,7 +311,7 @@ function on(id,fn){const e=$(id);if(e)e.onclick=fn}
 function shareWin(name){
   const url="https://moneyhunters.co.uk/play/?utm_source=share";
   const text="I just beat "+name+" in Coinsworth, a free UK money game that teaches real money skills. Play it:";
-  mhTrack("share_clicked",{boss:name});
+  mhTrack("share_clicked",{boss:name});mhTrack("share-click",{boss:String(name).slice(0,60)});
   if(navigator.share){navigator.share({title:"Coinsworth: The Little Penny",text,url}).catch(()=>{})}
   else{try{navigator.clipboard.writeText(text+" "+url);toast("LINK COPIED ✓")}catch(e){toast(url)}}
 }
@@ -1139,8 +1139,9 @@ function lighthouse(){
   say([{s:"",t:"You climb the lighthouse stairs. Six shards fit into the old Lamp, one by one. It flickers, almost bright..."},
        {s:"",t:"But the Lamp only shines with TODAY's truth. It needs the Live Hunt: real, current deals on Money Hunters."},
        {s:"TILLY",t:"Audit Day is coming. Marguerite will be back."},
-       {s:"",t:"END OF THIS BUILD. Audit Day (the Live Hunt) arrives in the next version. Thanks for playing!"}],()=>{const first=!S.flags.ending;S.flags.ending=true;save(true);if(first)mhTrack("game_finished");
+       {s:"",t:"END OF THIS BUILD. Audit Day (the Live Hunt) arrives in the next version. Thanks for playing!"}],()=>{const first=!S.flags.ending;S.flags.ending=true;save(true);if(first){mhTrack("game_finished");mhTrack("game-complete");}
     modal(`<h2>TO BE CONTINUED...</h2><p class="q">You finished this build of Coinsworth. What did you think? What was too easy, too hard or confusing?</p>
+      <a class="learn" href="https://moneyhunters.co.uk/?utm_source=coinsworth&utm_medium=game&utm_campaign=end_screen" target="_blank" rel="noopener">Explore UK money offers and guides on Money Hunters ↗</a>
       <a class="learn" href="mailto:hello@moneyhunters.co.uk?subject=Coinsworth%20feedback" target="_blank" rel="noopener">Email your feedback ↗</a>
       <button class="ghost" id="cl">CLOSE</button>`);on("cl",closeModal)});
 }
@@ -1494,7 +1495,7 @@ function creator(isNew){
     else{hud();save(true);toast("LOOK SAVED")}});
 }
 function enterWorld(fresh){
-  mhTrack(fresh?"game_new":"game_continue");
+  mhTrack(fresh?"game_new":"game_continue");mhTrack("play-start",{mode:fresh?"new":"continue"});
   mode="world";introPenny=false;$("topbar").hidden=false;$("controls").hidden=false;$("bpanel").hidden=true;
   const p=fresh?{x:AN.spawn[0],y:AN.spawn[1],dir:0}:S.pos;
   enterMap("isle",p.x,p.y,p.dir);lastZone="";hud();
