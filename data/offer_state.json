@@ -979,7 +979,7 @@
    "fca_priority": 0,
    "hidden": false,
    "hidden_reason": "",
-   "notes": "2026-11-25 owner-reported from in-app, not provider-verified. Listing changed from '£3 bonus' to rates-vary; amount 0 so it does not count toward totals."
+   "notes": "2026-11-25 owner-reported from in-app, not provider-verified. Listing changed from '£3 bonus' to rates-vary; amount 0 so it does not count toward totals. 2026-11-25 later: owner believes the app also shows a sign-up bonus of about £2 for new users with the code (not provider-verified, may change). Listing shows 'About £2'; app amount stays 0 so totals are unaffected."
   },
   "klarna": {
    "provider": "Klarna",
