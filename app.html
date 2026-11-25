@@ -4192,6 +4192,9 @@ body.light #gameReturn{color:#fff}
     }
     function applyOfferPolicyAll(){for(var i=offers.length-1;i>=0;i--){var st=offerState(offers[i]);if(st.hidden||st.status==='ended'||isHiddenOffer(offers[i])){offers.splice(i,1)}else applyOfferPolicy(offers[i])}}
     async function loadOfferState(){try{var r=await fetch('/data/offer_state.json?v='+Date.now());if(r.ok){var j=await r.json();OFFER_STATE=j.offers||{}}}catch(e){}}
+    var PROVIDER_SITES={};
+    async function loadProviderSites(){try{var r=await fetch('/data/provider_sites.json?v='+Date.now());if(r.ok){var j=await r.json();PROVIDER_SITES=j.sites||{}}}catch(e){}}
+    function providerSiteFor(o){var k=String((o&&(o.name||o.store))||'').toLowerCase().replace(/[^a-z0-9]/g,'');if(PROVIDER_SITES[k])return PROVIDER_SITES[k];var ks=Object.keys(PROVIDER_SITES);for(var i=0;i<ks.length;i++){if(k.length>=4&&(k.indexOf(ks[i])===0||ks[i].indexOf(k)===0))return PROVIDER_SITES[ks[i]]}return ''}
     (function hideOffers(){for(var i=offers.length-1;i>=0;i--){if(isHiddenOffer(offers[i]))offers.splice(i,1)}offers.forEach(neutraliseUnverifiedInvesting)})();
 
     // ── OFFER REVIEW (10 Oct 2026) ─────────────────────────
@@ -5825,7 +5828,7 @@ body.light #gameReturn{color:#fff}
         footer.innerHTML = (offerIsInvesting(offer) ? `<div class="panel-risk" style="font-size:11px;line-height:1.4;margin:0 0 8px;color:var(--muted)"><strong>Risk warning:</strong> ${RISK_LINE}</div>` : '') + `<button class="panel-claim ${isAmber?'amber':''}" onclick="panelClaim()">
           ${offerNoLink(offer)?'Find a code for '+offer.name+' on Reddit ↗':(offer.code ? '📋 Copy Code & ' : '')+'Open '+offer.name+' ↗'}
           <span style="font-size:10px;opacity:.6;display:block;margin-top:2px;font-weight:400">${offerNoLink(offer)?'Searches r/ReferralHunterUK in a new tab':(offerIsRef(offer)?'Ad · opens in new tab':'Opens in new tab')}</span>
-        </button>`;
+        </button>` + ((offerIsRef(offer) && !offerNoLink(offer) && providerSiteFor(offer)) ? `<a href="${providerSiteFor(offer)}" target="_blank" rel="nofollow noopener" style="display:block;text-align:center;font-size:12px;margin-top:8px;color:var(--muted)">Or go to ${offer.name}'s own site (no referral) ↗</a>` : '');
       } else {
         footer.innerHTML = `<button class="panel-claim" style="background:var(--bg3);color:var(--muted2);cursor:default">⏸️ Paused — Check Back Soon</button>`;
       }
@@ -7852,7 +7855,7 @@ function initTheme() {
 
     preCheckAuth();
     (async () => {
-      await loadOfferState();
+      await loadOfferState(); await loadProviderSites();
       await loadOffersFromJSON();
       applyOfferPolicyAll();
       renderAll();
