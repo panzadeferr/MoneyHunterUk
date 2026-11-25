@@ -679,10 +679,10 @@
       "original_price": "£0",
       "saving_percent": 100,
       "type": "bank_switch",
-      "code": "J2SK9W",
+      "code": "",
       "steps": [
-        "Copy code J2SK9W",
-        "Open account",
+        "Open account with the referral link",
+        "If asked for a code, email hello@moneyhunters.co.uk to check one still works",
         "Deposit £1,000 in 30 days"
       ],
       "timeFrame": "30 days",
@@ -1923,15 +1923,15 @@
     },
     {
       "store": "Jam Doughnut",
-      "item": "Gift Card Cashback - £3 Bonus",
-      "deal_price": "£3",
+      "item": "Gift Card Cashback",
+      "deal_price": "Rates vary",
       "link": "https://www.jamdoughnut.com/",
       "original_price": "£0",
-      "saving_percent": 100,
+      "saving_percent": 0,
       "type": "cashback",
       "code": "8TGF",
       "steps": [
-        "Use code 8TGF",
+        "Optional referral code 8TGF (rewards Money Hunters)",
         "Buy gift cards with cashback"
       ],
       "timeFrame": "Immediate",
