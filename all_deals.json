@@ -1,7 +1,7 @@
 {
   "last_updated": "2026-11-25 22:34:54",
-  "total_deals": 95,
-  "manual_count": 91,
+  "total_deals": 96,
+  "manual_count": 92,
   "supermarket_count": 4,
   "reddit_count": 0,
   "news_count": 20,
@@ -259,6 +259,30 @@
       "last_updated": "2026-11-25 22:34:54",
       "last_verified": "2026-10-06",
       "expires": "2026-12-09"
+    },
+    {
+      "store": "Santander",
+      "item": "Switch Account → £240 (+ £200 Regular Saver)",
+      "deal_price": "£240",
+      "link": "https://www.santander.co.uk/personal/support/current-accounts/switching",
+      "original_price": "£1,500",
+      "saving_percent": 0,
+      "type": "bank_switch",
+      "code": "",
+      "steps": [
+        "Full CASS switch to an Everyday Current Account",
+        "Pay in £1,500 and keep 2 household Direct Debits within 60 days",
+        "Pay £200 into a Santander Regular Saver",
+        "Paid about 90 days after the switch request"
+      ],
+      "timeFrame": "~90 days",
+      "category": "bank",
+      "stacked_price": 0,
+      "best_payment_method": "N/A",
+      "stacking_rate": 0,
+      "last_scraped": "2026-11-25 22:34:54",
+      "last_updated": "2026-11-25 22:34:54",
+      "last_verified": "2026-11-25"
     },
     {
       "store": "NatWest",

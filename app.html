@@ -3423,7 +3423,7 @@ body.light #gameReturn{color:#fff}
 
             <div class="guide-section-title">Method 2 — Gift card apps (highest rates)</div>
             <p class="guide-p">Instead of buying your groceries with a debit card, you first buy a gift card for that supermarket through an app. The app gives you cashback instantly — usually 3–8%. Then you use the gift card to pay for your shop as normal.</p>
-            <div class="guide-step"><span class="guide-step-num">1</span><span><strong>Download JamDoughnut</strong> (use code 8TGF for a signup bonus). Before every supermarket shop, check what cashback rate they have on Tesco, Asda, Sainsbury's etc.</span></div>
+            <div class="guide-step"><span class="guide-step-num">1</span><span><strong>Download JamDoughnut</strong> (optional referral code 8TGF rewards Money Hunters). Before every supermarket shop, check what cashback rate they have on Tesco, Asda, Sainsbury's etc.</span></div>
             <div class="guide-step"><span class="guide-step-num">2</span><span><strong>Buy the gift card</strong> in the app. Pay with your Chase card for an extra 1% on top. The gift card loads to your phone instantly — no physical card needed.</span></div>
             <div class="guide-step"><span class="guide-step-num">3</span><span><strong>Use the gift card</strong> to pay for your shop. The cashback is already in your JamDoughnut account — withdraw it to your bank anytime.</span></div>
             <div class="guide-step"><span class="guide-step-num">4</span><span><strong>Also check</strong> Airtime Rewards (code FRJKFXX3) and Everup — rates vary by retailer. Takes 30 seconds to compare before buying.</span></div>
@@ -4102,6 +4102,7 @@ body.light #gameReturn{color:#fff}
     const offers = [
       { id:"chase-uk", name:"Chase UK", action:"Open Chase account", reward:"£50", amount:50, code:"", url:"https://chase.co.uk/raf", desc:"Deposit £1,000 within 30 days of opening and follow the current referral steps. If Chase asks for a referral code, email hello@moneyhunters.co.uk and we will check that a code still works.", badge:"🔥 TOP PICK", effort:"5 min · requires deposit", steps:["Open the Chase app","Open the link to reach Chase's referral page. If it asks for a code, email hello@moneyhunters.co.uk to check one still works","Deposit £1,000 within 30 days","Wait for payout"], expectedDays:30 },
       { id:"first-direct", name:"First Direct", action:"Switch to First Direct", reward:"£175 + £35 boost", amount:210, code:"", url:"https://www.firstdirect.com/banking/switching-bank-accounts/", desc:"Switch via CASS and pay in £1,000 within 45 days. £175 bonus plus a £35 boost for accounts opened between 14 September and 2 December 2026. Checked on firstdirect.com 20 Oct 2026.", badge:"⭐ POPULAR", effort:"12 min · bank switch", steps:["Open the account between 14 September and 2 December 2026","Open First Direct account","Start CASS switch (2 direct debits needed)","Pay in £1,000 within 45 days","Make 5 debit card payments","Bonus paid by 20th of following month"], expectedDays:45,verified:"2026-10-25" },
+      { id:"santander", name:"Santander", action:"Switch to a Santander Everyday Current Account", reward:"£240", amount:240, code:"", url:"https://www.santander.co.uk/personal/support/current-accounts/switching", desc:"£240 for a full switch to an Everyday Current Account plus £200 in a Santander Regular Saver. Needs £1,500 paid in and 2 active household Direct Debits within 60 days. Not available if you held a Santander current account on 1 Jan 2026 or have had a Santander switching incentive. Santander can withdraw it without notice. Checked against Santander's offer terms 25 Nov 2026.", badge:"🏦 BANK SWITCH", effort:"15 min · bank switch", steps:["Check you did not hold a Santander current account on 1 Jan 2026","Open an Everyday Current Account and start a full CASS switch","Pay in £1,500 and keep 2 household Direct Debits active within 60 days","Pay £200 into a Santander Regular Saver","Keep both accounts open until payment, about 90 days after the switch request"], expectedDays:90,verified:"2026-11-25" },
       { id:"natwest", name:"NatWest Premier", action:"Switch to NatWest Premier", reward:"£500 (Premier only)", amount:500, code:"", url:"https://www.natwest.com/premier-banking/current-accounts/switch-your-banking-to-natwest-premier.html", desc:"£500 welcome bonus for switching to NatWest Premier (Select or Reward). Premier eligibility: £100k sole income or £120k joint income paid into a NatWest account, £100k+ savings or investments with NatWest Group, or a £500k+ NatWest mortgage. Full CASS switch, £15,000 paid in within 90 days (each payment stays in for 24 hours), and NatWest app log-in. £500 paid within 30 days after the 90-day check. Not available if you or anyone on the account has previously received a NatWest Group cash switch incentive, or if you\u2019re switching an account from NatWest Group (Royal Bank or Ulster Bank). Offer may be changed or withdrawn. Checked on natwest.com 18 Nov 2026.", badge:"👑 PREMIER", effort:"12 min · high earners only", steps:["Check Premier eligibility (£100k sole or £120k joint income into NatWest, £100k savings/investments, or a £500k NatWest mortgage)","Check you\u2019re not excluded: no prior NatWest Group cash switch incentive, and not switching from NatWest Group (Royal Bank or Ulster Bank)","Open a NatWest Premier account (Select or Reward) and complete a full CASS switch","Pay in £15,000 within 90 days of switching (each payment stays in 24 hours)","Log into the NatWest app","£500 is paid within 30 days after the 90-day check"], expectedDays:120, verified:"2026-11-18" },
       
       
@@ -4208,7 +4209,7 @@ body.light #gameReturn{color:#fff}
         desc:"£175 switch bonus plus £35 for accounts opened between 14 Sep and 2 Dec 2026. Not available if you have held a first direct product before.",
         steps:["Check you have never held a first direct product","Open a 1st Account between 14 Sep and 2 Dec 2026","Start a full CASS switch","Meet the pay-in and direct debit conditions on first direct's offer page","Bonus is paid after the conditions are met"] }
     };
-    const OFFERS_ENDED = { "santander": "2026-10-07" };
+    const OFFERS_ENDED = {};
     (function applyOfferReview() {
       const today = new Date().toISOString().slice(0, 10);
       for (let i = offers.length - 1; i >= 0; i--) {
@@ -4228,7 +4229,7 @@ body.light #gameReturn{color:#fff}
         rate:"4.5%",
         source:"Jam Doughnut",
         icon:"🍩",
-        tip:"Use code 8TGF when signing up. Pay for your Jam Doughnut card with a cashback card for an extra 1% on top.",
+        tip:"Optional referral code 8TGF (rewards Money Hunters). Pay for your Jam Doughnut card with a cashback card for an extra 1% on top.",
         url:"https://www.jamdoughnut.com/",
         boost:true,
         featured:true,
@@ -5597,7 +5598,7 @@ body.light #gameReturn{color:#fff}
           "Pay for your Jam Doughnut gift card with an Amex or cashback card to earn extra rewards on top",
           "Rates change every day — always check the current rate on the app before buying",
           "Best for your weekly supermarket shop — buy the gift card first, then use it to pay in store",
-          "Code 8TGF gets you a bonus when you sign up"
+          "Optional referral code 8TGF rewards Money Hunters"
         ],
         warnings:[
           "Rates shown are the rate TODAY — they can be different tomorrow, so always check before buying",
@@ -5605,7 +5606,7 @@ body.light #gameReturn{color:#fff}
         ],
         steps:[
           "Go to jamdoughnut.com and create a free account",
-          "Enter referral code 8TGF during signup to get a bonus",
+          "Optionally enter referral code 8TGF during signup (it rewards Money Hunters)",
           "Browse the available gift cards — Tesco, Sainsburys, Waitrose, Boots etc",
           "Check the current cashback percentage next to each retailer",
           "Buy the gift card for the amount you plan to spend (e.g. £50 for your weekly shop)",
