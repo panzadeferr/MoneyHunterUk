@@ -7439,48 +7439,45 @@ function initTheme() {
 
       var title, sub;
       if (xp === 0 && completedCount === 0) {
-        title = '🎯 Start here — your first £300+';
-        sub = 'Three simple offers to get you started. Takes about 20 minutes total.';
+        title = '🎯 Offers to look at first';
+        sub = 'Current terms, checked on the dates shown. Offers with a referral link are marked Ad. Investing: capital at risk.';
       } else if (xp < 200) {
-        title = '🎯 Your next moves';
-        sub = 'The best unclaimed offers for you right now.';
+        title = '🎯 Offers to look at next';
+        sub = 'Current terms, checked on the dates shown. Offers with a referral link are marked Ad.';
       } else {
-        title = '🎯 Keep stacking';
-        sub = 'Highest-value offers you haven\'t claimed yet.';
+        title = '🎯 More offers to look at';
+        sub = 'Higher-value offers you have not marked as done. Offers with a referral link are marked Ad.';
       }
 
-      // Pick: 1 bank switch (prefer Chase — Lloyds is in Quick Wins) + 1-2 referrals
-      var bankPriority = ['chase-uk','first-direct','natwest','santander','barclays'];
-      var bankPick = null;
-      for (var bi = 0; bi < bankPriority.length; bi++) {
-        var candidate = validOffers.find(function(o){ return o.id === bankPriority[bi] && getOfferStatus(o.id) !== 'completed'; });
-        if (candidate) { bankPick = candidate; break; }
-      }
+      // Pick: 1 high-value bank switch (the big number) + 2 offers that carry the
+      // site's referral link (marked Ad). Referral status comes from offerIsRef,
+      // the same check that drives the Ad label, so it never goes stale.
+      var bigBankIds = ['barclays','santander','hsbc','first-direct','coop-bank','lloyds-bank'];
+      var payPriority = ['chase-uk','freetrade','webull','revolut'];
+      var bankPick = validOffers
+        .filter(function(o){ return bigBankIds.indexOf(o.id) > -1 && getOfferStatus(o.id) !== 'completed'; })
+        .sort(function(a,b){ return (b.amount||0) - (a.amount||0); })[0] || null;
 
-      // Exclude Quick Wins offers (lloyds-bank, freetrade, topcashback) from modal
-      var quickWinIds = ['chase-uk', 'freetrade', 'topcashback'];
-
-      var referralPicks = validOffers
+      var referralPicks = offers
         .filter(function(o){
-          return referralIds.indexOf(o.id) > -1
-            && bankIds.indexOf(o.id) === -1
-            && quickWinIds.indexOf(o.id) === -1
+          var b = (o.badge || '').toUpperCase();
+          var junk = ['FIND','DEAL','HOTUKDEALS','SCRIMPR','REDDIT','BEERMONEY'].some(function(w){ return b.includes(w); });
+          return !junk && payPriority.indexOf(o.id) > -1 && offerIsRef(o)
             && getOfferStatus(o.id) !== 'completed'
             && (!bankPick || o.id !== bankPick.id);
         })
-        .sort(function(a,b){ return scoreOffer(b) - scoreOffer(a); })
+        .sort(function(a,b){ return payPriority.indexOf(a.id) - payPriority.indexOf(b.id); })
         .slice(0, 2);
 
       var picks = [];
       if (bankPick) picks.push(bankPick);
       picks = picks.concat(referralPicks);
 
-      // Fallback if not enough — also exclude Quick Wins offers
+      // Fallback if not enough: highest-value remaining offers
       if (picks.length < 3) {
         var extra = validOffers
           .filter(function(o){
             return getOfferStatus(o.id) !== 'completed'
-              && quickWinIds.indexOf(o.id) === -1
               && picks.every(function(p){ return p.id !== o.id; });
           })
           .sort(function(a,b){ return (b.amount||0) - (a.amount||0); })
@@ -7497,11 +7494,14 @@ function initTheme() {
         if (desc.length > 120) desc = desc.substring(0, 120) + '...';
         var reward = offer.reward || ('£' + offer.amount);
         var name = offer.name || offer.store || 'Offer';
+        var isInvest = (offer.badge || '').toUpperCase().indexOf('INVEST') > -1;
+        var adTag = offerIsRef(offer) ? ' <span class="quick-guide-badge" style="opacity:.75">Ad</span>' : '';
+        if (isInvest) desc += ' Capital at risk.';
         return '<div class="quick-guide-step">' +
           '<div class="quick-guide-step-num">' + (i+1) + '</div>' +
           '<div class="quick-guide-step-content">' +
             '<div class="quick-guide-step-title">' + name +
-              ' <span class="quick-guide-badge">' + reward + '</span>' +
+              ' <span class="quick-guide-badge">' + reward + '</span>' + adTag +
             '</div>' +
             '<div class="quick-guide-step-desc">' + desc + '</div>' +
             '<button class="quick-guide-btn" onclick="hideQuickGuide();openOfferById(\'' + offer.id + '\')">Open ' + name.split(' ')[0] + ' guide →</button>' +
@@ -7518,7 +7518,7 @@ function initTheme() {
       if (subEl) subEl.textContent = sub;
       if (stepsEl) stepsEl.innerHTML = stepsHtml;
       if (totalEl) totalEl.innerHTML = picks.length > 0
-        ? 'Total from these ' + picks.length + ': <strong style="color:var(--green)">up to £' + totalAmount.toLocaleString('en-GB') + '</strong>'
+        ? 'Listed amounts combined: <strong style="color:var(--green)">£' + totalAmount.toLocaleString('en-GB') + '</strong> (conditions apply; some offers have no fixed amount)'
         : '';
 
       el.classList.remove('hidden');
