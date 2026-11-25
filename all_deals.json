@@ -104,10 +104,10 @@
       "category": "bank",
       "code": "",
       "steps": [
-        "Open Barclays Premier account",
-        "Start CASS switch",
-        "Pay in £4,000",
-        "Wait for payout ~30 days"
+        "Open a Barclays Premier Current Account in the Barclays app (new customers aged 18+)",
+        "Complete a full CASS switch and move at least 3 active Direct Debits",
+        "Pay in a salary of at least £5,000 and make at least 10 debit card purchases",
+        "£450 first, then £30 a month for 5 months while you keep qualifying"
       ],
       "badge": "🏦 BANK SWITCH",
       "effort": "15 min · large deposit needed",
@@ -116,7 +116,7 @@
       "stacking_rate": 0,
       "last_scraped": "2026-11-25 23:07:26",
       "last_updated": "2026-11-25 23:07:26",
-      "last_verified": "2026-10-06"
+      "last_verified": "2026-11-25"
     },
     {
       "store": "Worldfirst",
@@ -223,9 +223,10 @@
       "category": "bank",
       "code": "",
       "steps": [
-        "Check you have not held an HSBC current account since 1 Jan 2018",
-        "Open the account and start a full CASS switch",
-        "Meet the conditions on HSBC's offer page"
+        "Open an HSBC Bank Account in the HSBC app (new HSBC and first direct customers only; check the exclusions on HSBC's page)",
+        "Within 60 days complete a full CASS switch including 2 Direct Debits",
+        "Pay in £2,000 and spend £500 on the debit card",
+        "Wait for payment after HSBC checks the conditions"
       ],
       "timeFrame": "~30 days",
       "stacked_price": 0,
@@ -233,7 +234,7 @@
       "stacking_rate": 0,
       "last_scraped": "2026-11-25 23:07:26",
       "last_updated": "2026-11-25 23:07:26",
-      "last_verified": "2026-10-06",
+      "last_verified": "2026-11-25",
       "expires": "2026-12-02"
     },
     {
