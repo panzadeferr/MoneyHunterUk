@@ -270,7 +270,7 @@
    "fca_priority": 2,
    "hidden": false,
    "hidden_reason": "",
-   "notes": "2026-11-21 provider terms: £50 each, friend deposits £1,000 within 30 days. Terms: codes only to people you know, not for paid promotion/ads: compliance flag for public listing.",
+   "notes": "2026-11-21 provider terms: £50 each, friend deposits £1,000 within 30 days. Terms: codes only to people you know, not for paid promotion/ads: compliance flag for public listing. 2026-11-25 owner: referral codes are single-use (up to 5 codes; the first is used, a second is in use), so codes are not published; users email for one. £50 for the owner, £50 for the friend after £1,000 in 30 days.",
    "conditions_source": "https://www.chase.co.uk/legal/refer-a-friend-2-terms-and-conditions/"
   },
   "cheddar": {
@@ -968,7 +968,7 @@
    "crypto": false,
    "reward_type": "other",
    "referral_product": "",
-   "conditions": "",
+   "conditions": "Owner-checked in the app 2026-11-25: £5 per referral for the referrer and £80 after 3 referrals (referrer only). Owner believes there is no bonus for the new user. No provider terms page found. Gift-card cashback rates vary by retailer.",
    "listing_terms": "Gift Card Cashback - £3 Bonus | 3-8% | Best rates on Tesco, Sainsbury's, Waitrose and more. Use code 8TGF. Always check rates before buying.",
    "max_claim": null,
    "source_url": "",
@@ -979,7 +979,7 @@
    "fca_priority": 0,
    "hidden": false,
    "hidden_reason": "",
-   "notes": ""
+   "notes": "2026-11-25 owner-reported from in-app, not provider-verified. Listing changed from '£3 bonus' to rates-vary; amount 0 so it does not count toward totals."
   },
   "klarna": {
    "provider": "Klarna",
@@ -1118,7 +1118,7 @@
    "fca_priority": 1,
    "hidden": false,
    "hidden_reason": "",
-   "notes": "saving and investing app"
+   "notes": "saving and investing app. 2026-11-25 owner: no referral money for the owner; useful for setting up Direct Debits for some bank-switch offers (check each bank's terms). Amount set to 0."
   },
   "monzo": {
    "provider": "Monzo",
@@ -1979,7 +1979,7 @@
    "fca_priority": 1,
    "hidden": false,
    "hidden_reason": "",
-   "notes": "2026-11-21 sheet (third-party reads): welcome offer is 5 random free fractional shares (about £12 typical) for a £500 single deposit held 60 days, invitation-based, likely to 31 Mar 2027. Not provider-verified. Listing £50 credit was wrong; reworded to share bonus."
+   "notes": "2026-11-21 sheet (third-party reads): welcome offer is 5 random free fractional shares (about £12 typical) for a £500 single deposit held 60 days, invitation-based, likely to 31 Mar 2027. Not provider-verified. Listing £50 credit was wrong; reworded to share bonus. 2026-11-25 owner-reported in app: friend deposits £500+ and holds 60 days; referrer gets 8 shares valued about $3-300 (random); friend gets 5 fractional shares. Still not provider-verified; amount stays hidden. Owner will send the link."
   },
   "wise": {
    "provider": "Wise",
