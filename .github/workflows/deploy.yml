@@ -196,7 +196,8 @@ jobs:
           for i in $(seq 1 18); do
             COUNT=$(gh api "repos/${GITHUB_REPOSITORY}/actions/runs/${GITHUB_RUN_ID}/artifacts" --jq '.total_count' 2>/dev/null || echo 0)
             if [ "${COUNT:-0}" -gt 0 ]; then
-              echo "Pages artifact registered (total_count=$COUNT) on attempt $i"
+              echo "Pages artifact registered (total_count=$COUNT) on attempt $i; waiting 30s for deploy-pages to see it"
+              sleep 30
               exit 0
             fi
             echo "Attempt $i: artifact not visible yet, waiting 10s"
