@@ -22,8 +22,9 @@ const bad = await p.evaluate(() => offers.filter(o => offerIsInvesting(o) && (/Â
 const hidden = await p.evaluate(() => offers.filter(o => /etoro|xtb|trading ?212/i.test(o.id + o.name)).map(o => o.id)); ok('CFD brokers absent', hidden.length === 0, hidden.join(','));
 const ig = await p.evaluate(() => offers.find(o => o.id === 'ig-trading')); ok('IG live as Share dealing account', !!ig && /Share dealing account/.test(ig.name) && ig.reward === 'Sign-up reward, value varies', ig && ig.reward);
 const freeBad = await p.evaluate(() => offers.filter(o => /\bfree\b/i.test([o.name, o.reward, o.desc, o.action].join(' '))).map(o => o.id)); ok('no "free" in offer text', freeBad.length === 0, freeBad.join(','));
-const panel = await p.evaluate(() => { openPanel(offers.find(o => o.id === 'freetrade')); const f = document.getElementById('panelFooter'); const r = f.querySelector('.panel-risk'), btn = f.querySelector('.panel-claim'); return {risk: !!r, order: r && btn ? !!(r.compareDocumentPosition(btn) & Node.DOCUMENT_POSITION_FOLLOWING) : false, body: document.getElementById('panelBody').innerText}; });
+const panel = await p.evaluate(() => { openPanel(offers.find(o => o.id === 'freetrade')); const f = document.getElementById('panelFooter'); const r = f.querySelector('.panel-risk'), btn = f.querySelector('.panel-claim'); return {foot: f.innerText, risk: !!r, order: r && btn ? !!(r.compareDocumentPosition(btn) & Node.DOCUMENT_POSITION_FOLLOWING) : false, body: document.getElementById('panelBody').innerText}; });
 ok('panel: risk warning directly above the claim button', panel.risk && panel.order);
+ok('panel: plain non-referral provider link next to referral link', /own site \(no referral\)/.test(panel.foot));
 ok('panel: Ad notice present and verification label', /Ad/.test(panel.body) && /not verified by a person/.test(panel.body));
 const prem = await p.evaluate(() => offers.filter(o => /premier/i.test(o.name)).map(o => [o.id, o.reward, !!offerState(o).conditions])); ok('Premier amounts only with conditions', prem.every(([i, r, c]) => c || !/Â£/.test(r)), JSON.stringify(prem));
 ok('no page errors', errs.length === 0, errs.join(';'));

@@ -30,6 +30,17 @@ def ref_markers():
     return re.findall(r"'([^']+)'", m.group(1)) if m else []
 
 
+def _slug(text):
+    return re.sub(r"[^a-z0-9]+", "-", html.unescape(str(text)).lower()).strip("-")[:60] or "offer"
+
+
+def _provider_sites():
+    try:
+        return json.loads((ROOT / "data" / "provider_sites.json").read_text(encoding="utf-8")).get("sites", {})
+    except Exception:
+        return {}
+
+
 def is_referral(deal, markers):
     blob = "{} {}".format(deal.get("link", ""), deal.get("code", ""))
     return any(mk in blob for mk in markers)
@@ -89,7 +100,7 @@ def is_hidden(deal):
     if store_key(deal) in HIDDEN_STORES or pol.is_hidden_provider(deal.get("store")):
         return True
     st = pol.state_for(STATE, deal.get("store"))
-    return bool(st.get("hidden")) or st.get("status") == "ended"
+    return bool(st.get("hidden"))
 
 
 def money_bits(deal):
@@ -145,6 +156,8 @@ def build_html():
             continue
         seen_rows.add(dk)
         t = d.get("type") or "megalist"
+        if pol.state_for(STATE, d.get("store")).get("status") == "ended":
+            t = "ended"
         if t in ("pension",):
             t = "invest"
         if t == "freebies":
@@ -154,8 +167,10 @@ def build_html():
     n_shown = sum(len(v) for v in groups.values())
     sections = []
     jsonld_items = []
+    used_anchors = set()
+    sites = _provider_sites()
     seen_types = set()
-    for t, label in GROUP_ORDER + FALLBACK_GROUPS:
+    for t, label in GROUP_ORDER + FALLBACK_GROUPS + [("ended", "Ended offers (kept so old links still work)")]:
         if t in seen_types or t not in groups:
             continue
         seen_types.add(t)
@@ -184,24 +199,41 @@ def build_html():
             link = html.escape(str(d.get("link", "")), quote=True)
             if not store or not item:
                 continue
+            if t == "ended":
+                amt = ""
+                item = "This offer has ended."
             amt_html = '<span class="amt">{}</span>'.format(amt) if amt else ""
-            anchor = "offer-{}".format(len(jsonld_items) + 1)
+            anchor = _slug(store)
+            if anchor in used_anchors:
+                anchor = _slug("{} {}".format(store, item))
+            n_try = 2
+            base_anchor = anchor
+            while anchor in used_anchors:
+                anchor = "{}-{}".format(base_anchor, n_try)
+                n_try += 1
+            used_anchors.add(anchor)
             jsonld_items.append({
                 "@type": "ListItem",
                 "position": len(jsonld_items) + 1,
                 "name": html.unescape("{} {}".format(store, amt)).strip(),
                 "url": "{}/offers.html#{}".format(SITE, anchor),
             })
-            if is_referral(d, markers):
+            if t == "ended":
+                link_html = "Ended, no link."
+            elif is_referral(d, markers):
                 link_html = (
                     '<span class="ad">Ad</span> '
                     '<a href="{}" rel="sponsored nofollow noopener" target="_blank">referral link</a>'
                     " · we may earn a commission".format(link)
                 )
+                plain_url = sites.get(pol.key(html.unescape(store)))
+                if plain_url:
+                    link_html += ' · <a href="{}" rel="nofollow noopener" target="_blank">{}\'s own site (no referral)</a>'.format(
+                        html.escape(plain_url, quote=True), html.escape(html.unescape(store)))
             else:
                 link_html = '<a href="{}" rel="nofollow noopener" target="_blank">provider\'s own page</a>'.format(link)
-            ver = html.escape(pol.verification_label(st))
-            if st.get("source_url") and pol.verified_by_fetch(st):
+            ver = "ended" if t == "ended" else html.escape(pol.verification_label(st))
+            if t != "ended" and st.get("source_url") and pol.verified_by_fetch(st):
                 ver = '<a href="{}" rel="nofollow noopener" target="_blank">{}</a>'.format(html.escape(st["source_url"], quote=True), ver)
             rows.append(
                 '<div class="offer" id="{}">'
