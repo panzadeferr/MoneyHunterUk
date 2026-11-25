@@ -2,7 +2,7 @@
  {
   "key": "starlingbank",
   "source_url": "https://www.starlingbank.com/referral/",
-  "observed_at": "2026-11-24",
+  "observed_at": "2026-11-25",
   "kind": "amount",
   "field": "amount_override",
   "before": "£10",
@@ -14,7 +14,7 @@
  {
   "key": "tescomobile",
   "source_url": "https://www.tescomobile.com/",
-  "observed_at": "2026-11-24",
+  "observed_at": "2026-11-25",
   "kind": "amount",
   "field": "amount_override",
   "before": "£20",
@@ -26,7 +26,7 @@
  {
   "key": "yonder",
   "source_url": "https://www.yonder.co.uk/",
-  "observed_at": "2026-11-24",
+  "observed_at": "2026-11-25",
   "kind": "amount",
   "field": "amount_override",
   "before": "£10",
