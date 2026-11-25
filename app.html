@@ -5843,6 +5843,7 @@ body.light #gameReturn{color:#fff}
       if (!activePanel) return;
       const offer = activePanel;
       mhTrack("offer_opened", { offer: offer.id });
+      mhTrack("offer-click", { offer: String(offer.name || offer.id).slice(0, 60) });
       // Copy code if exists
       if (offer.code) {
         navigator.clipboard?.writeText(offer.code).catch(() => {});
