@@ -2223,6 +2223,29 @@
    "hidden_reason": "",
    "notes": "22 Nov 2026 provider refer-a-friend page fetched live: £30 each, £2,000 minimum held 30 days, up to £300 per referrer across 10 referrals, +£10 for a second account. The Megalist's 'Save £2k, get £30' matched.",
    "conditions_source": "https://oaknorth.co.uk/personal-savings/refer-a-friend/"
+  },
+  "santander": {
+   "provider": "Santander",
+   "investing": "no",
+   "crypto": false,
+   "reward_type": "cash",
+   "referral_product": "",
+   "conditions": "£240 single payment for a full CASS switch to an Everyday Current Account within 60 days, £1,500 paid in within 60 days, 2 active household Direct Debits, and at least £200 in a Santander Regular Saver. Both accounts open and 2 Direct Debits active on the payment date. Excludes anyone who held a Santander current account on 1 Jan 2026 or has had a Santander switching incentive. Santander can withdraw or change it without notice.",
+   "listing_terms": "Switch Account → £240 (+ £200 Regular Saver)",
+   "max_claim": {
+    "amount": "£240",
+    "source_url": "https://www.santander.co.uk/assets/s3fs-public/documents/Santander_%C2%A3240_Switch_&_Save_offer_Terms_and_conditions_(%E2%80%98These_Terms%E2%80%99)_COREMC0855SEP26PUBCDT%20.pdf",
+    "date": "2026-11-25"
+   },
+   "source_url": "https://www.santander.co.uk/personal/support/current-accounts/eligible-to-switch",
+   "source_is_provider_page": true,
+   "last_checked": "2026-11-25",
+   "checked_by": "fetch",
+   "status": "check",
+   "fca_priority": 0,
+   "hidden": false,
+   "hidden_reason": "",
+   "notes": "2026-11-25 Santander official terms PDF and eligibility page fetched. Terms say the offer starts 1 Sep 2026; bank-switch.html says 27 Oct 2026 (from an earlier check): confirm which is right. Own offer page, no referral link."
   }
  }
 }
