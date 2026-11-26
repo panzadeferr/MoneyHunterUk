@@ -1,0 +1,14 @@
+# Money Hunters UK
+
+> Independent UK site tracking bank switch bonuses, cashback and referral offers, with the conditions and the date each was last checked. Also plain-English money guides and a money game. Not financial advice. Some links are referral links (marked Ad) and we may earn a commission.
+
+## Main pages
+- [Home](https://moneyhunters.co.uk/): overview of offers, guides and the game
+- [Bank switch bonuses](https://moneyhunters.co.uk/bank-switch.html): live UK switch offers with conditions and check dates
+- [Offers](https://moneyhunters.co.uk/offers.html): all tracked offers
+- [Guides](https://moneyhunters.co.uk/guides/): plain-English UK money guides, each with review date and sources
+- [Coinsworth](https://moneyhunters.co.uk/play/): free money game
+- [Newsletter](https://moneyhunters.co.uk/newsletter.html): UK money offers by email
+
+## Contact
+hello@moneyhunters.co.uk
