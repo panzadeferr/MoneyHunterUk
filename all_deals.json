@@ -653,8 +653,8 @@
     },
     {
       "store": "Plum",
-      "item": "Refer 3 Friends → £75",
-      "deal_price": "£75",
+      "item": "Savings app (no fixed referral amount)",
+      "deal_price": "Savings app",
       "link": "https://friends.withplum.com/r/RxK7c2fUNa",
       "original_price": "£0",
       "saving_percent": 100,
@@ -662,8 +662,7 @@
       "code": "",
       "steps": [
         "Join Plum",
-        "Refer 3 friends",
-        "Get £75"
+        "Check current referral terms in the app"
       ],
       "timeFrame": "",
       "category": "investment",
@@ -1488,8 +1487,9 @@
       "type": "invest",
       "code": "",
       "steps": [
-        "Deposit £50",
-        "Get free share"
+        "Deposit £50 (net)",
+        "Complete W-8BEN",
+        "Get share bonus"
       ],
       "timeFrame": "Few days",
       "category": "investment",
