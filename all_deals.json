@@ -1487,8 +1487,9 @@
       "type": "invest",
       "code": "",
       "steps": [
-        "Deposit £50",
-        "Get free share"
+        "Deposit £50 (net)",
+        "Complete W-8BEN",
+        "Get share bonus"
       ],
       "timeFrame": "Few days",
       "category": "investment",
