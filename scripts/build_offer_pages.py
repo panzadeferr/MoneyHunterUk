@@ -58,7 +58,7 @@ CLICK_JS = (
 )
 
 # Slugs we never build a page for (see the module docstring for why).
-SKIP_SLUGS = {"freetrade", "trading", "tradingcom", "trading-com", "tradingdotcom"}
+SKIP_SLUGS = {"rakuten", "freetrade", "trading", "tradingcom", "trading-com", "tradingdotcom"}
 
 GUIDES = {
     "bank_switch": [("guides/how-a-cass-switch-works/", "How a CASS switch works"),
