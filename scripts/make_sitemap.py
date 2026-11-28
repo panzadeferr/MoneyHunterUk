@@ -25,6 +25,15 @@ if gdir.is_dir():
             continue
         m = re.search(r'"dateModified": "(\d{4}-\d{2}-\d{2})"', f.read_text(encoding="utf-8"))
         out += ["  <url>", f"    <loc>https://moneyhunters.co.uk/guides/{f.parent.name}/</loc>", f"    <lastmod>{m.group(1) if m else today}</lastmod>", "    <changefreq>monthly</changefreq>", "    <priority>0.7</priority>", "  </url>"]
+# per-offer landing pages (built by scripts/build_offer_pages.py)
+odir = root / "offers"
+if odir.is_dir():
+    reg = odir / "index.json"
+    if reg.exists():
+        import json as _json
+        for _slug in sorted(_json.loads(reg.read_text(encoding="utf-8")).get("pages", [])):
+            out += ["  <url>", f"    <loc>https://moneyhunters.co.uk/offers/{_slug}/</loc>", f"    <lastmod>{today}</lastmod>", "    <changefreq>weekly</changefreq>", "    <priority>0.6</priority>", "  </url>"]
 out.append("</urlset>")
+
 (root / "sitemap.xml").write_text("\n".join(out) + "\n", encoding="utf-8")
 print("sitemap.xml written for", today)

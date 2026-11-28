@@ -1,0 +1,42 @@
+{
+ "checked": "2026-11-28",
+ "pages": [
+  "aj-bell-invest",
+  "barclays-premier-bank-switch",
+  "chase-uk-bank-switch",
+  "chip-invest",
+  "co-operative-bank-bank-switch",
+  "everup-cashback",
+  "fidelity-invest",
+  "fuse-energy-utilities",
+  "hsbc-bank-switch",
+  "lloyds-bank-bank-switch",
+  "oaknorth-bank-bank",
+  "penfold-invest",
+  "pensionbee-invest",
+  "raisin-uk-invest",
+  "santander-bank-switch",
+  "scottish-power-utilities",
+  "wealthify-invest"
+ ],
+ "noindex": [
+  "airtime-cashback",
+  "amex-credit",
+  "cheddar-cashback",
+  "jam-doughnut-cashback",
+  "lebara-utilities",
+  "octopus-energy-utilities",
+  "plum-invest",
+  "quidco-cashback",
+  "revolut-referral",
+  "robinhood-invest",
+  "tide-business",
+  "topcashback-cashback",
+  "trainpal-travel",
+  "webull-invest",
+  "wise-transfer",
+  "worldfirst-business",
+  "zilch-referral",
+  "zopa-biscuit-referral"
+ ]
+}

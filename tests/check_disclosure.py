@@ -31,7 +31,7 @@ for block in re.findall(r'<div class="offer"[^>]*>(.*?)</div>', offers, re.S):
         title = re.sub(r"<[^>]+>", " ", block)[:70]
         errors.append("offers.html: referral offer without Ad label: " + " ".join(title.split()))
 
-pages = ["index.html", "bank-switch.html"] + glob.glob("guides/**/*.html", recursive=True)
+pages = ["index.html", "bank-switch.html"] + glob.glob("guides/**/*.html", recursive=True) + glob.glob("offers/*/index.html")
 for page in pages:
     text = open(page, encoding="utf-8").read()
     for a in re.finditer(r'<a [^>]*href="([^"]+)"', text):
